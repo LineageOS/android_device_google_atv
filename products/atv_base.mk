@@ -86,6 +86,7 @@ PRODUCT_PACKAGES += \
     audio_policy.default \
     clatd \
     clatd.conf \
+    input.evdev.default \
     local_time.default \
     screenrecord
 
