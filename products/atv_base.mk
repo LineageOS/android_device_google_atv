@@ -99,8 +99,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
-# Use full NotoSans font
-FONT_NOTOSANS_FULL := true
+# Use full Noto Sans Japanese font
+FONT_NOTOSANS_JP_FULL := true
 
 # Do not include the Live Channels app if USE_OEM_TV_APP flag is set.
 # The feature com.google.android.tv.installed is used to tell whether a device
