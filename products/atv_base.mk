@@ -97,8 +97,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.media.avsync=true
 
-# Include an expanded selection of fonts
-EXTENDED_FONT_FOOTPRINT := true
 # Use full Noto Sans Japanese font
 FONT_NOTOSANS_JP_FULL := true
 
@@ -123,7 +121,6 @@ $(call inherit-product-if-exists, external/google-fonts/carrois-gothic-sc/fonts.
 $(call inherit-product-if-exists, external/google-fonts/coming-soon/fonts.mk)
 $(call inherit-product-if-exists, external/google-fonts/cutive-mono/fonts.mk)
 $(call inherit-product-if-exists, external/noto-fonts/fonts.mk)
-$(call inherit-product-if-exists, external/naver-fonts/fonts.mk)
 $(call inherit-product-if-exists, external/roboto-fonts/fonts.mk)
 $(call inherit-product-if-exists, external/hyphenation-patterns/patterns.mk)
 $(call inherit-product-if-exists, frameworks/base/data/keyboards/keyboards.mk)
