@@ -68,13 +68,11 @@ PRODUCT_PACKAGES += \
     FusedLocation \
     InputDevices \
     KeyChain \
-    Launcher2 \
     PicoTts \
     PacProcessor \
     PrintSpooler \
     ProxyHandler \
     SharedStorageBackup \
-    TeleService \
     VpnDialogs
 
 # From build/target/product/generic_no_telephony.mk
