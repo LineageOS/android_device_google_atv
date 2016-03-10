@@ -99,7 +99,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # has the pre-installed Live Channels app. This is necessary for the Play Store
 # to identify the compatible devices that can install later updates of the app.
 ifneq ($(USE_OEM_TV_APP),true)
-    PRODUCT_PACKAGES += TV
+    ifneq ($(PRODUCT_IS_ATV_SDK),true)
+        PRODUCT_PACKAGES += TV
+    else
+        PRODUCT_PACKAGES += LiveTv
+    endif # if PRODUCT_IS_ATV_SDK
+
     PRODUCT_COPY_FILES += \
         device/google/atv/permissions/com.google.android.tv.installed.xml:system/etc/permissions/com.google.android.tv.installed.xml
 endif
