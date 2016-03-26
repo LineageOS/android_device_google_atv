@@ -44,4 +44,8 @@
     <bool name="config_hasPermanentDpad">true</bool>
 
     <bool name="config_defaultInTouchMode">false</bool>
+
+    <!-- Launcher customization requires AppWidgetService, but otherwise
+         home screen widgets are not supported on TV -->
+    <bool name="config_enableAppWidgetService">true</bool>
 </resources>
