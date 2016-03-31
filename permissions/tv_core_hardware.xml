@@ -26,7 +26,6 @@
     <feature name="android.hardware.screen.landscape" />
     <feature name="android.hardware.type.television" />
 
-    <feature name="android.software.app_widgets" />
     <feature name="android.software.backup" />
     <feature name="android.software.leanback" />
     <feature name="android.software.leanback_only" />
