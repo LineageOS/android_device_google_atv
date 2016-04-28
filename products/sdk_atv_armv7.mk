@@ -20,6 +20,7 @@ PRODUCT_PACKAGES := \
     EmulatorSmokeTests \
     LeanbackSampleApp \
     TelephonyProvider \
+    SdkSetup \
     audio.primary.goldfish \
     rild
 
