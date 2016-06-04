@@ -63,6 +63,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     BasicDreams \
     CalendarProvider \
+    CaptivePortalLogin \
     CertInstaller \
     ExternalStorageProvider \
     FusedLocation \
