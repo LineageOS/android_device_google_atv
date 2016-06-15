@@ -50,6 +50,6 @@
     <bool name="config_enableAppWidgetService">true</bool>
 
     <!-- Package of the unbundled tv remote service which can connect to tv remote provider -->
-    <string translatable="false" name="config_tvRemoteServicePackage">com.google.android.tv.remote</string>
+    <string translatable="false" name="config_tvRemoteServicePackage">com.google.android.tv.remote.service</string>
 
 </resources>
