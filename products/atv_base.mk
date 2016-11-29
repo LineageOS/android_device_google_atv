@@ -84,7 +84,6 @@ PRODUCT_PACKAGES += \
     SystemUI \
     librs_jni \
     audio.primary.default \
-    audio_policy.default \
     clatd \
     clatd.conf \
     local_time.default \
