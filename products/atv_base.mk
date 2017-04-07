@@ -114,6 +114,10 @@ endif
 # To enable access to /dev/dvb*
 BOARD_SEPOLICY_DIRS += device/google/atv/sepolicy
 
+# Content for ATV Tutorials / Post-Setup Tour
+PRODUCT_COPY_FILES += \
+    device/google/atv/tutorial-library-google.zip:system/media/tutorial-library-google.zip
+
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AudioTv.mk)
 $(call inherit-product-if-exists, external/svox/pico/lang/all_pico_languages.mk)
 $(call inherit-product-if-exists, frameworks/base/data/fonts/fonts.mk)
