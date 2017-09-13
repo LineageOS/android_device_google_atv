@@ -16,5 +16,5 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Si la combinación de teclas está activada, se iniciará una función de accesibilidad al pulsar simultáneamente los botones para desplazarte hacia atrás y hacia abajo durante 3 segundos.\n\n Función de accesibilidad actual:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Para cambiarla, accede a Ajustes &gt; Accesibilidad."</string>
+    <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"ਸ਼ਾਰਟਕੱਟ ਚਾਲੂ ਹੋਣ \'ਤੇ, \'ਪਿੱਛੇ\' ਅਤੇ \'ਹੇਠਾਂ\' ਦੋਵਾਂ ਬਟਨਾਂ ਨੂੰ 3 ਸਕਿੰਟ ਤੱਕ ਦੱਬਣ ਨਾਲ ਕੋਈ ਪਹੁੰਚਯੋਗਤਾ ਵਿਸ਼ੇਸ਼ਤਾ ਸ਼ੁਰੂ ਹੋ ਜਾਵੇਗੀ।\n\n ਵਰਤਮਾਨ ਪਹੁੰਚਯੋਗਤਾ ਵਿਸ਼ੇਸ਼ਤਾ:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n ਤੁਸੀਂ ਸੈਟਿੰਗਾਂ &gt; ਪਹੁੰਚਯੋਗਤਾ ਵਿੱਚ ਵਿਸ਼ੇਸ਼ਤਾ ਨੂੰ ਬਦਲ ਸਕਦੇ ਹੋ।"</string>
 </resources>
