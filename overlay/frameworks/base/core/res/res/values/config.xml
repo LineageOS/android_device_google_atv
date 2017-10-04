@@ -37,6 +37,9 @@
          Any other values will have surprising consequences. -->
     <integer name="config_defaultUiModeType">4</integer>
 
+    <!-- default device has recents property -->
+    <bool name="config_hasRecents">false</bool>
+
     <!-- Control the behavior when the user long presses the home button.
             0 - Nothing
             1 - Launch all apps intent
@@ -60,5 +63,26 @@
 
     <!-- Default service to enable with accessibility shortcut [DO NOT TRANSLATE] -->
     <string name="config_defaultAccessibilityService" translatable="false">com.google.android.marvin.talkback/.TalkBackService</string>
+
+    <!-- The list of IMEs which should be disabled until used.
+         This function suppresses update notifications for these pre-installed apps.
+         We need to set this configuration carefully that they should not have functionarities
+         other than "IME" or "Spell Checker". In InputMethodManagerService,
+         the listed IMEs are disabled until used when all of the following conditions are met.
+         1. Not selected as an enabled IME in the Settings
+         2. Not selected as a spell checker in the Settings
+         3. Installed
+         4. A pre-installed IME
+         5. Not enabled
+         And the disabled_until_used state for an IME is released by InputMethodManagerService
+         when the IME is selected as an enabled IME. -->
+    <string-array name="config_disabledUntilUsedPreinstalledImes" translatable="false">
+        <item>com.google.android.inputmethod.latin</item>
+        <item>com.google.android.apps.inputmethod.hindi</item>
+        <item>com.google.android.apps.inputmethod.zhuyin</item>
+        <item>com.google.android.inputmethod.japanese</item>
+        <item>com.google.android.inputmethod.korean</item>
+        <item>com.google.android.inputmethod.pinyin</item>
+    </string-array>
 
 </resources>
