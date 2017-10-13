@@ -125,7 +125,6 @@ PRODUCT_COPY_FILES += \
     device/google/atv/tutorial-library-google.zip:system/media/tutorial-library-google.zip
 
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AudioTv.mk)
-$(call inherit-product-if-exists, external/svox/pico/lang/all_pico_languages.mk)
 $(call inherit-product-if-exists, frameworks/base/data/fonts/fonts.mk)
 $(call inherit-product-if-exists, external/google-fonts/dancing-script/fonts.mk)
 $(call inherit-product-if-exists, external/google-fonts/carrois-gothic-sc/fonts.mk)

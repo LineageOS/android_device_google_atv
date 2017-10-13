@@ -59,14 +59,6 @@ include $(SRC_TARGET_DIR)/product/emulator.mk
 
 $(call inherit-product, device/google/atv/products/atv_base.mk)
 
-# include available languages for TTS in the system image
--include external/svox/pico/lang/PicoLangDeDeInSystem.mk
--include external/svox/pico/lang/PicoLangEnGBInSystem.mk
--include external/svox/pico/lang/PicoLangEnUsInSystem.mk
--include external/svox/pico/lang/PicoLangEsEsInSystem.mk
--include external/svox/pico/lang/PicoLangFrFrInSystem.mk
--include external/svox/pico/lang/PicoLangItItInSystem.mk
-
 # Overrides
 PRODUCT_NAME := sdk_atv_armv7
 PRODUCT_DEVICE := generic
