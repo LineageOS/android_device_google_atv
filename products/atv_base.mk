@@ -126,6 +126,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/google/atv/tutorial-library-google.zip:system/media/tutorial-library-google.zip
 
+# Copy .kl file for generic voice remotes
+PRODUCT_COPY_FILES += \
+    device/google/atv/Generic.kl:system/usr/keylayout/Generic.kl
+
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AudioTv.mk)
 $(call inherit-product-if-exists, external/svox/pico/lang/all_pico_languages.mk)
 $(call inherit-product-if-exists, frameworks/base/data/fonts/fonts.mk)
