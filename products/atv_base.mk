@@ -70,7 +70,6 @@ PRODUCT_PACKAGES += \
     FusedLocation \
     InputDevices \
     KeyChain \
-    PicoTts \
     PacProcessor \
     PrintSpooler \
     ProxyHandler \
