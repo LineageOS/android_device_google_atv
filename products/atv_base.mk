@@ -19,6 +19,7 @@ PRODUCT_IS_ATV := true
 PRODUCT_PACKAGES := \
     TvProvider \
     TvSettings \
+    SettingsIntelligence \
     tv_input.default
 
 PRODUCT_COPY_FILES := \
