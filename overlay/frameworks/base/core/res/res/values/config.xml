@@ -88,4 +88,10 @@
         <item>com.google.android.inputmethod.pinyin</item>
     </string-array>
 
+    <!-- Whether to keep background restricted profiles running after exiting. If set to false,
+         restricted profiles may be put into stopped state as soon as the switch back to primary
+         happens.
+         Can be overridden with android.provider.Settings.Global.KEEP_PROFILE_IN_BACKGROUND. -->
+    <bool name="config_keepRestrictedProfilesInBackground">false</bool>
+
 </resources>
