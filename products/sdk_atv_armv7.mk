@@ -17,7 +17,6 @@
 PRODUCT_IS_ATV_SDK := true
 
 PRODUCT_PACKAGES := \
-    EmulatorSmokeTests \
     LeanbackSampleApp \
     TelephonyProvider \
     SdkSetup \
