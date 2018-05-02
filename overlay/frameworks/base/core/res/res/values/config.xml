@@ -94,4 +94,9 @@
          Can be overridden with android.provider.Settings.Global.KEEP_PROFILE_IN_BACKGROUND. -->
     <bool name="config_keepRestrictedProfilesInBackground">false</bool>
 
+
+    <!-- An array of packages which can listen for notifications on low ram devices. -->
+    <string-array translatable="false" name="config_allowedManagedServicesOnLowRamDevices">
+        <item>com.google.android.tvrecommendations</item>
+    </string-array>
 </resources>
