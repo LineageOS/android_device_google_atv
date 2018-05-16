@@ -67,7 +67,14 @@
     <!-- Default service to enable with accessibility shortcut [DO NOT TRANSLATE] -->
     <string name="config_defaultAccessibilityService" translatable="false">com.google.android.marvin.talkback/.TalkBackService</string>
 
-    <!-- The list of IMEs which should be disabled until used.
+    <!-- The component name, flattened to a string, for the default autofill service
+         to  enabled for an user. This service must be trusted, as it can be activated
+         without explicit consent of the user. If no autofill service with the
+          specified name exists on the device, autofill will be disabled by default.
+    -->
+    <string name="config_defaultAutofillService" translatable="false">com.google.android.gms/.autofill.service.AutofillService</string>
+
+   <!-- The list of IMEs which should be disabled until used.
          This function suppresses update notifications for these pre-installed apps.
          We need to set this configuration carefully that they should not have functionarities
          other than "IME" or "Spell Checker". In InputMethodManagerService,
