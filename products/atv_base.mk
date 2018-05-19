@@ -22,6 +22,10 @@ PRODUCT_PACKAGES := \
     SettingsIntelligence \
     tv_input.default
 
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+PRODUCT_PACKAGES += Traceur
+endif
+
 PRODUCT_COPY_FILES := \
     device/google/atv/permissions/tv_core_hardware.xml:system/etc/permissions/tv_core_hardware.xml
 
