@@ -81,8 +81,7 @@ PRODUCT_PACKAGES += \
     ProxyHandler \
     SharedStorageBackup \
     VpnDialogs \
-    com.android.media.tv.remoteprovider \
-    com.android.media.tv.remoteprovider.xml
+    com.android.media.tv.remoteprovider
 
 # From build/target/product/generic_no_telephony.mk
 PRODUCT_PACKAGES += \
