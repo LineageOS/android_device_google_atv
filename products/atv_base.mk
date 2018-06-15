@@ -73,16 +73,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.media.avsync=true
 
-# Strip the local variable table and the local variable type table to reduce
-# the size of the system image. This has no bearing on stack traces, but will
-# leave less information available via JDWP.
-# From //build/make/target/product/go_defaults_common.mk
-PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
-
-# Do not generate libartd.
-# From //build/make/target/product/go_defaults_common.mk
-PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
-
 # Do not include the Live Channels app if USE_OEM_TV_APP flag is set.
 # The feature com.google.android.tv.installed is used to tell whether a device
 # has the pre-installed Live Channels app. This is necessary for the Play Store
