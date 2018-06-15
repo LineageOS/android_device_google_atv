@@ -34,36 +34,8 @@ DEVICE_PACKAGE_OVERLAYS := \
 
 # From build/target/product/core_base.mk
 PRODUCT_PACKAGES += \
-    ContactsProvider \
-    DefaultContainerService \
     UserDictionaryProvider \
-    libaudiopreprocessing \
-    libfilterpack_imageproc \
-    libgabi++ \
     libkeystore \
-    libstagefright_soft_aacdec \
-    libstagefright_soft_aacenc \
-    libstagefright_soft_amrdec \
-    libstagefright_soft_amrnbenc \
-    libstagefright_soft_amrwbenc \
-    libstagefright_soft_avcdec \
-    libstagefright_soft_avcenc \
-    libstagefright_soft_flacdec \
-    libstagefright_soft_flacenc \
-    libstagefright_soft_g711dec \
-    libstagefright_soft_gsmdec \
-    libstagefright_soft_hevcdec \
-    libstagefright_soft_mp3dec \
-    libstagefright_soft_mpeg2dec \
-    libstagefright_soft_mpeg4dec \
-    libstagefright_soft_mpeg4enc \
-    libstagefright_soft_opusdec \
-    libstagefright_soft_rawdec \
-    libstagefright_soft_vorbisdec \
-    libstagefright_soft_vpxdec \
-    libstagefright_soft_vpxenc \
-    mdnsd \
-    requestsync
 
 # From build/target/product/core.mk
 PRODUCT_PACKAGES += \
@@ -100,16 +72,6 @@ PRODUCT_COPY_FILES += \
 # Enable frame-exact AV sync
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.media.avsync=true
-
-# Strip the local variable table and the local variable type table to reduce
-# the size of the system image. This has no bearing on stack traces, but will
-# leave less information available via JDWP.
-# From //build/make/target/product/go_defaults_common.mk
-PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
-
-# Do not generate libartd.
-# From //build/make/target/product/go_defaults_common.mk
-PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
 # Do not include the Live Channels app if USE_OEM_TV_APP flag is set.
 # The feature com.google.android.tv.installed is used to tell whether a device
