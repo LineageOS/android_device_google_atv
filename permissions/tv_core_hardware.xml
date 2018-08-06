@@ -33,6 +33,8 @@
     <feature name="android.software.picture_in_picture" />
     <feature name="android.software.activities_on_secondary_displays" />
     <feature name="android.software.voice_recognizers" />
+    <feature name="android.software.input_methods" />
+    <feature name="android.software.autofill" />
 
     <feature name="android.software.cts" />
 
