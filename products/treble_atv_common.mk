@@ -77,5 +77,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # privapp-permissions whitelisting
 PRODUCT_COPY_FILES += \
-    vendor/google/data/etc/permissions/privapp-permissions-google.xml:system/etc/permissions/privapp-permissions-google.xml \
     vendor/google/data/etc/permissions/privapp-permissions-atv.xml:system/etc/permissions/privapp-permissions-atv.xml
+
+$(call inherit-product, vendor/google/data/etc/permissions/privapp-permissions-google.mk)
