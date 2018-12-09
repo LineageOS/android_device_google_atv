@@ -66,6 +66,9 @@ PRODUCT_PACKAGES += \
     local_time.default \
     screenrecord
 
+PRODUCT_PACKAGES += \
+    cameraserver
+
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf
 
