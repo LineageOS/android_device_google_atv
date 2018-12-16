@@ -106,4 +106,8 @@
     <string-array translatable="false" name="config_allowedManagedServicesOnLowRamDevices">
         <item>com.google.android.tvrecommendations</item>
     </string-array>
+
+    <!-- Enable doze mode -->
+    <bool name="config_enableAutoPowerModes">true</bool>
+    <bool name="config_autoPowerModeUseMotionSensor">false</bool>
 </resources>
