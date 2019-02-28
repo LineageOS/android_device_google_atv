@@ -39,8 +39,4 @@
     <!-- Default screen timeout set when setting screensaver. Currently (15 * 60 * 1000) = 15 min -->
     <integer name="def_screen_off_timeout">900000</integer>
 
-    <!-- b/80422821 , b/117417862 -->
-    <!--location_providers_allowed set to gps prevents location dialog during setup-->
-    <string name="def_location_providers_allowed" translatable="false">gps</string>
-
 </resources>
