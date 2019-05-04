@@ -16,8 +16,7 @@
 
 PRODUCT_IS_ATV_SDK := true
 
-# Disable dynamic partition sizes.
-PRODUCT_USE_DYNAMIC_PARTITION_SIZE := false
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 PRODUCT_PACKAGES := \
     LeanbackSampleApp \
