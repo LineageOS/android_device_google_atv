@@ -110,4 +110,7 @@
 
     <!-- True if the device supports split screen as a form of multi-window. -->
     <bool name="config_supportsSplitScreenMultiWindow">false</bool>
+
+    <!-- Whether the device supports quick settings and its associated APIs -->
+    <bool name="config_quickSettingsSupported">false</bool>
 </resources>
