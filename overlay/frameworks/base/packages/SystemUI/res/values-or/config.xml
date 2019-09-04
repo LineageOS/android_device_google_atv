@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2017 The Android Open Source Project
+<!--  Copyright (C) 2014 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,5 +16,8 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Եթե դյուրանցումը միացված է, ապա հետ և ներքև կոճակները միասին 3 վայրկյան սեղմած պահելու դեպքում կգործարկվի մատչելիության գործառույթը:\n\n Մատչելիության ակտիվ գործառույթը՝\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Այն փոփոխելու համար անցեք Կարգավորումներ &gt; Հատուկ գործառույթներ:"</string>
+  <string-array name="recents_tv_blacklist_array">
+    <item msgid="9050240242608018713">"com.google.android.tv.remote.service"</item>
+    <item msgid="8901636675968723687">"com.google.android.apps.mediashell"</item>
+  </string-array>
 </resources>
