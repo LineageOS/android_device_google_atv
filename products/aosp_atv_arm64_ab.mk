@@ -14,20 +14,11 @@
 # limitations under the License.
 #
 
-# PRODUCT_PROPERTY_OVERRIDES cannot be used here because sysprops will be at
-# /vendor/[build|default].prop when build split is on. In order to have sysprops
-# on the generic system image, place them in build/make/target/board/
-# treble_system.prop.
+# This is an alias target of aosp_atv_arm64
 
-include device/google/atv/products/treble_atv_common_64.mk
-
-AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS := system
-PRODUCT_PACKAGES += \
-    update_engine \
-    update_verifier
+include device/google/atv/products/aosp_atv_arm64.mk
 
 PRODUCT_NAME := aosp_atv_arm64_ab
-PRODUCT_DEVICE := generic_arm64_ab
+PRODUCT_DEVICE := generic_arm64
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := AOSP ATV on ARM64
