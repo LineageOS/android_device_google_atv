@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018 The Android Open-Source Project
+# Copyright (C) 2019 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,11 +14,20 @@
 # limitations under the License.
 #
 
-# This is an alias target of aosp_atv_arm64
+# PRODUCT_PROPERTY_OVERRIDES cannot be used here because sysprops will be at
+# /vendor/[build|default].prop when build split is on. In order to have sysprops
+# on the generic system image, place them in build/make/target/board/
+# treble_system.prop.
 
-include device/google/atv/products/aosp_atv_arm.mk
+include device/google/atv/products/treble_atv_common_64.mk
 
-PRODUCT_NAME := aosp_atv_arm_ab
-PRODUCT_DEVICE := generic
+AB_OTA_UPDATER := true
+AB_OTA_PARTITIONS := system
+PRODUCT_PACKAGES += \
+    update_engine \
+    update_verifier
+
+PRODUCT_NAME := aosp_atv_arm64
+PRODUCT_DEVICE := generic_arm64
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := AOSP ATV on ARM32
+PRODUCT_MODEL := AOSP ATV on ARM64
