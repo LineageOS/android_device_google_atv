@@ -66,6 +66,9 @@ PRODUCT_PACKAGES += \
     local_time.default \
     screenrecord
 
+# Media tuner jni
+PRODUCT_PACKAGES += libmedia_tv_tuner
+
 # PRODUCT_SUPPORTS_CAMERA: Whether the product supports cameras at all
 # (built-in or external USB camera). When 'false', we drop cameraserver, which
 # saves ~3 MiB of RAM. When 'true', additional settings are required for
