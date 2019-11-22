@@ -62,7 +62,6 @@ PRODUCT_PACKAGES += \
     librs_jni \
     audio.primary.default \
     clatd \
-    clatd.conf \
     local_time.default \
     screenrecord
 
