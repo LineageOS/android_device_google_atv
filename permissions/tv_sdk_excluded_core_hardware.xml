@@ -25,4 +25,11 @@
     <unavailable-feature name="android.hardware.camera.level.full" />
     <unavailable-feature name="android.hardware.camera.capability.manual_sensor" />
     <unavailable-feature name="android.hardware.camera.capability.manual_post_processing" />
+
+    <!-- ATV SDK is not designed to have telephony services by default -->
+    <unavailable-feature name="android.hardware.telephony" />
+    <unavailable-feature name="android.hardware.telephony.gsm" />
+
+    <!-- ATV SDK is not designed to have communication (VoIP, etc.) services by default -->
+    <unavailable-feature name="android.software.connectionservice" />
 </permissions>
