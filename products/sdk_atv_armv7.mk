@@ -18,6 +18,9 @@ PRODUCT_IS_ATV_SDK := true
 
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# ATV SDK is not designed to have a camera by default
+PRODUCT_SUPPORTS_CAMERA ?= false
+
 PRODUCT_PACKAGES := \
     LeanbackSampleApp \
     TelephonyProvider \
@@ -38,6 +41,11 @@ PRODUCT_COPY_FILES := \
     frameworks/av/media/libstagefright/data/media_codecs_google_tv.xml:system/etc/media_codecs_google_tv.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     hardware/libhardware_legacy/audio/audio_policy.conf:system/etc/audio_policy.conf
+
+# Exclude all non-default hardware features on ATV SDK.
+# All default supported features are defined via device/google/atv/permissions/tv_core_hardware.xml.
+PRODUCT_COPY_FILES += \
+    device/google/atv/permissions/tv_sdk_excluded_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/tv_sdk_excluded_core_hardware.xml
 
 # Put en_US first in the list, so make it default.
 PRODUCT_LOCALES := en_US
