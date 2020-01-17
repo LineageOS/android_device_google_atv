@@ -115,4 +115,7 @@
 
     <!-- True if the device supports system decorations on secondary displays. -->
     <bool name="config_supportsSystemDecorsOnSecondaryDisplays">false</bool>
+
+    <!-- Package name of the required service extension package. -->
+    <string name="config_servicesExtensionPackage" translatable="false">com.google.android.ext.services</string>
 </resources>
