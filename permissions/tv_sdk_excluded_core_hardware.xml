@@ -32,4 +32,7 @@
 
     <!-- ATV SDK is not designed to have communication (VoIP, etc.) services by default -->
     <unavailable-feature name="android.software.connectionservice" />
+
+    <!-- ATV SDK is not designed to have GPS support by default -->
+    <unavailable-feature name="android.hardware.location.gps" />
 </permissions>

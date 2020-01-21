@@ -21,6 +21,9 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # ATV SDK is not designed to have a camera by default
 PRODUCT_SUPPORTS_CAMERA ?= false
 
+# ATV SDK is not designed to have a GNSS-receiver by default
+EMULATOR_VENDOR_NO_GNSS := true
+
 PRODUCT_PACKAGES := \
     LeanbackSampleApp \
     TelephonyProvider \
