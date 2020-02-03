@@ -118,7 +118,7 @@ ifneq ($(USE_OEM_TV_APP),true)
     endif # if PRODUCT_IS_ATV_SDK
 
     PRODUCT_COPY_FILES += \
-        device/google/atv/permissions/com.google.android.tv.installed.xml:system/etc/permissions/com.google.android.tv.installed.xml
+        device/google/atv/permissions/com.google.android.tv.installed.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.google.android.tv.installed.xml
 endif
 
 # To enable access to /dev/dvb*
