@@ -29,7 +29,8 @@ PRODUCT_PACKAGES := \
     TelephonyProvider \
     SdkSetup \
     audio.primary.goldfish \
-    rild
+    rild \
+    FrameworkPackageStubs
 
 DEVICE_PACKAGE_OVERLAYS := \
     device/google/atv/sdk_overlay \
