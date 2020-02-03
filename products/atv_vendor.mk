@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2014 The Android Open Source Project
+# Copyright (C) 2020 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,9 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+# This makefile contains the vendor partition contents for
+# a generic TV device.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/media_vendor.mk)
 
-$(call inherit-product, device/google/atv/products/atv_system.mk)
-$(call inherit-product, device/google/atv/products/atv_system_ext.mk)
-$(call inherit-product, device/google/atv/products/atv_product.mk)
-$(call inherit-product, device/google/atv/products/atv_vendor.mk)
+PRODUCT_PACKAGES += \
+    tv_input.default
 
+PRODUCT_PACKAGES += \
+    audio.primary.default \
+    local_time.default
+
+# To enable access to /dev/dvb*
+BOARD_SEPOLICY_DIRS += device/google/atv/sepolicy
