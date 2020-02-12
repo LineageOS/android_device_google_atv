@@ -13,6 +13,7 @@ android_app {
     system_ext_specific: true,
     certificate: "platform",
     privileged: true,
+    overrides: ["SdkSetup"],
     required: ["privapp_whitelist_com.android.tv.provision"],
     optimize: {
         proguard_flags_files: ["proguard.flags"],
