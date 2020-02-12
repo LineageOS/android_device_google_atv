@@ -17,6 +17,8 @@
 # a generic TV device.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/media_product.mk)
 
+$(call inherit-product-if-exists, frameworks/base/data/sounds/AudioTv.mk)
+
 PRODUCT_PACKAGES += \
     SettingsIntelligence \
     SystemUI \
