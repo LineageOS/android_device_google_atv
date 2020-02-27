@@ -53,8 +53,8 @@ PRODUCT_PACKAGES += \
 #
 # All components inherited here go to vendor image
 #
-$(call inherit-product-if-exists, device/generic/goldfish/arm32-vendor.mk)
 $(call inherit-product, device/google/atv/products/atv_emulator_vendor.mk)
+$(call inherit-product-if-exists, device/generic/goldfish/arm32-vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/board/generic_x86/device.mk)
 
 #
