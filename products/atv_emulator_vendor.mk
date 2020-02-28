@@ -38,6 +38,9 @@ PRODUCT_CHARACTERISTICS := emulator
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 PRODUCT_COPY_FILES += \
+    device/generic/goldfish/data/etc/config.ini.tv:config.ini
+
+PRODUCT_COPY_FILES += \
     device/generic/goldfish/data/etc/apns-conf.xml:$(TARGET_COPY_OUT_VENDOR)/etc/apns-conf.xml \
     device/generic/goldfish/camera/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
