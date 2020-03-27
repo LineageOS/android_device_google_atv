@@ -76,4 +76,7 @@
 
     <!-- True if the device supports system decorations on secondary displays. -->
     <bool name="config_supportsSystemDecorsOnSecondaryDisplays">false</bool>
+
+    <!-- Enable assistant to show in front of the dream/screensaver. -->
+    <bool name="config_assistantOnTopOfDream">true</bool>
 </resources>
