@@ -61,8 +61,10 @@ PRODUCT_PACKAGES += \
     com.android.media.tv.remoteprovider
 
 # Traceur for debug only
+ifeq (eng, $(TARGET_BUILD_VARIANT))
 PRODUCT_PACKAGES_DEBUG += \
     Traceur
+endif
 
 # PRODUCT_SUPPORTS_CAMERA: Whether the product supports cameras at all
 # (built-in or external USB camera). When 'false', we drop cameraserver, which
