@@ -61,7 +61,7 @@ PRODUCT_PACKAGES += \
     com.android.media.tv.remoteprovider
 
 # Traceur for debug only
-PRODUCT_PACKAGES_DEBUG += \
+PRODUCT_PACKAGES_ENG += \
     Traceur
 
 # PRODUCT_SUPPORTS_CAMERA: Whether the product supports cameras at all
