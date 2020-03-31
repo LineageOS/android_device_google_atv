@@ -22,7 +22,7 @@ PRODUCT_PACKAGES := \
     SettingsIntelligence \
     tv_input.default
 
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+ifeq (eng, $(TARGET_BUILD_VARIANT))
 PRODUCT_PACKAGES += Traceur
 endif
 
