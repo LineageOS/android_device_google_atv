@@ -79,4 +79,11 @@
 
     <!-- Enable assistant to show in front of the dream/screensaver. -->
     <bool name="config_assistantOnTopOfDream">true</bool>
+
+    <!-- Maximum size, specified in pixels, to restrain the display space width to. Height and
+         density will be scaled accordingly to maintain aspect ratio. A value of 0 indicates no
+         constraint will be enforced.
+         We limit the UI graphics width to 1920 because higher resolution is unnecessary and causes
+         too much overhead on the GPU for Android TV devices. -->
+    <integer name="config_maxUiWidth">1920</integer>
 </resources>
