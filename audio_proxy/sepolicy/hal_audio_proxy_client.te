@@ -1,0 +1,3 @@
+# allow mediashell access to audio proxy hal
+hal_client_domain(mediashell_app, hal_audio_proxy)
+
