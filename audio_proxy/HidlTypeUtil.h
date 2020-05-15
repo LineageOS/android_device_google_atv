@@ -14,8 +14,6 @@
 
 #pragma once
 
-#include <memory>
-
 #include "public/audio_proxy.h"
 
 // clang-format off
@@ -26,28 +24,15 @@
 namespace audio_proxy {
 namespace CPP_VERSION {
 
-using ::android::hardware::hidl_bitfield;
 using namespace ::android::hardware::audio::CPP_VERSION;
 using namespace ::android::hardware::audio::common::CPP_VERSION;
 
-class AudioProxyStreamOut;
+// Convert from C type to HIDL type.
+Result toResult(int res);
+AudioConfig toHidlAudioConfig(const audio_proxy_config_t& config);
 
-// C++ friendly wrapper of audio_proxy_device.
-class AudioProxyDevice final {
- public:
-  explicit AudioProxyDevice(audio_proxy_device_t* device);
-  ~AudioProxyDevice();
-
-  const char* getAddress();
-
-  Result openOutputStream(hidl_bitfield<AudioOutputFlag> flags,
-                          const AudioConfig& config,
-                          std::unique_ptr<AudioProxyStreamOut>* streamOut,
-                          AudioConfig* configOut);
-
- private:
-  audio_proxy_device_t* const mDevice;
-};
+// Convert from HIDL type to C type.
+audio_proxy_config_t toAudioProxyConfig(const AudioConfig& hidlConfig);
 
 }  // namespace CPP_VERSION
 }  // namespace audio_proxy
