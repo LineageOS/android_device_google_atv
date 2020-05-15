@@ -34,7 +34,10 @@ cc_defaults {
   srcs: [
     "AudioProxyDevice.cpp",
     "AudioProxyManager.cpp",
+    "AudioProxyStreamOut.cpp",
     "BusDeviceImpl.cpp",
+    "HidlTypeUtil.cpp",
+    "StreamOutImpl.cpp",
   ],
 
   header_libs: [
