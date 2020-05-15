@@ -19,6 +19,8 @@
 #include <utils/Log.h>
 
 #include "AudioProxyDevice.h"
+#include "AudioProxyStreamOut.h"
+#include "StreamOutImpl.h"
 
 using ::android::hardware::Void;
 
@@ -32,6 +34,17 @@ Return<void> BusDeviceImpl::openOutputStream(
     int32_t ioHandle, const DeviceAddress& device, const AudioConfig& config,
     hidl_bitfield<AudioOutputFlag> flags, const SourceMetadata& sourceMetadata,
     openOutputStream_cb _hidl_cb) {
+  std::unique_ptr<AudioProxyStreamOut> stream;
+  AudioConfig suggestedConfig;
+
+  Result res =
+      mDevice->openOutputStream(flags, config, &stream, &suggestedConfig);
+  ALOGE_IF(res != Result::OK, "Open output stream error.");
+
+  // Still pass `suggestedConfig` back when `openOutputStream` returns error,
+  // so that audio service can re-open the stream with a new config.
+  _hidl_cb(res, stream ? new StreamOutImpl(std::move(stream)) : nullptr,
+           suggestedConfig);
   return Void();
 }
 
