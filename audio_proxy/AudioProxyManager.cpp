@@ -43,7 +43,8 @@ namespace CPP_VERSION {
 namespace {
 
 bool checkDevice(audio_proxy_device_t* device) {
-  return device && device->get_address;
+  return device && device->get_address && device->open_output_stream &&
+         device->close_output_stream;
 }
 
 class DeathRecipient;
