@@ -1,6 +1,6 @@
 prebuilt_etc {
     name: "privapp_whitelist_com.android.tv.provision",
-    system_ext_specific: true,
+    product_specific: true,
     sub_dir: "permissions",
     src: "com.android.tv.provision.xml",
     filename_from_src: true,
@@ -9,8 +9,8 @@ prebuilt_etc {
 android_app {
     name: "TvProvision",
     srcs: ["**/*.java"],
-    platform_apis: true,
-    system_ext_specific: true,
+    product_specific: true,
+    sdk_version: "system_current",
     certificate: "platform",
     privileged: true,
     overrides: ["SdkSetup"],
