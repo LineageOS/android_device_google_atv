@@ -21,6 +21,9 @@
 
 include device/google/atv/products/treble_atv_common_32.mk
 
+PRODUCT_SOONG_NAMESPACES += device/generic/goldfish
+PRODUCT_SOONG_NAMESPACES += device/generic/goldfish-opengl
+
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS := system
 PRODUCT_PACKAGES += \
