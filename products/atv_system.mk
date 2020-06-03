@@ -45,7 +45,6 @@ PRODUCT_PACKAGES += \
     CaptivePortalLogin \
     CertInstaller \
     clatd \
-    clatd.conf \
     ExternalStorageProvider \
     FusedLocation \
     InputDevices \
