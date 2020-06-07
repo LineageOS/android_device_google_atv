@@ -27,4 +27,12 @@
         You can change the feature in Settings > Accessibility.
     </string>
 
+    <!-- Message spoken out when user is in the process of enabling the accessibility
+    service on Android TV devices via the remote control buttons shortcut for the first time.
+    [CHAR LIMIT=none] -->
+    <string name="accessibility_shortcut_spoken_feedback">
+        Press and hold both the back and down buttons for three seconds to use
+        <xliff:g id="service_name" example="TalkBack">%1$s</xliff:g>
+    </string>
+
 </resources>
