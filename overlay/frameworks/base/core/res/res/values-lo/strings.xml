@@ -17,4 +17,5 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"ເມື່ອເປີດປຸ່ມລັດແລ້ວ, ການກົດປຸ່ມກັບຄືນ ແລະ ປຸ່ມລົງພ້ອມກັນຄ້າງໄວ້ 3 ວິນາທີ ຈະເປັນການເປີດຄຸນສົມບັດຊ່ວຍເຂົ້າເຖິງ.\n\n ຄຸນສົມບັດການຊ່ວຍເຂົ້າເຖິງປັດຈຸບັນ:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n ທ່ານສາມາດປ່ຽນຄຸນສົມບັດໄດ້ໃນການຕັ້ງຄ່າ &gt; ການຊ່ວຍເຂົ້າເຖິງ."</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"ກົດປຸ່ມກັບ ແລະ ປຸ່ມລົງຄ້າງໄວ້ສາມວິນາທີເພື່ອໃຊ້ <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
 </resources>

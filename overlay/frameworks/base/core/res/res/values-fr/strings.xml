@@ -17,4 +17,5 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Lorsque le raccourci est activé, vous pouvez appuyer sur le bouton \"Précédent\" et le bouton \"Volume -\" pendant trois secondes pour lancer une fonctionnalité d\'accessibilité.\n\n Fonctionnalité d\'accessibilité utilisée actuellement :\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Vous pouvez changer de fonctionnalité dans Paramètres &gt; Accessibilité."</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"Appuyez sur le bouton \"Précédent\" et le bouton \"Volume -\" pendant trois secondes pour utiliser <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
 </resources>
