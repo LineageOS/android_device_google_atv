@@ -37,6 +37,10 @@
          Any other values will have surprising consequences. -->
     <integer name="config_defaultUiModeType">4</integer>
 
+    <!--  Control whether to lock UI mode to what is selected from config_defaultUiModeType.
+          Once UI mode is locked, applications cannot change it anymore. -->
+    <bool name="config_lockUiMode">true</bool>
+
     <!-- default device has recents property -->
     <bool name="config_hasRecents">false</bool>
 
