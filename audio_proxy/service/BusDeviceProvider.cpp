@@ -13,6 +13,7 @@
 // limitations under the License.
 
 #include "BusDeviceProvider.h"
+#include "DummyBusDevice.h"
 
 #include <algorithm>
 
@@ -66,7 +67,15 @@ sp<IBusDevice> BusDeviceProvider::get(const hidl_string& address) {
                          });
 
   if (it == mBusDevices.end()) {
-    return nullptr;
+    // When AudioPolicyManager first opens this HAL, it iterates through the
+    // devices and quickly opens and closes the first device (as specified in
+    // the audio configuration .xml). However, it is possible that the first
+    // device has not registered with the audio proxy HAL yet. In this case, we
+    // will return a dummy device, which is going to create a dummy output
+    // stream. Since this HAL only supports direct outputs, the dummy output
+    // will be immediately closed until it is reopened on use -- and by that
+    // time the actual device must have registered itself.
+    return new DummyBusDevice();
   }
 
   return it->device;
