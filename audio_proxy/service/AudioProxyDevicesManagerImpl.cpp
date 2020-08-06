@@ -22,7 +22,12 @@ using ::android::status_t;
 namespace audio_proxy {
 namespace service {
 
-AudioProxyDevicesManagerImpl::AudioProxyDevicesManagerImpl() = default;
+AudioProxyDevicesManagerImpl::AudioProxyDevicesManagerImpl() {
+  // We need to register the factory service when this is instantiated,
+  // rather than when the first client registers in order to not break VTS.
+  ensureDevicesFactory();
+}
+
 AudioProxyDevicesManagerImpl::~AudioProxyDevicesManagerImpl() = default;
 
 Return<bool> AudioProxyDevicesManagerImpl::registerDevice(
