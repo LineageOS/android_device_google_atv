@@ -25,7 +25,7 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 #
 # All components inherited here go to system image
 #
-$(call inherit-product, device/google/atv/products/atv_mainline_system.mk)
+$(call inherit-product, device/google/atv/products/atv_generic_system.mk)
 
 # Enable mainline checking for excat this product name
 ifeq (aosp_tv_x86,$(TARGET_PRODUCT))
