@@ -86,7 +86,10 @@ DummyOutputStream::getParameters(const hidl_vec<ParameterValue> &context,
   return Void();
 }
 
-Return<uint64_t> DummyOutputStream::getFrameSize() { return 0; }
+Return<uint64_t> DummyOutputStream::getFrameSize() {
+  // This is a randomly picked value.
+  return 1024;
+}
 
 Return<Result> DummyOutputStream::setSampleRate(uint32_t) {
   return Result::NOT_SUPPORTED;
