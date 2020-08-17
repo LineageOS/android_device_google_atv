@@ -14,6 +14,10 @@
 # limitations under the License.
 #
 
+ifeq ($(wildcard vendor/unbundled_google),)
+PRODUCT_USE_PREBUILT_GTVS := yes
+endif
+
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # The system image of aosp_tv_x86-userdebug is a GSI for the devices with:
