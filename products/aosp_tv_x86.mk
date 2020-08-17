@@ -14,10 +14,6 @@
 # limitations under the License.
 #
 
-ifeq ($(wildcard vendor/unbundled_google),)
-PRODUCT_USE_PREBUILT_GTVS := yes
-endif
-
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # The system image of aosp_tv_x86-userdebug is a GSI for the devices with:
@@ -42,7 +38,6 @@ endif
 $(call inherit-product, device/google/atv/products/atv_system_ext.mk)
 # Packages required for ATV GSI
 PRODUCT_PACKAGES += \
-    FrameworkPackageStubs \
     TvProvision
 
 #
