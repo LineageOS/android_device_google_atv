@@ -51,7 +51,7 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, device/google/atv/products/atv_product.mk)
 # Packages required for ATV GSI
 PRODUCT_PACKAGES += \
-    LatinIMEGoogleTvPrebuilt \
+    LeanbackIME \
     TvSampleLeanbackLauncher
 
 #
