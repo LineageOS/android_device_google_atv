@@ -16,3 +16,6 @@
 # This makefile contains the system_ext partition contents for
 # a generic TV device.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/media_system_ext.mk)
+
+PRODUCT_PACKAGES += \
+    TvFrameworkPackageStubs
