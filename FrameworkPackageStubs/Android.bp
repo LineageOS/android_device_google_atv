@@ -1,0 +1,9 @@
+android_app {
+    name: "TvFrameworkPackageStubs",
+
+    srcs: ["src/**/*.java"],
+    system_ext_specific: true,
+    overrides: ["FrameworkPackageStubs"],
+    platform_apis: true,
+    certificate: "platform",
+}
