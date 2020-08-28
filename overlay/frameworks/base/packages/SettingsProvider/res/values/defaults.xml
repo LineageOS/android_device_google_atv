@@ -39,4 +39,7 @@
     <!-- Default screen timeout set when setting screensaver. Currently (15 * 60 * 1000) = 15 min -->
     <integer name="def_screen_off_timeout">900000</integer>
 
+    <!-- Don't turn Wifi back on automatically -->
+    <bool name="def_wifi_wakeup_enabled">false</bool>
+
 </resources>
