@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2014 The Android Open Source Project
+# Copyright (C) 2020 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,18 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-PRODUCT_HOST_PACKAGES := \
-    bios.bin \
-    vgabios-cirrus.bin
-
-$(call inherit-product, device/google/atv/products/atv_generic.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/board/generic_x86/device.mk)
-
-include $(SRC_TARGET_DIR)/product/emulator.mk
-
-# Overrides
-PRODUCT_NAME := atv_x86
-PRODUCT_DEVICE := generic_x86
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := AOSP TV on IA Emulator
+# This makefile contains the system_ext partition contents for
+# a generic TV device.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/media_system_ext.mk)
