@@ -42,4 +42,7 @@
     <!-- Don't turn Wifi back on automatically -->
     <bool name="def_wifi_wakeup_enabled">false</bool>
 
+    <!-- Allow users to use both the on-screen keyboard, as well as a real keyboard -->
+    <bool name="def_show_ime_with_hard_keyboard">true</bool>
+
 </resources>
