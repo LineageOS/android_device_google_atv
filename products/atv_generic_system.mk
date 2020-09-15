@@ -93,15 +93,15 @@ PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += device/google/atv/overlay
 
-PRODUCT_NAME := atv_mainline_system
+PRODUCT_NAME := atv_generic_system
 PRODUCT_BRAND := generic
 
 # Define /system partition-specific product properties to identify that /system
-# partition is mainline_system.
-PRODUCT_SYSTEM_NAME := atv_mainline
+# partition is atv_generic_system.
+PRODUCT_SYSTEM_NAME := atv_generic
 PRODUCT_SYSTEM_BRAND := Android
 PRODUCT_SYSTEM_MANUFACTURER := Android
-PRODUCT_SYSTEM_MODEL := atv_mainline
+PRODUCT_SYSTEM_MODEL := atv_generic
 PRODUCT_SYSTEM_DEVICE := generic
 
 _base_mk_whitelist :=
