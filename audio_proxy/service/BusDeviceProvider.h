@@ -18,7 +18,7 @@
 #include <vector>
 
 // clang-format off
-#include PATH(device/google/atv/audio_proxy/FILE_VERSION/IBusDevice.h)
+#include PATH(device/google/atv/audio_proxy/AUDIO_PROXY_FILE_VERSION/IBusDevice.h)
 // clang-format on
 
 namespace audio_proxy {
@@ -27,7 +27,7 @@ namespace service {
 using ::android::sp;
 using ::android::hardware::hidl_death_recipient;
 using ::android::hardware::hidl_string;
-using ::device::google::atv::audio_proxy::CPP_VERSION::IBusDevice;
+using ::device::google::atv::audio_proxy::AUDIO_PROXY_CPP_VERSION::IBusDevice;
 
 class BusDeviceProvider {
  public:

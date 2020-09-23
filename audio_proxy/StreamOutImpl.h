@@ -38,7 +38,7 @@ using namespace ::android::hardware::audio::common::CPP_VERSION;
 using namespace ::android::hardware::audio::CPP_VERSION;
 
 namespace audio_proxy {
-namespace CPP_VERSION {
+namespace AUDIO_PROXY_CPP_VERSION {
 class AudioProxyStreamOut;
 
 class StreamOutImpl : public IStreamOut {
@@ -124,5 +124,5 @@ class StreamOutImpl : public IStreamOut {
   sp<Thread> mWriteThread;
 };
 
-}  // namespace CPP_VERSION
+}  // namespace AUDIO_PROXY_CPP_VERSION
 }  // namespace audio_proxy
