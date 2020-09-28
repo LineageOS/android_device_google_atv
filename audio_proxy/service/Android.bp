@@ -13,7 +13,7 @@
 // limitations under the License.
 
 cc_binary {
-  name: "device.google.atv.audio_proxy@5.0-service",
+  name: "device.google.atv.audio_proxy@5.1-service",
   vendor: true,
   relative_install_path: "hw",
 
@@ -28,7 +28,7 @@ cc_binary {
   ],
 
   init_rc: [
-    "device.google.atv.audio_proxy@5.0-service.rc",
+    "device.google.atv.audio_proxy@5.1-service.rc",
   ],
 
   vintf_fragments: [ "manifest_audio_proxy.xml" ],
@@ -42,6 +42,7 @@ cc_binary {
     "libcutils",
     "libutils",
     "device.google.atv.audio_proxy@5.0",
+    "device.google.atv.audio_proxy@5.1",
   ],
 
   header_libs: [
@@ -51,7 +52,7 @@ cc_binary {
   cflags: [
     "-DMAJOR_VERSION=5",
     "-DMINOR_VERSION=0",
-    "-DAUDIO_PROXY_MINOR_VERSION=0",
+    "-DAUDIO_PROXY_MINOR_VERSION=1",
     "-include common/all-versions/VersionMacro.h",
     "-include ../common/AudioProxyVersionMacro.h",
   ],

@@ -24,13 +24,13 @@ namespace service {
 
 using ::android::hardware::hidl_bitfield;
 using ::android::hardware::Return;
-using ::device::google::atv::audio_proxy::CPP_VERSION::IBusDevice;
+using ::device::google::atv::audio_proxy::AUDIO_PROXY_CPP_VERSION::IBusDevice;
 using namespace ::android::hardware::audio::common::CPP_VERSION;
 using namespace ::android::hardware::audio::CPP_VERSION;
 
 class DummyBusDevice : public IBusDevice {
-public:
-  // Methods from ::device::google::atv::audio_proxy::CPP_VERSION::IBusDevice:
+ public:
+  // Methods from IBusDevice:
   Return<void> openOutputStream(int32_t ioHandle, const DeviceAddress &device,
                                 const AudioConfig &config,
                                 hidl_bitfield<AudioOutputFlag> flags,
