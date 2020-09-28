@@ -179,6 +179,12 @@ StreamOutImpl::~StreamOutImpl() {
   mEventFlag.reset();
 }
 
+Return<void> StreamOutImpl::setEventListener(
+    const sp<IStreamEventListener>& listener) {
+  mEventListener = listener;
+  return Void();
+}
+
 Return<uint64_t> StreamOutImpl::getFrameSize() {
   audio_format_t format = static_cast<audio_format_t>(mStream->getFormat());
 
@@ -295,6 +301,11 @@ Result StreamOutImpl::closeImpl() {
   if (mEventFlag) {
     mEventFlag->wake(static_cast<uint32_t>(MessageQueueFlagBits::NOT_EMPTY));
   }
+
+  if (mEventListener) {
+    mEventListener->onClose();
+  }
+
   return Result::OK;
 }
 
