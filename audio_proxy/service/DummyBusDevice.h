@@ -15,7 +15,7 @@
 #pragma once
 
 // clang-format off
-#include PATH(device/google/atv/audio_proxy/FILE_VERSION/IBusDevice.h)
+#include PATH(device/google/atv/audio_proxy/AUDIO_PROXY_FILE_VERSION/IBusDevice.h)
 // clang-format on
 #include "DummyOutputStream.h"
 
