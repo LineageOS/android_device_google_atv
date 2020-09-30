@@ -26,7 +26,6 @@ using namespace ::android::hardware::audio::common::CPP_VERSION;
 
 namespace audio_proxy {
 namespace service {
-
 DeviceImpl::DeviceImpl(BusDeviceProvider& busDeviceProvider)
     : mBusDeviceProvider(busDeviceProvider) {}
 

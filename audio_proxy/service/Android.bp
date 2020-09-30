@@ -51,6 +51,8 @@ cc_binary {
   cflags: [
     "-DMAJOR_VERSION=5",
     "-DMINOR_VERSION=0",
+    "-DAUDIO_PROXY_MINOR_VERSION=0",
     "-include common/all-versions/VersionMacro.h",
+    "-include ../common/AudioProxyVersionMacro.h",
   ],
 }

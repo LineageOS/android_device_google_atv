@@ -27,7 +27,7 @@
 using ::android::status_t;
 
 namespace audio_proxy {
-namespace CPP_VERSION {
+namespace AUDIO_PROXY_CPP_VERSION {
 namespace {
 // 1GB
 constexpr uint32_t kMaxBufferSize = 1 << 30;
@@ -456,5 +456,5 @@ Return<Result> StreamOutImpl::selectPresentation(int32_t presentationId,
   return Result::NOT_SUPPORTED;
 }
 
-}  // namespace CPP_VERSION
+}  // namespace AUDIO_PROXY_CPP_VERSION
 }  // namespace audio_proxy
