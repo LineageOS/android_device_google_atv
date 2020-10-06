@@ -27,7 +27,6 @@ using ::android::hardware::hidl_string;
 using ::android::hardware::Return;
 using ::device::google::atv::audio_proxy::AUDIO_PROXY_CPP_VERSION::
     IAudioProxyDevicesManager;
-using ::device::google::atv::audio_proxy::AUDIO_PROXY_CPP_VERSION::IBusDevice;
 
 namespace audio_proxy {
 namespace service {
@@ -37,8 +36,10 @@ class AudioProxyDevicesManagerImpl : public IAudioProxyDevicesManager {
   AudioProxyDevicesManagerImpl();
   ~AudioProxyDevicesManagerImpl() override;
 
-  Return<bool> registerDevice(const hidl_string& address,
-                              const sp<IBusDevice>& device) override;
+  Return<bool> registerDevice(
+      const hidl_string& address,
+      const sp<::device::google::atv::audio_proxy::CPP_VERSION::IBusDevice>&
+          device) override;
 
  private:
   bool ensureDevicesFactory();
