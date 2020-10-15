@@ -23,9 +23,6 @@ $(call inherit-product-if-exists, vendor/google/security/adb/vendor_key.mk)
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
-# Binaries
-PRODUCT_PACKAGES += llkd
-
 # OTA support
 PRODUCT_PACKAGES += \
     recovery-refresh \
