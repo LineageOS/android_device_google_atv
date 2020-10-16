@@ -21,6 +21,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.provider.Settings;
@@ -42,6 +43,10 @@ public class DefaultActivity extends Activity {
         }
         Settings.Secure.putInt(getContentResolver(), Settings.Secure.USER_SETUP_COMPLETE, 1);
         Settings.Secure.putInt(getContentResolver(), TV_USER_SETUP_COMPLETE, 1);
+        if (SystemProperties.get("ro.kernel.qemu").equals("1")) {
+          // Emulator-only: Enable USB debugging and adb
+          Settings.Global.putInt(getContentResolver(), Settings.Global.ADB_ENABLED, 1);
+        }
 
         // remove this activity from the package manager.
         PackageManager pm = getPackageManager();
