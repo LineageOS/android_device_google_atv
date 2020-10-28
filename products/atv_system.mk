@@ -107,3 +107,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf
+
+# Copy CEC master configuration file
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/cec_config.xml:system/etc/cec_config.xml
