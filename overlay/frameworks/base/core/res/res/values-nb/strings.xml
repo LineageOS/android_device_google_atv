@@ -17,5 +17,4 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Når snarveien er på, kan du trykke på både tilbake- og ned-knappen i tre sekunder for å starte en tilgjengelighetsfunksjon.\n\n Nåværende tilgjengelighetsfunksjon:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Du kan endre funksjonen i Innstillinger &gt; Tilgjengelighet."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"Trykk og hold inne både tilbake- og nedknappen i tre sekunder for å bruke <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
 </resources>

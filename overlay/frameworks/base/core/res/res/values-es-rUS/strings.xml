@@ -17,5 +17,4 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Si la combinación de teclas está activada, se iniciará una función de accesibilidad cuando presiones los botones hacia atrás y hacia abajo durante 3 segundos.\n\n Función de accesibilidad actual:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Para cambiarla, ve a Configuración &gt; Accesibilidad."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"Mantén presionados los botones Atrás y Abajo durante tres segundos para usar <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
 </resources>

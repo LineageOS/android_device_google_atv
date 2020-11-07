@@ -17,5 +17,4 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Таңбаша қосулы кезде артқа және төмен көрсеткілі түймелердің екеуін де 3 секунд бойы басып тұрсаңыз, арнайы мүмкіндіктер функциясы іске қосылады.\n\n Ағымдағы арнайы мүмкіндік функциясы:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n \"Параметрлер &gt; Арнайы мүмкіндіктер\" бөлімінде өзгертуге болады."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"<xliff:g id="SERVICE_NAME">%1$s</xliff:g> қызметін пайдалану үшін артқы және төменгі түймелерінің екеуін де үш секунд бойы басып тұрыңыз."</string>
 </resources>

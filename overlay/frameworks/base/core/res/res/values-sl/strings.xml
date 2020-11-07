@@ -17,5 +17,4 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Ko je bližnjica vklopljena, pritisnite gumb za vrnitev in puščico navzdol ter ju pridržite tri sekunde, če želite zagnati funkcijo za ljudi s posebnimi potrebami.\n\n Trenutna funkcija za ljudi s posebnimi potrebami:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Funkcijo lahko spremenite v »Nastavitve &gt; Funkcije za ljudi s posebnimi potrebami«."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"Za tri sekunde pridržite tipki za nazaj in navzdol, če želite uporabljati storitev <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
 </resources>

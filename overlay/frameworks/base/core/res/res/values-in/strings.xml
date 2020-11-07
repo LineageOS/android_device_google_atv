@@ -17,5 +17,4 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Jika pintasan aktif, menekan tombol kembali dan panah bawah selama 3 detik akan memulai fitur aksesibilitas.\n\n Fitur aksesibilitas saat ini:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Anda dapat mengubah fitur di Setelan &gt; Aksesibilitas."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"Tekan dan tahan tombol kembali dan panah bawah selama tiga detik untuk menggunakan <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
 </resources>

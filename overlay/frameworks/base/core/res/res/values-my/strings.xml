@@ -17,5 +17,4 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"ဖြတ်လမ်းလင့်ခ် ဖွင့်ထားလျှင် အနောက်နှင့် အောက်သို့ ခလုတ်နှစ်ခုစလုံးကို ၃ စက္ကန့်ကြာသည့်တိုင် ဖိထားခြင်းဖြင့် အများသုံးစွဲနိုင်မှုဆိုင်ရာ ဝန်ဆောင်မှုများ စတင်ပါလိမ့်မည်။\n\n လက်ရှိ အများသုံးစွဲနိုင်မှုဆိုင်ရာ ဝန်ဆောင်မှုများ-\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n ဆက်တင်များနှင့် အများသုံးစွဲနိုင်စွမ်းတွင် ဝန်ဆောင်မှုများကို ပြောင်းလဲနိုင်ပါသည်။"</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"<xliff:g id="SERVICE_NAME">%1$s</xliff:g> ကို အသုံးပြုရန်အတွက် နောက်သို့နှင့် အောက်သို့ခလုတ် နှစ်ခုစလုံးကို သုံးစက္ကန့်ကြာနှိပ်ထားပါ"</string>
 </resources>

@@ -17,5 +17,4 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Когда эта функция включена, вы можете активировать специальные возможности, одновременно удерживая кнопки \"Назад\" и \"Вниз\" в течение трех секунд.\n\nТекущая функция специальных возможностей:\n<xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\nЧтобы выбрать другую, откройте настройки &gt; \"Специальные возможности\"."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"Чтобы использовать сервис \"<xliff:g id="SERVICE_NAME">%1$s</xliff:g>\", одновременно нажмите и удерживайте кнопки \"Назад\" и \"Вниз\" в течение трех секунд"</string>
 </resources>

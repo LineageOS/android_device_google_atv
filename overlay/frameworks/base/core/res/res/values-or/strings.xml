@@ -17,5 +17,4 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"ସର୍ଟକଟ୍‌ ଅନ୍‌ ଥିବା ବେଳେ, ଉଭୟ ବ୍ୟାକ୍‍ ଓ ଡାଉନ୍‍ ବଟନ୍‍ 3 ସେକେଣ୍ଡ ପାଇଁ ଦବାଇବା ଦ୍ୱାରା ଦିବ୍ୟାଙ୍ଗମାନଙ୍କ ପାଇଁ ବୈଶିଷ୍ଟ ଆରମ୍ଭ ହେବ।\n\n ସମ୍ପ୍ରତି ଦିବ୍ୟାଙ୍ଗମାନଙ୍କ ପାଇଁ ସୁବିଧା:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n ଆପଣ ସେଟିଂସ ଏବଂ ଆକ୍ସେସବିଲିଟିରେ ସୁବିଧା ବଦଳାଇ ପାରିବେ।"</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"<xliff:g id="SERVICE_NAME">%1$s</xliff:g> ବ୍ୟବହାର କରିବାକୁ ତିନି ସେକେଣ୍ଡ ପାଇଁ ଉଭୟ ପଛକୁ ଫେରନ୍ତୁ ଓ ତଳକୁ ଯାଆନ୍ତୁ ବଟନକୁ ଦବାଇ ଧରି ରଖନ୍ତୁ"</string>
 </resources>

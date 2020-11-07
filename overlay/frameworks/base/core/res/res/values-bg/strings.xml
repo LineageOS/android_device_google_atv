@@ -17,5 +17,4 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Когато прекият път е включен, можете да стартирате дадена функция за достъпност, като натиснете бутоните за назад и за надолу и ги задържите за 3 секунди.\n\n Текущата функция за достъпност е:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Можете да промените функцията от „Настройки“ &gt; „Достъпност“."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"За да използвате <xliff:g id="SERVICE_NAME">%1$s</xliff:g>, натиснете бутоните за назад и за надолу и ги задръжте за 3 секунди"</string>
 </resources>

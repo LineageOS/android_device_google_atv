@@ -17,5 +17,4 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Ha be van kapcsolva a gyorsparancs, a Vissza és a Lefelé gomb 3 másodpercig tartó együttes lenyomásával elindíthat egy adott kisegítő lehetőséget.\n\n A jelenlegi beállított kisegítő lehetőség:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Ezt a lehetőséget a Beállítások &gt; Kisegítő lehetőségek pont alatt módosíthatja."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"A Vissza és Lefelé gomb három másodpercig tartó együttes lenyomásával használhatja a következő szolgáltatást: <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
 </resources>

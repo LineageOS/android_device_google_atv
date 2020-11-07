@@ -17,5 +17,4 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Si la drecera està activada, prem els botons Enrere i Avall durant 3 segons per iniciar una funció d\'accessibilitat.\n\n Funció d\'accessibilitat actual:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Pots canviar la funció a Configuració &gt; Accessibilitat."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"Mantén premuts els botons Enrere i Avall durant 3 segons per utilitzar <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
 </resources>

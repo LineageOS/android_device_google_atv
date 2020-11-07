@@ -17,5 +17,4 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Quando o atalho estiver ativado, premir o botão Anterior e o botão para baixo em simultâneo durante 3 segundos inicia uma funcionalidade de acessibilidade.\n\n Funcionalidade de acessibilidade atual:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Pode alterar a funcionalidade em Definições &gt; Acessibilidade."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"Prima sem soltar o botão Anterior e o botão para baixo em simultâneo durante três segundos para utilizar o <xliff:g id="SERVICE_NAME">%1$s</xliff:g>."</string>
 </resources>

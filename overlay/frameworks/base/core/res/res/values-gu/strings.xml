@@ -17,5 +17,4 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"જ્યારે શૉર્ટકટ ચાલુ હોય, ત્યારે પાછળ અને નીચેના બન્ને બટનને 3 સેકન્ડ સુધી દબાવી રાખવાથી ઍક્સેસિબિલિટી સુવિધા શરૂ થઈ જશે.\n\n વર્તમાન ઍક્સેસિબિલિટી સુવિધા:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n તમે સેટિંગ્સ &gt; ઍક્સેસિબિલિટીમાં જઈને આ સુવિધા બદલી શકો છો."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"<xliff:g id="SERVICE_NAME">%1$s</xliff:g>નો ઉપયોગ કરવા માટે પાછળ અને નીચેના બન્ને બટનને 3 સેકન્ડ સુધી દબાવી રાખો"</string>
 </resources>

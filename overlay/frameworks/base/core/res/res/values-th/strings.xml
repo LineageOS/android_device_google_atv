@@ -17,5 +17,4 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"เมื่อทางลัดเปิดอยู่ การกดปุ่มกลับและปุ่มลงค้างไว้ 3 วินาทีจะเริ่มใช้งานฟีเจอร์การเข้าถึง\n\n ฟีเจอร์การเข้าถึงปัจจุบัน:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n เปลี่ยนฟีเจอร์การเข้าถึงได้ที่การตั้งค่า &gt; การเข้าถึง"</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"กดปุ่มกลับและปุ่มลงค้างไว้ 3 วินาทีเพื่อใช้ <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
 </resources>

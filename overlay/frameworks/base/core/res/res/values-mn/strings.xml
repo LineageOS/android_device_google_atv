@@ -17,5 +17,4 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Товчлолыг асаасан үед буцах болон доод товчлуурыг хамтад нь 3 секунд дарснаар хүртээмжийн онцлогийг эхлүүлнэ.\n\n Одоогийн хүртээмжийн онцлог:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Онцлогийг Тохиргоо &gt; Хүртээмж хэсэгт өөрчлөх боломжтой."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"<xliff:g id="SERVICE_NAME">%1$s</xliff:g>-г ашиглахын тулд буцах болон доод товчлууруудыг хоёуланг нь гурван секундийн турш удаан дарна уу"</string>
 </resources>

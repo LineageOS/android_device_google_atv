@@ -17,5 +17,4 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Quando o atalho estiver ativado, pressione os botões de voltar e para baixo por três segundos para iniciar um recurso de acessibilidade.\n\n Recurso de acessibilidade atual:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n É possível alterar o recurso em Config. &gt; Acessibilidade."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"Pressione ao mesmo tempo o botão para voltar e o botão para baixo por três segundos para usar o <xliff:g id="SERVICE_NAME">%1$s</xliff:g>."</string>
 </resources>
