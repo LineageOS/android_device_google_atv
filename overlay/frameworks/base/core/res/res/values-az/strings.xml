@@ -17,4 +17,5 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Qısayol aktiv olduqda geri və aşağı düymələrinin hər ikisini 3 saniyə basılı saxlamaqla əlçatımlılıq funksiyası başlayacaq.\n\n Cari əlçatımlılıq funksiyası:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Funksiyanı Ayarlar və Əlçatımlılıq bölməsində dəyişə bilərsiniz."</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"<xliff:g id="SERVICE_NAME">%1$s</xliff:g> xidmətindən istifadə etmək üçün geri və aşağı düymələrinin hər ikisini üç saniyə basıb saxlayın"</string>
 </resources>

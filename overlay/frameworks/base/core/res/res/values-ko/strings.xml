@@ -17,4 +17,5 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"단축키가 사용 설정되어 있다면 뒤로 버튼과 아래 버튼을 3초 동안 동시에 눌러 접근성 기능을 실행할 수 있습니다.\n\n 현재 접근성 기능:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n 설정 &gt; 접근성에서 기능을 변경할 수 있습니다."</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"뒤로 버튼과 아래 버튼을 3초 동안 동시에 길게 눌러 <xliff:g id="SERVICE_NAME">%1$s</xliff:g> 서비스를 사용할 수 있습니다."</string>
 </resources>

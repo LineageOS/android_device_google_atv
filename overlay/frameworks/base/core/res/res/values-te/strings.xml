@@ -17,4 +17,5 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"సత్వరమార్గం ఆన్‌లో ఉన్నప్పుడు, వెనుకకు మరియు కిందికి బటన్‌లను 3 సెకన్ల పాటు నొక్కితే యాక్సెస్ సౌలభ్య ఫీచర్ ప్రారంభమవుతుంది.\n\n ప్రస్తుత యాక్సెస్ సౌలభ్య ఫీచర్:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n సెట్టింగ్‌లు &gt; యాక్సెస్ సౌలభ్యంలో మీరు ఫీచర్‌ను మార్చవచ్చు."</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"<xliff:g id="SERVICE_NAME">%1$s</xliff:g>ను ఉపయోగించడానికి \'వెనుకకు\', \'కిందికి\' బటన్‌లను ఒకేసారి మూడు సెకెన్ల పాటు నొక్కి, పట్టుకోండి"</string>
 </resources>

@@ -17,4 +17,5 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Când comanda rapidă este activată, dacă apăsați simultan pe butoanele înapoi și în jos timp de 3 secunde, veți lansa o funcție de accesibilitate.\n\n Funcția actuală de accesibilitate:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Puteți schimba funcția în Setări &gt; Accesibilitate."</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"Apăsați lung ambele butoane înapoi și în jos timp de trei secunde pentru a folosi <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
 </resources>

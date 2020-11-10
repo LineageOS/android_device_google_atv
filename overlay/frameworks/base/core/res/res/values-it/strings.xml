@@ -17,4 +17,5 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Quando la scorciatoia è attiva, premendo i pulsanti indietro e giù per 3 secondi, verrà avviata una funzione di accessibilità.\n\n Funzione di accessibilità attuale:\n<xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Puoi modificare la funzione in Impostazioni &gt; Accessibilità."</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"Tieni premuti i pulsanti Indietro e Giù per tre secondi per usare <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
 </resources>
