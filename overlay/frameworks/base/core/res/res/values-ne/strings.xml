@@ -17,4 +17,5 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"सर्टकट सक्रिय हुँदा, पछाडि र तल दुवै बटनहरूलाई ३ सेकेन्डसम्म थिची राख्नुले पहुँचसम्बन्धी कुनै सुविधा सुरु हुनेछ।\n\n हाल व्यवहारमा रहेको पहुँचसम्बन्धी सुविधा:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n तपाईं सेटिङहरू &gt; पहुँचमा गई उक्त सुविधा परिवर्तन गर्न सक्नुहुन्छ।"</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"<xliff:g id="SERVICE_NAME">%1$s</xliff:g> प्रयोग गर्न पछाडि जाने तथा तल जाने दुवै बटन तीन सेकेन्डसम्म थिचिराख्नुहोस्"</string>
 </resources>
