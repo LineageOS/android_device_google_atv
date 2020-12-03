@@ -1,7 +1,7 @@
 cc_library {
   name: "libaudio_proxy.google",
 
-  product_specific: true,
+  system_ext_specific: true,
 
   srcs: [
     "AudioProxy.cpp",
@@ -29,7 +29,7 @@ cc_library {
 cc_defaults {
   name: "libaudio_proxy_client_default",
 
-  product_specific: true,
+  system_ext_specific: true,
 
   srcs: [
     "AudioProxyDevice.cpp",
