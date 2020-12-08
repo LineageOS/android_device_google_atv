@@ -27,5 +27,4 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     device/google/atv/atv-component-overrides.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/atv-component-overrides.xml \
-    frameworks/native/data/etc/cec_config.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/cec_config.xml \
 
