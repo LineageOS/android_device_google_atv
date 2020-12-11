@@ -16,6 +16,6 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"කෙටිමඟ සක්‍රිය විට, ආපසු සහ පහළ බොත්තම් දෙකම තත්පර 3ක් අල්ලාගෙන සිටීමෙන් ප්‍රවේශ්‍යත අංගයක් ඇරඹේ.\n\n වත්මන් ප්‍රවේශ්‍යතා අංගය:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n සැකසීම් &gt; ප්‍රවේශ්‍යතාව තුළ ඔබට අංගය වෙනස් කළ හැක."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"<xliff:g id="SERVICE_NAME">%1$s</xliff:g> භාවිතා කිරීමට ආපසු සහ පහළට බොත්තම් තත්පර තුනකට ඔබා අල්ලා සිටින්න"</string>
+    <string name="accessibility_shortcut_toogle_warning" msgid="6107141001991769734">"කෙටි මඟ ක්‍රියාත්මක විට, ආපසු සහ පහළට බොත්තම් දෙකම තත්පර 3ක් අල්ලාගෙන සිටීම ප්‍රවේශ්‍යතා විශේෂාංගයක් ආරම්භ කරනු ඇත.\n\n වත්මන් ප්‍රවේශ්‍යතා විශේෂාංගය:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n සැකසීම් &gt; ප්‍රවේශ්‍යතාව තුළ ඔබට විශේෂාංගය වෙනස් කළ හැකිය."</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="9044396964308216250">"<xliff:g id="SERVICE_NAME">%1$s</xliff:g> භාවිත කිරීමට ආපසු සහ පහළට බොත්තම් තත්පර තුනක් ඔබා අල්ලාගෙන සිටින්න"</string>
 </resources>

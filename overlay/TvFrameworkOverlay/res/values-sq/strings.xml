@@ -16,6 +16,6 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Kur shkurtorja është e aktivizuar, shtypja njëkohësisht e dy butonave të volumit për 3 sekonda do të nisë një funksion qasshmërie.\n\n Funksioni aktual i qasshmërisë:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Mund ta ndryshosh funksionin te Cilësimet &gt; Qasshmëria."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"Shtyp dhe mbaj shtypur njëkohësisht butonin e pasmë dhe butonin të poshtëm për tre sekonda për të përdorur <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
+    <string name="accessibility_shortcut_toogle_warning" msgid="6107141001991769734">"Kur shkurtorja është aktive, shtypja njëkohësisht e dy butonave të volumit për 3 sekonda do të nisë një veçori qasshmërie.\n\n Veçoria aktuale e qasshmërisë:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Mund ta ndryshosh veçorinë te Cilësimet &gt; Qasshmëria."</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="9044396964308216250">"Shtyp dhe mbaj shtypur njëkohësisht butonin e pasmë dhe butonin të poshtëm për tre sekonda për të përdorur <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
 </resources>

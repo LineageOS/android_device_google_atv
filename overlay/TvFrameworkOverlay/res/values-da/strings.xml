@@ -16,6 +16,6 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Når genvejen er slået til, kan du starte en hjælpefunktion ved at holde både pil ned og tilbageknappen nede i tre sekunder.\n\n Aktuel hjælpefunktion:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Du kan skifte funktion i Indstillinger &gt; Hjælpefunktioner."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"Hold både pil ned og tilbageknappen nede i tre sekunder for at bruge <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
+    <string name="accessibility_shortcut_toogle_warning" msgid="6107141001991769734">"Når genvejen er aktiveret, kan du starte en hjælpefunktion ved at holde både pil ned og tilbageknappen nede i tre sekunder.\n\n Nuværende hjælpefunktion:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Du kan ændre denne funktion i Indstillinger &gt; Hjælpefunktioner."</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="9044396964308216250">"Hold både pil ned og tilbageknappen nede i tre sekunder for at bruge <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
 </resources>

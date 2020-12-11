@@ -16,6 +16,6 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Kai įjungtas spartusis klavišas, galite paspausti abu mygtukus „Atgal“ bei „Žemyn“ ir palaikyti 3 sekundes, kad būtų paleista pritaikymo neįgaliesiems funkcija.\n\n Dabartinė pritaikymo neįgaliesiems funkcija:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Šią funkciją galite pakeisti skiltyje „Nustatymai“ &gt; „Pritaikymas neįgaliesiems“."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"Jei norite naudoti „<xliff:g id="SERVICE_NAME">%1$s</xliff:g>“, paspauskite abu mygtukus „Atgal“ bei „Žemyn“ ir palaikykite tris sekundes"</string>
+    <string name="accessibility_shortcut_toogle_warning" msgid="6107141001991769734">"Kai įjungtas spartusis klavišas, paspauskite abu mygtukus „Atgal“ bei „Žemyn“ ir palaikykite tris sekundes, kad būtų paleista pritaikymo neįgaliesiems funkcija.\n\n Dabartinė pritaikymo neįgaliesiems funkcija:\n „<xliff:g id="SERVICE_NAME">%1$s</xliff:g>“\n\n Funkciją galite pakeisti skiltyje „Nustatymai“ &gt; „Pritaikymas neįgaliesiems“."</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="9044396964308216250">"Jei norite naudoti „<xliff:g id="SERVICE_NAME">%1$s</xliff:g>“, paspauskite abu mygtukus „Atgal“ bei „Žemyn“ ir palaikykite tris sekundes"</string>
 </resources>
