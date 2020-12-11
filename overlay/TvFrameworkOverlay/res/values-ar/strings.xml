@@ -16,6 +16,6 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"عند تفعيل الاختصار، سيؤدي الضغط على زر الرجوع وزر الاتجاه للأسفل معًا لمدة 3 ثوانٍ إلى بدء ميزة من ميزات \"سهولة الاستخدام\".\n\n ميزة سهولة الاستخدام الحالية:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n يمكنك تغيير الميزة في الإعدادات &gt; سهولة الاستخدام."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"اضغط مع الاستمرار على زر الرجوع وزر الاتجاه للأسفل معًا لاستخدام <xliff:g id="SERVICE_NAME">%1$s</xliff:g>."</string>
+    <string name="accessibility_shortcut_toogle_warning" msgid="6107141001991769734">"عندما يكون الاختصار مُفعّلاً، سيؤدي الضغط على زر الرجوع وزر السهم المتجه للأسفل معًا لمدة ثلاث ثوانٍ إلى تفعيل ميزة من ميزات تسهيل الاستخدام.\n\n ميزة تسهيل الاستخدام الحالية:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n يمكنك تغيير الميزة من خلال الانتقال إلى الإعدادات &gt; تسهيل الاستخدام."</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="9044396964308216250">"اضغط مع الاستمرار على زر الرجوع وزر السهم المتجه للأسفل معًا لمدة ثلاث ثوانٍ لاستخدام <xliff:g id="SERVICE_NAME">%1$s</xliff:g>."</string>
 </resources>

@@ -16,6 +16,6 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"När kortkommandot är aktiverat kan du starta en tillgänglighetsfunktion genom att hålla tillbaka- och nedåtknapparna nedtryckta samtidigt i tre sekunder.\n\n Just nu är det följande tillgänglighetsfunktion som startas:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Du kan ändra till en annan funktion under Inställningar &gt; Tillgänglighet."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"Håll bakåt- och nedåtknapparna nedtryckta samtidigt i tre sekunder om du vill använda <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
+    <string name="accessibility_shortcut_toogle_warning" msgid="6107141001991769734">"När kortkommandot är aktiverat kan du starta en tillgänglighetsfunktion genom att hålla tillbaka- och nedåtknapparna nedtryckta samtidigt i tre sekunder.\n\n Aktuell tillgänglighetsfunktion:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Du kan ändra funktionen i Inställningar &gt; Tillgänglighet."</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="9044396964308216250">"Håll tillbaka- och nedåtknapparna nedtryckta samtidigt i tre sekunder om du vill använda <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
 </resources>
