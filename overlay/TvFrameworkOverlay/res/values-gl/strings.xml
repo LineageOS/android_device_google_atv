@@ -16,6 +16,6 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Cando o atallo estea activado, preme simultaneamente os botóns Atrás e Abaixo durante 3 segundos para iniciar unha función de accesibilidade.\n\n Función de accesibilidade activada actualmente:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Podes cambiar a función en Configuración &gt; Accesibilidade."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"Mantén premidos os botóns Atrás e Abaixo durante tres segundos para utilizar o servizo <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
+    <string name="accessibility_shortcut_toogle_warning" msgid="6107141001991769734">"Cando o atallo estea activado, ao premer simultaneamente os botóns Atrás e Abaixo durante 3 segundos iniciarase unha función de accesibilidade.\n\n Función de accesibilidade actual:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Podes cambiar esta opción máis tarde en Configuración &gt; Accesibilidade."</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="9044396964308216250">"Mantén premidos os botóns Atrás e Abaixo durante tres segundos para utilizar o servizo <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
 </resources>

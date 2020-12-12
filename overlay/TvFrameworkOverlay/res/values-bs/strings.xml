@@ -16,6 +16,6 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="accessibility_shortcut_toogle_warning" msgid="7758891516165017413">"Kada je uključena prečica, pritiskom i držanjem dugmadi za nazad i dolje u trajanju od 3 sekunde pokrenut će se funkcija pristupačnosti.\n\n Trenutna funkcija pristupačnosti:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Funkciju možete promijeniti u meniju Postavke &gt; Pristupačnost."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="8021909174869703100">"Istovremeno pritisnite i držite dugmad nazad i dolje tri sekunde da koristite <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
+    <string name="accessibility_shortcut_toogle_warning" msgid="6107141001991769734">"Kada je uključena prečica, funkciju pristupačnosti možete pokrenuti ako istovremeno pritisnete i zadržite dugmad za nazad i dolje u trajanju od 3 sekunde.\n\n Trenutna funkcija pristupačnosti:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Funkciju možete promijeniti u meniju Postavke &gt; Pristupačnost."</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="9044396964308216250">"Istovremeno pritisnite i držite dugmad za nazad i dolje tri sekunde da koristite <xliff:g id="SERVICE_NAME">%1$s</xliff:g>"</string>
 </resources>
