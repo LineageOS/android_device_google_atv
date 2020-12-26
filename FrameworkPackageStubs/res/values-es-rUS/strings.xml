@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<resources xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name" msgid="6394925716414120136">"Talón de actividad"</string>
-    <string name="message_not_supported" msgid="2654465469186844682">"Ninguna aplicación puede procesar esta acción."</string>
-    <string name="stub_name" msgid="472104069988600640">"Ninguno"</string>
-</resources>
