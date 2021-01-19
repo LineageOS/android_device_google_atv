@@ -34,5 +34,11 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_atv_arm_a.mk \
     $(LOCAL_DIR)/aosp_atv_arm_ab.mk \
+<<<<<<< HEAD   (4862d8 Disable Traceur on userdebug)
     $(LOCAL_DIR)/aosp_atv_arm64_a.mk \
     $(LOCAL_DIR)/aosp_atv_arm64_ab.mk
+=======
+    $(LOCAL_DIR)/aosp_atv_arm64_ab.mk \
+    $(LOCAL_DIR)/aosp_atv_x86_ab.mk \
+    $(LOCAL_DIR)/aosp_atv_x86_64_ab.mk
+>>>>>>> CHANGE (a18bce products: Add generic ATV x86{,_64} targets)
