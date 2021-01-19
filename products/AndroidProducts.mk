@@ -33,4 +33,6 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_atv_arm_ab.mk \
-    $(LOCAL_DIR)/aosp_atv_arm64_ab.mk
+    $(LOCAL_DIR)/aosp_atv_arm64_ab.mk \
+    $(LOCAL_DIR)/aosp_atv_x86_ab.mk \
+    $(LOCAL_DIR)/aosp_atv_x86_64_ab.mk
