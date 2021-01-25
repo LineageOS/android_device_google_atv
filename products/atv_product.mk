@@ -23,12 +23,6 @@ PRODUCT_PACKAGES += \
     SettingsIntelligence \
     SystemUI \
     TvSettings
-    TvFrameworkOverlay \
-    TvSettingsProviderOverlay \
-    TvWifiOverlay \
-
-PRODUCT_COPY_FILES += \
-    device/google/atv/atv-component-overrides.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/atv-component-overrides.xml \
 
 # Do not include the Live Channels app if USE_OEM_TV_APP flag is set.
 # The feature com.google.android.tv.installed is used to tell whether a device
