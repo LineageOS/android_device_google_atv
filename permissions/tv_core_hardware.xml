@@ -37,5 +37,6 @@
     <feature name="android.software.autofill" />
 
     <feature name="android.software.cts" />
+    <feature name="android.hardware.security.model.compatible" />
 
 </permissions>
