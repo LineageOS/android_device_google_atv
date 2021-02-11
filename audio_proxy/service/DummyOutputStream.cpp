@@ -106,7 +106,7 @@ Return<Result> DummyOutputStream::setFormat(AudioFormat) {
 
 Return<void>
 DummyOutputStream::getAudioProperties(getAudioProperties_cb _hidl_cb) {
-  _hidl_cb({}, {}, {});
+  _hidl_cb(mSampleRate, mChannelMask, mFormat);
   return Void();
 }
 
