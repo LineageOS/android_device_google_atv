@@ -105,4 +105,7 @@
         4 - Go to voice assist
         5 - Go to assistant (Settings.Secure.ASSISTANT -->
     <integer name="config_longPressOnPowerBehavior">3</integer>
+
+    <!-- Whether the time zone detection feature is enabled. Disabled for ATV devices. -->
+    <bool name="config_enableGeolocationTimeZoneDetection" translatable="false">false</bool>
 </resources>
