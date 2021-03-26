@@ -36,14 +36,6 @@ PRODUCT_COPY_FILES += device/google/atv/products/lowram_boot_profiles/preloaded-
 # .art image, and how the corresponding DEX files are laid out.
 PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := device/google/atv/products/lowram_boot_profiles/boot-image-profile.txt
 
-# Do not generate libartd.
-PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
-
-# Strip the local variable table and the local variable type table to reduce
-# the size of the system image. This has no bearing on stack traces, but will
-# leave less information available via JDWP.
-PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
-
 # Add the system properties.
 TARGET_SYSTEM_PROP += \
     build/make/target/board/go_defaults_common.prop
