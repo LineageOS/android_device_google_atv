@@ -88,19 +88,6 @@ else
     PRODUCT_PROPERTY_OVERRIDES += config.disable_cameraservice=true
 endif
 
-# SDK builds needs to build layoutlib-legacy that depends on debug info
-ifneq ($(PRODUCT_IS_ATV_SDK),true)
-    # Strip the local variable table and the local variable type table to reduce
-    # the size of the system image. This has no bearing on stack traces, but will
-    # leave less information available via JDWP.
-    # From //build/make/target/product/go_defaults_common.mk
-    PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
-
-    # Do not generate libartd.
-    # From //build/make/target/product/go_defaults_common.mk
-    PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
-endif
-
 # Enable frame-exact AV sync
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.media.avsync=true
