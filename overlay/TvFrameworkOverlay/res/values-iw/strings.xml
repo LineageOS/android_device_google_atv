@@ -16,6 +16,19 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- no translation found for accessibility_shortcut_multiple_service_warning (7133244216041378936) -->
+    <skip />
     <string name="accessibility_shortcut_toogle_warning" msgid="6107141001991769734">"כשקיצור הדרך מופעל, לחיצה על הלחצן \'הקודם\' ועל החץ למטה בו זמנית למשך 3 שניות תפעיל תכונת נגישות.\n\n תכונת הנגישות המוגדרת כרגע:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n ניתן לבחור תכונה אחרת בקטע \'הגדרות\' &gt; \'נגישות\'."</string>
-    <string name="accessibility_shortcut_spoken_feedback" msgid="9044396964308216250">"כדי להשתמש בשירות <xliff:g id="SERVICE_NAME">%1$s</xliff:g>, יש ללחוץ לחיצה ארוכה על הלחצן \'הקודם\' ועל החץ למטה למשך שלוש שניות"</string>
+    <!-- no translation found for accessibility_shortcut_enabling_service (955379455142747901) -->
+    <skip />
+    <!-- no translation found for accessibility_shortcut_disabling_service (1407311966343470931) -->
+    <skip />
+    <!-- no translation found for accessibility_shortcut_spoken_feedback (7263788823743141556) -->
+    <skip />
+    <!-- no translation found for accessibility_shortcut_single_service_warning (7941823324711523679) -->
+    <skip />
+    <!-- no translation found for disable_accessibility_shortcut (4559312586447750126) -->
+    <skip />
+    <!-- no translation found for leave_accessibility_shortcut_on (6807632291651241490) -->
+    <skip />
 </resources>
