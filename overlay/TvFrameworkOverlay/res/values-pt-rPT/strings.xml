@@ -16,19 +16,12 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- no translation found for accessibility_shortcut_multiple_service_warning (7133244216041378936) -->
-    <skip />
+    <string name="accessibility_shortcut_multiple_service_warning" msgid="7133244216041378936">"Premiu os botões anterior e para baixo durante três segundos para utilizar o <xliff:g id="SERVICE_0">%1$s</xliff:g>.\n\n Para ativar o <xliff:g id="SERVICE_1">%1$s</xliff:g> agora, volte a premir os botões anterior e para baixo durante três segundos. Utilize este atalho em qualquer altura para ativar ou desativar o <xliff:g id="SERVICE_2">%1$s</xliff:g>.\n\n Pode ajustar as suas preferências em Definições &gt; Sistema &gt; Acessibilidade."</string>
     <string name="accessibility_shortcut_toogle_warning" msgid="6107141001991769734">"Quando o atalho estiver ativado, pode premir o botão Anterior e o botão para baixo em simultâneo durante 3 segundos para iniciar uma funcionalidade de acessibilidade.\n\n Funcionalidade de acessibilidade atual:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Pode alterar a funcionalidade em Definições &gt; Acessibilidade."</string>
-    <!-- no translation found for accessibility_shortcut_enabling_service (955379455142747901) -->
-    <skip />
-    <!-- no translation found for accessibility_shortcut_disabling_service (1407311966343470931) -->
-    <skip />
-    <!-- no translation found for accessibility_shortcut_spoken_feedback (7263788823743141556) -->
-    <skip />
-    <!-- no translation found for accessibility_shortcut_single_service_warning (7941823324711523679) -->
-    <skip />
-    <!-- no translation found for disable_accessibility_shortcut (4559312586447750126) -->
-    <skip />
-    <!-- no translation found for leave_accessibility_shortcut_on (6807632291651241490) -->
-    <skip />
+    <string name="accessibility_shortcut_enabling_service" msgid="955379455142747901">"Botões anterior e para baixo premidos. Serviço <xliff:g id="SERVICE_NAME">%1$s</xliff:g> ativado."</string>
+    <string name="accessibility_shortcut_disabling_service" msgid="1407311966343470931">"Botões anterior e para baixo premidos. Serviço <xliff:g id="SERVICE_NAME">%1$s</xliff:g> desativado."</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="7263788823743141556">"Premiu os botões anterior e para baixo durante três segundos para utilizar o <xliff:g id="SERVICE_0">%1$s</xliff:g>. Para ativar o <xliff:g id="SERVICE_1">%1$s</xliff:g> agora, volte a premir os botões anterior e para baixo durante três segundos. Utilize este atalho em qualquer altura para ativar ou desativar o <xliff:g id="SERVICE_2">%1$s</xliff:g>."</string>
+    <string name="accessibility_shortcut_single_service_warning" msgid="7941823324711523679">"Premiu os botões anterior e para baixo durante três segundos para utilizar o <xliff:g id="SERVICE_0">%1$s</xliff:g>.\n\n Para ativar o <xliff:g id="SERVICE_1">%1$s</xliff:g> agora, volte a premir os botões anterior e para baixo durante três segundos.\n Utilize este atalho em qualquer altura para ativar ou desativar o <xliff:g id="SERVICE_2">%1$s</xliff:g>.\n\n Pode ajustar as suas preferências em Definições &gt; Sistema &gt; Acessibilidade."</string>
+    <string name="disable_accessibility_shortcut" msgid="4559312586447750126">"Agora não"</string>
+    <string name="leave_accessibility_shortcut_on" msgid="6807632291651241490">"Ativar agora"</string>
 </resources>
