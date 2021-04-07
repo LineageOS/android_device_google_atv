@@ -43,7 +43,7 @@ public class DefaultActivity extends Activity {
         }
         Settings.Secure.putInt(getContentResolver(), Settings.Secure.USER_SETUP_COMPLETE, 1);
         Settings.Secure.putInt(getContentResolver(), TV_USER_SETUP_COMPLETE, 1);
-        if (SystemProperties.get("ro.kernel.qemu").equals("1")) {
+        if (SystemProperties.get("ro.boot.qemu").equals("1")) {
           // Emulator-only: Enable USB debugging and adb
           Settings.Global.putInt(getContentResolver(), Settings.Global.ADB_ENABLED, 1);
         }
