@@ -14,6 +14,10 @@
 # limitations under the License.
 #
 
+# Generate source.properties for image target
+PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := \
+    device/google/atv/sdk/images_source.prop_template
+
 # The system image of aosp_tv_arm64-userdebug is a GSI for the devices with:
 # - ARM 64 bits user space
 # - 64 bits binder interface
