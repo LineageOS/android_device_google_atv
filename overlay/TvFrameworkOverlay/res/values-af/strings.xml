@@ -16,19 +16,12 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- no translation found for accessibility_shortcut_multiple_service_warning (7133244216041378936) -->
-    <skip />
+    <string name="accessibility_shortcut_multiple_service_warning" msgid="7133244216041378936">"Jy het die terug- en afknoppie albei drie sekondes lank gehou om <xliff:g id="SERVICE_0">%1$s</xliff:g> te gebruik.\n\n Hou die terug- en afknoppie weer drie sekondes lank om <xliff:g id="SERVICE_1">%1$s</xliff:g> nou te aktiveer. Gebruik hierdie kortpad enige tyd om <xliff:g id="SERVICE_2">%1$s</xliff:g> te aktiveer of te deaktiveer.\n\n Jy kan jou voorkeure in Instellings &gt; Stelsel &gt;. Toeganklikheid verstel."</string>
     <string name="accessibility_shortcut_toogle_warning" msgid="6107141001991769734">"Wanneer die kortpad aan is, kan jy sowel die terug- as afknoppie 3 sekondes lank druk om \'n toeganklikheidskenmerk te begin.\n\n Huidige toeganklikheidskenmerk:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Jy kan die kenmerk in Instellings &gt; Toeganklikheid verander."</string>
-    <!-- no translation found for accessibility_shortcut_enabling_service (955379455142747901) -->
-    <skip />
-    <!-- no translation found for accessibility_shortcut_disabling_service (1407311966343470931) -->
-    <skip />
-    <!-- no translation found for accessibility_shortcut_spoken_feedback (7263788823743141556) -->
-    <skip />
-    <!-- no translation found for accessibility_shortcut_single_service_warning (7941823324711523679) -->
-    <skip />
-    <!-- no translation found for disable_accessibility_shortcut (4559312586447750126) -->
-    <skip />
-    <!-- no translation found for leave_accessibility_shortcut_on (6807632291651241490) -->
-    <skip />
+    <string name="accessibility_shortcut_enabling_service" msgid="955379455142747901">"Het terug- en afknoppie gehou. <xliff:g id="SERVICE_NAME">%1$s</xliff:g> is aangeskakel."</string>
+    <string name="accessibility_shortcut_disabling_service" msgid="1407311966343470931">"Het terug- en afknoppie gehou. <xliff:g id="SERVICE_NAME">%1$s</xliff:g> is afgeskakel"</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="7263788823743141556">"Jy het die terug- en afknoppie albei drie sekondes lank gehou om <xliff:g id="SERVICE_0">%1$s</xliff:g> te gebruik. Hou die terug- en afknoppie weer drie sekondes lank om <xliff:g id="SERVICE_1">%1$s</xliff:g> nou te aktiveer. Gebruik hierdie kortpad enige tyd om <xliff:g id="SERVICE_2">%1$s</xliff:g> te aktiveer of te deaktiveer."</string>
+    <string name="accessibility_shortcut_single_service_warning" msgid="7941823324711523679">"Jy het die terug- en afknoppie albei drie sekondes lank gehou om <xliff:g id="SERVICE_0">%1$s</xliff:g> te gebruik.\n\n Hou die terug- en afknoppie weer drie sekondes lank om <xliff:g id="SERVICE_1">%1$s</xliff:g> nou te aktiveer.\n Gebruik hierdie kortpad enige tyd om <xliff:g id="SERVICE_2">%1$s</xliff:g> te aktiveer of te deaktiveer.\n\n Jy kan jou voorkeure in Instellings &gt; Stelsel &gt; Toeganklikheid verstel."</string>
+    <string name="disable_accessibility_shortcut" msgid="4559312586447750126">"Nie nou nie"</string>
+    <string name="leave_accessibility_shortcut_on" msgid="6807632291651241490">"Skakel nou aan"</string>
 </resources>
