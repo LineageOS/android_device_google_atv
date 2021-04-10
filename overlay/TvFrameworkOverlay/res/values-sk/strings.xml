@@ -16,19 +16,12 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- no translation found for accessibility_shortcut_multiple_service_warning (7133244216041378936) -->
-    <skip />
+    <string name="accessibility_shortcut_multiple_service_warning" msgid="7133244216041378936">"Pridržali ste tri sekundy tlačidlo Späť aj šípku nadol, aby ste mohli použiť službu <xliff:g id="SERVICE_0">%1$s</xliff:g>.\n\n Ak chcete povoliť službu <xliff:g id="SERVICE_1">%1$s</xliff:g> teraz, znova tri sekundy pridržte tlačidlo Späť a šípku nadol. Touto skratkou môžete službu <xliff:g id="SERVICE_2">%1$s</xliff:g> kedykoľvek zapnúť alebo vypnúť.\n\n Predvoľby si môžete upraviť v sekcii Nastavenia &gt; Systém &gt; Dostupnosť."</string>
     <string name="accessibility_shortcut_toogle_warning" msgid="6107141001991769734">"Keď je skratka zapnutá, funkciu dostupnosti spustíte tak, že na tri sekundy stlačíte tlačidlá späť a nadol.\n\n Aktuálna funkcia dostupnosti:\n <xliff:g id="SERVICE_NAME">%1$s</xliff:g>\n\n Funkciu môžete zmeniť v časti Nastavenia &gt; Dostupnosť."</string>
-    <!-- no translation found for accessibility_shortcut_enabling_service (955379455142747901) -->
-    <skip />
-    <!-- no translation found for accessibility_shortcut_disabling_service (1407311966343470931) -->
-    <skip />
-    <!-- no translation found for accessibility_shortcut_spoken_feedback (7263788823743141556) -->
-    <skip />
-    <!-- no translation found for accessibility_shortcut_single_service_warning (7941823324711523679) -->
-    <skip />
-    <!-- no translation found for disable_accessibility_shortcut (4559312586447750126) -->
-    <skip />
-    <!-- no translation found for leave_accessibility_shortcut_on (6807632291651241490) -->
-    <skip />
+    <string name="accessibility_shortcut_enabling_service" msgid="955379455142747901">"Pridržali ste tlačidlo Späť a šípku nadol. Služba <xliff:g id="SERVICE_NAME">%1$s</xliff:g> je zapnutá."</string>
+    <string name="accessibility_shortcut_disabling_service" msgid="1407311966343470931">"Pridržali ste tlačidlo Späť a šípku nadol. Služba <xliff:g id="SERVICE_NAME">%1$s</xliff:g> je vypnutá."</string>
+    <string name="accessibility_shortcut_spoken_feedback" msgid="7263788823743141556">"Pridržali ste tri sekundy tlačidlo Späť aj šípku nadol, aby ste mohli použiť službu <xliff:g id="SERVICE_0">%1$s</xliff:g>. Ak chcete povoliť službu <xliff:g id="SERVICE_1">%1$s</xliff:g> teraz, znova tri sekundy pridržte tlačidlo Späť a šípku nadol. Touto skratkou môžete službu <xliff:g id="SERVICE_2">%1$s</xliff:g> kedykoľvek zapnúť alebo vypnúť."</string>
+    <string name="accessibility_shortcut_single_service_warning" msgid="7941823324711523679">"Pridržali ste tri sekundy tlačidlo Späť aj šípku nadol, aby ste mohli použiť službu <xliff:g id="SERVICE_0">%1$s</xliff:g>.\n\n Ak chcete povoliť službu <xliff:g id="SERVICE_1">%1$s</xliff:g> teraz, znova tri sekundy pridržte tlačidlo Späť a šípku nadol.\n Touto skratkou môžete službu <xliff:g id="SERVICE_2">%1$s</xliff:g> kedykoľvek zapnúť alebo vypnúť.\n\n Predvoľby si môžete upraviť v sekcii Nastavenia &gt; Systém &gt; Dostupnosť."</string>
+    <string name="disable_accessibility_shortcut" msgid="4559312586447750126">"Teraz nie"</string>
+    <string name="leave_accessibility_shortcut_on" msgid="6807632291651241490">"Zapnúť"</string>
 </resources>
