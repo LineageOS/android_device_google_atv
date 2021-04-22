@@ -16,6 +16,29 @@
 
 #pragma once
 
+#if !defined(MAJOR_VERSION) || !defined(MINOR_VERSION)
+#error "MAJOR_VERSION and MINOR_VERSION must be defined"
+#endif
+
+/** Allows macro expansion for x and add surrounding `<>`.
+ * Is intended to be used for version dependant includes as
+ * `#include` do not macro expand if starting with < or "
+ * Example usage:
+ *      #include PATH(path/to/FILE_VERSION/file)
+ * @note: uses the implementation-define "Computed Includes" feature.
+ */
+#define PATH(x) <x>
+
+#define CONCAT_3(a, b, c) a##b##c
+#define EXPAND_CONCAT_3(a, b, c) CONCAT_3(a, b, c)
+/** The directory name of the version: <major>.<minor> */
+#define FILE_VERSION EXPAND_CONCAT_3(MAJOR_VERSION, ., MINOR_VERSION)
+
+#define CONCAT_4(a, b, c, d) a##b##c##d
+#define EXPAND_CONCAT_4(a, b, c, d) CONCAT_4(a, b, c, d)
+/** The c++ namespace of the version: V<major>_<minor> */
+#define CPP_VERSION EXPAND_CONCAT_4(V, MAJOR_VERSION, _, MINOR_VERSION)
+
 #if !defined(AUDIO_PROXY_MINOR_VERSION)
 #error "AUDIO_PROXY_MINOR_VERSION must be defined."
 #endif  // !defined(AUDIO_PROXY_MINOR_VERSION)
