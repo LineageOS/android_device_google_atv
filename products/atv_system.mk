@@ -63,9 +63,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ManagedProvisioning
 
-# Traceur for debug only
-PRODUCT_PACKAGES_DEBUG += \
-    Traceur
 
 # PRODUCT_SUPPORTS_CAMERA: Whether the product supports cameras at all
 # (built-in or external USB camera). When 'false', we drop cameraserver, which
