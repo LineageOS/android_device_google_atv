@@ -22,8 +22,7 @@ $(call inherit-product-if-exists, frameworks/base/data/sounds/AudioTv.mk)
 PRODUCT_PACKAGES += \
     TvFrameworkOverlay \
     TvSettingsProviderOverlay \
-    TvWifiOverlay \
-    SettingsIntelligence
+    TvWifiOverlay
 
 PRODUCT_COPY_FILES += \
     device/google/atv/atv-component-overrides.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/atv-component-overrides.xml \
