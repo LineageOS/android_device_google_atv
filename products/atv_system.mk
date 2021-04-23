@@ -59,6 +59,10 @@ PRODUCT_PACKAGES += \
     VpnDialogs \
     com.android.media.tv.remoteprovider
 
+# Device owner provisioning for devices defining device_admin
+PRODUCT_PACKAGES += \
+    ManagedProvisioning
+
 # Traceur for debug only
 PRODUCT_PACKAGES_DEBUG += \
     Traceur
