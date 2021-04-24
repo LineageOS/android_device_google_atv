@@ -59,9 +59,10 @@ PRODUCT_PACKAGES += \
     VpnDialogs \
     com.android.media.tv.remoteprovider
 
-# Traceur for debug only
-PRODUCT_PACKAGES_DEBUG += \
-    Traceur
+# Device owner provisioning for devices defining device_admin
+PRODUCT_PACKAGES += \
+    ManagedProvisioning
+
 
 # PRODUCT_SUPPORTS_CAMERA: Whether the product supports cameras at all
 # (built-in or external USB camera). When 'false', we drop cameraserver, which
