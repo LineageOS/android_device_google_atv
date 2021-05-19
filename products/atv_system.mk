@@ -96,6 +96,10 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.media.avsync=true
 
+# Update Display.getDeviceProductInfo() on hotplug
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.update_device_product_info_on_hotplug_reconnect=1
+
 # Copy .kl file for generic voice remotes
 PRODUCT_COPY_FILES += \
     device/google/atv/Generic.kl:system/usr/keylayout/Generic.kl
