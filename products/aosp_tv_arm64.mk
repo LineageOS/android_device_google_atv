@@ -53,10 +53,9 @@ PRODUCT_PACKAGES += \
     TvSampleLeanbackLauncher
 
 #
-# All components inherited here go to vendor image
+# All components inherited here go to vendor or vendor_boot image
 #
 $(call inherit-product, device/google/atv/products/atv_emulator_vendor.mk)
-$(call inherit-product-if-exists, device/generic/goldfish/arm64-vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/board/generic_arm64/device.mk)
 
 ifeq (aosp_tv_arm64,$(TARGET_PRODUCT))
