@@ -21,3 +21,6 @@ PRODUCT_PACKAGES += \
     SystemUI \
     TvFrameworkPackageStubs \
     TvSettings
+
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += device/google/atv/sepolicy/system_ext/public
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/google/atv/sepolicy/system_ext/private
