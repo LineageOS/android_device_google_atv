@@ -3,6 +3,7 @@ hal_attribute(audio_proxy)
 
 binder_call(hal_audio_proxy_client, hal_audio_proxy_server)
 binder_call(hal_audio_proxy_server, hal_audio_proxy_client)
+binder_call(hal_audio_proxy_server, servicemanager)
 
-type hal_audio_proxy_hwservice, hwservice_manager_type, vendor_hwservice_type;
-hal_attribute_hwservice(hal_audio_proxy, hal_audio_proxy_hwservice)
+type hal_audio_proxy_service, vendor_service, protected_service, service_manager_type;
+hal_attribute_service(hal_audio_proxy, hal_audio_proxy_service)
