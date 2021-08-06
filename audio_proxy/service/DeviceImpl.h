@@ -44,11 +44,11 @@ using ::android::hardware::audio::CPP_VERSION::IDevice;
 using ::android::hardware::audio::CPP_VERSION::ParameterValue;
 using ::android::hardware::audio::CPP_VERSION::Result;
 
-class BusDeviceProvider;
+class BusStreamProvider;
 
 class DeviceImpl : public IDevice {
  public:
-  explicit DeviceImpl(BusDeviceProvider& busDeviceProvider);
+  explicit DeviceImpl(BusStreamProvider& busStreamProvider);
 
   // Methods from ::android::hardware::audio::V5_0::IDevice follow.
   Return<Result> initCheck() override;
@@ -91,7 +91,7 @@ class DeviceImpl : public IDevice {
                                    bool connected) override;
 
  private:
-  BusDeviceProvider& mBusDeviceProvider;
+  BusStreamProvider& mBusStreamProvider;
 };
 
 }  // namespace service

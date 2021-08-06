@@ -27,12 +27,13 @@ cc_binary {
   relative_install_path: "hw",
 
   srcs: [
-    "AudioProxyDevicesManagerImpl.cpp",
-    "BusDeviceProvider.cpp",
+    "AudioProxyImpl.cpp",
+    "BusOutputStream.cpp",
+    "BusStreamProvider.cpp",
     "DeviceImpl.cpp",
     "DevicesFactoryImpl.cpp",
-    "DummyBusDevice.cpp",
-    "DummyOutputStream.cpp",
+    "DummyBusOutputStream.cpp",
+    "StreamOutImpl.cpp",
     "main.cpp",
   ],
 
@@ -45,12 +46,17 @@ cc_binary {
   shared_libs: [
     "android.hardware.audio@5.0",
     "android.hardware.audio.common@5.0",
+    "device.google.atv.audio_proxy-aidl-V1-ndk_platform",
+    "libbase",
+    "libbinder_ndk",
     "libhidlbase",
-    "liblog",
     "libcutils",
+    "libfmq",
     "libutils",
-    "device.google.atv.audio_proxy@5.0",
-    "device.google.atv.audio_proxy@5.1",
+  ],
+
+  header_libs: [
+    "libaudio_system_headers",
   ],
 
   cflags: [
@@ -58,5 +64,9 @@ cc_binary {
     "-DMINOR_VERSION=0",
     "-DAUDIO_PROXY_MINOR_VERSION=1",
     "-include ../common/AudioProxyVersionMacro.h",
+
+    "-Werror",
+    "-Wthread-safety",
+    "-Wno-unused-parameter",
   ],
 }
