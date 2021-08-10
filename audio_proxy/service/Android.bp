@@ -21,6 +21,18 @@ package {
     default_applicable_licenses: ["device_google_atv_license"],
 }
 
+cc_library_static {
+  name: "audio_proxy_service_util",
+  vendor_available: true,
+  host_supported: true,
+  srcs: [
+    "RingBufferUtil.cpp",
+  ],
+  shared_libs: [
+    "libbase",
+  ],
+}
+
 cc_binary {
   name: "device.google.atv.audio_proxy@5.1-service",
   vendor: true,
@@ -33,7 +45,9 @@ cc_binary {
     "DeviceImpl.cpp",
     "DevicesFactoryImpl.cpp",
     "DummyBusOutputStream.cpp",
+    "RemoteBusOutputStream.cpp",
     "StreamOutImpl.cpp",
+    "WriteThread.cpp",
     "main.cpp",
   ],
 
@@ -55,6 +69,10 @@ cc_binary {
     "libutils",
   ],
 
+  static_libs: [
+    "audio_proxy_service_util",
+  ],
+
   header_libs: [
     "libaudio_system_headers",
   ],
@@ -68,5 +86,18 @@ cc_binary {
     "-Werror",
     "-Wthread-safety",
     "-Wno-unused-parameter",
+  ],
+}
+
+cc_test {
+  name: "audio_proxy_service_util_test",
+  host_supported: true,
+
+  srcs: [
+    "RingBufferUtilTest.cpp",
+  ],
+  static_libs: [
+    "audio_proxy_service_util",
+    "libgtest",
   ],
 }
