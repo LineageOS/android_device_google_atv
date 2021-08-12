@@ -14,50 +14,35 @@
 
 #include "DeviceImpl.h"
 
-#include <utils/Log.h>
+#include <android-base/logging.h>
 #include <utils/RefBase.h>
 
-// clang-format off
-#include PATH(device/google/atv/audio_proxy/AUDIO_PROXY_FILE_VERSION/IAudioProxyStreamOut.h)
-#include PATH(device/google/atv/audio_proxy/AUDIO_PROXY_FILE_VERSION/IStreamEventListener.h)
-// clang-format on
-
-#include "BusDeviceProvider.h"
-
-#undef LOG_TAG
-#define LOG_TAG "AudioProxyDeviceImpl"
+#include "AidlTypes.h"
+#include "BusOutputStream.h"
+#include "BusStreamProvider.h"
+#include "StreamOutImpl.h"
 
 using namespace ::android::hardware::audio::CPP_VERSION;
 using namespace ::android::hardware::audio::common::CPP_VERSION;
 
 using ::android::wp;
-using ::device::google::atv::audio_proxy::AUDIO_PROXY_CPP_VERSION::IAudioProxyStreamOut;
-using ::device::google::atv::audio_proxy::AUDIO_PROXY_CPP_VERSION::IStreamEventListener;
 
 namespace audio_proxy {
 namespace service {
 namespace {
-class StreamEventListenerImpl : public IStreamEventListener {
- public:
-  explicit StreamEventListenerImpl(const sp<BusDeviceProvider::Handle>& handle)
-      : mDeviceHandle(handle) {}
-  ~StreamEventListenerImpl() override = default;
+AidlAudioConfig toAidlAudioConfig(const AudioConfig& hidl_config) {
+  AidlAudioConfig aidlConfig = {
+      .format = static_cast<AidlAudioFormat>(hidl_config.format),
+      .sampleRateHz = static_cast<int32_t>(hidl_config.sampleRateHz),
+      .channelMask =
+          static_cast<AidlAudioChannelMask>(hidl_config.channelMask)};
 
-  Return<void> onClose() override {
-    if (auto handle = mDeviceHandle.promote()) {
-      handle->onStreamClose();
-    }
-
-    return Void();
-  }
-
- private:
-  wp<BusDeviceProvider::Handle> mDeviceHandle;
-};
+  return aidlConfig;
+}
 }  // namespace
 
-DeviceImpl::DeviceImpl(BusDeviceProvider& busDeviceProvider)
-    : mBusDeviceProvider(busDeviceProvider) {}
+DeviceImpl::DeviceImpl(BusStreamProvider& busStreamProvider)
+    : mBusStreamProvider(busStreamProvider) {}
 
 // Methods from ::android::hardware::audio::V5_0::IDevice follow.
 Return<Result> DeviceImpl::initCheck() { return Result::OK; }
@@ -102,29 +87,15 @@ Return<void> DeviceImpl::openOutputStream(int32_t ioHandle,
                                           hidl_bitfield<AudioOutputFlag> flags,
                                           const SourceMetadata& sourceMetadata,
                                           openOutputStream_cb _hidl_cb) {
-  sp<BusDeviceProvider::Handle> handle = mBusDeviceProvider.get(device.busAddress);
-
-  if (!handle) {
-    ALOGE("BusDevice with address %s was not found.",
-          device.busAddress.c_str());
-    _hidl_cb(Result::NOT_SUPPORTED, nullptr, config);
-    return Void();
-  }
-
-  return handle->getDevice()->openOutputStream(
-      ioHandle, device, config, flags, sourceMetadata,
-      [handle, cb = std::move(_hidl_cb)](Result result, const sp<IStreamOut>& stream,
-                                 const AudioConfig& config) {
-        if (stream) {
-          handle->onStreamOpen();
-          if (sp<IAudioProxyStreamOut> audioProxyStream = IAudioProxyStreamOut::castFrom(stream)) {
-            Return<void> result = audioProxyStream->setEventListener(
-                new StreamEventListenerImpl(handle));
-            ALOGW_IF(!result.isOk(), "Failed to set event listener.");
-          }
-        }
-        cb(result, stream, config);
-      });
+  std::shared_ptr<BusOutputStream> busOutputStream =
+      mBusStreamProvider.openOutputStream(device.busAddress,
+                                          toAidlAudioConfig(config),
+                                          static_cast<int32_t>(flags));
+  DCHECK(busOutputStream);
+  auto streamOut = sp<StreamOutImpl>::make(std::move(busOutputStream));
+  mBusStreamProvider.onStreamOutCreated(streamOut);
+  _hidl_cb(Result::OK, streamOut, config);
+  return Void();
 }
 
 Return<void> DeviceImpl::openInputStream(int32_t ioHandle,

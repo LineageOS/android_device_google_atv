@@ -12,38 +12,50 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#define LOG_TAG "audio_proxy_service"
-
+#include <android-base/logging.h>
+#include <android/binder_manager.h>
+#include <android/binder_process.h>
 #include <hidl/HidlTransportSupport.h>
-#include <utils/Log.h>
 
-#include "AudioProxyDevicesManagerImpl.h"
+#include "AudioProxyError.h"
+#include "AudioProxyImpl.h"
 #include "DevicesFactoryImpl.h"
 
 using ::android::sp;
 using ::android::status_t;
-using ::audio_proxy::service::DevicesFactoryImpl;
 
-namespace {
-status_t registerAudioProxyDevicesManager() {
-  sp<audio_proxy::service::AudioProxyDevicesManagerImpl> manager =
-      new audio_proxy::service::AudioProxyDevicesManagerImpl();
-  return manager->registerAsService();
-}
-}  // namespace
+using namespace audio_proxy::service;
 
 int main(int argc, char** argv) {
-  android::hardware::configureRpcThreadpool(1, true /* callerWillJoin */);
+  // Config thread pool.
+  ABinderProcess_setThreadPoolMaxThreadCount(1);
+  android::hardware::configureRpcThreadpool(1, false /* callerWillJoin */);
 
-  status_t status = registerAudioProxyDevicesManager();
-  if (status != android::OK) {
-    ALOGE("fail to register devices factory manager: %x", status);
-    return -1;
+  // Register AudioProxy service.
+  auto audioProxy = ndk::SharedRefBase::make<AudioProxyImpl>();
+  const std::string audioProxyName =
+      std::string(AudioProxyImpl::descriptor) + "/default";
+
+  binder_status_t binder_status = AServiceManager_addService(
+      audioProxy->asBinder().get(), audioProxyName.c_str());
+  if (binder_status != STATUS_OK) {
+    LOG(ERROR) << "Failed to start AudioProxy service, status "
+               << binder_status;
+    return ERROR_AIDL_FAILURE;
   }
 
-  ::android::hardware::joinRpcThreadpool();
+  // Register AudioProxy audio HAL.
+  auto devicesFactory =
+      sp<DevicesFactoryImpl>::make(audioProxy->getBusStreamProvider());
+  status_t status = devicesFactory->registerAsService("audio_proxy");
+  if (status != android::OK) {
+    LOG(ERROR) << "Failed to start AudioProxy audio HAL, status " << status;
+    return ERROR_HIDL_FAILURE;
+  }
 
-  // `joinRpcThreadpool` should never return. Return -2 here for unexpected
-  // process exit.
-  return -2;
+  ABinderProcess_joinThreadPool();
+
+  // `ABinderProcess_joinThreadpool` should never return. Return -2 here for
+  // unexpected process exit.
+  return ERROR_UNEXPECTED;
 }
