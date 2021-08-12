@@ -1,4 +1,4 @@
-// Copyright (C) 2020 The Android Open Source Project
+// Copyright (C) 2021 The Android Open Source Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,32 +14,30 @@
 
 #pragma once
 
-#include <aidl/device/google/atv/audio_proxy/AudioConfig.h>
-
-#include <memory>
+#include <aidl/device/google/atv/audio_proxy/BnStreamProvider.h>
 
 #include "public/audio_proxy.h"
 
 namespace audio_proxy {
 
-class AudioProxyStreamOut;
+class AudioProxyDevice;
 
-// C++ friendly wrapper of audio_proxy_device. It handles type conversion
-// between C type and aidl type.
-class AudioProxyDevice final {
+class StreamProviderImpl
+    : public aidl::device::google::atv::audio_proxy::BnStreamProvider {
  public:
-  explicit AudioProxyDevice(audio_proxy_device_t* device);
-  ~AudioProxyDevice();
+  explicit StreamProviderImpl(AudioProxyDevice* device);
+  ~StreamProviderImpl() override;
 
-  const char* getServiceName();
-
-  std::unique_ptr<AudioProxyStreamOut> openOutputStream(
-      const std::string& address,
+  // Methods from IStreamProvider:
+  ndk::ScopedAStatus openOutputStream(
+      const std::string& addres,
       const aidl::device::google::atv::audio_proxy::AudioConfig& config,
-      int32_t flags);
+      int32_t flags,
+      std::shared_ptr<aidl::device::google::atv::audio_proxy::IOutputStream>*
+          outputStream) override;
 
  private:
-  audio_proxy_device_t* const mDevice;
+  AudioProxyDevice* const mDevice;
 };
 
 }  // namespace audio_proxy
