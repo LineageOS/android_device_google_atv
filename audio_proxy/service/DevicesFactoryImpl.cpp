@@ -14,26 +14,23 @@
 
 #include "DevicesFactoryImpl.h"
 
-#include <utils/Log.h>
+#include <android-base/logging.h>
 
-#undef LOG_TAG
-#define LOG_TAG "AudioProxyDevicesManagerImpl"
-
-using namespace ::android::hardware::audio::CPP_VERSION;
+using android::hardware::Void;
+using namespace android::hardware::audio::CPP_VERSION;
 
 namespace audio_proxy {
 namespace service {
 
-DevicesFactoryImpl::DevicesFactoryImpl(BusDeviceProvider& busDeviceProvider)
-    : mBusDeviceProvider(busDeviceProvider) {}
+DevicesFactoryImpl::DevicesFactoryImpl(BusStreamProvider& busStreamProvider)
+    : mBusStreamProvider(busStreamProvider) {}
 
-// Methods from ::android::hardware::audio::V5_0::IDevicesFactory follow.
+// Methods from android::hardware::audio::V5_0::IDevicesFactory follow.
 Return<void> DevicesFactoryImpl::openDevice(const hidl_string& device,
                                             openDevice_cb _hidl_cb) {
-  ALOGE("openDevice");
   if (device == "audio_proxy") {
-    ALOGE("Audio Device was opened: %s", device.c_str());
-    _hidl_cb(Result::OK, new DeviceImpl(mBusDeviceProvider));
+    LOG(INFO) << "Audio Device was opened: " << device;
+    _hidl_cb(Result::OK, new DeviceImpl(mBusStreamProvider));
   } else {
     _hidl_cb(Result::INVALID_ARGUMENTS, nullptr);
   }

@@ -17,36 +17,28 @@
 // clang-format off
 #include PATH(android/hardware/audio/FILE_VERSION/IDevicesFactory.h)
 // clang-format on
-#include <hidl/MQDescriptor.h>
-#include <hidl/Status.h>
 
 #include "DeviceImpl.h"
 
 namespace audio_proxy {
 namespace service {
 
-using ::android::sp;
-using ::android::hardware::hidl_array;
-using ::android::hardware::hidl_memory;
-using ::android::hardware::hidl_string;
-using ::android::hardware::hidl_vec;
-using ::android::hardware::Return;
-using ::android::hardware::Void;
-using ::android::hardware::audio::CPP_VERSION::IDevicesFactory;
+using android::hardware::Return;
+using android::hardware::audio::CPP_VERSION::IDevicesFactory;
 
-class BusDeviceProvider;
+class BusStreamProvider;
 
 class DevicesFactoryImpl : public IDevicesFactory {
  public:
-  explicit DevicesFactoryImpl(BusDeviceProvider& busDeviceProvider);
+  explicit DevicesFactoryImpl(BusStreamProvider& busDeviceProvider);
 
-  // Methods from ::android::hardware::audio::V5_0::IDevicesFactory follow.
+  // Methods from android::hardware::audio::V5_0::IDevicesFactory follow.
   Return<void> openDevice(const hidl_string& device,
                           openDevice_cb _hidl_cb) override;
   Return<void> openPrimaryDevice(openPrimaryDevice_cb _hidl_cb) override;
 
  private:
-  BusDeviceProvider& mBusDeviceProvider;
+  BusStreamProvider& mBusStreamProvider;
 };
 
 }  // namespace service

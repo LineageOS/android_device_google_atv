@@ -14,8 +14,7 @@
 
 #include "DummyOutputStream.h"
 
-namespace audio_proxy {
-namespace service {
+namespace audio_proxy::service {
 
 DummyOutputStream::DummyOutputStream(const AudioConfig &config)
     : mChannelMask(config.channelMask), mFormat(config.format),
@@ -196,5 +195,4 @@ Return<Result> DummyOutputStream::selectPresentation(int32_t, int32_t) {
   return Result::NOT_SUPPORTED;
 }
 
-} // namespace service
-} // namespace audio_proxy
+}  // namespace audio_proxy::service
