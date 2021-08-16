@@ -50,14 +50,11 @@ AudioProxyDevice::AudioProxyDevice(audio_proxy_device_t* device)
 AudioProxyDevice::~AudioProxyDevice() = default;
 
 const char* AudioProxyDevice::getServiceName() {
-  // TODO(yucliu): This should be the name of the service name. Temporary use
-  // "default" until the interface between the app and this lib is upgraded.
-  return "default";
+  return mDevice->v2->get_service_name(mDevice->v2);
 }
 
 std::unique_ptr<AudioProxyStreamOut> AudioProxyDevice::openOutputStream(
-    const std::string& /* address */, const AudioConfig& aidlConfig,
-    int32_t flags) {
+    const std::string& address, const AudioConfig& aidlConfig, int32_t flags) {
   audio_proxy_config_t config = {
       .format = static_cast<audio_proxy_format_t>(aidlConfig.format),
       .sample_rate = static_cast<uint32_t>(aidlConfig.sampleRateHz),
@@ -69,9 +66,9 @@ std::unique_ptr<AudioProxyStreamOut> AudioProxyDevice::openOutputStream(
   // TODO(yucliu): Pass address to the app. For now, the only client app
   // (MediaShell) can use flags to distinguish different streams.
   audio_proxy_stream_out_t* stream = nullptr;
-  int ret = mDevice->open_output_stream(
-      mDevice, static_cast<audio_proxy_output_flags_t>(flags), &config,
-      &stream);
+  int ret = mDevice->v2->open_output_stream(
+      mDevice->v2, address.c_str(),
+      static_cast<audio_proxy_output_flags_t>(flags), &config, &stream);
 
   if (ret || !stream) {
     return nullptr;

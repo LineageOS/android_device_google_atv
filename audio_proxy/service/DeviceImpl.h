@@ -48,7 +48,8 @@ class BusStreamProvider;
 
 class DeviceImpl : public IDevice {
  public:
-  explicit DeviceImpl(BusStreamProvider& busStreamProvider);
+  DeviceImpl(BusStreamProvider& busStreamProvider, uint32_t bufferSizeMs,
+             uint32_t latencyMs);
 
   // Methods from ::android::hardware::audio::V5_0::IDevice follow.
   Return<Result> initCheck() override;
@@ -92,6 +93,8 @@ class DeviceImpl : public IDevice {
 
  private:
   BusStreamProvider& mBusStreamProvider;
+  const uint32_t mBufferSizeMs;
+  const uint32_t mLatencyMs;
 };
 
 }  // namespace service

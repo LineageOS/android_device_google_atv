@@ -33,7 +33,11 @@ namespace {
 
 bool checkDevice(audio_proxy_device_t* device) {
   return device && device->get_address && device->open_output_stream &&
-         device->close_output_stream;
+         device->close_output_stream &&
+         // Check v2 extension. Currently only MediaShell uses this library and
+         // we'll make sure the MediaShell will update to use the new API.
+         device->v2 && device->v2->get_service_name &&
+         device->v2->open_output_stream;
 }
 
 std::shared_ptr<IAudioProxy> getAudioProxyService(

@@ -33,7 +33,6 @@ namespace {
 
 // 1GB
 constexpr uint32_t kMaxBufferSize = 1 << 30;
-constexpr uint32_t kDefaultLatencyMs = 40;
 
 constexpr int64_t kOneSecInNs = 1'000'000'000;
 
@@ -81,9 +80,12 @@ uint64_t estimatePlayedFramesSince(const TimeSpec& timestamp,
 
 }  // namespace
 
-StreamOutImpl::StreamOutImpl(std::shared_ptr<BusOutputStream> stream)
+StreamOutImpl::StreamOutImpl(std::shared_ptr<BusOutputStream> stream,
+                             uint32_t bufferSizeMs, uint32_t latencyMs)
     : mStream(std::move(stream)),
       mConfig(fromAidlAudioConfig(mStream->getConfig())),
+      mBufferSizeMs(bufferSizeMs),
+      mLatencyMs(latencyMs),
       mEventFlag(nullptr, deleteEventFlag) {}
 
 StreamOutImpl::~StreamOutImpl() {
@@ -103,12 +105,11 @@ Return<uint64_t> StreamOutImpl::getFrameSize() {
 }
 
 Return<uint64_t> StreamOutImpl::getFrameCount() {
-  return 20 * mConfig.sampleRateHz / 1000;
+  return mBufferSizeMs * mConfig.sampleRateHz / 1000;
 }
 
 Return<uint64_t> StreamOutImpl::getBufferSize() {
-  // TODO(yucliu): The buffer size should be provided by command line args.
-  return 20 * mConfig.sampleRateHz * mStream->getFrameSize() / 1000;
+  return mBufferSizeMs * mConfig.sampleRateHz * mStream->getFrameSize() / 1000;
 }
 
 Return<uint32_t> StreamOutImpl::getSampleRate() { return mConfig.sampleRateHz; }
@@ -207,10 +208,7 @@ Return<Result> StreamOutImpl::close() {
   return mStream->close() ? Result::OK : Result::INVALID_STATE;
 }
 
-Return<uint32_t> StreamOutImpl::getLatency() {
-  // TODO(yucliu): Get the value from command line.
-  return kDefaultLatencyMs;
-}
+Return<uint32_t> StreamOutImpl::getLatency() { return mLatencyMs; }
 
 Return<Result> StreamOutImpl::setVolume(float left, float right) {
   return mStream->setVolume(left, right) ? Result::OK : Result::INVALID_STATE;
@@ -282,7 +280,7 @@ Return<void> StreamOutImpl::prepareForWriting(uint32_t frameSize,
 
   sp<WriteThread> writeThread =
       sp<WriteThread>::make(mStream, commandMQ.get(), dataMQ.get(),
-                            statusMQ.get(), eventFlag.get(), kDefaultLatencyMs);
+                            statusMQ.get(), eventFlag.get(), mLatencyMs);
   status = writeThread->run("writer", ::android::PRIORITY_URGENT_AUDIO);
   if (status != ::android::OK) {
     LOG(ERROR) << "Failed to start writer thread: " << strerror(-status);

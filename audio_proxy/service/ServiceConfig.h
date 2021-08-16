@@ -14,26 +14,23 @@
 
 #pragma once
 
-namespace audio_proxy {
-namespace service {
+#include <stdint.h>
 
-enum {
-  ERROR_UNEXPECTED = 1,
+#include <string>
 
-  // Error caused by AIDL transactions. It doesn't include client/server logical
-  // failures.
-  ERROR_AIDL_FAILURE = 2,
+namespace audio_proxy::service {
 
-  // Error caused by HIDL transactions. It doesn't include client/server logical
-  // failures.
-  ERROR_HIDL_FAILURE = 3,
+// Global configurations for the audio HAL service and AudioProxy service.
+struct ServiceConfig {
+  // Name of the service. It will be used to identify the audio HAL service and
+  // AudioProxy service.
+  std::string name;
 
-  // The server already has a registered IStreamProvider.
-  ERROR_STREAM_PROVIDER_EXIST = 4,
+  // Buffer size in milliseconds, as defined by IStream::getBufferSize.
+  uint32_t bufferSizeMs = 0;
 
-  // Invalid command line args.
-  ERROR_INVALID_ARGS = 5,
+  // Latency in milliseconds, as defined by IStreamOut::getLatency.
+  uint32_t latencyMs = 0;
 };
 
-}  // namespace service
-}  // namespace audio_proxy
+}  // namespace audio_proxy::service
