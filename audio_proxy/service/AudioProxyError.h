@@ -30,6 +30,9 @@ enum {
 
   // The server already has a registered IStreamProvider.
   ERROR_STREAM_PROVIDER_EXIST = 4,
+
+  // Invalid command line args.
+  ERROR_INVALID_ARGS = 5,
 };
 
 }  // namespace service

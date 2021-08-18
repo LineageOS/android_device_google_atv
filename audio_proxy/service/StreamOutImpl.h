@@ -50,7 +50,8 @@ class StreamOutImpl : public IStreamOut {
   using DataMQ = MessageQueue<uint8_t, kSynchronizedReadWrite>;
   using StatusMQ = MessageQueue<WriteStatus, kSynchronizedReadWrite>;
 
-  explicit StreamOutImpl(std::shared_ptr<BusOutputStream> stream);
+  StreamOutImpl(std::shared_ptr<BusOutputStream> stream, uint32_t bufferSizeMs,
+                uint32_t latencyMs);
   ~StreamOutImpl() override;
 
   std::shared_ptr<BusOutputStream> getOutputStream();
@@ -120,6 +121,8 @@ class StreamOutImpl : public IStreamOut {
 
   std::shared_ptr<BusOutputStream> mStream;
   const AudioConfig mConfig;
+  const uint32_t mBufferSizeMs;
+  const uint32_t mLatencyMs;
 
   std::unique_ptr<CommandMQ> mCommandMQ;
   std::unique_ptr<DataMQ> mDataMQ;

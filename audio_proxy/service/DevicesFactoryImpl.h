@@ -19,6 +19,7 @@
 // clang-format on
 
 #include "DeviceImpl.h"
+#include "ServiceConfig.h"
 
 namespace audio_proxy {
 namespace service {
@@ -30,7 +31,8 @@ class BusStreamProvider;
 
 class DevicesFactoryImpl : public IDevicesFactory {
  public:
-  explicit DevicesFactoryImpl(BusStreamProvider& busDeviceProvider);
+  DevicesFactoryImpl(BusStreamProvider& busDeviceProvider,
+                     const ServiceConfig& config);
 
   // Methods from android::hardware::audio::V5_0::IDevicesFactory follow.
   Return<void> openDevice(const hidl_string& device,
@@ -39,6 +41,7 @@ class DevicesFactoryImpl : public IDevicesFactory {
 
  private:
   BusStreamProvider& mBusStreamProvider;
+  const ServiceConfig mConfig;
 };
 
 }  // namespace service

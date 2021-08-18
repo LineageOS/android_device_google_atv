@@ -22,15 +22,18 @@ using namespace android::hardware::audio::CPP_VERSION;
 namespace audio_proxy {
 namespace service {
 
-DevicesFactoryImpl::DevicesFactoryImpl(BusStreamProvider& busStreamProvider)
-    : mBusStreamProvider(busStreamProvider) {}
+DevicesFactoryImpl::DevicesFactoryImpl(BusStreamProvider& busStreamProvider,
+                                       const ServiceConfig& config)
+    : mBusStreamProvider(busStreamProvider), mConfig(config) {}
 
 // Methods from android::hardware::audio::V5_0::IDevicesFactory follow.
 Return<void> DevicesFactoryImpl::openDevice(const hidl_string& device,
                                             openDevice_cb _hidl_cb) {
-  if (device == "audio_proxy") {
+  if (device == mConfig.name) {
     LOG(INFO) << "Audio Device was opened: " << device;
-    _hidl_cb(Result::OK, new DeviceImpl(mBusStreamProvider));
+    _hidl_cb(Result::OK,
+             new DeviceImpl(mBusStreamProvider, mConfig.bufferSizeMs,
+                            mConfig.latencyMs));
   } else {
     _hidl_cb(Result::INVALID_ARGUMENTS, nullptr);
   }

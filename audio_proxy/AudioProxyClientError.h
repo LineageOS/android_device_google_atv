@@ -1,4 +1,4 @@
-// Copyright (C) 2020 The Android Open Source Project
+// Copyright (C) 2021 The Android Open Source Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,18 +14,16 @@
 
 #pragma once
 
-#include <memory>
-
-#include "public/audio_proxy.h"
-
 namespace audio_proxy {
 
-class AudioProxyManager {
- public:
-  virtual ~AudioProxyManager() = default;
+enum {
+  ERROR_UNEXPECTED = 1,
 
-  virtual bool registerDevice(audio_proxy_device_t* device) = 0;
+  // The arguments don't meet requirements.
+  ERROR_INVALID_ARGS = 2,
+
+  // Failure happens when creating FMQ.
+  ERROR_FMQ_CREATION_FAILURE = 3,
 };
 
-std::unique_ptr<AudioProxyManager> createAudioProxyManager();
 }  // namespace audio_proxy
