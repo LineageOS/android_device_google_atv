@@ -27,3 +27,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/google/atv/atv-component-overrides.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/atv-component-overrides.xml \
 
+# Too many tombstones can cause bugreports to grow too large to be uploaded.
+PRODUCT_PRODUCT_PROPERTIES += \
+    tombstoned.max_tombstone_count?=10
