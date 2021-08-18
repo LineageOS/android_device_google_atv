@@ -18,7 +18,7 @@
 
 package device.google.atv.audio_proxy;
 @FixedSize @VintfStability
-parcelable RenderingLatency {
+parcelable PresentationPosition {
   long frames;
   device.google.atv.audio_proxy.TimeSpec timestamp;
 }

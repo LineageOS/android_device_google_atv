@@ -20,5 +20,5 @@ package device.google.atv.audio_proxy;
 @FixedSize @VintfStability
 parcelable WriteStatus {
   long written;
-  device.google.atv.audio_proxy.RenderingLatency latency;
+  device.google.atv.audio_proxy.PresentationPosition position;
 }
