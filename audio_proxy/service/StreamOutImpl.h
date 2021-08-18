@@ -40,6 +40,9 @@ using namespace android::hardware::audio::CPP_VERSION;
 namespace audio_proxy::service {
 
 class BusOutputStream;
+class WriteThread;
+
+typedef void (*EventFlagDeleter)(EventFlag*);
 
 class StreamOutImpl : public IStreamOut {
  public:
@@ -113,8 +116,18 @@ class StreamOutImpl : public IStreamOut {
                                     int32_t programId) override;
 
  private:
+  uint64_t estimateTotalPlayedFrames() const;
+
   std::shared_ptr<BusOutputStream> mStream;
   const AudioConfig mConfig;
+
+  std::unique_ptr<CommandMQ> mCommandMQ;
+  std::unique_ptr<DataMQ> mDataMQ;
+  std::unique_ptr<StatusMQ> mStatusMQ;
+  std::unique_ptr<EventFlag, EventFlagDeleter> mEventFlag;
+  sp<WriteThread> mWriteThread;
+
+  uint64_t mTotalPlayedFramesSinceStandby = 0;
 };
 
 }  // namespace audio_proxy::service
