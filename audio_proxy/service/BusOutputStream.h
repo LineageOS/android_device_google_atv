@@ -30,6 +30,7 @@ class BusOutputStream {
   const std::string& getAddress() const;
   const AidlAudioConfig& getConfig() const;
   int32_t getFlags() const;
+  int getFrameSize() const;
 
   bool prepareForWriting(uint32_t frameSize, uint32_t frameCount);
   uint32_t getWritingFrameSize() const;

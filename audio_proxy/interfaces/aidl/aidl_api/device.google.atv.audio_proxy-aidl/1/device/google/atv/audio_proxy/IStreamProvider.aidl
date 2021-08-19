@@ -17,8 +17,7 @@
 // later when a module using the interface is updated, e.g., Mainline modules.
 
 package device.google.atv.audio_proxy;
-@FixedSize @VintfStability
-parcelable WriteStatus {
-  long written;
-  device.google.atv.audio_proxy.PresentationPosition position;
+@VintfStability
+interface IStreamProvider {
+  device.google.atv.audio_proxy.IOutputStream openOutputStream(in String address, in device.google.atv.audio_proxy.AudioConfig config, in int flags);
 }

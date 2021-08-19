@@ -17,8 +17,14 @@
 // later when a module using the interface is updated, e.g., Mainline modules.
 
 package device.google.atv.audio_proxy;
-@FixedSize @VintfStability
-parcelable WriteStatus {
-  long written;
-  device.google.atv.audio_proxy.PresentationPosition position;
+@VintfStability
+interface IOutputStream {
+  void standby();
+  void close();
+  void pause();
+  void resume();
+  void drain(device.google.atv.audio_proxy.AudioDrain drain);
+  void flush();
+  void prepareForWriting(in int frameSize, in int framesCount, out android.hardware.common.fmq.MQDescriptor<byte,android.hardware.common.fmq.SynchronizedReadWrite> dataMQ, out android.hardware.common.fmq.MQDescriptor<device.google.atv.audio_proxy.WriteStatus,android.hardware.common.fmq.SynchronizedReadWrite> statusMQ);
+  void setVolume(float left, float right);
 }

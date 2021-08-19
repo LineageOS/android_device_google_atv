@@ -17,8 +17,9 @@
 // later when a module using the interface is updated, e.g., Mainline modules.
 
 package device.google.atv.audio_proxy;
-@FixedSize @VintfStability
-parcelable WriteStatus {
-  long written;
-  device.google.atv.audio_proxy.PresentationPosition position;
+@Backing(type="int") @VintfStability
+enum AudioFormat {
+  PCM_16_BIT = 1,
+  PCM_8_BIT = 2,
+  PCM_FLOAT = 5,
 }
