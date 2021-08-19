@@ -1,4 +1,4 @@
-// Copyright (C) 2020 The Android Open Source Project
+// Copyright (C) 2021 The Android Open Source Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,18 +14,15 @@
 
 #pragma once
 
-#include <memory>
+#include <stddef.h>
+#include <stdint.h>
 
-#include "public/audio_proxy.h"
+namespace audio_proxy::service {
 
-namespace audio_proxy {
+// Copy data from ring buffer "src" to ring buffer "dst". "dst" is guaranteed to
+// have more space than "src".
+void copyRingBuffer(int8_t* dstBuf1, size_t dstLen1, int8_t* dstBuf2,
+                    size_t dstLen2, const int8_t* srcBuf1, size_t srcLen1,
+                    const int8_t* srcBuf2, size_t srcLen2);
 
-class AudioProxyManager {
- public:
-  virtual ~AudioProxyManager() = default;
-
-  virtual bool registerDevice(audio_proxy_device_t* device) = 0;
-};
-
-std::unique_ptr<AudioProxyManager> createAudioProxyManager();
-}  // namespace audio_proxy
+}  // namespace audio_proxy::service

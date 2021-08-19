@@ -1,4 +1,4 @@
-// Copyright (C) 2020 The Android Open Source Project
+// Copyright (C) 2021 The Android Open Source Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,18 +14,23 @@
 
 #pragma once
 
-#include <memory>
+#include <stdint.h>
 
-#include "public/audio_proxy.h"
+#include <string>
 
-namespace audio_proxy {
+namespace audio_proxy::service {
 
-class AudioProxyManager {
- public:
-  virtual ~AudioProxyManager() = default;
+// Global configurations for the audio HAL service and AudioProxy service.
+struct ServiceConfig {
+  // Name of the service. It will be used to identify the audio HAL service and
+  // AudioProxy service.
+  std::string name;
 
-  virtual bool registerDevice(audio_proxy_device_t* device) = 0;
+  // Buffer size in milliseconds, as defined by IStream::getBufferSize.
+  uint32_t bufferSizeMs = 0;
+
+  // Latency in milliseconds, as defined by IStreamOut::getLatency.
+  uint32_t latencyMs = 0;
 };
 
-std::unique_ptr<AudioProxyManager> createAudioProxyManager();
-}  // namespace audio_proxy
+}  // namespace audio_proxy::service

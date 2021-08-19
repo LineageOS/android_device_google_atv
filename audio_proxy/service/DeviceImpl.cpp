@@ -41,8 +41,11 @@ AidlAudioConfig toAidlAudioConfig(const AudioConfig& hidl_config) {
 }
 }  // namespace
 
-DeviceImpl::DeviceImpl(BusStreamProvider& busStreamProvider)
-    : mBusStreamProvider(busStreamProvider) {}
+DeviceImpl::DeviceImpl(BusStreamProvider& busStreamProvider,
+                       uint32_t bufferSizeMs, uint32_t latencyMs)
+    : mBusStreamProvider(busStreamProvider),
+      mBufferSizeMs(bufferSizeMs),
+      mLatencyMs(latencyMs) {}
 
 // Methods from ::android::hardware::audio::V5_0::IDevice follow.
 Return<Result> DeviceImpl::initCheck() { return Result::OK; }
@@ -92,7 +95,8 @@ Return<void> DeviceImpl::openOutputStream(int32_t ioHandle,
                                           toAidlAudioConfig(config),
                                           static_cast<int32_t>(flags));
   DCHECK(busOutputStream);
-  auto streamOut = sp<StreamOutImpl>::make(std::move(busOutputStream));
+  auto streamOut = sp<StreamOutImpl>::make(std::move(busOutputStream),
+                                           mBufferSizeMs, mLatencyMs);
   mBusStreamProvider.onStreamOutCreated(streamOut);
   _hidl_cb(Result::OK, streamOut, config);
   return Void();

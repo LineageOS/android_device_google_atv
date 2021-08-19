@@ -19,6 +19,9 @@
 #include <algorithm>
 
 #include "DummyBusOutputStream.h"
+#include "RemoteBusOutputStream.h"
+
+using aidl::device::google::atv::audio_proxy::IOutputStream;
 
 namespace audio_proxy::service {
 
@@ -58,9 +61,20 @@ void BusStreamProvider::onStreamOutCreated(wp<StreamOutImpl> stream) {
 
 std::shared_ptr<BusOutputStream> BusStreamProvider::openOutputStream_Locked(
     const std::string& address, const AidlAudioConfig& config, int32_t flags) {
-  // TODO(yucliu): Return AIDL interface based RemoteBusOutputStream when stream
-  // provider is available.
-  return std::make_shared<DummyBusOutputStream>(address, config, flags);
+  if (!mStreamProvider) {
+    return std::make_shared<DummyBusOutputStream>(address, config, flags);
+  }
+
+  std::shared_ptr<IOutputStream> stream;
+  ndk::ScopedAStatus status =
+      mStreamProvider->openOutputStream(address, config, flags, &stream);
+  if (!status.isOk() || !stream) {
+    LOG(ERROR) << "Failed to open output stream, status " << status.getStatus();
+    return std::make_shared<DummyBusOutputStream>(address, config, flags);
+  }
+
+  return std::make_shared<RemoteBusOutputStream>(std::move(stream), address,
+                                                 config, flags);
 }
 
 void BusStreamProvider::cleanStreamOutList_Locked() {

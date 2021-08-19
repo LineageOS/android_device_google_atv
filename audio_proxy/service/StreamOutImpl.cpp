@@ -16,7 +16,6 @@
 
 #include <android-base/logging.h>
 #include <inttypes.h>
-#include <system/audio.h>
 #include <time.h>
 #include <utils/Log.h>
 
@@ -24,6 +23,7 @@
 
 #include "AidlTypes.h"
 #include "BusOutputStream.h"
+#include "WriteThread.h"
 
 using android::status_t;
 
@@ -33,19 +33,18 @@ namespace {
 
 // 1GB
 constexpr uint32_t kMaxBufferSize = 1 << 30;
-constexpr uint32_t kDefaultLatencyMs = 40;
 
-uint64_t calcFrameSize(const AudioConfig& config) {
-  audio_format_t format = static_cast<audio_format_t>(config.format);
+constexpr int64_t kOneSecInNs = 1'000'000'000;
 
-  if (!audio_has_proportional_frames(format)) {
-    return sizeof(int8_t);
+void deleteEventFlag(EventFlag* obj) {
+  if (!obj) {
+    return;
   }
 
-  size_t channelSampleSize = audio_bytes_per_sample(format);
-  return audio_channel_count_from_out_mask(
-             static_cast<audio_channel_mask_t>(config.channelMask)) *
-         channelSampleSize;
+  status_t status = EventFlag::deleteEventFlag(&obj);
+  if (status) {
+    LOG(ERROR) << "Write MQ event flag deletion error: " << strerror(-status);
+  }
 }
 
 AudioConfig fromAidlAudioConfig(const AidlAudioConfig& aidlConfig) {
@@ -58,25 +57,59 @@ AudioConfig fromAidlAudioConfig(const AidlAudioConfig& aidlConfig) {
   return config;
 }
 
+uint64_t estimatePlayedFramesSince(const TimeSpec& timestamp,
+                                   uint32_t sampleRateHz) {
+  timespec now = {0, 0};
+  clock_gettime(CLOCK_MONOTONIC, &now);
+  int64_t deltaSec = 0;
+  int64_t deltaNSec = 0;
+  if (now.tv_nsec >= timestamp.tvNSec) {
+    deltaSec = now.tv_sec - timestamp.tvSec;
+    deltaNSec = now.tv_nsec - timestamp.tvNSec;
+  } else {
+    deltaSec = now.tv_sec - timestamp.tvSec - 1;
+    deltaNSec = kOneSecInNs + now.tv_nsec - timestamp.tvNSec;
+  }
+
+  if (deltaSec < 0 || deltaNSec < 0) {
+    return 0;
+  }
+
+  return deltaSec * sampleRateHz + deltaNSec * sampleRateHz / kOneSecInNs;
+}
+
 }  // namespace
 
-StreamOutImpl::StreamOutImpl(std::shared_ptr<BusOutputStream> stream)
+StreamOutImpl::StreamOutImpl(std::shared_ptr<BusOutputStream> stream,
+                             uint32_t bufferSizeMs, uint32_t latencyMs)
     : mStream(std::move(stream)),
-      mConfig(fromAidlAudioConfig(mStream->getConfig())) {}
+      mConfig(fromAidlAudioConfig(mStream->getConfig())),
+      mBufferSizeMs(bufferSizeMs),
+      mLatencyMs(latencyMs),
+      mEventFlag(nullptr, deleteEventFlag) {}
 
-StreamOutImpl::~StreamOutImpl() = default;
+StreamOutImpl::~StreamOutImpl() {
+  if (mWriteThread) {
+    mWriteThread->stop();
+    status_t status = mWriteThread->join();
+    if (status) {
+      LOG(ERROR) << "write thread exit error " << strerror(-status);
+    }
+  }
+
+  mEventFlag.reset();
+}
 
 Return<uint64_t> StreamOutImpl::getFrameSize() {
-  return calcFrameSize(mConfig);
+  return mStream->getFrameSize();
 }
 
 Return<uint64_t> StreamOutImpl::getFrameCount() {
-  return 20 * mConfig.sampleRateHz / 1000;
+  return mBufferSizeMs * mConfig.sampleRateHz / 1000;
 }
 
 Return<uint64_t> StreamOutImpl::getBufferSize() {
-  // TODO(yucliu): The buffer size should be provided by command line args.
-  return 20 * mConfig.sampleRateHz * calcFrameSize(mConfig) / 1000;
+  return mBufferSizeMs * mConfig.sampleRateHz * mStream->getFrameSize() / 1000;
 }
 
 Return<uint32_t> StreamOutImpl::getSampleRate() { return mConfig.sampleRateHz; }
@@ -132,7 +165,13 @@ Return<Result> StreamOutImpl::removeEffect(uint64_t effectId) {
 }
 
 Return<Result> StreamOutImpl::standby() {
-  return mStream->standby() ? Result::OK : Result::INVALID_STATE;
+  bool success = mStream->standby();
+  if (!success) {
+    return Result::INVALID_STATE;
+  }
+
+  mTotalPlayedFramesSinceStandby = estimateTotalPlayedFrames();
+  return Result::OK;
 }
 
 Return<void> StreamOutImpl::getDevices(getDevices_cb _hidl_cb) {
@@ -163,15 +202,13 @@ Return<Result> StreamOutImpl::setHwAvSync(uint32_t hwAvSync) {
 }
 
 Return<Result> StreamOutImpl::close() {
+  if (mWriteThread) {
+    mWriteThread->stop();
+  }
   return mStream->close() ? Result::OK : Result::INVALID_STATE;
 }
 
-Return<uint32_t> StreamOutImpl::getLatency() {
-  // TODO(yucliu): If no audio data is written into client, use the default
-  // latency from command line args. Otherwise calculate the value from
-  // AidlWriteStatus returned by mStream.writeRingBuffer.
-  return kDefaultLatencyMs;
-}
+Return<uint32_t> StreamOutImpl::getLatency() { return mLatencyMs; }
 
 Return<Result> StreamOutImpl::setVolume(float left, float right) {
   return mStream->setVolume(left, right) ? Result::OK : Result::INVALID_STATE;
@@ -189,15 +226,98 @@ Return<void> StreamOutImpl::prepareForWriting(uint32_t frameSize,
     return Void();
   };
 
-  // TODO(yucliu): Create a thread to read data from FMQ and write the data into
-  // mStream.
-  return sendError(Result::INVALID_STATE);
+  if (mDataMQ) {
+    LOG(ERROR) << "The client attempted to call prepareForWriting twice";
+    return sendError(Result::INVALID_STATE);
+  }
+
+  if (frameSize == 0 || framesCount == 0) {
+    LOG(ERROR) << "Invalid frameSize (" << frameSize << ") or framesCount ("
+               << framesCount << ")";
+    return sendError(Result::INVALID_ARGUMENTS);
+  }
+
+  if (frameSize > kMaxBufferSize / framesCount) {
+    LOG(ERROR) << "Buffer too big: " << frameSize << "*" << framesCount
+               << " bytes > MAX_BUFFER_SIZE (" << kMaxBufferSize << ")";
+    return sendError(Result::INVALID_ARGUMENTS);
+  }
+
+  auto commandMQ = std::make_unique<CommandMQ>(1);
+  if (!commandMQ->isValid()) {
+    LOG(ERROR) << "Command MQ is invalid";
+    return sendError(Result::INVALID_ARGUMENTS);
+  }
+
+  auto dataMQ =
+      std::make_unique<DataMQ>(frameSize * framesCount, true /* EventFlag */);
+  if (!dataMQ->isValid()) {
+    LOG(ERROR) << "Data MQ is invalid";
+    return sendError(Result::INVALID_ARGUMENTS);
+  }
+
+  auto statusMQ = std::make_unique<StatusMQ>(1);
+  if (!statusMQ->isValid()) {
+    LOG(ERROR) << "Status MQ is invalid";
+    return sendError(Result::INVALID_ARGUMENTS);
+  }
+
+  EventFlag* rawEventFlag = nullptr;
+  status_t status =
+      EventFlag::createEventFlag(dataMQ->getEventFlagWord(), &rawEventFlag);
+  std::unique_ptr<EventFlag, EventFlagDeleter> eventFlag(rawEventFlag,
+                                                         deleteEventFlag);
+  if (status != ::android::OK || !eventFlag) {
+    LOG(ERROR) << "Failed creating event flag for data MQ: "
+               << strerror(-status);
+    return sendError(Result::INVALID_ARGUMENTS);
+  }
+
+  if (!mStream->prepareForWriting(frameSize, framesCount)) {
+    LOG(ERROR) << "Failed to prepare writing channel.";
+    return sendError(Result::INVALID_ARGUMENTS);
+  }
+
+  sp<WriteThread> writeThread =
+      sp<WriteThread>::make(mStream, commandMQ.get(), dataMQ.get(),
+                            statusMQ.get(), eventFlag.get(), mLatencyMs);
+  status = writeThread->run("writer", ::android::PRIORITY_URGENT_AUDIO);
+  if (status != ::android::OK) {
+    LOG(ERROR) << "Failed to start writer thread: " << strerror(-status);
+    return sendError(Result::INVALID_ARGUMENTS);
+  }
+
+  mCommandMQ = std::move(commandMQ);
+  mDataMQ = std::move(dataMQ);
+  mStatusMQ = std::move(statusMQ);
+  mEventFlag = std::move(eventFlag);
+  mWriteThread = std::move(writeThread);
+  threadInfo.pid = getpid();
+  threadInfo.tid = mWriteThread->getTid();
+  _hidl_cb(Result::OK, *mCommandMQ->getDesc(), *mDataMQ->getDesc(),
+           *mStatusMQ->getDesc(), threadInfo);
+
+  return Void();
 }
 
 Return<void> StreamOutImpl::getRenderPosition(getRenderPosition_cb _hidl_cb) {
-  // TODO(yucliu): Render position can be calculated by the AidlWriteStatus
-  // returned by the mStream.writeRingBuffer.
-  _hidl_cb(Result::NOT_SUPPORTED, 0);
+  uint64_t totalPlayedFrames = estimateTotalPlayedFrames();
+  if (totalPlayedFrames == 0) {
+    _hidl_cb(Result::OK, 0);
+    return Void();
+  }
+
+  // getRenderPosition returns the number of frames played since the output has
+  // exited standby.
+  DCHECK_GE(totalPlayedFrames, mTotalPlayedFramesSinceStandby);
+  uint64_t position = totalPlayedFrames - mTotalPlayedFramesSinceStandby;
+
+  if (position > std::numeric_limits<uint32_t>::max()) {
+    _hidl_cb(Result::INVALID_STATE, 0);
+    return Void();
+  }
+
+  _hidl_cb(Result::OK, position);
   return Void();
 }
 
@@ -242,9 +362,13 @@ Return<Result> StreamOutImpl::flush() {
 
 Return<void> StreamOutImpl::getPresentationPosition(
     getPresentationPosition_cb _hidl_cb) {
-  // TODO(yucliu): Presentation position can be calculated by the
-  // AidlWriteStatus returned by the mStream.writeRingBuffer.
-  _hidl_cb(Result::NOT_SUPPORTED, 0, {});
+  if (!mWriteThread) {
+    _hidl_cb(Result::INVALID_STATE, 0, {});
+    return Void();
+  }
+
+  auto [frames, timestamp] = mWriteThread->getPresentationPosition();
+  _hidl_cb(Result::OK, frames, timestamp);
   return Void();
 }
 
@@ -286,10 +410,26 @@ void StreamOutImpl::updateOutputStream(
     return;
   }
 
-  // TODO(yucliu): Call mStream.prepareForWriting if audioserver starts to write
-  // data.
+  if (mWriteThread) {
+    if (!stream->prepareForWriting(mStream->getWritingFrameSize(),
+                                   mStream->getWritingFrameCount())) {
+      LOG(ERROR) << "Failed to prepare writing channel.";
+      return;
+    }
+
+    mWriteThread->updateOutputStream(stream);
+  }
 
   mStream = std::move(stream);
+}
+
+uint64_t StreamOutImpl::estimateTotalPlayedFrames() const {
+  if (!mWriteThread) {
+    return 0;
+  }
+
+  auto [frames, timestamp] = mWriteThread->getPresentationPosition();
+  return frames + estimatePlayedFramesSince(timestamp, mConfig.sampleRateHz);
 }
 
 }  // namespace audio_proxy::service

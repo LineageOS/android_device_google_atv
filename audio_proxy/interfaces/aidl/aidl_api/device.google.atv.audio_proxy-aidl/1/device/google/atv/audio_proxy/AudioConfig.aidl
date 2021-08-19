@@ -17,8 +17,9 @@
 // later when a module using the interface is updated, e.g., Mainline modules.
 
 package device.google.atv.audio_proxy;
-@FixedSize @VintfStability
-parcelable WriteStatus {
-  long written;
-  device.google.atv.audio_proxy.PresentationPosition position;
+@VintfStability
+parcelable AudioConfig {
+  device.google.atv.audio_proxy.AudioFormat format;
+  int sampleRateHz;
+  device.google.atv.audio_proxy.AudioChannelMask channelMask;
 }

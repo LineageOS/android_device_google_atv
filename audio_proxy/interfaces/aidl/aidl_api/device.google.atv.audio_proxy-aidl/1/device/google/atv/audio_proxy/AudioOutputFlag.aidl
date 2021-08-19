@@ -17,8 +17,9 @@
 // later when a module using the interface is updated, e.g., Mainline modules.
 
 package device.google.atv.audio_proxy;
-@FixedSize @VintfStability
-parcelable RenderingLatency {
-  long frames;
-  device.google.atv.audio_proxy.TimeSpec timestamp;
+@Backing(type="int") @VintfStability
+enum AudioOutputFlag {
+  NONE = 0,
+  DIRECT = 1,
+  HW_AV_SYNC = 64,
 }
