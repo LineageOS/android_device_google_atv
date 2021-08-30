@@ -60,7 +60,7 @@ cc_binary {
   shared_libs: [
     "android.hardware.audio@5.0",
     "android.hardware.audio.common@5.0",
-    "device.google.atv.audio_proxy-aidl-V1-ndk_platform",
+    "device.google.atv.audio_proxy-aidl-V1-ndk",
     "libbase",
     "libbinder_ndk",
     "libhidlbase",
