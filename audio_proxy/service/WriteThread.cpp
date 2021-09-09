@@ -160,10 +160,6 @@ bool WriteThread::threadLoop() {
     switch (replyTo) {
       case IStreamOut::WriteCommand::WRITE:
         status = doWrite(stream.get());
-        if (status.retval != Result::OK) {
-          LOG(ERROR) << "write status not ok";
-          continue;
-        }
         break;
       case IStreamOut::WriteCommand::GET_PRESENTATION_POSITION:
         // If we don't write data for a while, the presentation position info
