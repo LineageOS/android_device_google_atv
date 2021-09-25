@@ -41,9 +41,6 @@
           Once UI mode is locked, applications cannot change it anymore. -->
     <bool name="config_lockUiMode">true</bool>
 
-    <!-- default device has recents property -->
-    <bool name="config_hasRecents">false</bool>
-
     <!-- Control the behavior when the user long presses the home button.
             0 - Nothing
             1 - Launch all apps intent
