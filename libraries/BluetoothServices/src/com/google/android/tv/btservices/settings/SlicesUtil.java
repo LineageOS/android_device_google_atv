@@ -2,17 +2,10 @@
 
 package com.google.android.tv.btservices.settings;
 
-import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.net.Uri;
-
-import androidx.core.graphics.drawable.IconCompat;
-
 import com.android.tv.twopanelsettings.slices.SlicesConstants;
-import com.android.tv.twopanelsettings.slices.builders.PreferenceSliceBuilder;
 
-import com.google.android.tv.btservices.BluetoothUtils;
-import com.google.android.tv.btservices.R;
 
 /**
  * Utility class for slices.

@@ -20,7 +20,6 @@ import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ImageSpan;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -97,7 +96,7 @@ public class BluetoothScannerFragment extends LeanbackPreferenceFragment {
             mPrefGroup.addPreference(pairRemotePref);
         }
 
-        mAvailableCategory = (PreferenceCategory) mPrefGroup.findPreference(KEY_AVAILABLE_DEVICES);
+        mAvailableCategory = mPrefGroup.findPreference(KEY_AVAILABLE_DEVICES);
         if (mAvailableCategory == null) {
             mAvailableCategory = new PreferenceCategory(preferenceContext);
             mAvailableCategory.setKey(KEY_AVAILABLE_DEVICES);

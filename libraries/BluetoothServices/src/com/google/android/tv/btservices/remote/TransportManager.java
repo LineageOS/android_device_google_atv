@@ -17,13 +17,15 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-// Gatt-based communication between ATV and the remote
-//
-// Requests to the remote are placed into a queue and processed in queue order. Some requests
-// are expected to have reponses (for example requesting battery level and receiving the level).
-// Gatt connections are terminated when all requests have been sent. We also set a timeout -
-// if requests are not sent within a certain window, then we deem those as failed requests.
-
+/**
+ * Gatt-based communication between ATV and the remote.
+ *
+ * <p>Requests to the remote are placed into a queue and processed in queue order. Some requests are
+ * expected to have responses (for example requesting battery level and receiving the level).
+ * Gatt connections are terminated when all requests have been sent.
+ * We also set a timeout - if requests are not sent within a certain window, then we deem those as
+ * failed requests.
+ */
 public class TransportManager {
 
     private static final String TAG = "Atv.TrnsprtManager";

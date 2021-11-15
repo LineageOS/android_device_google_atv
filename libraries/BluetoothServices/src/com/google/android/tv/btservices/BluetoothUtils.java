@@ -118,11 +118,8 @@ public class BluetoothUtils {
     }
 
     public static boolean isLeCompatible(BluetoothDevice device) {
-        if (device == null || (device.getType() != BluetoothDevice.DEVICE_TYPE_LE &&
-                device.getType() != BluetoothDevice.DEVICE_TYPE_DUAL)) {
-            return false;
-        }
-        return true;
+        return device != null && (device.getType() == BluetoothDevice.DEVICE_TYPE_LE ||
+                device.getType() == BluetoothDevice.DEVICE_TYPE_DUAL);
     }
 
     @SuppressLint("NewApi") // Hidden API made public

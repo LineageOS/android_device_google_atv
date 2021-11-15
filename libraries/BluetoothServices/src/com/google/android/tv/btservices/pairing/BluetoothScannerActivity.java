@@ -12,14 +12,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
-import android.util.Log;
 import android.view.ViewGroup;
 
 import com.google.android.tv.btservices.BluetoothUtils;
 import com.google.android.tv.btservices.SettingsUtils;
 import com.google.android.tv.btservices.SimplifiedConnection;
 import com.google.android.tv.btservices.settings.SettingsFragment;
-import com.google.android.tv.btservices.settings.BluetoothDevicePreferenceFragment;
 
 public class BluetoothScannerActivity
         extends Activity implements BluetoothPairingService.ScanningListener,

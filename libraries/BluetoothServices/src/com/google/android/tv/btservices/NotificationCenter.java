@@ -11,13 +11,11 @@ import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Icon;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import androidx.core.app.NotificationCompat;
 import com.google.android.tv.btservices.settings.RemoteDfuConfirmationActivity;
-import com.google.common.base.Optional;
 import com.google.common.base.Stopwatch;
 import com.google.common.base.Ticker;
 

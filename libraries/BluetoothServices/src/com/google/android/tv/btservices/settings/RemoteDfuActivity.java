@@ -65,7 +65,7 @@ public class RemoteDfuActivity extends Activity implements DfuManager.Listener {
     private TextView mSummaryView;
     private ProgressBar mProgressBar;
     private ImageView mCheckIcon;
-    private Runnable mPleaseWaitTimemout = this::onErrorBeforeUpgradeFinished;
+    private Runnable mPleaseWaitTimeout = this::onErrorBeforeUpgradeFinished;
 
     private static final int NO_UPGRADE_ERR = R.string.settings_bt_update_not_necessary;
     private static final int UPDATE_ERR = R.string.settings_bt_update_error;
@@ -74,8 +74,8 @@ public class RemoteDfuActivity extends Activity implements DfuManager.Listener {
 
     private void error(int stringResId) {
         // No longer care about the "Please wait" state
-        if (mHandler.hasCallbacks(mPleaseWaitTimemout)) {
-            mHandler.removeCallbacks(mPleaseWaitTimemout);
+        if (mHandler.hasCallbacks(mPleaseWaitTimeout)) {
+            mHandler.removeCallbacks(mPleaseWaitTimeout);
         }
         mTitleView.setText(stringResId);
         Log.w(TAG, "error: " + getString(stringResId));
@@ -90,8 +90,8 @@ public class RemoteDfuActivity extends Activity implements DfuManager.Listener {
 
     private void onDone() {
         // We've recovered from the "Please wait" state.
-        if (mHandler.hasCallbacks(mPleaseWaitTimemout)) {
-            mHandler.removeCallbacks(mPleaseWaitTimemout);
+        if (mHandler.hasCallbacks(mPleaseWaitTimeout)) {
+            mHandler.removeCallbacks(mPleaseWaitTimeout);
         }
 
         mProgressBar.setVisibility(View.VISIBLE);
@@ -101,8 +101,8 @@ public class RemoteDfuActivity extends Activity implements DfuManager.Listener {
 
     private void onDoneNeedsPairing() {
         // We've recovered from the "Please wait" state.
-        if (mHandler.hasCallbacks(mPleaseWaitTimemout)) {
-            mHandler.removeCallbacks(mPleaseWaitTimemout);
+        if (mHandler.hasCallbacks(mPleaseWaitTimeout)) {
+            mHandler.removeCallbacks(mPleaseWaitTimeout);
         }
 
         Runnable showDone = () -> {
@@ -129,21 +129,22 @@ public class RemoteDfuActivity extends Activity implements DfuManager.Listener {
 
     private void onProgress(double progress) {
         // We've recovered from the "Please wait" state.
-        if (mHandler.hasCallbacks(mPleaseWaitTimemout)) {
-            mHandler.removeCallbacks(mPleaseWaitTimemout);
+        if (mHandler.hasCallbacks(mPleaseWaitTimeout)) {
+            mHandler.removeCallbacks(mPleaseWaitTimeout);
         }
 
         mProgressBar.setVisibility(View.VISIBLE);
         mProgressBar.setProgress((int) Math.round(progress * PROGRESS_BAR_MAX));
     }
 
-    // We've entered an unknown state.  It could be that update has failed. In this case, post a
-    // "Please wait" message to the user and then timeout.
+
     private void onUnknownState() {
+        // We've entered an unknown state. It could be that update has failed. In this case, post a
+        // "Please wait" message to the user and then timeout.
         mTitleView.setText(R.string.settings_bt_update_please_wait);
         mSummaryView.setVisibility(View.GONE);
-        mHandler.removeCallbacks(mPleaseWaitTimemout);
-        mHandler.postDelayed(mPleaseWaitTimemout, PLEASE_WAIT_TIMEOUT_MS);
+        mHandler.removeCallbacks(mPleaseWaitTimeout);
+        mHandler.postDelayed(mPleaseWaitTimeout, PLEASE_WAIT_TIMEOUT_MS);
     }
 
     private void attemptDfu() {

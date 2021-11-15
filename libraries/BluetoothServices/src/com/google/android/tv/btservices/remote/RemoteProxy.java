@@ -4,11 +4,8 @@ package com.google.android.tv.btservices.remote;
 
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
-import android.util.Log;
 import com.google.android.tv.btservices.R;
-import java.util.Arrays;
 import java.util.concurrent.CompletableFuture;
-import java.util.function.Consumer;
 import java.util.UUID;
 
 public abstract class RemoteProxy {
@@ -21,11 +18,11 @@ public abstract class RemoteProxy {
 
     // Battery Info Profile
     public static final UUID UUID_BATTERY_SERVICE =
-        UUID.fromString("0000180f-0000-1000-8000-00805f9b34fb");
+            UUID.fromString("0000180f-0000-1000-8000-00805f9b34fb");
     public static final UUID UUID_BATTERY_LEVEL_CHARACTERISTIC =
-        UUID.fromString("00002a19-0000-1000-8000-00805f9b34fb");
+            UUID.fromString("00002a19-0000-1000-8000-00805f9b34fb");
     public static final UUID CLIENT_CHARACTERISTIC_CONFIG_DESCRIPTOR_UUID =
-        UUID.fromString("00002902-0000-1000-8000-00805f9b34fb");
+            UUID.fromString("00002902-0000-1000-8000-00805f9b34fb");
 
     public static class Result {
 
@@ -150,10 +147,12 @@ public abstract class RemoteProxy {
 
     public abstract BatteryResult getLastKnownBatteryLevel();
 
-    // This method return a Completable of Boolean that indicates whether the
-    // callback has been successfully registered. The callback passed in is
-    // called by the underlying implementation whenever there is a battery level
-    // update.
+    /**
+     * @param callback The callback which is called by the underlying implementation whenever there
+     *                 is a battery level update.
+     * @return A CompleteableFuture of Boolean that indicates whether the callback has been
+     *         successfully registered.
+     */
     public abstract CompletableFuture<Boolean> registerBatteryLevelCallback(Runnable callback);
 
     public int lowBatteryLevel() {

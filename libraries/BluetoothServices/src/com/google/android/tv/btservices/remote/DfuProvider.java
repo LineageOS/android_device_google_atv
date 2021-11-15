@@ -2,6 +2,7 @@
 
 package com.google.android.tv.btservices.remote;
 
+import android.annotation.Nullable;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Environment;
@@ -11,13 +12,10 @@ import android.os.SystemProperties;
 import android.text.TextUtils;
 import android.util.Log;
 import com.google.android.tv.btservices.R;
-import com.google.android.tv.btservices.remote.Version.OverrideVersion;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.InputStream;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
@@ -26,7 +24,9 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 
-// For determining the current DFU binary
+/**
+ * For determining the current DFU binary.
+ */
 public abstract class DfuProvider {
 
     private static final String TAG = "Atv.RemoteDfuPrvdr";
@@ -116,9 +116,14 @@ public abstract class DfuProvider {
     // This method provides the DFU binaries that are packaged with the APK.
     protected abstract List<DfuBinary> getPackagedBinaries();
 
-    // Upgrades from certain version would erase the connection information saved on the remote. For
-    // this case, we would need to forget the connection on the host side and ask the user go
-    // through pairing again.
+    /**
+     * Returns the versions from which an upgrade will cause the connection information stored on
+     * the remote control being erased. After an upgrade from one of these versions the connection
+     * to the remote control would need to be forgotten on the host side and the user needs to
+     * perform pairing again.
+     *
+     * @return A set containing all versions for which the above behavior is to be expected.
+     */
     public Set<Version> getManualReconnectionVersions() {
         return mManualReconnectionVersions;
     }
@@ -137,7 +142,7 @@ public abstract class DfuProvider {
         mListener = listener;
         mFactory = factory;
         mDfus.addAll(getPackagedBinaries());
-        MD5s = Collections.unmodifiableSet(new HashSet<String>(
+        MD5s = Collections.unmodifiableSet(new HashSet<>(
                 Arrays.asList(mContext.getResources().getStringArray(R.array.dfu_binary_md5s))));
 
         String[] versionStrs =
@@ -222,7 +227,7 @@ public abstract class DfuProvider {
         return sb.toString().toLowerCase();
     }
 
-    // TODO (powei): Should be replaced with vendor implementation.
+    // TODO: Should be replaced with vendor implementation.
     private static boolean isDfuFileName(String fname) {
         if (fname == null)
             return false;
@@ -241,9 +246,15 @@ public abstract class DfuProvider {
         new CheckOnDiskDfuFileTask().execute(extDir.listFiles());
     }
 
-    // Given the device name and the firwmare version of the current remote, we should able to
-    // determine the best possible DFU for this remote. Return null if there are no suitable DFU
-    // binaries.
+    /**
+     * Given the device name and the firmware version of the current remote, this method determines
+     * the best possible DFU for this remote or null if there are no suitable DFU binaries.
+     *
+     * @param deviceName The name of the device.
+     * @param version The current version of the device.
+     * @return The best matching DfuBinary or null if there is no suitable one available.
+     */
+    @Nullable
     public DfuBinary getDfu(String deviceName, Version version) {
         DfuBinary best = null;
         for (DfuBinary bin : mDfus) {

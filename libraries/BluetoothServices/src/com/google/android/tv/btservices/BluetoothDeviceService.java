@@ -243,7 +243,7 @@ public abstract class BluetoothDeviceService
 
     private RemoteProxy createDefaultProxy(BluetoothDevice device){
         return new DefaultProxy(this, device);
-    };
+    }
 
     private void checkDfu() {
         List<BluetoothDevice> devices = getDevices();
@@ -598,8 +598,7 @@ public abstract class BluetoothDeviceService
     }
 
     private boolean fastPairInForeground() {
-        ActivityManager activityManager =
-            (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        ActivityManager activityManager = getSystemService(ActivityManager.class);
         if (activityManager == null) {
             return false;
         }

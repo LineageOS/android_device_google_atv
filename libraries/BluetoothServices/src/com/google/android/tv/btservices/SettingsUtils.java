@@ -43,7 +43,7 @@ public class SettingsUtils {
     }
 
     public static Map<String, String> getAudioManagerParameter(Context context, String param) {
-        AudioManager am = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
+        AudioManager am = context.getSystemService(AudioManager.class);
         String str = am.getParameters(param);
         Map<String, String> ret = new HashMap<>();
         if (TextUtils.isEmpty(param)) {

@@ -92,7 +92,6 @@ public final class BluetoothPairer {
     };
 
     protected BluetoothPairer(Context context, int bluetoothProfile) {
-        Log.d("philipjunker", "BluetoothPairer()");
         this.context = context.getApplicationContext();
         if (bluetoothProfile != BluetoothProfile.A2DP
                 && bluetoothProfile != BluetoothProfile.HID_HOST) {

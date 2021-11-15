@@ -1,18 +1,7 @@
 package com.google.android.tv.btservices;
 
-import android.content.ContentResolver;
 import android.content.Context;
-import android.content.Intent;
-import android.hardware.display.DisplayManager;
 import android.hardware.hdmi.HdmiControlManager;
-import android.hardware.hdmi.HdmiDeviceInfo;
-import android.hardware.hdmi.HdmiPlaybackClient;
-import android.os.PowerManager;
-import android.os.SystemClock;
-import android.provider.Settings.Global;
-import android.util.Log;
-import android.view.Display;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 public class PowerUtils {
 

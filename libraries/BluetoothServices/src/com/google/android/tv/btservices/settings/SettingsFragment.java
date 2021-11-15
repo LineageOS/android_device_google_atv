@@ -3,7 +3,6 @@
 package com.google.android.tv.btservices.settings;
 
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import androidx.leanback.preference.LeanbackPreferenceFragment;
 import androidx.leanback.preference.LeanbackSettingsFragment;
 import androidx.preference.Preference;

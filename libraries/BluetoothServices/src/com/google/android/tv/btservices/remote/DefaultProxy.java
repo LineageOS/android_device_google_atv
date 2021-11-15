@@ -9,20 +9,7 @@ import android.bluetooth.BluetoothGattService;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.content.Context;
 import android.util.Log;
-import com.google.android.tv.btservices.remote.BleConnection;
-import com.google.android.tv.btservices.remote.RemoteProxy;
-import com.google.android.tv.btservices.remote.Version;
-import com.google.android.tv.btservices.NotificationCenter;
-import com.google.android.tv.btservices.R;
-import com.google.common.base.Stopwatch;
-import com.google.common.base.Ticker;
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
-import java.util.function.Supplier;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class DefaultProxy extends RemoteProxy {
     private static final String TAG = "Atv.DefaultProxy";

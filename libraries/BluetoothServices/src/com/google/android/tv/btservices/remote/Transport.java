@@ -2,6 +2,8 @@
 
 package com.google.android.tv.btservices.remote;
 
+import static android.bluetooth.BluetoothGatt.GATT_SUCCESS;
+
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCallback;
@@ -12,7 +14,6 @@ import android.content.Context;
 import android.os.Handler;
 import android.util.Log;
 import java.util.ArrayList;
-import java.util.concurrent.CompletableFuture;
 import java.util.UUID;
 import java.util.List;
 
@@ -70,7 +71,9 @@ public abstract class Transport extends BluetoothGattCallback {
         };
     }
 
-    // Must be called by subclasses right after constructor initializations.
+    /**
+     * This method must be called by subclasses right after constructor initializations.
+     */
     protected void connect() {
         mHandler.post(mReadyToConnect);
     }
@@ -122,7 +125,7 @@ public abstract class Transport extends BluetoothGattCallback {
 
     @Override
     public void onServicesDiscovered(BluetoothGatt gatt, int status) {
-        if (status == gatt.GATT_SUCCESS) {
+        if (status == GATT_SUCCESS) {
             ArrayList<BluetoothGattCharacteristic> chars = new ArrayList<>();
             for (UUID uuid : getServiceUuids()) {
                 BluetoothGattService service = gatt.getService(uuid);

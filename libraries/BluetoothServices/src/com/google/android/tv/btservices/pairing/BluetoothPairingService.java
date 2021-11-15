@@ -14,7 +14,6 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
 
 import com.google.android.tv.btservices.BluetoothUtils;

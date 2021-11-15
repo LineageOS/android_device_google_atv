@@ -5,7 +5,6 @@ package com.google.android.tv.btservices.pairing.profiles;
 import android.bluetooth.BluetoothA2dp;
 import android.bluetooth.BluetoothDevice;;
 import android.bluetooth.BluetoothProfile;
-import android.providers.settings.GlobalSettingsProto;
 
 import java.util.List;
 

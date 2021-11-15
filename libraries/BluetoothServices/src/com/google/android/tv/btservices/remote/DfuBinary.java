@@ -8,7 +8,9 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-// Transform from a file to a series of packet for Device Field Update (DFU).
+/**
+ * Transform from a file to a series of packet for Device Field Update (DFU).
+ */
 public abstract class DfuBinary implements Comparable<DfuBinary> {
 
     private static final String TAG = "Atv.DfuBinary";

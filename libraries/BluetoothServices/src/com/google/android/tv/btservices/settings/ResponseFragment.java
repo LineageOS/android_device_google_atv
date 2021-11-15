@@ -138,15 +138,15 @@ public class ResponseFragment extends GuidedStepFragment {
         }
 
         Bundle args = getArguments();
-        final String exisitingName = args.getString(ARG_NAME);
+        final String existingName = args.getString(ARG_NAME);
         final String key = args.getString(ARG_KEY);
         final String newName = action.getTitle() != null ? action.getTitle().toString() : "";
 
         // We need to dismiss the keyboard ourselves since the behavior of dismissing the response
-        // after an input completes is not one of the the typical flows handled by
+        // after an input completes is not one of the typical flows handled by
         // GuidedStepFragment.
         dismissKeyboard();
-        if (!TextUtils.equals(exisitingName, newName) && !TextUtils.isEmpty(newName)) {
+        if (!TextUtils.equals(existingName, newName) && !TextUtils.isEmpty(newName)) {
             listener.onText(key, action.getTitle().toString());
         }
         return action.getId();
@@ -165,9 +165,9 @@ public class ResponseFragment extends GuidedStepFragment {
         // If no choices were given, we know this is a text input.
         if (choices.length == 0) {
             Bundle args = getArguments();
-            final String exisitingName = args.getString(ARG_NAME);
+            final String existingName = args.getString(ARG_NAME);
             actions.add(new GuidedAction.Builder(context)
-                    .title(exisitingName)
+                    .title(existingName)
                     .editable(true)
                     .build());
         }

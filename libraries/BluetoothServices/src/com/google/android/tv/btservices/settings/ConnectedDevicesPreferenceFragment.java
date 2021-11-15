@@ -180,7 +180,6 @@ public class ConnectedDevicesPreferenceFragment extends LeanbackPreferenceFragme
 
     private static Preference createConnectedBtPreference(Context context,
             BluetoothDeviceProvider provider, BluetoothDevice device) {
-        Log.d("philipjunker", "BTService#createConnectedBtPreference");
         Preference pref = new Preference(context);
         pref.setKey(device.getAddress());
         pref.setLayoutResource(R.layout.preference_item_layout);
@@ -352,7 +351,7 @@ public class ConnectedDevicesPreferenceFragment extends LeanbackPreferenceFragme
     private void popDevicePreference(BluetoothDevice device) {
         mHandler.removeMessages(MSG_POP_DEVICE_FRAGMENT);
         Message msg = mHandler.obtainMessage(MSG_POP_DEVICE_FRAGMENT, device.getAddress());
-        // We need to add an delay to make sure we are not popping the top fragment and updating the
+        // We need to add a delay to make sure we are not popping the top fragment and updating the
         // fragment underneath at the same time.
         mHandler.sendMessageDelayed(msg, UPDATE_DELAY_MS);
     }
