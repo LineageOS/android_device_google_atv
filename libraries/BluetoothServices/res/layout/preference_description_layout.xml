@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/lb_preference_item_padding_start"
+    android:paddingEnd="@dimen/lb_preference_item_padding_end" >
+
+    <TextView
+        android:id="@android:id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center_vertical"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/lb_preference_item_secondary_text_color"
+        android:textSize="@dimen/lb_preference_item_secondary_text_size"
+        android:paddingTop="@dimen/lb_preference_item_text_space_top"
+        android:paddingBottom="@dimen/settings_bt_pair_description_space_bottom"
+        android:lineSpacingMultiplier="@dimen/settings_bt_pair_description_line_multiplier"/>
+</FrameLayout>

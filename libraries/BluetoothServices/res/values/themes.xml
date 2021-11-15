@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <style name="Theme.Settings.SidePanel" parent="@style/Theme.Leanback">
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <item name="android:windowIsTranslucent">true</item>
+    <item name="android:fontFamily">sans-serif</item>
+    <item name="android:colorPrimary">@color/settings_screen_title_color</item>
+    <item name="android:colorAccent">@color/settings_category_text_color</item>
+    <item name="preferenceTheme">@style/PreferenceThemeOverlayLeanback</item>
+  </style>
+
+  <style name="Theme.Settings.SidePanelDim" parent="@style/Theme.Leanback">
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <item name="android:windowIsTranslucent">true</item>
+    <item name="android:backgroundDimAmount">.8</item>
+    <item name="android:backgroundDimEnabled">true</item>
+    <item name="android:fontFamily">sans-serif</item>
+    <item name="android:colorPrimary">@color/settings_screen_title_color</item>
+    <item name="android:colorAccent">@color/settings_category_text_color</item>
+    <item name="preferenceTheme">@style/PreferenceThemeOverlayLeanback</item>
+  </style>
+
+  <style name="SettingsStyle.TextAppearanceMedium" parent="@android:style/TextAppearance.Holo.Medium">
+    <item name="android:textSize">@dimen/guidance_description_footer_text_size</item>
+    <item name="android:fontFamily">sans-serif</item>
+  </style>
+  <style name="SettingsStyle.TextAppearanceLarge" parent="@android:style/TextAppearance.Holo.Large">
+    <item name="android:textSize">@dimen/guidance_title_text_size</item>
+    <item name="android:fontFamily">sans-serif</item>
+  </style>
+  <style name="SettingsStyle.TextAppearanceSmall" parent="@android:style/TextAppearance.Holo.Medium">
+    <item name="android:textSize">@dimen/guidance_description_hint_text_size</item>
+    <item name="android:fontFamily">sans-serif</item>
+  </style>
+
+  <style name="ResponseGuidedStepTheme" parent="Theme.Leanback.GuidedStep">
+    <item name="guidanceTitleStyle">@style/ResponseGuidanceTitleStyle</item>
+  </style>
+
+</resources>

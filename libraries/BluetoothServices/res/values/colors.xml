@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 Google Inc. All Rights Reserved. -->
+<resources>
+  <color name="settings_category_text_color">#FF51AAFF</color>
+  <color name="settings_screen_title_color">#FF1B1C1E</color>
+  <color name="primary_progress_bg">#FF505050</color>
+  <color name="primary_progress_fg">#FFABABAB</color>
+
+  <color name="connected">#FFFFFFFF</color>
+  <color name="bt_info">#FF767676</color>
+  <color name="bt_info_separator">#FF323232</color>
+
+</resources>

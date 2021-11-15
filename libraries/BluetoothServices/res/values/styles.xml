@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 Google Inc. All Rights Reserved. -->
+<resources>
+
+  <style name="AppTheme" parent="@style/Theme.Leanback">
+  </style>
+
+  <style name="PreferenceThemeOverlayLeanback">
+    <item name="checkBoxPreferenceStyle">@style/LeanbackPreference.CheckBoxPreference</item>
+    <item name="dialogPreferenceStyle">@style/LeanbackPreference.DialogPreference</item>
+    <item name="dropdownPreferenceStyle">@style/Preference.DropDown</item>
+    <item name="editTextPreferenceStyle">@style/LeanbackPreference.DialogPreference.EditTextPreference</item>
+    <item name="preferenceCategoryStyle">@style/LeanbackPreference.Category</item>
+    <item name="preferenceFragmentCompatStyle">@style/PreferenceFragment.Leanback</item>
+    <item name="preferenceFragmentListStyle">@style/PreferenceFragmentList.Leanback</item>
+    <item name="preferenceFragmentStyle">@style/PreferenceFragment.Leanback</item>
+    <item name="preferenceInformationStyle">@style/LeanbackPreference.Information</item>
+    <item name="preferenceScreenStyle">@style/LeanbackPreference.PreferenceScreen</item>
+    <item name="preferenceStyle">@style/LeanbackPreference</item>
+    <item name="seekBarPreferenceStyle">@style/LeanbackPreference.SeekBarPreference</item>
+    <item name="switchPreferenceCompatStyle">@style/LeanbackPreference.SwitchPreferenceCompat</item>
+    <item name="switchPreferenceStyle">@style/LeanbackPreference.SwitchPreference</item>
+  </style>
+
+  <style name="BtProgressBar">
+    <item name="android:indeterminateOnly">false</item>
+    <item name="android:mirrorForRtl">true</item>
+    <item name="android:indeterminate">false</item>
+    <item name="android:minHeight">5dp</item>
+    <item name="android:maxHeight">5dp</item>
+    <item name="android:progressDrawable">@drawable/progress_drawable</item>
+  </style>
+
+  <style name="BtIndeterminateProgressBar">
+    <item name="android:indeterminateOnly">false</item>
+    <item name="android:mirrorForRtl">true</item>
+    <item name="android:indeterminate">true</item>
+    <item name="android:minHeight">15dp</item>
+    <item name="android:maxHeight">15dp</item>
+    <item name="android:indeterminateDrawable">@drawable/indeterminate_progress_drawable</item>
+  </style>
+
+  <style name="ResponseGuidanceTitleStyle" parent="Widget.Leanback.GuidanceTitleStyle">
+    <item name="android:maxLines">3</item>
+  </style>
+</resources>
