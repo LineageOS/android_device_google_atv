@@ -25,8 +25,6 @@ import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Icon;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import androidx.core.app.NotificationCompat;
 import com.google.android.tv.btservices.settings.RemoteDfuConfirmationActivity;
@@ -58,17 +56,14 @@ public class NotificationCenter {
     private static final String HIGH_PRIORITY_NOTIFICATION_CHANNEL = "btservices-high-channel";
     private static final String CRITICAL_NOTIFICATION_CHANNEL = "btservices-critical-channel";
 
-    private static final long CRITICAL_BATT_CYCLE_MS = TimeUnit.MINUTES.toMillis(5);
     private static final int NOTIFICATION_RESET_HOUR_OF_DAY = 3;
 
-    private static NotificationCenter INSTANCE;
+    private static class InstanceHolder {
+        public static NotificationCenter instance = new NotificationCenter();
+    }
 
     private static NotificationCenter getInstance() {
-        if (INSTANCE == null) {
-            INSTANCE = new NotificationCenter();
-        }
-
-        return INSTANCE;
+        return InstanceHolder.instance;
     }
 
     /**
@@ -87,12 +82,16 @@ public class NotificationCenter {
     }
 
     public static synchronized void initialize(Context context) {
-        getInstance().context = context;
-        createNotificationChannel(context);
+        NotificationCenter nc = getInstance();
+        nc.mContext = context;
+        nc.mNotificationManager = context.getSystemService(NotificationManager.class);
+        nc.createNotificationChannel();
     }
 
     public static synchronized void refreshLowBatteryNotification(
-            BluetoothDevice device, BatteryState state, boolean forceNotification) {
+            BluetoothDevice device,
+            BatteryState state,
+            boolean forceNotification) {
         getInstance().refreshLowBatteryNotificationImpl(device, state, forceNotification);
     }
 
@@ -108,71 +107,65 @@ public class NotificationCenter {
         getInstance().dfuNotificationSnoozeWatch.clear();
     }
 
-    private static void createNotificationChannel(Context context) {
-        final NotificationManager notificationManager =
-                context.getSystemService(NotificationManager.class);
-
+    private void createNotificationChannel() {
         // Create notification channel for firmware update notification
-        if (notificationManager.getNotificationChannel(DFU_NOTIFICATION_CHANNEL) == null) {
-            CharSequence name = context.getString(R.string.settings_notif_update_channel_name);
-            String description = context.getString(
+        if (mNotificationManager.getNotificationChannel(DFU_NOTIFICATION_CHANNEL) == null) {
+            CharSequence name = mContext.getString(R.string.settings_notif_update_channel_name);
+            String description = mContext.getString(
                     R.string.settings_notif_update_channel_description);
             int importance = NotificationManager.IMPORTANCE_MAX;
 
             NotificationChannel channel =
                     new NotificationChannel(DFU_NOTIFICATION_CHANNEL, name, importance);
             channel.setDescription(description);
-            notificationManager.createNotificationChannel(channel);
+            mNotificationManager.createNotificationChannel(channel);
         }
 
-        // Create notification channels with different priority for LauncherX
-        {
-            CharSequence name = context.getString(R.string.settings_notif_battery_channel_name);
-            String description = context.getString(
-                    R.string.settings_notif_battery_channel_description);
+        // Create notification channels with different priorities for battery notifications
+        CharSequence name = mContext.getString(R.string.settings_notif_battery_channel_name);
+        String description = mContext.getString(R.string.settings_notif_battery_channel_description);
 
-            if (notificationManager.getNotificationChannel(DEFAULT_NOTIFICATION_CHANNEL) == null) {
-                int importance = NotificationManager.IMPORTANCE_LOW;
+        if (mNotificationManager.getNotificationChannel(DEFAULT_NOTIFICATION_CHANNEL) == null) {
+            int importance = NotificationManager.IMPORTANCE_LOW;
 
-                NotificationChannel channel =
-                    new NotificationChannel(DEFAULT_NOTIFICATION_CHANNEL, name, importance);
-                channel.setDescription(description);
-                notificationManager.createNotificationChannel(channel);
-            }
+            NotificationChannel channel =
+                new NotificationChannel(DEFAULT_NOTIFICATION_CHANNEL, name, importance);
+            channel.setDescription(description);
+            mNotificationManager.createNotificationChannel(channel);
+        }
 
-            if (notificationManager.getNotificationChannel(
-                        HIGH_PRIORITY_NOTIFICATION_CHANNEL) == null) {
-                int importance = NotificationManager.IMPORTANCE_DEFAULT;
+        if (mNotificationManager.getNotificationChannel(
+                    HIGH_PRIORITY_NOTIFICATION_CHANNEL) == null) {
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
 
-                NotificationChannel channel =
-                    new NotificationChannel(HIGH_PRIORITY_NOTIFICATION_CHANNEL, name, importance);
-                channel.setDescription(description);
-                notificationManager.createNotificationChannel(channel);
-            }
+            NotificationChannel channel =
+                new NotificationChannel(HIGH_PRIORITY_NOTIFICATION_CHANNEL, name, importance);
+            channel.setDescription(description);
+            mNotificationManager.createNotificationChannel(channel);
+        }
 
-            if (notificationManager.getNotificationChannel(CRITICAL_NOTIFICATION_CHANNEL) == null) {
-                int importance = NotificationManager.IMPORTANCE_HIGH;
+        if (mNotificationManager.getNotificationChannel(CRITICAL_NOTIFICATION_CHANNEL) == null) {
+            int importance = NotificationManager.IMPORTANCE_HIGH;
 
-                NotificationChannel channel =
-                    new NotificationChannel(CRITICAL_NOTIFICATION_CHANNEL, name, importance);
-                channel.setDescription(description);
-                notificationManager.createNotificationChannel(channel);
-            }
+            NotificationChannel channel =
+                new NotificationChannel(CRITICAL_NOTIFICATION_CHANNEL, name, importance);
+            channel.setDescription(description);
+            mNotificationManager.createNotificationChannel(channel);
         }
     }
 
-    private Context context;
 
     private final Map<BluetoothDevice, Integer> dfuNotifications = new HashMap<>();
     private final Map<BluetoothDevice, Integer> lowBatteryNotifications = new HashMap<>();
     private final Map<BluetoothDevice, Integer> criticalBatteryNotifications = new HashMap<>();
     private final Map<BluetoothDevice, Integer> depletedBatteryNotifications = new HashMap<>();
     private final Map<BluetoothDevice, Stopwatch> dfuNotificationSnoozeWatch = new HashMap<>();
+    private Context mContext;
+    private NotificationManager mNotificationManager;
     private int notificationIdCounter = 0;
     private ZonedDateTime lastNotificationTime =
             Instant.ofEpochSecond(0).atZone(ZoneId.systemDefault());
 
-    private final Handler handler = new Handler(Looper.getMainLooper());
     private final Ticker ticker = new Ticker() {
         public long read() {
             return android.os.SystemClock.elapsedRealtimeNanos();
@@ -183,7 +176,7 @@ public class NotificationCenter {
 
     private void sendDfuNotificationImpl(BluetoothDevice device) {
         if (device == null) {
-            Log.w(TAG, "sendDfuNotification: No Bluetooth device found for address: " + device);
+            Log.w(TAG, "sendDfuNotification: Bluetooth device null");
             return;
         }
 
@@ -208,69 +201,59 @@ public class NotificationCenter {
             notificationId = notificationIdCounter++;
             dfuNotifications.put(device, notificationId);
         }
-
-        final NotificationManager notificationManager =
-                context.getSystemService(NotificationManager.class);
-
         final String name = BluetoothUtils.getName(device);
-        Intent intent = new Intent(context, RemoteDfuConfirmationActivity.class);
+        Intent intent = new Intent(mContext, RemoteDfuConfirmationActivity.class);
         intent.putExtra(RemoteDfuConfirmationActivity.EXTRA_BT_ADDRESS, device.getAddress());
         intent.putExtra(RemoteDfuConfirmationActivity.EXTRA_BT_NAME, name);
 
-        PendingIntent updateIntent = PendingIntent.getActivity(context, 0, intent,
+        PendingIntent updateIntent = PendingIntent.getActivity(mContext,
+                /* requestCode= */ 0, intent,
                 PendingIntent.FLAG_MUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
 
-        Notification.Action updateAction = new Notification.Action.Builder(null,
-                context.getString(R.string.settings_notif_update_action), updateIntent).build();
+        Notification.Action updateAction = new Notification.Action.Builder(/* icon= */ null,
+                mContext.getString(R.string.settings_notif_update_action),
+                updateIntent).build();
 
-        Notification.Action dismissAction = new Notification.Action.Builder(null,
-                context.getString(R.string.settings_notif_update_dismiss), null)
+        Notification.Action dismissAction = new Notification.Action.Builder(/* icon= */ null,
+                mContext.getString(R.string.settings_notif_update_dismiss), null)
                 .setSemanticAction(Notification.Action.SEMANTIC_ACTION_DELETE)
                 .build();
 
-        Icon icon = Icon.createWithResource(context, R.drawable.ic_official_remote);
-        Notification notification = new Notification.Builder(context, DFU_NOTIFICATION_CHANNEL)
+        Icon icon = Icon.createWithResource(mContext, R.drawable.ic_official_remote);
+        Notification notification = new Notification.Builder(mContext, DFU_NOTIFICATION_CHANNEL)
                 .setSmallIcon(icon)
-                .setContentTitle(context.getString(R.string.settings_notif_update_title))
-                .setContentText(context.getString(R.string.settings_notif_update_text))
+                .setContentTitle(mContext.getString(R.string.settings_notif_update_title))
+                .setContentText(mContext.getString(R.string.settings_notif_update_text))
                 .setContentIntent(updateIntent)
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .addAction(updateAction)
                 .addAction(dismissAction)
                 .extend(new TvExtender())
                 .build();
-        notificationManager.notify(notificationId, notification);
+        mNotificationManager.notify(notificationId, notification);
     }
 
     private void dismissUpdateNotificationImpl(BluetoothDevice device) {
-        final NotificationManager notificationManager =
-                context.getSystemService(NotificationManager.class);
-
         if (dfuNotifications.get(device) != null) {
             int notificationId = dfuNotifications.get(device);
-            notificationManager.cancel(notificationId);
+            mNotificationManager.cancel(notificationId);
         }
     }
 
-    private void refreshLowBatteryNotificationImpl(
-            BluetoothDevice device,
-            BatteryState state,
+    private void refreshLowBatteryNotificationImpl(BluetoothDevice device, BatteryState state,
             boolean forceNotification) {
-        final NotificationManager notificationManager =
-                context.getSystemService(NotificationManager.class);
-
         // Dismiss outdated notifications.
         if (state != BatteryState.LOW) {
             if (lowBatteryNotifications.get(device) != null) {
                 int notificationId = lowBatteryNotifications.remove(device);
-                notificationManager.cancel(notificationId);
+                mNotificationManager.cancel(notificationId);
             }
         }
 
         if (state != BatteryState.CRITICAL) {
             if (criticalBatteryNotifications.get(device) != null) {
                 int notificationId = criticalBatteryNotifications.remove(device);
-                notificationManager.cancel(notificationId);
+                mNotificationManager.cancel(notificationId);
             }
         }
 
@@ -298,9 +281,6 @@ public class NotificationCenter {
     }
 
     private void postLowBatteryNotification(BluetoothDevice device, boolean forced) {
-        final NotificationManager notificationManager =
-                context.getSystemService(NotificationManager.class);
-
         if ((!forced && lowBatteryNotifications.get(device) != null) || !isNotificationAllowed()) {
             return;
         }
@@ -313,23 +293,20 @@ public class NotificationCenter {
         }
 
         Log.w(TAG, "Low battery for remote device: " + device);
+        Icon icon = Icon.createWithResource(mContext, R.drawable.ic_official_remote);
 
-        Icon icon = Icon.createWithResource(context, R.drawable.ic_official_remote);
-
-        Notification notification = new Notification.Builder(context, DEFAULT_NOTIFICATION_CHANNEL)
+        Notification notification = new Notification.Builder(mContext, DEFAULT_NOTIFICATION_CHANNEL)
                 .setSmallIcon(icon)
-                .setContentTitle(context.getString(R.string.settings_notif_low_battery_title))
-                .setContentText(context.getString(R.string.settings_notif_low_battery_text))
+                .setContentTitle(mContext.getString(R.string.settings_notif_low_battery_title))
+                .setContentText(mContext.getString(R.string.settings_notif_low_battery_text))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .extend(new TvExtender())
                 .build();
-        notificationManager.notify(notificationId, notification);
+        mNotificationManager.notify(notificationId, notification);
         logLastNotificationTime();
     }
 
     private void postCriticalBatteryNotification(BluetoothDevice device, boolean forced) {
-        final NotificationManager notificationManager =
-                context.getSystemService(NotificationManager.class);
 
         if ((!forced && criticalBatteryNotifications.get(device) != null) ||
                 !isNotificationAllowed()) {
@@ -344,25 +321,21 @@ public class NotificationCenter {
         }
 
         Log.w(TAG, "Critical battery for remote device: " + device);
-        Intent settingsIntent = new Intent(android.provider.Settings.ACTION_SETTINGS);
-
-        Icon icon = Icon.createWithResource(context, R.drawable.ic_official_remote);
+        Icon icon = Icon.createWithResource(mContext, R.drawable.ic_official_remote);
 
         Notification notification =
-                new Notification.Builder(context, HIGH_PRIORITY_NOTIFICATION_CHANNEL)
+                new Notification.Builder(mContext, HIGH_PRIORITY_NOTIFICATION_CHANNEL)
                 .setSmallIcon(icon)
-                .setContentTitle(context.getString(R.string.settings_notif_critical_battery_title))
-                .setContentText(context.getString(R.string.settings_notif_critical_battery_text))
+                .setContentTitle(mContext.getString(R.string.settings_notif_critical_battery_title))
+                .setContentText(mContext.getString(R.string.settings_notif_critical_battery_text))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .extend(new TvExtender())
                 .build();
-        notificationManager.notify(notificationId, notification);
+        mNotificationManager.notify(notificationId, notification);
         logLastNotificationTime();
     }
 
     private void postDepletedBatteryNotification(BluetoothDevice device) {
-        final NotificationManager notificationManager =
-                context.getSystemService(NotificationManager.class);
 
         if (depletedBatteryNotifications.get(device) != null || !isNotificationAllowed()) {
             return;
@@ -372,19 +345,17 @@ public class NotificationCenter {
         depletedBatteryNotifications.put(device, notificationId);
 
         Log.w(TAG, "Depleted battery for remote device: " + device);
-        Intent settingsIntent = new Intent(android.provider.Settings.ACTION_SETTINGS);
-
-        Icon icon = Icon.createWithResource(context, R.drawable.ic_official_remote);
+        Icon icon = Icon.createWithResource(mContext, R.drawable.ic_official_remote);
 
         Notification notification =
-                new Notification.Builder(context, HIGH_PRIORITY_NOTIFICATION_CHANNEL)
+                new Notification.Builder(mContext, HIGH_PRIORITY_NOTIFICATION_CHANNEL)
                 .setSmallIcon(icon)
-                .setContentTitle(context.getString(R.string.settings_notif_depleted_battery_title))
-                .setContentText(context.getString(R.string.settings_notif_depleted_battery_text))
+                .setContentTitle(mContext.getString(R.string.settings_notif_depleted_battery_title))
+                .setContentText(mContext.getString(R.string.settings_notif_depleted_battery_text))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .extend(new TvExtender())
                 .build();
-        notificationManager.notify(notificationId, notification);
+        mNotificationManager.notify(notificationId, notification);
         logLastNotificationTime();
     }
 

@@ -37,9 +37,7 @@ import android.os.Looper;
 import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
-
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
-
 import com.google.android.tv.btservices.remote.DefaultProxy;
 import com.google.android.tv.btservices.remote.DfuBinary;
 import com.google.android.tv.btservices.remote.DfuManager;
@@ -51,7 +49,6 @@ import com.google.android.tv.btservices.remote.Version;
 import com.google.android.tv.btservices.settings.BluetoothDeviceProvider;
 import com.google.common.base.Stopwatch;
 import com.google.common.base.Ticker;
-
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -66,9 +63,9 @@ import java.util.function.Consumer;
 
 public abstract class BluetoothDeviceService
         extends Service implements DfuManager.Listener, DfuProvider.Listener {
-
     public static final long PAIRING_AFTER_DFU_DELAY_MS = 3000;
     private static final String TAG = "Atv.BtDeviceService";
+    private static final boolean DEBUG = false;
     private static final String USER_SETUP_COMPLETE = "user_setup_complete";
     private static final String TV_USER_SETUP_COMPLETE = "tv_user_setup_complete";
     private static final String FASTPAIR_PROCESS = "com.google.android.gms.ui";
@@ -92,7 +89,6 @@ public abstract class BluetoothDeviceService
     private static final List<Intent> ORDERED_PAIRING_INTENTS = Collections.unmodifiableList(
             Arrays.asList(new Intent("com.google.android.tvsetup.app.REPAIR_REMOTE"),
                     new Intent("com.google.android.intent.action.CONNECT_INPUT")));
-    private static boolean DEBUG = false;
     protected final Handler mHandler = new Handler(Looper.getMainLooper());
     private final List<BluetoothDeviceProvider.Listener> mListeners = new ArrayList<>();
     private final List<DfuManager.Listener> mDfuListeners = new ArrayList<>();
