@@ -45,21 +45,21 @@ import java.util.function.Consumer;
  * <p>Example usage:
  *
  * Create a new {@code BleConnection}:
- * <pre>{@code
+ * <pre>
  * BluetoothDevice device;
  *
  * private class Callback implements BleConnection.Callback {
- *     @Override
+ *     &#64;Override
  *     public void onGattReady(BluetoothGatt gatt) {
  *         // Initialize with GATT requests here.
  *     }
  *
- *     @Override
+ *     &#64;Override
  *     public void onNotification(BluetoothGattCharacteristic characteristic, byte[] data) {
  *         // Handle GATT notification.
  *     }
  *
- *     @Override
+ *     &#64;Override
  *     public void onDisconnect(BluetoothGatt gatt, int status) {
  *         // Handle disconnect.
  *     }
@@ -67,7 +67,7 @@ import java.util.function.Consumer;
  *
  * BleConnection bleConnection = new BleConnection(new Callback());
  * bleConnection.connect(context, device);
- * }</pre>
+ * </pre>
  *
  * Write to GATT characteristic (must be called only after {@code
  * Callback#onGattReady} is called):
