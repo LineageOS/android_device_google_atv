@@ -25,9 +25,10 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Pair;
+
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
@@ -108,8 +109,8 @@ public class TransportManager {
     private final Transport.Factory mFactory;
 
     private Packet mPacketToBeProcessed = null;
-    private LinkedList<Pair<Packet, CompletableFuture<Transport.Result>>> mQueue =
-            new LinkedList<>();
+    private final ArrayDeque<Pair<Packet, CompletableFuture<Transport.Result>>> mQueue =
+            new ArrayDeque<>();
     private HashMap<Packet, CompletableFuture<Transport.Result>> mPendingResults = new HashMap<>();
     private String mLockId;
     private List<GattStateListener> mGattStateListeners = new ArrayList<>();
@@ -140,8 +141,8 @@ public class TransportManager {
         for (CompletableFuture<Transport.Result> result : mPendingResults.values()) {
             result.complete(RESULT_FAILURE_GATT_DISCONNECTED);
         }
-        for (Pair<Packet, CompletableFuture<Transport.Result>> qItem : mQueue) {
-            qItem.second.complete(RESULT_FAILURE_TIMED_OUT);
+        for (Pair<Packet, CompletableFuture<Transport.Result>> item : mQueue) {
+            item.second.complete(RESULT_FAILURE_TIMED_OUT);
         }
         mPendingResults.clear();
         mQueue.clear();
@@ -334,7 +335,7 @@ public class TransportManager {
 
         CompletableFuture<Transport.Result> ret = new CompletableFuture<>();
         mHandler.post(() -> {
-            mQueue.push(new Pair<Packet, CompletableFuture<Transport.Result>>(packet, ret));
+            mQueue.push(new Pair<>(packet, ret));
             processQueueAfterDelay(0);
         });
         return ret;
