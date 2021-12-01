@@ -93,7 +93,6 @@ public abstract class BluetoothDeviceService
             Arrays.asList(new Intent("com.google.android.tvsetup.app.REPAIR_REMOTE"),
                     new Intent("com.google.android.intent.action.CONNECT_INPUT")));
     private static boolean DEBUG = false;
-    private static Context sContext;
     protected final Handler mHandler = new Handler(Looper.getMainLooper());
     private final List<BluetoothDeviceProvider.Listener> mListeners = new ArrayList<>();
     private final List<DfuManager.Listener> mDfuListeners = new ArrayList<>();
@@ -155,8 +154,8 @@ public abstract class BluetoothDeviceService
         }
     };
 
-    protected static boolean isRemote(BluetoothDevice device) {
-        boolean res = BluetoothUtils.isRemote(sContext, device);
+    protected boolean isRemote(BluetoothDevice device) {
+        boolean res = BluetoothUtils.isRemote(this, device);
         if (DEBUG) {
             Log.d(TAG, "Device " + device.getName() + " isRemote(): " + res);
         }
@@ -292,7 +291,7 @@ public abstract class BluetoothDeviceService
         }
         mProxies.put(device, proxy);
 
-        if (!proxy.initialize(sContext)) {
+        if (!proxy.initialize(this)) {
             removeDevice(device);
             return;
         }
@@ -363,7 +362,7 @@ public abstract class BluetoothDeviceService
     private void connectDevice(BluetoothDevice device) {
         if (device != null) {
             CachedBluetoothDevice cachedDevice =
-                    BluetoothUtils.getCachedBluetoothDevice(sContext, device);
+                    BluetoothUtils.getCachedBluetoothDevice(this, device);
             if (cachedDevice != null) {
                 cachedDevice.connect(true);
             }
@@ -373,7 +372,7 @@ public abstract class BluetoothDeviceService
     private void disconnectDevice(BluetoothDevice device) {
         if (device != null) {
             CachedBluetoothDevice cachedDevice =
-                    BluetoothUtils.getCachedBluetoothDevice(sContext, device);
+                    BluetoothUtils.getCachedBluetoothDevice(this, device);
             if (cachedDevice != null) {
                 cachedDevice.disconnect();
             }
@@ -530,7 +529,7 @@ public abstract class BluetoothDeviceService
             return;
         }
 
-        if (!isSetupComplete(sContext)) {
+        if (!isSetupComplete(this)) {
             Log.e(TAG, "startRemoteDfu: oobe must be completed before updating " + device);
             return;
         }
@@ -769,8 +768,6 @@ public abstract class BluetoothDeviceService
     public void onCreate() {
         super.onCreate();
         if (DEBUG) Log.e(TAG, "onCreate");
-
-        sContext = this;
 
         IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_ACL_CONNECTED);
         filter.addAction(BluetoothDevice.ACTION_ACL_DISCONNECT_REQUESTED);
