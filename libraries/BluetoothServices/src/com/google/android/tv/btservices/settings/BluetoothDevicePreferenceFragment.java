@@ -298,7 +298,7 @@ public class BluetoothDevicePreferenceFragment extends LeanbackPreferenceFragmen
     // BluetoothPairingService.PairingListener implementation
     @Override
     public void updatePairingStatus(BluetoothDevice device, int status) {
-        if (mDevice.getAddress() != device.getAddress()) {
+        if (!TextUtils.equals(mDevice.getAddress(), device.getAddress())) {
             return;
         }
         mHandler.post(() -> this.updatePairingStatusImpl(status));
