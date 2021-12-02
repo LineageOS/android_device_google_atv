@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d4a1988_60d6445d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2021-12-02T23:53:24Z",
+      "side": 1,
+      "message": "psuedo-V+1 from the 18.1 user who had me do this in the first place - and the fact we have the target in vendor/lineage",
+      "revId": "00f6792dde68fe1144e5d612d7e3599991d87293",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
