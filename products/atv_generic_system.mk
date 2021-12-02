@@ -57,7 +57,7 @@ PRODUCT_PACKAGES += \
     libhidltransport \
     libhwbinder
 
-PRODUCT_PACKAGES_DEBUG += \
+PRODUCT_PACKAGES_ENG += \
     avbctl \
     bootctl \
     tinycap \
