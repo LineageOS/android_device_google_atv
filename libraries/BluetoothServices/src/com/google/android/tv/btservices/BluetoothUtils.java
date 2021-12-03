@@ -64,6 +64,13 @@ public class BluetoothUtils {
         }
         sKnownRemoteLabels = Collections.unmodifiableList(Arrays.asList(
                 context.getResources().getStringArray(R.array.known_bluetooth_device_labels)));
+        // For backward compatibility, the customization name used to be known_remote_labels
+        if (sKnownRemoteLabels.isEmpty()) {
+            sKnownRemoteLabels = Collections.unmodifiableList(
+                    Arrays.asList(
+                        context.getResources().getStringArray(
+                            R.array.known_remote_labels)));
+        }
     }
 
     public static boolean isConnected(BluetoothDevice device) {
