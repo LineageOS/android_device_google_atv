@@ -63,7 +63,6 @@ import java.util.function.Consumer;
 
 public abstract class BluetoothDeviceService
         extends Service implements DfuManager.Listener, DfuProvider.Listener {
-    public static final long PAIRING_AFTER_DFU_DELAY_MS = 3000;
     private static final String TAG = "Atv.BtDeviceService";
     private static final boolean DEBUG = false;
     private static final String USER_SETUP_COMPLETE = "user_setup_complete";
@@ -78,12 +77,6 @@ public abstract class BluetoothDeviceService
             TimeUnit.MILLISECONDS.convert(5, TimeUnit.MINUTES);
     private static final long INITIATE_DFU_CHECK_DELAY_MS =
             TimeUnit.MILLISECONDS.convert(5, TimeUnit.MINUTES);
-
-    // The remote has just been connected; we should not send any data request immediately.
-    private static final long DO_NOT_DISTURB_PERIOD_MS = 750;
-    private static final int PENDING_BATTERY_LEVEL = -2;
-    private static final Version PENDING_VERSION = Version.BAD_VERSION;
-    private static final List<BluetoothDevice> EMPTY_LIST = new ArrayList<>();
     // Following list is describes the set of intents to try in case we need to pair a remote. The
     // list should be traversed in order.
     private static final List<Intent> ORDERED_PAIRING_INTENTS = Collections.unmodifiableList(
@@ -205,10 +198,12 @@ public abstract class BluetoothDeviceService
     protected static List<BluetoothDevice> getDevices() {
         final BluetoothAdapter btAdapter = BluetoothAdapter.getDefaultAdapter();
         if (btAdapter != null) {
-            List<BluetoothDevice> devices = new ArrayList<>(btAdapter.getBondedDevices());
-            return devices;
+            Set<BluetoothDevice> devices = btAdapter.getBondedDevices();
+            if (devices != null) {
+                return new ArrayList<>(devices);
+            }
         }
-        return EMPTY_LIST;
+        return Collections.emptyList();
     }
 
     public static BluetoothDevice findDevice(String address) {
@@ -360,7 +355,7 @@ public abstract class BluetoothDeviceService
             CachedBluetoothDevice cachedDevice =
                     BluetoothUtils.getCachedBluetoothDevice(this, device);
             if (cachedDevice != null) {
-                cachedDevice.connect(true);
+                cachedDevice.connect();
             }
         }
     }
@@ -469,8 +464,7 @@ public abstract class BluetoothDeviceService
         }
 
         Version version = getRemoteVersion(device);
-        if (version == null || version.equals(Version.BAD_VERSION)
-                || version.equals(PENDING_VERSION)) {
+        if (version == null || version.equals(Version.BAD_VERSION)) {
             return false;
         }
         final String name = BluetoothUtils.getOriginalName(device);
@@ -628,9 +622,7 @@ public abstract class BluetoothDeviceService
         if (device == null) {
             return null;
         }
-
-        RemoteProxy proxy = mProxies.get(device);
-        return proxy;
+        return mProxies.get(device);
     }
 
     /**
@@ -716,7 +708,7 @@ public abstract class BluetoothDeviceService
 
     private void initializeDeviceBatteryLevelRead(BluetoothDevice device) {
         if (device == null) {
-            Log.w(TAG, "device is null for: " + device);
+            Log.w(TAG, "initializeDeviceBatteryLevelRead for null device");
             return;
         }
 
@@ -817,7 +809,7 @@ public abstract class BluetoothDeviceService
     public class LocalBinder extends Binder implements BluetoothDeviceProvider {
 
         public List<BluetoothDevice> getDevices() {
-            return BluetoothDeviceService.this.getDevices();
+            return BluetoothDeviceService.getDevices();
         }
 
         @Override
@@ -832,7 +824,7 @@ public abstract class BluetoothDeviceService
 
         @Override
         public void forgetDevice(BluetoothDevice device) {
-            BluetoothDeviceService.this.forgetDevice(device);
+            BluetoothDeviceService.forgetDevice(device);
         }
 
         @Override
@@ -905,7 +897,7 @@ public abstract class BluetoothDeviceService
         }
 
         public void dismissDfuNotification(String address) {
-            BluetoothDevice device = BluetoothDeviceService.this.findDevice(address);
+            BluetoothDevice device = BluetoothDeviceService.findDevice(address);
             NotificationCenter.dismissUpdateNotification(device);
         }
     }
