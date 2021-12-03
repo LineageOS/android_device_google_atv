@@ -17,6 +17,8 @@
 <resources>
   <string-array name="dfu_binary_md5s" translatable="false">
   </string-array>
+  <string-array name="known_remote_labels" translatable="false">
+  </string-array>
   <string-array name="known_bluetooth_device_labels" translatable="false">
     <item>b06</item>
     <item>remote</item>
