@@ -43,6 +43,7 @@ public class BluetoothPairingService extends Service implements BluetoothScanner
     private final Binder mBinder = new LocalBinder();
     private List<ScanningListener> mScanningListenerList = new ArrayList<>();
     private List<PairingListener> mPairingListenerList = new ArrayList<>();
+    private BluetoothScanner mBluetoothScanner;
     private BluetoothPairer mBluetoothPairer;
 
     private final Handler mHandler = new Handler();
@@ -107,19 +108,31 @@ public class BluetoothPairingService extends Service implements BluetoothScanner
         return mBinder;
     }
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        mBluetoothScanner = new BluetoothScanner(getApplicationContext());
+    }
+
+    @Override
+    public void onDestroy() {
+        stopScanning();
+        super.onDestroy();
+    }
+
     private void resetScanning() {
         stopScanning();
         if (pairingInProgress()) {
             return;
         }
         if (!mScanningListenerList.isEmpty()) {
-            BluetoothScanner.startListening(this, this);
+            mBluetoothScanner.startListening(/* listener= */this);
             mScanningListenerList.forEach(listener -> listener.updateScanning(true));
         }
     }
 
     private void stopScanning() {
-        BluetoothScanner.stopListening(this);
+        mBluetoothScanner.stopListening(this);
         mScanningListenerList.forEach(listener -> listener.updateScanning(false));
     }
 

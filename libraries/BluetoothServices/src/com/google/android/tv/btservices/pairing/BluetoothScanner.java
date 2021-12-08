@@ -67,23 +67,20 @@ public class BluetoothScanner {
         void onDeviceRemoved(BluetoothDevice device);
     }
 
-    private static Receiver receiver;
+    private final Receiver receiver;
 
-    private BluetoothScanner() {}
+    public BluetoothScanner(Context context) {
+        receiver = new Receiver(context.getApplicationContext());
+    }
 
-    protected static void startListening(Context context, Listener listener) {
-        if (receiver == null) {
-            receiver = new Receiver(context.getApplicationContext());
-        }
+    protected void startListening(Listener listener) {
         receiver.startListening(listener);
         Log.v(TAG, "startListening");
     }
 
-    protected static void stopListening(Listener listener) {
-        Log.v(TAG, "stopListening sReceiver=" + receiver);
-        if (receiver != null) {
-            receiver.stopListening(listener);
-        }
+    protected void stopListening(Listener listener) {
+        Log.v(TAG, "stopListening receiver=" + receiver);
+        receiver.stopListening(listener);
     }
 
     private static class Receiver extends BroadcastReceiver {
