@@ -167,5 +167,26 @@ Return<Result> DeviceImpl::setConnectedState(const DeviceAddress& address,
   return Result::OK;
 }
 
+#if MAJOR_VERSION >= 6
+Return<void> DeviceImpl::updateAudioPatch(
+    int32_t previousPatch, const hidl_vec<AudioPortConfig>& sources,
+    const hidl_vec<AudioPortConfig>& sinks, updateAudioPatch_cb _hidl_cb) {
+  _hidl_cb(Result::NOT_SUPPORTED, 0);
+  return Void();
+}
+
+Return<Result> DeviceImpl::close() { return Result::OK; }
+
+Return<Result> DeviceImpl::addDeviceEffect(AudioPortHandle device,
+                                           uint64_t effectId) {
+  return Result::NOT_SUPPORTED;
+}
+
+Return<Result> DeviceImpl::removeDeviceEffect(AudioPortHandle device,
+                                              uint64_t effectId) {
+  return Result::NOT_SUPPORTED;
+}
+#endif
+
 }  // namespace service
 }  // namespace audio_proxy

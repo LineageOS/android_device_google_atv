@@ -116,6 +116,20 @@ class StreamOutImpl : public IStreamOut {
   Return<Result> selectPresentation(int32_t presentationId,
                                     int32_t programId) override;
 
+#if MAJOR_VERSION >= 6
+  Return<Result> setEventCallback(
+      const sp<IStreamOutEventCallback>& callback) override;
+  Return<void> getDualMonoMode(getDualMonoMode_cb _hidl_cb) override;
+  Return<Result> setDualMonoMode(DualMonoMode mode) override;
+  Return<void> getAudioDescriptionMixLevel(
+      getAudioDescriptionMixLevel_cb _hidl_cb) override;
+  Return<Result> setAudioDescriptionMixLevel(float leveldB) override;
+  Return<void> getPlaybackRateParameters(
+      getPlaybackRateParameters_cb _hidl_cb) override;
+  Return<Result> setPlaybackRateParameters(
+      const PlaybackRate& playbackRate) override;
+#endif
+
  private:
   uint64_t estimateTotalPlayedFrames() const;
 

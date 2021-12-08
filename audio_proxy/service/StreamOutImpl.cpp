@@ -143,7 +143,11 @@ Return<AudioFormat> StreamOutImpl::getFormat() { return mConfig.format; }
 
 Return<void> StreamOutImpl::getSupportedFormats(
     getSupportedFormats_cb _hidl_cb) {
+#if MAJOR_VERSION >= 6
+  _hidl_cb(Result::NOT_SUPPORTED, {});
+#else
   _hidl_cb({});
+#endif
   return Void();
 }
 
@@ -431,5 +435,42 @@ uint64_t StreamOutImpl::estimateTotalPlayedFrames() const {
   auto [frames, timestamp] = mWriteThread->getPresentationPosition();
   return frames + estimatePlayedFramesSince(timestamp, mConfig.sampleRateHz);
 }
+
+#if MAJOR_VERSION >= 6
+Return<Result> StreamOutImpl::setEventCallback(
+    const sp<IStreamOutEventCallback>& callback) {
+  return Result::NOT_SUPPORTED;
+}
+
+Return<void> StreamOutImpl::getDualMonoMode(getDualMonoMode_cb _hidl_cb) {
+  _hidl_cb(Result::NOT_SUPPORTED, DualMonoMode::OFF);
+  return Void();
+}
+
+Return<Result> StreamOutImpl::setDualMonoMode(DualMonoMode mode) {
+  return Result::NOT_SUPPORTED;
+}
+
+Return<void> StreamOutImpl::getAudioDescriptionMixLevel(
+    getAudioDescriptionMixLevel_cb _hidl_cb) {
+  _hidl_cb(Result::NOT_SUPPORTED, 0.f);
+  return Void();
+}
+
+Return<Result> StreamOutImpl::setAudioDescriptionMixLevel(float leveldB) {
+  return Result::NOT_SUPPORTED;
+}
+
+Return<void> StreamOutImpl::getPlaybackRateParameters(
+    getPlaybackRateParameters_cb _hidl_cb) {
+  _hidl_cb(Result::NOT_SUPPORTED, {});
+  return Void();
+}
+
+Return<Result> StreamOutImpl::setPlaybackRateParameters(
+    const PlaybackRate& playbackRate) {
+  return Result::NOT_SUPPORTED;
+}
+#endif
 
 }  // namespace audio_proxy::service

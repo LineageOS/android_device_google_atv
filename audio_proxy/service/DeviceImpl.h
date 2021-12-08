@@ -37,6 +37,7 @@ using ::android::hardware::audio::common::CPP_VERSION::AudioInputFlag;
 using ::android::hardware::audio::common::CPP_VERSION::AudioOutputFlag;
 using ::android::hardware::audio::common::CPP_VERSION::AudioPort;
 using ::android::hardware::audio::common::CPP_VERSION::AudioPortConfig;
+using ::android::hardware::audio::common::CPP_VERSION::AudioPortHandle;
 using ::android::hardware::audio::common::CPP_VERSION::DeviceAddress;
 using ::android::hardware::audio::common::CPP_VERSION::SinkMetadata;
 using ::android::hardware::audio::common::CPP_VERSION::SourceMetadata;
@@ -90,6 +91,18 @@ class DeviceImpl : public IDevice {
   Return<void> getMicrophones(getMicrophones_cb _hidl_cb) override;
   Return<Result> setConnectedState(const DeviceAddress& address,
                                    bool connected) override;
+
+#if MAJOR_VERSION >= 6
+  Return<void> updateAudioPatch(int32_t previousPatch,
+                                const hidl_vec<AudioPortConfig>& sources,
+                                const hidl_vec<AudioPortConfig>& sinks,
+                                updateAudioPatch_cb _hidl_cb) override;
+  Return<Result> close() override;
+  Return<Result> addDeviceEffect(AudioPortHandle device,
+                                 uint64_t effectId) override;
+  Return<Result> removeDeviceEffect(AudioPortHandle device,
+                                    uint64_t effectId) override;
+#endif
 
  private:
   BusStreamProvider& mBusStreamProvider;
