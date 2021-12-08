@@ -16,6 +16,11 @@
 
 package com.google.android.tv.btservices;
 
+import static android.app.NotificationManager.IMPORTANCE_DEFAULT;
+import static android.app.NotificationManager.IMPORTANCE_HIGH;
+import static android.app.NotificationManager.IMPORTANCE_LOW;
+import static android.app.NotificationManager.IMPORTANCE_MAX;
+
 import android.app.Notification;
 import android.app.Notification.TvExtender;
 import android.app.NotificationChannel;
@@ -109,49 +114,27 @@ public class NotificationCenter {
 
     private void createNotificationChannel() {
         // Create notification channel for firmware update notification
-        if (mNotificationManager.getNotificationChannel(DFU_NOTIFICATION_CHANNEL) == null) {
-            CharSequence name = mContext.getString(R.string.settings_notif_update_channel_name);
-            String description = mContext.getString(
-                    R.string.settings_notif_update_channel_description);
-            int importance = NotificationManager.IMPORTANCE_MAX;
-
-            NotificationChannel channel =
-                    new NotificationChannel(DFU_NOTIFICATION_CHANNEL, name, importance);
-            channel.setDescription(description);
-            mNotificationManager.createNotificationChannel(channel);
-        }
+        CharSequence dfuName = mContext.getString(R.string.settings_notif_update_channel_name);
+        String dfuDescr = mContext.getString(R.string.settings_notif_update_channel_description);
+        ensureNotificationChannel(DFU_NOTIFICATION_CHANNEL, IMPORTANCE_MAX, dfuName, dfuDescr);
 
         // Create notification channels with different priorities for battery notifications
         CharSequence name = mContext.getString(R.string.settings_notif_battery_channel_name);
-        String description = mContext.getString(R.string.settings_notif_battery_channel_description);
+        String descr = mContext.getString(R.string.settings_notif_battery_channel_description);
+        ensureNotificationChannel(DEFAULT_NOTIFICATION_CHANNEL, IMPORTANCE_LOW, name, descr);
+        ensureNotificationChannel(HIGH_PRIORITY_NOTIFICATION_CHANNEL, IMPORTANCE_DEFAULT, name,
+                descr);
+        ensureNotificationChannel(CRITICAL_NOTIFICATION_CHANNEL, IMPORTANCE_HIGH, name, descr);
+    }
 
-        if (mNotificationManager.getNotificationChannel(DEFAULT_NOTIFICATION_CHANNEL) == null) {
-            int importance = NotificationManager.IMPORTANCE_LOW;
-
-            NotificationChannel channel =
-                new NotificationChannel(DEFAULT_NOTIFICATION_CHANNEL, name, importance);
-            channel.setDescription(description);
-            mNotificationManager.createNotificationChannel(channel);
+    private void ensureNotificationChannel(String channelId,
+            @NotificationManager.Importance int importance, CharSequence name, String description) {
+        if (mNotificationManager.getNotificationChannel(channelId) != null) {
+            return;
         }
-
-        if (mNotificationManager.getNotificationChannel(
-                    HIGH_PRIORITY_NOTIFICATION_CHANNEL) == null) {
-            int importance = NotificationManager.IMPORTANCE_DEFAULT;
-
-            NotificationChannel channel =
-                new NotificationChannel(HIGH_PRIORITY_NOTIFICATION_CHANNEL, name, importance);
-            channel.setDescription(description);
-            mNotificationManager.createNotificationChannel(channel);
-        }
-
-        if (mNotificationManager.getNotificationChannel(CRITICAL_NOTIFICATION_CHANNEL) == null) {
-            int importance = NotificationManager.IMPORTANCE_HIGH;
-
-            NotificationChannel channel =
-                new NotificationChannel(CRITICAL_NOTIFICATION_CHANNEL, name, importance);
-            channel.setDescription(description);
-            mNotificationManager.createNotificationChannel(channel);
-        }
+        NotificationChannel channel = new NotificationChannel(channelId, name, importance);
+        channel.setDescription(description);
+        mNotificationManager.createNotificationChannel(channel);
     }
 
 
