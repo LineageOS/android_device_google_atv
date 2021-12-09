@@ -37,9 +37,7 @@ import android.os.Looper;
 import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
-
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
-
 import com.google.android.tv.btservices.remote.DefaultProxy;
 import com.google.android.tv.btservices.remote.DfuBinary;
 import com.google.android.tv.btservices.remote.DfuManager;
@@ -51,7 +49,6 @@ import com.google.android.tv.btservices.remote.Version;
 import com.google.android.tv.btservices.settings.BluetoothDeviceProvider;
 import com.google.common.base.Stopwatch;
 import com.google.common.base.Ticker;
-
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -66,9 +63,9 @@ import java.util.function.Consumer;
 
 public abstract class BluetoothDeviceService
         extends Service implements DfuManager.Listener, DfuProvider.Listener {
-
     public static final long PAIRING_AFTER_DFU_DELAY_MS = 3000;
     private static final String TAG = "Atv.BtDeviceService";
+    private static final boolean DEBUG = false;
     private static final String USER_SETUP_COMPLETE = "user_setup_complete";
     private static final String TV_USER_SETUP_COMPLETE = "tv_user_setup_complete";
     private static final String FASTPAIR_PROCESS = "com.google.android.gms.ui";
@@ -92,8 +89,6 @@ public abstract class BluetoothDeviceService
     private static final List<Intent> ORDERED_PAIRING_INTENTS = Collections.unmodifiableList(
             Arrays.asList(new Intent("com.google.android.tvsetup.app.REPAIR_REMOTE"),
                     new Intent("com.google.android.intent.action.CONNECT_INPUT")));
-    private static boolean DEBUG = false;
-    private static Context sContext;
     protected final Handler mHandler = new Handler(Looper.getMainLooper());
     private final List<BluetoothDeviceProvider.Listener> mListeners = new ArrayList<>();
     private final List<DfuManager.Listener> mDfuListeners = new ArrayList<>();
@@ -155,8 +150,8 @@ public abstract class BluetoothDeviceService
         }
     };
 
-    protected static boolean isRemote(BluetoothDevice device) {
-        boolean res = BluetoothUtils.isRemote(sContext, device);
+    protected boolean isRemote(BluetoothDevice device) {
+        boolean res = BluetoothUtils.isRemote(this, device);
         if (DEBUG) {
             Log.d(TAG, "Device " + device.getName() + " isRemote(): " + res);
         }
@@ -292,7 +287,7 @@ public abstract class BluetoothDeviceService
         }
         mProxies.put(device, proxy);
 
-        if (!proxy.initialize(sContext)) {
+        if (!proxy.initialize(this)) {
             removeDevice(device);
             return;
         }
@@ -363,7 +358,7 @@ public abstract class BluetoothDeviceService
     private void connectDevice(BluetoothDevice device) {
         if (device != null) {
             CachedBluetoothDevice cachedDevice =
-                    BluetoothUtils.getCachedBluetoothDevice(sContext, device);
+                    BluetoothUtils.getCachedBluetoothDevice(this, device);
             if (cachedDevice != null) {
                 cachedDevice.connect(true);
             }
@@ -373,7 +368,7 @@ public abstract class BluetoothDeviceService
     private void disconnectDevice(BluetoothDevice device) {
         if (device != null) {
             CachedBluetoothDevice cachedDevice =
-                    BluetoothUtils.getCachedBluetoothDevice(sContext, device);
+                    BluetoothUtils.getCachedBluetoothDevice(this, device);
             if (cachedDevice != null) {
                 cachedDevice.disconnect();
             }
@@ -530,7 +525,7 @@ public abstract class BluetoothDeviceService
             return;
         }
 
-        if (!isSetupComplete(sContext)) {
+        if (!isSetupComplete(this)) {
             Log.e(TAG, "startRemoteDfu: oobe must be completed before updating " + device);
             return;
         }
@@ -769,8 +764,6 @@ public abstract class BluetoothDeviceService
     public void onCreate() {
         super.onCreate();
         if (DEBUG) Log.e(TAG, "onCreate");
-
-        sContext = this;
 
         IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_ACL_CONNECTED);
         filter.addAction(BluetoothDevice.ACTION_ACL_DISCONNECT_REQUESTED);
