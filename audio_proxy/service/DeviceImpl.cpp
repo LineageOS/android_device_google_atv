@@ -30,6 +30,8 @@ using ::android::wp;
 namespace audio_proxy {
 namespace service {
 namespace {
+AudioPatchHandle gNextAudioPatchHandle = 1;
+
 AidlAudioConfig toAidlAudioConfig(const AudioConfig& hidl_config) {
   AidlAudioConfig aidlConfig = {
       .format = static_cast<AidlAudioFormat>(hidl_config.format),
@@ -114,15 +116,19 @@ Return<void> DeviceImpl::openInputStream(int32_t ioHandle,
 
 Return<bool> DeviceImpl::supportsAudioPatches() { return true; }
 
+// Create a do-nothing audio patch.
 Return<void> DeviceImpl::createAudioPatch(
     const hidl_vec<AudioPortConfig>& sources,
     const hidl_vec<AudioPortConfig>& sinks, createAudioPatch_cb _hidl_cb) {
-  _hidl_cb(Result::OK, 0);
+  AudioPatchHandle handle = gNextAudioPatchHandle++;
+  mAudioPatchHandles.insert(handle);
+  _hidl_cb(Result::OK, handle);
   return Void();
 }
 
-Return<Result> DeviceImpl::releaseAudioPatch(int32_t patch) {
-  return Result::OK;
+Return<Result> DeviceImpl::releaseAudioPatch(AudioPatchHandle patch) {
+  size_t removed = mAudioPatchHandles.erase(patch);
+  return removed > 0 ? Result::OK : Result::INVALID_ARGUMENTS;
 }
 
 Return<void> DeviceImpl::getAudioPort(const AudioPort& port,
@@ -169,13 +175,23 @@ Return<Result> DeviceImpl::setConnectedState(const DeviceAddress& address,
 
 #if MAJOR_VERSION >= 6
 Return<void> DeviceImpl::updateAudioPatch(
-    int32_t previousPatch, const hidl_vec<AudioPortConfig>& sources,
+    AudioPatchHandle previousPatch, const hidl_vec<AudioPortConfig>& sources,
     const hidl_vec<AudioPortConfig>& sinks, updateAudioPatch_cb _hidl_cb) {
-  _hidl_cb(Result::NOT_SUPPORTED, 0);
+  if (mAudioPatchHandles.erase(previousPatch) == 0) {
+    _hidl_cb(Result::INVALID_ARGUMENTS, 0);
+    return Void();
+  }
+  AudioPatchHandle newPatch = gNextAudioPatchHandle++;
+  mAudioPatchHandles.insert(newPatch);
+  _hidl_cb(Result::OK, newPatch);
   return Void();
 }
 
-Return<Result> DeviceImpl::close() { return Result::OK; }
+Return<Result> DeviceImpl::close() {
+  return mBusStreamProvider.cleanAndCountStreamOuts() == 0
+             ? Result::OK
+             : Result::INVALID_STATE;
+}
 
 Return<Result> DeviceImpl::addDeviceEffect(AudioPortHandle device,
                                            uint64_t effectId) {

@@ -14,6 +14,8 @@
 
 #pragma once
 
+#include <set>
+
 // clang-format off
 #include PATH(android/hardware/audio/FILE_VERSION/IDevice.h)
 // clang-format on
@@ -35,6 +37,7 @@ using ::android::hardware::Void;
 using ::android::hardware::audio::common::CPP_VERSION::AudioConfig;
 using ::android::hardware::audio::common::CPP_VERSION::AudioInputFlag;
 using ::android::hardware::audio::common::CPP_VERSION::AudioOutputFlag;
+using ::android::hardware::audio::common::CPP_VERSION::AudioPatchHandle;
 using ::android::hardware::audio::common::CPP_VERSION::AudioPort;
 using ::android::hardware::audio::common::CPP_VERSION::AudioPortConfig;
 using ::android::hardware::audio::common::CPP_VERSION::AudioPortHandle;
@@ -76,7 +79,7 @@ class DeviceImpl : public IDevice {
   Return<void> createAudioPatch(const hidl_vec<AudioPortConfig>& sources,
                                 const hidl_vec<AudioPortConfig>& sinks,
                                 createAudioPatch_cb _hidl_cb) override;
-  Return<Result> releaseAudioPatch(int32_t patch) override;
+  Return<Result> releaseAudioPatch(AudioPatchHandle patch) override;
   Return<void> getAudioPort(const AudioPort& port,
                             getAudioPort_cb _hidl_cb) override;
   Return<Result> setAudioPortConfig(const AudioPortConfig& config) override;
@@ -93,7 +96,7 @@ class DeviceImpl : public IDevice {
                                    bool connected) override;
 
 #if MAJOR_VERSION >= 6
-  Return<void> updateAudioPatch(int32_t previousPatch,
+  Return<void> updateAudioPatch(AudioPatchHandle previousPatch,
                                 const hidl_vec<AudioPortConfig>& sources,
                                 const hidl_vec<AudioPortConfig>& sinks,
                                 updateAudioPatch_cb _hidl_cb) override;
@@ -108,6 +111,7 @@ class DeviceImpl : public IDevice {
   BusStreamProvider& mBusStreamProvider;
   const uint32_t mBufferSizeMs;
   const uint32_t mLatencyMs;
+  std::set<AudioPatchHandle> mAudioPatchHandles;
 };
 
 }  // namespace service

@@ -54,6 +54,9 @@ class BusStreamProvider {
   std::shared_ptr<BusOutputStream> openOutputStream(
       const std::string& address, const AidlAudioConfig& config, int32_t flags);
 
+  // Clear closed StreamOut and return number of opened StreamOut.
+  size_t cleanAndCountStreamOuts();
+
  private:
   std::shared_ptr<BusOutputStream> openOutputStream_Locked(
       const std::string& address, const AidlAudioConfig& config, int32_t flags)
