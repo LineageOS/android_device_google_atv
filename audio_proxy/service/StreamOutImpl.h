@@ -133,6 +133,7 @@ class StreamOutImpl : public IStreamOut {
  private:
   uint64_t estimateTotalPlayedFrames() const;
 
+  // The object is always valid until close is called.
   std::shared_ptr<BusOutputStream> mStream;
   const AudioConfig mConfig;
   const uint32_t mBufferSizeMs;
@@ -145,6 +146,9 @@ class StreamOutImpl : public IStreamOut {
   sp<WriteThread> mWriteThread;
 
   uint64_t mTotalPlayedFramesSinceStandby = 0;
+
+  // Whether pause is called. It's used to avoid resuming when not paused.
+  bool mIsPaused = false;
 };
 
 }  // namespace audio_proxy::service
