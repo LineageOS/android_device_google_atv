@@ -16,6 +16,7 @@
 
 #include <android-base/logging.h>
 #include <inttypes.h>
+#include <math.h>
 #include <time.h>
 #include <utils/Log.h>
 
@@ -143,7 +144,11 @@ Return<AudioFormat> StreamOutImpl::getFormat() { return mConfig.format; }
 
 Return<void> StreamOutImpl::getSupportedFormats(
     getSupportedFormats_cb _hidl_cb) {
+#if MAJOR_VERSION >= 6
+  _hidl_cb(Result::NOT_SUPPORTED, {});
+#else
   _hidl_cb({});
+#endif
   return Void();
 }
 
@@ -156,12 +161,13 @@ Return<void> StreamOutImpl::getAudioProperties(getAudioProperties_cb _hidl_cb) {
   return Void();
 }
 
+// We don't support effects. So any effectId is invalid.
 Return<Result> StreamOutImpl::addEffect(uint64_t effectId) {
-  return Result::NOT_SUPPORTED;
+  return Result::INVALID_ARGUMENTS;
 }
 
 Return<Result> StreamOutImpl::removeEffect(uint64_t effectId) {
-  return Result::NOT_SUPPORTED;
+  return Result::INVALID_ARGUMENTS;
 }
 
 Return<Result> StreamOutImpl::standby() {
@@ -187,7 +193,7 @@ Return<Result> StreamOutImpl::setDevices(
 Return<void> StreamOutImpl::getParameters(
     const hidl_vec<ParameterValue>& context, const hidl_vec<hidl_string>& keys,
     getParameters_cb _hidl_cb) {
-  _hidl_cb(Result::OK, {});
+  _hidl_cb(keys.size() > 0 ? Result::NOT_SUPPORTED : Result::OK, {});
   return Void();
 }
 
@@ -202,15 +208,30 @@ Return<Result> StreamOutImpl::setHwAvSync(uint32_t hwAvSync) {
 }
 
 Return<Result> StreamOutImpl::close() {
+  if (!mStream) {
+    return Result::INVALID_STATE;
+  }
+
   if (mWriteThread) {
     mWriteThread->stop();
   }
-  return mStream->close() ? Result::OK : Result::INVALID_STATE;
+
+  if (!mStream->close()) {
+    LOG(WARNING) << "Failed to close stream.";
+  }
+
+  mStream = nullptr;
+
+  return Result::OK;
 }
 
 Return<uint32_t> StreamOutImpl::getLatency() { return mLatencyMs; }
 
 Return<Result> StreamOutImpl::setVolume(float left, float right) {
+  if (isnan(left) || left < 0.f || left > 1.f || isnan(right) || right < 0.f ||
+      right > 1.f) {
+    return Result::INVALID_ARGUMENTS;
+  }
   return mStream->setVolume(left, right) ? Result::OK : Result::INVALID_STATE;
 }
 
@@ -340,24 +361,51 @@ Return<void> StreamOutImpl::supportsPauseAndResume(
   return Void();
 }
 
+// pause should not be called before starting the playback.
 Return<Result> StreamOutImpl::pause() {
-  return mStream->pause() ? Result::OK : Result::INVALID_STATE;
+  if (!mWriteThread) {
+    return Result::INVALID_STATE;
+  }
+
+  if (!mStream->pause()) {
+    return Result::INVALID_STATE;
+  }
+
+  mIsPaused = true;
+  return Result::OK;
 }
 
+// Resume should onl be called after pause.
 Return<Result> StreamOutImpl::resume() {
-  return mStream->resume() ? Result::OK : Result::INVALID_STATE;
+  if (!mIsPaused) {
+    return Result::INVALID_STATE;
+  }
+
+  if (!mStream->resume()) {
+    return Result::INVALID_STATE;
+  }
+
+  mIsPaused = false;
+  return Result::OK;
 }
 
+// Drain and flush should always succeed if supported.
 Return<bool> StreamOutImpl::supportsDrain() { return true; }
 
 Return<Result> StreamOutImpl::drain(AudioDrain type) {
-  return mStream->drain(static_cast<AidlAudioDrain>(type))
-             ? Result::OK
-             : Result::INVALID_STATE;
+  if (!mStream->drain(static_cast<AidlAudioDrain>(type))) {
+    LOG(WARNING) << "Failed to drain the stream.";
+  }
+
+  return Result::OK;
 }
 
 Return<Result> StreamOutImpl::flush() {
-  return mStream->flush() ? Result::OK : Result::INVALID_STATE;
+  if (!mStream->flush()) {
+    LOG(WARNING) << "Failed to flush the stream.";
+  }
+
+  return Result::OK;
 }
 
 Return<void> StreamOutImpl::getPresentationPosition(
@@ -431,5 +479,42 @@ uint64_t StreamOutImpl::estimateTotalPlayedFrames() const {
   auto [frames, timestamp] = mWriteThread->getPresentationPosition();
   return frames + estimatePlayedFramesSince(timestamp, mConfig.sampleRateHz);
 }
+
+#if MAJOR_VERSION >= 6
+Return<Result> StreamOutImpl::setEventCallback(
+    const sp<IStreamOutEventCallback>& callback) {
+  return Result::NOT_SUPPORTED;
+}
+
+Return<void> StreamOutImpl::getDualMonoMode(getDualMonoMode_cb _hidl_cb) {
+  _hidl_cb(Result::NOT_SUPPORTED, DualMonoMode::OFF);
+  return Void();
+}
+
+Return<Result> StreamOutImpl::setDualMonoMode(DualMonoMode mode) {
+  return Result::NOT_SUPPORTED;
+}
+
+Return<void> StreamOutImpl::getAudioDescriptionMixLevel(
+    getAudioDescriptionMixLevel_cb _hidl_cb) {
+  _hidl_cb(Result::NOT_SUPPORTED, 0.f);
+  return Void();
+}
+
+Return<Result> StreamOutImpl::setAudioDescriptionMixLevel(float leveldB) {
+  return Result::NOT_SUPPORTED;
+}
+
+Return<void> StreamOutImpl::getPlaybackRateParameters(
+    getPlaybackRateParameters_cb _hidl_cb) {
+  _hidl_cb(Result::NOT_SUPPORTED, {});
+  return Void();
+}
+
+Return<Result> StreamOutImpl::setPlaybackRateParameters(
+    const PlaybackRate& playbackRate) {
+  return Result::NOT_SUPPORTED;
+}
+#endif
 
 }  // namespace audio_proxy::service

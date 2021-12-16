@@ -77,6 +77,12 @@ std::shared_ptr<BusOutputStream> BusStreamProvider::openOutputStream_Locked(
                                                  config, flags);
 }
 
+size_t BusStreamProvider::cleanAndCountStreamOuts() {
+  std::lock_guard<std::mutex> lock(mLock);
+  cleanStreamOutList_Locked();
+  return mStreamOutList.size();
+}
+
 void BusStreamProvider::cleanStreamOutList_Locked() {
   auto it = mStreamOutList.begin();
   while (it != mStreamOutList.end()) {
