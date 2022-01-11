@@ -17,4 +17,8 @@
 <resources>
     <!-- Make the IME killable by the lowmemorykiller by raising its oom_score_adj. -->
     <bool name="config_killableInputMethods">true</bool>
+
+    <!-- Prevent the InputMethodManagerService from starting up the IME unless
+      the currently focused view is a text editor. -->
+    <bool name="config_preventImeStartupUnlessTextEditor">true</bool>
 </resources>
