@@ -44,7 +44,6 @@ PRODUCT_PACKAGES += \
     CalendarProvider \
     CaptivePortalLogin \
     CertInstaller \
-    clatd \
     ExternalStorageProvider \
     FusedLocation \
     InputDevices \
