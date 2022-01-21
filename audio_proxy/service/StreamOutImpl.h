@@ -61,6 +61,12 @@ class StreamOutImpl : public IStreamOut {
   Return<uint64_t> getFrameSize() override;
   Return<uint64_t> getFrameCount() override;
   Return<uint64_t> getBufferSize() override;
+
+#if MAJOR_VERSION >= 7
+  Return<void> getSupportedProfiles(getSupportedProfiles_cb _hidl_cb) override;
+  Return<Result> setAudioProperties(
+      const AudioConfigBaseOptional& config) override;
+#else
   Return<uint32_t> getSampleRate() override;
   Return<void> getSupportedSampleRates(
       AudioFormat format, getSupportedSampleRates_cb _hidl_cb) override;
@@ -72,6 +78,8 @@ class StreamOutImpl : public IStreamOut {
   Return<AudioFormat> getFormat() override;
   Return<void> getSupportedFormats(getSupportedFormats_cb _hidl_cb) override;
   Return<Result> setFormat(AudioFormat format) override;
+#endif
+
   Return<void> getAudioProperties(getAudioProperties_cb _hidl_cb) override;
   Return<Result> addEffect(uint64_t effectId) override;
   Return<Result> removeEffect(uint64_t effectId) override;
@@ -111,8 +119,13 @@ class StreamOutImpl : public IStreamOut {
   Return<void> createMmapBuffer(int32_t minSizeFrames,
                                 createMmapBuffer_cb _hidl_cb) override;
   Return<void> getMmapPosition(getMmapPosition_cb _hidl_cb) override;
+#if MAJOR_VERSION >= 7
+  Return<Result> updateSourceMetadata(
+      const SourceMetadata& sourceMetadata) override;
+#else
   Return<void> updateSourceMetadata(
       const SourceMetadata& sourceMetadata) override;
+#endif
   Return<Result> selectPresentation(int32_t presentationId,
                                     int32_t programId) override;
 
@@ -135,7 +148,12 @@ class StreamOutImpl : public IStreamOut {
 
   // The object is always valid until close is called.
   std::shared_ptr<BusOutputStream> mStream;
+#if MAJOR_VERSION >= 7
+  const AudioConfigBase mConfig;
+#else
   const AudioConfig mConfig;
+#endif
+
   const uint32_t mBufferSizeMs;
   const uint32_t mLatencyMs;
 

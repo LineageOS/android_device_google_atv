@@ -17,6 +17,7 @@
 #include <android-base/logging.h>
 #include <inttypes.h>
 #include <math.h>
+#include <system/audio-hal-enums.h>
 #include <time.h>
 #include <utils/Log.h>
 
@@ -48,6 +49,18 @@ void deleteEventFlag(EventFlag* obj) {
   }
 }
 
+#if MAJOR_VERSION >= 7
+AudioConfigBase fromAidlAudioConfig(const AidlAudioConfig& aidlConfig) {
+  AudioConfigBase config;
+  config.format =
+      audio_format_to_string(static_cast<audio_format_t>(aidlConfig.format));
+  config.sampleRateHz = static_cast<uint32_t>(aidlConfig.sampleRateHz);
+  config.channelMask = audio_channel_out_mask_to_string(
+      static_cast<audio_channel_mask_t>(aidlConfig.channelMask));
+
+  return config;
+}
+#else
 AudioConfig fromAidlAudioConfig(const AidlAudioConfig& aidlConfig) {
   AudioConfig config;
   config.format = static_cast<AudioFormat>(aidlConfig.format);
@@ -57,6 +70,7 @@ AudioConfig fromAidlAudioConfig(const AidlAudioConfig& aidlConfig) {
 
   return config;
 }
+#endif
 
 uint64_t estimatePlayedFramesSince(const TimeSpec& timestamp,
                                    uint32_t sampleRateHz) {
@@ -113,6 +127,24 @@ Return<uint64_t> StreamOutImpl::getBufferSize() {
   return mBufferSizeMs * mConfig.sampleRateHz * mStream->getFrameSize() / 1000;
 }
 
+#if MAJOR_VERSION >= 7
+Return<void> StreamOutImpl::getSupportedProfiles(
+    getSupportedProfiles_cb _hidl_cb) {
+  // For devices with fixed configuration, this method can return NOT_SUPPORTED.
+  _hidl_cb(Result::NOT_SUPPORTED, {});
+  return Void();
+}
+
+Return<void> StreamOutImpl::getAudioProperties(getAudioProperties_cb _hidl_cb) {
+  _hidl_cb(Result::OK, mConfig);
+  return Void();
+}
+
+Return<Result> StreamOutImpl::setAudioProperties(
+    const AudioConfigBaseOptional& config) {
+  return Result::NOT_SUPPORTED;
+}
+#else
 Return<uint32_t> StreamOutImpl::getSampleRate() { return mConfig.sampleRateHz; }
 
 Return<void> StreamOutImpl::getSupportedSampleRates(
@@ -160,6 +192,7 @@ Return<void> StreamOutImpl::getAudioProperties(getAudioProperties_cb _hidl_cb) {
   _hidl_cb(mConfig.sampleRateHz, mConfig.channelMask, mConfig.format);
   return Void();
 }
+#endif
 
 // We don't support effects. So any effectId is invalid.
 Return<Result> StreamOutImpl::addEffect(uint64_t effectId) {
@@ -238,7 +271,11 @@ Return<Result> StreamOutImpl::setVolume(float left, float right) {
 Return<void> StreamOutImpl::prepareForWriting(uint32_t frameSize,
                                               uint32_t framesCount,
                                               prepareForWriting_cb _hidl_cb) {
+#if MAJOR_VERSION >= 7
+  int32_t threadInfo = 0;
+#else
   ThreadInfo threadInfo = {0, 0};
+#endif
 
   // Wrap the _hidl_cb to return an error
   auto sendError = [&threadInfo, &_hidl_cb](Result result) -> Return<void> {
@@ -313,8 +350,14 @@ Return<void> StreamOutImpl::prepareForWriting(uint32_t frameSize,
   mStatusMQ = std::move(statusMQ);
   mEventFlag = std::move(eventFlag);
   mWriteThread = std::move(writeThread);
+
+#if MAJOR_VERSION >= 7
+  threadInfo = mWriteThread->getTid();
+#else
   threadInfo.pid = getpid();
   threadInfo.tid = mWriteThread->getTid();
+#endif
+
   _hidl_cb(Result::OK, *mCommandMQ->getDesc(), *mDataMQ->getDesc(),
            *mStatusMQ->getDesc(), threadInfo);
 
@@ -435,10 +478,17 @@ Return<void> StreamOutImpl::getMmapPosition(getMmapPosition_cb _hidl_cb) {
   return Void();
 }
 
+#if MAJOR_VERSION >= 7
+Return<Result> StreamOutImpl::updateSourceMetadata(
+    const SourceMetadata& sourceMetadata) {
+  return Result::NOT_SUPPORTED;
+}
+#else
 Return<void> StreamOutImpl::updateSourceMetadata(
     const SourceMetadata& sourceMetadata) {
   return Void();
 }
+#endif
 
 Return<Result> StreamOutImpl::selectPresentation(int32_t presentationId,
                                                  int32_t programId) {

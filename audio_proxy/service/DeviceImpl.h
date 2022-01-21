@@ -35,8 +35,6 @@ using ::android::hardware::hidl_vec;
 using ::android::hardware::Return;
 using ::android::hardware::Void;
 using ::android::hardware::audio::common::CPP_VERSION::AudioConfig;
-using ::android::hardware::audio::common::CPP_VERSION::AudioInputFlag;
-using ::android::hardware::audio::common::CPP_VERSION::AudioOutputFlag;
 using ::android::hardware::audio::common::CPP_VERSION::AudioPatchHandle;
 using ::android::hardware::audio::common::CPP_VERSION::AudioPort;
 using ::android::hardware::audio::common::CPP_VERSION::AudioPortConfig;
@@ -47,6 +45,13 @@ using ::android::hardware::audio::common::CPP_VERSION::SourceMetadata;
 using ::android::hardware::audio::CPP_VERSION::IDevice;
 using ::android::hardware::audio::CPP_VERSION::ParameterValue;
 using ::android::hardware::audio::CPP_VERSION::Result;
+
+#if MAJOR_VERSION >= 7
+using ::android::hardware::audio::CPP_VERSION::AudioInOutFlag;
+#else
+using ::android::hardware::audio::common::CPP_VERSION::AudioInputFlag;
+using ::android::hardware::audio::common::CPP_VERSION::AudioOutputFlag;
+#endif
 
 class BusStreamProvider;
 
@@ -65,6 +70,19 @@ class DeviceImpl : public IDevice {
   Return<void> getMasterMute(getMasterMute_cb _hidl_cb) override;
   Return<void> getInputBufferSize(const AudioConfig& config,
                                   getInputBufferSize_cb _hidl_cb) override;
+
+#if MAJOR_VERSION >= 7
+  Return<void> openOutputStream(int32_t ioHandle, const DeviceAddress& device,
+                                const AudioConfig& config,
+                                const hidl_vec<AudioInOutFlag>& flags,
+                                const SourceMetadata& sourceMetadata,
+                                openOutputStream_cb _hidl_cb) override;
+  Return<void> openInputStream(int32_t ioHandle, const DeviceAddress& device,
+                               const AudioConfig& config,
+                               const hidl_vec<AudioInOutFlag>& flags,
+                               const SinkMetadata& sinkMetadata,
+                               openInputStream_cb _hidl_cb) override;
+#else
   Return<void> openOutputStream(int32_t ioHandle, const DeviceAddress& device,
                                 const AudioConfig& config,
                                 hidl_bitfield<AudioOutputFlag> flags,
@@ -75,6 +93,8 @@ class DeviceImpl : public IDevice {
                                hidl_bitfield<AudioInputFlag> flags,
                                const SinkMetadata& sinkMetadata,
                                openInputStream_cb _hidl_cb) override;
+#endif
+
   Return<bool> supportsAudioPatches() override;
   Return<void> createAudioPatch(const hidl_vec<AudioPortConfig>& sources,
                                 const hidl_vec<AudioPortConfig>& sinks,
