@@ -129,6 +129,30 @@ cc_binary {
 }
 
 cc_binary {
+  name: "device.google.atv.audio_proxy@7.0-service",
+
+  defaults: [
+    "audio_proxy_service_defaults"
+  ],
+
+  init_rc: [
+    "device.google.atv.audio_proxy@7.0-service.rc",
+  ],
+
+  vintf_fragments: [ "manifest_audio_proxy_7_0.xml" ],
+
+  shared_libs: [
+    "android.hardware.audio@7.0",
+    "android.hardware.audio.common@7.0",
+  ],
+
+  cflags: [
+    "-DMAJOR_VERSION=7",
+    "-DMINOR_VERSION=0",
+  ],
+}
+
+cc_binary {
   name: "device.google.atv.audio_proxy@7.1-service",
 
   defaults: [
