@@ -303,8 +303,8 @@ public class BleConnection {
         return gatt.requestMtu(mtu);
     }
 
-    public boolean refreshGattCache() {
-        return gatt.refresh();
+    public void refreshGattCache() {
+        gatt.discoverServices();
     }
 
     private void closeGatt() {
