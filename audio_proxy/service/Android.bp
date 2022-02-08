@@ -70,9 +70,6 @@ cc_defaults {
   ],
 
   cflags: [
-    // TODO(209037093): The flag is not used in prod anymore. Remove after removing the unused files.
-    "-DAUDIO_PROXY_MINOR_VERSION=1",
-
     "-include ../common/AudioProxyVersionMacro.h",
     "-Werror",
     "-Wthread-safety",
