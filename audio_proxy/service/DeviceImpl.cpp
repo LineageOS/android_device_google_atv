@@ -25,8 +25,8 @@
 #include "BusStreamProvider.h"
 #include "StreamOutImpl.h"
 
-using namespace ::android::hardware::audio::CPP_VERSION;
 using namespace ::android::hardware::audio::common::CPP_VERSION;
+using namespace ::android::hardware::audio::CPP_VERSION;
 
 using ::android::wp;
 
@@ -113,12 +113,11 @@ Return<void> DeviceImpl::getInputBufferSize(const AudioConfig& config,
 }
 
 #if MAJOR_VERSION >= 7
-Return<void> DeviceImpl::openOutputStream(int32_t ioHandle,
-                                          const DeviceAddress& device,
-                                          const AudioConfig& config,
-                                          const hidl_vec<AudioInOutFlag>& flags,
-                                          const SourceMetadata& sourceMetadata,
-                                          openOutputStream_cb _hidl_cb) {
+template <typename CallbackType>
+Return<void> DeviceImpl::openOutputStreamImpl(
+    int32_t ioHandle, const DeviceAddress& device, const AudioConfig& config,
+    const hidl_vec<AudioInOutFlag>& flags, const SourceMetadata& sourceMetadata,
+    CallbackType _hidl_cb) {
   if (device.deviceType != "AUDIO_DEVICE_OUT_BUS") {
     DCHECK(false);
     _hidl_cb(Result::INVALID_ARGUMENTS, nullptr, {});
@@ -153,6 +152,16 @@ Return<void> DeviceImpl::openOutputStream(int32_t ioHandle,
   mBusStreamProvider.onStreamOutCreated(streamOut);
   _hidl_cb(Result::OK, streamOut, config);
   return Void();
+}
+
+Return<void> DeviceImpl::openOutputStream(int32_t ioHandle,
+                                          const DeviceAddress& device,
+                                          const AudioConfig& config,
+                                          const hidl_vec<AudioInOutFlag>& flags,
+                                          const SourceMetadata& sourceMetadata,
+                                          openOutputStream_cb _hidl_cb) {
+  return openOutputStreamImpl(ioHandle, device, config, flags, sourceMetadata,
+                              _hidl_cb);
 }
 
 Return<void> DeviceImpl::openInputStream(int32_t ioHandle,
@@ -281,6 +290,21 @@ Return<Result> DeviceImpl::addDeviceEffect(AudioPortHandle device,
 Return<Result> DeviceImpl::removeDeviceEffect(AudioPortHandle device,
                                               uint64_t effectId) {
   return Result::NOT_SUPPORTED;
+}
+#endif
+
+#if MAJOR_VERSION == 7 && MINOR_VERSION == 1
+Return<void> DeviceImpl::openOutputStream_7_1(
+    int32_t ioHandle, const DeviceAddress& device, const AudioConfig& config,
+    const hidl_vec<AudioInOutFlag>& flags, const SourceMetadata& sourceMetadata,
+    openOutputStream_7_1_cb _hidl_cb) {
+  return openOutputStreamImpl(ioHandle, device, config, flags, sourceMetadata,
+                              _hidl_cb);
+}
+
+Return<Result> DeviceImpl::setConnectedState_7_1(const AudioPort& devicePort,
+                                                 bool connected) {
+  return Result::OK;
 }
 #endif
 
