@@ -38,15 +38,3 @@
 #define EXPAND_CONCAT_4(a, b, c, d) CONCAT_4(a, b, c, d)
 /** The c++ namespace of the version: V<major>_<minor> */
 #define CPP_VERSION EXPAND_CONCAT_4(V, MAJOR_VERSION, _, MINOR_VERSION)
-
-#if !defined(AUDIO_PROXY_MINOR_VERSION)
-#error "AUDIO_PROXY_MINOR_VERSION must be defined."
-#endif  // !defined(AUDIO_PROXY_MINOR_VERSION)
-
-/** The directory name of the version: <major>.<minor> */
-#define AUDIO_PROXY_FILE_VERSION \
-  EXPAND_CONCAT_3(MAJOR_VERSION, ., AUDIO_PROXY_MINOR_VERSION)
-
-/** The c++ namespace of the version: V<major>_<minor> */
-#define AUDIO_PROXY_CPP_VERSION \
-  EXPAND_CONCAT_4(V, MAJOR_VERSION, _, AUDIO_PROXY_MINOR_VERSION)
