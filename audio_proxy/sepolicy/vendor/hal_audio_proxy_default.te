@@ -15,3 +15,9 @@ hal_client_domain(hal_audio_proxy_default, hal_audio);
 allow hal_audio_proxy_default audioserver:fifo_file write;
 
 allow dumpstate hal_audio_proxy_default:binder call;
+
+type hal_audio_proxy_service, vendor_service, protected_service, service_manager_type;
+hal_attribute_service(hal_audio_proxy, hal_audio_proxy_service);
+
+add_service(hal_audio_proxy_default, hal_audio_proxy_service);
+
