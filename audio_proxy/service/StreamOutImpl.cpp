@@ -567,4 +567,23 @@ Return<Result> StreamOutImpl::setPlaybackRateParameters(
 }
 #endif
 
+#if MAJOR_VERSION == 7 && MINOR_VERSION == 1
+Return<Result> StreamOutImpl::setLatencyMode(
+    android::hardware::audio::V7_1::LatencyMode mode) {
+  return Result::NOT_SUPPORTED;
+}
+
+Return<void> StreamOutImpl::getRecommendedLatencyModes(
+    getRecommendedLatencyModes_cb _hidl_cb) {
+  _hidl_cb(Result::NOT_SUPPORTED, {});
+  return Void();
+}
+
+Return<Result> StreamOutImpl::setLatencyModeCallback(
+    const sp<android::hardware::audio::V7_1::IStreamOutLatencyModeCallback>&
+        cb) {
+  return Result::NOT_SUPPORTED;
+}
+#endif
+
 }  // namespace audio_proxy::service
