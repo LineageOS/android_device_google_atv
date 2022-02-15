@@ -36,5 +36,8 @@
 
 #define CONCAT_4(a, b, c, d) a##b##c##d
 #define EXPAND_CONCAT_4(a, b, c, d) CONCAT_4(a, b, c, d)
-/** The c++ namespace of the version: V<major>_<minor> */
-#define CPP_VERSION EXPAND_CONCAT_4(V, MAJOR_VERSION, _, MINOR_VERSION)
+/** The c++ namespace of the version: V<major>_0.
+ * Always use minor version 0's namespace. If minor version is not zero, use
+ * the full namespace path explicitly.
+ */
+#define CPP_VERSION EXPAND_CONCAT_4(V, MAJOR_VERSION, _, 0)

@@ -162,15 +162,15 @@ cc_binary {
 
   vintf_fragments: [ "manifest_audio_proxy_7_1.xml" ],
 
-  // TODO(197547824): Upgrade to 7.1
   shared_libs: [
+    "android.hardware.audio@7.1",
     "android.hardware.audio@7.0",
     "android.hardware.audio.common@7.0",
   ],
 
   cflags: [
     "-DMAJOR_VERSION=7",
-    "-DMINOR_VERSION=0",
+    "-DMINOR_VERSION=1",
   ],
 }
 

@@ -44,7 +44,11 @@ class WriteThread;
 
 typedef void (*EventFlagDeleter)(EventFlag*);
 
+#if MAJOR_VERSION == 7 && MINOR_VERSION == 1
+class StreamOutImpl : public android::hardware::audio::V7_1::IStreamOut {
+#else
 class StreamOutImpl : public IStreamOut {
+#endif
  public:
   using CommandMQ = MessageQueue<WriteCommand, kSynchronizedReadWrite>;
   using DataMQ = MessageQueue<uint8_t, kSynchronizedReadWrite>;
@@ -141,6 +145,16 @@ class StreamOutImpl : public IStreamOut {
       getPlaybackRateParameters_cb _hidl_cb) override;
   Return<Result> setPlaybackRateParameters(
       const PlaybackRate& playbackRate) override;
+#endif
+
+#if MAJOR_VERSION == 7 && MINOR_VERSION == 1
+  Return<Result> setLatencyMode(
+      android::hardware::audio::V7_1::LatencyMode mode) override;
+  Return<void> getRecommendedLatencyModes(
+      getRecommendedLatencyModes_cb _hidl_cb) override;
+  Return<Result> setLatencyModeCallback(
+      const sp<android::hardware::audio::V7_1::IStreamOutLatencyModeCallback>&
+          cb) override;
 #endif
 
  private:
