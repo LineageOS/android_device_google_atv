@@ -44,7 +44,11 @@ class WriteThread;
 
 typedef void (*EventFlagDeleter)(EventFlag*);
 
+#if MAJOR_VERSION == 7 && MINOR_VERSION == 1
+class StreamOutImpl : public android::hardware::audio::V7_1::IStreamOut {
+#else
 class StreamOutImpl : public IStreamOut {
+#endif
  public:
   using CommandMQ = MessageQueue<WriteCommand, kSynchronizedReadWrite>;
   using DataMQ = MessageQueue<uint8_t, kSynchronizedReadWrite>;
@@ -61,6 +65,12 @@ class StreamOutImpl : public IStreamOut {
   Return<uint64_t> getFrameSize() override;
   Return<uint64_t> getFrameCount() override;
   Return<uint64_t> getBufferSize() override;
+
+#if MAJOR_VERSION >= 7
+  Return<void> getSupportedProfiles(getSupportedProfiles_cb _hidl_cb) override;
+  Return<Result> setAudioProperties(
+      const AudioConfigBaseOptional& config) override;
+#else
   Return<uint32_t> getSampleRate() override;
   Return<void> getSupportedSampleRates(
       AudioFormat format, getSupportedSampleRates_cb _hidl_cb) override;
@@ -72,6 +82,8 @@ class StreamOutImpl : public IStreamOut {
   Return<AudioFormat> getFormat() override;
   Return<void> getSupportedFormats(getSupportedFormats_cb _hidl_cb) override;
   Return<Result> setFormat(AudioFormat format) override;
+#endif
+
   Return<void> getAudioProperties(getAudioProperties_cb _hidl_cb) override;
   Return<Result> addEffect(uint64_t effectId) override;
   Return<Result> removeEffect(uint64_t effectId) override;
@@ -111,16 +123,51 @@ class StreamOutImpl : public IStreamOut {
   Return<void> createMmapBuffer(int32_t minSizeFrames,
                                 createMmapBuffer_cb _hidl_cb) override;
   Return<void> getMmapPosition(getMmapPosition_cb _hidl_cb) override;
+#if MAJOR_VERSION >= 7
+  Return<Result> updateSourceMetadata(
+      const SourceMetadata& sourceMetadata) override;
+#else
   Return<void> updateSourceMetadata(
       const SourceMetadata& sourceMetadata) override;
+#endif
   Return<Result> selectPresentation(int32_t presentationId,
                                     int32_t programId) override;
+
+#if MAJOR_VERSION >= 6
+  Return<Result> setEventCallback(
+      const sp<IStreamOutEventCallback>& callback) override;
+  Return<void> getDualMonoMode(getDualMonoMode_cb _hidl_cb) override;
+  Return<Result> setDualMonoMode(DualMonoMode mode) override;
+  Return<void> getAudioDescriptionMixLevel(
+      getAudioDescriptionMixLevel_cb _hidl_cb) override;
+  Return<Result> setAudioDescriptionMixLevel(float leveldB) override;
+  Return<void> getPlaybackRateParameters(
+      getPlaybackRateParameters_cb _hidl_cb) override;
+  Return<Result> setPlaybackRateParameters(
+      const PlaybackRate& playbackRate) override;
+#endif
+
+#if MAJOR_VERSION == 7 && MINOR_VERSION == 1
+  Return<Result> setLatencyMode(
+      android::hardware::audio::V7_1::LatencyMode mode) override;
+  Return<void> getRecommendedLatencyModes(
+      getRecommendedLatencyModes_cb _hidl_cb) override;
+  Return<Result> setLatencyModeCallback(
+      const sp<android::hardware::audio::V7_1::IStreamOutLatencyModeCallback>&
+          cb) override;
+#endif
 
  private:
   uint64_t estimateTotalPlayedFrames() const;
 
+  // The object is always valid until close is called.
   std::shared_ptr<BusOutputStream> mStream;
+#if MAJOR_VERSION >= 7
+  const AudioConfigBase mConfig;
+#else
   const AudioConfig mConfig;
+#endif
+
   const uint32_t mBufferSizeMs;
   const uint32_t mLatencyMs;
 
@@ -131,6 +178,9 @@ class StreamOutImpl : public IStreamOut {
   sp<WriteThread> mWriteThread;
 
   uint64_t mTotalPlayedFramesSinceStandby = 0;
+
+  // Whether pause is called. It's used to avoid resuming when not paused.
+  bool mIsPaused = false;
 };
 
 }  // namespace audio_proxy::service

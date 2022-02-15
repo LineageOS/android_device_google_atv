@@ -33,8 +33,8 @@ cc_library_static {
   ],
 }
 
-cc_binary {
-  name: "device.google.atv.audio_proxy@5.1-service",
+cc_defaults {
+  name: "audio_proxy_service_defaults",
   vendor: true,
   relative_install_path: "hw",
 
@@ -51,15 +51,7 @@ cc_binary {
     "main.cpp",
   ],
 
-  init_rc: [
-    "device.google.atv.audio_proxy@5.1-service.rc",
-  ],
-
-  vintf_fragments: [ "manifest_audio_proxy.xml" ],
-
   shared_libs: [
-    "android.hardware.audio@5.0",
-    "android.hardware.audio.common@5.0",
     "device.google.atv.audio_proxy-aidl-V1-ndk",
     "libbase",
     "libbinder_ndk",
@@ -78,14 +70,107 @@ cc_binary {
   ],
 
   cflags: [
-    "-DMAJOR_VERSION=5",
-    "-DMINOR_VERSION=0",
-    "-DAUDIO_PROXY_MINOR_VERSION=1",
     "-include ../common/AudioProxyVersionMacro.h",
-
     "-Werror",
     "-Wthread-safety",
     "-Wno-unused-parameter",
+  ],
+}
+
+cc_binary {
+  name: "device.google.atv.audio_proxy@5.1-service",
+
+  defaults: [
+    "audio_proxy_service_defaults"
+  ],
+
+  init_rc: [
+    "device.google.atv.audio_proxy@5.1-service.rc",
+  ],
+
+  vintf_fragments: [ "manifest_audio_proxy_5_0.xml" ],
+
+  shared_libs: [
+    "android.hardware.audio@5.0",
+    "android.hardware.audio.common@5.0",
+  ],
+
+  cflags: [
+    "-DMAJOR_VERSION=5",
+    "-DMINOR_VERSION=0",
+  ],
+}
+
+cc_binary {
+  name: "device.google.atv.audio_proxy@6.0-service",
+
+  defaults: [
+    "audio_proxy_service_defaults"
+  ],
+
+  init_rc: [
+    "device.google.atv.audio_proxy@6.0-service.rc",
+  ],
+
+  vintf_fragments: [ "manifest_audio_proxy_6_0.xml" ],
+
+  shared_libs: [
+    "android.hardware.audio@6.0",
+    "android.hardware.audio.common@6.0",
+  ],
+
+  cflags: [
+    "-DMAJOR_VERSION=6",
+    "-DMINOR_VERSION=0",
+  ],
+}
+
+cc_binary {
+  name: "device.google.atv.audio_proxy@7.0-service",
+
+  defaults: [
+    "audio_proxy_service_defaults"
+  ],
+
+  init_rc: [
+    "device.google.atv.audio_proxy@7.0-service.rc",
+  ],
+
+  vintf_fragments: [ "manifest_audio_proxy_7_0.xml" ],
+
+  shared_libs: [
+    "android.hardware.audio@7.0",
+    "android.hardware.audio.common@7.0",
+  ],
+
+  cflags: [
+    "-DMAJOR_VERSION=7",
+    "-DMINOR_VERSION=0",
+  ],
+}
+
+cc_binary {
+  name: "device.google.atv.audio_proxy@7.1-service",
+
+  defaults: [
+    "audio_proxy_service_defaults"
+  ],
+
+  init_rc: [
+    "device.google.atv.audio_proxy@7.1-service.rc",
+  ],
+
+  vintf_fragments: [ "manifest_audio_proxy_7_1.xml" ],
+
+  shared_libs: [
+    "android.hardware.audio@7.1",
+    "android.hardware.audio@7.0",
+    "android.hardware.audio.common@7.0",
+  ],
+
+  cflags: [
+    "-DMAJOR_VERSION=7",
+    "-DMINOR_VERSION=1",
   ],
 }
 

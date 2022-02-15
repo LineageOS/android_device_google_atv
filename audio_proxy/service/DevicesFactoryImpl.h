@@ -25,7 +25,12 @@ namespace audio_proxy {
 namespace service {
 
 using android::hardware::Return;
+
+#if MAJOR_VERSION == 7 && MINOR_VERSION == 1
+using android::hardware::audio::V7_1::IDevicesFactory;
+#else
 using android::hardware::audio::CPP_VERSION::IDevicesFactory;
+#endif
 
 class BusStreamProvider;
 
@@ -38,6 +43,13 @@ class DevicesFactoryImpl : public IDevicesFactory {
   Return<void> openDevice(const hidl_string& device,
                           openDevice_cb _hidl_cb) override;
   Return<void> openPrimaryDevice(openPrimaryDevice_cb _hidl_cb) override;
+
+#if MAJOR_VERSION == 7 && MINOR_VERSION == 1
+  Return<void> openDevice_7_1(const hidl_string& device,
+                              openDevice_7_1_cb _hidl_cb) override;
+  Return<void> openPrimaryDevice_7_1(
+      openPrimaryDevice_7_1_cb _hidl_cb) override;
+#endif
 
  private:
   BusStreamProvider& mBusStreamProvider;

@@ -35,8 +35,7 @@
     <string name="settings_enabled" msgid="4164674211291175678">"പ്രവർത്തനക്ഷമമാക്കി"</string>
     <string name="settings_disabled" msgid="4626695692196357413">"പ്രവർത്തനരഹിതമാക്കി"</string>
     <string name="settings_remote_battery_level_label" msgid="8649612732948142737">"ബാറ്ററി നില"</string>
-    <string name="settings_remote_battery_level_with_warning_label" msgid="1428771323355803036">"%1$s (%2$s)"</string>
-    <string name="settings_remote_battery_level_percentage_label" msgid="1771717432090516984">"%1$s%%"</string>
+    <string name="settings_remote_battery_level_percentage_label" msgid="1771717432090516984">%1$d%%</string>
     <string name="settings_remote_firmware_label" msgid="8924845692887005455">"ഫേംവെയർ"</string>
     <string name="settings_remote_serial_number_label" msgid="407950420697944948">"Bluetooth വിലാസം"</string>
     <string name="settings_bt_battery_low" msgid="4487348957313624256">"ബാറ്ററി മാറ്റി മറ്റൊന്നു വയ്ക്കുക"</string>

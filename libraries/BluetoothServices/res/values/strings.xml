@@ -40,8 +40,8 @@
   <string name="settings_disabled">Disabled</string>
 
   <string name="settings_remote_battery_level_label">Battery level</string>
-  <string name="settings_remote_battery_level_with_warning_label">%1$s (%2$s)</string>
-  <string name="settings_remote_battery_level_percentage_label">%1$s%%</string>
+  <string translatable="false" name="settings_remote_battery_level_with_warning_label">%1$s (%2$s)</string>
+  <string name="settings_remote_battery_level_percentage_label">%1$d%%</string>
   <string name="settings_remote_firmware_label">Firmware</string>
   <string name="settings_remote_serial_number_label">Bluetooth address</string>
 

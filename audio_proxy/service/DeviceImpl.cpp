@@ -15,21 +15,48 @@
 #include "DeviceImpl.h"
 
 #include <android-base/logging.h>
+#include <system/audio-hal-enums.h>
 #include <utils/RefBase.h>
+
+#include <optional>
 
 #include "AidlTypes.h"
 #include "BusOutputStream.h"
 #include "BusStreamProvider.h"
 #include "StreamOutImpl.h"
 
-using namespace ::android::hardware::audio::CPP_VERSION;
 using namespace ::android::hardware::audio::common::CPP_VERSION;
+using namespace ::android::hardware::audio::CPP_VERSION;
 
 using ::android::wp;
 
 namespace audio_proxy {
 namespace service {
 namespace {
+AudioPatchHandle gNextAudioPatchHandle = 1;
+
+#if MAJOR_VERSION >= 7
+std::optional<AidlAudioConfig> toAidlAudioConfig(
+    const AudioConfigBase& hidl_config) {
+  audio_format_t format = AUDIO_FORMAT_INVALID;
+  if (!audio_format_from_string(hidl_config.format.c_str(), &format)) {
+    return std::nullopt;
+  }
+
+  audio_channel_mask_t channelMask = AUDIO_CHANNEL_INVALID;
+  if (!audio_channel_mask_from_string(hidl_config.channelMask.c_str(),
+                                      &channelMask)) {
+    return std::nullopt;
+  }
+
+  AidlAudioConfig aidlConfig = {
+      .format = static_cast<AidlAudioFormat>(format),
+      .sampleRateHz = static_cast<int32_t>(hidl_config.sampleRateHz),
+      .channelMask = static_cast<AidlAudioChannelMask>(channelMask)};
+
+  return aidlConfig;
+}
+#else
 AidlAudioConfig toAidlAudioConfig(const AudioConfig& hidl_config) {
   AidlAudioConfig aidlConfig = {
       .format = static_cast<AidlAudioFormat>(hidl_config.format),
@@ -39,6 +66,7 @@ AidlAudioConfig toAidlAudioConfig(const AudioConfig& hidl_config) {
 
   return aidlConfig;
 }
+#endif
 }  // namespace
 
 DeviceImpl::DeviceImpl(BusStreamProvider& busStreamProvider,
@@ -84,6 +112,68 @@ Return<void> DeviceImpl::getInputBufferSize(const AudioConfig& config,
   return Void();
 }
 
+#if MAJOR_VERSION >= 7
+template <typename CallbackType>
+Return<void> DeviceImpl::openOutputStreamImpl(
+    int32_t ioHandle, const DeviceAddress& device, const AudioConfig& config,
+    const hidl_vec<AudioInOutFlag>& flags, const SourceMetadata& sourceMetadata,
+    CallbackType _hidl_cb) {
+  if (device.deviceType != "AUDIO_DEVICE_OUT_BUS") {
+    DCHECK(false);
+    _hidl_cb(Result::INVALID_ARGUMENTS, nullptr, {});
+    return Void();
+  }
+
+  std::optional<AidlAudioConfig> aidlConfig = toAidlAudioConfig(config.base);
+  if (!aidlConfig) {
+    DCHECK(false);
+    _hidl_cb(Result::INVALID_ARGUMENTS, nullptr, {});
+    return Void();
+  }
+
+  int32_t outputFlags = static_cast<int32_t>(AUDIO_OUTPUT_FLAG_NONE);
+  for (const auto& flag : flags) {
+    audio_output_flags_t outputFlag = AUDIO_OUTPUT_FLAG_NONE;
+    if (audio_output_flag_from_string(flag.c_str(), &outputFlag)) {
+      outputFlags |= static_cast<int32_t>(outputFlag);
+    } else {
+      DCHECK(false);
+      _hidl_cb(Result::INVALID_ARGUMENTS, nullptr, {});
+      return Void();
+    }
+  }
+
+  std::shared_ptr<BusOutputStream> busOutputStream =
+      mBusStreamProvider.openOutputStream(device.address.id(), *aidlConfig,
+                                          static_cast<int32_t>(outputFlags));
+  DCHECK(busOutputStream);
+  auto streamOut = sp<StreamOutImpl>::make(std::move(busOutputStream),
+                                           mBufferSizeMs, mLatencyMs);
+  mBusStreamProvider.onStreamOutCreated(streamOut);
+  _hidl_cb(Result::OK, streamOut, config);
+  return Void();
+}
+
+Return<void> DeviceImpl::openOutputStream(int32_t ioHandle,
+                                          const DeviceAddress& device,
+                                          const AudioConfig& config,
+                                          const hidl_vec<AudioInOutFlag>& flags,
+                                          const SourceMetadata& sourceMetadata,
+                                          openOutputStream_cb _hidl_cb) {
+  return openOutputStreamImpl(ioHandle, device, config, flags, sourceMetadata,
+                              _hidl_cb);
+}
+
+Return<void> DeviceImpl::openInputStream(int32_t ioHandle,
+                                         const DeviceAddress& device,
+                                         const AudioConfig& config,
+                                         const hidl_vec<AudioInOutFlag>& flags,
+                                         const SinkMetadata& sinkMetadata,
+                                         openInputStream_cb _hidl_cb) {
+  _hidl_cb(Result::NOT_SUPPORTED, sp<IStreamIn>(), config);
+  return Void();
+}
+#else
 Return<void> DeviceImpl::openOutputStream(int32_t ioHandle,
                                           const DeviceAddress& device,
                                           const AudioConfig& config,
@@ -111,18 +201,23 @@ Return<void> DeviceImpl::openInputStream(int32_t ioHandle,
   _hidl_cb(Result::NOT_SUPPORTED, sp<IStreamIn>(), config);
   return Void();
 }
+#endif
 
 Return<bool> DeviceImpl::supportsAudioPatches() { return true; }
 
+// Create a do-nothing audio patch.
 Return<void> DeviceImpl::createAudioPatch(
     const hidl_vec<AudioPortConfig>& sources,
     const hidl_vec<AudioPortConfig>& sinks, createAudioPatch_cb _hidl_cb) {
-  _hidl_cb(Result::OK, 0);
+  AudioPatchHandle handle = gNextAudioPatchHandle++;
+  mAudioPatchHandles.insert(handle);
+  _hidl_cb(Result::OK, handle);
   return Void();
 }
 
-Return<Result> DeviceImpl::releaseAudioPatch(int32_t patch) {
-  return Result::OK;
+Return<Result> DeviceImpl::releaseAudioPatch(AudioPatchHandle patch) {
+  size_t removed = mAudioPatchHandles.erase(patch);
+  return removed > 0 ? Result::OK : Result::INVALID_ARGUMENTS;
 }
 
 Return<void> DeviceImpl::getAudioPort(const AudioPort& port,
@@ -166,6 +261,52 @@ Return<Result> DeviceImpl::setConnectedState(const DeviceAddress& address,
                                              bool connected) {
   return Result::OK;
 }
+
+#if MAJOR_VERSION >= 6
+Return<void> DeviceImpl::updateAudioPatch(
+    AudioPatchHandle previousPatch, const hidl_vec<AudioPortConfig>& sources,
+    const hidl_vec<AudioPortConfig>& sinks, updateAudioPatch_cb _hidl_cb) {
+  if (mAudioPatchHandles.erase(previousPatch) == 0) {
+    _hidl_cb(Result::INVALID_ARGUMENTS, 0);
+    return Void();
+  }
+  AudioPatchHandle newPatch = gNextAudioPatchHandle++;
+  mAudioPatchHandles.insert(newPatch);
+  _hidl_cb(Result::OK, newPatch);
+  return Void();
+}
+
+Return<Result> DeviceImpl::close() {
+  return mBusStreamProvider.cleanAndCountStreamOuts() == 0
+             ? Result::OK
+             : Result::INVALID_STATE;
+}
+
+Return<Result> DeviceImpl::addDeviceEffect(AudioPortHandle device,
+                                           uint64_t effectId) {
+  return Result::NOT_SUPPORTED;
+}
+
+Return<Result> DeviceImpl::removeDeviceEffect(AudioPortHandle device,
+                                              uint64_t effectId) {
+  return Result::NOT_SUPPORTED;
+}
+#endif
+
+#if MAJOR_VERSION == 7 && MINOR_VERSION == 1
+Return<void> DeviceImpl::openOutputStream_7_1(
+    int32_t ioHandle, const DeviceAddress& device, const AudioConfig& config,
+    const hidl_vec<AudioInOutFlag>& flags, const SourceMetadata& sourceMetadata,
+    openOutputStream_7_1_cb _hidl_cb) {
+  return openOutputStreamImpl(ioHandle, device, config, flags, sourceMetadata,
+                              _hidl_cb);
+}
+
+Return<Result> DeviceImpl::setConnectedState_7_1(const AudioPort& devicePort,
+                                                 bool connected) {
+  return Result::OK;
+}
+#endif
 
 }  // namespace service
 }  // namespace audio_proxy

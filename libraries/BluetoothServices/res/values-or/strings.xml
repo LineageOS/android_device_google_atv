@@ -35,8 +35,7 @@
     <string name="settings_enabled" msgid="4164674211291175678">"ସକ୍ଷମ କରାଯାଇଛି"</string>
     <string name="settings_disabled" msgid="4626695692196357413">"ଅକ୍ଷମ ହୋଇଛି"</string>
     <string name="settings_remote_battery_level_label" msgid="8649612732948142737">"ବ୍ୟାଟେରୀର ସ୍ତର"</string>
-    <string name="settings_remote_battery_level_with_warning_label" msgid="1428771323355803036">"%1$s (%2$s)"</string>
-    <string name="settings_remote_battery_level_percentage_label" msgid="1771717432090516984">"%1$s%%"</string>
+    <string name="settings_remote_battery_level_percentage_label" msgid="1771717432090516984">%1$d%%</string>
     <string name="settings_remote_firmware_label" msgid="8924845692887005455">"ଫାର୍ମୱେର୍"</string>
     <string name="settings_remote_serial_number_label" msgid="407950420697944948">"ବ୍ଲୁଟୁଥ ଠିକଣା"</string>
     <string name="settings_bt_battery_low" msgid="4487348957313624256">"ଦୟାକରି ବ୍ୟାଟେରୀ ବଦଳାନ୍ତୁ"</string>

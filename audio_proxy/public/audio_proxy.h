@@ -69,6 +69,7 @@ typedef int32_t audio_proxy_drain_type_t;
 enum {
   AUDIO_PROXY_OUTPUT_FLAG_NONE = 0x0,
   AUDIO_PROXY_OUTPUT_FLAG_DIRECT = 0x1,
+  AUDIO_PROXY_OUTPUT_FLAG_HW_AV_SYNC = 0x40,
 };
 typedef int32_t audio_proxy_output_flags_t;
 
