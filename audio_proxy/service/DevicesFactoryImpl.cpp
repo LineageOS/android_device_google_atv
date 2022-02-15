@@ -26,7 +26,7 @@ DevicesFactoryImpl::DevicesFactoryImpl(BusStreamProvider& busStreamProvider,
                                        const ServiceConfig& config)
     : mBusStreamProvider(busStreamProvider), mConfig(config) {}
 
-// Methods from android::hardware::audio::V5_0::IDevicesFactory follow.
+// Methods from android::hardware::audio::CPP_VERSION::IDevicesFactory follow.
 Return<void> DevicesFactoryImpl::openDevice(const hidl_string& device,
                                             openDevice_cb _hidl_cb) {
   if (device == mConfig.name) {
@@ -47,6 +47,29 @@ Return<void> DevicesFactoryImpl::openPrimaryDevice(
   _hidl_cb(Result::NOT_SUPPORTED, nullptr);
   return Void();
 }
+
+#if MAJOR_VERSION == 7 && MINOR_VERSION == 1
+Return<void> DevicesFactoryImpl::openDevice_7_1(const hidl_string& device,
+                                                openDevice_7_1_cb _hidl_cb) {
+  if (device == mConfig.name) {
+    LOG(INFO) << "Audio Device was opened: " << device;
+    _hidl_cb(Result::OK,
+             new DeviceImpl(mBusStreamProvider, mConfig.bufferSizeMs,
+                            mConfig.latencyMs));
+  } else {
+    _hidl_cb(Result::INVALID_ARGUMENTS, nullptr);
+  }
+
+  return Void();
+}
+
+Return<void> DevicesFactoryImpl::openPrimaryDevice_7_1(
+    openPrimaryDevice_7_1_cb _hidl_cb) {
+  // The AudioProxy HAL does not support a primary device.
+  _hidl_cb(Result::NOT_SUPPORTED, nullptr);
+  return Void();
+}
+#endif
 
 }  // namespace service
 }  // namespace audio_proxy
