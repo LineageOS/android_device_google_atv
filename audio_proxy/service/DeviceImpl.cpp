@@ -23,6 +23,7 @@
 #include "AidlTypes.h"
 #include "BusOutputStream.h"
 #include "BusStreamProvider.h"
+#include "ServiceConfig.h"
 #include "StreamOutImpl.h"
 
 using namespace ::android::hardware::audio::common::CPP_VERSION;
@@ -70,10 +71,8 @@ AidlAudioConfig toAidlAudioConfig(const AudioConfig& hidl_config) {
 }  // namespace
 
 DeviceImpl::DeviceImpl(BusStreamProvider& busStreamProvider,
-                       uint32_t bufferSizeMs, uint32_t latencyMs)
-    : mBusStreamProvider(busStreamProvider),
-      mBufferSizeMs(bufferSizeMs),
-      mLatencyMs(latencyMs) {}
+                       const ServiceConfig& serviceConfig)
+    : mBusStreamProvider(busStreamProvider), mServiceConfig(serviceConfig) {}
 
 // Methods from ::android::hardware::audio::V5_0::IDevice follow.
 Return<Result> DeviceImpl::initCheck() { return Result::OK; }
@@ -124,6 +123,12 @@ Return<void> DeviceImpl::openOutputStreamImpl(
     return Void();
   }
 
+  const auto configIt = mServiceConfig.streams.find(device.address.id());
+  if (configIt == mServiceConfig.streams.end()) {
+    _hidl_cb(Result::INVALID_ARGUMENTS, nullptr, {});
+    return Void();
+  }
+
   std::optional<AidlAudioConfig> aidlConfig = toAidlAudioConfig(config.base);
   if (!aidlConfig) {
     DCHECK(false);
@@ -148,7 +153,8 @@ Return<void> DeviceImpl::openOutputStreamImpl(
                                           static_cast<int32_t>(outputFlags));
   DCHECK(busOutputStream);
   auto streamOut = sp<StreamOutImpl>::make(std::move(busOutputStream),
-                                           mBufferSizeMs, mLatencyMs);
+                                           configIt->second.bufferSizeMs,
+                                           configIt->second.latencyMs);
   mBusStreamProvider.onStreamOutCreated(streamOut);
   _hidl_cb(Result::OK, streamOut, config);
   return Void();
@@ -180,13 +186,20 @@ Return<void> DeviceImpl::openOutputStream(int32_t ioHandle,
                                           hidl_bitfield<AudioOutputFlag> flags,
                                           const SourceMetadata& sourceMetadata,
                                           openOutputStream_cb _hidl_cb) {
+  const auto configIt = mServiceConfig.streams.find(device.busAddress);
+  if (configIt == mServiceConfig.streams.end()) {
+    _hidl_cb(Result::INVALID_ARGUMENTS, nullptr, {});
+    return Void();
+  }
+
   std::shared_ptr<BusOutputStream> busOutputStream =
       mBusStreamProvider.openOutputStream(device.busAddress,
                                           toAidlAudioConfig(config),
                                           static_cast<int32_t>(flags));
   DCHECK(busOutputStream);
   auto streamOut = sp<StreamOutImpl>::make(std::move(busOutputStream),
-                                           mBufferSizeMs, mLatencyMs);
+                                           configIt->second.bufferSizeMs,
+                                           configIt->second.latencyMs);
   mBusStreamProvider.onStreamOutCreated(streamOut);
   _hidl_cb(Result::OK, streamOut, config);
   return Void();
