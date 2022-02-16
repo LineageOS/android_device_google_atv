@@ -27,6 +27,7 @@ cc_library_static {
   host_supported: true,
   srcs: [
     "RingBufferUtil.cpp",
+    "ServiceConfig.cpp",
   ],
   shared_libs: [
     "libbase",
@@ -180,9 +181,16 @@ cc_test {
 
   srcs: [
     "RingBufferUtilTest.cpp",
+    "ServiceConfigTest.cpp",
   ],
   static_libs: [
     "audio_proxy_service_util",
+    "libbase",
     "libgtest",
+  ],
+
+  cflags: [
+    // Suppress the warning to make ServiceConfigTest easier.
+    "-Wno-writable-strings",
   ],
 }

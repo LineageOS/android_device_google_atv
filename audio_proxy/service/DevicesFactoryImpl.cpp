@@ -31,9 +31,7 @@ Return<void> DevicesFactoryImpl::openDevice(const hidl_string& device,
                                             openDevice_cb _hidl_cb) {
   if (device == mConfig.name) {
     LOG(INFO) << "Audio Device was opened: " << device;
-    _hidl_cb(Result::OK,
-             new DeviceImpl(mBusStreamProvider, mConfig.bufferSizeMs,
-                            mConfig.latencyMs));
+    _hidl_cb(Result::OK, new DeviceImpl(mBusStreamProvider, mConfig));
   } else {
     _hidl_cb(Result::INVALID_ARGUMENTS, nullptr);
   }
@@ -53,9 +51,7 @@ Return<void> DevicesFactoryImpl::openDevice_7_1(const hidl_string& device,
                                                 openDevice_7_1_cb _hidl_cb) {
   if (device == mConfig.name) {
     LOG(INFO) << "Audio Device was opened: " << device;
-    _hidl_cb(Result::OK,
-             new DeviceImpl(mBusStreamProvider, mConfig.bufferSizeMs,
-                            mConfig.latencyMs));
+    _hidl_cb(Result::OK, new DeviceImpl(mBusStreamProvider, mConfig));
   } else {
     _hidl_cb(Result::INVALID_ARGUMENTS, nullptr);
   }
