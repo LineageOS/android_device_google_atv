@@ -308,9 +308,6 @@ public final class BluetoothPairer {
             return;
         }
         mPairingProfileWrapper.connect(mDevice);
-        // must set PRIORITY_AUTO_CONNECT or auto-connection will not occur, however this setting
-        // does not appear to be sticky across a reboot.
-        mPairingProfileWrapper.setPriority(mDevice, BluetoothProfile.PRIORITY_AUTO_CONNECT);
     }
 
     private void onAdded() {
