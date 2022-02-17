@@ -47,16 +47,11 @@ public class PairingProfileWrapperHidHost implements PairingProfileWrapper {
 
     @Override
     public boolean connect(BluetoothDevice device) {
-        return mProxy.connect(device);
+        return mProxy.setConnectionPolicy(device, BluetoothProfile.CONNECTION_POLICY_ALLOWED);
     }
 
     @Override
     public boolean disconnect(BluetoothDevice device) {
-        return mProxy.disconnect(device);
-    }
-
-    @Override
-    public boolean setPriority(BluetoothDevice device, int priority) {
-        return mProxy.setPriority(device, priority);
+        return mProxy.setConnectionPolicy(device, BluetoothProfile.CONNECTION_POLICY_FORBIDDEN);
     }
 }

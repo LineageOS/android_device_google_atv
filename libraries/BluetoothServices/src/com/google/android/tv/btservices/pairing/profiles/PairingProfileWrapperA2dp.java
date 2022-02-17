@@ -46,15 +46,12 @@ public class PairingProfileWrapperA2dp implements PairingProfileWrapper {
     }
 
     @Override
-    public boolean connect(BluetoothDevice device) { return mProxy.connect(device); }
-
-    @Override
-    public boolean disconnect(BluetoothDevice device) {
-        return mProxy.disconnect(device);
+    public boolean connect(BluetoothDevice device) {
+        return mProxy.setConnectionPolicy(device, BluetoothProfile.CONNECTION_POLICY_ALLOWED);
     }
 
     @Override
-    public boolean setPriority(BluetoothDevice device, int priority) {
-        return mProxy.setPriority(device, priority);
+    public boolean disconnect(BluetoothDevice device) {
+        return mProxy.setConnectionPolicy(device, BluetoothProfile.CONNECTION_POLICY_FORBIDDEN);
     }
 }

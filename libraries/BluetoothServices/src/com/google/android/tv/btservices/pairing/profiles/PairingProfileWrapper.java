@@ -32,7 +32,4 @@ public interface PairingProfileWrapper {
     boolean connect(BluetoothDevice device);
 
     boolean disconnect(BluetoothDevice device);
-
-    boolean setPriority(BluetoothDevice device, int priority);
-
 }
