@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
   }
 
   // Default stream config.
-  StreamConfig defaultStreamConfig = {100, 100};
+  StreamConfig defaultStreamConfig = {10, 10};
   config->streams.emplace("default", defaultStreamConfig);
 
   // Config thread pool.
