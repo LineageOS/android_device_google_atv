@@ -16,9 +16,19 @@
 
 #include <stdint.h>
 
+#include <map>
+#include <optional>
 #include <string>
 
 namespace audio_proxy::service {
+
+struct StreamConfig {
+  // Buffer size in milliseconds, as defined by IStream::getBufferSize.
+  uint32_t bufferSizeMs;
+
+  // Latency in milliseconds, as defined by IStreamOut::getLatency.
+  uint32_t latencyMs;
+};
 
 // Global configurations for the audio HAL service and AudioProxy service.
 struct ServiceConfig {
@@ -26,11 +36,12 @@ struct ServiceConfig {
   // AudioProxy service.
   std::string name;
 
-  // Buffer size in milliseconds, as defined by IStream::getBufferSize.
-  uint32_t bufferSizeMs = 0;
-
-  // Latency in milliseconds, as defined by IStreamOut::getLatency.
-  uint32_t latencyMs = 0;
+  // Supported stream configs. Key is the address of the stream. Value is the
+  // config.
+  std::map<std::string, StreamConfig> streams;
 };
+
+std::optional<ServiceConfig> parseServiceConfigFromCommandLine(int argc,
+                                                               char** argv);
 
 }  // namespace audio_proxy::service
