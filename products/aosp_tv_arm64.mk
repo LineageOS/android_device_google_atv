@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020 The Android Open Source Project
+# Copyright (C) 2022 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 #
 # All components inherited here go to system image
 #
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, device/google/atv/products/atv_generic_system.mk)
 
 # Enable mainline checking for excat this product name
@@ -57,9 +57,10 @@ PRODUCT_PACKAGES += \
 #
 # All components inherited here go to vendor image
 #
-$(call inherit-product, device/google/atv/products/atv_emulator_vendor.mk)
-$(call inherit-product-if-exists, device/generic/goldfish/arm64-vendor.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/board/generic_arm64/device.mk)
+$(call inherit-product, device/generic/goldfish/64bitonly/product/arm64-vendor.mk)
+$(call inherit-product, device/generic/goldfish/64bitonly/product/emulator64_vendor.mk)
+$(call inherit-product, device/generic/goldfish/64bitonly/product/vendor.mk)
+$(call inherit-product, device/generic/goldfish/emulator64_arm64/device.mk)
 
 #
 # Special settings for GSI releasing
