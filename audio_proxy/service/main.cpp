@@ -13,10 +13,8 @@
 // limitations under the License.
 
 #include <android-base/logging.h>
-#include <android-base/parseint.h>
 #include <android/binder_manager.h>
 #include <android/binder_process.h>
-#include <getopt.h>
 #include <hidl/HidlTransportSupport.h>
 
 #include <optional>
@@ -24,55 +22,12 @@
 #include "AudioProxyError.h"
 #include "AudioProxyImpl.h"
 #include "DevicesFactoryImpl.h"
+#include "ServiceConfig.h"
 
 using android::sp;
 using android::status_t;
 
 using namespace audio_proxy::service;
-
-namespace {
-
-std::optional<ServiceConfig> parseServiceConfigFromCommandLine(int argc,
-                                                               char** argv) {
-  ServiceConfig config;
-  static option options[] = {
-      {"service_name", required_argument, nullptr, 's'},
-      {"buffer_size_ms", required_argument, nullptr, 'b'},
-      {"latency_ms", required_argument, nullptr, 'l'},
-      {nullptr, 0, nullptr, 0},
-  };
-
-  int val = 0;
-  while ((val = getopt_long(argc, argv, "s:b:l:", options, nullptr)) != -1) {
-    switch (val) {
-      case 's':
-        config.name = optarg;
-        break;
-      case 'b':
-        if (!android::base::ParseUint(optarg, &config.bufferSizeMs)) {
-          return std::nullopt;
-        }
-        break;
-      case 'l':
-        if (!android::base::ParseUint(optarg, &config.latencyMs)) {
-          return std::nullopt;
-        }
-        break;
-
-      default:
-        break;
-    }
-  }
-
-  if (config.name.empty() || config.bufferSizeMs == 0 ||
-      config.latencyMs == 0) {
-    return std::nullopt;
-  }
-
-  return config;
-}
-
-}  // namespace
 
 int main(int argc, char** argv) {
   auto config = parseServiceConfigFromCommandLine(argc, argv);
