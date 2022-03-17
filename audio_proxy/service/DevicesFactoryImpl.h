@@ -53,7 +53,7 @@ class DevicesFactoryImpl : public IDevicesFactory {
 
  private:
   BusStreamProvider& mBusStreamProvider;
-  const ServiceConfig mConfig;
+  const ServiceConfig& mConfig;
 };
 
 }  // namespace service
