@@ -103,6 +103,9 @@ AidlWriteStatus RemoteBusOutputStream::writeRingBuffer(const uint8_t* firstMem,
   // readNotification is used to "wake" after successful read, hence we don't
   // need it. writeNotification is used to "wait" for the other end to write
   // enough data.
+  // It's fine to use readBlocking here because:
+  // 1. We don't wake without writing mStatusMQ.
+  // 2. The other end will always write mStatusMQ before wake mEventFlag.
   if (!mStatusMQ->readBlocking(
           &status, 1 /* count */, 0 /* readNotification */,
           static_cast<uint32_t>(
