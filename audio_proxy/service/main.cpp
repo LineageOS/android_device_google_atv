@@ -35,6 +35,10 @@ int main(int argc, char** argv) {
     return ERROR_INVALID_ARGS;
   }
 
+  // Default stream config.
+  StreamConfig defaultStreamConfig = {100, 100};
+  config->streams.emplace("default", defaultStreamConfig);
+
   // Config thread pool.
   ABinderProcess_setThreadPoolMaxThreadCount(1);
   android::hardware::configureRpcThreadpool(1, false /* callerWillJoin */);
