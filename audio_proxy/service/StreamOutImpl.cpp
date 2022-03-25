@@ -49,29 +49,6 @@ void deleteEventFlag(EventFlag* obj) {
   }
 }
 
-#if MAJOR_VERSION >= 7
-AudioConfigBase fromAidlAudioConfig(const AidlAudioConfig& aidlConfig) {
-  AudioConfigBase config;
-  config.format =
-      audio_format_to_string(static_cast<audio_format_t>(aidlConfig.format));
-  config.sampleRateHz = static_cast<uint32_t>(aidlConfig.sampleRateHz);
-  config.channelMask = audio_channel_out_mask_to_string(
-      static_cast<audio_channel_mask_t>(aidlConfig.channelMask));
-
-  return config;
-}
-#else
-AudioConfig fromAidlAudioConfig(const AidlAudioConfig& aidlConfig) {
-  AudioConfig config;
-  config.format = static_cast<AudioFormat>(aidlConfig.format);
-  config.sampleRateHz = static_cast<uint32_t>(aidlConfig.sampleRateHz);
-  config.channelMask =
-      static_cast<hidl_bitfield<AudioChannelMask>>(aidlConfig.channelMask);
-
-  return config;
-}
-#endif
-
 uint64_t estimatePlayedFramesSince(const TimeSpec& timestamp,
                                    uint32_t sampleRateHz) {
   timespec now = {0, 0};
@@ -96,9 +73,10 @@ uint64_t estimatePlayedFramesSince(const TimeSpec& timestamp,
 }  // namespace
 
 StreamOutImpl::StreamOutImpl(std::shared_ptr<BusOutputStream> stream,
+                             const StreamOutConfig& config,
                              uint32_t bufferSizeMs, uint32_t latencyMs)
     : mStream(std::move(stream)),
-      mConfig(fromAidlAudioConfig(mStream->getConfig())),
+      mConfig(config),
       mBufferSizeMs(bufferSizeMs),
       mLatencyMs(latencyMs),
       mEventFlag(nullptr, deleteEventFlag) {}

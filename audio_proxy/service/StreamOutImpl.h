@@ -54,7 +54,14 @@ class StreamOutImpl : public IStreamOut {
   using DataMQ = MessageQueue<uint8_t, kSynchronizedReadWrite>;
   using StatusMQ = MessageQueue<WriteStatus, kSynchronizedReadWrite>;
 
-  StreamOutImpl(std::shared_ptr<BusOutputStream> stream, uint32_t bufferSizeMs,
+#if MAJOR_VERSION >= 7
+  using StreamOutConfig = AudioConfigBase;
+#else
+  using StreamOutConfig = AudioConfig;
+#endif
+
+  StreamOutImpl(std::shared_ptr<BusOutputStream> stream,
+                const StreamOutConfig& config, uint32_t bufferSizeMs,
                 uint32_t latencyMs);
   ~StreamOutImpl() override;
 
@@ -162,11 +169,7 @@ class StreamOutImpl : public IStreamOut {
 
   // The object is always valid until close is called.
   std::shared_ptr<BusOutputStream> mStream;
-#if MAJOR_VERSION >= 7
-  const AudioConfigBase mConfig;
-#else
-  const AudioConfig mConfig;
-#endif
+  const StreamOutConfig mConfig;
 
   const uint32_t mBufferSizeMs;
   const uint32_t mLatencyMs;
