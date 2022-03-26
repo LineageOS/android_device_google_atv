@@ -23,10 +23,6 @@
 #include "BusOutputStream.h"
 
 namespace audio_proxy::service {
-namespace {
-// Time out for FMQ read in ns -- 1s.
-constexpr int64_t kFmqReadTimeoutNs = 1'000'000'000;
-}  // namespace
 
 WriteThread::WriteThread(std::shared_ptr<BusOutputStream> stream,
                          CommandMQ* commandMQ, DataMQ* dataMQ,
@@ -140,14 +136,19 @@ bool WriteThread::threadLoop() {
       stream = mStream;
     }
 
+    // Read command. Don't use readBlocking, because readBlocking will block
+    // when there's no data. When stopping the thread, there's a chance that we
+    // only wake the mEventFlag without writing any data to FMQ. In this case,
+    // readBlocking will block until timeout.
     IStreamOut::WriteCommand replyTo;
-    if (!mCommandMQ->readBlocking(
-            &replyTo, 1 /* count */, 0 /* readNoticication */,
-            static_cast<uint32_t>(
-                MessageQueueFlagBits::NOT_EMPTY) /* writeNotification */,
-            kFmqReadTimeoutNs, mEventFlag)) {
-      LOG(ERROR) << "read command timeout";
-      continue;
+    uint32_t efState = 0;
+    mEventFlag->wait(static_cast<uint32_t>(MessageQueueFlagBits::NOT_EMPTY),
+                     &efState);
+    if (!(efState & static_cast<uint32_t>(MessageQueueFlagBits::NOT_EMPTY))) {
+      continue;  // Nothing to do.
+    }
+    if (!mCommandMQ->read(&replyTo)) {
+      continue;  // Nothing to do.
     }
 
     if (replyTo == IStreamOut::WriteCommand::WRITE) {

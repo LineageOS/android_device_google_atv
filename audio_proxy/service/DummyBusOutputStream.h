@@ -16,10 +16,12 @@
 
 #include "BusOutputStream.h"
 
+#include <time.h>
+
 namespace audio_proxy::service {
 
-// Impl of BusOutputStream which blocks the write, a.k.a, it always has
-// 0 available write space.
+// Impl of BusOutputStream which has a small buffer and consumes the audio data
+// in real time.
 class DummyBusOutputStream : public BusOutputStream {
  public:
   DummyBusOutputStream(const std::string& address,
@@ -41,6 +43,19 @@ class DummyBusOutputStream : public BusOutputStream {
 
  protected:
   bool prepareForWritingImpl(uint32_t frameSize, uint32_t frameCount) override;
+
+ private:
+  // Buffer capacity.
+  int64_t mMaxBufferUs = 0;
+
+  // Timestamp for the first played frame. Underrun will reset it.
+  timespec mStartTime = {0, 0};
+
+  // Total written buffer size in us after `mStartTime` reset.
+  int64_t mInputUsSinceStart = 0;
+
+  // Total played buffer size in us before underrun.
+  int64_t mPlayedUsBeforeUnderrun = 0;
 };
 
 }  // namespace audio_proxy::service
