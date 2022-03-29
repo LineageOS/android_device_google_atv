@@ -345,9 +345,10 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
             createAndAddBtDeviceSlicePreferenceFromSet(psb, activeOfficialRemotes, addressToDevice);
             createAndAddBtDeviceSlicePreferenceFromSet(
                     psb, inactiveOfficialRemotes, addressToDevice);
-            // Adding the remote buttons settings at the bottom
-            updateAxel(psb);
         }
+
+        // Adding the remote buttons settings at the bottom
+        updateAxel(psb);
     }
 
     private void updateDeviceControl(PreferenceSliceBuilder psb) {
