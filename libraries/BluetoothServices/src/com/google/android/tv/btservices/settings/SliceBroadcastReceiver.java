@@ -17,9 +17,11 @@
 package com.google.android.tv.btservices.settings;
 
 import static com.google.android.tv.btservices.settings.ConnectedDevicesSliceProvider.ACTION_TOGGLE_CHANGED;
+import static com.google.android.tv.btservices.settings.SlicesUtil.CEC_SLICE_URI;
 import static com.google.android.tv.btservices.settings.SlicesUtil.DIRECTION_BACK;
 import static com.google.android.tv.btservices.settings.SlicesUtil.EXTRAS_DIRECTION;
 import static com.google.android.tv.btservices.settings.SlicesUtil.EXTRAS_SLICE_URI;
+import static com.google.android.tv.btservices.settings.SlicesUtil.GENERAL_SLICE_URI;
 import static com.google.android.tv.btservices.settings.SlicesUtil.notifyToGoBack;
 
 import android.content.BroadcastReceiver;
@@ -49,6 +51,8 @@ public class SliceBroadcastReceiver extends BroadcastReceiver {
         if (ACTION_TOGGLE_CHANGED.equals(action)
                 && CEC.equals(intent.getStringExtra(TOGGLE_TYPE))) {
             PowerUtils.enableCecControl(context, isChecked);
+            context.getContentResolver().notifyChange(CEC_SLICE_URI, null);
+            context.getContentResolver().notifyChange(GENERAL_SLICE_URI, null);
             return;
         }
 
