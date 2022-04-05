@@ -100,7 +100,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
     private final Map<Uri, Integer> pinnedUris = new ArrayMap<>();
 
     static final String KEY_EXTRAS_DEVICE = "key_extras_device";
-
+    private static final String SCHEME_CONTENT = "content://";
     private final Handler mHandler = new Handler(Looper.getMainLooper());
 
     private final ServiceConnection mBtDeviceServiceConnection =
@@ -434,7 +434,8 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                     null,
                     ResponseFragment.DEFAULT_CHOICE_UNDEFINED
             );
-            i.putExtras(extras).putExtra(KEY_EXTRAS_DEVICE, device);
+            i.putExtras(extras).putExtra(KEY_EXTRAS_DEVICE, device)
+                    .setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
             List<String> updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString(),
                     sliceUri.toString());
             PendingIntent updateSliceIntent = updateSliceIntent(getContext(), 0,
@@ -491,7 +492,8 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                     isConnected ? 1 /* default to NO (index 1) */ : 0 /* default to YES */
             );
             i.putExtras(extras)
-                    .putExtra(KEY_EXTRAS_DEVICE, device);
+                    .putExtra(KEY_EXTRAS_DEVICE, device)
+                    .setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
             List<String> updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString(),
                     sliceUri.toString());
             PendingIntent updateSliceIntent = backAndUpdateSliceIntent(getContext(), 1,
@@ -522,7 +524,8 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         );
         i = new Intent(context, ResponseActivity.class)
                 .putExtra(KEY_EXTRAS_DEVICE, device)
-                .putExtras(extras);
+                .putExtras(extras)
+                .setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
         List<String> updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString(), sliceUri.toString());
         PendingIntent updateSliceIntent = updateSliceIntent(getContext(), 2,
                 new ArrayList<>(updatedUris));
@@ -550,7 +553,8 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 deviceName,
                 1 /* default to NO (index 1) */
         );
-        i.putExtras(extras).putExtra(KEY_EXTRAS_DEVICE, device);
+        i.putExtras(extras).putExtra(KEY_EXTRAS_DEVICE, device)
+                .setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
         updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString(), sliceUri.toString());
         updateSliceIntent = backAndUpdateSliceIntent(getContext(), 3,
                 new ArrayList<>(updatedUris), sliceUri.toString());
