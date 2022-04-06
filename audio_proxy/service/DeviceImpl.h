@@ -54,6 +54,7 @@ using ::android::hardware::audio::common::CPP_VERSION::AudioOutputFlag;
 #endif
 
 class BusStreamProvider;
+struct ServiceConfig;
 
 #if MAJOR_VERSION == 7 && MINOR_VERSION == 1
 class DeviceImpl : public android::hardware::audio::V7_1::IDevice {
@@ -61,8 +62,7 @@ class DeviceImpl : public android::hardware::audio::V7_1::IDevice {
 class DeviceImpl : public IDevice {
 #endif
  public:
-  DeviceImpl(BusStreamProvider& busStreamProvider, uint32_t bufferSizeMs,
-             uint32_t latencyMs);
+  DeviceImpl(BusStreamProvider& busStreamProvider, const ServiceConfig& config);
 
   // Methods from ::android::hardware::audio::V5_0::IDevice follow.
   Return<Result> initCheck() override;
@@ -154,8 +154,7 @@ class DeviceImpl : public IDevice {
 #endif
 
   BusStreamProvider& mBusStreamProvider;
-  const uint32_t mBufferSizeMs;
-  const uint32_t mLatencyMs;
+  const ServiceConfig& mServiceConfig;
   std::set<AudioPatchHandle> mAudioPatchHandles;
 };
 

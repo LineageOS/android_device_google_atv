@@ -16,6 +16,8 @@
 
 package com.google.android.tv.btservices.settings;
 
+import static com.android.tv.twopanelsettings.slices.SlicesConstants.EXTRA_SLICE_FOLLOWUP;
+
 import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenceFragment.CONT_CANCEL_ARGS;
 import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenceFragment.KEY_CONNECT;
 import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenceFragment.KEY_DISCONNECT;
@@ -32,7 +34,9 @@ import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferen
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.CEC;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.TOGGLE_STATE;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.TOGGLE_TYPE;
-import static com.google.android.tv.btservices.settings.SlicesUtil.EXTRAS_SLICE_URI;
+import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.backAndUpdateSliceIntent;
+import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.updateSliceIntent;
+import static com.google.android.tv.btservices.settings.SlicesUtil.GENERAL_SLICE_URI;
 
 import android.app.PendingIntent;
 import android.app.admin.DevicePolicyManager;
@@ -43,7 +47,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.net.Uri;
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -73,6 +76,7 @@ import com.google.android.tv.btservices.SettingsUtils;
 import com.google.android.tv.btservices.remote.Version;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -91,12 +95,12 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
     private static final String TAG = "Atv.ConDevsSliceProvider";
     private static final boolean DEBUG = false;
     private boolean mBtDeviceServiceBound;
-    private Map<String, Version> mVersionsMap = new ConcurrentHashMap<>();
+    private final Map<String, Version> mVersionsMap = new ConcurrentHashMap<>();
     private BluetoothDeviceService.LocalBinder mBtDeviceServiceBinder;
     private final Map<Uri, Integer> pinnedUris = new ArrayMap<>();
 
     static final String KEY_EXTRAS_DEVICE = "key_extras_device";
-
+    private static final String SCHEME_CONTENT = "content://";
     private final Handler mHandler = new Handler(Looper.getMainLooper());
 
     private final ServiceConnection mBtDeviceServiceConnection =
@@ -165,8 +169,8 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
             }
             Context context = getContext();
             if (!mBtDeviceServiceBound && context.bindService(
-                        new Intent(context, BluetoothUtils.getBluetoothDeviceServiceClass(context)),
-                        mBtDeviceServiceConnection, Context.BIND_AUTO_CREATE)) {
+                    new Intent(context, BluetoothUtils.getBluetoothDeviceServiceClass(context)),
+                    mBtDeviceServiceConnection, Context.BIND_AUTO_CREATE)) {
                 mBtDeviceServiceBound = true;
             }
             if (!pinnedUris.containsKey(sliceUri)) {
@@ -243,15 +247,20 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 RestrictedLockUtilsInternal.checkIfRestrictionEnforced(getContext(),
                         UserManager.DISALLOW_CONFIG_BLUETOOTH, UserHandle.myUserId());
         PendingIntent pendingIntent;
+        List<String> updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString());
+        PendingIntent updateGeneralSliceIntent = updateSliceIntent(getContext(), 0,
+                new ArrayList<>(updatedUris));
         if (admin == null) {
             Intent i = SettingsUtils.getPairingIntent();
+            i.putExtra(EXTRA_SLICE_FOLLOWUP, updateGeneralSliceIntent);
             pendingIntent = PendingIntent.getActivity(getContext(), 0, i,
                     PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
         } else {
             Intent intent = RestrictedLockUtils.getShowAdminSupportDetailsIntent(getContext(),
                     admin);
             intent.putExtra(DevicePolicyManager.EXTRA_RESTRICTION,
-                    UserManager.DISALLOW_CONFIG_BLUETOOTH);
+                    UserManager.DISALLOW_CONFIG_BLUETOOTH)
+                    .putExtra(EXTRA_SLICE_FOLLOWUP, updateGeneralSliceIntent);
             pendingIntent = PendingIntent.getActivity(getContext(), 0, intent,
                     PendingIntent.FLAG_IMMUTABLE);
         }
@@ -345,9 +354,10 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
             createAndAddBtDeviceSlicePreferenceFromSet(psb, activeOfficialRemotes, addressToDevice);
             createAndAddBtDeviceSlicePreferenceFromSet(
                     psb, inactiveOfficialRemotes, addressToDevice);
-            // Adding the remote buttons settings at the bottom
-            updateAxel(psb);
         }
+
+        // Adding the remote buttons settings at the bottom
+        updateAxel(psb);
     }
 
     private void updateDeviceControl(PreferenceSliceBuilder psb) {
@@ -424,8 +434,13 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                     null,
                     ResponseFragment.DEFAULT_CHOICE_UNDEFINED
             );
-            i.putExtras(extras);
-            i.putExtra(KEY_EXTRAS_DEVICE, device);
+            i.putExtras(extras).putExtra(KEY_EXTRAS_DEVICE, device)
+                    .setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
+            List<String> updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString(),
+                    sliceUri.toString());
+            PendingIntent updateSliceIntent = updateSliceIntent(getContext(), 0,
+                    new ArrayList<>(updatedUris));
+            i.putExtra(EXTRA_SLICE_FOLLOWUP, updateSliceIntent);
             PendingIntent updatePendingIntent =
                     PendingIntent.getActivity(context, 0, i,
                             PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
@@ -476,18 +491,18 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                     deviceName,
                     isConnected ? 1 /* default to NO (index 1) */ : 0 /* default to YES */
             );
-            i.putExtras(extras);
-            i.putExtra(KEY_EXTRAS_DEVICE, device);
+            i.putExtras(extras)
+                    .putExtra(KEY_EXTRAS_DEVICE, device)
+                    .setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
+            List<String> updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString(),
+                    sliceUri.toString());
+            PendingIntent updateSliceIntent = backAndUpdateSliceIntent(getContext(), 1,
+                    new ArrayList<>(updatedUris), sliceUri.toString());
+            i.putExtra(EXTRA_SLICE_FOLLOWUP, updateSliceIntent);
             PendingIntent pendingIntent = PendingIntent
-                    .getActivity(context, 2, i,
-                            PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
-            Intent followUpIntent = new Intent(context, SliceBroadcastReceiver.class);
-            followUpIntent.putExtra(EXTRAS_SLICE_URI, sliceUri.toString());
-            PendingIntent followupIntent = PendingIntent
-                    .getBroadcast(context, 2, followUpIntent,
+                    .getActivity(context, 1, i,
                             PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
             disconnectPref.setPendingIntent(pendingIntent);
-            disconnectPref.setFollowupPendingIntent(followupIntent);
             psb.addPreference(disconnectPref);
         }
 
@@ -507,19 +522,17 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 deviceName,
                 ResponseFragment.DEFAULT_CHOICE_UNDEFINED
         );
-        i = new Intent(context, ResponseActivity.class);
-        i.putExtra(KEY_EXTRAS_DEVICE, device);
-        i.putExtras(extras);
+        i = new Intent(context, ResponseActivity.class)
+                .putExtra(KEY_EXTRAS_DEVICE, device)
+                .putExtras(extras)
+                .setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
+        List<String> updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString(), sliceUri.toString());
+        PendingIntent updateSliceIntent = updateSliceIntent(getContext(), 2,
+                new ArrayList<>(updatedUris));
+        i.putExtra(EXTRA_SLICE_FOLLOWUP, updateSliceIntent);
         PendingIntent renamePendingIntent = PendingIntent
-                .getActivity(context, 1, i,
+                .getActivity(context, 2, i,
                         PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
-
-        Intent followUpIntent = new Intent(context, SliceBroadcastReceiver.class);
-        followUpIntent.putExtra(EXTRAS_SLICE_URI, sliceUri.toString());
-        PendingIntent renameFollowupIntent = PendingIntent
-                .getBroadcast(context, 1, followUpIntent,
-                        PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
-        renamePref.setFollowupPendingIntent(renameFollowupIntent);
         renamePref.setPendingIntent(renamePendingIntent);
         psb.addPreference(renamePref);
 
@@ -540,18 +553,16 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 deviceName,
                 1 /* default to NO (index 1) */
         );
-        i.putExtras(extras);
-        i.putExtra(KEY_EXTRAS_DEVICE, device);
+        i.putExtras(extras).putExtra(KEY_EXTRAS_DEVICE, device)
+                .setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
+        updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString(), sliceUri.toString());
+        updateSliceIntent = backAndUpdateSliceIntent(getContext(), 3,
+                new ArrayList<>(updatedUris), sliceUri.toString());
+        i.putExtra(EXTRA_SLICE_FOLLOWUP, updateSliceIntent);
         PendingIntent disconnectPendingIntent = PendingIntent
                 .getActivity(context, 3, i,
                         PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
-        followUpIntent = new Intent(context, SliceBroadcastReceiver.class);
-        followUpIntent.putExtra(EXTRAS_SLICE_URI, sliceUri.toString());
-        PendingIntent forgetFollowupIntent = PendingIntent
-                .getBroadcast(context, 3, followUpIntent,
-                        PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
         forgetPref.setPendingIntent(disconnectPendingIntent);
-        forgetPref.setFollowupPendingIntent(forgetFollowupIntent);
         psb.addPreference(forgetPref);
 
         // Update "bluetooth device info preference".
@@ -686,7 +697,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         pref.setIconNeedsToBeProcessed(true);
     }
 
-    private BluetoothDeviceProvider mLocalBluetoothDeviceProvider =
+    private final BluetoothDeviceProvider mLocalBluetoothDeviceProvider =
             new LocalBluetoothDeviceProvider() {
                 final BluetoothDeviceProvider getHostBluetoothDeviceProvider() {
                     return getBluetoothDeviceProvider();

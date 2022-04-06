@@ -14,9 +14,34 @@
 
 #include "DummyBusOutputStream.h"
 
+#include <algorithm>
+
+#include <aidl/device/google/atv/audio_proxy/TimeSpec.h>
 #include <android-base/logging.h>
+#include <unistd.h>
+
+using aidl::device::google::atv::audio_proxy::TimeSpec;
 
 namespace audio_proxy::service {
+namespace {
+constexpr int64_t kOneSecInNs = 1'000'000'000;
+constexpr int64_t kOneSecInUs = 1'000'000;
+constexpr int64_t kOneUSecInNs = 1'000;
+
+int64_t timespecDelta(const timespec& newTime, const timespec& oldTime) {
+  int64_t deltaSec = 0;
+  int64_t deltaNSec = 0;
+  if (newTime.tv_nsec >= oldTime.tv_nsec) {
+    deltaSec = newTime.tv_sec - oldTime.tv_sec;
+    deltaNSec = newTime.tv_nsec - oldTime.tv_nsec;
+  } else {
+    deltaSec = newTime.tv_sec - oldTime.tv_sec - 1;
+    deltaNSec = kOneSecInNs + newTime.tv_nsec - oldTime.tv_nsec;
+  }
+
+  return deltaSec * kOneSecInUs + deltaNSec / kOneUSecInNs;
+}
+}  // namespace
 
 DummyBusOutputStream::DummyBusOutputStream(const std::string& address,
                                            const AidlAudioConfig& config,
@@ -32,17 +57,61 @@ bool DummyBusOutputStream::flush() { return true; }
 bool DummyBusOutputStream::close() { return true; }
 bool DummyBusOutputStream::setVolume(float left, float right) { return true; }
 
-size_t DummyBusOutputStream::availableToWrite() { return 0; }
+size_t DummyBusOutputStream::availableToWrite() {
+  return mWritingFrameSize * mWritingFrameCount;
+}
 
 AidlWriteStatus DummyBusOutputStream::writeRingBuffer(const uint8_t* firstMem,
                                                       size_t firstLength,
                                                       const uint8_t* secondMem,
                                                       size_t secondLength) {
-  return {};
+  size_t bufferBytes = firstLength + secondLength;
+  int64_t numFrames = bufferBytes / getFrameSize();
+  int64_t durationUs = numFrames * kOneSecInUs / mConfig.sampleRateHz;
+
+  timespec now = {0, 0};
+  clock_gettime(CLOCK_MONOTONIC, &now);
+  if (mStartTime.tv_sec == 0) {
+    mStartTime = now;
+  }
+
+  // Check underrun
+  int64_t elapsedTimeUs = timespecDelta(now, mStartTime);
+  if (elapsedTimeUs > mInputUsSinceStart) {
+    // Underrun
+    mPlayedUsBeforeUnderrun += mInputUsSinceStart;
+    mStartTime = now;
+    mInputUsSinceStart = 0;
+  }
+
+  // Wait if buffer full.
+  mInputUsSinceStart += durationUs;
+  int64_t waitTimeUs = mInputUsSinceStart - elapsedTimeUs - mMaxBufferUs;
+  if (waitTimeUs > 0) {
+    usleep(waitTimeUs);
+    clock_gettime(CLOCK_MONOTONIC, &now);
+  }
+
+  // Calculate played frames.
+  int64_t playedUs =
+      mPlayedUsBeforeUnderrun +
+      std::min(timespecDelta(now, mStartTime), mInputUsSinceStart);
+
+  TimeSpec timeSpec = {now.tv_sec, now.tv_nsec};
+
+  AidlWriteStatus status;
+  status.written = bufferBytes;
+  status.position = {playedUs * mConfig.sampleRateHz / kOneSecInUs, timeSpec};
+
+  return status;
 }
 
 bool DummyBusOutputStream::prepareForWritingImpl(uint32_t frameSize,
                                                  uint32_t frameCount) {
+  // The `frame` here is not audio frame, it doesn't count the sample format and
+  // channel layout.
+  mMaxBufferUs = frameSize * frameCount * 10 * kOneSecInUs /
+                 (mConfig.sampleRateHz * getFrameSize());
   return true;
 }
 
