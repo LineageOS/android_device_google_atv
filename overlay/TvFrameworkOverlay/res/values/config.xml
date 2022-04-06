@@ -144,4 +144,7 @@
     <!-- Determines whether SafetyCenter feature is enabled.
          SafetyCenter is not yet supported on TV. -->
     <bool name="config_enableSafetyCenter">false</bool>
+
+    <!-- The name of the package that will hold the system contacts role. -->
+    <string name="config_systemContacts" translatable="false">com.android.tv.frameworkpackagestubs</string>
 </resources>
