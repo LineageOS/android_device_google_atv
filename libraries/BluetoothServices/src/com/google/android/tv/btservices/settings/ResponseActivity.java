@@ -24,8 +24,6 @@ import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenc
 import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenceFragment.KEY_UPDATE;
 import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenceFragment.YES;
 import static com.google.android.tv.btservices.settings.ConnectedDevicesSliceProvider.KEY_EXTRAS_DEVICE;
-import static com.google.android.tv.btservices.settings.SlicesUtil.DIRECTION_BACK;
-import static com.google.android.tv.btservices.settings.SlicesUtil.EXTRAS_DIRECTION;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothDevice;
@@ -91,8 +89,7 @@ public class ResponseActivity extends Activity implements
     @Override
     public void onChoice(String key, int choice) {
         BluetoothDeviceProvider provider = getBluetoothDeviceProvider();
-        Intent i = new Intent();
-
+        Intent i = new Intent().putExtras(getIntent());
         if (provider == null) {
             return;
         }
@@ -104,19 +101,19 @@ public class ResponseActivity extends Activity implements
             case KEY_CONNECT:
                 if (choice == YES) {
                     provider.connectDevice(mDevice);
-                    i.putExtra(EXTRAS_DIRECTION, DIRECTION_BACK);
+                    setResult(RESULT_OK, i);
                 }
                 break;
             case KEY_DISCONNECT:
                 if (choice == YES) {
                     provider.disconnectDevice(mDevice);
-                    i.putExtra(EXTRAS_DIRECTION, DIRECTION_BACK);
+                    setResult(RESULT_OK, i);
                 }
                 break;
             case KEY_FORGET:
                 if (choice == YES) {
                     provider.forgetDevice(mDevice);
-                    i.putExtra(EXTRAS_DIRECTION, DIRECTION_BACK);
+                    setResult(RESULT_OK, i);
                 }
                 break;
             case KEY_UPDATE:
@@ -125,24 +122,23 @@ public class ResponseActivity extends Activity implements
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     intent.putExtra(RemoteDfuActivity.EXTRA_BT_ADDRESS, mDevice.getAddress());
                     startActivity(intent);
+                    setResult(RESULT_OK, i);
                 }
                 break;
         }
-        setResult(RESULT_OK, i);
         finish();
     }
 
     @Override
     public void onText(String key, String text) {
         BluetoothDeviceProvider provider = getBluetoothDeviceProvider();
+        Intent i = new Intent().putExtras(getIntent());
         if (KEY_RENAME.equals(key)) {
             if (mDevice != null) {
                 provider.renameDevice(mDevice, text);
+                setResult(RESULT_OK, i);
             }
         }
-        Intent i = new Intent();
-        i.putExtra(EXTRAS_DIRECTION, DIRECTION_BACK);
-        setResult(RESULT_OK, i);
         finish();
     }
 
