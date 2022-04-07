@@ -75,10 +75,11 @@ public class SliceBroadcastReceiver extends BroadcastReceiver {
     }
 
     public static PendingIntent updateSliceIntent(
-            Context context, int requestCode, ArrayList<String> uris) {
+            Context context, int requestCode, ArrayList<String> uris, String updatedUri) {
         Intent i = new Intent(context, SliceBroadcastReceiver.class)
                 .setAction(ACTION_UPDATE_SLICE)
-                .putStringArrayListExtra(PARAM_URIS, uris);
+                .putStringArrayListExtra(PARAM_URIS, uris)
+                .setData(Uri.parse(updatedUri));
         return PendingIntent.getBroadcast(context, requestCode, i,
                 PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
     }
@@ -88,7 +89,8 @@ public class SliceBroadcastReceiver extends BroadcastReceiver {
         Intent i = new Intent(context, SliceBroadcastReceiver.class)
                 .setAction(ACTION_BACK_AND_UPDATE_SLICE)
                 .putStringArrayListExtra(PARAM_URIS, uris)
-                .putExtra(EXTRAS_SLICE_URI, navigatingBackUri);
+                .putExtra(EXTRAS_SLICE_URI, navigatingBackUri)
+                .setData(Uri.parse(navigatingBackUri));
         return PendingIntent.getBroadcast(context, requestCode, i,
                 PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
     }
