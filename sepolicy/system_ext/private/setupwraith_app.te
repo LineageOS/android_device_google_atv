@@ -24,3 +24,5 @@ allow setupwraith_app system_linker_exec:file execute_no_trans;
 
 # Allow running subproc of DRM.
 allow setupwraith_app privapp_data_file:file execute;
+
+allow setupwraith_app privapp_data_file:lnk_file create_file_perms;
