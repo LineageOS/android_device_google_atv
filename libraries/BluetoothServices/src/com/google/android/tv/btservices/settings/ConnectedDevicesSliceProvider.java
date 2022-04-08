@@ -126,6 +126,8 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
     @Override
     public void onDeviceUpdated(BluetoothDevice device) {
         getContext().getContentResolver().notifyChange(SlicesUtil.GENERAL_SLICE_URI, null);
+        getContext().getContentResolver().notifyChange(
+                SlicesUtil.getDeviceUri(device.getAddress()), null);
         updateVersionAndNotify(device);
     }
 
@@ -135,7 +137,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
             mVersionsMap.put(addr, getLocalBluetoothDeviceProvider().getVersion(device));
             if (device != null) {
                 getContext().getContentResolver().notifyChange(
-                        SlicesUtil.getDeviceUri(addr, device.getAlias()), null);
+                        SlicesUtil.getDeviceUri(addr), null);
             }
         });
     }
@@ -249,7 +251,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         PendingIntent pendingIntent;
         List<String> updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString());
         PendingIntent updateGeneralSliceIntent = updateSliceIntent(getContext(), 0,
-                new ArrayList<>(updatedUris));
+                new ArrayList<>(updatedUris), GENERAL_SLICE_URI.toString());
         if (admin == null) {
             Intent i = SettingsUtils.getPairingIntent();
             i.putExtra(EXTRA_SLICE_FOLLOWUP, updateGeneralSliceIntent);
@@ -439,7 +441,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
             List<String> updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString(),
                     sliceUri.toString());
             PendingIntent updateSliceIntent = updateSliceIntent(getContext(), 0,
-                    new ArrayList<>(updatedUris));
+                    new ArrayList<>(updatedUris), sliceUri.toString());
             i.putExtra(EXTRA_SLICE_FOLLOWUP, updateSliceIntent);
             PendingIntent updatePendingIntent =
                     PendingIntent.getActivity(context, 0, i,
@@ -528,7 +530,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 .setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
         List<String> updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString(), sliceUri.toString());
         PendingIntent updateSliceIntent = updateSliceIntent(getContext(), 2,
-                new ArrayList<>(updatedUris));
+                new ArrayList<>(updatedUris), sliceUri.toString());
         i.putExtra(EXTRA_SLICE_FOLLOWUP, updateSliceIntent);
         PendingIntent renamePendingIntent = PendingIntent
                 .getActivity(context, 2, i,
@@ -654,8 +656,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 RestrictedLockUtilsInternal.checkIfRestrictionEnforced(context,
                         UserManager.DISALLOW_CONFIG_BLUETOOTH, UserHandle.myUserId());
         if (admin == null) {
-            Uri targetSliceUri = SlicesUtil.getDeviceUri(
-                    device.getAddress(), BluetoothUtils.getName(device));
+            Uri targetSliceUri = SlicesUtil.getDeviceUri(device.getAddress());
             pref.setTargetSliceUri(targetSliceUri.toString());
         } else {
             Intent intent = RestrictedLockUtils.getShowAdminSupportDetailsIntent(context, admin);
