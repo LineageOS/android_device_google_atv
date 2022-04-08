@@ -144,6 +144,9 @@ public class ResponseActivity extends Activity implements
 
     @Override
     public void onDeviceUpdated(BluetoothDevice device) {
+        getContentResolver().notifyChange(SlicesUtil.GENERAL_SLICE_URI, null);
+        getContentResolver().notifyChange(
+                SlicesUtil.getDeviceUri(device.getAddress()), null);
     }
 
     private BluetoothDeviceProvider getBluetoothDeviceProvider() {

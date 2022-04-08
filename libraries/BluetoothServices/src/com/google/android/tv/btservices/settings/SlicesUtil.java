@@ -61,9 +61,9 @@ public final class SlicesUtil {
         return CEC_PATH.equals(getFirstSegment(uri));
     }
 
-    static Uri getDeviceUri(String deviceAddr, String aliasName) {
+    static Uri getDeviceUri(String deviceAddr) {
         return Uri.withAppendedPath(
-                BLUETOOTH_DEVICE_SLICE_URI, deviceAddr + " " + aliasName);
+                BLUETOOTH_DEVICE_SLICE_URI, deviceAddr);
     }
 
     private static String getFirstSegment(Uri uri) {
