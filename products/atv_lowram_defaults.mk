@@ -37,7 +37,6 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 # Do not spin up a separate process for the network stack on low ram devices, use an in-process APK.
 PRODUCT_PACKAGES += InProcessNetworkStack
 PRODUCT_PACKAGES += PlatformCaptivePortalLogin
-PRODUCT_PACKAGES += PlatformNetworkPermissionConfig
 PRODUCT_PACKAGES += com.android.tethering.inprocess
 
 # Strip the local variable table and the local variable type table to reduce
