@@ -38,7 +38,6 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 ifneq ($(PRODUCT_IS_ATV_SDK),true)
   PRODUCT_PACKAGES += InProcessNetworkStack
   PRODUCT_PACKAGES += PlatformCaptivePortalLogin
-  PRODUCT_PACKAGES += PlatformNetworkPermissionConfig
   PRODUCT_PACKAGES += com.android.tethering.inprocess
 endif
 
