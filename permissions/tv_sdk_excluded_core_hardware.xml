@@ -25,6 +25,7 @@
     <!-- ATV SDK is not designed to have telephony services by default -->
     <unavailable-feature name="android.hardware.telephony" />
     <unavailable-feature name="android.hardware.telephony.gsm" />
+    <unavailable-feature name="android.software.telecom" />
 
     <!-- ATV SDK is not designed to have communication (VoIP, etc.) services by default -->
     <unavailable-feature name="android.software.connectionservice" />
