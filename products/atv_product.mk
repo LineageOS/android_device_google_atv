@@ -27,7 +27,10 @@ PRODUCT_PACKAGES += \
     TvWifiOverlay
 
 PRODUCT_COPY_FILES += \
-    device/google/atv/atv-component-overrides.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/atv-component-overrides.xml \
+    device/google/atv/atv-component-overrides.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/atv-component-overrides.xml
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.gamepad.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.gamepad.xml
 
 # Too many tombstones can cause bugreports to grow too large to be uploaded.
 PRODUCT_PRODUCT_PROPERTIES += \
