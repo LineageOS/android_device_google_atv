@@ -107,6 +107,32 @@
             </intent-filter>
         </activity>
 
+        <!-- Camera package stubs -->
+        <activity android:name=".Stubs$CameraStub"
+            android:exported="true"
+            android:label="@string/stub_name"
+            android:excludeFromRecents="true"
+            >
+            <meta-data android:name="com.android.tv.stub" android:value="true" />
+            <intent-filter android:priority="-1">
+                <action android:name="android.media.action.IMAGE_CAPTURE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:priority="-1">
+                <action android:name="android.media.action.VIDEO_CAPTURE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:priority="-1">
+                <action android:name="android.media.action.STILL_IMAGE_CAMERA" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:priority="-1">
+                <action android:name="android.media.action.VIDEO_CAMERA" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
         <!-- Contacts package stubs.
 
              Copied all intent filters from all activities
