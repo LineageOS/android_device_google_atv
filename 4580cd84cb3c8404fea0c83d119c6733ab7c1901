@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "77348d32_9415a619",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2022-08-31T21:37:23Z",
+      "side": 1,
+      "message": "x86 target hasn\u0027t changed since 19.1, so this is good too",
+      "revId": "4580cd84cb3c8404fea0c83d119c6733ab7c1901",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
