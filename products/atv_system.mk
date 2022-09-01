@@ -78,6 +78,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_SUPPORTS_CAMERA ?= true
 ifeq ($(PRODUCT_SUPPORTS_CAMERA),true)
     PRODUCT_PACKAGES += cameraserver
+    PRODUCT_PACKAGES += CameraExtensionsProxy
 else
     # When cameraserver is not included, we need to configure Camera API to not
     # connect to it.
