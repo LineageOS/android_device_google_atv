@@ -112,6 +112,7 @@
             android:exported="true"
             android:label="@string/stub_name"
             android:excludeFromRecents="true"
+            android:visibleToInstantApps="true"
             >
             <meta-data android:name="com.android.tv.stub" android:value="true" />
             <intent-filter android:priority="-1">
