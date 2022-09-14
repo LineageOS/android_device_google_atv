@@ -47,7 +47,6 @@ endif
 # From build/target/product/core.mk
 PRODUCT_PACKAGES += \
     BasicDreams \
-    Bluetooth \
     CalendarProvider \
     CaptivePortalLogin \
     CertInstaller \
