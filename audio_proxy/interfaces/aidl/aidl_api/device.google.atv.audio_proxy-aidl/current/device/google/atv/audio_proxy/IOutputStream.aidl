@@ -27,4 +27,6 @@ interface IOutputStream {
   void flush();
   void prepareForWriting(in int frameSize, in int framesCount, out android.hardware.common.fmq.MQDescriptor<byte,android.hardware.common.fmq.SynchronizedReadWrite> dataMQ, out android.hardware.common.fmq.MQDescriptor<device.google.atv.audio_proxy.WriteStatus,android.hardware.common.fmq.SynchronizedReadWrite> statusMQ);
   void setVolume(float left, float right);
+  long getBufferSizeBytes();
+  int getLatencyMs();
 }

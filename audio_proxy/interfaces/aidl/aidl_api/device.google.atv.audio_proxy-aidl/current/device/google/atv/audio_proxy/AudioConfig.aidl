@@ -22,4 +22,6 @@ parcelable AudioConfig {
   device.google.atv.audio_proxy.AudioFormat format;
   int sampleRateHz;
   device.google.atv.audio_proxy.AudioChannelMask channelMask;
+  long bufferSizeBytes;
+  int latencyMs;
 }
