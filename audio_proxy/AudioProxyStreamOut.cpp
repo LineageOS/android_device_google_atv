@@ -54,4 +54,11 @@ void AudioProxyStreamOut::setVolume(float left, float right) {
   mStream->set_volume(mStream, left, right);
 }
 
+int64_t AudioProxyStreamOut::getBufferSizeBytes() {
+  return mStream->get_buffer_size(mStream);
+}
+
+int32_t AudioProxyStreamOut::getLatencyMs() {
+  return mStream->get_latency(mStream);
+}
 }  // namespace audio_proxy

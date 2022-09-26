@@ -56,6 +56,9 @@ class OutputStreamImpl : public BnOutputStream {
 
   ndk::ScopedAStatus setVolume(float left, float right) override;
 
+  ndk::ScopedAStatus getBufferSizeBytes(int64_t* bufferSizeBytes) override;
+  ndk::ScopedAStatus getLatencyMs(int32_t* latencyMs) override;
+
  private:
   typedef void (*EventFlagDeleter)(EventFlag*);
 

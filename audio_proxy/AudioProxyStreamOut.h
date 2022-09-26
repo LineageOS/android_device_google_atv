@@ -45,6 +45,9 @@ class AudioProxyStreamOut final {
 
   void setVolume(float left, float right);
 
+  int64_t getBufferSizeBytes();
+  int32_t getLatencyMs();
+
  private:
   audio_proxy_stream_out_t* const mStream;
   audio_proxy_device_t* const mDevice;
