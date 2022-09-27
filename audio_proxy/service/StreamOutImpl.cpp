@@ -73,12 +73,11 @@ uint64_t estimatePlayedFramesSince(const TimeSpec& timestamp,
 }  // namespace
 
 StreamOutImpl::StreamOutImpl(std::shared_ptr<BusOutputStream> stream,
-                             const StreamOutConfig& config,
-                             uint32_t bufferSizeMs, uint32_t latencyMs)
+                             const StreamOutConfig& config)
     : mStream(std::move(stream)),
       mConfig(config),
-      mBufferSizeMs(bufferSizeMs),
-      mLatencyMs(latencyMs),
+      mBufferSizeBytes(mStream->getConfig().bufferSizeBytes),
+      mLatencyMs(mStream->getConfig().latencyMs),
       mEventFlag(nullptr, deleteEventFlag) {}
 
 StreamOutImpl::~StreamOutImpl() {
@@ -98,12 +97,10 @@ Return<uint64_t> StreamOutImpl::getFrameSize() {
 }
 
 Return<uint64_t> StreamOutImpl::getFrameCount() {
-  return mBufferSizeMs * mConfig.sampleRateHz / 1000;
+  return mBufferSizeBytes / mStream->getFrameSize();
 }
 
-Return<uint64_t> StreamOutImpl::getBufferSize() {
-  return mBufferSizeMs * mConfig.sampleRateHz * mStream->getFrameSize() / 1000;
-}
+Return<uint64_t> StreamOutImpl::getBufferSize() { return mBufferSizeBytes; }
 
 #if MAJOR_VERSION >= 7
 Return<void> StreamOutImpl::getSupportedProfiles(
@@ -505,6 +502,10 @@ uint64_t StreamOutImpl::estimateTotalPlayedFrames() const {
   }
 
   auto [frames, timestamp] = mWriteThread->getPresentationPosition();
+  if (frames == 0) {
+    return 0;
+  }
+
   return frames + estimatePlayedFramesSince(timestamp, mConfig.sampleRateHz);
 }
 

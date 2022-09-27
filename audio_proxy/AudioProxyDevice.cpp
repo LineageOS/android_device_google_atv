@@ -39,6 +39,8 @@ bool isValidStreamOut(const audio_proxy_stream_out_t* stream) {
   CHECK_API(write);
   CHECK_API(get_presentation_position);
   CHECK_API(set_volume);
+  CHECK_API(get_buffer_size);
+  CHECK_API(get_latency);
 
   return true;
 }
@@ -55,13 +57,18 @@ const char* AudioProxyDevice::getServiceName() {
 
 std::unique_ptr<AudioProxyStreamOut> AudioProxyDevice::openOutputStream(
     const std::string& address, const AudioConfig& aidlConfig, int32_t flags) {
+  audio_proxy_config_v2_t config_v2 = {
+      .buffer_size_bytes = aidlConfig.bufferSizeBytes,
+      .latency_ms = aidlConfig.latencyMs,
+      .extension = nullptr};
+
   audio_proxy_config_t config = {
       .format = static_cast<audio_proxy_format_t>(aidlConfig.format),
       .sample_rate = static_cast<uint32_t>(aidlConfig.sampleRateHz),
       .channel_mask =
           static_cast<audio_proxy_channel_mask_t>(aidlConfig.channelMask),
       .frame_count = 0,
-      .extension = nullptr};
+      .v2 = &config_v2};
 
   // TODO(yucliu): Pass address to the app. For now, the only client app
   // (MediaShell) can use flags to distinguish different streams.

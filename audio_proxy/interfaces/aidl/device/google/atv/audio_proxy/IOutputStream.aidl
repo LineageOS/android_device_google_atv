@@ -42,4 +42,10 @@ interface IOutputStream {
      * Volume control.
      */
     void setVolume(float left, float right);
+
+    /**
+     * Get the buffer size and latency of the stream. They're called before starting the playback.
+     */
+    long getBufferSizeBytes();
+    int getLatencyMs();
 }
