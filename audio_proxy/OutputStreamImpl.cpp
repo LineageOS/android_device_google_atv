@@ -254,4 +254,15 @@ ndk::ScopedAStatus OutputStreamImpl::setVolume(float left, float right) {
   return ndk::ScopedAStatus::ok();
 }
 
+ndk::ScopedAStatus OutputStreamImpl::getBufferSizeBytes(
+    int64_t* bufferSizeBytes) {
+  *bufferSizeBytes = mStream->getBufferSizeBytes();
+  return ndk::ScopedAStatus::ok();
+}
+
+ndk::ScopedAStatus OutputStreamImpl::getLatencyMs(int32_t* latencyMs) {
+  *latencyMs = mStream->getLatencyMs();
+  return ndk::ScopedAStatus::ok();
+}
+
 }  // namespace audio_proxy

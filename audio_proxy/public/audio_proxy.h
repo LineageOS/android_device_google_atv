@@ -107,13 +107,21 @@ typedef int32_t audio_proxy_output_flags_t;
 
 // AudioConfig
 typedef struct {
+  int64_t buffer_size_bytes;
+  int32_t latency_ms;
+
+  // Points to extra fields defined in the future versions.
+  void* extension;
+} audio_proxy_config_v2_t;
+
+typedef struct {
   uint32_t sample_rate;
   audio_proxy_channel_mask_t channel_mask;
   audio_proxy_format_t format;
   uint32_t frame_count;
 
-  // Points to extra fields defined in the future versions.
-  void* extension;
+  // Points to extra fields.
+  audio_proxy_config_v2_t* v2;
 } audio_proxy_config_t;
 
 // Util structure for key value pair.
