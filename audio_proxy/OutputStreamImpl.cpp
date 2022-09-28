@@ -23,7 +23,6 @@
 #include "AudioProxyStreamOut.h"
 
 using aidl::device::google::atv::audio_proxy::MessageQueueFlag;
-using aidl::device::google::atv::audio_proxy::PresentationPosition;
 using android::status_t;
 
 namespace audio_proxy {
@@ -262,6 +261,28 @@ ndk::ScopedAStatus OutputStreamImpl::getBufferSizeBytes(
 
 ndk::ScopedAStatus OutputStreamImpl::getLatencyMs(int32_t* latencyMs) {
   *latencyMs = mStream->getLatencyMs();
+  return ndk::ScopedAStatus::ok();
+}
+
+ndk::ScopedAStatus OutputStreamImpl::start() {
+  mStream->start();
+  return ndk::ScopedAStatus::ok();
+}
+
+ndk::ScopedAStatus OutputStreamImpl::stop() {
+  mStream->stop();
+  return ndk::ScopedAStatus::ok();
+}
+
+ndk::ScopedAStatus OutputStreamImpl::createMmapBuffer(
+    int32_t minBufferSizeFrames, MmapBufferInfo* info) {
+  *info = mStream->createMmapBuffer(minBufferSizeFrames);
+  return ndk::ScopedAStatus::ok();
+}
+
+ndk::ScopedAStatus OutputStreamImpl::getMmapPosition(
+    PresentationPosition* position) {
+  *position = mStream->getMmapPosition();
   return ndk::ScopedAStatus::ok();
 }
 

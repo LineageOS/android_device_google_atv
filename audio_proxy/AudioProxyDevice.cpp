@@ -20,9 +20,9 @@
 
 using aidl::device::google::atv::audio_proxy::AudioConfig;
 
-#define CHECK_API(func)                        \
+#define CHECK_API(st, func)                    \
   do {                                         \
-    if (!stream->func) {                       \
+    if (!st->func) {                           \
       LOG(ERROR) << "Undefined API " << #func; \
       return false;                            \
     }                                          \
@@ -31,16 +31,23 @@ using aidl::device::google::atv::audio_proxy::AudioConfig;
 namespace audio_proxy {
 namespace {
 bool isValidStreamOut(const audio_proxy_stream_out_t* stream) {
-  CHECK_API(standby);
-  CHECK_API(pause);
-  CHECK_API(resume);
-  CHECK_API(flush);
-  CHECK_API(drain);
-  CHECK_API(write);
-  CHECK_API(get_presentation_position);
-  CHECK_API(set_volume);
-  CHECK_API(get_buffer_size);
-  CHECK_API(get_latency);
+  CHECK_API(stream, standby);
+  CHECK_API(stream, pause);
+  CHECK_API(stream, resume);
+  CHECK_API(stream, flush);
+  CHECK_API(stream, drain);
+  CHECK_API(stream, write);
+  CHECK_API(stream, get_presentation_position);
+  CHECK_API(stream, set_volume);
+  CHECK_API(stream, get_buffer_size);
+  CHECK_API(stream, get_latency);
+
+  if (stream->v2) {
+    CHECK_API(stream->v2, start);
+    CHECK_API(stream->v2, stop);
+    CHECK_API(stream->v2, create_mmap_buffer);
+    CHECK_API(stream->v2, get_mmap_position);
+  }
 
   return true;
 }

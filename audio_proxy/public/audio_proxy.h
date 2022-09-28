@@ -133,10 +133,32 @@ typedef struct {
 typedef void (*audio_proxy_get_parameters_callback_t)(
     void*, const audio_proxy_key_val_t*);
 
-// The following struct/functions mirror those definitions in audio HAL. They
-// should have the same requirement as audio HAL interfaces, unless specified.
+enum {
+  AUDIO_PROXY_MMAP_BUFFER_FLAG_NONE = 0x0,
+  AUDIO_PROXY_MMAP_BUFFER_FLAG_APPLICATION_SHAREABLE = 0x1,
+};
+typedef int32_t audio_proxy_mmap_buffer_flag_t;
+
+typedef struct {
+  int shared_memory_fd;
+  int32_t buffer_size_frames;
+  int32_t burst_size_frames;
+  audio_proxy_mmap_buffer_flag_t flags;
+} audio_proxy_mmap_buffer_info_t;
 
 // IStreamOut.
+struct audio_proxy_stream_out_v2 {
+  void (*start)(struct audio_proxy_stream_out_v2* stream);
+  void (*stop)(struct audio_proxy_stream_out_v2* stream);
+  audio_proxy_mmap_buffer_info_t (*create_mmap_buffer)(
+      struct audio_proxy_stream_out_v2* stream, int32_t min_buffer_size_frames);
+  void (*get_mmap_position)(struct audio_proxy_stream_out_v2* stream,
+                            int64_t* frames, struct timespec* timestamp);
+  // Pointer to the next version structure, for compatibility.
+  void* extension;
+};
+typedef struct audio_proxy_stream_out_v2 audio_proxy_stream_out_v2_t;
+
 struct audio_proxy_stream_out {
   size_t (*get_buffer_size)(const struct audio_proxy_stream_out* stream);
   uint64_t (*get_frame_count)(const struct audio_proxy_stream_out* stream);
@@ -231,8 +253,8 @@ struct audio_proxy_stream_out {
   // optional.
   int (*dump)(const struct audio_proxy_stream_out* stream, int fd);
 
-  // Pointer to the next version structure, for compatibility.
-  void* extension;
+  // Pointer to the next version structure.
+  audio_proxy_stream_out_v2_t* v2;
 };
 
 typedef struct audio_proxy_stream_out audio_proxy_stream_out_t;
