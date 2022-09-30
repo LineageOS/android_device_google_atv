@@ -54,7 +54,7 @@ cc_defaults {
   ],
 
   shared_libs: [
-    "device.google.atv.audio_proxy-aidl-V2-ndk",
+    "device.google.atv.audio_proxy-aidl-V3-ndk",
     "libbase",
     "libbinder_ndk",
     "libhidlbase",

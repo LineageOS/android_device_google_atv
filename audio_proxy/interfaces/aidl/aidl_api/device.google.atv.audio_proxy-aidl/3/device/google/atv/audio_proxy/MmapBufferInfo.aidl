@@ -18,19 +18,9 @@
 
 package device.google.atv.audio_proxy;
 @VintfStability
-interface IOutputStream {
-  void standby();
-  void close();
-  void pause();
-  void resume();
-  void drain(device.google.atv.audio_proxy.AudioDrain drain);
-  void flush();
-  void prepareForWriting(in int frameSize, in int framesCount, out android.hardware.common.fmq.MQDescriptor<byte,android.hardware.common.fmq.SynchronizedReadWrite> dataMQ, out android.hardware.common.fmq.MQDescriptor<device.google.atv.audio_proxy.WriteStatus,android.hardware.common.fmq.SynchronizedReadWrite> statusMQ);
-  void setVolume(float left, float right);
-  long getBufferSizeBytes();
-  int getLatencyMs();
-  void start();
-  void stop();
-  device.google.atv.audio_proxy.MmapBufferInfo createMmapBuffer(int minSizeFrames);
-  device.google.atv.audio_proxy.PresentationPosition getMmapPosition();
+parcelable MmapBufferInfo {
+  ParcelFileDescriptor sharedMemoryFd;
+  int bufferSizeFrames;
+  int burstSizeFrames;
+  int flags;
 }
