@@ -23,14 +23,9 @@
     <!-- Disable AUDIO_BECOMING_NOISY notifications. -->
     <bool name="config_sendAudioBecomingNoisy">false</bool>
 
-    <!-- This device is data-only. -->
-    <bool name="config_voice_capable">false</bool>
-
-    <!-- This device does not allow sms service. -->
-    <bool name="config_sms_capable">false</bool>
-
-    <!-- This device does not support mobile data. -->
-    <bool name="config_mobile_data_capable">false</bool>
+    <!-- Enable doze mode -->
+    <bool name="config_enableAutoPowerModes">true</bool>
+    <bool name="config_autoPowerModeUseMotionSensor">false</bool>
 
     <!-- Control the default UI mode type to use when there is no other type override
          happening.  One of the following values (See Configuration.java):
@@ -52,8 +47,19 @@
     -->
     <integer name="config_defaultNightMode">2</integer>
 
-    <!-- default device has recents property -->
-    <bool name="config_hasRecents">false</bool>
+    <!-- Control the behavior when the user long presses the power button.
+        0 - Nothing
+        1 - Global actions menu
+        2 - Power off (with confirmation)
+        3 - Power off (without confirmation)
+        4 - Go to voice assist
+        5 - Go to assistant (Settings.Secure.ASSISTANT -->
+    <integer name="config_longPressOnPowerBehavior">3</integer>
+
+    <!-- If true, enables verification of the lockscreen credential in the factory reset protection
+        flow. This should be true if gatekeeper / weaver credentials can still be checked after a
+        factory reset. -->
+    <bool name="config_enableCredentialFactoryResetProtection">false</bool>
 
     <!-- Control the behavior when the user long presses the home button.
             0 - Nothing
@@ -74,36 +80,41 @@
     -->
     <integer name="config_doubleTapOnHomeBehavior">2</integer>
 
+    <!-- Whether the time zone detection feature is enabled. Disabled for ATV devices. -->
+    <bool name="config_enableGeolocationTimeZoneDetection" translatable="false">false</bool>
+
+    <!-- This device is data-only. -->
+    <bool name="config_voice_capable">false</bool>
+
+    <!-- This device does not allow sms service. -->
+    <bool name="config_sms_capable">false</bool>
+
+    <!-- This device does not support mobile data. -->
+    <bool name="config_mobile_data_capable">false</bool>
+
+    <!-- The name of the package that will hold the system contacts role. -->
+    <string name="config_systemContacts" translatable="false">com.android.tv.frameworkpackagestubs</string>
+
+    <!-- ComponentName of the default dream (Settings.Secure.DEFAULT_SCREENSAVER_COMPONENT) -->
+    <string name="config_dreamsDefaultComponent" translatable="false">com.android.dreams.basic/com.android.dreams.basic.Colors</string>
+
     <!-- Override configuration check for dpad so that we always appear to have one -->
     <bool name="config_hasPermanentDpad">true</bool>
 
+    <!-- default device has recents property -->
+    <bool name="config_hasRecents">false</bool>
+
     <bool name="config_defaultInTouchMode">false</bool>
-
-    <!-- Launcher customization requires AppWidgetService, but otherwise
-         home screen widgets are not supported on TV -->
-    <bool name="config_enableAppWidgetService">true</bool>
-
-    <!-- Whether to keep background restricted profiles running after exiting. If set to false,
-         restricted profiles may be put into stopped state as soon as the switch back to primary
-         happens.
-         Can be overridden with android.provider.Settings.Global.KEEP_PROFILE_IN_BACKGROUND. -->
-    <bool name="config_keepRestrictedProfilesInBackground">false</bool>
-
-    <!-- Enable doze mode -->
-    <bool name="config_enableAutoPowerModes">true</bool>
-    <bool name="config_autoPowerModeUseMotionSensor">false</bool>
 
     <!-- True if the device supports split screen as a form of multi-window. -->
     <bool name="config_supportsSplitScreenMultiWindow">false</bool>
 
-    <!-- Whether the device supports quick settings and its associated APIs -->
-    <bool name="config_quickSettingsSupported">false</bool>
-
     <!-- True if the device supports system decorations on secondary displays. -->
     <bool name="config_supportsSystemDecorsOnSecondaryDisplays">false</bool>
 
-    <!-- Enable assistant to show in front of the dream/screensaver. -->
-    <bool name="config_assistantOnTopOfDream">true</bool>
+    <!-- Launcher customization requires AppWidgetService, but otherwise
+         home screen widgets are not supported on TV -->
+    <bool name="config_enableAppWidgetService">true</bool>
 
     <!-- Maximum size, specified in pixels, to restrain the display space width to. Height and
          density will be scaled accordingly to maintain aspect ratio. A value of 0 indicates no
@@ -112,38 +123,27 @@
          too much overhead on the GPU for Android TV devices. -->
     <integer name="config_maxUiWidth">1920</integer>
 
-    <!-- If true, enables verification of the lockscreen credential in the factory reset protection
-        flow. This should be true if gatekeeper / weaver credentials can still be checked after a
-        factory reset. -->
-    <bool name="config_enableCredentialFactoryResetProtection">false</bool>
+    <!-- Whether the device supports quick settings and its associated APIs -->
+    <bool name="config_quickSettingsSupported">false</bool>
 
-    <!-- Control the behavior when the user long presses the power button.
-        0 - Nothing
-        1 - Global actions menu
-        2 - Power off (with confirmation)
-        3 - Power off (without confirmation)
-        4 - Go to voice assist
-        5 - Go to assistant (Settings.Secure.ASSISTANT -->
-    <integer name="config_longPressOnPowerBehavior">3</integer>
+    <!-- Whether to keep background restricted profiles running after exiting. If set to false,
+         restricted profiles may be put into stopped state as soon as the switch back to primary
+         happens.
+         Can be overridden with android.provider.Settings.Global.KEEP_PROFILE_IN_BACKGROUND. -->
+    <bool name="config_keepRestrictedProfilesInBackground">false</bool>
 
-    <!-- Whether the time zone detection feature is enabled. Disabled for ATV devices. -->
-    <bool name="config_enableGeolocationTimeZoneDetection" translatable="false">false</bool>
+    <!-- Enable assistant to show in front of the dream/screensaver. -->
+    <bool name="config_assistantOnTopOfDream">true</bool>
+
+    <!-- If true, Views will declare they prefer to be kept clear from overlays when focused. -->
+    <bool name="config_preferKeepClearForFocus">true</bool>
 
     <!-- Whether this device is supporting the microphone toggle -->
     <bool name="config_supportsMicToggle">true</bool>
     <!-- Whether this device is supporting the camera toggle -->
     <bool name="config_supportsCamToggle">true</bool>
 
-    <!-- ComponentName of the default dream (Settings.Secure.DEFAULT_SCREENSAVER_COMPONENT) -->
-    <string name="config_dreamsDefaultComponent" translatable="false">com.android.dreams.basic/com.android.dreams.basic.Colors</string>
-
-    <!-- If true, Views will declare they prefer to be kept clear from overlays when focused. -->
-    <bool name="config_preferKeepClearForFocus">true</bool>
-
     <!-- Determines whether SafetyCenter feature is enabled.
          SafetyCenter is not yet supported on TV. -->
     <bool name="config_enableSafetyCenter">false</bool>
-
-    <!-- The name of the package that will hold the system contacts role. -->
-    <string name="config_systemContacts" translatable="false">com.android.tv.frameworkpackagestubs</string>
 </resources>
