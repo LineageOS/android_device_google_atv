@@ -146,4 +146,8 @@
 
     <!-- The name of the package that will hold the system contacts role. -->
     <string name="config_systemContacts" translatable="false">com.android.tv.frameworkpackagestubs</string>
+
+    <!-- Inactivity threshold (in milliseconds) used in JobScheduler. JobScheduler will consider
+         the device to be "idle" after being inactive for this long. -->
+    <integer name="config_jobSchedulerInactivityIdleThreshold">300000</integer>
 </resources>
