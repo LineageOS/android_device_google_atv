@@ -19,7 +19,7 @@
 #
 
 EMULATOR_VENDOR_NO_GNSS := true
-EMULATOR_VENDOR_NO_FINGERPRINT := true
+EMULATOR_VENDOR_NO_BIOMETRICS := true
 EMULATOR_VENDOR_NO_SENSORS := true
 
 $(call inherit-product, device/google/atv/products/atv_vendor.mk)
