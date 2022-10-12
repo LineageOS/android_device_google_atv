@@ -18,8 +18,9 @@
 # TV emulator-related modules to PRODUCT_PACKAGES.
 #
 
-# ATV SDK is not designed to have a GNSS-receiver by default
 EMULATOR_VENDOR_NO_GNSS := true
+EMULATOR_VENDOR_NO_FINGERPRINT := true
+EMULATOR_VENDOR_NO_SENSORS := true
 
 $(call inherit-product, device/google/atv/products/atv_vendor.mk)
 
