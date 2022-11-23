@@ -5,3 +5,5 @@ binder_call(hal_audio_proxy_client, hal_audio_proxy_server);
 binder_call(hal_audio_proxy_server, hal_audio_proxy_client);
 binder_call(hal_audio_proxy_server, servicemanager);
 
+hal_attribute_service(hal_audio_proxy, hal_audio_proxy_service);
+
