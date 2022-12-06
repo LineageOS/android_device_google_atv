@@ -1,0 +1,1 @@
+type hal_audio_proxy_service, vendor_service, protected_service, service_manager_type;
