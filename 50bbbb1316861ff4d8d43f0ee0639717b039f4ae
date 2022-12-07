@@ -16,6 +16,24 @@
       "message": "build/make/core/main.mk:1308: warning:  device/askey/wade/lineage_wade.mk includes non-existent modules in PRODUCT_PACKAGES\nOffending entries:\nBluetooth\n",
       "revId": "50bbbb1316861ff4d8d43f0ee0639717b039f4ae",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d15be4a_9915473a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-12-07T17:14:43Z",
+      "side": 1,
+      "message": "Right, thus my previous comment.",
+      "parentUuid": "6204fef8_d40d7562",
+      "revId": "50bbbb1316861ff4d8d43f0ee0639717b039f4ae",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
