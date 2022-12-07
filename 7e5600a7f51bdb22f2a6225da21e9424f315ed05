@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03edd727_74644035",
+        "filename": "products/atv_system.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-12-07T12:40:50Z",
+      "side": 0,
+      "message": "Don\u0027t you want to remove only this?",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 25
+      },
+      "revId": "7e5600a7f51bdb22f2a6225da21e9424f315ed05",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
