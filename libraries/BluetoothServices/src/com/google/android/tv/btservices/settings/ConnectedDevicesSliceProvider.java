@@ -40,7 +40,6 @@ import static com.google.android.tv.btservices.settings.SlicesUtil.GENERAL_SLICE
 
 import android.app.PendingIntent;
 import android.app.admin.DevicePolicyManager;
-import android.app.tvsettings.TvSettingsEnums;
 import android.bluetooth.BluetoothDevice;
 import android.content.ComponentName;
 import android.content.Context;
@@ -243,7 +242,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         psb.addScreenTitle(
                 new RowBuilder()
                         .setTitle(getString(R.string.connected_devices_slice_pref_title))
-                        .setPageId(TvSettingsEnums.CONNECTED_SLICE));
+                        .setPageId(0x18000000)); // TvSettingsEnums.CONNECTED_SLICE
 
         RestrictedLockUtils.EnforcedAdmin admin =
                 RestrictedLockUtilsInternal.checkIfRestrictionEnforced(getContext(),
@@ -269,7 +268,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         psb.addPreference(new RowBuilder()
                 .setKey(KEY_PAIR_REMOTE)
                 .setTitle(getString(R.string.settings_pair_remote))
-                .setActionId(TvSettingsEnums.CONNECTED_SLICE_CONNECT_NEW_DEVICES)
+                .setActionId(0x18100000) // TvSettingsEnums.CONNECTED_SLICE_CONNECT_NEW_DEVICES
                 .setIcon(IconCompat.createWithResource(getContext(),
                         R.drawable.ic_baseline_add_24dp))
                 .setIconNeedsToBeProcessed(true)
@@ -418,7 +417,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         psb.addScreenTitle(
                 new RowBuilder()
                         .setTitle(deviceName)
-                        .setPageId(TvSettingsEnums.CONNECTED_SLICE_DEVICE_ENTRY));
+                        .setPageId(0x18200000)); // TvSettingsEnums.CONNECTED_SLICE_DEVICE_ENTRY
 
         Bundle extras = new Bundle();
         Intent i = null;
@@ -454,7 +453,8 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 updatePref.setTitle(getString(R.string.settings_bt_update));
                 updatePref.setEnabled(true);
                 updatePref.setSelectable(true);
-                updatePref.setActionId(TvSettingsEnums.CONNECTED_SLICE_DEVICE_ENTRY_UPDATE);
+                // TvSettingsEnums.CONNECTED_SLICE_DEVICE_ENTRY_UPDATE
+                updatePref.setActionId(0x18210000);
                 if (btDeviceProvider.isBatteryLow(device)) {
                     updatePref.setSubtitle(getString(R.string.settings_bt_battery_low));
                     updatePref.setEnabled(false);
@@ -512,7 +512,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         RowBuilder renamePref = new RowBuilder()
                 .setKey(KEY_RENAME)
                 .setTitle(getString(R.string.bluetooth_rename))
-                .setActionId(TvSettingsEnums.CONNECTED_SLICE_DEVICE_ENTRY_RENAME);
+                .setActionId(0x18220000); // TvSettingsEnums.CONNECTED_SLICE_DEVICE_ENTRY_RENAME
         extras = new Bundle();
         ResponseFragment.prepareArgs(
                 extras,
@@ -542,7 +542,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         RowBuilder forgetPref = new RowBuilder()
                 .setKey(KEY_FORGET)
                 .setTitle(getString(R.string.bluetooth_forget))
-                .setActionId(TvSettingsEnums.CONNECTED_SLICE_DEVICE_ENTRY_FORGET);
+                .setActionId(0x18230000); // TvSettingsEnums.CONNECTED_SLICE_DEVICE_ENTRY_FORGET
         extras = new Bundle();
         i = new Intent(context, ResponseActivity.class);
         ResponseFragment.prepareArgs(
@@ -606,7 +606,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         psb.addScreenTitle(
                 new RowBuilder()
                         .setTitle(getString(R.string.settings_hdmi_cec))
-                        .setPageId(TvSettingsEnums.CONNECTED_SLICE_HDMICEC));
+                        .setPageId(0x18300000)); // TvSettingsEnums.CONNECTED_SLICE_HDMICEC
         final boolean isEnabled = PowerUtils.isCecControlEnabled(getContext());
         Intent intent = new Intent(ACTION_TOGGLE_CHANGED);
         intent.putExtra(TOGGLE_TYPE, CEC);
@@ -616,7 +616,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
         psb.addPreference(new RowBuilder()
                 .setTitle(getString(R.string.settings_enable_hdmi_cec))
-                .setActionId(TvSettingsEnums.CONNECTED_SLICE_HDMICEC_ON_OFF)
+                .setActionId(0x18310000) // TvSettingsEnums.CONNECTED_SLICE_HDMICEC_ON_OFF
                 .addSwitch(pendingIntent, null, isEnabled));
         psb.addPreference(new RowBuilder()
                 .setTitle(getString(R.string.settings_cec_explain))
