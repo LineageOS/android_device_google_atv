@@ -23,6 +23,7 @@ PRODUCT_PACKAGES += \
     TvFrameworkOverlay \
     TvSettingsProviderOverlay \
     TvWifiOverlay \
+    TvNetworkStackOverlay \
     SettingsIntelligence
 
 PRODUCT_COPY_FILES += \
