@@ -22,6 +22,7 @@ $(call inherit-product-if-exists, frameworks/base/data/sounds/AudioTv.mk)
 PRODUCT_PUBLIC_SEPOLICY_DIRS += device/google/atv/audio_proxy/sepolicy/public
 
 PRODUCT_PACKAGES += \
+    TvNetworkStackOverlay \
     TvFrameworkOverlay \
     TvSettingsProviderOverlay \
     TvWifiOverlay
