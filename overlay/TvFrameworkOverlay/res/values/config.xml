@@ -198,4 +198,7 @@
 
     <!-- Flag indicating whether seamless refresh rate switching is supported by a device. -->
     <bool name="config_supportsSeamlessRefreshRateSwitching">false</bool>
+
+    <!-- If a location should be pre-fetched when going into device idle. -->
+    <bool name="config_autoPowerModePrefetchLocation">false</bool>
 </resources>
