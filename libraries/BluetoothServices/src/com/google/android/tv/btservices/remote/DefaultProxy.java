@@ -165,13 +165,14 @@ public class DefaultProxy extends RemoteProxy {
     }
 
     private Version stringToVersion(String s) {
-        if (s == null || s.length() != 5) return Version.BAD_VERSION;
-        if (!s.startsWith("V")) return Version.BAD_VERSION;
+        if (s == null || !(s.startsWith("V") || s.startsWith("v"))) return Version.BAD_VERSION;
         try {
-            int majorVersion = Integer.parseInt(s.substring(1, 2));
-            int minorVersion = Integer.parseInt(s.substring(3));
+            String[] versionParts = s.split("\\.");
+            int majorVersion = Integer.parseInt(versionParts[0].substring(1));
+            int minorVersion = Integer.parseInt(versionParts[1]);
             return new Version(majorVersion, minorVersion, 0 /*vendorId*/, 0 /*productId*/);
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
+            Log.w(TAG, "Failed to parse version" + e);
             return Version.BAD_VERSION;
         }
     }
