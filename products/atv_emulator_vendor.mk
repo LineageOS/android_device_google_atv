@@ -51,9 +51,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/google/atv/permissions/tv_sdk_excluded_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/tv_sdk_excluded_core_hardware.xml
 
-# goldfish vendor partition configurations
-$(call inherit-product-if-exists, device/generic/goldfish/64bitonly/product/vendor.mk)
-
 #watchdog tiggers reboot because location service is not
 #responding, disble it for now.
 #still keep it on internal master as it is still working
