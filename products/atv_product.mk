@@ -26,6 +26,12 @@ PRODUCT_PACKAGES += \
     TvWifiOverlay \
     SettingsIntelligence
 
+# Override com.android.* overlays with com.google.android.* overlays for mainline
+ifeq ($(PRODUCT_IS_ATV_MAINLINE), true)
+PRODUCT_PACKAGES += \
+    TvWifiOverlayGoogle
+endif
+
 PRODUCT_COPY_FILES += \
     device/google/atv/atv-component-overrides.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/atv-component-overrides.xml
 
