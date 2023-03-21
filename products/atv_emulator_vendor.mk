@@ -24,6 +24,9 @@ EMULATOR_VENDOR_NO_SENSORS := true
 
 $(call inherit-product, device/google/atv/products/atv_vendor.mk)
 
+# Sets HDMI CEC as Playback Device.
+PRODUCT_PROPERTY_OVERRIDES += ro.hdmi.device_type=4
+
 # need this for gles libraries to load properly
 # after moving to /vendor/lib/
 PRODUCT_PACKAGES += \
