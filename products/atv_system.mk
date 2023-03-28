@@ -62,6 +62,7 @@ PRODUCT_PACKAGES += \
     screenrecord \
     UserDictionaryProvider \
     VpnDialogs \
+    com.android.bluetooth \
     com.android.media.tv.remoteprovider
 
 # Device owner provisioning for devices defining device_admin
