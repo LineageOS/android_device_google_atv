@@ -15,4 +15,8 @@ android_app {
     overrides: ["FrameworkPackageStubs"],
     platform_apis: true,
     certificate: "platform",
+
+    lint: {
+        error_checks: ["Recycle"],
+    },
 }
