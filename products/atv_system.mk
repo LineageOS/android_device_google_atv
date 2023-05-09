@@ -118,4 +118,4 @@ PRODUCT_COPY_FILES += \
     device/google/atv/permissions/tv_core_hardware.xml:system/etc/permissions/tv_core_hardware.xml
 
 PRODUCT_COPY_FILES += \
-    frameworks/av/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf
+    frameworks/av/media/libeffects/data/audio_effects.xml:system/etc/audio_effects.xml
