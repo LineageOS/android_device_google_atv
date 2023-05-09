@@ -24,4 +24,4 @@ PRODUCT_PACKAGES += \
 # Overrides
 PRODUCT_BRAND := Android
 PRODUCT_NAME := sdk_atv_x86
-PRODUCT_DEVICE := generic_x86
+PRODUCT_DEVICE := emulator_x86
