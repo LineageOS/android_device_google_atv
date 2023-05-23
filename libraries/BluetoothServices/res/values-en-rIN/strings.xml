@@ -17,125 +17,77 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- no translation found for battery_not_available (5120583262792310269) -->
-    <skip />
-    <!-- no translation found for battery_level_critical (1217236822824234202) -->
-    <skip />
-    <!-- no translation found for battery_level_low (8156936236696805171) -->
-    <skip />
-    <!-- no translation found for battery_level_good (529772292250195778) -->
-    <skip />
-    <!-- no translation found for settings_bt_confirm_update (7490528407190318108) -->
-    <skip />
-    <!-- no translation found for settings_bt_update_summary (137113561617823800) -->
-    <skip />
+    <string name="battery_not_available" msgid="5120583262792310269">"N/A"</string>
+    <string name="battery_level_critical" msgid="1217236822824234202">"Critical"</string>
+    <string name="battery_level_low" msgid="8156936236696805171">"Low"</string>
+    <string name="battery_level_good" msgid="529772292250195778">"Good"</string>
+    <string name="settings_bt_confirm_update" msgid="7490528407190318108">"Confirm remote update"</string>
+    <string name="settings_bt_update_summary" msgid="137113561617823800">"During the update, your remote may briefly disconnect."</string>
     <string name="settings_continue" msgid="5640776697820481568">"Continue"</string>
-    <!-- no translation found for settings_cancel (1284029950430684039) -->
-    <skip />
-    <!-- no translation found for settings_bt_update (8210371540974244481) -->
-    <skip />
-    <!-- no translation found for settings_bt_update_software_available (7002004529854458452) -->
-    <skip />
+    <string name="settings_cancel" msgid="1284029950430684039">"Cancel"</string>
+    <string name="settings_bt_update" msgid="8210371540974244481">"Remote update"</string>
+    <string name="settings_bt_update_software_available" msgid="7002004529854458452">"New software available"</string>
     <string name="settings_bt_update_available" msgid="414405852666517260">"Update available"</string>
-    <!-- no translation found for settings_bt_update_not_necessary (6906777343269759565) -->
-    <skip />
+    <string name="settings_bt_update_not_necessary" msgid="6906777343269759565">"Remote is up to date"</string>
     <string name="settings_bt_update_failed" msgid="2593228509570726064">"Remote update failed"</string>
-    <!-- no translation found for settings_bt_update_error (6267154862961568780) -->
-    <skip />
+    <string name="settings_bt_update_error" msgid="6267154862961568780">"We experienced an issue while updating your remote. Please try again."</string>
     <string name="settings_bt_update_please_wait" msgid="8029641271132945499">"Please wait"</string>
-    <!-- no translation found for settings_bt_update_needs_repair (1310917691218455907) -->
-    <skip />
+    <string name="settings_bt_update_needs_repair" msgid="1310917691218455907">"Pair your remote again"</string>
     <string name="settings_enabled" msgid="431464375814187683">"Enabled"</string>
     <string name="settings_disabled" msgid="1459717258643130682">"Disabled"</string>
     <string name="settings_remote_battery_level_label" msgid="3644348379742819020">"Battery level"</string>
-    <!-- no translation found for settings_remote_battery_level_percentage_label (7301487906665476276) -->
-    <skip />
+    <string name="settings_remote_battery_level_percentage_label" msgid="7301487906665476276">"%1$d%%"</string>
     <string name="settings_remote_firmware_label" msgid="2132403094910284670">"Firmware"</string>
     <string name="settings_remote_serial_number_label" msgid="7591347399882767241">"Bluetooth address"</string>
-    <!-- no translation found for settings_bt_battery_low (3547517382697124858) -->
-    <skip />
-    <!-- no translation found for settings_bt_battery_low_warning (721091326401791089) -->
-    <skip />
-    <!-- no translation found for connected_devices_pref_title (8985364841073196008) -->
-    <skip />
-    <!-- no translation found for connected_devices_slice_pref_title (8637777961277201747) -->
-    <skip />
-    <!-- no translation found for settings_notif_update_title (4767043003900594863) -->
-    <skip />
-    <!-- no translation found for settings_notif_update_text (1092279154776177720) -->
-    <skip />
-    <!-- no translation found for settings_notif_update_action (7614942170621338703) -->
-    <skip />
-    <!-- no translation found for settings_notif_update_dismiss (2492993446930472109) -->
-    <skip />
-    <!-- no translation found for settings_notif_low_battery_title (4638332702264612574) -->
-    <skip />
-    <!-- no translation found for settings_notif_low_battery_text (4371868286738256938) -->
-    <skip />
-    <!-- no translation found for settings_notif_critical_battery_title (2790514511512220266) -->
-    <skip />
-    <!-- no translation found for settings_notif_critical_battery_text (7540676820061160224) -->
-    <skip />
-    <!-- no translation found for settings_notif_depleted_battery_title (5564074017335214430) -->
-    <skip />
-    <!-- no translation found for settings_notif_depleted_battery_text (5656927974233544784) -->
-    <skip />
+    <string name="settings_bt_battery_low" msgid="3547517382697124858">"Please replace battery"</string>
+    <string name="settings_bt_battery_low_warning" msgid="721091326401791089">"Low battery"</string>
+    <string name="connected_devices_pref_title" msgid="8985364841073196008">"Connected devices"</string>
+    <string name="connected_devices_slice_pref_title" msgid="8637777961277201747">"Remotes and accessories"</string>
+    <string name="settings_notif_update_title" msgid="4767043003900594863">"Update your remote"</string>
+    <string name="settings_notif_update_text" msgid="1092279154776177720">"Ready to install"</string>
+    <string name="settings_notif_update_action" msgid="7614942170621338703">"UPDATE"</string>
+    <string name="settings_notif_update_dismiss" msgid="2492993446930472109">"DISMISS"</string>
+    <string name="settings_notif_low_battery_title" msgid="4638332702264612574">"Remote battery low"</string>
+    <string name="settings_notif_low_battery_text" msgid="4371868286738256938">"Replace battery soon"</string>
+    <string name="settings_notif_critical_battery_title" msgid="2790514511512220266">"Remote battery almost empty"</string>
+    <string name="settings_notif_critical_battery_text" msgid="7540676820061160224">"Replace battery soon"</string>
+    <string name="settings_notif_depleted_battery_title" msgid="5564074017335214430">"Remote battery empty"</string>
+    <string name="settings_notif_depleted_battery_text" msgid="5656927974233544784">"Replace battery to use remote"</string>
     <string name="settings_choices_yes" msgid="791981754037655968">"Yes"</string>
     <string name="settings_choices_no" msgid="8559979491355839764">"No"</string>
     <string name="settings_bt_disconnect" msgid="887583681642627405">"Disconnect from %1$s"</string>
-    <!-- no translation found for settings_bt_connect (486902469425565740) -->
-    <skip />
+    <string name="settings_bt_connect" msgid="486902469425565740">"Connect to %1$s"</string>
     <string name="settings_bt_forget" msgid="1032095001156402398">"Forget %1$s"</string>
     <string name="settings_bt_rename" msgid="477643459806883336">"Rename your connected device"</string>
     <string name="settings_hdmi_cec" msgid="7945299353290226128">"HDMI-CEC"</string>
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"Enable HDMI-CEC"</string>
     <string name="settings_cec_explain" msgid="282126756909187653">"HDMI-CEC allows you to control and automatically turn on/off other HDMI-CEC enabled devices with a single remote control.\n\nNote: Ensure HDMI-CEC is enabled on your TV and other HDMI devices. Manufacturers often have different names for HDMI-CEC, for example:"</string>
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
-    <!-- no translation found for settings_axel (8253298947221430993) -->
-    <skip />
-    <!-- no translation found for settings_axel_description (5432968671905160994) -->
-    <skip />
-    <!-- no translation found for settings_remote_battery_level (1817513765913707505) -->
-    <skip />
-    <!-- no translation found for settings_known_devices_category (2307810690946536753) -->
-    <skip />
-    <!-- no translation found for settings_official_remote_category (1373956695709331265) -->
-    <skip />
+    <string name="settings_axel" msgid="8253298947221430993">"Set up remote buttons"</string>
+    <string name="settings_axel_description" msgid="5432968671905160994">"Control volume, power, input on TVs, receivers and soundbars"</string>
+    <string name="settings_remote_battery_level" msgid="1817513765913707505">"Battery level: %1$s"</string>
+    <string name="settings_known_devices_category" msgid="2307810690946536753">"Accessories"</string>
+    <string name="settings_official_remote_category" msgid="1373956695709331265">"Remote control"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Connected"</string>
     <string name="settings_devices_paired" msgid="4460141776955368574">"Previously connected"</string>
-    <!-- no translation found for settings_pair_remote (7566753084479902759) -->
-    <skip />
+    <string name="settings_pair_remote" msgid="7566753084479902759">"Pair remote or accessory"</string>
     <string name="bluetooth_disconnect" msgid="1385608885917484057">"Disconnect"</string>
-    <!-- no translation found for bluetooth_connect (6283971929092004620) -->
-    <skip />
-    <!-- no translation found for bluetooth_rename (4433577238394058486) -->
-    <skip />
+    <string name="bluetooth_connect" msgid="6283971929092004620">"Connect"</string>
+    <string name="bluetooth_rename" msgid="4433577238394058486">"Rename"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"Forget"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Connected"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Disconnected"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Device control"</string>
-    <!-- no translation found for settings_bt_pair_title (1205942796805671508) -->
-    <skip />
-    <!-- no translation found for pair_device_description (5145574754576245361) -->
-    <skip />
-    <!-- no translation found for pair_device_device_name (4004194247588260613) -->
-    <skip />
-    <!-- no translation found for settings_bt_available_devices (6237789711837183219) -->
-    <skip />
-    <!-- no translation found for settings_bt_empty_text (6228875847390369960) -->
-    <skip />
-    <!-- no translation found for settings_bt_pair_status_error (4153213506048075994) -->
-    <skip />
-    <!-- no translation found for settings_bt_pair_status_connecting (1438458595123669762) -->
-    <skip />
-    <!-- no translation found for settings_bt_pair_status_done (6151867483707947194) -->
-    <skip />
-    <!-- no translation found for settings_bt_pair_status_cancelled (5247663100749067089) -->
-    <skip />
-    <!-- no translation found for settings_bt_pair_toast_fail (8025560978364284117) -->
-    <skip />
-    <!-- no translation found for settings_bt_pair_toast_connected (3073130641004809067) -->
-    <skip />
-    <!-- no translation found for settings_bt_pair_toast_disconnected (2046165143924352053) -->
-    <skip />
+    <string name="settings_bt_pair_title" msgid="1205942796805671508">"Connect new device"</string>
+    <string name="pair_device_description" msgid="5145574754576245361">"Before connecting new Bluetooth devices, make sure that they\'re in pairing mode. To connect %1$s, press and hold %2$s + %3$s for three seconds."</string>
+    <string name="pair_device_device_name" msgid="4004194247588260613">"an Android TV remote"</string>
+    <string name="settings_bt_available_devices" msgid="6237789711837183219">"Available devices"</string>
+    <string name="settings_bt_empty_text" msgid="6228875847390369960">"Looking for devices…"</string>
+    <string name="settings_bt_pair_status_error" msgid="4153213506048075994">"Error"</string>
+    <string name="settings_bt_pair_status_connecting" msgid="1438458595123669762">"Connecting…"</string>
+    <string name="settings_bt_pair_status_done" msgid="6151867483707947194">"Connected"</string>
+    <string name="settings_bt_pair_status_cancelled" msgid="5247663100749067089">"Cancelled"</string>
+    <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s failed to connect"</string>
+    <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s connected"</string>
+    <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s disconnected"</string>
 </resources>
