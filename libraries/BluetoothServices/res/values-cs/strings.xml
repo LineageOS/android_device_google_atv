@@ -42,7 +42,7 @@
     <string name="settings_bt_battery_low" msgid="3547517382697124858">"Vyměňte baterii"</string>
     <string name="settings_bt_battery_low_warning" msgid="721091326401791089">"Slabá baterie"</string>
     <string name="connected_devices_pref_title" msgid="8985364841073196008">"Připojená zařízení"</string>
-    <string name="connected_devices_slice_pref_title" msgid="8637777961277201747">"Dálkové ovládání a příslušenství"</string>
+    <string name="connected_devices_slice_pref_title" msgid="8637777961277201747">"Dálkový ovladač a příslušenství"</string>
     <string name="settings_notif_update_title" msgid="4767043003900594863">"Aktualizace dálkového ovládání"</string>
     <string name="settings_notif_update_text" msgid="1092279154776177720">"Připraveno k instalaci"</string>
     <string name="settings_notif_update_action" msgid="7614942170621338703">"AKTUALIZOVAT"</string>
