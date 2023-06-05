@@ -22,7 +22,9 @@ EMULATOR_VENDOR_NO_GNSS := true
 EMULATOR_VENDOR_NO_BIOMETRICS := true
 EMULATOR_VENDOR_NO_SENSORS := true
 
-$(call inherit-product, device/google/atv/products/atv_vendor.mk)
+ifneq ($(PRODUCT_IS_ATV_ARM64_SDK),true)
+    $(call inherit-product, device/google/atv/products/atv_vendor.mk)
+endif
 
 # Sets HDMI CEC as Playback Device.
 PRODUCT_PROPERTY_OVERRIDES += ro.hdmi.device_type=4
@@ -56,7 +58,11 @@ PRODUCT_COPY_FILES += \
     device/google/atv/permissions/tv_sdk_excluded_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/tv_sdk_excluded_core_hardware.xml
 
 # goldfish vendor partition configurations
-$(call inherit-product-if-exists, device/generic/goldfish/64bitonly/product/vendor.mk)
+ifeq ($(PRODUCT_IS_ATV_ARM64_SDK),true)
+    $(call inherit-product-if-exists, device/generic/goldfish/64bitonly/product/emulator64_vendor.mk)
+else
+    $(call inherit-product-if-exists, device/generic/goldfish/64bitonly/product/vendor.mk)
+endif
 
 #watchdog tiggers reboot because location service is not
 #responding, disble it for now.

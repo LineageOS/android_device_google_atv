@@ -14,6 +14,7 @@
 # limitations under the License.
 #
 PRODUCT_IS_ATV_SDK := true
+PRODUCT_IS_ATV_ARM64_SDK := true
 
 # Overrides
 PRODUCT_BRAND := Android
