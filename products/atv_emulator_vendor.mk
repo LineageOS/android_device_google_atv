@@ -27,7 +27,9 @@ ifneq ($(PRODUCT_IS_ATV_ARM64_SDK),true)
 endif
 
 # Sets HDMI CEC as Playback Device.
-PRODUCT_PROPERTY_OVERRIDES += ro.hdmi.device_type=4
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hdmi.device_type=4 \
+    ro.hdmi.cec_device_types=playback_device
 
 # need this for gles libraries to load properly
 # after moving to /vendor/lib/
