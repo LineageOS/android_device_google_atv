@@ -37,9 +37,14 @@ PRODUCT_PACKAGES += \
     vndk-sp
 
 DEVICE_PACKAGE_OVERLAYS += \
-    device/generic/goldfish/overlay \
     device/google/atv/sdk_overlay \
     development/sdk_overlay
+
+# Declared in emulator64_vendor.mk for 64-bit targets.
+ifneq ($(PRODUCT_IS_ATV_ARM64_SDK),true)
+    DEVICE_PACKAGE_OVERLAYS += \
+        device/generic/goldfish/overlay
+endif
 
 PRODUCT_CHARACTERISTICS := emulator
 
