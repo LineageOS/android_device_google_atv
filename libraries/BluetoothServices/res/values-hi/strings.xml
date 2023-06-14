@@ -81,7 +81,7 @@
     <string name="settings_bt_pair_title" msgid="1205942796805671508">"नया डिवाइस कनेक्ट करें"</string>
     <string name="pair_device_description" msgid="5145574754576245361">"ब्लूटूथ वाले नए डिवाइस कनेक्ट करने से पहले, पक्का करें कि दोनों डिवाइसों पर \'दूसरे डिवाइस से जोड़ने वाला मोड\' चालू हो. %1$s से कनेक्ट करने के लिए, %2$s + %3$s को तीन सेकंड तक दबाकर रखें."</string>
     <string name="pair_device_device_name" msgid="4004194247588260613">"एक Android TV रिमोट"</string>
-    <string name="settings_bt_available_devices" msgid="6237789711837183219">"मौजूदा डिवाइस"</string>
+    <string name="settings_bt_available_devices" msgid="6237789711837183219">"मौजूद डिवाइस"</string>
     <string name="settings_bt_empty_text" msgid="6228875847390369960">"डिवाइसों को खोजा जा रहा है…"</string>
     <string name="settings_bt_pair_status_error" msgid="4153213506048075994">"गड़बड़ी"</string>
     <string name="settings_bt_pair_status_connecting" msgid="1438458595123669762">"कनेक्ट हो रहा है…"</string>
