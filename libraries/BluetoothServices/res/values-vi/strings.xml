@@ -41,7 +41,7 @@
     <string name="settings_remote_serial_number_label" msgid="7591347399882767241">"Địa chỉ Bluetooth"</string>
     <string name="settings_bt_battery_low" msgid="3547517382697124858">"Vui lòng thay pin"</string>
     <string name="settings_bt_battery_low_warning" msgid="721091326401791089">"Pin yếu"</string>
-    <string name="connected_devices_pref_title" msgid="8985364841073196008">"Thiết bị thông minh"</string>
+    <string name="connected_devices_pref_title" msgid="8985364841073196008">"Thiết bị đã kết nối"</string>
     <string name="connected_devices_slice_pref_title" msgid="8637777961277201747">"Điều khiển từ xa và phụ kiện"</string>
     <string name="settings_notif_update_title" msgid="4767043003900594863">"Cập nhật điều khiển từ xa"</string>
     <string name="settings_notif_update_text" msgid="1092279154776177720">"Sẵn sàng cài đặt"</string>
