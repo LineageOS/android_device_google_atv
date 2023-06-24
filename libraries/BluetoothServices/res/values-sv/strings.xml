@@ -36,9 +36,7 @@
     <string name="settings_enabled" msgid="431464375814187683">"Aktiverad"</string>
     <string name="settings_disabled" msgid="1459717258643130682">"Inaktiverad"</string>
     <string name="settings_remote_battery_level_label" msgid="3644348379742819020">"Batterinivå"</string>
-    <!-- String.format failed for translation -->
-    <!-- no translation found for settings_remote_battery_level_percentage_label (7301487906665476276) -->
-    <skip />
+    <string name="settings_remote_battery_level_percentage_label" msgid="7301487906665476276">"%1$d %%"</string>
     <string name="settings_remote_firmware_label" msgid="2132403094910284670">"Inbyggd programvara"</string>
     <string name="settings_remote_serial_number_label" msgid="7591347399882767241">"Bluetooth-adress"</string>
     <string name="settings_bt_battery_low" msgid="3547517382697124858">"Byt batteriet"</string>
