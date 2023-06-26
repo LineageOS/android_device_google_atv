@@ -658,6 +658,10 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter android:priority="-1">
+                <action android:name="android.intent.action.POWER_USAGE_SUMMARY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:priority="-1">
                 <action android:name="android.settings.REQUEST_MANAGE_MEDIA" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
