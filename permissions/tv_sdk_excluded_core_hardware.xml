@@ -17,6 +17,7 @@
 <!-- Excludes all non-default ATV SDK features to comply with CTS -->
 <permissions>
     <!-- ATV SDK needs some basic camera features to enable video calling, but can exclude some -->
+    <unavailable-feature name="android.hardware.camera" />
     <unavailable-feature name="android.hardware.camera.ar" />
     <unavailable-feature name="android.hardware.camera.autofocus" />
     <unavailable-feature name="android.hardware.camera.concurrent" />
