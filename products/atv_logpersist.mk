@@ -2,5 +2,7 @@
 # See go/agw/platform/system/logging/+/refs/heads/master/logd/README.property for available options
 
 ifneq (,$(filter userdebug eng,$(TARGET_BUILD_VARIANT)))
-PRODUCT_PRODUCT_PROPERTIES += logd.logpersistd=logcatd
+PRODUCT_PRODUCT_PROPERTIES +=
+    logd.logpersistd=logcatd \
+    logd.logpersistd.size=80
 endif
