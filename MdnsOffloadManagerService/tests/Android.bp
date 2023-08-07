@@ -17,6 +17,7 @@ android_test {
         "junit",
         "mockito-target-minus-junit4",
         "MdnsOffloadManagerService",
+        "frameworks-base-testutils",
     ],
     test_suites: ["general-tests"],
     certificate: "platform",
