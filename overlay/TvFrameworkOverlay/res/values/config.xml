@@ -149,6 +149,10 @@
          is non-interactive. -->
     <bool name="config_cameraDoubleTapPowerGestureEnabled">false</bool>
 
+    <!-- Inactivity threshold (in milliseconds) used in JobScheduler. JobScheduler will consider
+         the device to be "idle" after being inactive for this long. -->
+    <integer name="config_jobSchedulerInactivityIdleThreshold">300000</integer>
+
     <!-- True if the device supports split screen as a form of multi-window. -->
     <bool name="config_supportsSplitScreenMultiWindow">false</bool>
 
@@ -191,4 +195,16 @@
     <!-- Determines whether SafetyCenter feature is enabled.
          SafetyCenter is not yet supported on TV. -->
     <bool name="config_enableSafetyCenter">false</bool>
+
+    <!-- Flag indicating whether seamless refresh rate switching is supported by a device. -->
+    <bool name="config_supportsSeamlessRefreshRateSwitching">false</bool>
+
+    <!-- If a location should be pre-fetched when going into device idle. -->
+    <bool name="config_autoPowerModePrefetchLocation">false</bool>
+
+    <!-- Whether Low Power Standby is supported and can be enabled. -->
+    <bool name="config_lowPowerStandbySupported">true</bool>
+
+    <!-- If supported, whether Low Power Standby is enabled by default. -->
+    <bool name="config_lowPowerStandbyEnabledByDefault">true</bool>
 </resources>
