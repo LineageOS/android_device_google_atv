@@ -228,11 +228,9 @@ public class AppFragment extends Fragment {
             mView.findViewById(R.id.frame).setContentDescription(launchItem.getLabel());
             mView.findViewById(R.id.frame).setOnClickListener(this);
 
-            int bannerVisibility = launchItem.getBanner() == null ? View.GONE: View.VISIBLE;
-            mView.findViewById(R.id.banner).setVisibility(bannerVisibility);
+            mView.findViewById(R.id.banner).setVisibility(View.VISIBLE);
 
-            int llVisibility = launchItem.getBanner() == null ? View.GONE: View.VISIBLE;
-            mView.findViewById(R.id.ll).setVisibility(llVisibility);
+            mView.findViewById(R.id.ll).setVisibility(View.VISIBLE);
 
             TextView launchItemLabel = mView.findViewById(R.id.label);
             launchItemLabel.setText(launchItem.getLabel());
