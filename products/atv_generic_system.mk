@@ -106,4 +106,8 @@ _my_paths := \
   $(TARGET_COPY_OUT_ROOT)/ \
   $(TARGET_COPY_OUT_SYSTEM)/ \
 
+# TODO(b/299166571) Remove this after the artifact path requirements checker picks up
+# hwservicemanager correctly.
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += $(TARGET_COPY_OUT_SYSTEM)/bin/hwservicemanager
+
 $(call require-artifacts-in-path, $(_my_paths), $(_my_whitelist))
