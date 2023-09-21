@@ -19,7 +19,7 @@ package device.google.atv.mdns_offload;
 /**
  * Offload interface to collect, prioritize and offload mDNS responses.
  * All methods act asynchronously.
- * They all consume a linkToDeath binder, to cleanup offload memory if the client app dies.
+ * They all consume a clientToken binder, to cleanup offload memory if the client app dies.
  */
 @VintfStability
 interface IMdnsOffloadManager {
@@ -40,12 +40,9 @@ interface IMdnsOffloadManager {
      *
      * If the binder instance dies, the records will be automatically cleaned up from
      * the offload service and the offload manager.
-     * In case the network interface is torn down, and bringed back up, any previous offload is
-     * forgotten. It is the responsibility of the offload user to listen to that event and register
-     * its offload data again.
      */
     int addProtocolResponses(
-            String networkInterface, in OffloadServiceInfo offloadData, IBinder linkToDeath);
+            String networkInterface, in OffloadServiceInfo offloadData, IBinder clientToken);
 
     /**
      * Removes the offload intent from the manager. Any offloaded responses will also
@@ -53,7 +50,7 @@ interface IMdnsOffloadManager {
      * If the binder doesn't match with the one used for registering, nothing
      * happens.
      */
-    void removeProtocolResponses(int recordKey, IBinder linkToDeath);
+    void removeProtocolResponses(int recordKey, IBinder clientToken);
 
     /**
      * Collects a passthrough intent for a given network interface. The system will do its best to
@@ -62,7 +59,7 @@ interface IMdnsOffloadManager {
      * If the binder instance dies, the passthrough intents will be automatically
      * cleaned up from the offload service and the offload manager.
      */
-    void addToPassthroughList(String networkInterface, String qname, IBinder linkToDeath);
+    void addToPassthroughList(String networkInterface, String qname, IBinder clientToken);
 
     /**
      * Remove the passthrough intent for the given network interface. If the passthrough was active
@@ -70,5 +67,5 @@ interface IMdnsOffloadManager {
      *
      * If the binder instance doesn't match with the one used for registering, nothing happens.
      */
-    void removeFromPassthroughList(String networkInterface, String qname, IBinder linkToDeath);
+    void removeFromPassthroughList(String networkInterface, String qname, IBinder clientToken);
 }

@@ -96,6 +96,6 @@ public class Version implements Comparable<Version> {
     @Override
     public String toString() {
         return String.format(
-                "%02X.%02X (%02X:%02X)", mMajorVersion, mMinorVersion, mVendorId, mProductId);
+                "%s (%02X:%02X)", toVersionString(), mVendorId, mProductId);
     }
 }
