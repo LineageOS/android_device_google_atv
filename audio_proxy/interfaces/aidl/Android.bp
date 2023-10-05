@@ -34,5 +34,19 @@ aidl_interface {
                 "android.hardware.common.fmq-V1",
             ],
         },
+        {
+            version: "2",
+            imports: [
+                "android.hardware.common-V2",
+                "android.hardware.common.fmq-V1",
+            ],
+        },
+        {
+            version: "3",
+            imports: [
+                "android.hardware.common-V2",
+                "android.hardware.common.fmq-V1",
+            ],
+        },
     ],
 }
