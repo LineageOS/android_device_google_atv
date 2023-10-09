@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfaccdde_342d9c8f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14048
+      },
+      "writtenOn": "2023-10-09T17:18:55Z",
+      "side": 1,
+      "message": "I\u0027m still confused how translations work on targets without this. But if this fixes issues with adding extra locales, then looks fine to me.",
+      "revId": "bec7fb5c5ce8ee6c8aa407cfdff42998adf11335",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
