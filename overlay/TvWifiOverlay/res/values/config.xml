@@ -19,5 +19,5 @@
          Wifi scans can cause network latency spikes, and on Android TV we
          believe it's rare to have multiple Wifi networks configured whose
          quality changes over time. -->
-    <bool name="config_wifi_framework_enable_associated_network_selection">false</bool>
+    <bool translatable="false" name="config_wifi_framework_enable_associated_network_selection">false</bool>
 </resources>
