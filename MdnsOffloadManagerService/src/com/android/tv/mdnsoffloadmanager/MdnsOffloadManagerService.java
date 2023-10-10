@@ -61,12 +61,12 @@ public class MdnsOffloadManagerService extends Service {
 
     private final ConnectivityManager.NetworkCallback mNetworkCallback =
             new ConnectivityManagerNetworkCallback();
+    private final Map<String, InterfaceOffloadManager> mInterfaceOffloadManagers = new HashMap<>();
     private final Injector mInjector;
-    private final Handler mHandler;
-    private final PriorityListManager mPriorityListManager;
-    private final OffloadIntentStore mOffloadIntentStore;
-    private final OffloadWriter mOffloadWriter;
-    private final Map<String, InterfaceOffloadManager> mInterfaceOffloadManagers;
+    private Handler mHandler;
+    private PriorityListManager mPriorityListManager;
+    private OffloadIntentStore mOffloadIntentStore;
+    private OffloadWriter mOffloadWriter;
     private ConnectivityManager mConnectivityManager;
     private PackageManager mPackageManager;
 
@@ -79,11 +79,6 @@ public class MdnsOffloadManagerService extends Service {
         super();
         injector.setContext(this);
         mInjector = injector;
-        mHandler = new Handler(mInjector.getLooper());
-        mPriorityListManager = new PriorityListManager(mInjector.getResources());
-        mOffloadIntentStore = new OffloadIntentStore(mPriorityListManager);
-        mOffloadWriter = new OffloadWriter();
-        mInterfaceOffloadManagers = new HashMap<>();
     }
 
     @VisibleForTesting
@@ -119,7 +114,7 @@ public class MdnsOffloadManagerService extends Service {
         }
 
         PackageManager getPackageManager() {
-            return mContext.getSystemService(PackageManager.class);
+            return mContext.getPackageManager();
         }
 
         boolean isInteractive() {
@@ -142,6 +137,10 @@ public class MdnsOffloadManagerService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+        mHandler = new Handler(mInjector.getLooper());
+        mPriorityListManager = new PriorityListManager(mInjector.getResources());
+        mOffloadIntentStore = new OffloadIntentStore(mPriorityListManager);
+        mOffloadWriter = new OffloadWriter();
         mConnectivityManager = mInjector.getConnectivityManager();
         mPackageManager = mInjector.getPackageManager();
         bindVendorService();
@@ -213,11 +212,11 @@ public class MdnsOffloadManagerService extends Service {
                     try {
                         return mPackageManager.getPackageUid(pkg, 0);
                     } catch (PackageManager.NameNotFoundException e) {
-                        String msg = "Unable to get UID of package {" + pkg + "}.";
-                        Log.e(TAG, msg, e);
-                        throw new RuntimeException(msg, e);
+                        Log.e(TAG, "Unable to get UID of package {" + pkg + "}.", e);
+                        return null;
                     }
                 })
+                .filter(Objects::nonNull)
                 .map(UserHandle::getAppId)
                 .collect(Collectors.toSet());
         mHandler.post(() -> {
