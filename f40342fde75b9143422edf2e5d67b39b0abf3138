@@ -1,4 +1,22 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85aa0578_44c4174f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2023-10-11T17:51:54Z",
+      "side": 1,
+      "message": "For 21:\n\ncommit 091af0b1bedf331876ccd992e06206ab0b36267c\nAuthor: Zhizhi Liu \u003czhizhiliu@google.com\u003e\nDate:   Wed Nov 9 02:17:23 2022 +0000\n\n    Add SettingsIntelligence back to TV system.\n    \n    Settings suggestions need this app to function correctly.\n    \n    Bug: 232886982\n    \n    Test: make -j, verify that settings suggestion component work using \"device name suggestion\".\n    \n    Change-Id: I5bd565b98c147bd4b07d33590f99d4e4bde42e54",
+      "revId": "f40342fde75b9143422edf2e5d67b39b0abf3138",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ],
   "submitRequirementResults": []
 }
