@@ -20,7 +20,11 @@
  -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.android.tv.mdnsoffloadmanager">
+    <permission
+        android:name="com.android.tv.mdnsoffloadmanager.MDNS_OFFLOAD_SERVICE"
+        android:protectionLevel="signature" />
 
+    <uses-permission android:name="com.android.tv.mdnsoffloadmanager.MDNS_OFFLOAD_SERVICE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.DEVICE_POWER" />
 
