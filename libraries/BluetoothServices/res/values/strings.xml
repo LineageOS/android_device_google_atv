@@ -105,6 +105,7 @@
   <string name="bluetooth_connect">Connect</string>
   <string name="bluetooth_rename">Rename</string>
   <string name="bluetooth_forget">Forget</string>
+  <string name="bluetooth_toggle_active_audio_output">Use for TV audio</string>
 
   <!-- Subtitle showing connected connection status of Bluetooth device. [CHAR LIMIT=40] -->
   <string name="bluetooth_connected_status">Connected</string>
