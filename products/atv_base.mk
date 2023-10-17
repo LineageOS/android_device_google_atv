@@ -14,6 +14,7 @@
 # limitations under the License.
 #
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_default.mk)
 $(call inherit-product, device/google/atv/products/atv_system.mk)
 $(call inherit-product, device/google/atv/products/atv_system_ext.mk)
 $(call inherit-product, device/google/atv/products/atv_product.mk)
