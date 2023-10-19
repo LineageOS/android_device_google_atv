@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "720dcf78_a28eb5f8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2023-10-19T16:41:31Z",
+      "side": 1,
+      "message": "was merged on master, we should use that commit message (same ID).",
+      "revId": "36ca9cf9b3a913be50cabb7da6e31806924b4b3c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
