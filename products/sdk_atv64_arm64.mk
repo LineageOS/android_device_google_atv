@@ -24,4 +24,4 @@ PRODUCT_PACKAGES += \
 # Overrides
 PRODUCT_BRAND := Android
 PRODUCT_NAME := sdk_atv64_arm64
-PRODUCT_DEVICE := emulator64_arm64
+PRODUCT_DEVICE := emu64a
