@@ -7,6 +7,8 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.WorkerThread;
 
+import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -173,6 +175,35 @@ public class OffloadIntentStore {
         return data;
     }
 
+    @WorkerThread
+    void dump(PrintWriter writer) {
+        writer.println("OffloadIntentStore:");
+        writer.println("offload intents:");
+        mOffloadIntentsByRecordKey.values()
+                .forEach(intent -> writer.println("* %s".formatted(intent)));
+        writer.println("passthrough intents:");
+        mPassthroughIntents.forEach(intent -> writer.println("* %s".formatted(intent)));
+        writer.println();
+    }
+
+    /**
+     * Create a detailed dump of the OffloadIntents, including a hexdump of the raw packets.
+     */
+    @WorkerThread
+    void dumpProtocolData(PrintWriter writer) {
+        writer.println("Protocol data dump:");
+        mOffloadIntentsByRecordKey.values().forEach(intent -> {
+            writer.println("mRecordKey=%d".formatted(intent.mRecordKey));
+            IMdnsOffload.MdnsProtocolData data = intent.mProtocolData;
+            writer.println("match criteria:");
+            data.matchCriteriaList.forEach(criteria ->
+                    writer.println("* %s".formatted(formatMatchCriteria(criteria))));
+            writer.println("raw offload packet:");
+            hexDump(writer, data.rawOffloadPacket);
+        });
+        writer.println();
+    }
+
     /**
      * Class representing the intention to offload mDNS protocol data.
      */
@@ -198,6 +229,17 @@ public class OffloadIntentStore {
             mClientToken = clientToken;
             mPriority = priority;
             mOwnerAppId = ownerAppId;
+        }
+
+        @Override
+        public String toString() {
+            final StringBuilder sb = new StringBuilder("OffloadIntent{");
+            sb.append("mNetworkInterface='").append(mNetworkInterface).append('\'');
+            sb.append(", mRecordKey=").append(mRecordKey);
+            sb.append(", mPriority=").append(mPriority);
+            sb.append(", mOwnerAppId=").append(mOwnerAppId);
+            sb.append('}');
+            return sb.toString();
         }
     }
 
@@ -226,6 +268,43 @@ public class OffloadIntentStore {
             mClientToken = clientToken;
             mPriority = priority;
             mOwnerAppId = ownerAppId;
+        }
+
+        @Override
+        public String toString() {
+            final StringBuilder sb = new StringBuilder("PassthroughIntent{");
+            sb.append("mNetworkInterface='").append(mNetworkInterface).append('\'');
+            sb.append(", mOriginalQName='").append(mOriginalQName).append('\'');
+            sb.append(", mCanonicalQName='").append(mCanonicalQName).append('\'');
+            sb.append(", mPriority=").append(mPriority);
+            sb.append(", mOwnerAppId=").append(mOwnerAppId);
+            sb.append('}');
+            return sb.toString();
+        }
+    }
+
+    private String formatMatchCriteria(IMdnsOffload.MdnsProtocolData.MatchCriteria matchCriteria) {
+        return "MatchCriteria{type=%d, nameOffset=%d}"
+                .formatted(matchCriteria.type, matchCriteria.nameOffset);
+    }
+
+    private void hexDump(PrintWriter writer, byte[] data) {
+        final int width = 16;
+        for (int rowOffset = 0; rowOffset < data.length; rowOffset += width) {
+            writer.printf("%06d:  ", rowOffset);
+
+            for (int index = 0; index < width; index++) {
+                if (rowOffset + index < data.length) {
+                    writer.printf("%02x ", data[rowOffset + index]);
+                } else {
+                    writer.print("   ");
+                }
+            }
+
+            int asciiWidth = Math.min(width, data.length - rowOffset);
+            writer.print("  |  ");
+            writer.println(new String(data, rowOffset, asciiWidth, StandardCharsets.US_ASCII)
+                    .replaceAll("[^\\x20-\\x7E]", "."));
         }
     }
 }

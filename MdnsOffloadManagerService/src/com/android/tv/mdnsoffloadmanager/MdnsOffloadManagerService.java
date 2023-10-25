@@ -42,11 +42,16 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.VisibleForTesting;
+import androidx.annotation.WorkerThread;
 
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import device.google.atv.mdns_offload.IMdnsOffload;
@@ -58,6 +63,7 @@ public class MdnsOffloadManagerService extends Service {
     private static final String TAG = MdnsOffloadManagerService.class.getSimpleName();
     private static final int VENDOR_SERVICE_COMPONENT_ID =
             R.string.config_mdnsOffloadVendorServiceComponent;
+    private static final int AWAIT_DUMP_SECONDS = 5;
 
     private final ConnectivityManager.NetworkCallback mNetworkCallback =
             new ConnectivityManagerNetworkCallback();
@@ -212,7 +218,7 @@ public class MdnsOffloadManagerService extends Service {
                     try {
                         return mPackageManager.getPackageUid(pkg, 0);
                     } catch (PackageManager.NameNotFoundException e) {
-                        Log.e(TAG, "Unable to get UID of package {" + pkg + "}.", e);
+                        Log.w(TAG, "Unable to get UID of package {" + pkg + "}.");
                         return null;
                     }
                 })
@@ -229,6 +235,30 @@ public class MdnsOffloadManagerService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         return mOffloadManagerBinder;
+    }
+
+    @Override
+    protected void dump(FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strings) {
+        CountDownLatch doneSignal = new CountDownLatch(1);
+        mHandler.post(() -> {
+            dump(printWriter);
+            doneSignal.countDown();
+        });
+        boolean success = false;
+        try {
+            success = doneSignal.await(AWAIT_DUMP_SECONDS, TimeUnit.SECONDS);
+        } catch (InterruptedException ignored) {}
+        if (!success) {
+            Log.e(TAG, "Failed to dump state on handler thread");
+        }
+    }
+
+    @WorkerThread
+    private void dump(PrintWriter writer) {
+        mOffloadIntentStore.dump(writer);
+        mInterfaceOffloadManagers.values().forEach(manager -> manager.dump(writer));
+        mOffloadWriter.dump(writer);
+        mOffloadIntentStore.dumpProtocolData(writer);
     }
 
     private final IMdnsOffloadManager.Stub mOffloadManagerBinder = new IMdnsOffloadManager.Stub() {
