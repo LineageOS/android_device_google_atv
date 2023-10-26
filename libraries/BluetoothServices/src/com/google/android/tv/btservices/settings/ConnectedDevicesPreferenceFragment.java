@@ -79,6 +79,7 @@ public class ConnectedDevicesPreferenceFragment extends LeanbackPreferenceFragme
     static final String KEY_DEVICE_CONTROL = "device_control";
     static final String KEY_CEC_TOGGLE = "cec_toggle";
     static final String KEY_AXEL_TOGGLE = "axel_toggle";
+    static final String KEY_FMR_TOGGLE = "fmr_toggle";
 
     private static final Set<String> NON_BT_PREFERENCES =
             new HashSet<>(Arrays.asList(KEY_PAIR_REMOTE));
