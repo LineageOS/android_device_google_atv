@@ -5,6 +5,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.WorkerThread;
 
+import java.io.PrintWriter;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -19,8 +20,8 @@ public class InterfaceOffloadManager {
     private final String mNetworkInterface;
     private final OffloadIntentStore mOffloadIntentStore;
     private final OffloadWriter mOffloadWriter;
-    private final Set<Integer> mCurrentOffloadedRecordKeys = new HashSet<>();
-    private final Set<String> mCurrentPassthroughQName = new HashSet<>();
+    private final Set<Integer> mCurrentOffloadKeys = new HashSet<>();
+    private final Set<String> mCurrentPassthroughQNames = new HashSet<>();
     private boolean mIsNetworkAvailable = false;
 
     InterfaceOffloadManager(
@@ -61,8 +62,8 @@ public class InterfaceOffloadManager {
     }
 
     void onVendorServiceDisconnected() {
-        mCurrentOffloadedRecordKeys.clear();
-        mCurrentPassthroughQName.clear();
+        mCurrentOffloadKeys.clear();
+        mCurrentPassthroughQNames.clear();
     }
 
     void refreshProtocolResponses() {
@@ -93,11 +94,11 @@ public class InterfaceOffloadManager {
             Log.e(TAG, "Vendor service disconnected, cannot apply mDNS offload state");
             return;
         }
-        Collection<Integer> deleted = mOffloadWriter.deleteOffloadData(mCurrentOffloadedRecordKeys);
-        mCurrentOffloadedRecordKeys.removeAll(deleted);
+        Collection<Integer> deleted = mOffloadWriter.deleteOffloadData(mCurrentOffloadKeys);
+        mCurrentOffloadKeys.removeAll(deleted);
         Collection<Integer> offloaded = mOffloadWriter.writeOffloadData(
                 mNetworkInterface, offloadIntents);
-        mCurrentOffloadedRecordKeys.addAll(offloaded);
+        mCurrentOffloadKeys.addAll(offloaded);
     }
 
     private void applyPassthroughIntents(
@@ -107,11 +108,22 @@ public class InterfaceOffloadManager {
             return;
         }
         Collection<String> deleted = mOffloadWriter.deletePassthroughData(
-                mNetworkInterface, mCurrentPassthroughQName);
-        mCurrentPassthroughQName.removeAll(deleted);
+                mNetworkInterface, mCurrentPassthroughQNames);
+        mCurrentPassthroughQNames.removeAll(deleted);
         Collection<String> added = mOffloadWriter.writePassthroughData(
                 mNetworkInterface, passthroughIntents);
-        mCurrentPassthroughQName.addAll(added);
+        mCurrentPassthroughQNames.addAll(added);
+    }
+
+    @WorkerThread
+    void dump(PrintWriter writer) {
+        writer.println("InterfaceOffloadManager[%s]:".formatted(mNetworkInterface));
+        writer.println("mIsNetworkAvailable=%b".formatted(mIsNetworkAvailable));
+        writer.println("current offload keys:");
+        mCurrentOffloadKeys.forEach(key -> writer.println("* %d".formatted(key)));
+        writer.println("current passthrough qnames:");
+        mCurrentPassthroughQNames.forEach(qname -> writer.println("* %s".formatted(qname)));
+        writer.println();
     }
 
 }
