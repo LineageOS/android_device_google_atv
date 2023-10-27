@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.WorkerThread;
 
+import java.io.PrintWriter;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -268,5 +269,12 @@ public class OffloadWriter {
                 return "PASSTHROUGH_LIST";
         }
         throw new IllegalArgumentException("No such passthrough behavior " + passthroughBehavior);
+    }
+
+    void dump(PrintWriter writer) {
+        writer.println("OffloadWriter:");
+        writer.println("mOffloadState=%b".formatted(mOffloadState));
+        writer.println("isVendorServiceConnected=%b".formatted(isVendorServiceConnected()));
+        writer.println();
     }
 }

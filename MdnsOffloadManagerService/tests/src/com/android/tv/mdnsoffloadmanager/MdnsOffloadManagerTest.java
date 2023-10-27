@@ -62,6 +62,7 @@ import android.os.Looper;
 import android.os.PowerManager;
 import android.os.RemoteException;
 import android.os.test.TestLooper;
+import android.util.Log;
 
 import androidx.test.filters.SmallTest;
 
@@ -75,6 +76,8 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.Spy;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.Arrays;
 import java.util.List;
 
@@ -86,6 +89,7 @@ import device.google.atv.mdns_offload.IMdnsOffloadManager;
 @SmallTest
 public class MdnsOffloadManagerTest {
 
+    private static final String TAG = MdnsOffloadManagerTest.class.getSimpleName();
     private static final ComponentName VENDOR_SERVICE_COMPONENT =
         ComponentName.unflattenFromString("test.vendor.offloadservice/.TestOffloadService");
     private static final String[] PRIORITY_LIST = {
@@ -796,5 +800,77 @@ public class MdnsOffloadManagerTest {
 
         verifyOffloadedServices(mVendorService, IFC_0, SERVICE_ATV);
         verifyPassthroughQNames(mVendorService, IFC_0, "atv");
+    }
+
+    @Test
+    public void serviceDump_containsDebuggingInfo() throws RemoteException {
+        setupDefaultOffloadManager();
+        mOffloadManagerBinder.addProtocolResponses(IFC_0, SERVICE_ATV, mClientBinder0);
+        mOffloadManagerBinder.addToPassthroughList(
+                IFC_0, "atv", mClientBinder0);
+        mCallingUid = APP_UID_1;
+        mOffloadManagerBinder.addProtocolResponses(IFC_1, SERVICE_GOOGLECAST, mClientBinder1);
+        mOffloadManagerBinder.addToPassthroughList(
+                IFC_1, "gtv", mClientBinder1);
+        mTestLooper.dispatchAll();
+
+        StringWriter resultWriter = new StringWriter();
+        mOffloadManagerService.dump(null, new PrintWriter(resultWriter), null);
+        mTestLooper.dispatchAll();
+        String result = resultWriter.getBuffer().toString();
+
+        Log.d(TAG, "Service dump:\n" + result);
+        assertTrue(result.contains("""
+                OffloadIntentStore:
+                offload intents:
+                * OffloadIntent{mNetworkInterface='imaginaryif0', mRecordKey=1, mPriority=1, mOwnerAppId=1234}
+                * OffloadIntent{mNetworkInterface='imaginaryif1', mRecordKey=2, mPriority=-2, mOwnerAppId=1235}
+                passthrough intents:
+                * PassthroughIntent{mNetworkInterface='imaginaryif0', mOriginalQName='atv', mCanonicalQName='ATV.', mPriority=0, mOwnerAppId=1234}
+                * PassthroughIntent{mNetworkInterface='imaginaryif1', mOriginalQName='gtv', mCanonicalQName='GTV.', mPriority=0, mOwnerAppId=1235}
+
+                """));
+        assertTrue(result.contains("""
+                InterfaceOffloadManager[imaginaryif0]:
+                mIsNetworkAvailable=true
+                current offload keys:
+                * 0
+                current passthrough qnames:
+                * atv
+
+                """));
+        assertTrue(result.contains("""
+                InterfaceOffloadManager[imaginaryif1]:
+                mIsNetworkAvailable=false
+                current offload keys:
+                current passthrough qnames:
+
+                """));
+        assertTrue(result.contains("""
+                OffloadWriter:
+                mOffloadState=false
+                isVendorServiceConnected=true
+
+                """));
+        assertTrue(result.contains("""
+                mRecordKey=1
+                match criteria:
+                * MatchCriteria{type=1, nameOffset=12}
+                raw offload packet:
+                000000:  00 00 00 00 00 00 00 01 00 00 00 00 03 61 74 76   |  .............atv
+                000016:  00 00 01 80 01 00 00 00 05 00 04 64 50 28 14      |  ...........dP(.
+                """));
+        assertTrue(result.contains("""
+                mRecordKey=2
+                match criteria:
+                * MatchCriteria{type=12, nameOffset=12}
+                * MatchCriteria{type=1, nameOffset=55}
+                raw offload packet:
+                000000:  00 00 00 00 00 00 00 02 00 00 00 00 0b 5f 67 6f   |  ............._go
+                000016:  6f 67 6c 65 63 61 73 74 04 5f 74 63 70 05 6c 6f   |  oglecast._tcp.lo
+                000032:  63 61 6c 00 00 0c 80 01 00 00 00 05 00 09 06 74   |  cal............t
+                000048:  76 2d 61 62 63 c0 1d c0 2e 00 01 80 01 00 00 00   |  v-abc...........
+                000064:  05 00 04 64 50 28 14                              |  ...dP(.
+                """));
     }
 }
