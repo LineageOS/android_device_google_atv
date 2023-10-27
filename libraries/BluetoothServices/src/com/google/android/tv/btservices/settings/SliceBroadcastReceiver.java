@@ -19,6 +19,7 @@ package com.google.android.tv.btservices.settings;
 import static com.google.android.tv.btservices.settings.ConnectedDevicesSliceProvider.ACTION_TOGGLE_CHANGED;
 import static com.google.android.tv.btservices.settings.SlicesUtil.CEC_SLICE_URI;
 import static com.google.android.tv.btservices.settings.SlicesUtil.EXTRAS_SLICE_URI;
+import static com.google.android.tv.btservices.settings.SlicesUtil.FMR_SLICE_URI;
 import static com.google.android.tv.btservices.settings.SlicesUtil.GENERAL_SLICE_URI;
 import static com.google.android.tv.btservices.settings.SlicesUtil.notifyToGoBack;
 
@@ -28,6 +29,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
+import android.provider.Settings.Global;
 import com.google.android.tv.btservices.PowerUtils;
 
 import java.util.ArrayList;
@@ -41,6 +43,13 @@ import java.util.ArrayList;
 public class SliceBroadcastReceiver extends BroadcastReceiver {
     private static final String TAG = "SliceBroadcastReceiver";
     static final String CEC = "CEC";
+
+    /**
+     * The {@link Global} integer setting name.
+     *
+     * <p>The settings tells whether the physical button integration for FMR feature is enabled.
+     * Default value: 1. */
+    static final String FMR_ON_PHYSICAL_BUTTON_ENABLED = "fmr_on_physical_button_enabled";
     static final String TOGGLE_TYPE = "TOGGLE_TYPE";
     static final String TOGGLE_STATE = "TOGGLE_STATE";
     private static final String ACTION_UPDATE_SLICE = "UPDATE_SLICE";
@@ -50,25 +59,30 @@ public class SliceBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         final String action = intent.getAction();
-        final boolean isChecked = intent.getBooleanExtra(TOGGLE_STATE, false);
         if (action == null) {
             return;
         }
         switch (action) {
-            case ACTION_TOGGLE_CHANGED:
-                if (CEC.equals(intent.getStringExtra(TOGGLE_TYPE))) {
+            case ACTION_TOGGLE_CHANGED: {
+                final boolean isChecked = intent.getBooleanExtra(TOGGLE_STATE, false);
+                final String toggleType = intent.getStringExtra(TOGGLE_TYPE);
+                if (CEC.equals(toggleType)) {
                     PowerUtils.enableCecControl(context, isChecked);
                     context.getContentResolver().notifyChange(CEC_SLICE_URI, null);
                     context.getContentResolver().notifyChange(GENERAL_SLICE_URI, null);
+                } else if (FMR_ON_PHYSICAL_BUTTON_ENABLED.equals(toggleType)) {
+                    Global.putInt(context.getContentResolver(),
+                            FMR_ON_PHYSICAL_BUTTON_ENABLED, isChecked ? 1 : 0);
+                    context.getContentResolver().notifyChange(FMR_SLICE_URI, null);
                 }
                 break;
+            }
             case ACTION_BACK_AND_UPDATE_SLICE:
                 notifyToGoBack(context, Uri.parse(intent.getStringExtra(EXTRAS_SLICE_URI)));
+                // fall-through
             case ACTION_UPDATE_SLICE:
                 ArrayList<String> uris = intent.getStringArrayListExtra(PARAM_URIS);
-                uris.forEach(uri -> {
-                    context.getContentResolver().notifyChange(Uri.parse(uri), null);
-                });
+                uris.forEach(uri -> context.getContentResolver().notifyChange(Uri.parse(uri), null));
             default:
                 // no-op
         }
