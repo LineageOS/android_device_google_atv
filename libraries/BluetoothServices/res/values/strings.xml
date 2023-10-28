@@ -85,6 +85,13 @@
   <string name="settings_axel">Set up remote buttons</string>
   <string name="settings_axel_description">Control volume, power, input on TVs, receivers and soundbars</string>
 
+  <string name="settings_fmr_title">Find my remote</string>
+  <string name="settings_fmr_description">Play a sound to locate your Google TV remote if it\'s misplaced</string>
+  <string name="fmr_slice_description">Press the button at the back of your Google TV Streamer to play a sound on your remote for 30 seconds. This only works on a Google TV Streamer Voice Remote.\n\nTo stop the sound, press any button on your remote.</string>
+  <string name="fmr_suppress_title">Disable the physical button</string>
+  <string name="fmr_suppress_subtitle">Pressing your device button will no longer play a sound on your remote</string>
+  <string name="fmr_play_sound">Play sound</string>
+
   <string name="settings_remote_battery_level">Battery level: %1$s</string>
   <string name="settings_known_devices_category">Accessories</string>
   <!-- Category for listing official remote control devices. Can be overlaid for different devices such as "Foobar Remote". -->

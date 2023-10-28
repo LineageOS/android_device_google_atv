@@ -30,6 +30,7 @@ public final class SlicesUtil {
     static final String GENERAL_PATH = "general";
     static final String BLUETOOTH_DEVICE_PATH = "device";
     static final String CEC_PATH = "cec";
+    static final String FIND_MY_REMOTE_PATH = "find_my_remote";
     static final String EXTRAS_DIRECTION = "extras_direction";
     static final String EXTRAS_SLICE_URI = "extras_slice_uri";
     static final String DIRECTION_BACK = "direction_back";
@@ -41,6 +42,9 @@ public final class SlicesUtil {
             Uri.parse("content://" + AUTHORITY + "/" + CEC_PATH);
     static final Uri AXEL_SLICE_URI =
             Uri.parse("content://com.google.android.tv.axel.sliceprovider/main");
+
+    static final Uri FMR_SLICE_URI =
+            Uri.parse("content://" + AUTHORITY + "/" + FIND_MY_REMOTE_PATH);
 
     static String getDeviceAddr(Uri uri) {
         if (uri.getPathSegments().size() >= 2) {
@@ -59,6 +63,10 @@ public final class SlicesUtil {
 
     static boolean isCecPath(Uri uri) {
         return CEC_PATH.equals(getFirstSegment(uri));
+    }
+
+    static boolean isFindMyRemotePath(Uri uri) {
+        return FIND_MY_REMOTE_PATH.equals(getFirstSegment(uri));
     }
 
     static Uri getDeviceUri(String deviceAddr) {
