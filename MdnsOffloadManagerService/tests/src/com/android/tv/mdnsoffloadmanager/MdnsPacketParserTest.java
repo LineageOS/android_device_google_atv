@@ -224,6 +224,40 @@ public class MdnsPacketParserTest {
     }
 
     @Test
+    public void testNegativeByteToUint8() {
+        byte[] array = new byte[]{
+                0, 0, 0, 0,//Id , Flags
+                0, 0, 0, 3, 0, 0, 0, 0,// Header section. 2 answers.
+                //Data 1
+                3, 'a', 't', 'v', 0x00, //atv.
+                0x00, 0x01, //type A
+                (byte) 0x80, 0x01,//cache flush: True, class: in
+                0, 0, 0, 5,// TTL 5sec
+                0, 4, // Data with size 4
+                100, 80, 40, 20, //ip: 100.80.40.20
+                //Data 2
+                3, 'g', 't', 'v', (byte) 0b11000000, 12, //gtv.[ptr->]atv.
+                0x00, 16, //type TXT
+                (byte) 0x80, 0x01,//cache flush: True, class: in
+                0, 0, 0, 5,// TTL 5sec
+                0, (byte) 130, // Data with size 130 > 127
+                1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+                //Data 3
+                4, 'f', 'a', 'i', 'l', 0x00, //fail.
+                0x00, 0x01, //type A
+                (byte) 0x80, 0x01,//cache flush: True, class: in
+                0, 0, 0, 5,// TTL 5sec
+                0, 4, // Data with size 4
+                100, 80, 40, 20, //ip: 100.80.40.20
+        };
+
+        List<MatchCriteria> criteria = MdnsPacketParser.extractMatchCriteria(array);
+        assertEquals(3, criteria.size());
+        String name2 = MdnsPacketParser.extractFullName(array, criteria.get(2).nameOffset);
+        assertEquals("fail.", name2);
+    }
+
+    @Test
     public void testExtractMatchCriteriaFailureTooMuchData() {
         byte[] array = new byte[]{
                 0, 0, 0, 0,//Id , Flags

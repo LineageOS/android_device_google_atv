@@ -65,6 +65,18 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Konfiguro butonat e telekomandës"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Kontrollo volumin, energjinë dhe hyrjen në televizorë, marrës dhe soundbar-ë"</string>
+    <!-- no translation found for settings_fmr_title (7188079231958724417) -->
+    <skip />
+    <!-- no translation found for settings_fmr_description (5899816382798080359) -->
+    <skip />
+    <!-- no translation found for fmr_slice_description (4045105659035601638) -->
+    <skip />
+    <!-- no translation found for fmr_suppress_title (5643342716043460636) -->
+    <skip />
+    <!-- no translation found for fmr_suppress_subtitle (4555277795253849722) -->
+    <skip />
+    <!-- no translation found for fmr_play_sound (8432918663207674576) -->
+    <skip />
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Niveli i baterisë: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Aksesorët"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Telekomanda"</string>

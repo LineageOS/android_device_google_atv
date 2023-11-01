@@ -201,7 +201,7 @@ public final class MdnsPacketParser {
             throw new IllegalArgumentException(
                     "mDNS response packet is badly formed. Not enough data.");
         }
-        return mMdnsData[offset];
+        return ((int) mMdnsData[offset]) & 0xff;
     }
 
     private int readUint16(int offset) {
@@ -209,7 +209,7 @@ public final class MdnsPacketParser {
             throw new IllegalArgumentException(
                     "mDNS response packet is badly formed. Not enough data.");
         }
-        return (mMdnsData[offset] << 8) + mMdnsData[offset + 1];
+        return (readUint8(offset) << 8) + readUint8(offset + 1);
     }
 
     private int pollUint16() {
