@@ -18,6 +18,7 @@ package com.google.android.tv.btservices.settings;
 
 import android.content.Context;
 import android.net.Uri;
+
 import com.android.tv.twopanelsettings.slices.SlicesConstants;
 
 
@@ -43,7 +44,7 @@ public final class SlicesUtil {
     static final Uri AXEL_SLICE_URI =
             Uri.parse("content://com.google.android.tv.axel.sliceprovider/main");
 
-    static final Uri FMR_SLICE_URI =
+    static final Uri FIND_MY_REMOTE_SLICE_URI =
             Uri.parse("content://" + AUTHORITY + "/" + FIND_MY_REMOTE_PATH);
 
     static String getDeviceAddr(Uri uri) {
