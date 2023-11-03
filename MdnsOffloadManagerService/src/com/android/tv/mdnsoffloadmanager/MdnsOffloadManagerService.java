@@ -75,6 +75,7 @@ public class MdnsOffloadManagerService extends Service {
     private OffloadWriter mOffloadWriter;
     private ConnectivityManager mConnectivityManager;
     private PackageManager mPackageManager;
+    private PowerManager.WakeLock mWakeLock;
 
     public MdnsOffloadManagerService() {
         this(new Injector());
@@ -119,6 +120,11 @@ public class MdnsOffloadManagerService extends Service {
             return mContext.getSystemService(PowerManager.class).getLowPowerStandbyPolicy();
         }
 
+        PowerManager.WakeLock newWakeLock() {
+            return mContext.getSystemService(PowerManager.class).newWakeLock(
+                    PowerManager.PARTIAL_WAKE_LOCK, TAG);
+        }
+
         PackageManager getPackageManager() {
             return mContext.getPackageManager();
         }
@@ -149,6 +155,7 @@ public class MdnsOffloadManagerService extends Service {
         mOffloadWriter = new OffloadWriter();
         mConnectivityManager = mInjector.getConnectivityManager();
         mPackageManager = mInjector.getPackageManager();
+        mWakeLock = mInjector.newWakeLock();
         bindVendorService();
         setupScreenBroadcastReceiver();
         setupConnectivityListener();
@@ -247,7 +254,8 @@ public class MdnsOffloadManagerService extends Service {
         boolean success = false;
         try {
             success = doneSignal.await(AWAIT_DUMP_SECONDS, TimeUnit.SECONDS);
-        } catch (InterruptedException ignored) {}
+        } catch (InterruptedException ignored) {
+        }
         if (!success) {
             Log.e(TAG, "Failed to dump state on handler thread");
         }
@@ -264,8 +272,8 @@ public class MdnsOffloadManagerService extends Service {
     private final IMdnsOffloadManager.Stub mOffloadManagerBinder = new IMdnsOffloadManager.Stub() {
         @Override
         public int addProtocolResponses(@NonNull String networkInterface,
-                                        @NonNull OffloadServiceInfo serviceOffloadData,
-                                        @NonNull IBinder clientToken) {
+                @NonNull OffloadServiceInfo serviceOffloadData,
+                @NonNull IBinder clientToken) {
             Objects.requireNonNull(networkInterface);
             Objects.requireNonNull(serviceOffloadData);
             Objects.requireNonNull(clientToken);
@@ -402,7 +410,12 @@ public class MdnsOffloadManagerService extends Service {
                     mOffloadWriter.setOffloadState(false);
                     mOffloadWriter.retrieveAndClearMetrics(mOffloadIntentStore.getRecordKeys());
                 } else if (Intent.ACTION_SCREEN_OFF.equals(action)) {
-                    mOffloadWriter.setOffloadState(true);
+                    try {
+                        mWakeLock.acquire(5000);
+                        mOffloadWriter.setOffloadState(true);
+                    } finally {
+                        mWakeLock.release();
+                    }
                 }
             });
         }

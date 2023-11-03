@@ -27,6 +27,7 @@
     <uses-permission android:name="com.android.tv.mdnsoffloadmanager.MDNS_OFFLOAD_SERVICE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
     <application android:label="MdnsOffloadManager">
         <service
