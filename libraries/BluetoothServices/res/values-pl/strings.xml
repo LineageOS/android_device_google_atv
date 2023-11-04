@@ -65,18 +65,12 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Skonfiguruj przyciski pilota"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Steruj głośnością, zasilaniem i źródłem sygnału na telewizorach, amplitunerach i soundbarach"</string>
-    <!-- no translation found for settings_fmr_title (7188079231958724417) -->
-    <skip />
-    <!-- no translation found for settings_fmr_description (5899816382798080359) -->
-    <skip />
-    <!-- no translation found for fmr_slice_description (4045105659035601638) -->
-    <skip />
-    <!-- no translation found for fmr_suppress_title (5643342716043460636) -->
-    <skip />
-    <!-- no translation found for fmr_suppress_subtitle (4555277795253849722) -->
-    <skip />
-    <!-- no translation found for fmr_play_sound (8432918663207674576) -->
-    <skip />
+    <string name="settings_fmr_title" msgid="7188079231958724417">"Znajdź pilota"</string>
+    <string name="settings_fmr_description" msgid="5899816382798080359">"Odtwórz dźwięk, aby znaleźć zgubionego pilota Google TV"</string>
+    <string name="fmr_slice_description" msgid="4045105659035601638">"Naciśnij przycisk z tyłu Google TV Streamer, aby odtwarzać dźwięk na pilocie przez 30 sekund. Ta funkcja działa tylko na sterowanym głosem pilocie Google TV Streamer.\n\nAby wyłączyć dźwięk, naciśnij dowolny przycisk na pilocie."</string>
+    <string name="fmr_suppress_title" msgid="5643342716043460636">"Wyłącz przycisk fizyczny"</string>
+    <string name="fmr_suppress_subtitle" msgid="4555277795253849722">"Naciśnięcie przycisku na urządzeniu spowoduje wstrzymanie odtwarzania dźwięku na pilocie"</string>
+    <string name="fmr_play_sound" msgid="8432918663207674576">"Odtwarzaj dźwięk"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Poziom naładowania baterii: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Akcesoria"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Pilot"</string>

@@ -65,18 +65,12 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung : Anynet+\nLG : SimpLink\nSony : BRAVIA Sync\nPhilips : EasyLink\nSharp : Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Configurer les boutons de la télécommande"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Contrôlez le volume, l\'alimentation et le mode d\'entrée sur vos téléviseurs, vos récepteurs et vos barres de son"</string>
-    <!-- no translation found for settings_fmr_title (7188079231958724417) -->
-    <skip />
-    <!-- no translation found for settings_fmr_description (5899816382798080359) -->
-    <skip />
-    <!-- no translation found for fmr_slice_description (4045105659035601638) -->
-    <skip />
-    <!-- no translation found for fmr_suppress_title (5643342716043460636) -->
-    <skip />
-    <!-- no translation found for fmr_suppress_subtitle (4555277795253849722) -->
-    <skip />
-    <!-- no translation found for fmr_play_sound (8432918663207674576) -->
-    <skip />
+    <string name="settings_fmr_title" msgid="7188079231958724417">"Localiser ma télécommande"</string>
+    <string name="settings_fmr_description" msgid="5899816382798080359">"Émettre un son pour localiser votre télécommande Google TV si vous l\'avez égarée"</string>
+    <string name="fmr_slice_description" msgid="4045105659035601638">"Appuyez sur le bouton à l\'arrière de votre Google TV Streamer pour que votre télécommande émette un son pendant 30 secondes. Cela ne fonctionne que sur une télécommande vocale Google TV Streamer.\n\nPour arrêter le son, appuyez sur n\'importe quel bouton de la télécommande."</string>
+    <string name="fmr_suppress_title" msgid="5643342716043460636">"Désactiver le bouton physique"</string>
+    <string name="fmr_suppress_subtitle" msgid="4555277795253849722">"Appuyer sur le bouton de l\'appareil n\'émettra plus de son sur la télécommande"</string>
+    <string name="fmr_play_sound" msgid="8432918663207674576">"Émettre un son"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Niveau de la batterie : %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Accessoires"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Télécommande"</string>
