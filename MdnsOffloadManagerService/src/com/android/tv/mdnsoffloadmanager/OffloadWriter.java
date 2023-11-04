@@ -4,6 +4,7 @@ import static device.google.atv.mdns_offload.IMdnsOffload.PassthroughBehavior.DR
 import static device.google.atv.mdns_offload.IMdnsOffload.PassthroughBehavior.PASSTHROUGH_LIST;
 
 import android.os.RemoteException;
+import android.os.ServiceSpecificException;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -28,6 +29,28 @@ public class OffloadWriter {
     private boolean mOffloadState = false;
     private IMdnsOffload mVendorService;
 
+    @NonNull
+    private static String convertQNameForVendorService(String qname) {
+        // We strip the trailing '.' when we provide QNames to the vendor service.
+        if (qname.endsWith(".")) {
+            return qname.substring(0, qname.length() - 1);
+        }
+        return qname;
+    }
+
+    private static String passthroughBehaviorToString(
+            @IMdnsOffload.PassthroughBehavior byte passthroughBehavior) {
+        switch (passthroughBehavior) {
+            case IMdnsOffload.PassthroughBehavior.FORWARD_ALL:
+                return "FORWARD_ALL";
+            case IMdnsOffload.PassthroughBehavior.DROP_ALL:
+                return "DROP_ALL";
+            case IMdnsOffload.PassthroughBehavior.PASSTHROUGH_LIST:
+                return "PASSTHROUGH_LIST";
+        }
+        throw new IllegalArgumentException("No such passthrough behavior " + passthroughBehavior);
+    }
+
     void setVendorService(@Nullable IMdnsOffload vendorService) {
         mVendorService = vendorService;
     }
@@ -43,7 +66,7 @@ public class OffloadWriter {
         }
         try {
             mVendorService.resetAll();
-        } catch (RemoteException e) {
+        } catch (RemoteException | ServiceSpecificException e) {
             Log.e(TAG, "Failed to reset vendor service.", e);
         }
     }
@@ -66,7 +89,7 @@ public class OffloadWriter {
         }
         try {
             mVendorService.setOffloadState(enabled);
-        } catch (RemoteException e) {
+        } catch (RemoteException | ServiceSpecificException e) {
             Log.e(TAG, "Failed to set offload state to {" + enabled + "}.", e);
         }
         mOffloadState = enabled;
@@ -79,14 +102,16 @@ public class OffloadWriter {
      */
     void retrieveAndClearMetrics(Collection<Integer> recordKeys) {
         try {
-            mVendorService.getAndResetMissCounter();
-        } catch (RemoteException e) {
+            int missCounter = mVendorService.getAndResetMissCounter();
+            Log.d(TAG, "Missed queries:" + missCounter);
+        } catch (RemoteException | ServiceSpecificException e) {
             Log.e(TAG, "getAndResetMissCounter failure", e);
         }
         for (int recordKey : recordKeys) {
             try {
-                mVendorService.getAndResetHitCounter(recordKey);
-            } catch (RemoteException e) {
+                int hitCounter = mVendorService.getAndResetHitCounter(recordKey);
+                Log.d(TAG, "Hits for record " + recordKey + " : " + hitCounter);
+            } catch (RemoteException | ServiceSpecificException e) {
                 Log.e(TAG, "getAndResetHitCounter failure for recordKey {" + recordKey + "}", e);
             }
         }
@@ -179,7 +204,7 @@ public class OffloadWriter {
         try {
             offloadKey = mVendorService.addProtocolResponses(
                     networkInterface, offloadIntent.mProtocolData);
-        } catch (RemoteException e) {
+        } catch (RemoteException | ServiceSpecificException e) {
             String msg = "Failed to offload mDNS protocol response for record key {" +
                     offloadIntent.mRecordKey + "} on iface {" + networkInterface + "}";
             Log.e(TAG, msg, e);
@@ -196,7 +221,7 @@ public class OffloadWriter {
         try {
             mVendorService.removeProtocolResponses(offloadKey);
             return true;
-        } catch (RemoteException e) {
+        } catch (RemoteException | ServiceSpecificException e) {
             String msg = "Failed to remove offloaded mDNS protocol response for offload key {"
                     + offloadKey + "}";
             Log.e(TAG, msg, e);
@@ -207,7 +232,7 @@ public class OffloadWriter {
     private void trySetPassthroughBehavior(String networkInterface, byte passthroughMode) {
         try {
             mVendorService.setPassthroughBehavior(networkInterface, passthroughMode);
-        } catch (RemoteException e) {
+        } catch (RemoteException | ServiceSpecificException e) {
             String msg = "Failed to set passthrough mode {"
                     + passthroughBehaviorToString(passthroughMode) + "}"
                     + " on iface {" + networkInterface + "}";
@@ -222,7 +247,7 @@ public class OffloadWriter {
         boolean addedEntry;
         try {
             addedEntry = mVendorService.addToPassthroughList(networkInterface, simpleQName);
-        } catch (RemoteException e) {
+        } catch (RemoteException | ServiceSpecificException e) {
             String msg = "Failed to add passthrough list entry for qname {"
                     + ptIntent.mOriginalQName + "} on iface {" + networkInterface + "}";
             Log.e(TAG, msg, e);
@@ -242,33 +267,11 @@ public class OffloadWriter {
         try {
             mVendorService.removeFromPassthroughList(networkInterface, simpleQName);
             return true;
-        } catch (RemoteException e) {
+        } catch (RemoteException | ServiceSpecificException e) {
             String msg = "Failed to remove passthrough for qname {" + qname + "}.";
             Log.e(TAG, msg, e);
         }
         return false;
-    }
-
-    @NonNull
-    private static String convertQNameForVendorService(String qname) {
-        // We strip the trailing '.' when we provide QNames to the vendor service.
-        if (qname.endsWith(".")) {
-            return qname.substring(0, qname.length() - 1);
-        }
-        return qname;
-    }
-
-    private static String passthroughBehaviorToString(
-            @IMdnsOffload.PassthroughBehavior byte passthroughBehavior) {
-        switch (passthroughBehavior) {
-            case IMdnsOffload.PassthroughBehavior.FORWARD_ALL:
-                return "FORWARD_ALL";
-            case IMdnsOffload.PassthroughBehavior.DROP_ALL:
-                return "DROP_ALL";
-            case IMdnsOffload.PassthroughBehavior.PASSTHROUGH_LIST:
-                return "PASSTHROUGH_LIST";
-        }
-        throw new IllegalArgumentException("No such passthrough behavior " + passthroughBehavior);
     }
 
     void dump(PrintWriter writer) {
