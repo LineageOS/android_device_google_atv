@@ -33,7 +33,7 @@ import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferen
 import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_AXEL_TOGGLE;
 import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_CEC_TOGGLE;
 import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_DEVICE_CONTROL;
-import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_FMR_TOGGLE;
+import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_FIND_MY_REMOTE_TOGGLE;
 import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_OFFICIAL_REMOTES;
 import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_PAIR_REMOTE;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.ACTION_FIND_MY_REMOTE;
@@ -402,9 +402,9 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         }
 
         psb.addPreference(new RowBuilder()
-                .setKey(KEY_FMR_TOGGLE)
-                .setTitle(getString(R.string.settings_fmr_title))
-                .setSubtitle(getString(R.string.settings_fmr_description))
+                .setKey(KEY_FIND_MY_REMOTE_TOGGLE)
+                .setTitle(getString(R.string.settings_find_my_remote_title))
+                .setSubtitle(getString(R.string.settings_find_my_remote_description))
                 .setTargetSliceUri(SlicesUtil.FIND_MY_REMOTE_SLICE_URI.toString()));
     }
 
@@ -655,10 +655,10 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         Context context = getContext();
         final PreferenceSliceBuilder psb = new PreferenceSliceBuilder(context, sliceUri);
         psb.addScreenTitle(new RowBuilder()
-                .setTitle(getString(R.string.settings_fmr_title))
-                .setSubtitle(getString(R.string.fmr_slice_description)));
+                .setTitle(getString(R.string.settings_find_my_remote_title))
+                .setSubtitle(getString(R.string.find_my_remote_slice_description)));
 
-        if (context.getResources().getBoolean(R.bool.fmr_integration_enabled)) {
+        if (context.getResources().getBoolean(R.bool.find_my_remote_integration_enabled)) {
             boolean isEnabled = Global.getInt(context.getContentResolver(),
                     FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED, 1) != 0;
             Intent intent = new Intent(context, SliceBroadcastReceiver.class)
@@ -667,12 +667,14 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                     .putExtra(TOGGLE_STATE, !isEnabled);
             psb.addPreference(new RowBuilder()
                     .setKey(FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED)
-                    .setTitle(getString(R.string.fmr_suppress_title))
-                    .setSubtitle(getString(R.string.fmr_suppress_subtitle))
+                    .setTitle(getString(R.string.find_my_remote_integration_title))
+                    .setInfoTitleIcon(IconCompat.createWithResource(
+                            context, R.drawable.ic_info_24dp))
+                    .setInfoSummary(getString(R.string.find_my_remote_integration_hint))
                     .addSwitch(
                             PendingIntent.getBroadcast(
                                     context, 0, intent, FLAG_IMMUTABLE | FLAG_UPDATE_CURRENT),
-                            !isEnabled));
+                            isEnabled));
         }
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(
@@ -684,7 +686,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
 
         psb.addPreference(new RowBuilder()
                 .setKey(ACTION_FIND_MY_REMOTE)
-                .setTitle(getString(R.string.fmr_play_sound))
+                .setTitle(getString(R.string.find_my_remote_play_sound))
                 .setPendingIntent(pendingIntent)
                 .setIcon(IconCompat.createWithResource(context, R.drawable.ic_play_arrow))
                 .setIconNeedsToBeProcessed(true));
