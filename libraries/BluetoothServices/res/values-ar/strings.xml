@@ -65,18 +65,12 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"إعداد أزرار جهاز التحكّم عن بُعد"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"التحكّم في مستوى الصوت وإمكانية الإيقاف أو التشغيل والإدخال في أجهزة التلفزيون وأجهزة الاستقبال ومكبّرات الصوت العمودي"</string>
-    <!-- no translation found for settings_fmr_title (7188079231958724417) -->
-    <skip />
-    <!-- no translation found for settings_fmr_description (5899816382798080359) -->
-    <skip />
-    <!-- no translation found for fmr_slice_description (4045105659035601638) -->
-    <skip />
-    <!-- no translation found for fmr_suppress_title (5643342716043460636) -->
-    <skip />
-    <!-- no translation found for fmr_suppress_subtitle (4555277795253849722) -->
-    <skip />
-    <!-- no translation found for fmr_play_sound (8432918663207674576) -->
-    <skip />
+    <string name="settings_fmr_title" msgid="7188079231958724417">"العثور على جهاز التحكّم عن بُعد"</string>
+    <string name="settings_fmr_description" msgid="5899816382798080359">"يمكنك تشغيل صوت لتحديد موقع جهاز التحكّم في Google TV عن بُعد إذا لم يكن في مكانه."</string>
+    <string name="fmr_slice_description" msgid="4045105659035601638">"اضغط على الزرّ المتوفّر في الجزء الخلفي من Google TV Streamer لتشغيل صوت على جهاز التحكّم عن بُعد لمدة 30 ثانية. لا تعمل هذه الميزة إلا على جهاز التحكّم الصوتي في Google TV Streamer.\n\nلإيقاف الصوت، اضغط على أي زرّ في جهاز التحكّم عن بُعد."</string>
+    <string name="fmr_suppress_title" msgid="5643342716043460636">"إيقاف الزرّ الفعلي"</string>
+    <string name="fmr_suppress_subtitle" msgid="4555277795253849722">"بعد ذلك، لن يؤدي الضغط على زرّ الجهاز إلى تشغيل صوت على جهاز التحكّم عن بُعد."</string>
+    <string name="fmr_play_sound" msgid="8432918663207674576">"تشغيل الصوت"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"مستوى البطارية: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"الأجهزة الملحقة"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"جهاز التحكّم عن بُعد"</string>
