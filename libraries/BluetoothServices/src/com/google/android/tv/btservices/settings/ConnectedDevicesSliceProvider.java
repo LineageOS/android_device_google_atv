@@ -38,6 +38,7 @@ import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferen
 import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_PAIR_REMOTE;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.ACTION_FIND_MY_REMOTE;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.ACTION_TOGGLE_CHANGED;
+import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.ACTIVE_AUDIO_OUTPUT;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.CEC;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.TOGGLE_STATE;
@@ -70,6 +71,7 @@ import androidx.core.graphics.drawable.IconCompat;
 import androidx.slice.Slice;
 import androidx.slice.SliceProvider;
 
+import com.android.settingslib.media.flags.Flags;
 import com.android.settingslib.RestrictedLockUtils;
 import com.android.settingslib.RestrictedLockUtilsInternal;
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
@@ -102,12 +104,16 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
     private static final String TAG = "Atv.ConDevsSliceProvider";
     private static final boolean DEBUG = false;
     private static final boolean DISCONNECT_PREFERENCE_ENABLED = false;
+    private static final int ACTIVE_AUDIO_OUTPUT_REQUEST_CODE = 4;
+    private static final int ACTIVE_AUDIO_OUTPUT_UPDATE_REQUEST_CODE = 5;
     private boolean mBtDeviceServiceBound;
     private final Map<String, Version> mVersionsMap = new ConcurrentHashMap<>();
     private BluetoothDeviceService.LocalBinder mBtDeviceServiceBinder;
     private final Map<Uri, Integer> pinnedUris = new ArrayMap<>();
 
     static final String KEY_EXTRAS_DEVICE = "key_extras_device";
+    static final String KEY_TOGGLE_ACTIVE_AUDIO_OUTPUT = "toggle_active_audio_output";
+
     private static final String SCHEME_CONTENT = "content://";
     private final Handler mHandler = new Handler(Looper.getMainLooper());
 
@@ -430,6 +436,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 .findDevice(SlicesUtil.getDeviceAddr(sliceUri));
         CachedBluetoothDevice cachedDevice =
                 BluetoothUtils.getCachedBluetoothDevice(getContext(), device);
+        BluetoothDeviceProvider btDeviceProvider = getLocalBluetoothDeviceProvider();
         String deviceName = "";
         if (device != null) {
             deviceName = BluetoothUtils.getName(device);
@@ -469,8 +476,6 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                             FLAG_IMMUTABLE | FLAG_UPDATE_CURRENT);
             updatePref.setPendingIntent(updatePendingIntent);
 
-            BluetoothDeviceProvider btDeviceProvider = getLocalBluetoothDeviceProvider();
-
             if (btDeviceProvider.hasUpgrade(device)) {
                 updatePref.setTitle(getString(R.string.settings_bt_update));
                 updatePref.setEnabled(true);
@@ -492,6 +497,42 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 updatePref.setSelectable(false);
             }
             psb.addPreference(updatePref);
+        }
+
+        // Update "Use for TV audio".
+        // Set as active audio output device only connected devices that have audio capabilities
+        if (Flags.enableTvMediaOutputDialog()
+                && cachedDevice != null && !cachedDevice.isBusy()
+                && BluetoothUtils.isConnected(device) && cachedDevice.isConnected()
+                && BluetoothUtils.isBluetoothHeadset(device)) {
+            boolean isActive = BluetoothUtils.isActiveAudioOutput(device);
+
+            Intent intent = new Intent(ACTION_TOGGLE_CHANGED);
+            intent.setClass(context, SliceBroadcastReceiver.class);
+            intent.putExtra(TOGGLE_TYPE, ACTIVE_AUDIO_OUTPUT);
+            intent.putExtra(TOGGLE_STATE, !isActive);
+            intent.putExtra(KEY_EXTRAS_DEVICE, device);
+
+            List<String> updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString(), sliceUri.toString());
+            PendingIntent updateSliceIntent = updateSliceIntent(getContext(),
+                    ACTIVE_AUDIO_OUTPUT_UPDATE_REQUEST_CODE, new ArrayList<>(updatedUris),
+                    sliceUri.toString());
+            intent.putExtra(EXTRA_SLICE_FOLLOWUP, updateSliceIntent);
+
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(context,
+                    ACTIVE_AUDIO_OUTPUT_REQUEST_CODE, intent,
+                    PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
+
+            // Update set/unset active audio output preference
+            RowBuilder activeAudioOutputPref = new RowBuilder()
+                    .setKey(KEY_TOGGLE_ACTIVE_AUDIO_OUTPUT)
+                    .setTitle(getString(R.string.bluetooth_toggle_active_audio_output))
+                    .setActionId(0x18240000) // TvSettingsEnums.CONNECTED_SLICE_DEVICE_ENTRY_TOGGLE_ACTIVE_AUDIO_OUTPUT)
+                    .addSwitch(pendingIntent,
+                            context.getText(R.string.bluetooth_toggle_active_audio_output),
+                            isActive);
+
+            psb.addPreference(activeAudioOutputPref);
         }
 
         // Update "connect/disconnect preference"
@@ -595,13 +636,12 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         RowBuilder infoPref = new RowBuilder()
                 .setIcon(IconCompat.createWithResource(context, R.drawable.ic_baseline_info_24dp));
 
-        BluetoothDeviceProvider provider = getLocalBluetoothDeviceProvider();
-        int battery = provider.getBatteryLevel(device);
+        int battery = btDeviceProvider.getBatteryLevel(device);
         if (battery != BluetoothDevice.BATTERY_LEVEL_UNKNOWN) {
-            String batteryText = provider.mapBatteryLevel(context, device, battery);
+            String batteryText = btDeviceProvider.mapBatteryLevel(context, device, battery);
             final String warning = getString(R.string.settings_bt_battery_low);
 
-            if (provider.isBatteryLow(device) && !provider.hasUpgrade(device)) {
+            if (btDeviceProvider.isBatteryLow(device) && !btDeviceProvider.hasUpgrade(device)) {
                 batteryText = context.getString(
                         R.string.settings_remote_battery_level_with_warning_label, batteryText,
                         warning);

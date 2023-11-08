@@ -20,6 +20,8 @@ import static android.content.Intent.FLAG_INCLUDE_STOPPED_PACKAGES;
 import static android.content.Intent.FLAG_RECEIVER_FOREGROUND;
 import static android.content.Intent.FLAG_RECEIVER_INCLUDE_BACKGROUND;
 
+import static com.android.tv.twopanelsettings.slices.SlicesConstants.EXTRA_SLICE_FOLLOWUP;
+import static com.google.android.tv.btservices.settings.ConnectedDevicesSliceProvider.KEY_EXTRAS_DEVICE;
 import static com.google.android.tv.btservices.settings.SlicesUtil.CEC_SLICE_URI;
 import static com.google.android.tv.btservices.settings.SlicesUtil.EXTRAS_SLICE_URI;
 import static com.google.android.tv.btservices.settings.SlicesUtil.FIND_MY_REMOTE_SLICE_URI;
@@ -27,13 +29,16 @@ import static com.google.android.tv.btservices.settings.SlicesUtil.GENERAL_SLICE
 import static com.google.android.tv.btservices.settings.SlicesUtil.notifyToGoBack;
 
 import android.app.PendingIntent;
+import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
 import android.provider.Settings.Global;
+import android.util.Log;
 
+import com.google.android.tv.btservices.BluetoothUtils;
 import com.google.android.tv.btservices.PowerUtils;
 
 import java.util.ArrayList;
@@ -61,7 +66,7 @@ public class SliceBroadcastReceiver extends BroadcastReceiver {
 
     static final String ACTION_TOGGLE_CHANGED = "com.google.android.settings.usage.TOGGLE_CHANGED";
     static final String ACTION_FIND_MY_REMOTE = "com.google.android.tv.FIND_MY_REMOTE";
-
+    static final String ACTIVE_AUDIO_OUTPUT = "ACTIVE_AUDIO_OUTPUT";
     private static final String ACTION_UPDATE_SLICE = "UPDATE_SLICE";
     private static final String ACTION_BACK_AND_UPDATE_SLICE = "BACK_AND_UPDATE_SLICE";
     private static final String PARAM_URIS = "URIS";
@@ -85,6 +90,21 @@ public class SliceBroadcastReceiver extends BroadcastReceiver {
                             FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED,
                             isChecked ? 1 : 0);
                     context.getContentResolver().notifyChange(FIND_MY_REMOTE_SLICE_URI, null);
+                } else if (ACTIVE_AUDIO_OUTPUT.equals(toggleType)) {
+                    boolean enable = intent.getBooleanExtra(TOGGLE_STATE, false);
+                    BluetoothDevice device = intent.getParcelableExtra(KEY_EXTRAS_DEVICE,
+                            BluetoothDevice.class);
+                    BluetoothUtils.setActiveAudioOutput(enable ? device : null);
+                    // If there is followup pendingIntent, send it
+                    try {
+                        PendingIntent followupPendingIntent = intent.getParcelableExtra(
+                                EXTRA_SLICE_FOLLOWUP, PendingIntent.class);
+                        if (followupPendingIntent != null) {
+                            followupPendingIntent.send();
+                        }
+                    } catch (Throwable ex) {
+                        Log.e(TAG, "Followup PendingIntent for slice cannot be sent", ex);
+                    }
                 }
                 break;
             }
@@ -97,7 +117,6 @@ public class SliceBroadcastReceiver extends BroadcastReceiver {
                 uris.forEach(
                         uri -> context.getContentResolver().notifyChange(Uri.parse(uri), null));
                 break;
-
             case ACTION_FIND_MY_REMOTE:
                 context.sendBroadcast(
                         new Intent(ACTION_FIND_MY_REMOTE)
