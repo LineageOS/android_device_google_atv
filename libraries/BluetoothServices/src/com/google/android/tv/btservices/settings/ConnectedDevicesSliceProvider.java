@@ -40,12 +40,13 @@ import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.A
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.ACTION_TOGGLE_CHANGED;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.ACTIVE_AUDIO_OUTPUT;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.CEC;
-import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.TOGGLE_STATE;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.TOGGLE_TYPE;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.backAndUpdateSliceIntent;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.updateSliceIntent;
+import static com.google.android.tv.btservices.settings.SlicesUtil.FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED_SETTING;
 import static com.google.android.tv.btservices.settings.SlicesUtil.GENERAL_SLICE_URI;
+import static com.google.android.tv.btservices.settings.SlicesUtil.isFindMyRemoteButtonEnabled;
 
 import android.app.PendingIntent;
 import android.app.admin.DevicePolicyManager;
@@ -63,7 +64,6 @@ import android.os.Looper;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.provider.Settings;
-import android.provider.Settings.Global;
 import android.util.ArrayMap;
 import android.util.Log;
 
@@ -699,14 +699,13 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 .setSubtitle(getString(R.string.find_my_remote_slice_description)));
 
         if (context.getResources().getBoolean(R.bool.find_my_remote_integration_enabled)) {
-            boolean isEnabled = Global.getInt(context.getContentResolver(),
-                    FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED, 1) != 0;
+            boolean isButtonEnabled = isFindMyRemoteButtonEnabled(context);
             Intent intent = new Intent(context, SliceBroadcastReceiver.class)
                     .setAction(ACTION_TOGGLE_CHANGED)
-                    .putExtra(TOGGLE_TYPE, FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED)
-                    .putExtra(TOGGLE_STATE, !isEnabled);
+                    .putExtra(TOGGLE_TYPE, FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED_SETTING)
+                    .putExtra(TOGGLE_STATE, !isButtonEnabled);
             psb.addPreference(new RowBuilder()
-                    .setKey(FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED)
+                    .setKey(FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED_SETTING)
                     .setTitle(getString(R.string.find_my_remote_integration_title))
                     .setInfoTitleIcon(IconCompat.createWithResource(
                             context, R.drawable.ic_info_24dp))
@@ -714,7 +713,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                     .addSwitch(
                             PendingIntent.getBroadcast(
                                     context, 0, intent, FLAG_IMMUTABLE | FLAG_UPDATE_CURRENT),
-                            isEnabled));
+                            isButtonEnabled));
         }
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(
