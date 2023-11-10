@@ -18,6 +18,7 @@ package com.google.android.tv.btservices.settings;
 
 import android.content.Context;
 import android.net.Uri;
+import android.provider.Settings;
 
 import com.android.tv.twopanelsettings.slices.SlicesConstants;
 
@@ -46,6 +47,15 @@ public final class SlicesUtil {
 
     static final Uri FIND_MY_REMOTE_SLICE_URI =
             Uri.parse("content://" + AUTHORITY + "/" + FIND_MY_REMOTE_PATH);
+
+    /**
+     * The {@link Settings.Global} integer setting name.
+     *
+     * <p>The settings tells whether the physical button integration for Find My Remote feature
+     * is enabled. Default value: 1.
+     */
+    static final String FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED_SETTING =
+            "find_my_remote_physical_button_enabled";
 
     static String getDeviceAddr(Uri uri) {
         if (uri.getPathSegments().size() >= 2) {
@@ -89,5 +99,16 @@ public final class SlicesUtil {
                 .appendQueryParameter(SlicesConstants.PARAMETER_DIRECTION, SlicesConstants.BACKWARD)
                 .build();
         context.getContentResolver().notifyChange(appendedUri, null);
+    }
+
+    public static boolean isFindMyRemoteButtonEnabled(Context context) {
+        return Settings.Global.getInt(context.getContentResolver(),
+                FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED_SETTING, 1) != 0;
+    }
+
+    static void setFindMyRemoteButtonEnabled(Context context, boolean enabled) {
+        Settings.Global.putInt(context.getContentResolver(),
+                FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED_SETTING,
+                enabled ? 1 : 0);
     }
 }

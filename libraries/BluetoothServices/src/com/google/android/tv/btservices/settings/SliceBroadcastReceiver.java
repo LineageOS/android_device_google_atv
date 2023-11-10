@@ -24,9 +24,11 @@ import static com.android.tv.twopanelsettings.slices.SlicesConstants.EXTRA_SLICE
 import static com.google.android.tv.btservices.settings.ConnectedDevicesSliceProvider.KEY_EXTRAS_DEVICE;
 import static com.google.android.tv.btservices.settings.SlicesUtil.CEC_SLICE_URI;
 import static com.google.android.tv.btservices.settings.SlicesUtil.EXTRAS_SLICE_URI;
+import static com.google.android.tv.btservices.settings.SlicesUtil.FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED_SETTING;
 import static com.google.android.tv.btservices.settings.SlicesUtil.FIND_MY_REMOTE_SLICE_URI;
 import static com.google.android.tv.btservices.settings.SlicesUtil.GENERAL_SLICE_URI;
 import static com.google.android.tv.btservices.settings.SlicesUtil.notifyToGoBack;
+import static com.google.android.tv.btservices.settings.SlicesUtil.setFindMyRemoteButtonEnabled;
 
 import android.app.PendingIntent;
 import android.bluetooth.BluetoothDevice;
@@ -35,7 +37,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
-import android.provider.Settings.Global;
 import android.util.Log;
 
 import com.google.android.tv.btservices.BluetoothUtils;
@@ -53,14 +54,6 @@ public class SliceBroadcastReceiver extends BroadcastReceiver {
     private static final String TAG = "SliceBroadcastReceiver";
     static final String CEC = "CEC";
 
-    /**
-     * The {@link Global} integer setting name.
-     *
-     * <p>The settings tells whether the physical button integration for Find My Remote feature
-     * is enabled. Default value: 1.
-     */
-    protected static final String FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED =
-            "find_my_remote_physical_button_enabled";
     static final String TOGGLE_TYPE = "TOGGLE_TYPE";
     static final String TOGGLE_STATE = "TOGGLE_STATE";
 
@@ -85,10 +78,8 @@ public class SliceBroadcastReceiver extends BroadcastReceiver {
                     PowerUtils.enableCecControl(context, isChecked);
                     context.getContentResolver().notifyChange(CEC_SLICE_URI, null);
                     context.getContentResolver().notifyChange(GENERAL_SLICE_URI, null);
-                } else if (FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED.equals(toggleType)) {
-                    Global.putInt(context.getContentResolver(),
-                            FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED,
-                            isChecked ? 1 : 0);
+                } else if (FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED_SETTING.equals(toggleType)) {
+                    setFindMyRemoteButtonEnabled(context, isChecked);
                     context.getContentResolver().notifyChange(FIND_MY_REMOTE_SLICE_URI, null);
                 } else if (ACTIVE_AUDIO_OUTPUT.equals(toggleType)) {
                     boolean enable = intent.getBooleanExtra(TOGGLE_STATE, false);
