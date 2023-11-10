@@ -65,12 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"రిమోట్ బటన్‌లను సెటప్ చేయండి"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"వాల్యూమ్, పవర్, టీవీలలోని ఇన్‌పుట్, రిసీవర్‌లు అలాగే సౌండ్‌బార్‌లను కంట్రోల్ చేయండి"</string>
-    <string name="settings_fmr_title" msgid="7188079231958724417">"నా రిమోట్‌ను కనుగొనండి"</string>
-    <string name="settings_fmr_description" msgid="5899816382798080359">"మీ Google TV రిమోట్ మిస్‌ప్లేస్ చేయబడితే దాన్ని గుర్తించడానికి సౌండ్ ప్లే చేయండి"</string>
-    <string name="fmr_slice_description" msgid="4045105659035601638">"మీ రిమోట్‌లో 30 సెకన్ల పాటు సౌండ్‌ను ప్లే చేయడానికి మీ Google TV స్ట్రీమర్ వెనుక ఉన్న బటన్‌ను నొక్కండి. ఇది Google TV స్ట్రీమర్ వాయిస్ రిమోట్‌లో మాత్రమే పని చేస్తుంది.\n\nసౌండ్‌ను ఆపడానికి, మీ రిమోట్‌లోని ఏదైనా బటన్‌ను నొక్కండి."</string>
-    <string name="fmr_suppress_title" msgid="5643342716043460636">"ఫిజికల్ బటన్‌ను డిజేబుల్ చేయండి"</string>
-    <string name="fmr_suppress_subtitle" msgid="4555277795253849722">"మీ పరికర బటన్‌ను నొక్కడం వలన ఇకపై మీ రిమోట్‌లో సౌండ్ ప్లే అవ్వదు"</string>
-    <string name="fmr_play_sound" msgid="8432918663207674576">"సౌండ్‌ను ప్లే చేయండి"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"నా రిమోట్‌ను కనుగొనండి"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"మీ Google TV రిమోట్ మిస్‌ప్లేస్ చేయబడితే దాన్ని గుర్తించడానికి సౌండ్ ప్లే చేయండి"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"మీ రిమోట్‌లో 30 సెకన్ల పాటు సౌండ్‌ను ప్లే చేయడానికి మీ Google TV స్ట్రీమర్ వెనుక ఉన్న బటన్‌ను నొక్కండి. ఇది Google TV స్ట్రీమర్ వాయిస్ రిమోట్‌లో మాత్రమే పని చేస్తుంది.\n\nసౌండ్‌ను ఆపడానికి, మీ రిమోట్‌లోని ఏదైనా బటన్‌ను నొక్కండి."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"\'నా రిమోట్‌ను కనుగొనండి\' ఫీచర్‌ను ఎనేబుల్ చేసినప్పుడు, మీ Google TV రిమోట్ మిస్‌ప్లేస్ చేయబడితే దాన్ని గుర్తించడానికి మీరు సౌండ్‌ను ప్లే చేయవచ్చు."</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"సౌండ్‌ను ప్లే చేయండి"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"బ్యాటరీ స్థాయి: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"యాక్సెసరీలు"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"రిమోట్ కంట్రోల్"</string>
@@ -81,6 +80,8 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"కనెక్ట్ చేయండి"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"పేరుమార్చండి"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"విస్మరించండి"</string>
+    <!-- no translation found for bluetooth_toggle_active_audio_output (494557568422711885) -->
+    <skip />
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"కనెక్ట్ చేయబడింది"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"డిస్‌కనెక్ట్ అయింది"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"పరికర నియంత్రణ"</string>

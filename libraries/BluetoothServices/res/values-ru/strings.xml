@@ -65,12 +65,16 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SIMPLINK\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Настройка кнопок на пульте ДУ"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Управляйте громкостью и питанием, а также выбирайте источники сигнала на телевизорах, ресиверах и саундбарах"</string>
-    <string name="settings_fmr_title" msgid="7188079231958724417">"Найти пульт"</string>
-    <string name="settings_fmr_description" msgid="5899816382798080359">"Воспроизвести звуковой сигнал на потерянном пульте Google TV"</string>
-    <string name="fmr_slice_description" msgid="4045105659035601638">"Нажмите кнопку на задней панели стримингового устройства Google TV, чтобы пульт издал 30-секундный звуковой сигнал. Функция поддерживается только на голосовых пультах для стриминговых устройств Google TV.\n\nЧтобы прекратить воспроизведение сигнала, нажмите любую кнопку на пульте."</string>
-    <string name="fmr_suppress_title" msgid="5643342716043460636">"Отключить кнопку"</string>
-    <string name="fmr_suppress_subtitle" msgid="4555277795253849722">"При нажатии кнопки на устройстве пульт не будет издавать звуковой сигнал"</string>
-    <string name="fmr_play_sound" msgid="8432918663207674576">"Звуковой сигнал"</string>
+    <!-- no translation found for settings_find_my_remote_title (618883575610472525) -->
+    <skip />
+    <!-- no translation found for settings_find_my_remote_description (2434088262598422577) -->
+    <skip />
+    <!-- no translation found for find_my_remote_slice_description (4802810369433859327) -->
+    <skip />
+    <!-- no translation found for find_my_remote_integration_hint (3962827321568773142) -->
+    <skip />
+    <!-- no translation found for find_my_remote_play_sound (1799877650759138251) -->
+    <skip />
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Уровень заряда батареи: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Аксессуары"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Пульт ДУ"</string>
@@ -81,6 +85,8 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"Подключить"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Переименовать"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"Удалить"</string>
+    <!-- no translation found for bluetooth_toggle_active_audio_output (494557568422711885) -->
+    <skip />
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Подключено"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Отключено"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Управление устройством"</string>

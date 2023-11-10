@@ -65,12 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Afstandsbedieningsknoppen instellen"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Volume bedienen, aan- en uitzetten en invoer selecteren op tv\'s, ontvangers en soundbars"</string>
-    <string name="settings_fmr_title" msgid="7188079231958724417">"Mijn afstandsbediening vinden"</string>
-    <string name="settings_fmr_description" msgid="5899816382798080359">"Speel een geluid af om je Google TV-afstandsbediening te vinden als je deze kwijt bent"</string>
-    <string name="fmr_slice_description" msgid="4045105659035601638">"Druk op de knop op de achterkant van je Google TV Streamer om 30 seconden een geluid op je afstandsbediening af te spelen. Dit werkt alleen op een Google TV Streamer-stembediening.\n\nAls je het geluid wilt stoppen, druk je op een knop op de afstandsbediening."</string>
-    <string name="fmr_suppress_title" msgid="5643342716043460636">"De fysieke knop uitzetten"</string>
-    <string name="fmr_suppress_subtitle" msgid="4555277795253849722">"Als je op de apparaatknop drukt, wordt er geen geluid meer afgespeeld op de afstandsbediening"</string>
-    <string name="fmr_play_sound" msgid="8432918663207674576">"Geluid afspelen"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Mijn afstandsbediening vinden"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Speel een geluid af om je Google TV-afstandsbediening te vinden als je deze kwijt bent"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Druk op de knop op de achterkant van je Google TV Streamer om 30 seconden een geluid op je afstandsbediening af te spelen. Dit werkt alleen op een Google TV Streamer-stembediening.\n\nAls je het geluid wilt stoppen, druk je op een knop op de afstandsbediening."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"Als Mijn afstandsbediening vinden aanstaat, kun je een geluid afspelen om je Google TV-afstandsbediening te vinden als je deze kwijt bent."</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Geluid afspelen"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Batterijniveau: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Accessoires"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Afstandsbediening"</string>
@@ -81,6 +80,8 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"Koppelen"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Naam wijzigen"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"Vergeten"</string>
+    <!-- no translation found for bluetooth_toggle_active_audio_output (494557568422711885) -->
+    <skip />
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Verbonden"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Verbinding verbroken"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Apparaatbeheer"</string>

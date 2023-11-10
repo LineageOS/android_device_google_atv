@@ -65,12 +65,16 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"ரிமோட் பட்டன்களை அமைத்தல்"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"டிவிகள், ரிசீவர்கள், சவுண்ட்பார்கள் ஆகியவற்றில் ஒலியளவையும் பவரையும் உள்ளீட்டையும் கட்டுப்படுத்தலாம்"</string>
-    <string name="settings_fmr_title" msgid="7188079231958724417">"எனது ரிமோட்டைக் கண்டறிதல்"</string>
-    <string name="settings_fmr_description" msgid="5899816382798080359">"உங்கள் Google TV ரிமோட்டைத் தவறுதலாக வேறொரு இடத்தில் வைத்திருந்தால், ஒலியை இயக்குவதன் மூலம் அதைக் கண்டறியலாம்"</string>
-    <string name="fmr_slice_description" msgid="4045105659035601638">"Google TV ஸ்ட்ரீமரின் பின்புறம் உள்ள பட்டனை அழுத்துவதன் மூலம் உங்கள் ரிமோட்டில் 30 வினாடிகளுக்கு ஒலியை இயக்கலாம். Google TV ஸ்ட்ரீமர் வாய்ஸ் ரிமோட்டில் மட்டுமே இது செயல்படும்.\n\nஒலியை நிறுத்த உங்கள் ரிமோட்டில் ஏதேனும் ஒரு பட்டனை அழுத்துங்கள்."</string>
-    <string name="fmr_suppress_title" msgid="5643342716043460636">"அசல் பட்டனை முடக்குதல்"</string>
-    <string name="fmr_suppress_subtitle" msgid="4555277795253849722">"உங்கள் சாதனத்தின் பட்டனை அழுத்தி இனி உங்கள் ரிமோட்டில் ஒலியை இயக்க முடியாது"</string>
-    <string name="fmr_play_sound" msgid="8432918663207674576">"ஒலியை இயக்கு"</string>
+    <!-- no translation found for settings_find_my_remote_title (618883575610472525) -->
+    <skip />
+    <!-- no translation found for settings_find_my_remote_description (2434088262598422577) -->
+    <skip />
+    <!-- no translation found for find_my_remote_slice_description (4802810369433859327) -->
+    <skip />
+    <!-- no translation found for find_my_remote_integration_hint (3962827321568773142) -->
+    <skip />
+    <!-- no translation found for find_my_remote_play_sound (1799877650759138251) -->
+    <skip />
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"பேட்டரி நிலை: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"துணைக்கருவிகள்"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"ரிமோட் கன்ட்ரோல்"</string>
@@ -81,6 +85,8 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"இணை"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"பெயர் மாற்று"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"அகற்று"</string>
+    <!-- no translation found for bluetooth_toggle_active_audio_output (494557568422711885) -->
+    <skip />
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"இணைக்கப்பட்டது"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"துண்டிக்கப்பட்டது"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"சாதனக் கட்டுப்பாடு"</string>

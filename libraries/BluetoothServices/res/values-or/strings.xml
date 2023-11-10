@@ -65,12 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nସାର୍ପ: Aquos ଲିିିିଙ୍କ୍"</string>
     <string name="settings_axel" msgid="8253298947221430993">"ରିମୋଟ୍ ବଟନଗୁଡ଼ିକୁ ସେଟ୍ ଅପ୍ କରନ୍ତୁ"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"ଟିଭି, ରିସିଭର୍ ଏବଂ ସାଉଣ୍ଡବାରଗୁଡ଼ିକରେ ଭଲ୍ୟୁମ୍, ପାୱାର, ଇନପୁଟକୁ ନିୟନ୍ତ୍ରଣ କରନ୍ତୁ"</string>
-    <string name="settings_fmr_title" msgid="7188079231958724417">"ମୋ ରିମୋଟ ଖୋଜନ୍ତୁ"</string>
-    <string name="settings_fmr_description" msgid="5899816382798080359">"ଯଦି ଆପଣଙ୍କ Google TV ରିମୋଟକୁ ଭୁଲ ସ୍ଥାନରେ ରଖାଯାଇଥାଏ ତେବେ ଏହାକୁ ଖୋଜିବା ପାଇଁ ଏକ ସାଉଣ୍ଡ ପ୍ଲେ କରନ୍ତୁ"</string>
-    <string name="fmr_slice_description" msgid="4045105659035601638">"30 ସେକେଣ୍ଡ ପାଇଁ ଆପଣଙ୍କ ରିମୋଟରେ ଏକ ସାଉଣ୍ଡ ପ୍ଲେ କରିବାକୁ ଆପଣଙ୍କ Google TV ଷ୍ଟ୍ରିମରର ପଛପଟେ ଥିବା ବଟନ ଦବାନ୍ତୁ। ଏହା କେବଳ ଏକ Google TV ଷ୍ଟ୍ରିମର ଭଏସ ରିମୋଟରେ କାମ କରେ।\n\nସାଉଣ୍ଡ ବନ୍ଦ କରିବାକୁ ଆପଣଙ୍କ ରିମୋଟରେ ଯେ କୌଣସି ବଟନ ଦବାନ୍ତୁ।"</string>
-    <string name="fmr_suppress_title" msgid="5643342716043460636">"ଫିଜିକାଲ ବଟନକୁ ଅକ୍ଷମ କରନ୍ତୁ"</string>
-    <string name="fmr_suppress_subtitle" msgid="4555277795253849722">"ଆପଣଙ୍କ ଡିଭାଇସର ବଟନ ଦବାଇବା ଫଳରେ ଏହା ଆପଣଙ୍କ ରିମୋଟରେ ଏକ ସାଉଣ୍ଡ ଆଉ ପ୍ଲେ କରିବ ନାହିଁ"</string>
-    <string name="fmr_play_sound" msgid="8432918663207674576">"ସାଉଣ୍ଡ ପ୍ଲେ କରନ୍ତୁ"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"ମୋ ରିମୋଟ ଖୋଜନ୍ତୁ"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"ଯଦି ଆପଣଙ୍କ Google TV ରିମୋଟକୁ ଭୁଲ ସ୍ଥାନରେ ରଖାଯାଇଥାଏ ତେବେ ଏହାକୁ ଖୋଜିବା ପାଇଁ ଏକ ସାଉଣ୍ଡ ପ୍ଲେ କରନ୍ତୁ"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"30 ସେକେଣ୍ଡ ପାଇଁ ଆପଣଙ୍କ ରିମୋଟରେ ଏକ ସାଉଣ୍ଡ ପ୍ଲେ କରିବାକୁ ଆପଣଙ୍କ Google TV ଷ୍ଟ୍ରିମରର ପଛପଟେ ଥିବା ବଟନ ଦବାନ୍ତୁ। ଏହା କେବଳ ଏକ Google TV ଷ୍ଟ୍ରିମର ଭଏସ ରିମୋଟରେ କାମ କରେ।\n\nସାଉଣ୍ଡ ବନ୍ଦ କରିବାକୁ ଆପଣଙ୍କ ରିମୋଟରେ ଯେ କୌଣସି ବଟନ ଦବାନ୍ତୁ।"</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"ଯେତେବେଳେ \'ମୋ ରିମୋଟ ଖୋଜନ୍ତୁ\'କୁ ସକ୍ଷମ କରାଯାଏ, ସେତେବେଳେ ଯଦି ଆପଣଙ୍କ Google TV ରିମୋଟକୁ ଭୁଲ ସ୍ଥାନରେ ରଖାଯାଇଥାଏ ତେବେ ଏହାକୁ ଖୋଜିବା ପାଇଁ ଏକ ସାଉଣ୍ଡ ପ୍ଲେ କରନ୍ତୁ।"</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"ସାଉଣ୍ଡ ପ୍ଲେ କରନ୍ତୁ"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"ବେଟେରୀ ଲେଭେଲ: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"ଆକସେସୋରୀଗୁଡ଼ିକ"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"ରିମୋଟ କଣ୍ଟ୍ରୋଲ"</string>
@@ -81,7 +80,9 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"କନେକ୍ଟ କରନ୍ତୁ"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"ରିନେମ କରନ୍ତୁ"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"ଭୁଲିଯାଆନ୍ତୁ"</string>
-    <string name="bluetooth_connected_status" msgid="8391804274846835227">"ସଂଯୋଗ କରାଯାଇଛି"</string>
+    <!-- no translation found for bluetooth_toggle_active_audio_output (494557568422711885) -->
+    <skip />
+    <string name="bluetooth_connected_status" msgid="8391804274846835227">"କନେକ୍ଟ କରାଯାଇଛି"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"ବିଚ୍ଛିନ୍ନ କରାଯାଇଛି"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"ଡିଭାଇସ କଣ୍ଟ୍ରୋଲ"</string>
     <string name="settings_bt_pair_title" msgid="1205942796805671508">"ନୂଆ ଡିଭାଇସ କନେକ୍ଟ କରନ୍ତୁ"</string>
