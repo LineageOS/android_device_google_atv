@@ -65,12 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA \nPhilips સિંક કરો: EasyLink\nSharp: Aquos લિંક"</string>
     <string name="settings_axel" msgid="8253298947221430993">"રિમોટ બટનનું સેટઅપ કરો"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"ટીવી, રિસીવર અને સાઉન્ડબાર પર વૉલ્યૂમ, પાવર અને ઇનપુટને નિયંત્રિત કરો"</string>
-    <string name="settings_fmr_title" msgid="7188079231958724417">"મારું રિમોટ શોધો"</string>
-    <string name="settings_fmr_description" msgid="5899816382798080359">"જો તમારું Google TV રિમોટ ખોવાઈ ગયું હોય, તો તેને શોધવા માટે સાઉન્ડ વગાડો"</string>
-    <string name="fmr_slice_description" msgid="4045105659035601638">"તમારા રિમોટ પર 30 સેકન્ડ સુધી સાઉન્ડ વગાડવા માટે, તમારા Google TV સ્ટ્રીમરની પાછળનું બટન દબાવો. આ માત્ર Google TV સ્ટ્રીમર વૉઇસ રિમોટ પર કામ કરે છે.\n\nસાઉન્ડ બંધ કરવા માટે, તમારા રિમોટ પર કોઈપણ બટન દબાવો."</string>
-    <string name="fmr_suppress_title" msgid="5643342716043460636">"ભૌતિક બટન બંધ કરો"</string>
-    <string name="fmr_suppress_subtitle" msgid="4555277795253849722">"તમારા ડિવાઇસનું બટન દબાવવાથી, હવે પછી તમારા રિમોટ પર સાઉન્ડ વગાડવામાં આવશે નહીં"</string>
-    <string name="fmr_play_sound" msgid="8432918663207674576">"સાઉન્ડ વગાડો"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"મારું રિમોટ શોધો"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"જો Google TVનું તમારું રિમોટ ખોવાઈ ગયું હોય, તો તેને શોધવા માટે સાઉન્ડ વગાડો"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"તમારા રિમોટ પર 30 સેકન્ડ સુધી સાઉન્ડ વગાડવા માટે, તમારા Google TV સ્ટ્રીમરની પાછળનું બટન દબાવો. આ માત્ર Google TV સ્ટ્રીમર વૉઇસ રિમોટ પર કામ કરે છે.\n\nસાઉન્ડ બંધ કરવા માટે, તમારા રિમોટ પર કોઈપણ બટન દબાવો."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"\'મારું રિમોટ શોધો\' સુવિધા ચાલુ કરેલી હોય, ત્યારે જો Google TVનું તમારું રિમોટ ખોવાઈ ગયું હોય, તો તમે તેને શોધવા માટે કોઈ સાઉન્ડ વગાડી શકો છો."</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"સાઉન્ડ વગાડો"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"બૅટરીનું લેવલ: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"ઍક્સેસરી"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"રિમોટ કન્ટ્રોલ"</string>
@@ -81,6 +80,8 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"કનેક્ટ કરો"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"નામ બદલો"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"ભૂલી જાઓ"</string>
+    <!-- no translation found for bluetooth_toggle_active_audio_output (494557568422711885) -->
+    <skip />
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"કનેક્ટ કરેલું"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"ડિસ્કનેક્ટ કર્યું"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"ડિવાઇસ નિયંત્રણ"</string>

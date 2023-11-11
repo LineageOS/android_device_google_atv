@@ -65,12 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Поставете копчиња на далечинскиот управувач"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Контролирајте ги јачината на звукот, вклучувањето, влезот на телевизорите, приемниците и звучниците"</string>
-    <string name="settings_fmr_title" msgid="7188079231958724417">"Најди го мојот далечински управувач"</string>
-    <string name="settings_fmr_description" msgid="5899816382798080359">"Репродуцирајте звук за да го лоцирате далечинскиот управувач на Google TV ако е изгубен"</string>
-    <string name="fmr_slice_description" msgid="4045105659035601638">"Притиснете го копчето на задниот дел од вашиот стример за Google TV за да се репродуцира звук на далечинскиот управувач 30 секунди. Ова функционира само на Voice Remote за стример на Google TV.\n\nЗа да го сопрете звукот, притиснете некое копче на далечинскиот управувач."</string>
-    <string name="fmr_suppress_title" msgid="5643342716043460636">"Оневозможете го физичкото копче"</string>
-    <string name="fmr_suppress_subtitle" msgid="4555277795253849722">"Со притискање на копчето на вашиот уред веќе нема да се репродуцира звук на далечинскиот управувач"</string>
-    <string name="fmr_play_sound" msgid="8432918663207674576">"Репродуцирај звук"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Најди го мојот далечински управувач"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Репродуцирајте звук за да го лоцирате далечинскиот управувач на Google TV ако е изгубен"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Притиснете го копчето на задниот дел од вашиот стример за Google TV за да се репродуцира звук на далечинскиот управувач 30 секунди. Ова функционира само на Voice Remote за стример на Google TV.\n\nЗа да го сопрете звукот, притиснете некое копче на далечинскиот управувач."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"Кога е овозможена „Најди го мојот далечински управувач“, може да репродуцирате звук за да го лоцирате далечинскиот управувач на Google TV ако е изгубен."</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Репродуцирај звук"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Ниво на батерија: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Додатоци"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Далечински управувач"</string>
@@ -81,6 +80,8 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"Поврзи"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Преименувај"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"Заборави"</string>
+    <!-- no translation found for bluetooth_toggle_active_audio_output (494557568422711885) -->
+    <skip />
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Поврзано"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Не е поврзано"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Контрола на уреди"</string>

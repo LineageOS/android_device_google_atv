@@ -65,12 +65,16 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung : Anynet+\nLG : SimpLink\nSony : BRAVIA Sync\nPhilips : EasyLink\nSharp : Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Configurer les boutons de la télécommande"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Contrôlez le volume, l\'alimentation, les entrées sur les téléviseurs, les récepteurs et les barres de son"</string>
-    <string name="settings_fmr_title" msgid="7188079231958724417">"Localiser ma télécommande"</string>
-    <string name="settings_fmr_description" msgid="5899816382798080359">"Faites jouer un son pour localiser votre télécommande Google TV si elle est égarée"</string>
-    <string name="fmr_slice_description" msgid="4045105659035601638">"Appuyez sur le bouton à l\'arrière de votre Google TV Streamer pour faire jouer un son sur votre télécommande pendant 30 secondes. Cette opération fonctionne uniquement avec les télécommandes vocales pour Google TV Streamer.\n\nPour couper le son, appuyez sur n\'importe quel bouton de votre télécommande."</string>
-    <string name="fmr_suppress_title" msgid="5643342716043460636">"Désactiver le bouton physique"</string>
-    <string name="fmr_suppress_subtitle" msgid="4555277795253849722">"Le fait d\'appuyer sur un bouton de votre appareil coupera le son sur votre télécommande"</string>
-    <string name="fmr_play_sound" msgid="8432918663207674576">"Faire jouer un son"</string>
+    <!-- no translation found for settings_find_my_remote_title (618883575610472525) -->
+    <skip />
+    <!-- no translation found for settings_find_my_remote_description (2434088262598422577) -->
+    <skip />
+    <!-- no translation found for find_my_remote_slice_description (4802810369433859327) -->
+    <skip />
+    <!-- no translation found for find_my_remote_integration_hint (3962827321568773142) -->
+    <skip />
+    <!-- no translation found for find_my_remote_play_sound (1799877650759138251) -->
+    <skip />
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Niveau de charge de la pile : %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Accessoires"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Télécommande"</string>
@@ -81,6 +85,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"Se connecter"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Renommer"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"Oublier"</string>
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"Utiliser pour l\'audio du téléviseur"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Connecté"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Déconnecté"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Contrôle de l\'appareil"</string>

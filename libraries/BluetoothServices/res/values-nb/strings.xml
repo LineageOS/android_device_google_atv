@@ -65,12 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Konfigurer fjernkontrollknapper"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Kontroller volumet og innenheter på TV-er, mottakere og lydplanker, og slå dem av og på"</string>
-    <string name="settings_fmr_title" msgid="7188079231958724417">"Finn fjernkontrollen min"</string>
-    <string name="settings_fmr_description" msgid="5899816382798080359">"Spill av en lyd for å finne Google TV-fjernkontrollen hvis du ikke finner den"</string>
-    <string name="fmr_slice_description" msgid="4045105659035601638">"Trykk på knappen på baksiden av Google TV Streamer for å spille av en lyd på fjernkontrollen i 30 sekunder. Dette fungerer bare på stemmestyrte Google TV Streamer-fjernkontroller.\n\nFor å stoppe lyden, trykk på hvilken som helst knapp på fjernkontrollen."</string>
-    <string name="fmr_suppress_title" msgid="5643342716043460636">"Deaktiver den fysiske knappen"</string>
-    <string name="fmr_suppress_subtitle" msgid="4555277795253849722">"En lyd spilles ikke lenger av på fjernkontrollen når du trykker på enhetsknappen"</string>
-    <string name="fmr_play_sound" msgid="8432918663207674576">"Spill av lyd"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Finn fjernkontrollen min"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Spill av en lyd for å finne Google TV-fjernkontrollen hvis du ikke finner den"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Trykk på knappen på baksiden av Google TV Streamer for å spille av en lyd på fjernkontrollen i 30 sekunder. Dette fungerer bare på stemmestyrte Google TV Streamer-fjernkontroller.\n\nFor å stoppe lyden, trykk på hvilken som helst knapp på fjernkontrollen."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"Når Finn fjernkontrollen min er slått på, kan du spille av en lyd for å finne Google TV-fjernkontrollen din hvis du ikke finner den."</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Spill av lyd"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Batterinivå: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Tilbehør"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Fjernkontroll"</string>
@@ -81,6 +80,8 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"Koble til"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Gi nytt navn"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"Glem"</string>
+    <!-- no translation found for bluetooth_toggle_active_audio_output (494557568422711885) -->
+    <skip />
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Tilkoblet"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Frakoblet"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Enhetskontroll"</string>
