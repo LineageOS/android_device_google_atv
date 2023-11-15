@@ -65,16 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Tālvadības ierīces pogu iestatīšana"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Kontrolējiet skaļumu, ieslēgšanu un izslēgšanu, kā arī televizoru, uztvērēju un skaņas joslu ieejas avotus."</string>
-    <!-- no translation found for settings_find_my_remote_title (618883575610472525) -->
-    <skip />
-    <!-- no translation found for settings_find_my_remote_description (2434088262598422577) -->
-    <skip />
-    <!-- no translation found for find_my_remote_slice_description (4802810369433859327) -->
-    <skip />
-    <!-- no translation found for find_my_remote_integration_hint (3962827321568773142) -->
-    <skip />
-    <!-- no translation found for find_my_remote_play_sound (1799877650759138251) -->
-    <skip />
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Tālvadības ierīces atrašana"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Atskaņojiet signālu, lai atrastu savu Google TV tālvadības ierīci, ja tā ir pazudusi."</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Nospiediet pogu Google TV straumētāja aizmugurē, lai 30 sekundes atskaņotu tālvadības ierīces signālu. Tas darbojas tikai Google TV straumētāja balss tālvadības ierīcē.\n\nLai apturētu signāla atskaņošanu, nospiediet jebkuru tālvadības ierīces pogu."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"Kad ir iespējota funkcija “Atrast tālvadības ierīci”, varat atskaņot signālu, lai atrastu savu Google TV tālvadības ierīci, ja tā ir pazudusi."</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Atskaņot signālu"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Akumulatora uzlādes līmenis: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Aksesuāri"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Tālvadības ierīce"</string>
@@ -85,8 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"Izveidot savienojumu"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Pārdēvēt"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"Aizmirst"</string>
-    <!-- no translation found for bluetooth_toggle_active_audio_output (494557568422711885) -->
-    <skip />
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"Izmantot TV audio izvadei"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Izveidots savienojums"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Savienojums pārtraukts"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Ierīces vadība"</string>

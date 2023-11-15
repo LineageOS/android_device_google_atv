@@ -65,16 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung：Anynet+\nLG：SimpLink\nSony：BRAVIA Sync\nPhilips：EasyLink\nSharp：Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"設定遙控器按鈕"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"控制電視、接收器和 Soundbar 揚聲器的音量、電源開關和訊號源"</string>
-    <!-- no translation found for settings_find_my_remote_title (618883575610472525) -->
-    <skip />
-    <!-- no translation found for settings_find_my_remote_description (2434088262598422577) -->
-    <skip />
-    <!-- no translation found for find_my_remote_slice_description (4802810369433859327) -->
-    <skip />
-    <!-- no translation found for find_my_remote_integration_hint (3962827321568773142) -->
-    <skip />
-    <!-- no translation found for find_my_remote_play_sound (1799877650759138251) -->
-    <skip />
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"尋找遙控器"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"播放音效以助你尋找位置不明的 Google TV 遙控器"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"按一下 Google TV Streamer 背面的按鈕，即可在遙控器上播放音效 30 秒。此功能只適用於 Google TV Streamer 語音遙控器。\n\n如要停止播放音效，請按一下遙控器上的任何按鈕。"</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"啟用「尋找遙控器」後，便可透過播放音效尋找位置不明的 Google TV 遙控器。"</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"播放音效"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"電量：%1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"配件"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"遙控器"</string>
@@ -85,8 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"連線"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"重新命名"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"忘記"</string>
-    <!-- no translation found for bluetooth_toggle_active_audio_output (494557568422711885) -->
-    <skip />
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"用於電視音訊"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"已連接"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"已中斷連接"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"裝置控制"</string>

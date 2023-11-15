@@ -65,16 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"रिमोटका बटनहरू सेटअप गर्नुहोस्"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"टिभी, रिसिभर र साउन्डबारको भोल्युम, पावर र इनपुट नियन्त्रण गर्नुहोस्"</string>
-    <!-- no translation found for settings_find_my_remote_title (618883575610472525) -->
-    <skip />
-    <!-- no translation found for settings_find_my_remote_description (2434088262598422577) -->
-    <skip />
-    <!-- no translation found for find_my_remote_slice_description (4802810369433859327) -->
-    <skip />
-    <!-- no translation found for find_my_remote_integration_hint (3962827321568773142) -->
-    <skip />
-    <!-- no translation found for find_my_remote_play_sound (1799877650759138251) -->
-    <skip />
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"मेरो रिमोट भेट्टाइयोस्"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"आफ्नो Google TV रिमोट हराएका खण्डमा उक्त रिमोट भेट्टाउन कुनै साउन्ड प्ले गर्नुहोस्"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"रिमोटमा ३० सेकेन्डसम्म साउन्ड प्ले गर्न Google TV स्ट्रिमरको पछाडिपट्टि रहेको बटन थिच्नुहोस्। Google TV स्ट्रिमर भ्वाइस रिमोटमा मात्र यसो गर्न सकिन्छ।\n\nसाउन्ड बन्द गर्न रिमोटमा भएको कुनै पनि बटन थिच्नुहोस्।"</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"\"मेरो रिमोट भेट्टाइयोस्\" अन गरिएका बेला तपाईंको Google TV रिमोट हराएका खण्डमा तपाईं उक्त रिमोट भेट्टाउन कुनै साउन्ड प्ले गर्न सक्नुहुन्छ।"</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"साउन्ड प्ले गर्नुहोस्"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"ब्याट्रीको स्तर: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"सहायक सामग्रीहरू"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"रिमोट कन्ट्रोल"</string>
@@ -85,8 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"कनेक्ट गर्नुहोस्"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"नाम बदल्नुहोस्"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"बिर्सनुहोस्"</string>
-    <!-- no translation found for bluetooth_toggle_active_audio_output (494557568422711885) -->
-    <skip />
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"टिभीको अडियोका लागि प्रयोग गर्नुहोस्"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"कनेक्ट गरिएको छ"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"डिस्कनेक्ट भयो"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"यन्त्रको नियन्त्रण"</string>

@@ -80,8 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"કનેક્ટ કરો"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"નામ બદલો"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"ભૂલી જાઓ"</string>
-    <!-- no translation found for bluetooth_toggle_active_audio_output (494557568422711885) -->
-    <skip />
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"ટીવીના ઑડિયો માટે ઉપયોગ કરો"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"કનેક્ટ કરેલું"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"ડિસ્કનેક્ટ કર્યું"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"ડિવાઇસ નિયંત્રણ"</string>

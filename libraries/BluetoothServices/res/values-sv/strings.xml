@@ -80,8 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"Anslut"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Byt namn"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"Glöm"</string>
-    <!-- no translation found for bluetooth_toggle_active_audio_output (494557568422711885) -->
-    <skip />
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"Använd för tv-ljud"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Ansluten"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Frånkopplad"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Enhetskontroll"</string>

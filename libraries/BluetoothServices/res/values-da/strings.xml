@@ -65,16 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Konfigurer fjernbetjeningsknapper"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Styr lydstyrke, afbryderknap og indgangskilde på fjernsyn, modtagere og soundbars"</string>
-    <!-- no translation found for settings_find_my_remote_title (618883575610472525) -->
-    <skip />
-    <!-- no translation found for settings_find_my_remote_description (2434088262598422577) -->
-    <skip />
-    <!-- no translation found for find_my_remote_slice_description (4802810369433859327) -->
-    <skip />
-    <!-- no translation found for find_my_remote_integration_hint (3962827321568773142) -->
-    <skip />
-    <!-- no translation found for find_my_remote_play_sound (1799877650759138251) -->
-    <skip />
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Find min fjernbetjening"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Afspil en lyd for at finde din fjernbetjening til Google TV, hvis den er blevet væk"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Tryk på knappen på bagsiden af din fjernbetjening til streaming på Google TV for at afspille en lyd på fjernbetjeningen i 30 sekunder. Dette virker kun på en Voice Remote til streaming på Google TV.\n\nTryk på en vilkårlig knap på fjernbetjeningen for at stoppe lyden."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"Når Find min fjernbetjening er aktiveret, kan du afspille en lyd for at finde din fjernbetjening til Google TV, hvis den er blevet væk."</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Afspil lyd"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Batteriniveau: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Tilbehør"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Fjernbetjening"</string>
@@ -85,8 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"Opret forbindelse"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Omdøb"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"Glem"</string>
-    <!-- no translation found for bluetooth_toggle_active_audio_output (494557568422711885) -->
-    <skip />
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"Brug som lydoutput på fjernsyn"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Forbundet"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Afbrudt"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Enhedsstyring"</string>
