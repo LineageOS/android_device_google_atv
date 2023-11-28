@@ -50,6 +50,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
@@ -432,22 +433,48 @@ public class MdnsOffloadManagerService extends Service {
     }
 
     private class ConnectivityManagerNetworkCallback extends ConnectivityManager.NetworkCallback {
+        private Map<Network, LinkProperties> mLinkPropertiesMap = new ConcurrentHashMap<>();
+
         @Override
-        public void onAvailable(@NonNull Network network) {
-            LinkProperties linkProperties = mConnectivityManager.getLinkProperties(network);
-            String iface = linkProperties.getInterfaceName();
+        public void onLinkPropertiesChanged(Network network,
+                LinkProperties linkProperties) {
+            // We only want to know the interface name of a network. This method is
+            // called right after onAvailable() or any other important change during the lifecycle
+            // of the network.
+            LinkProperties previousProperties = mLinkPropertiesMap.put(network, linkProperties);
             mHandler.post(() -> {
-                InterfaceOffloadManager offloadManager = getInterfaceOffloadManager(iface);
+                if (previousProperties != null &&
+                        !previousProperties.getInterfaceName().equals(
+                                linkProperties.getInterfaceName())) {
+                    // This means that the interface changed names, which may happen
+                    // but very rarely.
+                    InterfaceOffloadManager offloadManager =
+                            getInterfaceOffloadManager(previousProperties.getInterfaceName());
+                    offloadManager.onNetworkLost();
+                }
+
+                // We trigger an onNetworkAvailable even if the existing is the same in case
+                // anything needs to be refreshed due to the LinkProperties change.
+                InterfaceOffloadManager offloadManager =
+                        getInterfaceOffloadManager(linkProperties.getInterfaceName());
                 offloadManager.onNetworkAvailable();
             });
+
         }
 
         @Override
         public void onLost(@NonNull Network network) {
-            LinkProperties linkProperties = mConnectivityManager.getLinkProperties(network);
-            String iface = linkProperties.getInterfaceName();
+            // Network object is guaranteed to match a network object from a previous
+            // onLinkPropertiesChanged() so the LinkProperties must be available to retrieve
+            // the associated iface.
+            LinkProperties previousProperties = mLinkPropertiesMap.remove(network);
+            if (previousProperties == null){
+                Log.w(TAG,"Network "+ network + " lost before being available.");
+                return;
+            }
             mHandler.post(() -> {
-                InterfaceOffloadManager offloadManager = getInterfaceOffloadManager(iface);
+                InterfaceOffloadManager offloadManager =
+                        getInterfaceOffloadManager(previousProperties.getInterfaceName());
                 offloadManager.onNetworkLost();
             });
         }
