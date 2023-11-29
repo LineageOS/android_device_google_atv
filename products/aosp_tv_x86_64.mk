@@ -58,7 +58,7 @@ PRODUCT_PACKAGES += \
 # All components inherited here go to vendor image
 #
 $(call inherit-product, device/google/atv/products/atv_emulator_vendor.mk)
-$(call inherit-product-if-exists, device/generic/goldfish/x86_64-vendor.mk)
+$(call inherit-product, device/generic/goldfish/board/emu64x/details.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/board/generic_x86_64/device.mk)
 
 ifeq (aosp_tv_x86_64,$(TARGET_PRODUCT))
