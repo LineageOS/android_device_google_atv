@@ -69,6 +69,7 @@ import android.util.Log;
 import androidx.test.filters.SmallTest;
 
 import com.android.tv.mdnsoffloadmanager.MdnsOffloadManagerService.Injector;
+import com.android.tv.mdnsoffloadmanager.util.WakeLockWrapper;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -120,6 +121,8 @@ public class MdnsOffloadManagerTest {
     Network mNetwork1;
     @Mock
     PackageManager mPackageManager;
+    @Mock
+    WakeLockWrapper mWakeLock;
     @Spy
     FakeMdnsOffloadService mVendorService = new FakeMdnsOffloadService();
     @Captor
@@ -182,6 +185,11 @@ public class MdnsOffloadManagerTest {
             @Override
             PowerManager.LowPowerStandbyPolicy getLowPowerStandbyPolicy() {
                 return mLowPowerStandbyPolicy;
+            }
+
+            @Override
+            WakeLockWrapper newWakeLock() {
+                return mWakeLock;
             }
 
             @Override

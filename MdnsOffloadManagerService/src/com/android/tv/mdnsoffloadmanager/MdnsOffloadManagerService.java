@@ -44,13 +44,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.VisibleForTesting;
 import androidx.annotation.WorkerThread;
 
+import com.android.tv.mdnsoffloadmanager.util.WakeLockWrapper;
+
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
@@ -76,7 +77,7 @@ public class MdnsOffloadManagerService extends Service {
     private OffloadWriter mOffloadWriter;
     private ConnectivityManager mConnectivityManager;
     private PackageManager mPackageManager;
-    private PowerManager.WakeLock mWakeLock;
+    private WakeLockWrapper mWakeLock;
 
     public MdnsOffloadManagerService() {
         this(new Injector());
@@ -121,9 +122,10 @@ public class MdnsOffloadManagerService extends Service {
             return mContext.getSystemService(PowerManager.class).getLowPowerStandbyPolicy();
         }
 
-        PowerManager.WakeLock newWakeLock() {
-            return mContext.getSystemService(PowerManager.class).newWakeLock(
-                    PowerManager.PARTIAL_WAKE_LOCK, TAG);
+        WakeLockWrapper newWakeLock() {
+            return new WakeLockWrapper(
+                    mContext.getSystemService(PowerManager.class)
+                            .newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG));
         }
 
         PackageManager getPackageManager() {
@@ -433,16 +435,15 @@ public class MdnsOffloadManagerService extends Service {
     }
 
     private class ConnectivityManagerNetworkCallback extends ConnectivityManager.NetworkCallback {
-        private Map<Network, LinkProperties> mLinkPropertiesMap = new ConcurrentHashMap<>();
+        private final Map<Network, LinkProperties> mLinkProperties = new HashMap<>();
 
         @Override
-        public void onLinkPropertiesChanged(Network network,
-                LinkProperties linkProperties) {
+        public void onLinkPropertiesChanged(Network network, LinkProperties linkProperties) {
             // We only want to know the interface name of a network. This method is
             // called right after onAvailable() or any other important change during the lifecycle
             // of the network.
-            LinkProperties previousProperties = mLinkPropertiesMap.put(network, linkProperties);
             mHandler.post(() -> {
+                LinkProperties previousProperties = mLinkProperties.put(network, linkProperties);
                 if (previousProperties != null &&
                         !previousProperties.getInterfaceName().equals(
                                 linkProperties.getInterfaceName())) {
@@ -459,20 +460,19 @@ public class MdnsOffloadManagerService extends Service {
                         getInterfaceOffloadManager(linkProperties.getInterfaceName());
                 offloadManager.onNetworkAvailable();
             });
-
         }
 
         @Override
         public void onLost(@NonNull Network network) {
-            // Network object is guaranteed to match a network object from a previous
-            // onLinkPropertiesChanged() so the LinkProperties must be available to retrieve
-            // the associated iface.
-            LinkProperties previousProperties = mLinkPropertiesMap.remove(network);
-            if (previousProperties == null){
-                Log.w(TAG,"Network "+ network + " lost before being available.");
-                return;
-            }
             mHandler.post(() -> {
+                // Network object is guaranteed to match a network object from a previous
+                // onLinkPropertiesChanged() so the LinkProperties must be available to retrieve
+                // the associated iface.
+                LinkProperties previousProperties = mLinkProperties.remove(network);
+                if (previousProperties == null){
+                    Log.w(TAG,"Network "+ network + " lost before being available.");
+                    return;
+                }
                 InterfaceOffloadManager offloadManager =
                         getInterfaceOffloadManager(previousProperties.getInterfaceName());
                 offloadManager.onNetworkLost();
