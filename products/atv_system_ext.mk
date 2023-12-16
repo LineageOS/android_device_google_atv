@@ -22,8 +22,11 @@ PRODUCT_PACKAGES += \
     TvSystemUI \
     TvFeedbackConsent \
     TvFrameworkPackageStubs \
-    TvSettings \
-    MdnsOffloadManagerService
+    TvSettings
+
+ifeq ($(MDNS_OFFLOAD_SUPPORT),true)
+    PRODUCT_PACKAGES += MdnsOffloadManagerService
+endif
 
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += device/google/atv/sepolicy/system_ext/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/google/atv/sepolicy/system_ext/private

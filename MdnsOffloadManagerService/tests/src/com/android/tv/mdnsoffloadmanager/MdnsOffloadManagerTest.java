@@ -18,6 +18,7 @@ package com.android.tv.mdnsoffloadmanager;
 
 import static android.net.NetworkCapabilities.TRANSPORT_ETHERNET;
 import static android.net.NetworkCapabilities.TRANSPORT_WIFI;
+
 import static com.android.tv.mdnsoffloadmanager.TestHelpers.SERVICE_AIRPLAY;
 import static com.android.tv.mdnsoffloadmanager.TestHelpers.SERVICE_ATV;
 import static com.android.tv.mdnsoffloadmanager.TestHelpers.SERVICE_GOOGLECAST;
@@ -27,6 +28,7 @@ import static com.android.tv.mdnsoffloadmanager.TestHelpers.makeLinkProperties;
 import static com.android.tv.mdnsoffloadmanager.TestHelpers.makeLowPowerStandbyPolicy;
 import static com.android.tv.mdnsoffloadmanager.TestHelpers.verifyOffloadedServices;
 import static com.android.tv.mdnsoffloadmanager.TestHelpers.verifyPassthroughQNames;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -67,6 +69,7 @@ import android.util.Log;
 import androidx.test.filters.SmallTest;
 
 import com.android.tv.mdnsoffloadmanager.MdnsOffloadManagerService.Injector;
+import com.android.tv.mdnsoffloadmanager.util.WakeLockWrapper;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -91,10 +94,10 @@ public class MdnsOffloadManagerTest {
 
     private static final String TAG = MdnsOffloadManagerTest.class.getSimpleName();
     private static final ComponentName VENDOR_SERVICE_COMPONENT =
-        ComponentName.unflattenFromString("test.vendor.offloadservice/.TestOffloadService");
+            ComponentName.unflattenFromString("test.vendor.offloadservice/.TestOffloadService");
     private static final String[] PRIORITY_LIST = {
-        "_googlecast._tcp.local.",
-        "_some._other._svc.local."
+            "_googlecast._tcp.local.",
+            "_some._other._svc.local."
     };
     private static final String IFC_0 = "imaginaryif0";
     private static final String IFC_1 = "imaginaryif1";
@@ -104,16 +107,28 @@ public class MdnsOffloadManagerTest {
     private static final String APP_PACKAGE_0 = "first.app.package";
     private static final String APP_PACKAGE_1 = "some.other.package";
 
-    @Mock Resources mResources;
-    @Mock IBinder mClientBinder0;
-    @Mock IBinder mClientBinder1;
-    @Mock ConnectivityManager mConnectivityManager;
-    @Mock Network mNetwork0;
-    @Mock Network mNetwork1;
-    @Mock PackageManager mPackageManager;
-    @Spy FakeMdnsOffloadService mVendorService = new FakeMdnsOffloadService();
-    @Captor ArgumentCaptor<NetworkCallback> mNetworkCallbackCaptor;
-    @Captor ArgumentCaptor<IBinder.DeathRecipient> mDeathRecipientCaptor;
+    @Mock
+    Resources mResources;
+    @Mock
+    IBinder mClientBinder0;
+    @Mock
+    IBinder mClientBinder1;
+    @Mock
+    ConnectivityManager mConnectivityManager;
+    @Mock
+    Network mNetwork0;
+    @Mock
+    Network mNetwork1;
+    @Mock
+    PackageManager mPackageManager;
+    @Mock
+    WakeLockWrapper mWakeLock;
+    @Spy
+    FakeMdnsOffloadService mVendorService = new FakeMdnsOffloadService();
+    @Captor
+    ArgumentCaptor<NetworkCallback> mNetworkCallbackCaptor;
+    @Captor
+    ArgumentCaptor<IBinder.DeathRecipient> mDeathRecipientCaptor;
 
     TestLooper mTestLooper;
     ServiceConnection mCapturedVendorServiceConnection;
@@ -130,9 +145,9 @@ public class MdnsOffloadManagerTest {
         mTestLooper = new TestLooper();
         MockitoAnnotations.initMocks(this);
         when(mResources.getString(eq(R.string.config_mdnsOffloadVendorServiceComponent)))
-            .thenReturn(VENDOR_SERVICE_COMPONENT.flattenToShortString());
+                .thenReturn(VENDOR_SERVICE_COMPONENT.flattenToShortString());
         when(mResources.getStringArray(eq(R.array.config_mdnsOffloadPriorityQnames)))
-            .thenReturn(PRIORITY_LIST);
+                .thenReturn(PRIORITY_LIST);
         when(mPackageManager.getPackageUid(eq(APP_PACKAGE_0), anyInt())).thenReturn(APP_UID_0);
         when(mPackageManager.getPackageUid(eq(APP_PACKAGE_1), anyInt())).thenReturn(APP_UID_1);
         mLowPowerStandbyPolicy = makeLowPowerStandbyPolicy(APP_PACKAGE_0);
@@ -170,6 +185,11 @@ public class MdnsOffloadManagerTest {
             @Override
             PowerManager.LowPowerStandbyPolicy getLowPowerStandbyPolicy() {
                 return mLowPowerStandbyPolicy;
+            }
+
+            @Override
+            WakeLockWrapper newWakeLock() {
+                return mWakeLock;
             }
 
             @Override
@@ -220,7 +240,7 @@ public class MdnsOffloadManagerTest {
 
     private void bindVendorService() {
         mCapturedVendorServiceConnection.onServiceConnected(
-            VENDOR_SERVICE_COMPONENT, mVendorService);
+                VENDOR_SERVICE_COMPONENT, mVendorService);
         mTestLooper.dispatchAll();
     }
 
@@ -230,9 +250,8 @@ public class MdnsOffloadManagerTest {
     }
 
     private void registerNetwork(Network network, String networkInterface) {
-        when(mConnectivityManager.getLinkProperties(eq(network))).thenReturn(
+        mNetworkCallbackCaptor.getValue().onLinkPropertiesChanged(network,
                 makeLinkProperties(networkInterface));
-        mNetworkCallbackCaptor.getValue().onAvailable(network);
         mTestLooper.dispatchAll();
     }
 
@@ -358,7 +377,8 @@ public class MdnsOffloadManagerTest {
         mOffloadManagerBinder.addProtocolResponses(IFC_0, SERVICE_GOOGLECAST, mClientBinder0);
         mTestLooper.dispatchAll();
 
-        verifyOffloadedServices(mVendorService, IFC_0, SERVICE_GOOGLECAST, SERVICE_ATV, SERVICE_GTV);
+        verifyOffloadedServices(mVendorService, IFC_0, SERVICE_GOOGLECAST, SERVICE_ATV,
+                SERVICE_GTV);
     }
 
     @Test
@@ -377,7 +397,7 @@ public class MdnsOffloadManagerTest {
     @Test
     public void priorityListNamesAreCanonicalized() throws RemoteException {
         when(mResources.getStringArray(eq(R.array.config_mdnsOffloadPriorityQnames)))
-            .thenReturn(new String[]{"_googlecast._tcp.local"}); // Trailing dot is missing.
+                .thenReturn(new String[]{"_googlecast._tcp.local"}); // Trailing dot is missing.
         setupDefaultOffloadManager();
         mOffloadManagerBinder.addProtocolResponses(IFC_0, SERVICE_ATV, mClientBinder0);
         mOffloadManagerBinder.addProtocolResponses(IFC_0, SERVICE_GOOGLECAST, mClientBinder0);
@@ -388,7 +408,7 @@ public class MdnsOffloadManagerTest {
 
     @Test
     public void addingToPassthroughList_setsPassthroughBehaviorAndPropagatesToVendorService()
-        throws RemoteException {
+            throws RemoteException {
         setupDefaultOffloadManager();
         mOffloadManagerBinder.addToPassthroughList(IFC_0, "atv", mClientBinder0);
         mTestLooper.dispatchAll();
@@ -458,7 +478,7 @@ public class MdnsOffloadManagerTest {
 
     @Test
     public void removingPassthroughQNameHoldingInvalidClientBinder_doesNothing()
-        throws RemoteException {
+            throws RemoteException {
         setupDefaultOffloadManager();
         mOffloadManagerBinder.addToPassthroughList(IFC_0, "atv", mClientBinder0);
         mOffloadManagerBinder.addToPassthroughList(IFC_0, "gtv", mClientBinder0);
@@ -473,7 +493,7 @@ public class MdnsOffloadManagerTest {
 
     @Test
     public void removingAllEntriesFromPassthroughList_disablesPassthroughBehavior()
-        throws RemoteException {
+            throws RemoteException {
         setupDefaultOffloadManager();
         mOffloadManagerBinder.addToPassthroughList(IFC_0, "atv", mClientBinder0);
         mOffloadManagerBinder.addToPassthroughList(IFC_0, "gtv", mClientBinder0);
