@@ -26,6 +26,7 @@ import android.util.Log;
 
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
 import com.android.settingslib.bluetooth.LocalBluetoothManager;
+import com.android.settingslib.bluetooth.LocalBluetoothProfile;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -308,5 +309,20 @@ public class BluetoothUtils {
             }
         }
         return false;
+    }
+
+    /**
+     * Returns true if the CachedBluetoothDevice supports an audio profile (A2DP for now),
+     * false otherwise.
+     */
+    public static boolean hasAudioProfile(CachedBluetoothDevice cachedDevice) {
+      if (cachedDevice != null) {
+          for (LocalBluetoothProfile profile : cachedDevice.getProfiles()) {
+              if (profile.getProfileId() == BluetoothProfile.A2DP) {
+                  return true;
+              }
+          }
+      }
+      return false;
     }
 }

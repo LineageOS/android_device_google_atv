@@ -23,4 +23,7 @@ android_library {
     resource_dirs: ["res"],
     manifest: "AndroidManifest.xml",
     sdk_version: "system_current",
+    lint: {
+        baseline_filename: "lint-baseline.xml",
+    },
 }
