@@ -32,7 +32,7 @@
     <string name="settings_bt_update_failed" msgid="2593228509570726064">"Imeshindwa kusasisha kidhibiti mbali"</string>
     <string name="settings_bt_update_error" msgid="6267154862961568780">"Tumekumbwa na hitilafu fulani wakati wa kusasisha kidhibiti chako cha mbali. Tafadhali jaribu tena."</string>
     <string name="settings_bt_update_please_wait" msgid="8029641271132945499">"Tafadhali subiri"</string>
-    <string name="settings_bt_update_needs_repair" msgid="1310917691218455907">"Oanisha tena kidhibiti chako cha mbali"</string>
+    <string name="settings_bt_update_needs_repair" msgid="1310917691218455907">"Unganisha tena kidhibiti chako cha mbali"</string>
     <string name="settings_enabled" msgid="431464375814187683">"Imewashwa"</string>
     <string name="settings_disabled" msgid="1459717258643130682">"Imezimwa"</string>
     <string name="settings_remote_battery_level_label" msgid="3644348379742819020">"Kiwango cha chaji kwenye betri"</string>
@@ -75,7 +75,7 @@
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Kidhibiti cha Mbali"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Imeunganisha"</string>
     <string name="settings_devices_paired" msgid="4460141776955368574">"Vilivyounganishwa awali"</string>
-    <string name="settings_pair_remote" msgid="7566753084479902759">"Oanisha kidhibiti cha mbali au kifuasi"</string>
+    <string name="settings_pair_remote" msgid="7566753084479902759">"Unganisha kidhibiti cha mbali au kifuasi"</string>
     <string name="bluetooth_disconnect" msgid="1385608885917484057">"Ondoa"</string>
     <string name="bluetooth_connect" msgid="6283971929092004620">"Unganisha"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Badilisha jina"</string>
