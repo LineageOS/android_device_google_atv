@@ -10,6 +10,14 @@ prebuilt_etc {
     filename_from_src: true,
 }
 
+prebuilt_etc {
+    name: "android.hardware.mdns_offload.prebuild.xml",
+    soc_specific: true,
+    sub_dir: "permissions",
+    src: "android.hardware.mdns_offload.xml",
+    filename_from_src: true,
+}
+
 android_app {
     name: "MdnsOffloadManagerService",
     srcs: [
@@ -27,5 +35,8 @@ android_app {
         "device.google.atv.mdns_offload_manager-aidl-V1-java",
     ],
     certificate: "platform",
-    required: ["privapp_permissions_MdnsOffloadManagerService"],
+    required: [
+        "privapp_permissions_MdnsOffloadManagerService",
+        "android.hardware.mdns_offload.prebuild.xml"
+    ],
 }
