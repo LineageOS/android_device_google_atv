@@ -80,7 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"Opret forbindelse"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Omdøb"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"Glem"</string>
-    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"Brug som lydoutput på fjernsyn"</string>
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"Brug til TV-lyd"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Forbundet"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Afbrudt"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Enhedsstyring"</string>

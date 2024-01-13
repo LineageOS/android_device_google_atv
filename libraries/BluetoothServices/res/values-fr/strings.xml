@@ -65,10 +65,10 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung : Anynet+\nLG : SimpLink\nSony : BRAVIA Sync\nPhilips : EasyLink\nSharp : Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Configurer les boutons de la télécommande"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Contrôlez le volume, l\'alimentation et le mode d\'entrée sur vos téléviseurs, vos récepteurs et vos barres de son"</string>
-    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Localiser ma télécommande"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Trouver ma télécommande"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Émettre un son pour localiser votre télécommande Google TV si vous l\'avez égarée"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Appuyez sur le bouton à l\'arrière de votre Google TV Streamer pour que votre télécommande émette un son pendant 30 secondes. Cela ne fonctionne que sur une télécommande vocale Google TV Streamer.\n\nPour arrêter le son, appuyez sur n\'importe quel bouton de la télécommande."</string>
-    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"Lorsque Localiser ma télécommande est activé, vous pouvez émettre un son pour localiser votre télécommande Google TV si vous l\'avez égarée."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"Lorsque \"Trouver ma télécommande\" est activé, vous pouvez émettre un son pour localiser votre télécommande Google TV si vous l\'avez égarée."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Émettre un son"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Niveau de la batterie : %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Accessoires"</string>
