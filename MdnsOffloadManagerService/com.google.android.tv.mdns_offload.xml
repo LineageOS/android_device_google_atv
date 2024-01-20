@@ -15,5 +15,5 @@
 -->
 <!-- Adds the feature indicating support for mDNS Offload -->
 <permissions>
-    <feature name="android.hardware.mdns_offload" />
+    <feature name="com.google.android.tv.mdns_offload" />
 </permissions>

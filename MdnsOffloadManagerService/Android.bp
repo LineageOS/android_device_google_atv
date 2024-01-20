@@ -11,10 +11,10 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "android.hardware.mdns_offload.prebuild.xml",
+    name: "com.google.android.tv.mdns_offload.xml",
     soc_specific: true,
     sub_dir: "permissions",
-    src: "android.hardware.mdns_offload.xml",
+    src: "com.google.android.tv.mdns_offload.xml",
     filename_from_src: true,
 }
 
@@ -37,6 +37,6 @@ android_app {
     certificate: "platform",
     required: [
         "privapp_permissions_MdnsOffloadManagerService",
-        "android.hardware.mdns_offload.prebuild.xml"
+        "com.google.android.tv.mdns_offload.xml"
     ],
 }
