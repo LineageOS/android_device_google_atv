@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# Declare here to not install modules which are not supported on TV
+PRODUCT_IS_ATV := true
+
 #
 # All components inherited here go to system image
 #
