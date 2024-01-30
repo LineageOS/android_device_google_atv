@@ -68,7 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Find my remote"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Play a sound to locate your Google TV remote if it\'s misplaced"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Press the button at the back of your Google TV Streamer to play a sound on your remote for 30 seconds. This only works on a Google TV Streamer Voice Remote.\n\nTo stop the sound, press any button on your remote."</string>
-    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"When Find my remote is enabled, you can play a sound to locate your Google TV remote if it\'s misplaced."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"When Find my remote is enabled, you can play a sound to locate your Google TV Streamer Voice Remote if it\'s misplaced."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Play sound"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Battery level: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Accessories"</string>
