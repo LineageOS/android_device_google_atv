@@ -64,6 +64,7 @@ import android.os.Looper;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.provider.Settings;
+import android.text.TextUtils;
 import android.util.ArrayMap;
 import android.util.Log;
 
@@ -372,6 +373,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
 
         // Adding the remote buttons settings at the bottom
         updateAxelSlice(psb);
+        updateCustomSlice(psb);
         updateFindMyRemoteSlice(psb);
     }
 
@@ -398,6 +400,15 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 .setSubtitle(getString(R.string.settings_axel_description))
                 .setTargetSliceUri(SlicesUtil.AXEL_SLICE_URI.toString());
         psb.addPreference(axelPref);
+    }
+
+    private void updateCustomSlice(PreferenceSliceBuilder psb) {
+        String customUri = getString(R.string.custom_bluetooth_slice_provider_uri);
+        if (TextUtils.isEmpty(customUri)) {
+            return;
+        }
+        RowBuilder customPref = new RowBuilder().setTargetSliceUri(customUri);
+        psb.addEmbeddedPreference(customPref);
     }
 
     private void updateFindMyRemoteSlice(PreferenceSliceBuilder psb) {

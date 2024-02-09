@@ -60,6 +60,9 @@
 
   <bool name="cec_settings_enabled">true</bool>
   <bool name="axel_settings_enabled">false</bool>
+
+  <string name="custom_bluetooth_slice_provider_uri" translatable="false" />
+
   <!--
     Whether the ATV integrates the Find My Remote functionality with the on-device button.
     If it does, the integration should respect the value of
