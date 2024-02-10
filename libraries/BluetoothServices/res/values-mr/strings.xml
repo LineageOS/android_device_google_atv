@@ -21,7 +21,7 @@
     <string name="battery_level_critical" msgid="1217236822824234202">"महत्त्वाचे"</string>
     <string name="battery_level_low" msgid="8156936236696805171">"कमी"</string>
     <string name="battery_level_good" msgid="529772292250195778">"चांगले"</string>
-    <string name="settings_bt_confirm_update" msgid="7490528407190318108">"रिमोटचे अपडेट कंफर्म करा"</string>
+    <string name="settings_bt_confirm_update" msgid="7490528407190318108">"रिमोटचे अपडेट कन्फर्म करा"</string>
     <string name="settings_bt_update_summary" msgid="137113561617823800">"अपडेटच्या दरम्यान तुमचा रिमोट काही वेळेसाठी डिस्कनेक्ट होऊ शकतो."</string>
     <string name="settings_continue" msgid="5640776697820481568">"पुढे सुरू ठेवा"</string>
     <string name="settings_cancel" msgid="1284029950430684039">"रद्द करा"</string>
