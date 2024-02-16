@@ -61,7 +61,7 @@
     <string name="settings_bt_rename" msgid="477643459806883336">"Cambiar el nombre del dispositivo"</string>
     <string name="settings_hdmi_cec" msgid="7945299353290226128">"HDMI‑CEC"</string>
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"Habilitar HDMI‑CEC"</string>
-    <string name="settings_cec_explain" msgid="282126756909187653">"HDMI-CEC te permite controlar y activar o desactivar automáticamente otros dispositivos HDMI-CEC habilitados con un solo mando.\n\nNota: HDMI-CEC debe estar habilitado en tu TV y otros dispositivos HDMI. Los fabricantes suelen usar diferentes nombres para HDMI-CEC, como:"</string>
+    <string name="settings_cec_explain" msgid="282126756909187653">"HDMI-CEC te permite controlar y activar o desactivar automáticamente otros dispositivos habilitados con HDMI-CEC con un solo mando.\n\nNota: HDMI-CEC debe estar habilitado en tu TV y otros dispositivos HDMI. Los fabricantes suelen usar diferentes nombres para HDMI-CEC, como:"</string>
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Configurar botones del mando"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Controlar el volumen, el encendido y la fuente de entrada de televisiones, receptores AV y barras de sonido"</string>
