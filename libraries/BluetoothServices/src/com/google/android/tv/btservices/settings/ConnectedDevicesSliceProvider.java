@@ -462,7 +462,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         Bundle extras = new Bundle();
         Intent i = null;
         // Update "update preference".
-        if (BluetoothUtils.isOfficialRemote(context, device)) {
+        if (BluetoothUtils.supportBtDeviceServiceUpdate(context, device)) {
             i = new Intent(context, ResponseActivity.class);
             RowBuilder updatePref = new RowBuilder().setKey(KEY_UPDATE);
             ResponseFragment.prepareArgs(
