@@ -65,6 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Tasten der Fernbedienung einrichten"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Lautstärke, Ein/Aus und Eingang auf Fernsehern, Receivern und Soundbars steuern"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Fernbedienung finden"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Du kannst auf deiner Google TV-Fernbedienung einen Ton wiedergeben lassen, wenn du sie verlegt hast"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Drück die Taste auf der Rückseite deines Google TV Streamers, um 30 Sekunden lang einen Ton auf deiner Fernbedienung wiedergeben zu lassen. Dafür ist eine Google TV Streamer-Sprachfernbedienung erforderlich.\n\nDrücke zum Beenden der Wiedergabe eine beliebige Taste auf deiner Fernbedienung."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"Wenn die Funktion „Fernbedienung finden“ aktiviert ist, kannst du einen Ton abspielen, um deine Google TV-Fernbedienung wiederzufinden, wenn du sie verlegt hast."</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Ton abspielen"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Akkustand: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Zubehör"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Fernbedienung"</string>
@@ -75,6 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"Verbinden"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Umbenennen"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"Entfernen"</string>
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"Für TV-Audio verwenden"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Verbunden"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Nicht verbunden"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Gerätesteuerung"</string>

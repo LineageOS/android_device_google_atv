@@ -65,6 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Pult tugmalarini sozlash"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Televizor, resiver va saundbarlardagi tovush balandligi, quvvat va manbalarni boshqarish"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Pultimni top"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Google TV pulti joyida boʻlmasa, uni topish uchun jiringlating"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Pultingizni 30 soniya jiringlatish uchun Google TV Streamer orqasidagi tugmani bosing. Bu faqat Google TV Streamer ovozli boshqaruv pultida ishlaydi.\n\nSignalni toʻxtatish uchun pultdagi biror tugmani bosing."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"Pultimni top funksiyasi yoniq boʻlsa, yoʻqolgan Google TV pultini ovozli signal orqali topish mumkin."</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Signalni ijro etish"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Batareya quvvati: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Aksessuarlar"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Masofaviy boshqaruv"</string>
@@ -75,6 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"Ulash"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Qayta nomlash"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"Olib tashlash"</string>
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"TV audiosi uchun foydalanish"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Ulandi"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Uzildi"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Qurilma boshqaruvi"</string>

@@ -65,6 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Пульттун баскычтарын тууралоо"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Сыналгыларда, ресиверлерде жана үн такталарында үндүн катуулугун, күйгүзүү/өчүрүүнү жана киргизүүнү башкаруу"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Пультумду табуу"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Google TV\'нин пультун табуу үчүн үн чыгарыңыз"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Пультуңузда 30 секунд бою үн чыгаруу үчүн Google TV Streamer\'дин артындагы баскычты басыңыз. Бул Google TV Streamer\'дин үн пультунда гана иштейт.\n\nДобушту токтотуу үчүн пультуңуздун каалаган баскычын басыңыз."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"Пультумду табуу функциясы иштетилсе, Google TV\'нин пультун табуу үчүн анын үнүн чыгарууга болот."</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Үнүн чыгаруу"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Батареянын деңгээли: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Көмөкчү жабдыктар"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Пульт"</string>
@@ -75,6 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"Туташтыруу"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Аталышын өзгөртүү"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"Унутуу"</string>
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"TV\'нин аудиосу үчүн колдонуу"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Туташты"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Ажыратылды"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Түзмөктү башкаруу"</string>

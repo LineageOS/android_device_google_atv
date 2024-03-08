@@ -65,6 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Sediakan butang alat kawalan jauh"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Kawal kelantangan, kuasa, input pada TV, penerima dan bar bunyi"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Cari alat kawalan jauh saya"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Mainkan bunyi untuk mengesan alat kawalan jauh Google TV anda sekiranya tersalah letak"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Tekan butang di belakang Penyiar Strim Google TV anda untuk memainkan bunyi pada alat kawalan jauh anda selama 30 saat. Tindakan ini hanya berfungsi pada Alat Kawalan Jauh Suara Penyiar Strim Google TV.\n\nUntuk menghentikan bunyi, tekan mana-mana butang pada alat kawalan jauh anda."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"Apabila Cari alat kawalan jauh saya dihidupkan, anda boleh memainkan bunyi untuk mengesan alat kawalan jauh Google TV anda sekiranya tersalah letak."</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Mainkan bunyi"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Paras kuasa bateri: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Aksesori"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Alat Kawalan Jauh"</string>
@@ -75,6 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"Sambung"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Namakan semula"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"Lupakan"</string>
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"Gunakan untuk audio TV"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Disambungkan"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Diputuskan sambungan"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Kawalan peranti"</string>

@@ -65,6 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Set up remote buttons"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Control volume, power, input on TVs, receivers and soundbars"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Find my remote"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Play a sound to locate your Google TV remote if it\'s misplaced"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Press the button at the back of your Google TV Streamer to play a sound on your remote for 30 seconds. This only works on a Google TV Streamer Voice Remote.\n\nTo stop the sound, press any button on your remote."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"When Find my remote is enabled, you can play a sound to locate your Google TV remote if it\'s misplaced."</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Play sound"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Battery level: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Accessories"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Remote control"</string>
@@ -75,6 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"Connect"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Rename"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"Forget"</string>
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"Use for TV audio"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Connected"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Disconnected"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Device control"</string>

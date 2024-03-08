@@ -20,8 +20,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/media_system_ext.mk)
 PRODUCT_PACKAGES += \
     blur_sysprop_notifier \
     TvSystemUI \
+    TvFeedbackConsent \
     TvFrameworkPackageStubs \
     TvSettings
 
+ifeq ($(MDNS_OFFLOAD_SUPPORT),true)
+    PRODUCT_PACKAGES += MdnsOffloadManagerService
+endif
+
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += device/google/atv/sepolicy/system_ext/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/google/atv/sepolicy/system_ext/private
+
+# Always disable Compose features in SystemUI to avoid APK size increase.
+SYSTEMUI_USE_COMPOSE := false

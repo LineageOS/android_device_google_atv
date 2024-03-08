@@ -65,6 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"रिमोट के बटन सेट अप करें"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"आवाज़, पावर बटन, और इनपुट के विकल्पों को टीवी, AV रिसीवर, और साउंडबार पर कंट्रोल करें"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"मेरा रिमोट ढूंढें"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Google TV रिमोट खो जाने पर, उसका पता लगाने के लिए साउंड चलाएं"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"रिमोट पर 30 सेकंड तक साउंड चलाने के लिए, Google TV स्ट्रीम करने वाले डिवाइस के पीछे मौजूद बटन दबाएं. ऐसा सिर्फ़ Google TV स्ट्रीम करने वाले वॉइस रिमोट पर किया जा सकता है.\n\nसाउंड बंद करने के लिए, रिमोट के किसी भी बटन को दबाएं."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"अगर \'मेरा रिमोट ढूंढें\' सुविधा चालू है, तो Google TV रिमोट खो जाने पर उसका पता लगाने के लिए साउंड चलाया जा सकता है."</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"साउंड चलाएं"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"बैटरी लेवल: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"ऐक्सेसरी"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"रिमोट कंट्रोल"</string>
@@ -75,6 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"कनेक्ट करें"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"नाम बदलें"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"जानकारी हटाएं"</string>
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"टीवी पर ऑडियो चलाने के लिए इस्तेमाल करें"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"कनेक्ट हो गया"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"डिसकनेक्ट हो गया"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"डिवाइस कंट्रोल"</string>

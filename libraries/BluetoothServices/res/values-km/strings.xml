@@ -65,6 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung៖ Anynet+\nLG៖ SimpLink\nSony៖ BRAVIA Sync\nPhilips៖ EasyLink\nSharp៖ Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"រៀបចំ​ប៊ូតុងឧបករណ៍​បញ្ជា​ពី​ចម្ងាយ"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"គ្រប់គ្រងកម្រិតសំឡេង ថាមពល ប្រភពបញ្ចូលនៅលើទូរទស្សន៍ ឧបករណ៍ចាប់សំឡេងនិងរូបភាព និងរបារ​សំឡេង"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"ស្វែងរកឧបករណ៍​បញ្ជាពីចម្ងាយរបស់ខ្ញុំ"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"ចាក់សំឡេងណាមួយ ដើម្បីកំណត់ទីតាំងឧបករណ៍​បញ្ជាពីចម្ងាយសម្រាប់ Google TV របស់អ្នក ប្រសិនបើបាត់ឧបករណ៍នោះ"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"ចុចប៊ូតុងនៅផ្នែកខាងក្រោយនៃ Google TV Streamer របស់អ្នក ដើម្បីចាក់សំឡេងនៅលើឧបករណ៍​បញ្ជាពីចម្ងាយរយៈពេល 30 វិនាទី។ សកម្មភាពនេះដំណើរការនៅលើឧបករណ៍បញ្ជាដោយសំឡេងសម្រាប់ Google TV Streamer តែប៉ុណ្ណោះ។\n\nដើម្បីបញ្ឈប់សំឡេង សូមចុចប៊ូតុងណាមួយនៅលើឧបករណ៍​បញ្ជាពីចម្ងាយរបស់អ្នក។"</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"នៅពេលបើក \"រកឧបករណ៍​បញ្ជាពីចម្ងាយរបស់ខ្ញុំ\" អ្នកអាចចាក់សំឡេងណាមួយ ដើម្បីកំណត់ទីតាំងឧបករណ៍​បញ្ជាពីចម្ងាយសម្រាប់ Google TV របស់អ្នក ប្រសិនបើបាត់ឧបករណ៍នោះ។"</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"ចាក់​សំឡេង"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"កម្រិតថ្ម៖ %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"ឧបករណ៍​បន្ទាប់បន្សំ"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"ឧបករណ៍​បញ្ជា​ពី​ចម្ងាយ"</string>
@@ -75,6 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"ភ្ជាប់"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"ប្ដូរ​ឈ្មោះ"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"បំភ្លេច"</string>
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"ប្រើ​សម្រាប់​សំឡេង​ទូរទស្សន៍"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"បានភ្ជាប់"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"បាន​ដាច់"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"ការ​គ្រប់គ្រងឧបករណ៍"</string>

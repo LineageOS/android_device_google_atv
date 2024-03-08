@@ -27,7 +27,6 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.UserHandle;
 import android.os.UserManager;
-import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -39,7 +38,6 @@ import androidx.preference.PreferenceScreen;
 
 import com.android.settingslib.RestrictedLockUtils;
 import com.android.settingslib.RestrictedLockUtilsInternal;
-import com.android.settingslib.RestrictedPreference;
 
 import com.google.android.tv.btservices.BluetoothUtils;
 import com.google.android.tv.btservices.Configuration;
@@ -79,6 +77,7 @@ public class ConnectedDevicesPreferenceFragment extends LeanbackPreferenceFragme
     static final String KEY_DEVICE_CONTROL = "device_control";
     static final String KEY_CEC_TOGGLE = "cec_toggle";
     static final String KEY_AXEL_TOGGLE = "axel_toggle";
+    static final String KEY_FIND_MY_REMOTE_TOGGLE = "fmr_toggle";
 
     private static final Set<String> NON_BT_PREFERENCES =
             new HashSet<>(Arrays.asList(KEY_PAIR_REMOTE));

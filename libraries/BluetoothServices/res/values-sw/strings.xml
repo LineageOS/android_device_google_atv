@@ -65,6 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Weka mipangilio ya vitufe vya kidhibiti cha mbali"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Dhibiti sauti, nishati, vifaa vya kuingiza data kwenye TV, spika na vipokea sauti na video"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Tafuta kidhibiti changu cha mbali"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Cheza sauti ili upate kidhibiti chako cha mbali cha Google TV ikiwa kimepotea"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Bonyeza kitufe kilicho upande wa nyuma wa Kitiririshaji chako cha Google TV ili ucheze sauti kwenye kidhibiti chako cha mbali kwa sekunde 30. Kipengele hiki kinapatikana tu kwa Kiungambali cha Sauti cha Kitiririshaji cha Google TV.\n\nIli uzime sauti, bonyeza kitufe chochote kwenye kidhibiti chako cha mbali."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"Ukiwasha huduma ya Tafuta kidhibiti changu cha mbali, unaweza kucheza sauti ili kupata kilipo kidhibiti chako cha mbali cha Google TV kikipotea."</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Cheza sauti"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Kiasi cha chaji kwenye betri: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Vifuasi"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Kidhibiti cha Mbali"</string>
@@ -75,6 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"Unganisha"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Badilisha jina"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"Sahau"</string>
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"Tumia kwa maudhui ya sauti kwenye TV"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Imeunganishwa"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Imetenganishwa"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Kudhibiti kifaa"</string>

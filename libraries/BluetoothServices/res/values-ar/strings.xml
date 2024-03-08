@@ -65,6 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"إعداد أزرار جهاز التحكّم عن بُعد"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"التحكّم في مستوى الصوت وإمكانية الإيقاف أو التشغيل والإدخال في أجهزة التلفزيون وأجهزة الاستقبال ومكبّرات الصوت العمودي"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"العثور على جهاز التحكّم عن بُعد"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"يمكنك تشغيل صوت لتحديد موقع جهاز التحكّم في Google TV عن بُعد إذا لم يكن في مكانه."</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"اضغط على الزرّ المتوفّر في الجزء الخلفي من Google TV Streamer لتشغيل صوت على جهاز التحكّم عن بُعد لمدة 30 ثانية. لا تعمل هذه الميزة إلا على جهاز التحكّم الصوتي في Google TV Streamer.\n\nلإيقاف الصوت، اضغط على أي زرّ في جهاز التحكّم عن بُعد."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"عندما تكون ميزة \"العثور على جهاز التحكّم عن بُعد\" مفعَّلة، يمكنك تشغيل صوت لتحديد موقع جهاز التحكّم في Google TV عن بُعد إذا لم يكن في مكانه."</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"تشغيل الصوت"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"مستوى البطارية: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"الأجهزة الملحقة"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"جهاز التحكّم عن بُعد"</string>
@@ -75,6 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"توصيل"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"إعادة التسمية"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"حذف"</string>
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"استخدام البلوتوث لصوت التلفزيون"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"متّصل"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"غير متّصل"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"التحكم في الجهاز"</string>

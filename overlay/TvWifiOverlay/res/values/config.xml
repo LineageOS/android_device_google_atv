@@ -38,4 +38,10 @@
     If no spontaneous awakening happens at the end of the time window, the device is awakened to
     perform the scan.-->
     <bool translatable="false" name="config_wifiSwPnoEnabled">true</bool>
+
+    <!-- Boolean indicating performing a partial initial scan is enabled -->
+    <bool translatable="false" name="config_wifiEnablePartialInitialScan">true</bool>
+
+    <!-- Integer for maximum number of channels to use in initial partial scan. If equals to 0, means add all available channels for networks -->
+    <integer translatable="false" name="config_wifiInitialPartialScanChannelMaxCount">4</integer>
 </resources>

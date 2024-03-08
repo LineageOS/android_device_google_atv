@@ -65,6 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Stel afstandbeheerknoppies op"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Beheer volume, krag, invoer op TV\'s, ontvangers en klankbalke"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Soek my afstandbeheerder"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Speel ’n klank om jou Google TV-afstandbeheerder op te spoor as jy dit nie kan kry nie."</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Druk die knoppie aan die agterkant van jou Google TV-stromer om 30 sekondes lank ’n klank op jou afstandbeheerder te speel. Dit werk net op ’n Google TV-stromerstemafstandbeheerder.\n\nDruk enige knoppie op jou afstandbeheerder om die klank te stop."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"As Soek My Afstandbeheerder geaktiveer is, kan jy ’n klank speel om jou Google TV se afstandbeheerder op te spoor as jy dit nie kan kry nie."</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Speel klank"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Batteryvlak: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Bykomstighede"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Afstandbeheer"</string>
@@ -75,6 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"Koppel"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Hernoem"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"Vergeet"</string>
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"Gebruik vir TV-oudio"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Gekoppel"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Ontkoppel"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Toestelbeheer"</string>

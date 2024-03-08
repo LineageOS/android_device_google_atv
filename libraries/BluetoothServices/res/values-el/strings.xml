@@ -65,6 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Ρύθμιση κουμπιών τηλεχειριστηρίου"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Έλεγχος έντασης ήχου, λειτουργίας και πηγών εισόδου σε τηλεοράσεις, δέκτες και soundbar"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Εύρεση τηλεχειριστηρίου"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Αναπαράγετε ήχο για να εντοπίσετε το τηλεχειριστήριο του Google TV, σε περίπτωση που το έχετε χάσει"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Πατήστε το κουμπί στο πίσω μέρος του Google TV Streamer για την αναπαραγωγή ενός ήχου στο τηλεχειριστήριο για 30 δευτερόλεπτα. Αυτό λειτουργεί μόνο σε Φωνητικό έλεγχο Google TV Streamer.\n\nΓια να σταματήσετε την αναπαραγωγή του ήχου, πατήστε ένα κουμπί στο τηλεχειριστήριο."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"Όταν είναι ενεργή η Εύρεση τηλεχειριστηρίου, μπορείτε να αναπαράγετε έναν ήχο για να εντοπίσετε το τηλεχειριστήριο του Google TV σε περίπτωση που το έχετε χάσει."</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Αναπαραγωγή ήχου"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Επίπεδο μπαταρίας: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Αξεσουάρ"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Τηλεχειριστήριο"</string>
@@ -75,6 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"Σύνδεση"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Μετονομασία"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"Διαγραφή"</string>
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"Χρήση για ήχο στην τηλεόραση"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Συνδέθηκε"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Αποσυνδέθηκε"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Έλεγχος συσκευής"</string>

@@ -60,6 +60,12 @@
 
   <bool name="cec_settings_enabled">true</bool>
   <bool name="axel_settings_enabled">false</bool>
+  <!--
+    Whether the ATV integrates the Find My Remote functionality with the on-device button.
+    If it does, the integration should respect the value of
+    Settings.Global.fmr_on_physical_button_enabled setting.
+  -->
+  <bool name="find_my_remote_integration_enabled">false</bool>
 
   <!--
     Whether to show the HDMI-CEC settings in ConnectedDevicesSlice. This is different from

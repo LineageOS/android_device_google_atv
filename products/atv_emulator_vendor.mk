@@ -22,10 +22,14 @@ EMULATOR_VENDOR_NO_GNSS := true
 EMULATOR_VENDOR_NO_BIOMETRICS := true
 EMULATOR_VENDOR_NO_SENSORS := true
 
-$(call inherit-product, device/google/atv/products/atv_vendor.mk)
+ifneq ($(PRODUCT_IS_ATV_ARM64_SDK),true)
+    $(call inherit-product, device/google/atv/products/atv_vendor.mk)
+endif
 
 # Sets HDMI CEC as Playback Device.
-PRODUCT_PROPERTY_OVERRIDES += ro.hdmi.device_type=4
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hdmi.device_type=4 \
+    ro.hdmi.cec_device_types=playback_device
 
 # need this for gles libraries to load properly
 # after moving to /vendor/lib/
@@ -33,9 +37,14 @@ PRODUCT_PACKAGES += \
     vndk-sp
 
 DEVICE_PACKAGE_OVERLAYS += \
-    device/generic/goldfish/overlay \
     device/google/atv/sdk_overlay \
     development/sdk_overlay
+
+# Declared in emulator64_vendor.mk for 64-bit targets.
+ifneq ($(PRODUCT_IS_ATV_ARM64_SDK),true)
+    DEVICE_PACKAGE_OVERLAYS += \
+        device/generic/goldfish/overlay
+endif
 
 PRODUCT_CHARACTERISTICS := emulator
 
@@ -45,8 +54,8 @@ PRODUCT_COPY_FILES += \
     device/generic/goldfish/data/etc/config.ini.tv:config.ini
 
 PRODUCT_COPY_FILES += \
-    device/generic/goldfish/data/etc/apns-conf.xml:$(TARGET_COPY_OUT_VENDOR)/etc/apns-conf.xml \
     device/generic/goldfish/camera/media/media_codecs_google_tv.xml:${TARGET_COPY_OUT_VENDOR}/etc/media_codecs_google_tv.xml \
+    device/generic/goldfish/data/etc/apns-conf.xml:$(TARGET_COPY_OUT_VENDOR)/etc/apns-conf.xml \
     frameworks/native/data/etc/android.hardware.ethernet.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.ethernet.xml \
     hardware/libhardware_legacy/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf
 
@@ -56,7 +65,11 @@ PRODUCT_COPY_FILES += \
     device/google/atv/permissions/tv_sdk_excluded_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/tv_sdk_excluded_core_hardware.xml
 
 # goldfish vendor partition configurations
-$(call inherit-product-if-exists, device/generic/goldfish/64bitonly/product/vendor.mk)
+ifeq ($(PRODUCT_IS_ATV_ARM64_SDK),true)
+    $(call inherit-product-if-exists, device/generic/goldfish/64bitonly/product/emulator64_vendor.mk)
+else
+    $(call inherit-product-if-exists, device/generic/goldfish/64bitonly/product/vendor.mk)
+endif
 
 #watchdog tiggers reboot because location service is not
 #responding, disble it for now.

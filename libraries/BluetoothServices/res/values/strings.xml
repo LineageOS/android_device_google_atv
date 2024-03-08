@@ -85,6 +85,13 @@
   <string name="settings_axel">Set up remote buttons</string>
   <string name="settings_axel_description">Control volume, power, input on TVs, receivers and soundbars</string>
 
+  <string name="settings_find_my_remote_title">Find my remote</string>
+  <string name="settings_find_my_remote_description">Play a sound to locate your Google TV remote if it\'s misplaced</string>
+  <string name="find_my_remote_slice_description">Press the button at the back of your Google TV Streamer to play a sound on your remote for 30 seconds. This only works on a Google TV Streamer Voice Remote.\n\nTo stop the sound, press any button on your remote.</string>
+  <string name="find_my_remote_integration_title" translatable="false">@string/settings_find_my_remote_title</string>
+  <string name="find_my_remote_integration_hint">When Find my remote is enabled, you can play a sound to locate your Google TV remote if it\'s misplaced.</string>
+  <string name="find_my_remote_play_sound">Play sound</string>
+
   <string name="settings_remote_battery_level">Battery level: %1$s</string>
   <string name="settings_known_devices_category">Accessories</string>
   <!-- Category for listing official remote control devices. Can be overlaid for different devices such as "Foobar Remote". -->
@@ -98,6 +105,7 @@
   <string name="bluetooth_connect">Connect</string>
   <string name="bluetooth_rename">Rename</string>
   <string name="bluetooth_forget">Forget</string>
+  <string name="bluetooth_toggle_active_audio_output">Use for TV audio</string>
 
   <!-- Subtitle showing connected connection status of Bluetooth device. [CHAR LIMIT=40] -->
   <string name="bluetooth_connected_status">Connected</string>

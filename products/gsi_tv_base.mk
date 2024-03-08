@@ -41,6 +41,8 @@ PRODUCT_PACKAGES += system_ext_userdebug_plat_sepolicy.cil
 # All components inherited here go to product image
 #
 $(call inherit-product, device/google/atv/products/atv_product.mk)
+# Default sound experience
+$(call inherit-product-if-exists, frameworks/base/data/sounds/AudioTv.mk)
 # Packages required for ATV GSI
 PRODUCT_PACKAGES += \
     LeanbackIME \

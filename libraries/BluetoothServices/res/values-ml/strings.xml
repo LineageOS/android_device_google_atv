@@ -65,6 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"റിമോട്ട് ബട്ടണുകൾ സജ്ജീകരിക്കുക"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"ശബ്‌ദം, പവർ, ടിവികളിലെ ഇൻപുട്ട്, റിസീവറുകൾ, സൗണ്ട് ബാറുകൾ എന്നിവ നിയന്ത്രിക്കുക"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"എന്റെ റിമോട്ട് കണ്ടെത്തൂ"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"നിങ്ങളുടെ Google TV റിമോട്ട് എവിടെയെങ്കിലും വച്ച് മറന്നെങ്കിൽ അത് കണ്ടെത്താൻ ഒരു ശബ്ദം പ്ലേ ചെയ്യുക"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"നിങ്ങളുടെ റിമോട്ടിൽ 30 സെക്കൻഡ് നേരത്തേക്ക് ഒരു ശബ്ദം പ്ലേ ചെയ്യാൻ Google TV Streamer-ന്റെ പിൻഭാഗത്തുള്ള ബട്ടൺ അമർത്തുക. ഇത് Google TV Streamer Voice Remote-ൽ മാത്രമേ പ്രവർത്തിക്കൂ.\n\nശബ്ദം നിർത്താൻ, നിങ്ങളുടെ റിമോട്ടിലെ ഏതെങ്കിലും ബട്ടൺ അമർത്തുക."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"\'എന്റെ റിമോട്ട് കണ്ടെത്തുക\' പ്രവർത്തനക്ഷമമാക്കിയിരിക്കുമ്പോൾ, Google TV റിമോട്ട് എവിടെയെങ്കിലും വച്ച് മറന്നെങ്കിൽ അത് കണ്ടെത്താൻ ഒരു ശബ്ദം പ്ലേ ചെയ്യാം."</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"ശബ്‌ദം പ്ലേ ചെയ്യുക"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"ബാറ്ററി നില: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"ആക്‌സസറികൾ"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"റിമോട്ട് കൺട്രോൾ"</string>
@@ -75,6 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"കണക്‌റ്റ് ചെയ്യുക"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"പേര് മാറ്റുക"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"മറന്നു"</string>
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"ടിവി ഓഡിയോയ്ക്കായി ഉപയോഗിക്കുക"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"കണക്റ്റ് ചെയ്തു"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"വിച്ഛേദിച്ചു"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"ഉപകരണ നിയന്ത്രണം"</string>

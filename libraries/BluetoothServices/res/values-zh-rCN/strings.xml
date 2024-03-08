@@ -65,6 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"三星：Anynet+\nLG：SimpLink\n索尼：BRAVIA Sync\n飞利浦：EasyLink\n夏普：Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"设置遥控器按钮"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"控制电视、接收器及条形音箱的音量、电源和输入源"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"查找我的遥控器"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"让忘记放在何处的 Google TV 遥控器响铃，以便找到它"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"按下 Google TV 流媒体播放器背面的按钮，即可让遥控器响铃 30 秒。这仅适用于 Google TV 流媒体播放器语音遥控器。\n\n若要停止响铃，请按下遥控器上的任意按钮。"</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"当“查找我的遥控器”处于启用状态时，您可让找不到的 Google TV 遥控器响铃，从而定位它。"</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"响铃"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"电池电量：%1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"配件"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"遥控器"</string>
@@ -75,6 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"连接"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"重命名"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"取消保存"</string>
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"用于播放 TV 音频"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"已连接"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"已断开连接"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"设备控制"</string>

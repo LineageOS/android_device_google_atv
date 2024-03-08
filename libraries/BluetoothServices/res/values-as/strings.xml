@@ -65,6 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"ৰিম’টৰ বুটামসমূহ ছেট আপ কৰক"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"টিভি, ৰিচিভাৰ আৰু ছাউণ্ডবাৰত ভলিউম, পাৱাৰ আৰু ইনপুট নিয়ন্ত্ৰণ কৰক"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"মোৰ ৰিম’ট বিচাৰক"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"আপোনাৰ Google TV ৰিম’টটো হেৰুৱালে তাক বিচাৰিবলৈ কোনো ধ্বনি প্লে’ কৰক"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"আপোনাৰ ৰিম’টত ৩০ ছেকেণ্ডৰ বাবে কোনো ধ্বনি প্লে’ কৰিবলৈ আপোনাৰ Google TV ষ্ট্ৰীমাৰৰ পিছফালে থকা বুটামটোত টিপক। এইটোৱে কেৱল এটা Google TV ষ্ট্ৰীমাৰ ভইচ ৰিম’টতহে কাম কৰে।\n\nধ্বনিটো বন্ধ কৰিবলৈ, আপোনাৰ ৰিম’টটোৰ যিকোনো বুটামত টিপক।"</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"মোৰ ৰিম’ট বিচাৰক সক্ষম কৰিলে, আপোনাৰ Google TVৰ ৰিম’টটো সঠিক স্থানত নাথাকিলে সেইটোৰ অৱস্থান জানিবলৈ আপুনি এটা ধ্বনি প্লে’ কৰিব পাৰে।"</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"ধ্বনি প্লে’ কৰক"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"বেটাৰীৰ স্তৰ: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"আনুষংগিক সামগ্ৰী"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"ৰিম’ট কণ্ট্ৰ’ল"</string>
@@ -75,6 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"সংযোগ কৰক"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"নতুন নাম দিয়ক"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"পাহৰি যাওক"</string>
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"টিভি অডিঅ’ৰ বাবে ব্যৱহাৰ কৰক"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"সংযোগ কৰা হ’ল"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"সংযোগ বিচ্ছিন্ন কৰা হ\'ল"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"ডিভাইচ নিয়ন্ত্ৰণ"</string>

@@ -48,16 +48,20 @@ PRODUCT_PACKAGES += \
 # All components inherited here go to product image
 #
 $(call inherit-product, device/google/atv/products/atv_product.mk)
+# Default sound experience
+$(call inherit-product-if-exists, frameworks/base/data/sounds/AudioTv.mk)
 # Packages required for ATV GSI
+ifeq (aosp_tv_x86,$(TARGET_PRODUCT))
 PRODUCT_PACKAGES += \
     LeanbackIME \
     TvSampleLeanbackLauncher
+endif
 
 #
 # All components inherited here go to vendor image
 #
 $(call inherit-product, device/google/atv/products/atv_emulator_vendor.mk)
-$(call inherit-product-if-exists, device/generic/goldfish/x86-vendor.mk)
+$(call inherit-product, device/generic/goldfish/board/emu64x/kernel_fstab_32.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/board/generic_x86/device.mk)
 
 ifeq (aosp_tv_x86,$(TARGET_PRODUCT))

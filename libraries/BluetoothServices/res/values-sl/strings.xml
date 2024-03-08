@@ -65,6 +65,11 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Nastavitev gumbov daljinskega upravljalnika"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Nadziranje glasnosti, vklopa/izklopa in vhodov v televizorjih, sprejemnikih ter zvočniških modulih"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Poišči moj daljinski upravljalnik"</string>
+    <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Predvajajte zvok, da poiščete daljinski upravljalnik za Google TV, če ga založite"</string>
+    <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Pritisnite gumb na hrbtni strani naprave Google TV Streamer, če želite 30 sekund predvajati zvok prek daljinskega upravljalnika. To deluje samo z glasovnim daljinskim upravljalnikom za Google TV Streamer.\n\nČe želite zaustaviti predvajanje zvoka, pritisnite poljuben gumb na daljinskem upravljalniku."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"Če je omogočena funkcija Poišči moj daljinski upravljalnik, lahko nastavite, da se predvaja zvok, da najdete založeni daljinski upravljalnik Googla TV."</string>
+    <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Predvajaj zvok"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Raven napolnjenosti baterije: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Dodatki"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Daljinski upravljalnik"</string>
@@ -75,6 +80,7 @@
     <string name="bluetooth_connect" msgid="6283971929092004620">"Poveži"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Preimenuj"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"Pozabi"</string>
+    <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"Uporabi za zvok televizorja"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Povezava je vzpostavljena"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Povezava je prekinjena"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Upravljanje naprav"</string>
