@@ -5,6 +5,7 @@ package {
 aidl_interface {
     name: "device.google.atv.mdns_offload-aidl",
     vendor_available: true,
+    owner: "google",
     system_ext_specific: true,
     srcs: [
         "device/google/atv/mdns_offload/IMdnsOffload.aidl",
@@ -26,6 +27,7 @@ aidl_interface {
 aidl_interface {
     name: "device.google.atv.mdns_offload_manager-aidl",
     vendor_available: true,
+    owner: "google",
     system_ext_specific: true,
     srcs: [
         "device/google/atv/mdns_offload/IMdnsOffloadManager.aidl",
@@ -40,4 +42,3 @@ aidl_interface {
         },
     },
 }
-

@@ -65,10 +65,10 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Configurar botóns do mando a distancia"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Controla o volume, o acendido e a entrada nos receptores, barras de son e televisións"</string>
-    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Localizar mando a distancia"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Localizar o mando a distancia"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Se non dás atopado o mando a distancia de Google TV, fai que se reproduza un son nel para localizalo"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Preme o botón situado na parte traseira do Google TV Streamer para que se reproduza un son no mando a distancia durante 30 segundos. Esta acción só dá resultado co mando por voz do Google TV Streamer.\n\nPara deter o son, preme calquera botón do mando a distancia."</string>
-    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"Cando está activada a opción Localizar mando a distancia, podes facer que se reproduza un son para atopar o mando a distancia de Google TV se non sabes onde está."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"Cando está activada a opción Localizar o mando a distancia, podes facer que se reproduza un son para atopar o mando a distancia de Google TV se non sabes onde está."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Reproducir son"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Nivel de batería: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Accesorios"</string>

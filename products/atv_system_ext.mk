@@ -30,6 +30,3 @@ endif
 
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += device/google/atv/sepolicy/system_ext/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/google/atv/sepolicy/system_ext/private
-
-# Always disable Compose features in SystemUI to avoid APK size increase.
-SYSTEMUI_USE_COMPOSE := false

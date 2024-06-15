@@ -127,7 +127,7 @@ public class BluetoothScannerFragment extends LeanbackPreferenceFragment {
     private static SpannableStringBuilder getPairingDescription(Context context) {
         Paint textPaint = new Paint();
         textPaint.setTextSize(context.getResources().getDimension(
-                R.dimen.lb_preference_item_secondary_text_size));
+                androidx.leanback.preference.R.dimen.lb_preference_item_secondary_text_size));
         Paint.FontMetricsInt fontMetrics = textPaint.getFontMetricsInt();
         int width = fontMetrics.descent - fontMetrics.ascent;
 

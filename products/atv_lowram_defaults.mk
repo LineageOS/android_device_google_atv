@@ -31,14 +31,14 @@ PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
 PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
 
-# Disable Scudo outside of eng builds to save RAM.
-ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
-  PRODUCT_DISABLE_SCUDO := true
-endif
-
 # Add the system properties.
 TARGET_SYSTEM_PROP += \
     build/make/target/board/go_defaults_common.prop
 
 # Dedupe VNDK libraries with identical core variants.
 TARGET_VNDK_USE_CORE_VARIANT := true
+
+# Use the low memory allocator outside of eng builds to save RSS.
+ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
+  MALLOC_SVELTE := true
+endif

@@ -28,6 +28,14 @@
     <item>g20</item>
     <item>Onn</item>
   </string-array>
+
+  <!--
+    List of BluetoothDeviceService updatable remotes. This list to used to provide update button in
+    settings page and can be overlaid.
+  -->
+  <string-array name="bt_device_service_updatable_labels" translatable="false">
+  </string-array>
+
   <!-- Upgrades from certain version would erase the connection information saved on the remote. For
        this case, we would need to forget the connection on the host side and ask the user go
        through pairing again.
@@ -35,6 +43,13 @@
        Example: 1 23 AB 1F
   -->
   <string-array name="manual_reconnection_remote_versions" translatable="false">
+  </string-array>
+
+  <!--
+    List of official bluetooth device labels. This list is used to identify official
+    devices and can be overlaid.
+  -->
+  <string-array name="official_bt_device_labels" translatable="false">
   </string-array>
 
   <!--
@@ -60,6 +75,9 @@
 
   <bool name="cec_settings_enabled">true</bool>
   <bool name="axel_settings_enabled">false</bool>
+
+  <string name="custom_bluetooth_slice_provider_uri" translatable="false" />
+
   <!--
     Whether the ATV integrates the Find My Remote functionality with the on-device button.
     If it does, the integration should respect the value of

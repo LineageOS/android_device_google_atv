@@ -65,10 +65,10 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Configura tasti telecomando"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Controlla volume, accensione/spegnimento e ingresso su TV, ricevitori e soundbar"</string>
-    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Trova il mio telecomando"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Trova il telecomando"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Riproduci un suono per trovare il tuo telecomando di Google TV se non sai dov\'è."</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Premi il pulsante sul retro del Google TV Streamer per riprodurre un suono per 30 secondi sul telecomando. Questa operazione funziona solo su un telecomando con controllo vocale Google TV Streamer.\n\nPer interrompere il suono, premi un pulsante qualsiasi sul telecomando."</string>
-    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"Quando Find my remote è attivata, puoi riprodurre un suono per trovare il tuo telecomando di Google TV se non sai dov\'è."</string>
+    <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"Quando la funzionalità Trova il telecomando è attivata, puoi riprodurre un suono per trovare il tuo telecomando di Google TV se non sai dov\'è."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Riproduci audio"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Livello batteria: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Accessori"</string>

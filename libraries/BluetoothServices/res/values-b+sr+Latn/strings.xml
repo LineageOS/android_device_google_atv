@@ -65,7 +65,7 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"Podesite dugmad na daljinskom upravljaču"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Kontrolišite jačinu zvuka, napajanje i ulaz TV-a, prijemnika i saundbarova"</string>
-    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Pronađi moj daljinski"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"Nađi daljinski"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Pustite zvuk da biste locirali daljinski za Google TV ako ste ga zaturili"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Pritisnite dugme na poleđini uređaja za strimovanje na Google TV-u da biste na daljinskom pustili zvuk od 30 sekundi. Ovo radi samo na glasovnom daljinskom upravljaču za strimovanje na Google TV-u.\n\nDa biste zaustavili zvuk, pritisnite bilo koje dugme na daljinskom."</string>
     <string name="find_my_remote_integration_hint" msgid="3962827321568773142">"Kada je omogućena funkcija Pronađi moj daljinski, možete da pustite zvuk da biste locirali daljinski upravljač za Google TV ako ste ga zaturili."</string>

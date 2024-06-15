@@ -42,7 +42,7 @@
     <string name="settings_bt_battery_low" msgid="3547517382697124858">"Vaihda paristo"</string>
     <string name="settings_bt_battery_low_warning" msgid="721091326401791089">"Virta vähissä"</string>
     <string name="connected_devices_pref_title" msgid="8985364841073196008">"Yhdistetyt laitteet"</string>
-    <string name="connected_devices_slice_pref_title" msgid="8637777961277201747">"Etälaitteet ja lisävarusteet"</string>
+    <string name="connected_devices_slice_pref_title" msgid="8637777961277201747">"Kaukosäätimet ja lisävarusteet"</string>
     <string name="settings_notif_update_title" msgid="4767043003900594863">"Päivitä kaukosäädin"</string>
     <string name="settings_notif_update_text" msgid="1092279154776177720">"Valmis asennukseen"</string>
     <string name="settings_notif_update_action" msgid="7614942170621338703">"PÄIVITÄ"</string>
