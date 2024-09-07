@@ -30,6 +30,8 @@ import android.net.LinkProperties;
 import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.net.NetworkRequest;
+import android.net.nsd.NsdManager;
+import android.net.nsd.OffloadEngine;
 import android.os.Binder;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -44,6 +46,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.VisibleForTesting;
 import androidx.annotation.WorkerThread;
 
+import com.android.tv.mdnsoffloadmanager.util.HandlerExecutor;
+import com.android.tv.mdnsoffloadmanager.util.NsdManagerWrapper;
 import com.android.tv.mdnsoffloadmanager.util.WakeLockWrapper;
 
 import java.io.FileDescriptor;
@@ -53,12 +57,13 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import device.google.atv.mdns_offload.IMdnsOffload;
 import device.google.atv.mdns_offload.IMdnsOffloadManager;
-
+import device.google.atv.mdns_offload.IMdnsOffloadManager.OffloadServiceInfo;
 
 public class MdnsOffloadManagerService extends Service {
 
@@ -70,6 +75,7 @@ public class MdnsOffloadManagerService extends Service {
     private final ConnectivityManager.NetworkCallback mNetworkCallback =
             new ConnectivityManagerNetworkCallback();
     private final Map<String, InterfaceOffloadManager> mInterfaceOffloadManagers = new HashMap<>();
+    private final Map<String, NsdManagerOffloadEngine> mInterfaceNsdOffloadEngine = new HashMap<>();
     private final Injector mInjector;
     private Handler mHandler;
     private PriorityListManager mPriorityListManager;
@@ -78,6 +84,8 @@ public class MdnsOffloadManagerService extends Service {
     private ConnectivityManager mConnectivityManager;
     private PackageManager mPackageManager;
     private WakeLockWrapper mWakeLock;
+
+    private NsdManagerWrapper mNsdManager;
 
     public MdnsOffloadManagerService() {
         this(new Injector());
@@ -117,7 +125,6 @@ public class MdnsOffloadManagerService extends Service {
             return mContext.getSystemService(ConnectivityManager.class);
         }
 
-
         PowerManager.LowPowerStandbyPolicy getLowPowerStandbyPolicy() {
             return mContext.getSystemService(PowerManager.class).getLowPowerStandbyPolicy();
         }
@@ -147,10 +154,15 @@ public class MdnsOffloadManagerService extends Service {
         int getCallingUid() {
             return Binder.getCallingUid();
         }
+
+        NsdManagerWrapper getNsdManager() {
+            return new NsdManagerWrapper(mContext.getSystemService(NsdManager.class));
+        }
     }
 
     @Override
     public void onCreate() {
+        Log.d(TAG, "onCreate()");
         super.onCreate();
         mHandler = new Handler(mInjector.getLooper());
         mPriorityListManager = new PriorityListManager(mInjector.getResources());
@@ -159,6 +171,7 @@ public class MdnsOffloadManagerService extends Service {
         mConnectivityManager = mInjector.getConnectivityManager();
         mPackageManager = mInjector.getPackageManager();
         mWakeLock = mInjector.newWakeLock();
+        mNsdManager = mInjector.getNsdManager();
         bindVendorService();
         setupScreenBroadcastReceiver();
         setupConnectivityListener();
@@ -235,6 +248,17 @@ public class MdnsOffloadManagerService extends Service {
                 .filter(Objects::nonNull)
                 .map(UserHandle::getAppId)
                 .collect(Collectors.toSet());
+
+        try {
+            // Allowlist ourselves, since OffloadEngine in this package is calling the protocol
+            // responses API on behalf of NsdManager.
+            int selfAppId = UserHandle.getAppId(
+                    mPackageManager.getPackageUid("com.android.tv.mdnsoffloadmanager", 0));
+            allowedAppIds.add(selfAppId);
+        } catch (PackageManager.NameNotFoundException e) {
+            throw new IllegalStateException("Failed to retrieve own package ID", e);
+        }
+
         mHandler.post(() -> {
             mOffloadIntentStore.setAppIdAllowlist(allowedAppIds);
             mInterfaceOffloadManagers.values()
@@ -272,48 +296,19 @@ public class MdnsOffloadManagerService extends Service {
         mOffloadIntentStore.dumpProtocolData(writer);
     }
 
-    private final IMdnsOffloadManager.Stub mOffloadManagerBinder = new IMdnsOffloadManager.Stub() {
+
+    final IMdnsOffloadManager.Stub mOffloadManagerBinder = new IMdnsOffloadManager.Stub() {
         @Override
         public int addProtocolResponses(@NonNull String networkInterface,
                 @NonNull OffloadServiceInfo serviceOffloadData,
                 @NonNull IBinder clientToken) {
-            Objects.requireNonNull(networkInterface);
-            Objects.requireNonNull(serviceOffloadData);
-            Objects.requireNonNull(clientToken);
-            int callerUid = mInjector.getCallingUid();
-            OffloadIntentStore.OffloadIntent offloadIntent =
-                    mOffloadIntentStore.registerOffloadIntent(
-                            networkInterface, serviceOffloadData, clientToken, callerUid);
-            try {
-                offloadIntent.mClientToken.linkToDeath(
-                        () -> removeProtocolResponses(offloadIntent.mRecordKey, clientToken), 0);
-            } catch (RemoteException e) {
-                String msg = "Error while setting a callback for linkToDeath binder" +
-                        " {" + offloadIntent.mClientToken + "} in addProtocolResponses.";
-                Log.e(TAG, msg, e);
-                return offloadIntent.mRecordKey;
-            }
-            mHandler.post(() -> {
-                getInterfaceOffloadManager(networkInterface).refreshProtocolResponses();
-            });
-            return offloadIntent.mRecordKey;
+            return MdnsOffloadManagerService.this.addProtocolResponses(
+                    networkInterface, serviceOffloadData, clientToken);
         }
 
         @Override
         public void removeProtocolResponses(int recordKey, @NonNull IBinder clientToken) {
-            if (recordKey <= 0) {
-                throw new IllegalArgumentException("recordKey must be positive");
-            }
-            Objects.requireNonNull(clientToken);
-            mHandler.post(() -> {
-                OffloadIntentStore.OffloadIntent offloadIntent =
-                        mOffloadIntentStore.getAndRemoveOffloadIntent(recordKey, clientToken);
-                if (offloadIntent == null) {
-                    return;
-                }
-                getInterfaceOffloadManager(offloadIntent.mNetworkInterface)
-                        .refreshProtocolResponses();
-            });
+            MdnsOffloadManagerService.this.removeProtocolResponses(recordKey, clientToken);
         }
 
         @Override
@@ -371,10 +366,55 @@ public class MdnsOffloadManagerService extends Service {
         }
     };
 
+    int addProtocolResponses(@NonNull String networkInterface,
+            @NonNull OffloadServiceInfo serviceOffloadData,
+            @NonNull IBinder clientToken) {
+        Objects.requireNonNull(networkInterface);
+        Objects.requireNonNull(serviceOffloadData);
+        Objects.requireNonNull(clientToken);
+        int callerUid = mInjector.getCallingUid();
+        OffloadIntentStore.OffloadIntent offloadIntent =
+                mOffloadIntentStore.registerOffloadIntent(
+                        networkInterface, serviceOffloadData, clientToken, callerUid);
+        try {
+            offloadIntent.mClientToken.linkToDeath(
+                    () -> removeProtocolResponses(offloadIntent.mRecordKey, clientToken), 0);
+        } catch (RemoteException e) {
+            String msg = "Error while setting a callback for linkToDeath binder" +
+                    " {" + offloadIntent.mClientToken + "} in addProtocolResponses.";
+            Log.e(TAG, msg, e);
+            return offloadIntent.mRecordKey;
+        }
+        mHandler.post(() ->
+                getInterfaceOffloadManager(networkInterface).refreshProtocolResponses());
+        return offloadIntent.mRecordKey;
+    }
+
+    void removeProtocolResponses(int recordKey, @NonNull IBinder clientToken) {
+        if (recordKey <= 0) {
+            throw new IllegalArgumentException("recordKey must be positive");
+        }
+        Objects.requireNonNull(clientToken);
+        mHandler.post(() -> {
+            OffloadIntentStore.OffloadIntent offloadIntent =
+                    mOffloadIntentStore.getAndRemoveOffloadIntent(recordKey, clientToken);
+            if (offloadIntent == null) {
+                return;
+            }
+            getInterfaceOffloadManager(offloadIntent.mNetworkInterface)
+                    .refreshProtocolResponses();
+        });
+    }
+
     private InterfaceOffloadManager getInterfaceOffloadManager(String networkInterface) {
         return mInterfaceOffloadManagers.computeIfAbsent(
                 networkInterface,
                 iface -> new InterfaceOffloadManager(iface, mOffloadIntentStore, mOffloadWriter));
+    }
+
+    private NsdManagerOffloadEngine getInterfaceNsdOffloadEngine(String networkInterface) {
+        return mInterfaceNsdOffloadEngine.computeIfAbsent(
+                networkInterface, iface -> new NsdManagerOffloadEngine(this, iface));
     }
 
     private final ServiceConnection mVendorServiceConnection = new ServiceConnection() {
@@ -410,17 +450,29 @@ public class MdnsOffloadManagerService extends Service {
             String action = intent.getAction();
             mHandler.post(() -> {
                 if (Intent.ACTION_SCREEN_ON.equals(action)) {
+                    Log.d(TAG, "SCREEN_ON");
                     mOffloadWriter.setOffloadState(false);
                     mOffloadWriter.retrieveAndClearMetrics(mOffloadIntentStore.getRecordKeys());
                 } else if (Intent.ACTION_SCREEN_OFF.equals(action)) {
+                    Log.d(TAG, "SCREEN_OFF");
                     try {
                         mWakeLock.acquire(5000);
                         mOffloadWriter.setOffloadState(true);
                     } finally {
+                        Log.d(TAG, "SCREEN_OFF wakelock released");
                         mWakeLock.release();
                     }
                 }
             });
+        }
+    }
+
+    public static class BootCompletedReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.d(TAG, "Initial startup of mDNS offload manager service after boot...");
+            Intent serviceIntent = new Intent(context, MdnsOffloadManagerService.class);
+            context.startService(serviceIntent);
         }
     }
 
@@ -438,27 +490,22 @@ public class MdnsOffloadManagerService extends Service {
         private final Map<Network, LinkProperties> mLinkProperties = new HashMap<>();
 
         @Override
-        public void onLinkPropertiesChanged(Network network, LinkProperties linkProperties) {
-            // We only want to know the interface name of a network. This method is
-            // called right after onAvailable() or any other important change during the lifecycle
-            // of the network.
+        public void onLinkPropertiesChanged(
+                @NonNull Network network,
+                @NonNull LinkProperties linkProperties) {
             mHandler.post(() -> {
+                // We only want to know the interface name of a network. This method is
+                // called right after onAvailable() or any other important change during the
+                // lifecycle of the network.
+                String iface = linkProperties.getInterfaceName();
                 LinkProperties previousProperties = mLinkProperties.put(network, linkProperties);
                 if (previousProperties != null &&
-                        !previousProperties.getInterfaceName().equals(
-                                linkProperties.getInterfaceName())) {
+                        !previousProperties.getInterfaceName().equals(iface)) {
                     // This means that the interface changed names, which may happen
                     // but very rarely.
-                    InterfaceOffloadManager offloadManager =
-                            getInterfaceOffloadManager(previousProperties.getInterfaceName());
-                    offloadManager.onNetworkLost();
+                    onIfaceLost(previousProperties.getInterfaceName());
                 }
-
-                // We trigger an onNetworkAvailable even if the existing is the same in case
-                // anything needs to be refreshed due to the LinkProperties change.
-                InterfaceOffloadManager offloadManager =
-                        getInterfaceOffloadManager(linkProperties.getInterfaceName());
-                offloadManager.onNetworkAvailable();
+                onIfaceUpdated(iface);
             });
         }
 
@@ -473,10 +520,33 @@ public class MdnsOffloadManagerService extends Service {
                     Log.w(TAG,"Network "+ network + " lost before being available.");
                     return;
                 }
-                InterfaceOffloadManager offloadManager =
-                        getInterfaceOffloadManager(previousProperties.getInterfaceName());
-                offloadManager.onNetworkLost();
+                onIfaceLost(previousProperties.getInterfaceName());
             });
         }
+
+        @WorkerThread
+        private void onIfaceUpdated(String iface) {
+            NsdManagerOffloadEngine nsdOffloadEngine = getInterfaceNsdOffloadEngine(iface);
+            long flags = OffloadEngine.OFFLOAD_TYPE_REPLY
+                    | OffloadEngine.OFFLOAD_TYPE_FILTER_QUERIES;
+            Executor executor = new HandlerExecutor(mHandler);
+            mNsdManager.registerOffloadEngine(iface, flags, 0, executor, nsdOffloadEngine);
+
+            // We trigger an onNetworkAvailable even if the existing is the same in case
+            // anything needs to be refreshed due to the LinkProperties change.
+            InterfaceOffloadManager offloadManager = getInterfaceOffloadManager(iface);
+            offloadManager.onNetworkAvailable();
+        }
+
+        @WorkerThread
+        private void onIfaceLost(String iface) {
+            NsdManagerOffloadEngine nsdOffloadEngine = getInterfaceNsdOffloadEngine(iface);
+            mNsdManager.unregisterOffloadEngine(nsdOffloadEngine);
+            nsdOffloadEngine.clearOffloadServices();
+            InterfaceOffloadManager offloadManager = getInterfaceOffloadManager(iface);
+            offloadManager.onNetworkLost();
+        }
     }
+
+
 }

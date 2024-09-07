@@ -24,11 +24,15 @@ android_app {
         "src/**/*.java",
     ],
     use_embedded_native_libs: true,
-    sdk_version: "system_current",
+    sdk_version: "module_current",
     system_ext_specific: true,
     dex_preopt: {
         enabled: false,
     },
+    libs: [
+        "framework-connectivity",
+        "framework-connectivity-t",
+    ],
     static_libs: [
         "androidx.annotation_annotation",
         "device.google.atv.mdns_offload-aidl-V1-java",

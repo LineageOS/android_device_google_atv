@@ -27,11 +27,24 @@
     <uses-permission android:name="com.android.tv.mdnsoffloadmanager.MDNS_OFFLOAD_SERVICE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.NETWORK_SETTINGS"/>
 
-    <application android:label="MdnsOffloadManager">
+    <application
+        android:label="MdnsOffloadManager"
+        android:persistent="true">
+
         <service
             android:name="com.android.tv.mdnsoffloadmanager.MdnsOffloadManagerService"
             android:exported="true" />
+        <receiver
+            android:name=".MdnsOffloadManagerService$BootCompletedReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>
