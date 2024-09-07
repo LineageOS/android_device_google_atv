@@ -18,6 +18,7 @@
         <policy type="product|system|vendor">
             <item name="config_mdnsOffloadVendorServiceComponent" type="string" />
             <item name="config_mdnsOffloadPriorityQnames" type="array" />
+            <item name="config_mdnsOffloadNsdManagerMaxPriority" type="integer" />
         </policy>
     </overlayable>
 </resources>

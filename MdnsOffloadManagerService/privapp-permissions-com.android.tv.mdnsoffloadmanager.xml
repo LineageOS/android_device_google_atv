@@ -16,5 +16,6 @@
 <permissions>
     <privapp-permissions package="com.android.tv.mdnsoffloadmanager">
         <permission name="android.permission.DEVICE_POWER"/>
+        <permission name="android.permission.NETWORK_SETTINGS"/>
     </privapp-permissions>
 </permissions>

@@ -25,4 +25,9 @@
     interfaces chipsets in cases where memory is smaller than the offloaded records.
     -->
     <string-array name="config_mdnsOffloadPriorityQnames" translatable="false" />
+    <!--
+    Maximum priority value that will be considered for offload, from the
+    NsdManager#registerOffoadEngine API.
+    -->
+    <integer name="config_mdnsOffloadNsdManagerMaxPriority" translatable="false">10</integer>
 </resources>

@@ -1,6 +1,7 @@
 package com.android.tv.mdnsoffloadmanager;
 
 import android.os.IBinder;
+import android.os.Process;
 import android.os.UserHandle;
 import android.util.Log;
 
@@ -50,6 +51,7 @@ public class OffloadIntentStore {
     void setAppIdAllowlist(Set<Integer> appIds) {
         mAppIdAllowlist.clear();
         mAppIdAllowlist.addAll(appIds);
+        mAppIdAllowlist.add(UserHandle.getAppId(Process.SYSTEM_UID));
     }
 
     /**
