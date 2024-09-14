@@ -65,10 +65,10 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung：Anynet+\nLG：SimpLink\nSony：BRAVIA Sync\nPhilips：EasyLink\nSharp：Aquos Link"</string>
     <string name="settings_axel" msgid="8253298947221430993">"設定遙控器按鈕"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"控制電視、接收器和單件式環繞劇院的音量、電源和輸入來源"</string>
-    <string name="settings_find_my_remote_title" msgid="618883575610472525">"尋找我的遙控器"</string>
+    <string name="settings_find_my_remote_title" msgid="618883575610472525">"尋找我的聲控器"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"讓忘記放在何處的 Google TV 遙控器發出音效，以便找出裝置"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"按下 Google TV Streamer 背面的按鈕，即可讓遙控器播放音效 30 秒。這項功能僅適用於 Google TV Streamer 聲控器。\n\n如要停止播放音效，請按下遙控器上的任一按鈕。"</string>
-    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"如果開啟，你就能使用裝置上的按鈕播放音效，以利找出遙控器。如果關閉，則無法使用這個按鈕，但你仍可透過其他方法使用「尋找我的遙控器」。"</string>
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"如果開啟，你就能使用裝置上的按鈕播放音效，以利找出遙控器。如果關閉，則無法使用這個按鈕，但你仍可透過其他方法使用「尋找我的聲控器」。"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"播放音效"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"電池電量：%1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"配件"</string>

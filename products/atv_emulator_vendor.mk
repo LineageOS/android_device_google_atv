@@ -48,8 +48,6 @@ endif
 
 PRODUCT_CHARACTERISTICS := emulator
 
-PRODUCT_FULL_TREBLE_OVERRIDE := true
-
 PRODUCT_COPY_FILES += \
     device/generic/goldfish/data/etc/config.ini.tv:config.ini
 

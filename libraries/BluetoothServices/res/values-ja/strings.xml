@@ -42,7 +42,7 @@
     <string name="settings_bt_battery_low" msgid="3547517382697124858">"電池を交換してください"</string>
     <string name="settings_bt_battery_low_warning" msgid="721091326401791089">"バッテリー残量: 少"</string>
     <string name="connected_devices_pref_title" msgid="8985364841073196008">"接続済みのデバイス"</string>
-    <string name="connected_devices_slice_pref_title" msgid="8637777961277201747">"リモコンとアクセサリ"</string>
+    <string name="connected_devices_slice_pref_title" msgid="8637777961277201747">"リモコンとアクセサリー"</string>
     <string name="settings_notif_update_title" msgid="4767043003900594863">"リモコンの更新"</string>
     <string name="settings_notif_update_text" msgid="1092279154776177720">"インストールの準備完了"</string>
     <string name="settings_notif_update_action" msgid="7614942170621338703">"更新"</string>
@@ -71,11 +71,11 @@
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"ON にすると、デバイスのボタンを使用して、リモコンから音を鳴らして探すことができます。OFF にすると、このボタンは使用できません。別の方法で「リモコンを探す」機能を使用することもできます。"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"音を鳴らす"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"電池残量: %1$s"</string>
-    <string name="settings_known_devices_category" msgid="2307810690946536753">"アクセサリ"</string>
+    <string name="settings_known_devices_category" msgid="2307810690946536753">"アクセサリー"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"リモコン"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"接続済み"</string>
     <string name="settings_devices_paired" msgid="4460141776955368574">"以前に接続"</string>
-    <string name="settings_pair_remote" msgid="7566753084479902759">"リモコンやアクセサリのペア設定"</string>
+    <string name="settings_pair_remote" msgid="7566753084479902759">"リモコンやアクセサリーのペア設定"</string>
     <string name="bluetooth_disconnect" msgid="1385608885917484057">"接続を解除"</string>
     <string name="bluetooth_connect" msgid="6283971929092004620">"接続"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"名前を変更"</string>
