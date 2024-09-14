@@ -26,12 +26,9 @@ android_app {
     use_embedded_native_libs: true,
     sdk_version: "module_current",
     system_ext_specific: true,
-    dex_preopt: {
-        enabled: false,
-    },
     libs: [
-        "framework-connectivity",
-        "framework-connectivity-t",
+        "framework-connectivity.stubs.module_lib",
+        "framework-connectivity-t.stubs.module_lib",
     ],
     static_libs: [
         "androidx.annotation_annotation",
