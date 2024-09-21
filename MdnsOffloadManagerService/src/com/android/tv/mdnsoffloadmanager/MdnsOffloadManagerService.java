@@ -300,8 +300,8 @@ public class MdnsOffloadManagerService extends Service {
     final IMdnsOffloadManager.Stub mOffloadManagerBinder = new IMdnsOffloadManager.Stub() {
         @Override
         public int addProtocolResponses(@NonNull String networkInterface,
-                @NonNull OffloadServiceInfo serviceOffloadData,
-                @NonNull IBinder clientToken) {
+                                        @NonNull OffloadServiceInfo serviceOffloadData,
+                                        @NonNull IBinder clientToken) {
             return MdnsOffloadManagerService.this.addProtocolResponses(
                     networkInterface, serviceOffloadData, clientToken);
         }
@@ -367,8 +367,8 @@ public class MdnsOffloadManagerService extends Service {
     };
 
     int addProtocolResponses(@NonNull String networkInterface,
-            @NonNull OffloadServiceInfo serviceOffloadData,
-            @NonNull IBinder clientToken) {
+                             @NonNull OffloadServiceInfo serviceOffloadData,
+                             @NonNull IBinder clientToken) {
         Objects.requireNonNull(networkInterface);
         Objects.requireNonNull(serviceOffloadData);
         Objects.requireNonNull(clientToken);
@@ -406,15 +406,25 @@ public class MdnsOffloadManagerService extends Service {
         });
     }
 
+    private NsdManagerOffloadEngine getInterfaceNsdOffloadEngine(String networkInterface) {
+        if (mInterfaceNsdOffloadEngine.get(networkInterface) == null) {
+            NsdManagerOffloadEngine nsdOffloadEngine = new NsdManagerOffloadEngine(
+                    this, networkInterface);
+            long flags = OffloadEngine.OFFLOAD_TYPE_REPLY
+                    | OffloadEngine.OFFLOAD_TYPE_FILTER_QUERIES;
+            Executor executor = new HandlerExecutor(mHandler);
+            mNsdManager.registerOffloadEngine(networkInterface, flags, 0, executor,
+                    nsdOffloadEngine);
+            mInterfaceNsdOffloadEngine.put(networkInterface, nsdOffloadEngine);
+            return nsdOffloadEngine;
+        }
+        return mInterfaceNsdOffloadEngine.get(networkInterface);
+    }
+
     private InterfaceOffloadManager getInterfaceOffloadManager(String networkInterface) {
         return mInterfaceOffloadManagers.computeIfAbsent(
                 networkInterface,
                 iface -> new InterfaceOffloadManager(iface, mOffloadIntentStore, mOffloadWriter));
-    }
-
-    private NsdManagerOffloadEngine getInterfaceNsdOffloadEngine(String networkInterface) {
-        return mInterfaceNsdOffloadEngine.computeIfAbsent(
-                networkInterface, iface -> new NsdManagerOffloadEngine(this, iface));
     }
 
     private final ServiceConnection mVendorServiceConnection = new ServiceConnection() {
@@ -526,23 +536,21 @@ public class MdnsOffloadManagerService extends Service {
 
         @WorkerThread
         private void onIfaceUpdated(String iface) {
-            NsdManagerOffloadEngine nsdOffloadEngine = getInterfaceNsdOffloadEngine(iface);
-            long flags = OffloadEngine.OFFLOAD_TYPE_REPLY
-                    | OffloadEngine.OFFLOAD_TYPE_FILTER_QUERIES;
-            Executor executor = new HandlerExecutor(mHandler);
-            mNsdManager.registerOffloadEngine(iface, flags, 0, executor, nsdOffloadEngine);
-
             // We trigger an onNetworkAvailable even if the existing is the same in case
             // anything needs to be refreshed due to the LinkProperties change.
+            getInterfaceNsdOffloadEngine(iface);
             InterfaceOffloadManager offloadManager = getInterfaceOffloadManager(iface);
             offloadManager.onNetworkAvailable();
         }
 
         @WorkerThread
         private void onIfaceLost(String iface) {
-            NsdManagerOffloadEngine nsdOffloadEngine = getInterfaceNsdOffloadEngine(iface);
-            mNsdManager.unregisterOffloadEngine(nsdOffloadEngine);
-            nsdOffloadEngine.clearOffloadServices();
+            if (mInterfaceNsdOffloadEngine.containsKey(iface)) {
+                NsdManagerOffloadEngine nsdOffloadEngine = getInterfaceNsdOffloadEngine(iface);
+                mNsdManager.unregisterOffloadEngine(nsdOffloadEngine);
+                nsdOffloadEngine.clearOffloadServices();
+                mInterfaceNsdOffloadEngine.remove(iface);
+            }
             InterfaceOffloadManager offloadManager = getInterfaceOffloadManager(iface);
             offloadManager.onNetworkLost();
         }

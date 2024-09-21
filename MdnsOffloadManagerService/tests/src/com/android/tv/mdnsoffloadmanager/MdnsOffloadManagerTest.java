@@ -29,6 +29,7 @@ import static com.android.tv.mdnsoffloadmanager.TestHelpers.makeLowPowerStandbyP
 import static com.android.tv.mdnsoffloadmanager.TestHelpers.verifyOffloadedServices;
 import static com.android.tv.mdnsoffloadmanager.TestHelpers.verifyPassthroughQNames;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -37,6 +38,7 @@ import static org.junit.Assert.fail;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyByte;
 import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.argThat;
 import static org.mockito.ArgumentMatchers.eq;
@@ -45,6 +47,7 @@ import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.reset;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -58,7 +61,10 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.ConnectivityManager.NetworkCallback;
+import android.net.nsd.OffloadEngine;
+import android.net.nsd.OffloadServiceInfo;
 import android.net.Network;
+import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 import android.os.PowerManager;
@@ -69,6 +75,9 @@ import android.util.Log;
 import androidx.test.filters.SmallTest;
 
 import com.android.tv.mdnsoffloadmanager.MdnsOffloadManagerService.Injector;
+import com.android.tv.mdnsoffloadmanager.NsdManagerOffloadEngine;
+import com.android.tv.mdnsoffloadmanager.util.HandlerExecutor;
+import com.android.tv.mdnsoffloadmanager.util.NsdManagerWrapper;
 import com.android.tv.mdnsoffloadmanager.util.WakeLockWrapper;
 
 import org.junit.Before;
@@ -120,13 +129,19 @@ public class MdnsOffloadManagerTest {
     @Mock
     Network mNetwork1;
     @Mock
+    Handler mHandler;
+    @Mock
     PackageManager mPackageManager;
+    @Mock
+    NsdManagerWrapper mNsdManager;
     @Mock
     WakeLockWrapper mWakeLock;
     @Spy
     FakeMdnsOffloadService mVendorService = new FakeMdnsOffloadService();
     @Captor
     ArgumentCaptor<NetworkCallback> mNetworkCallbackCaptor;
+    @Captor
+    ArgumentCaptor<android.net.nsd.OffloadEngine> mNsdCaptor;
     @Captor
     ArgumentCaptor<IBinder.DeathRecipient> mDeathRecipientCaptor;
 
@@ -185,6 +200,11 @@ public class MdnsOffloadManagerTest {
             @Override
             PowerManager.LowPowerStandbyPolicy getLowPowerStandbyPolicy() {
                 return mLowPowerStandbyPolicy;
+            }
+
+            @Override
+            NsdManagerWrapper getNsdManager() {
+                return mNsdManager;
             }
 
             @Override
@@ -277,6 +297,37 @@ public class MdnsOffloadManagerTest {
         verify(mVendorService).resetAll();
         assertFalse(mVendorService.mOffloadState);
         assertEquals(0, mVendorService.getOffloadData(IFC_0).offloadedRecords.size());
+    }
+
+
+    @Test
+    public void whenOffloadingRecordWithNsdManager_propagatesToVendorService()
+            throws RemoteException {
+        setupDefaultOffloadManager();
+
+        verify(mNsdManager).registerOffloadEngine(eq(IFC_0), anyLong(),
+                anyLong(), notNull(),
+                mNsdCaptor.capture());
+        OffloadServiceInfo internalInfo = new OffloadServiceInfo(
+                new OffloadServiceInfo.Key("", "atv"),
+                Arrays.asList("0x00", "0x01"),
+                "somedevice",
+                SERVICE_ATV.rawOffloadPacket,
+                10 /* priority */,
+                OffloadEngine.OFFLOAD_TYPE_REPLY
+        );
+        mNsdCaptor.getValue().onOffloadServiceUpdated(internalInfo);
+
+        mTestLooper.dispatchAll();
+
+        FakeMdnsOffloadService.OffloadData offloadData = mVendorService.getOffloadData(IFC_0);
+        assertEquals(1, offloadData.offloadedRecords.size());
+        MdnsProtocolData protocolData = offloadData.offloadedRecords.get(0);
+        assertArrayEquals(SERVICE_ATV.rawOffloadPacket, protocolData.rawOffloadPacket);
+        assertEquals(1, protocolData.matchCriteriaList.size());
+        MatchCriteria matchCriteria = protocolData.matchCriteriaList.get(0);
+        assertEquals(0x01, matchCriteria.type); // Type A response
+        assertEquals(12, matchCriteria.nameOffset);
     }
 
 
@@ -685,6 +736,30 @@ public class MdnsOffloadManagerTest {
     }
 
     @Test
+    public void whenNetworkLostNsdManager_removesOffloadData() throws RemoteException {
+        setupDefaultOffloadManager();
+
+        verify(mNsdManager).registerOffloadEngine(eq(IFC_0), anyLong(),
+                anyLong(), notNull(),
+                mNsdCaptor.capture());
+        OffloadServiceInfo internalInfo = new OffloadServiceInfo(
+                new OffloadServiceInfo.Key("", "atv"),
+                Arrays.asList("0x00", "0x01"),
+                "somedevice",
+                SERVICE_ATV.rawOffloadPacket,
+                10 /* priority */,
+                OffloadEngine.OFFLOAD_TYPE_REPLY
+        );
+        mNsdCaptor.getValue().onOffloadServiceUpdated(internalInfo);
+        mTestLooper.dispatchAll();
+        verifyOffloadedServices(mVendorService, IFC_0, SERVICE_ATV);
+
+        unregisterNetwork(mNetwork0);
+
+        verifyOffloadedServices(mVendorService, IFC_0);
+    }
+
+    @Test
     public void whenNetworkLost_removesOffloadData() throws RemoteException {
         setupDefaultOffloadManager();
         mOffloadManagerBinder.addProtocolResponses(IFC_0, SERVICE_ATV, mClientBinder0);
@@ -729,6 +804,36 @@ public class MdnsOffloadManagerTest {
         assertEquals(
                 PassthroughBehavior.DROP_ALL,
                 mVendorService.getOffloadData(IFC_1).passthroughBehavior);
+    }
+
+    @Test
+    public void whenNetworkRecoversNsdManager_restoresOffloadData() throws RemoteException {
+        setupDefaultOffloadManager();
+        verify(mNsdManager).registerOffloadEngine(eq(IFC_0), anyLong(),
+                anyLong(), notNull(),
+                mNsdCaptor.capture());
+        OffloadServiceInfo internalInfo = new OffloadServiceInfo(
+                new OffloadServiceInfo.Key("", "atv"),
+                Arrays.asList("0x00", "0x01"),
+                "somedevice",
+                SERVICE_ATV.rawOffloadPacket,
+                10 /* priority */,
+                OffloadEngine.OFFLOAD_TYPE_REPLY
+        );
+        mNsdCaptor.getValue().onOffloadServiceUpdated(internalInfo);
+        mTestLooper.dispatchAll();
+        verifyOffloadedServices(mVendorService, IFC_0, SERVICE_ATV);
+
+        unregisterNetwork(mNetwork0);
+        verifyOffloadedServices(mVendorService, IFC_0);
+
+        registerNetwork(mNetwork0, IFC_0);
+        verify(mNsdManager, times(2)).registerOffloadEngine(eq(IFC_0), anyLong(),
+                anyLong(), notNull(),
+                mNsdCaptor.capture());
+        mNsdCaptor.getValue().onOffloadServiceUpdated(internalInfo);
+        mTestLooper.dispatchAll();
+        verifyOffloadedServices(mVendorService, IFC_0, SERVICE_ATV);
     }
 
     @Test
