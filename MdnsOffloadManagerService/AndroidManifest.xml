@@ -19,7 +19,8 @@
     hardware without waking up the CPU.
  -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.tv.mdnsoffloadmanager">
+    package="com.android.tv.mdnsoffloadmanager"
+    android:sharedUserId="android.uid.system">
     <permission
         android:name="com.android.tv.mdnsoffloadmanager.MDNS_OFFLOAD_SERVICE"
         android:protectionLevel="signature" />
