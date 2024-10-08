@@ -36,4 +36,22 @@ public class PowerUtils {
                 ? HdmiControlManager.HDMI_CEC_CONTROL_ENABLED
                 : HdmiControlManager.HDMI_CEC_CONTROL_DISABLED);
     }
+
+    public static boolean isEnabledGoToSleepOnActiveSourceLost(Context context) {
+        HdmiControlManager hdmiControlManager = context.getSystemService(HdmiControlManager.class);
+        return hdmiControlManager.getPowerStateChangeOnActiveSourceLost().equals(
+            HdmiControlManager.POWER_STATE_CHANGE_ON_ACTIVE_SOURCE_LOST_STANDBY_NOW);
+    }
+
+    public static void setPowerStateChangeOnActiveSourceLost(Context context, boolean enable) {
+        HdmiControlManager hdmiControlManager = context.getSystemService(HdmiControlManager.class);
+        hdmiControlManager.setPowerStateChangeOnActiveSourceLost(enable
+            ? HdmiControlManager.POWER_STATE_CHANGE_ON_ACTIVE_SOURCE_LOST_STANDBY_NOW
+            : HdmiControlManager.POWER_STATE_CHANGE_ON_ACTIVE_SOURCE_LOST_NONE);
+    }
+
+    public static boolean isPlaybackDevice(Context context) {
+        HdmiControlManager hdmiControlManager = context.getSystemService(HdmiControlManager.class);
+        return hdmiControlManager.getPlaybackClient() != null;
+    }
 }
