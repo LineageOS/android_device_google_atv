@@ -24,6 +24,7 @@ import androidx.work.ExistingPeriodicWorkPolicy;
 import androidx.work.Operation;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
+import androidx.work.Configuration;
 
 import java.util.concurrent.TimeUnit;
 
@@ -35,9 +36,23 @@ public class RemoteSyncWorkManager {
     public static final String WORK_NAME = "SYNC_REMOTE_PERIODIC";
 
     public RemoteSyncWorkManager(){}
-    private static final WorkManager workManager = WorkManager.getInstance();
 
-    public static void schedulePeriodicSyncs() {
+    public static WorkManager getWorkManagerInstance(Context context) {
+        // Typically WorkManager is initialized as part of app start up. It is possible for
+        // apps to disable that for customized configuration, so to be safe we should
+        // attempt to initialize it here as well.
+        try {
+            WorkManager.initialize(context.getApplicationContext(),
+                    new Configuration.Builder().build());
+        } catch (IllegalStateException ex) {
+            // The call to initialize can fail in normal scenarios when WorkManager is already
+            // initialized.
+        }
+        return WorkManager.getInstance(context.getApplicationContext());
+    }
+
+    public static void schedulePeriodicSyncs(Context context) {
+        WorkManager workManager = getWorkManagerInstance(context);
         Log.i(TAG, "Scheduling periodic remote time syncs");
         // Run periodically
         final PeriodicWorkRequest periodicSyncRequest = getDailySyncRequest();
