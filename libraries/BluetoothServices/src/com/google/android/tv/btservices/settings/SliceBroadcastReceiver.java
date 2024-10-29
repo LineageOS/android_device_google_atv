@@ -54,6 +54,8 @@ import java.util.ArrayList;
 public class SliceBroadcastReceiver extends BroadcastReceiver {
     private static final String TAG = "SliceBroadcastReceiver";
     static final String CEC = "CEC";
+    static final String POWER_STATE_CHANGE_ON_ACTIVE_SOURCE_LOST =
+        "POWER_STATE_CHANGE_ON_ACTIVE_SOURCE_LOST";
 
     static final String TOGGLE_TYPE = "TOGGLE_TYPE";
     static final String TOGGLE_STATE = "TOGGLE_STATE";
@@ -100,6 +102,9 @@ public class SliceBroadcastReceiver extends BroadcastReceiver {
                     } catch (Throwable ex) {
                         Log.e(TAG, "Followup PendingIntent for slice cannot be sent", ex);
                     }
+                } else if (POWER_STATE_CHANGE_ON_ACTIVE_SOURCE_LOST.equals(toggleType)) {
+                    PowerUtils.setPowerStateChangeOnActiveSourceLost(context, isChecked);
+                    context.getContentResolver().notifyChange(CEC_SLICE_URI, null);
                 }
                 break;
             }

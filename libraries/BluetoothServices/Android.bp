@@ -12,6 +12,7 @@ android_library {
 
     srcs: ["src/**/*.java"],
     static_libs: [
+        "android.media.tv.flags-aconfig-java",
         "androidx.annotation_annotation",
         "androidx.leanback_leanback",
         "androidx.leanback_leanback-preference",
