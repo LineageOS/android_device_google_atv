@@ -63,6 +63,10 @@
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"HDMI-CEC-г идэвхжүүлэх"</string>
     <string name="settings_cec_explain" msgid="282126756909187653">"Та HDMI-CEC-г ашиглан бусад HDMI-CEC-г идэвхжүүлсэн төхөөрөмжийг нэг алсын удирдлагаар хянаж, автоматаар асаах/унтраах боломжтой.\n\nСанамж: HDMI-CEC-г ТВ болон бусад HDMI төхөөрөмждөө идэвхжүүлсэн эсэхээ шалгана уу. Үйлдвэрлэгчид ихэвчлэн HDMI-CEC-н өөр өөр нэртэй байдаг бөгөөд жишээлбэл:"</string>
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
+    <!-- no translation found for settings_cec_go_to_sleep_on_active_source_lost_title (8678213062009082466) -->
+    <skip />
+    <!-- no translation found for settings_cec_go_to_sleep_on_active_source_lost_description (3308324454326515797) -->
+    <skip />
     <string name="settings_axel" msgid="8253298947221430993">"Алсын удирдлагын товчлуурыг тохируулах"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"ТВ, хүлээн авагч болон дууны самбаруудын дууны түвшин, тэжээл, оролтыг хянана уу"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Алсын удирдлагаа олох"</string>

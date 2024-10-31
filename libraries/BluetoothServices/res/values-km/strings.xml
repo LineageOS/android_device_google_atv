@@ -63,6 +63,10 @@
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"បើក HDMI-CEC"</string>
     <string name="settings_cec_explain" msgid="282126756909187653">"HDMI-CEC អនុញ្ញាតឱ្យ​អ្នក​គ្រប់គ្រង​ និងបើក/បិទ​ឧបករណ៍​ដែល​អាច​ប្រើ HDMI-CEC ផ្សេង​ទៀត​ដោយស្វ័យប្រវត្តិ​តាមរយៈឧបករណ៍​​បញ្ជា​ពី​ចម្ងាយតែមួយ។\n\nចំណាំ៖ សូមប្រាកដ​ថា HDMI-CEC បានបើក​នៅលើ​ទូរទស្សន៍​ និងឧបករណ៍ HDMI ផ្សេងទៀត​របស់អ្នក។ ជាទូទៅ ក្រុមហ៊ុន​ផលិតឧបករណ៍ដាក់ឈ្មោះខុសៗ​គ្នាឱ្យ​ HDMI-CEC ឧទាហរណ៍៖"</string>
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung៖ Anynet+\nLG៖ SimpLink\nSony៖ BRAVIA Sync\nPhilips៖ EasyLink\nSharp៖ Aquos Link"</string>
+    <!-- no translation found for settings_cec_go_to_sleep_on_active_source_lost_title (8678213062009082466) -->
+    <skip />
+    <!-- no translation found for settings_cec_go_to_sleep_on_active_source_lost_description (3308324454326515797) -->
+    <skip />
     <string name="settings_axel" msgid="8253298947221430993">"រៀបចំ​ប៊ូតុងឧបករណ៍​បញ្ជា​ពី​ចម្ងាយ"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"គ្រប់គ្រងកម្រិតសំឡេង ថាមពល ប្រភពបញ្ចូលនៅលើទូរទស្សន៍ ឧបករណ៍ចាប់សំឡេងនិងរូបភាព និងរបារ​សំឡេង"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"ស្វែងរកឧបករណ៍​បញ្ជាពីចម្ងាយរបស់ខ្ញុំ"</string>
