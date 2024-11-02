@@ -63,6 +63,10 @@
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"HDMI-CEC を有効にする"</string>
     <string name="settings_cec_explain" msgid="282126756909187653">"HDMI-CEC を利用すると、1 台のリモコンによる他の HDMI-CEC 対応デバイスの操作や電源の自動オン / オフが可能になります。\n\n注: テレビや他の HDMI デバイスで HDMI-CEC が有効になっていることをご確認ください。HDMI-CEC の呼び名は、下記のようにメーカーで異なることがあります。"</string>
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nソニー: ブラビアリンク\nフィリップス: EasyLink\nシャープ: Aquos ファミリンク"</string>
+    <!-- no translation found for settings_cec_go_to_sleep_on_active_source_lost_title (8678213062009082466) -->
+    <skip />
+    <!-- no translation found for settings_cec_go_to_sleep_on_active_source_lost_description (3308324454326515797) -->
+    <skip />
     <string name="settings_axel" msgid="8253298947221430993">"リモコンボタンのセットアップ"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"テレビ、レシーバー、サウンドバーの音量、電源の操作や、入力の切り替えを行えます"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"リモコンを探す"</string>

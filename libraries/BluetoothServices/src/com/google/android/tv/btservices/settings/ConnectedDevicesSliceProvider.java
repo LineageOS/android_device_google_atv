@@ -19,6 +19,7 @@ package com.google.android.tv.btservices.settings;
 import static android.app.PendingIntent.FLAG_IMMUTABLE;
 import static android.app.PendingIntent.FLAG_UPDATE_CURRENT;
 import static android.content.Intent.FLAG_RECEIVER_FOREGROUND;
+import static android.media.tv.flags.Flags.hdmiControlEnhancedBehavior;
 
 import static com.android.tv.twopanelsettings.slices.SlicesConstants.EXTRA_SLICE_FOLLOWUP;
 
@@ -41,6 +42,7 @@ import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.A
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.ACTION_TOGGLE_CHANGED;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.ACTIVE_AUDIO_OUTPUT;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.CEC;
+import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.POWER_STATE_CHANGE_ON_ACTIVE_SOURCE_LOST;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.TOGGLE_STATE;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.TOGGLE_TYPE;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.backAndUpdateSliceIntent;
@@ -707,7 +709,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 new RowBuilder()
                         .setTitle(getString(R.string.settings_hdmi_cec))
                         .setPageId(0x18300000)); // TvSettingsEnums.CONNECTED_SLICE_HDMICEC
-        final boolean isEnabled = PowerUtils.isCecControlEnabled(getContext());
+        final boolean isEnabled = PowerUtils.isCecControlEnabled(context);
         Intent intent = new Intent(context, SliceBroadcastReceiver.class)
                 .setAction(ACTION_TOGGLE_CHANGED)
                 .putExtra(TOGGLE_TYPE, CEC)
@@ -724,6 +726,30 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         psb.addPreference(new RowBuilder()
                 .setTitle(getString(R.string.settings_cec_feature_names))
                 .setEnabled(false));
+
+        // Allow the user to choose the behavior of their device when losing active source.
+        // This setting should be visible only on playback devices (OTTs/STBs) and it should be
+        // available to be toggled only when CEC is enabled.
+        if (hdmiControlEnhancedBehavior() && PowerUtils.isPlaybackDevice(context)) {
+            final boolean isEnabledGoToSleepOnActiveSourceLost =
+                    PowerUtils.isEnabledGoToSleepOnActiveSourceLost(context);
+            Intent intentGoToSleepOnActiveSourceLost = new Intent(context,
+                    SliceBroadcastReceiver.class)
+                    .setAction(ACTION_TOGGLE_CHANGED)
+                    .putExtra(TOGGLE_TYPE, POWER_STATE_CHANGE_ON_ACTIVE_SOURCE_LOST)
+                    .putExtra(TOGGLE_STATE, !isEnabledGoToSleepOnActiveSourceLost);
+            PendingIntent pendingIntentGoToSleepOnActiveSourceLost = PendingIntent.getBroadcast(
+                    context, 1, intentGoToSleepOnActiveSourceLost,
+                    FLAG_IMMUTABLE | FLAG_UPDATE_CURRENT);
+            psb.addPreference(new RowBuilder()
+                    .setTitle(getString(
+                            R.string.settings_cec_go_to_sleep_on_active_source_lost_title))
+                    .setInfoSummary(getString(
+                            R.string.settings_cec_go_to_sleep_on_active_source_lost_description))
+                    .addSwitch(pendingIntentGoToSleepOnActiveSourceLost, null,
+                            isEnabledGoToSleepOnActiveSourceLost && isEnabled)
+                    .setEnabled(isEnabled));
+        }
         return psb.build();
     }
 

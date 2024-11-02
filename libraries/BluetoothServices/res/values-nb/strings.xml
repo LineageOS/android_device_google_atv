@@ -63,6 +63,10 @@
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"Slå på HDMI-CEC"</string>
     <string name="settings_cec_explain" msgid="282126756909187653">"Med HDMI-CEC kan du kontrollere og automatisk slå andre HDMI-CEC-aktiverte enheter av/på med én enkelt fjernkontroll.\n\nMerk: Sjekk at HDMI-CEC er slått på for TV-en din og andre HDMI-enheter. Produsenter har ofte forskjellige navn for HDMI-CEC, for eksempel:"</string>
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
+    <!-- no translation found for settings_cec_go_to_sleep_on_active_source_lost_title (8678213062009082466) -->
+    <skip />
+    <!-- no translation found for settings_cec_go_to_sleep_on_active_source_lost_description (3308324454326515797) -->
+    <skip />
     <string name="settings_axel" msgid="8253298947221430993">"Konfigurer fjernkontrollknapper"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Kontroller volumet og innenheter på TV-er, mottakere og lydplanker, og slå dem av og på"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Finn fjernkontrollen min"</string>

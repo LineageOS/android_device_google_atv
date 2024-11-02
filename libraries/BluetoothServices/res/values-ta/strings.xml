@@ -63,6 +63,10 @@
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"HDMI-CECயை இயக்கு"</string>
     <string name="settings_cec_explain" msgid="282126756909187653">"HDMI-CEC இயக்கப்பட்டுள்ள வேறு சாதனங்களை ரிமோட் கன்ட்ரோல் மூலம் கட்டுப்படுத்தவும் தானாகவே ஆன்/ஆஃப் செய்யவும் HDMI-CEC அனுமதிக்கும்.\n\nகவனத்திற்கு: டிவியிலும் பிற HDMI சாதனங்களிலும் HDMI-CEC இயக்கப்பட்டிருப்பதை உறுதிசெய்யவும். HDMI-CECக்கு ஒவ்வொரு தயாரிப்பாளரும் ஒவ்வொரு பெயரை வைத்திருப்பார், உதாரணமாக:"</string>
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
+    <!-- no translation found for settings_cec_go_to_sleep_on_active_source_lost_title (8678213062009082466) -->
+    <skip />
+    <!-- no translation found for settings_cec_go_to_sleep_on_active_source_lost_description (3308324454326515797) -->
+    <skip />
     <string name="settings_axel" msgid="8253298947221430993">"ரிமோட் பட்டன்களை அமைத்தல்"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"டிவிகள், ரிசீவர்கள், சவுண்ட்பார்கள் ஆகியவற்றில் ஒலியளவையும் பவரையும் உள்ளீட்டையும் கட்டுப்படுத்தலாம்"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"எனது ரிமோட்டைக் கண்டறிதல்"</string>

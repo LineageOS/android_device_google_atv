@@ -63,6 +63,10 @@
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"Активиране на CEC за HDMI"</string>
     <string name="settings_cec_explain" msgid="282126756909187653">"CEC за HDMI ви позволява да управлявате и автоматично да включвате/изключвате други активирани за CEC за HDMI устройства посредством едно дистанционно управление.\n\nЗабележка: Уверете се, че сте активирали CEC за HDMI на телевизора си и другите HDMI устройства. Производителите често имат различни имена за тази функция, като например:"</string>
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
+    <!-- no translation found for settings_cec_go_to_sleep_on_active_source_lost_title (8678213062009082466) -->
+    <skip />
+    <!-- no translation found for settings_cec_go_to_sleep_on_active_source_lost_description (3308324454326515797) -->
+    <skip />
     <string name="settings_axel" msgid="8253298947221430993">"Настройване на бутоните на дистанционното управление"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Управление на бутоните за силата на звука, включване/изключване и избор на вход на телевизори, приемници и звукови панели"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Намиране на дистанционното ми управление"</string>
