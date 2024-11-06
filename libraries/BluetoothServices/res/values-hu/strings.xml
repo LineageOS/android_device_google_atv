@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Nem sikerült csatlakoztatni a következőt: %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s csatlakoztatva"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s leválasztva"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Háttérvilágítás mód"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"A távirányító gombjainak háttérvilágítása minden lenyomáskor bekapcsol."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"A támogatott Google TV-távirányítókon a rajtuk lévő gombok megnyomásakor aktiválódik a háttérvilágítás."</string>
 </resources>

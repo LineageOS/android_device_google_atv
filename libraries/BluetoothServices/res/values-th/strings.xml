@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s เชื่อมต่อไม่สำเร็จ"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"เชื่อมต่อ %1$s แล้ว"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"ยกเลิกการเชื่อมต่อ %1$s แล้ว"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"โหมดไฟแบ็กไลต์"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"การส่องสว่างของปุ่มเมื่อกดรีโมตคอนโทรลแต่ละครั้ง"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"เมื่อใช้รีโมต Google TV ที่รองรับ การกดปุ่มบนรีโมตจะเป็นการเปิดใช้งานไฟแบ็กไลต์"</string>
 </resources>

@@ -29,6 +29,7 @@ import static com.google.android.tv.btservices.settings.SlicesUtil.FIND_MY_REMOT
 import static com.google.android.tv.btservices.settings.SlicesUtil.GENERAL_SLICE_URI;
 import static com.google.android.tv.btservices.settings.SlicesUtil.notifyToGoBack;
 import static com.google.android.tv.btservices.settings.SlicesUtil.setFindMyRemoteButtonEnabled;
+import static com.google.android.tv.btservices.settings.SlicesUtil.setBacklightMode;
 
 import android.app.PendingIntent;
 import android.bluetooth.BluetoothDevice;
@@ -36,11 +37,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-
 import android.util.Log;
 
 import com.google.android.tv.btservices.BluetoothUtils;
 import com.google.android.tv.btservices.PowerUtils;
+import com.google.android.tv.btservices.R;
 
 import java.util.ArrayList;
 
@@ -56,9 +57,12 @@ public class SliceBroadcastReceiver extends BroadcastReceiver {
 
     static final String TOGGLE_TYPE = "TOGGLE_TYPE";
     static final String TOGGLE_STATE = "TOGGLE_STATE";
+    static final String BACKLIGHT_MODE = "BACKLIGHT_MODE";
 
     static final String ACTION_TOGGLE_CHANGED = "com.google.android.settings.usage.TOGGLE_CHANGED";
     static final String ACTION_FIND_MY_REMOTE = "com.google.android.tv.FIND_MY_REMOTE";
+    static final String ACTION_BACKLIGHT = "com.google.android.tv.BACKLIGHT";
+    static final String KEY_BACKLIGHT_MODE = "key_backlight_mode";
     static final String ACTIVE_AUDIO_OUTPUT = "ACTIVE_AUDIO_OUTPUT";
     private static final String ACTION_UPDATE_SLICE = "UPDATE_SLICE";
     private static final String ACTION_BACK_AND_UPDATE_SLICE = "BACK_AND_UPDATE_SLICE";
@@ -116,6 +120,17 @@ public class SliceBroadcastReceiver extends BroadcastReceiver {
                                         | FLAG_RECEIVER_INCLUDE_BACKGROUND),
                         "com.google.android.tv.permission.FIND_MY_REMOTE");
                 break;
+            case ACTION_BACKLIGHT:
+                final int modes = intent.getIntExtra(BACKLIGHT_MODE, 1);
+                // save user selection
+                setBacklightMode(context, modes);
+
+                context.sendBroadcast(
+                        new Intent(ACTION_BACKLIGHT)
+                                .putExtra(BACKLIGHT_MODE, modes)
+                                .setFlags(FLAG_INCLUDE_STOPPED_PACKAGES | FLAG_RECEIVER_FOREGROUND
+                                        | FLAG_RECEIVER_INCLUDE_BACKGROUND),
+                        "com.google.android.tv.permission.BACKLIGHT");
 
             default:
                 // no-op
@@ -137,6 +152,37 @@ public class SliceBroadcastReceiver extends BroadcastReceiver {
                 ACTION_BACK_AND_UPDATE_SLICE).putStringArrayListExtra(PARAM_URIS, uris).putExtra(
                 EXTRAS_SLICE_URI, navigatingBackUri).setData(Uri.parse(navigatingBackUri));
         return PendingIntent.getBroadcast(context, requestCode, i,
+                PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
+    }
+
+    public static PendingIntent getBacklightModeIntent(
+            Context context, Uri sliceUri, String backlightMode) {
+        Intent intent = new Intent(context, SliceBroadcastReceiver.class);
+
+        // Intents are considered the same if only extras different. Thus putting backlightMode in
+        // Uri query to create different PendingIntents for different backlightMode changing
+        // requests.
+        final Uri sliceUriWithQuery =
+                sliceUri.buildUpon()
+                        .appendQueryParameter(
+                                KEY_BACKLIGHT_MODE, backlightMode)
+                        .build();
+
+        intent.setAction(ACTION_BACKLIGHT);
+
+        final String[] backlightModes =
+                context.getResources().getStringArray(R.array.backlight_modes);
+        int modes = -1;
+        for (int i = 0; i < backlightModes.length; i ++){
+            if (backlightModes[i].equals(backlightMode)) {
+                modes = i;
+                break;
+            }
+        }
+        intent.putExtra(BACKLIGHT_MODE, modes);
+        intent.setData(sliceUriWithQuery);
+
+        return PendingIntent.getBroadcast(context, 0, intent,
                 PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
     }
 }

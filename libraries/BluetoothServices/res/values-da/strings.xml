@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Der kunne ikke oprettes forbindelse til %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s er forbundet"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Forbindelsen til %1$s blev afbrudt"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Tilstanden Baggrundslys"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Knapperne på fjernbetjeningen lyser ved hvert tryk."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"På understøttede Google TV-fjernbetjeninger aktiveres baggrundslyset ved tryk på fjernbetjeningsknappen."</string>
 </resources>

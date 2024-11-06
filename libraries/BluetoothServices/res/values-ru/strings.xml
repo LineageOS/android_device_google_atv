@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Не удалось подключиться к устройству \"%1$s\"."</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Устройство \"%1$s\" подключено."</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Устройство \"%1$s\" отключено."</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Подсветка"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Кнопки на пульте будут подсвечиваться при каждом нажатии"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Нажав какую-либо кнопку на поддерживаемом пульте Google TV, вы включите подсветку."</string>
 </resources>

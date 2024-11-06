@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2024 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string-array name="backlight_modes">
+    <item msgid="3697287350057956643">"कभी नहीं"</item>
+    <item msgid="5086108549243157281">"स्टैंडर्ड"</item>
+    <item msgid="1608651425322487768">"शेड्यूल की गई"</item>
+  </string-array>
+  <string-array name="backlight_hints">
+    <item msgid="9076173600287388436">"क्लिक करने पर कभी भी बैकलाइट नहीं जलेगी."</item>
+    <item msgid="2183471491302242879">"जब भी क्लिक किया जाएगा, बैकलाइट जलेगी. इसके चालू होने पर, हर बार पांच सेकंड तक बैकलाइट जली रहेगी."</item>
+    <item msgid="4339318499911916123">"शाम 6 बजे से सुबह 6 बजे के दौरान ही, जब भी क्लिक किया जाएगा, बैकलाइट जलेगी. इसके चालू होने पर, हर बार पांच सेकंड तक बैकलाइट जली रहेगी."</item>
+  </string-array>
+</resources>

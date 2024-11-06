@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2024 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string-array name="backlight_modes">
+    <item msgid="3697287350057956643">"ਕਦੇ ਵੀ ਨਹੀਂ"</item>
+    <item msgid="5086108549243157281">"ਮਿਆਰੀ"</item>
+    <item msgid="1608651425322487768">"ਨਿਯਤ"</item>
+  </string-array>
+  <string-array name="backlight_hints">
+    <item msgid="9076173600287388436">"ਕਲਿੱਕ ਕਰਨ \'ਤੇ ਬੈਕਲਾਈਟ ਕਦੇ ਵੀ ਪ੍ਰਕਾਸ਼ਮਾਨ ਨਹੀਂ ਹੋਵੇਗੀ।"</item>
+    <item msgid="2183471491302242879">"ਹਰ ਵਾਰ ਕਲਿੱਕ ਕਰਨ \'ਤੇ ਬੈਕਲਾਈਟ ਪ੍ਰਕਾਸ਼ਮਾਨ ਹੋਵੇਗੀ। ਇਸਦੇ ਕਿਰਿਆਸ਼ੀਲ ਹੋਣ \'ਤੇ ਰੋਸ਼ਨੀ ਹਰ ਵਾਰ 5 ਸਕਿੰਟਾਂ ਤੱਕ ਪ੍ਰਕਾਸ਼ਮਾਨ ਰਹੇਗੀ।"</item>
+    <item msgid="4339318499911916123">"ਬੈਕਲਾਈਟ ਹਰੇਕ ਕਲਿੱਕ \'ਤੇ ਸਿਰਫ਼ ਰਾਤ ਦੇ ਸਮੇਂ (ਸ਼ਾਮ 6 ਵਜੇ~ਸਵੇਰ 6 ਵਜੇ) ਦੌਰਾਨ ਹੀ ਪ੍ਰਕਾਸ਼ਮਾਨ ਹੋਵੇਗੀ। ਇਸਦੇ ਕਿਰਿਆਸ਼ੀਲ ਹੋਣ \'ਤੇ ਰੋਸ਼ਨੀ ਹਰ ਵਾਰ 5 ਸਕਿੰਟਾਂ ਤੱਕ ਪ੍ਰਕਾਸ਼ਮਾਨ ਰਹੇਗੀ।"</item>
+  </string-array>
+</resources>

@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s ਨੂੰ ਕਨੈਕਟ ਕਰਨਾ ਅਸਫਲ ਰਿਹਾ"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s ਨੂੰ ਕਨੈਕਟ ਕੀਤਾ ਗਿਆ"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s ਨੂੰ ਡਿਸਕਨੈਕਟ ਕੀਤਾ ਗਿਆ"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"ਬੈਕਲਾਈਟ ਮੋਡ"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"ਰਿਮੋਟ ਕੰਟਰੋਲ \'ਤੇ ਮੌਜੂਦ ਬਟਨਾਂ ਨੂੰ ਦਬਾਉਣ \'ਤੇ, ਹਰ ਵਾਰ ਬੈਕਲਾਈਟ ਪ੍ਰਕਾਸ਼ਮਾਨ ਹੋ ਜਾਂਦੀ ਹੈ।"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"ਸਮਰਥਿਤ Google TV ਰਿਮੋਟ \'ਤੇ, ਰਿਮੋਟ \'ਤੇ ਬਟਨ ਦਬਾਉਣ ਨਾਲ ਬੈਕਲਾਈਟ ਰੋਸ਼ਨੀ ਕਿਰਿਆਸ਼ੀਲ ਹੋ ਜਾਂਦੀ ਹੈ।"</string>
 </resources>

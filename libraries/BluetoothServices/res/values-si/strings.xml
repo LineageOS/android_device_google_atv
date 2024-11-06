@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s සබැඳීමට අසමත් විය"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s සම්බන්ධ විය"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s විසන්ධි විය"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"පසු ආලෝකන ප්‍රකාරය"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"එක් එක් එබීම මත දුරස්ථ පාලකයෙහි බොත්තම් ආලෝකමත් කිරීම."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"සහාය දක්වන Google TV දුරස්ථ පාලකවල, දුරස්ථ පාලකවල බොත්තම එබීමෙන් පසුතල ආලෝකය සක්‍රිය කරයි."</string>
 </resources>

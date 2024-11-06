@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s متصل نشد"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s متصل شد"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"اتصال %1$s قطع شد"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"حالت نور پس‌زمینه"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"روشنایی دکمه‌های روی کنترل از دور با هر فشردن."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"در کنترل‌های از دور پشتیبانی‌شده Google TV، با فشار دادن دکمه روی کنترل از دور روشنایی نور پس‌زمینه فعال می‌شود."</string>
 </resources>

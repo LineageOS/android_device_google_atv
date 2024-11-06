@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s ஐ இணைக்க முடியவில்லை"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s இணைக்கப்பட்டது"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s துண்டிக்கப்பட்டது"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"பேக்லைட் பயன்முறை"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"ஒவ்வொருமுறை அழுத்தும்போதும் ரிமோட் கன்ட்ரோலில் உள்ள பட்டன்களில் வெளிப்படும் வெளிச்சம்."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"ஆதரிக்கப்படும் Google TV ரிமோட்களில், ரிமோட்களில் உள்ள பட்டனை அழுத்துவது பேக்லைட் வெளிச்சத்தைச் செயல்படுத்தும்."</string>
 </resources>

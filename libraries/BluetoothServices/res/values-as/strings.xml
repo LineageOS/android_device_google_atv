@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s সংযোগ কৰিব পৰা নগ’ল"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s সংযোগ কৰা হ’ল"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$sৰ সংযোগ বিচ্ছিন্ন কৰা হ’ল"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"বেকলাইট ম’ড"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"ৰিম’ট কন্ট্ৰ’লৰ বুটামবোৰৰ প্ৰতিবাৰ টিপিলে লাইট জ্বলে।"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"সমৰ্থিত Google TVৰ ৰিম’টত, ৰিম’টৰ বুটাম টিপিলে বেকলাইটৰ পোহৰ সক্ৰিয় হয়।"</string>
 </resources>

@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s – свързването не бе успешно"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Установена е връзка с(ъс) %1$s"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s – връзката е прекратена"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Режим за фоново осветление"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Осветяване на бутоните на дистанционното управление при всяко натискане"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"На поддържани дистанционни управления на Google TV при натискането на бутона ще се активира осветяването от фоновото осветление."</string>
 </resources>

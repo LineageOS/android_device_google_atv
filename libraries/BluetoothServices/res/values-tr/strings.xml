@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s bağlantısı başarısız oldu"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s bağlandı"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s bağlantısı kesildi"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Arka Işık Modu"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Uzaktan kumandadaki düğmelerin her basıldığında yanması."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Desteklenen Google TV uzaktan kumandalarında düğmeye basıldığında arka ışık aydınlatması etkinleşir."</string>
 </resources>

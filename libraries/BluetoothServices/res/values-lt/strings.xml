@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Nepavyko prijungti „%1$s“"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"„%1$s“ įrenginys prijungtas"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"„%1$s“ įrenginys atjungtas"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Foninio apšvietimo režimas"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Nuotolinio valdymo pultelio mygtukų apšvietimas kiekvieną kartą paspaudus."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Paspaudus palaikomo „Google TV“ nuotolinio valdymo pultelio mygtuką suaktyvinamas foninis apšvietimas."</string>
 </resources>

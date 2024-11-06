@@ -1,5 +1,6 @@
 package com.android.tv.mdnsoffloadmanager;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 import android.content.Intent;
@@ -15,7 +16,7 @@ import java.util.stream.Collectors;
 public class TestHelpers {
 
     static final OffloadServiceInfo SERVICE_ATV
-        = makeOffloadServiceInfo("", "atv", "somedevice", new byte[]{
+            = makeOffloadServiceInfo("", "atv", "somedevice", new byte[]{
             0, 0, 0, 0,             // Id, Flags
             0, 0, 0, 1, 0, 0, 0, 0, // Header section, 1 answer
 
@@ -26,10 +27,10 @@ public class TestHelpers {
             0, 0, 0, 5,             // TTL 5sec
             0, 4,                   // Data with size 4
             100, 80, 40, 20         // IP: 100.80.40.20
-        });
+    });
 
     static final OffloadServiceInfo SERVICE_AIRPLAY
-        = makeOffloadServiceInfo("", "airplay", "somedevice", new byte[]{
+            = makeOffloadServiceInfo("", "airplay", "somedevice", new byte[]{
             0, 0, 0, 0,             // Id, Flags
             0, 0, 0, 1, 0, 0, 0, 0, // Header section, 1 answer
 
@@ -40,10 +41,10 @@ public class TestHelpers {
             0, 0, 0, 5,             // TTL 5sec
             0, 4,                   // Data with size 4
             100, 80, 40, 20         // IP: 100.80.40.20
-        });
+    });
 
     static final OffloadServiceInfo SERVICE_GTV
-        = makeOffloadServiceInfo("gtv", "atv", "somedevice", new byte[]{
+            = makeOffloadServiceInfo("gtv", "atv", "somedevice", new byte[]{
             0, 0, 0, 0,             // Id, Flags
             0, 0, 0, 2, 0, 0, 0, 0, // Header section, 2 answers
 
@@ -63,10 +64,10 @@ public class TestHelpers {
             0, 0, 0, 5,             // TTL 5sec
             0, 3,                   // Data with size 3
             'i', 's', 'o'           // "iso"
-        });
+    });
 
     static final OffloadServiceInfo SERVICE_GOOGLECAST
-        = makeOffloadServiceInfo("_googlecast", "_tcp", "tv-abc", new byte[]{
+            = makeOffloadServiceInfo("_googlecast", "_tcp", "tv-abc", new byte[]{
             0, 0, 0, 0,             // Id, Flags
             0, 0, 0, 2, 0, 0, 0, 0, // Header section, 2 answers
 
@@ -88,10 +89,10 @@ public class TestHelpers {
             0, 0, 0, 5,             // TTL 5sec
             0, 4,                   // Data with size 4
             100, 80, 40, 20,        // IP: 100.80.40.20
-        });
+    });
 
     static OffloadServiceInfo makeOffloadServiceInfo(String serviceName, String serviceType,
-        String deviceHostName, byte[] rawOffloadPacket) {
+                                                     String deviceHostName, byte[] rawOffloadPacket) {
         OffloadServiceInfo serviceInfo = new OffloadServiceInfo();
         serviceInfo.serviceName = serviceName;
         serviceInfo.serviceType = serviceType;
@@ -132,7 +133,12 @@ public class TestHelpers {
                 .stream()
                 .map(protocolData -> protocolData.rawOffloadPacket)
                 .collect(Collectors.toList());
-        assertEquals(expectedPackets, offloadedPackets);
+        int expectedPacketsSize = expectedPackets.size();
+        int offloadedPacketsSize = offloadedPackets.size();
+        assertEquals(expectedPacketsSize, offloadedPacketsSize);
+        for (int i = 0; i < expectedPacketsSize; i++) {
+            assertArrayEquals(expectedPackets.get(i), offloadedPackets.get(i));
+        }
     }
 
     static void verifyPassthroughQNames(

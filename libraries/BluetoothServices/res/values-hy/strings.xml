@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s․ չհաջողվեց միացնել"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s սարքը միացված է"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s սարքն անջատված է"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Հետնալույսի ռեժիմ"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Հեռակառավարման վահանակի կոճակների լուսավորում յուրաքանչյուր սեղմումով։"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Հեռակառավարման վահանակի կոճակի սեղմումը Google TV-ի հեռակառավարման աջակցվող վահանակներում միացնում է հետնալույսը։"</string>
 </resources>

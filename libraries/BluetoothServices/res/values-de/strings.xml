@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s konnte keine Verbindung herstellen"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s verbunden"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Verbindung mit %1$s getrennt"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Hintergrundbeleuchtung"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Die Tasten der Fernbedienung leuchten bei jedem Drücken auf."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Wenn du bei unterstützten Google TV-Fernbedienungen auf die Tasten drückst, leuchtet die Hintergrundbeleuchtung auf."</string>
 </resources>

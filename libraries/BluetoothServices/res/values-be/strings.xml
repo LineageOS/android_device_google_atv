@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Не ўдалося падключыцца да прылады \"%1$s\""</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Прылада \"%1$s\" падключана"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Прылада \"%1$s\" адключана"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Рэжым падсветкі"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Падсветка кнопак на пульце дыстанцыйнага кіравання падчас іх націскання."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Калі націснуць кнопку на пульце дыстанцыйнага кіравання Google TV, будзе ўключацца падсветка (толькі на пультах, якія падтрымліваюць гэту функцыю)."</string>
 </resources>

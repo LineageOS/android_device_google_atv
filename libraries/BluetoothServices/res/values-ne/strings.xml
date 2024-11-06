@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s जडान गर्न सकिएन"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s कनेक्ट गरिएको छ"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s डिस्कनेक्ट गरिएको छ"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"ब्याकलाइट मोड"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"हरेक पटक रिमोट कन्ट्रोलमा भएका बटनमा थिच्दा ब्याकलाइट बल्छ।"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"यो सुविधा भएको Google TV को रिमोटको बटन थिच्दा ब्याकलाइट एक्टिभेट हुन्छ।"</string>
 </resources>

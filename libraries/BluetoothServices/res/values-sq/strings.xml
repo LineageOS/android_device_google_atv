@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Dështoi lidhja me %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s u lidh"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s u shkëput"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Modaliteti i dritës së sfondit"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Ndriçimi i butonave në telekomandë pas çdo shtypjeje."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Në telekomandat e mbështetura të Google TV, shtypja e butonit në telekomanda aktivizon ndriçim e dritës së sfondit."</string>
 </resources>

@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Ierīcē (%1$s) neizdevās izveidot savienojumu."</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Savienojums ar ierīci (%1$s) ir izveidots."</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Savienojums ar ierīci (%1$s) ir pārtraukts."</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Fona apgaismojuma režīms"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Katru reizi nospiežot tālvadības ierīces pogu, tiek aktivizēts pogu izgaismojums."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Atbalstītām Google TV tālvadības ierīcēm, nospiežot tālvadības ierīces pogu, tiek aktivizēts fona apgaismojums."</string>
 </resources>

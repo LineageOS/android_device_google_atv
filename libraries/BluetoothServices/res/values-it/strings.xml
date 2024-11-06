@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Impossibile connettere %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Dispositivo %1$s connesso"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Dispositivo %1$s disconnesso"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Modalità di retroilluminazione"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Illuminazione dei tasti del telecomando a ogni pressione."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Sui telecomandi Google TV supportati, premendo il pulsante sul telecomando si attiva la retroilluminazione."</string>
 </resources>

@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s ulanmadi"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s ulandi"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s uzildi"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Orqa chiroq rejimi"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Har bir bosishda pultdagi tugmalarning yoritilishi."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Mos Google TV pultlarida pultdagi tugmani bosish orqa chiroq yoritilishini faollashtiradi."</string>
 </resources>

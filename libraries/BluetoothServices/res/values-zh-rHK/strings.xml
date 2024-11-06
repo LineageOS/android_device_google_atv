@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"無法連接「%1$s」"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"「%1$s」已連接"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"「%1$s」已解除連接"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"背光模式"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"每次按下遙控器按鈕時便會亮起。"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"按下支援的 Google TV 遙控器按鈕時，背光會亮起。"</string>
 </resources>

@@ -28,6 +28,9 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Consumer;
 
+import static com.google.android.tv.btservices.syncwork.RemoteSyncWorkManager.schedulePeriodicSyncs;
+
+
 /**
  * An object that manages Bluetooth LE connection.
  *
@@ -357,6 +360,8 @@ public class BleConnection {
                         ", status: " + status);
             }
             if (newState == BluetoothProfile.STATE_CONNECTED) {
+                Log.i(TAG, "Remote connected. Calibrating the time clock...");
+                schedulePeriodicSyncs();
                 if (state.compareAndSet(
                         ConnectionState.GATT_CONNECTING,
                         ConnectionState.SERVICE_DISCOVERING)) {

@@ -88,6 +88,7 @@ public class OffloadWriter {
             return;
         }
         try {
+            Log.e(TAG, "Setting offload state: %b".formatted(enabled));
             mVendorService.setOffloadState(enabled);
         } catch (RemoteException | ServiceSpecificException e) {
             Log.e(TAG, "Failed to set offload state to {" + enabled + "}.", e);
@@ -232,6 +233,10 @@ public class OffloadWriter {
     private void trySetPassthroughBehavior(String networkInterface, byte passthroughMode) {
         try {
             mVendorService.setPassthroughBehavior(networkInterface, passthroughMode);
+            String msg = "Set passthrough mode {"
+                    + passthroughBehaviorToString(passthroughMode) + "}"
+                    + " on iface {" + networkInterface + "}";
+            Log.e(TAG, msg);
         } catch (RemoteException | ServiceSpecificException e) {
             String msg = "Failed to set passthrough mode {"
                     + passthroughBehaviorToString(passthroughMode) + "}"
@@ -259,6 +264,9 @@ public class OffloadWriter {
             Log.e(TAG, msg);
             return false;
         }
+        String msg = "Added passthrough list entry for qname {"
+                    + ptIntent.mOriginalQName + "} on iface {" + networkInterface + "}.";
+        Log.e(TAG, msg);
         return true;
     }
 

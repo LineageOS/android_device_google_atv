@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s មិនអាច​ភ្ជាប់​បានទេ"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"បានភ្ជាប់ %1$s"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"បានផ្ដាច់ %1$s"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"មុខងារពន្លឺក្រោយ"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"ពន្លឺនៃប៊ូតុងនៅលើឧបករណ៍​​បញ្ជា​ពី​ចម្ងាយនៅពេលចុចម្ដងៗ។"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"នៅលើឧបករណ៍​បញ្ជាពីចម្ងាយ Google TV ដែលអាចប្រើបាន ការចុចប៊ូតុងនៅលើឧបករណ៍​បញ្ជាពីចម្ងាយបើកដំណើរការពន្លឺក្រោយ។"</string>
 </resources>
