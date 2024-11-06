@@ -63,10 +63,8 @@
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"HDMI-CEC ਚਾਲੂ ਕਰੋ"</string>
     <string name="settings_cec_explain" msgid="282126756909187653">"HDMI-CEC ਤੁਹਾਨੂੰ ਇਕਹਿਰੇ ਰਿਮੋਟ ਕੰਟਰੋਲ ਨਾਲ ਹੋਰਾਂ HDMI-CEC ਸਮਰਥਿਤ ਡੀਵਾਈਸਾਂ ਨੂੰ ਕੰਟਰੋਲ ਅਤੇ ਚਾਲੂ ਜਾਂ ਬੰਦ ਕਰਨ ਦਿੰਦਾ ਹੈ।\n\nਨੋਟ ਕਰੋ: ਪੱਕਾ ਕਰੋ ਕਿ ਤੁਹਾਡੇ ਟੀਵੀ ਅਤੇ ਹੋਰਾਂ HDMI ਡੀਵਾਈਸਾਂ \'ਤੇ HDMI-CEC ਚਾਲੂ ਕੀਤਾ ਹੋਵੇ। ਨਿਰਮਾਤਾ ਅਕਸਰ HDMI-CEC ਲਈ ਵੱਖੋ-ਵੱਖਰੇ ਨਾਮ ਰੱਖਦੇ ਹਨ, ਉਦਾਹਰਨ ਲਈ:"</string>
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
-    <!-- no translation found for settings_cec_go_to_sleep_on_active_source_lost_title (8678213062009082466) -->
-    <skip />
-    <!-- no translation found for settings_cec_go_to_sleep_on_active_source_lost_description (3308324454326515797) -->
-    <skip />
+    <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"ਕਿਸੇ ਹੋਰ ਸਰੋਤ \'ਤੇ ਇਨਪੁੱਟ ਸਵਿੱਚ ਕਰਨ ਵੇਲੇ ਸਟੈਂਡਬਾਈ ਮੋਡ ਵਿੱਚ ਦਾਖਲ ਹੋਵੋ"</string>
+    <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"ਜਦੋਂ ਤੁਸੀਂ ਇਸ ਸੈਟਿੰਗ ਨੂੰ ਚਾਲੂ ਕਰਦੇ ਹੋ ਅਤੇ ਆਪਣੇ ਟੀਵੀ \'ਤੇ HDMI-CEC ਨੂੰ ਚਾਲੂ ਕੀਤਾ ਹੋਇਆ ਹੈ, ਤਾਂ ਇਹ ਡੀਵਾਈਸ ਤੁਹਾਡੇ ਟੀਵੀ \'ਤੇ ਕਿਸੇ ਵੱਖਰੇ ਇਨਪੁੱਟ \'ਤੇ ਸਵਿੱਚ ਕਰਨ ਤੋਂ ਬਾਅਦ ਜਲਦ ਹੀ ਸਵੈਚਲਿਤ ਤੌਰ \'ਤੇ ਸਟੈਂਡਬਾਏ ਮੋਡ ਵਿੱਚ ਦਾਖਲ ਹੋ ਜਾਵੇਗਾ। ਇਸ ਨਾਲ ਅਜਿਹੀ ਸਮੱਗਰੀ ਨੂੰ ਰੋਕਣ ਅਤੇ ਬਿਜਲੀ ਦੀ ਖਪਤ ਘੱਟ ਕਰਨ ਵਿੱਚ ਮਦਦ ਮਿਲ ਸਕਦੀ ਹੈ ਜਦੋਂ ਤੁਸੀਂ ਸਰਗਰਮੀ ਨਾਲ ਨਾ ਦੇਖ ਰਹੇ ਹੋਵੋ।"</string>
     <string name="settings_axel" msgid="8253298947221430993">"ਰਿਮੋਟ ਦੇ ਬਟਨਾਂ ਦਾ ਸੈੱਟਅੱਪ ਕਰੋ"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"ਅਵਾਜ਼, ਪਾਵਰ, ਟੀਵੀਆਂ \'ਤੇ ਇਨਪੁੱਟ, ਰਿਸੀਵਰਾਂ ਅਤੇ ਸਾਊਂਡਬਾਰਾਂ ਨੂੰ ਕੰਟਰੋਲ ਕਰੋ"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"ਮੇਰਾ ਰਿਮੋਟ ਲੱਭੋ"</string>
