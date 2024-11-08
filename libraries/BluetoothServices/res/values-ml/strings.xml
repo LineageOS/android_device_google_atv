@@ -63,10 +63,8 @@
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"HDMI-CEC പ്രവർത്തനക്ഷമമാക്കുക"</string>
     <string name="settings_cec_explain" msgid="282126756909187653">"HDMI-CEC പ്രവര്‍ത്തനക്ഷമമാക്കിയ മറ്റ് ഉപകരണങ്ങള്‍ ഒരു റിമോട്ട് കണ്‍ട്രോള്‍ ഉപയോഗിച്ച് നിയന്ത്രിക്കാനും സ്വയമേവ ഓണാക്കാനും/ഓഫാക്കാനും HDMI-CEC നിങ്ങളെ അനുവദിക്കുന്നു. \n\nകുറിപ്പ്: നിങ്ങളുടെ ടിവിയിലും മറ്റ് HDMI ഉപകരണങ്ങളിലും HDMI-CEC പ്രവര്‍ത്തനക്ഷമമാക്കിയിട്ടുണ്ടെന്ന് ഉറപ്പാക്കുക. HDMI-CEC-ക്ക് നിര്‍മ്മാതാക്കള്‍ പലപ്പോഴും വ്യത്യസ്‌ത പേരുകള്‍ നല്‍കാറുണ്ട്, ഉദാഹരണത്തിന്:"</string>
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
-    <!-- no translation found for settings_cec_go_to_sleep_on_active_source_lost_title (8678213062009082466) -->
-    <skip />
-    <!-- no translation found for settings_cec_go_to_sleep_on_active_source_lost_description (3308324454326515797) -->
-    <skip />
+    <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"മറ്റൊരു ഉറവിടത്തിലേക്ക് ഇൻപുട്ട് മാറുമ്പോൾ സ്റ്റാൻഡ്ബൈ നൽകുക"</string>
+    <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"നിങ്ങൾ ഈ ക്രമീകരണം പ്രവർത്തനക്ഷമമാക്കുകയും നിങ്ങളുടെ ടിവിയിൽ HDMI-CEC പ്രവർത്തനക്ഷമമാക്കുകയും ചെയ്യുമ്പോൾ, നിങ്ങളുടെ ടിവി മറ്റൊരു ഇൻപുട്ടിലേക്ക് മാറിയതിന് ശേഷം ഈ ഉപകരണം സ്വയമേവ സ്റ്റാൻഡ്‌ബൈയിൽ പ്രവേശിക്കും. നിങ്ങൾ സജീവമായി കാണാത്തപ്പോൾ ഉള്ളടക്കം താൽക്കാലികമായി നിർത്താനും വൈദ്യുതി ഉപഭോഗം കുറയ്ക്കാനും ഇത് സഹായിച്ചേക്കാം."</string>
     <string name="settings_axel" msgid="8253298947221430993">"റിമോട്ട് ബട്ടണുകൾ സജ്ജീകരിക്കുക"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"ശബ്‌ദം, പവർ, ടിവികളിലെ ഇൻപുട്ട്, റിസീവറുകൾ, സൗണ്ട് ബാറുകൾ എന്നിവ നിയന്ത്രിക്കുക"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"എന്റെ റിമോട്ട് കണ്ടെത്തൂ"</string>
