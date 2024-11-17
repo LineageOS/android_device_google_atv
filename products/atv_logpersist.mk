@@ -3,7 +3,5 @@
 
 ifneq (,$(filter userdebug eng,$(TARGET_BUILD_VARIANT)))
 PRODUCT_PRODUCT_PROPERTIES += \
-    logd.logpersistd=logcatd \
-    logd.logpersistd.size=30 \
-    logd.logpersistd.rotate_kbytes=2048
+    logd.logpersistd=logcatd
 endif
