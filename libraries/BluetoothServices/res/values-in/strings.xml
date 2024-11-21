@@ -87,7 +87,7 @@
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Tidak terhubung"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"Kontrol perangkat"</string>
     <string name="settings_bt_pair_title" msgid="1205942796805671508">"Hubungkan perangkat baru"</string>
-    <string name="pair_device_description" msgid="5145574754576245361">"Sebelum menghubungkan perangkat Bluetooth baru, pastikan perangkat dalam mode penyambungan. Untuk menghubungkan %1$s, tekan dan tahan %2$s + %3$s selama 3 detik."</string>
+    <string name="pair_device_description" msgid="5145574754576245361">"Sebelum menyambungkan perangkat Bluetooth baru, pastikan perangkat dalam mode penyambungan. Untuk menyambungkan %1$s, tekan %2$s + %3$s selama 3 detik."</string>
     <string name="pair_device_device_name" msgid="4004194247588260613">"Remote Android TV"</string>
     <string name="settings_bt_available_devices" msgid="6237789711837183219">"Perangkat yang tersedia"</string>
     <string name="settings_bt_empty_text" msgid="6228875847390369960">"Mencari perangkat…"</string>
