@@ -19,6 +19,7 @@ package com.google.android.tv.btservices.settings;
 import static android.content.Intent.FLAG_INCLUDE_STOPPED_PACKAGES;
 import static android.content.Intent.FLAG_RECEIVER_FOREGROUND;
 import static android.content.Intent.FLAG_RECEIVER_INCLUDE_BACKGROUND;
+import static android.media.tv.flags.Flags.enableLeAudioUnicastUi;
 
 import static com.android.tv.twopanelsettings.slices.SlicesConstants.EXTRA_SLICE_FOLLOWUP;
 import static com.google.android.tv.btservices.settings.ConnectedDevicesSliceProvider.KEY_EXTRAS_DEVICE;
@@ -66,6 +67,7 @@ public class SliceBroadcastReceiver extends BroadcastReceiver {
     static final String ACTION_BACKLIGHT = "com.google.android.tv.BACKLIGHT";
     static final String KEY_BACKLIGHT_MODE = "key_backlight_mode";
     static final String ACTIVE_AUDIO_OUTPUT = "ACTIVE_AUDIO_OUTPUT";
+    static final String LE_AUDIO_UNICAST = "LE_AUDIO_UNICAST";
     private static final String ACTION_UPDATE_SLICE = "UPDATE_SLICE";
     private static final String ACTION_BACK_AND_UPDATE_SLICE = "BACK_AND_UPDATE_SLICE";
     private static final String PARAM_URIS = "URIS";
@@ -105,6 +107,21 @@ public class SliceBroadcastReceiver extends BroadcastReceiver {
                 } else if (POWER_STATE_CHANGE_ON_ACTIVE_SOURCE_LOST.equals(toggleType)) {
                     PowerUtils.setPowerStateChangeOnActiveSourceLost(context, isChecked);
                     context.getContentResolver().notifyChange(CEC_SLICE_URI, null);
+                } else if (enableLeAudioUnicastUi() && LE_AUDIO_UNICAST.equals(toggleType)) {
+                    boolean enabled = intent.getBooleanExtra(TOGGLE_STATE, false);
+                    BluetoothDevice device = intent.getParcelableExtra(KEY_EXTRAS_DEVICE,
+                            BluetoothDevice.class);
+                    BluetoothUtils.setLeAudioEnabled(device, context, enabled);
+                    // If there is followup pendingIntent, send it
+                    try {
+                        PendingIntent followupPendingIntent = intent.getParcelableExtra(
+                                EXTRA_SLICE_FOLLOWUP, PendingIntent.class);
+                        if (followupPendingIntent != null) {
+                            followupPendingIntent.send();
+                        }
+                    } catch (Throwable ex) {
+                        Log.e(TAG, "Followup PendingIntent for slice cannot be sent", ex);
+                    }
                 }
                 break;
             }
