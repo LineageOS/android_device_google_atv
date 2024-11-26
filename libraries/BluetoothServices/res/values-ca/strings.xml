@@ -30,7 +30,7 @@
     <string name="settings_bt_update_available" msgid="414405852666517260">"Actualització disponible"</string>
     <string name="settings_bt_update_not_necessary" msgid="6906777343269759565">"El comandament està actualitzat"</string>
     <string name="settings_bt_update_failed" msgid="2593228509570726064">"No s\'ha pogut actualitzar el comandament"</string>
-    <string name="settings_bt_update_error" msgid="6267154862961568780">"S\'ha produït un error en actualitzar el comandament. Torna-ho a provar."</string>
+    <string name="settings_bt_update_error" msgid="6267154862961568780">"Hi ha hagut un error en actualitzar el comandament. Torna-ho a provar."</string>
     <string name="settings_bt_update_please_wait" msgid="8029641271132945499">"Espera"</string>
     <string name="settings_bt_update_needs_repair" msgid="1310917691218455907">"Torna a vincular el comandament"</string>
     <string name="settings_enabled" msgid="431464375814187683">"Activat"</string>
