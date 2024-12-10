@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Rasti nuotolinio valdymo pultelį"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Garso leidimas norint rasti netinkamoje vietoje padėtą „Google TV“ nuotolinio valdymo pultelį"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Paspauskite mygtuką „Google TV“ srautinio perdavimo įrenginio užpakalinėje dalyje, kad leistumėte garsą nuotolinio valdymo pultelyje trisdešimt sekundžių. Tai veikia tik „Google TV“ srautinio perdavimo įrenginio nuotolinio valdymo balsu pultelyje.\n\nJei norite sustabdyti garsą, paspauskite bet kurį nuotolinio valdymo pultelio mygtuką."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Kai įjungta, galite naudoti įrenginio mygtuką norėdami paleisti garsą ir aptikti nuotolinio valdymo pultelį. Kai išjungta, šis mygtukas neveiks. Funkciją „Rasti nuotolinio valdymo pultelį“ vis tiek galėsite naudoti kitais būdais."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Leisti garsą"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Akumuliatoriaus energijos lygis: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Priedai"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Nepavyko prijungti „%1$s“"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"„%1$s“ įrenginys prijungtas"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"„%1$s“ įrenginys atjungtas"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Foninio apšvietimo režimas"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Nuotolinio valdymo pultelio mygtukų apšvietimas kiekvieną kartą paspaudus."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Paspaudus palaikomo „Google TV“ nuotolinio valdymo pultelio mygtuką suaktyvinamas foninis apšvietimas."</string>
 </resources>

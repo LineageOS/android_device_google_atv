@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Encontrar mi mando a distancia"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Reproduce un sonido para localizar el mando a distancia de Google TV si no sabes dónde está"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Pulsa el botón de la parte posterior de tu Google TV Streamer para reproducir un sonido en el mando a distancia durante 30 segundos. Esto solo funciona en los mandos de control por voz de Google TV Streamer.\n\nPara detener el sonido, pulsa cualquier botón del mando a distancia."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Cuando la función está activada, puedes usar el botón de tu dispositivo para reproducir un sonido que te permita localizar el mando a distancia. Cuando está desactivada, ese botón no funciona. Podrás seguir usando Encuentra el mando mediante otros métodos."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Reproducir sonido"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Nivel de batería: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Accesorios"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s no se ha podido conectar"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s conectado"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s desconectado"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Modo Retroiluminación"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Iluminación de los botones del mando con cada pulsación."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"En los mandos a distancia de Google TV compatibles, pulsar el botón del mando activa la retroiluminación."</string>
 </resources>

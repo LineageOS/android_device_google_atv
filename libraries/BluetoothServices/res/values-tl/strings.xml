@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Hanapin ang remote ko"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Mag-play ng tunog para mahanap ang iyong Google TV remote kung nawawala ito"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Pindutin ang button sa likod ng iyong Google TV Streamer para mag-play ng tunog sa iyong remote sa loob ng 30 segundo. Sa Google TV Streamer Voice Remote lang ito gumagana.\n\nPara ihinto ang tunog, pumindot ng kahit anong button sa iyong remote."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Kapag naka-on, puwede mong gamitin ang button sa iyong device para magpatugtog ng tunog para mahanap ang remote mo. Kapag naka-off, hindi gagana ang button na ito. Magagamit mo pa rin ang Hanapin ang aking remote sa pamamagitan ng iba pang paraan."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Mag-play ng tunog"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Antas ng baterya: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Mga Accessory"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Hindi nagawang kumonekta sa %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Nakakonekta ang %1$s"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Nadiskonekta ang %1$s"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Backlight Mode"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Pag-ilaw ng mga button sa remote control sa bawat pagpindot."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Sa mga sinusuportahang remote ng Google TV, iilaw ang backlight kapag pumindot sa button sa mga remote."</string>
 </resources>

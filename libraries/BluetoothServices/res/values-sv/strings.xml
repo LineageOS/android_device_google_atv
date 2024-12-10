@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Hitta min fjärrkontroll"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Spela upp ett ljud för att hitta Google TV-fjärrkontrollen om den kommer bort"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Tryck på knappen på baksidan av Google TV Streamer för att spela upp ett ljud på din fjärrkontroll under 30 sekunder. Detta fungerar endast på en Google TV Streamer Voice Remote.\n\nStäng av ljudet genom att trycka på valfri knapp på fjärrkontrollen."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"När funktionen är aktiverad kan du trycka på knappen på enheten för att spela upp ett ljud så du kan hitta fjärrkontrollen. Knappen fungerar inte om funktionen är inaktiverad. Du kan fortfarande använda Hitta min fjärrkontroll på andra sätt."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Spela upp ljud"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Batterinivå: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Tillbehör"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s kunde inte anslutas"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s är ansluten"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s är frånkopplad"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Läge med bakgrundsbelysning"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Knapparna på fjärrkontrollen lyser vid varje tryckning."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Bakgrundsbelysningen aktiveras vid tryck på knappen på Google TV-fjärrkontroller som stöds."</string>
 </resources>

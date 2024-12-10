@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Алсын удирдлагаа олох"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Google TV-н алсын удирдлагаа алдсан бол байршлыг нь тогтоохын тулд дуу чимээ тоглуулна уу"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Алсын удирдлагадаа 30 секундийн турш дуу чимээ тоглуулахын тулд Google TV дамжуулагчийнхаа ард байх товчлуурыг дарна уу. Энэ нь зөвхөн Google TV дамжуулагчийн Voice Remote-д ажилладаг.\n\nДуу чимээг зогсоохын тулд алсын удирдлагынхаа дурын товчлуурыг дарна уу."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Асаалттай үед та алсын удирдлагынхаа байршлыг тогтоохын тулд төхөөрөмж дээрээ байх товчлуурыг ашиглан дуу чимээ тоглуулах боломжтой. Унтраалттай үед энэ товчлуур ажиллахгүй. Та бусад аргаар Миний алсын удирдлагыг олох онцлогийг ашиглах боломжтой хэвээр байх болно."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Дуу чимээ тоглуулах"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Батарейн түвшин: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Дагалдах хэрэгслүүд"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s холбогдож чадсангүй"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s холбогдсон"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s салсан"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Арын гэрлийн горим"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Алсын удирдлага дээрх товчийн даралт бүрийн гэрэлтүүлэг."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Google TV-н дэмжигдсэн алсын удирдлага дээрх товчийг дарах нь арын гэрэлтүүлгийг асаана."</string>
 </resources>

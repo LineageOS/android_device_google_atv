@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Find my remote"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Prehraním zvuku nájdite stratené diaľkové ovládanie Google TV"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Stlačte tlačidlo na zadnej strane zariadenia Google TV Streamer a na 30 sekúnd tak prehrajte zvuk v diaľkovom ovládaní. Funguje to iba v zariadení Google TV Streamer Voice Remote.\n\nZvuk zastavíte stlačením akéhokoľvek tlačidla na diaľkovom ovládaní."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Keď je táto možnosť zapnutá, pomocou príslušného tlačidla na zariadení môžete prehrať zvuk a nájsť tak svoje diaľkové ovládanie. Keď je vypnutá, toto tlačidlo nefunguje. Funkciu nájdenia ovládania budete môcť stále používať inými spôsobmi."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Prehranie zvuku"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Stav batérie: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Príslušenstvo"</string>
@@ -80,7 +79,7 @@
     <string name="bluetooth_disconnect" msgid="1385608885917484057">"Odpojiť"</string>
     <string name="bluetooth_connect" msgid="6283971929092004620">"Pripojiť"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"Premenovať"</string>
-    <string name="bluetooth_forget" msgid="4933552074497360964">"Odstrániť"</string>
+    <string name="bluetooth_forget" msgid="4933552074497360964">"Zabudnúť"</string>
     <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"Používa sa pre zvuk televízora"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Pripojené"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Odpojené"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s sa nepodarilo pripojiť"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Zariadenie %1$s je pripojené"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Zariadenie %1$s je odpojené"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Režim podsvietenia"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Aktivácia podsvietenia tlačidiel diaľkového ovládania po každom stlačení."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Po stlačení tlačidla na podporovaných diaľkových ovládaniach zariadení Google TV sa rozsvieti podsvietenie."</string>
 </resources>

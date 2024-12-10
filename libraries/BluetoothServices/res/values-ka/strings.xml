@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"იპოვეთ ჩემი დისტანციური მართვის პულტი"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"დაუკარით ხმა Google TV-ის დისტანციური მართვის პულტის მოსაძებნად, თუ ის დაკარგეთ"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"დააჭირეთ ღილაკს Google TV-ის სტრიმინგის გამშვების უკანა მხარეს, რათა დაუკრათ ხმა დისტანციური მართვის პულტზე 30 წამის განმავლობაში. ეს მხოლოდ Google TV-ის სტრიმინგის გამშვების ხმოვან პულტზე მუშაობს.\n\nხმის გასაჩერებლად დისტანციური მართვის პულტის ნებისმიერ ღილაკს დააჭირეთ."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"როდესაც ჩართულია, შეგიძლიათ გამოიყენოთ თქვენს მოწყობილობაზე არსებული ღილაკი ხმის დასაკრავად, რათა იპოვოთ თქვენი დისტანციური მართვის პულტი. გამორთულ მდგომარეობაში ეს ღილაკი არ იმუშავებს. თქვენ კვლავ შეგეძლებათ პულტის პოვნის ფუნქციის გამოყენება სხვა მეთოდებით."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"ხმის დაკვრა"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"ბატარეის დონე: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"აქსესუარები"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s ვერ უკავშირდება"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s დაკავშირებულია"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s-ის კავშირი გაწყვეტილია"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"შენათების რეჟიმი"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"ღილაკების განათება დისტანციური მართვის პულტზე ყოველი დაჭერისას."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Google TV-ის მხარდაჭერილ დისტანციური მართვის პულტებზე ღილაკის დაჭერა ააქტიურებს შენათებას."</string>
 </resources>

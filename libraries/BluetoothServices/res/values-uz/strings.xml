@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Pultimni top"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Google TV pulti joyida boʻlmasa, uni topish uchun jiringlating"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Pultingizni 30 soniya jiringlatish uchun Google TV Streamer orqasidagi tugmani bosing. Bu faqat Google TV Streamer ovozli boshqaruv pultida ishlaydi.\n\nSignalni toʻxtatish uchun pultdagi biror tugmani bosing."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Bu yoqilsa, pult qayerdaligini aniqlash uchun qurilmadagi tugma orqali tovush chiqarish mumkin. Yoqilmasa, bu tugma ishlamaydi. Biroq boshqa usullar orqali “Pultni top” funksiyasidan foydalanishingiz mumkin."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Signalni ijro etish"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Batareya quvvati: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Aksessuarlar"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s ulanmadi"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s ulandi"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s uzildi"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Orqa chiroq rejimi"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Har bir bosishda pultdagi tugmalarning yoritilishi."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Mos Google TV pultlarida pultdagi tugmani bosish orqa chiroq yoritilishini faollashtiradi."</string>
 </resources>

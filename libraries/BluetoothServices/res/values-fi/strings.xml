@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Etsi kaukosäätimeni"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Jos et löydä Google TV ‑kaukosäädintä, etsi se toistamalla ääni"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Paina Google TV Streamer ‑laitteen takaosassa olevaa painiketta toistaaksesi kaukosäätimestä ääntä 30 sekunnin ajan. Tämä toimii vain Google TV Streamer Voice Remote ‑kaukosäätimellä.\n\nMykistä ääni painamalla mitä tahansa kaukosäätimen painiketta."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Kun asetus on päällä, voit käyttää laitteen painiketta ja löytää kaukosäätimen sen toistaman äänen perusteella. Kun asetus on pois päältä, painike ei toimi. Voit kuitenkin käyttää Löydä kaukosäädin ‑ominaisuutta muilla tavoilla."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Toista ääni"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Akun varaustaso: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Lisävarusteet"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Yhdistäminen epäonnistui: %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s yhdistetty"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Yhteys katkaistu: %1$s"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Taustavalaisutila"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Säädä valaisua painamalla kaukosäätimen painikkeita."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Tuetuilla Google TV ‑kaukosäätimillä voit painaa kaukosäätimen painiketta, joka aktivoi taustavalaisun."</string>
 </resources>

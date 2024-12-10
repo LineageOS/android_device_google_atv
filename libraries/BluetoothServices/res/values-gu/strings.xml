@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"મારું રિમોટ શોધો"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"જો Google TVનું તમારું રિમોટ ખોવાઈ ગયું હોય, તો તેને શોધવા માટે સાઉન્ડ વગાડો"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"તમારા રિમોટ પર 30 સેકન્ડ સુધી સાઉન્ડ વગાડવા માટે, તમારા Google TV સ્ટ્રીમરની પાછળનું બટન દબાવો. આ માત્ર Google TV સ્ટ્રીમર વૉઇસ રિમોટ પર કામ કરે છે.\n\nસાઉન્ડ બંધ કરવા માટે, તમારા રિમોટ પર કોઈપણ બટન દબાવો."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"જ્યારે ચાલુ હોય, ત્યારે તમે તમારા રિમોટને શોધવા માટે સાઉન્ડ વગાડવા માટે તમારા ડિવાઇસ પરના બટનનો ઉપયોગ કરી શકો છો. જ્યારે બંધ હોય, ત્યારે આ બટન કામ કરશે નહીં. તમે હજી પણ અન્ય પદ્ધતિઓ દ્વારા \'મારું રિમોટ શોધો\' સુવિધાનો ઉપયોગ કરી શકશો."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"સાઉન્ડ વગાડો"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"બૅટરીનું લેવલ: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"ઍક્સેસરી"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s કનેક્ટ કરવામાં નિષ્ફળ થયું"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s કનેક્ટેડ છે"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s ડિસ્કનેક્ટ કરેલું છે"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"બૅકલાઇટ મોડ"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"રિમોટ કન્ટ્રોલ પરના બટનને દરેક વખતે દબાવવાથી પ્રકાશિત થાય છે."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Google TVના સપોર્ટેડ રિમોટ પર, રિમોટ પરનું બટન દબાવવાથી બૅકલાઇટ પ્રકાશિત થવાની ક્રિયા સક્રિય થાય છે."</string>
 </resources>

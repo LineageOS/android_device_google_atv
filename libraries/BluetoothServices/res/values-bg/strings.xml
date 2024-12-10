@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Намиране на дистанционното ми управление"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Възпроизвеждане на звук, чрез който да намерите дистанционното си управление за Google TV"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Натиснете бутона на гърба на устройството си Google TV Streamer, за да се възпроизведе звук на дистанционното ви управление, който продължава 30 секунди. Това работи само на гласово дистанционно управление за Google TV Streamer.\n\nЗа да спрете звука, натиснете някой от бутоните на дистанционното управление."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Когато тази функция е включена, можете чрез бутона на устройството си да пускате звук, който да послужи за намиране на дистанционното ви управление. Ако е изключена, този бутон няма да работи. Пак ще можете да използвате „Намери дистанционното ми“ чрез други методи."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Възпроизвеждане на звук"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Ниво на батерията: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Аксесоари"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s – свързването не бе успешно"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Установена е връзка с(ъс) %1$s"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s – връзката е прекратена"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Режим за фоново осветление"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Осветяване на бутоните на дистанционното управление при всяко натискане"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"На поддържани дистанционни управления на Google TV при натискането на бутона ще се активира осветяването от фоновото осветление."</string>
 </resources>

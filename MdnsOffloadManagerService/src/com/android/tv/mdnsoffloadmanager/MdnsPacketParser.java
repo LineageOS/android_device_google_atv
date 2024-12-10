@@ -16,6 +16,8 @@
 
 package com.android.tv.mdnsoffloadmanager;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import java.nio.charset.StandardCharsets;
@@ -29,6 +31,7 @@ import device.google.atv.mdns_offload.IMdnsOffload.MdnsProtocolData.MatchCriteri
  * Tool class to help read mdns data from a fully formed mDNS response packet.
  */
 public final class MdnsPacketParser {
+    private static final String TAG = MdnsPacketParser.class.getSimpleName();
 
     private static final int OFFSET_QUERIES_COUNT = 4;
     private static final int OFFSET_ANSWERS_COUNT = 6;
@@ -66,7 +69,7 @@ public final class MdnsPacketParser {
     }
 
     /**
-     * Finds all the RRNAMEs ans RRTYPEs in the mdns response packet provided. Expects a packet only
+     * Finds all the RRNAMEs and RRTYPEs in the mdns response packet provided. Expects a packet only
      * with responses.
      */
     public static List<MatchCriteria> extractMatchCriteria(@NonNull byte[] mdnsResponsePacket) {
@@ -114,7 +117,36 @@ public final class MdnsPacketParser {
             parser.skipBytes(dataLength);
 
             // Criteria is complete, it can be added.
-            criteriaList.add(criteria);
+            // https://b.corp.google.com/issues/323169340#comment5
+            if (criteria.type != 28) {
+                criteriaList.add(criteria);
+
+                if (Log.isLoggable(TAG, Log.DEBUG)) {
+                  String name = extractFullName(mdnsResponsePacket, criteria.nameOffset);
+                  String type = Integer.toString(criteria.type);
+                  switch(criteria.type) {
+                    case 1:
+                      type = "A";
+                      break;
+                    case 28:
+                      type = "AAAA";
+                      break;
+                    case 12:
+                      type = "PTR";
+                      break;
+                    case 33:
+                      type = "SRV";
+                      break;
+                    case 16:
+                      type = "TXT";
+                      break;
+                    default:
+                      break;
+                  }
+                  Log.d(TAG, "Adding match criteria: %s type %s".formatted(name, type));
+                }
+            }
+
             answersToRead--;
         }
         if (parser.hasContent()) {

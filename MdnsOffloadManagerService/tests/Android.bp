@@ -7,9 +7,9 @@ android_test {
     srcs: ["src/**/*.java"],
     sdk_version: "system_current",
     libs: [
-        "android.test.runner",
-        "android.test.base",
-        "android.test.mock",
+        "android.test.runner.stubs.system",
+        "android.test.base.stubs.system",
+        "android.test.mock.stubs.system",
     ],
     static_libs: [
         "androidx.test.rules",

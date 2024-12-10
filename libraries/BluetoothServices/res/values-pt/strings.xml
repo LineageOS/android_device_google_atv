@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Encontrar meu controle remoto"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Tocar um som para localizar o controle remoto do Google TV caso ele esteja perdido"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Pressione o botão na parte de trás do Google TV Streamer para tocar um som no controle remoto por 30 segundos. Isso só funciona em um Controle remoto por voz do Google TV Streamer.\n\nSe quiser parar o som, pressione qualquer botão do controle."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Quando ativado, você pode usar o botão no seu dispositivo para tocar um som e encontrar o controle remoto. Quando desativado, o botão não vai funcionar. Você ainda poderá usar o recurso \"encontrar meu controle remoto\" por outros métodos."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Tocar som"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Nível da pilha: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Acessórios"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Falha ao conectar %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s conectado"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s desconectado"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Modo luz de fundo"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Iluminação dos botões do controle remoto a cada pressionamento."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Em controles remotos do Google TV compatíveis, pressionar o botão ativa a luz de fundo."</string>
 </resources>

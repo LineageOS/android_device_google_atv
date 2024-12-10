@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"എന്റെ റിമോട്ട് കണ്ടെത്തൂ"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"നിങ്ങളുടെ Google TV റിമോട്ട് എവിടെയെങ്കിലും വച്ച് മറന്നെങ്കിൽ അത് കണ്ടെത്താൻ ഒരു ശബ്ദം പ്ലേ ചെയ്യുക"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"നിങ്ങളുടെ റിമോട്ടിൽ 30 സെക്കൻഡ് നേരത്തേക്ക് ഒരു ശബ്ദം പ്ലേ ചെയ്യാൻ Google TV Streamer-ന്റെ പിൻഭാഗത്തുള്ള ബട്ടൺ അമർത്തുക. ഇത് Google TV Streamer Voice Remote-ൽ മാത്രമേ പ്രവർത്തിക്കൂ.\n\nശബ്ദം നിർത്താൻ, നിങ്ങളുടെ റിമോട്ടിലെ ഏതെങ്കിലും ബട്ടൺ അമർത്തുക."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"ഓണായിരിക്കുമ്പോൾ, ഉപകരണത്തിലെ ബട്ടൺ ഉപയോഗിച്ച് ശബ്‌ദം പ്ലേ ചെയ്യുന്നതിലൂടെ റിമോട്ട് കണ്ടെത്താം. ഓഫായിരിക്കുമ്പോൾ ഈ ബട്ടൺ ഉപയോഗിക്കാനാകില്ല. അപ്പോഴും മറ്റ് മാർഗങ്ങളിലൂടെ \'എന്റെ റിമോട്ട് കണ്ടെത്തൂ\' ഉപയോഗിക്കാനാകും."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"ശബ്‌ദം പ്ലേ ചെയ്യുക"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"ബാറ്ററി നില: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"ആക്‌സസറികൾ"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s കണക്റ്റ് ചെയ്യാനായില്ല"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s കണക്റ്റ് ചെയ്തു"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s വിച്ഛേദിച്ചു"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"ബാക്ക്‌ലൈറ്റ് മോഡ്"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"ഓരോ തവണ അമർത്തുമ്പോഴും റിമോട്ട് കൺട്രോളിലെ ബട്ടണുകൾ തിളങ്ങുന്നു."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"പിന്തുണയ്ക്കുന്ന Google TV റിമോട്ടുകളിൽ, റിമോട്ടിലെ ബട്ടൺ അമർത്തുന്നത് ബാക്ക്‌ലൈറ്റിലെ തിളക്കം സജീവമാക്കുന്നു."</string>
 </resources>

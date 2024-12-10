@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Vyhledání dálkového ovládání"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Pokud někam založíte dálkové ovládání ke Google TV, najděte ho podle zvuku"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Stiskněte tlačítko na zadní části Google TV Streamer a dálkové ovládání bude 30 sekund vydávat zvuk. Funguje to pouze na hlasovém ovládání Google TV Streamer.\n\nZvuk vypnete stisknutím libovolného tlačítka na dálkovém ovládání."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Když bude možnost zapnutá, můžete pomocí tlačítka na zařízení přehrát zvuk, podle kterého najdete dálkové ovládání. Když bude možnost vypnutá, tlačítko nebude fungovat. Ovladač bude nadále možné najít jinými způsoby."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Přehrát zvuk"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Úroveň baterie: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Doplňky"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Zařízení %1$s se nepodařilo připojit"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Zařízení %1$s je připojeno"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Zařízení %1$s je odpojeno"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Režim podsvícení"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Podsvícení tlačítek na dálkovém ovládání při každém stisknutí tlačítka."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Na podporovaných dálkových ovládáních Google TV se stisknutím tlačítka aktivuje podsvícení."</string>
 </resources>

@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Nađi daljinski"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Pustite zvuk da biste locirali daljinski za Google TV ako ste ga zaturili"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Pritisnite dugme na poleđini uređaja za strimovanje na Google TV-u da biste na daljinskom pustili zvuk od 30 sekundi. Ovo radi samo na glasovnom daljinskom upravljaču za strimovanje na Google TV-u.\n\nDa biste zaustavili zvuk, pritisnite bilo koje dugme na daljinskom."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Kada je ova opcija uključena, pomoću dugmeta na uređaju možete da pustite zvuk kako biste pronašli daljinski. Kada je isključena, ovo dugme ne funkcioniše. Ipak ćete moći da koristite funkciju Nađi daljinski pomoću drugih metoda."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Pusti zvuk"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Nivo napunjenosti baterije: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Dodaci"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Povezivanje nije uspelo: %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Povezano: %1$s"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Prekinuta je veza: %1$s"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Režim pozadinskog osvetljenja"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Dugmad na daljinskom svetli za svaki pritisak."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Na podržanim daljinskim za Google TV, pritiskanje dugmeta na daljinskom aktivira pozadinsko osvetljenje."</string>
 </resources>

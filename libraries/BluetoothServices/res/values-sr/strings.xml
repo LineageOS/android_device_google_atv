@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Нађи даљински"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Пустите звук да бисте лоцирали даљински за Google TV ако сте га затурили"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Притисните дугме на полеђини уређаја за стримовање на Google TV-у да бисте на даљинском пустили звук од 30 секунди. Ово ради само на гласовном даљинском управљачу за стримовање на Google TV-у.\n\nДа бисте зауставили звук, притисните било које дугме на даљинском."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Када је ова опција укључена, помоћу дугмета на уређају можете да пустите звук како бисте пронашли даљински. Када је искључена, ово дугме не функционише. Ипак ћете моћи да користите функцију Нађи даљински помоћу других метода."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Пусти звук"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Ниво напуњености батерије: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Додаци"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Повезивање није успело: %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Повезано: %1$s"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Прекинута je веза: %1$s"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Режим позадинског осветљења"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Дугмад на даљинском светли за сваки притисак."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"На подржаним даљинским за Google TV, притискање дугмета на даљинском активира позадинско осветљење."</string>
 </resources>

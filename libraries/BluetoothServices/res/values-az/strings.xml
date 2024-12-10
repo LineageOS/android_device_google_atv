@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Pultumu tapın"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Google TV pultu itibsə, tapmaq üçün səs oxudun"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Pultda 30 saniyəlik səs oxutma üçün Google TV Streamer-in arxasındakı düyməni basın. Bu funksiya yalnız Google TV Streamer Səsli Pultu üçündür.\n\nSəsi dayandırmaq üçün pultda istənilən düyməni basın."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Yanılı olduqda pultun yerini tapmaq məqsədilə səs oxutmaq üçün cihazdakı düymədən istifadə edə bilərsiniz. Sönülü olduqda bu düymə işləməyəcək. Yenə də digər metodlar ilə Pultumu tap funksiyasından istifadə edə biləcəksiniz."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Səs oxudun"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Batareya səviyyəsi: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Aksesuarlar"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s qoşulmadı"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s qoşulub"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s ayrılıb"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Arxa işıq rejimi"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Hər dəfə basdıqda pultdakı düymələrin işıqlandırılması."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Dəstəklənən Google TV pultlarında pultdakı düyməyə basmaq arxa işığın işıqlandırılmasını aktivləşdirir."</string>
 </resources>

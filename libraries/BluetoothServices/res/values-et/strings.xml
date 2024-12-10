@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Leia mu pult"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Esitage heli, et leida oma kaotsiläinud Google TV pult"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Vajutage Google TV voogesitusseadme tagaküljel olevat nuppu, et esitada puldil 30-sekundiline heli. See töötab ainult Google TV voogesitusseadme hääljuhtimisege puldiga.\n\nHeli peatamiseks vajutage puldil mis tahes nuppu."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Kui see funktsioon on sees, saate esitada oma seadmes oleva nupu abil heli, et leida oma pult. Kui funktsioon on väljas, siis see nupp ei tööta. Saate siiski kasutada funktsiooni Leia mu kaugjuhtimispult teiste meetodite kaudu."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Esita heli"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Aku tase: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Tarvikud"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Seadme %1$s ühendamine ebaõnnestus"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s on ühendatud"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s pole ühendatud"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Taustavalgustuse režiim"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Kaugjuhtimispuldi nuppude valgustus süttib igal vajutamisel."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Toetatud Google TV kaugjuhtimispultide korral aktiveerib kaugjuhtimispuldi vajutamine taustavalgustuse."</string>
 </resources>

@@ -132,4 +132,11 @@
        designed to be abstract. Users of BluetoothServices must override the following with the
        correct class name of their implementation of BluetoothDeviceService -->
   <string translatable="false" name="bluetooth_device_service_class">com.google.android.tv.btservices.BluetoothDeviceService</string>
+
+  <!-- Title for backlight preference -->
+  <string name="settings_backlight_title">Backlight Mode</string>
+  <!-- Description for backlight preference -->
+  <string name="settings_backlight_description">Illumination of the buttons on the remote control upon each press.</string>
+  <string name="backlight_slice_description">On supported Google TV remotes, pressing the button on the remotes activates backlight illumination.</string>
+  <string name="backlight_integration_title" translatable="false">@string/settings_backlight_title</string>
 </resources>

@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Znajdź pilota"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Włącz dźwięk, aby znaleźć zgubionego pilota do Google TV"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Naciśnij przycisk z tyłu Google TV Streamera, aby na 30 sekund włączyć dźwięk na pilocie. Ta funkcja działa tylko na sterowanym głosem pilocie Google TV Streamera.\n\nAby wyłączyć dźwięk, naciśnij dowolny przycisk na pilocie."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Gdy ta funkcja jest włączona, możesz użyć przycisku na urządzeniu, aby włączyć dźwięk ułatwiający znalezienie pilota. Gdy funkcja jest wyłączona, ten przycisk nie działa. Nadal możesz korzystać z funkcji Znajdź pilota za pomocą innych metod."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Włącz dźwięk"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Poziom naładowania baterii: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Akcesoria"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Nie można połączyć z: %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Połączono: %1$s"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Odłączono: %1$s"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Tryb podświetlenia"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Podświetlenie przycisków na pilocie po każdym naciśnięciu."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Naciśnięcie przycisku na obsługiwanym pilocie Google TV aktywuje podświetlenie."</string>
 </resources>

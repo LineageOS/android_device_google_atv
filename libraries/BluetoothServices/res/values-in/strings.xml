@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Temukan remote saya"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Memutar suara untuk menemukan lokasi remote Google TV jika Anda lupa tempat menaruhnya"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Tekan tombol di bagian belakang Google TV Streamer untuk memutar suara di remote selama 30 detik. Tindakan ini hanya berfungsi pada Remote Suara Google TV Streamer.\n\nUntuk berhenti memutar suara, tekan tombol apa saja di remote."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Saat aktif, Anda dapat menggunakan tombol ini di perangkat untuk memainkan suara guna menemukan lokasi remote Anda. Saat nonaktif, tombol ini tidak akan berfungsi. Anda masih tetap dapat menggunakan Temukan remote saya melalui metode lainnya."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Putar suara"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Tingkat daya baterai: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Aksesori"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s gagal dihubungkan"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s terhubung"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s terputus"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Mode Lampu Latar"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Cahaya tombol di remote control saat setiap kali ditekan."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Menekan tombol di remote akan mengaktifkan lampu latar di remote Google TV yang didukung."</string>
 </resources>

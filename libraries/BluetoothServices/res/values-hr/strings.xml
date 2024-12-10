@@ -37,7 +37,7 @@
     <string name="settings_disabled" msgid="1459717258643130682">"Onemogućeno"</string>
     <string name="settings_remote_battery_level_label" msgid="3644348379742819020">"Razina napunjenosti baterije"</string>
     <string name="settings_remote_battery_level_percentage_label" msgid="7301487906665476276">"%1$d%%"</string>
-    <string name="settings_remote_firmware_label" msgid="2132403094910284670">"Oprema"</string>
+    <string name="settings_remote_firmware_label" msgid="2132403094910284670">"Firmware"</string>
     <string name="settings_remote_serial_number_label" msgid="7591347399882767241">"Bluetooth adresa"</string>
     <string name="settings_bt_battery_low" msgid="3547517382697124858">"Zamijenite bateriju"</string>
     <string name="settings_bt_battery_low_warning" msgid="721091326401791089">"Slaba baterija"</string>
@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Pronađi moj daljinski upravljač"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Reproducirajte zvuk da biste locirali daljinski upravljač za Google TV ako ste ga zametnuli"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Pritisnite gumb sa stražnje strane Google TV Streamera za reprodukciju zvuka na daljinskom upravljaču 30 sekundi. Ta značajka funkcionira samo na glasovnom daljinskom upravljaču Google TV Streamer.\n\nDa biste zaustavili zvuk, pritisnite bilo koji gumb na daljinskom upravljaču."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Kada je ta opcija uključena, možete upotrebljavati gumb na uređaju da biste reproducirali zvuk kako biste pronašli svoj daljinski upravljač. Kada je ta opcija isključena, gumb neće raditi. I dalje ćete moći upotrebljavati značajku Pronađi moj daljinski putem drugih metoda."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Reproduciraj zvuk"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Razina napunjenosti baterije: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Dodaci"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Povezivanje nije uspjelo: %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Povezano: %1$s"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Prekinuta veza: %1$s"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Način rada s pozadinskim osvjetljenjem"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Osvjetljenje gumba na daljinskom upravljaču na svaki pritisak gumba."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Na podržanim daljinskim upravljačima za Google TV pritiskom gumba na daljinskom upravljaču aktivirat će se pozadinsko osvjetljenje."</string>
 </resources>

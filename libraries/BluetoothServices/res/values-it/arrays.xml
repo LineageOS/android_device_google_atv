@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2024 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string-array name="backlight_modes">
+    <item msgid="3697287350057956643">"Mai"</item>
+    <item msgid="5086108549243157281">"Standard"</item>
+    <item msgid="1608651425322487768">"Programmato"</item>
+  </string-array>
+  <string-array name="backlight_hints">
+    <item msgid="9076173600287388436">"La retroilluminazione non si accende mai a ogni clic."</item>
+    <item msgid="2183471491302242879">"La retroilluminazione si accende a ogni clic. L\'illuminazione dura 5 secondi ogni volta che viene attivata."</item>
+    <item msgid="4339318499911916123">"La retroilluminazione si accende a ogni clic solo nelle ore notturne (18:00~06:00). L\'illuminazione dura 5 secondi ogni volta che viene attivata."</item>
+  </string-array>
+</resources>

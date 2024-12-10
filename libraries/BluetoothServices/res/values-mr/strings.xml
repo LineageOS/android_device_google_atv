@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"माझा रिमोट शोधा"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"तुमचा Google TV रिमोट हरवला असल्यास, तो शोधण्यासाठी आवाज प्ले करा"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"तुमच्या रिमोटवर ३० सेकंदांसाठी आवाज प्ले करण्यासाठी तुमच्या Google TV Streamer च्या मागील बाजूचे बटण प्रेस करा. हे फक्त Google TV Streamer Voice Remote वर काम करते.\n\nआवाज थांबवण्यासाठी, तुमच्या रिमोटवरील कोणतेही बटण प्रेस करा."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"सुरू केलेले असेल, तेव्हा तुमचा रिमोट शोधण्यासाठी आवाज प्ले करण्याकरिता तुम्ही तुमच्या डिव्हाइसवरील बटण वापरू शकता. बंद केलेले असेल, तेव्हा हे बटण काम करणार नाही. तुम्ही तरीही इतर पद्धतींद्वारे माझा रिमोट शोधा हे वापरू शकाल."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"आवाज प्ले करा"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"बॅटरीची पातळी: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"अ‍ॅक्सेसरी"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s कनेक्ट करता आले नाही"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s कनेक्ट केले"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s डिस्कनेक्ट केले"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"बॅकलाइट मोड"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"रिमोट कंट्रोलवरील बटणे प्रत्येक वेळी प्रेस केल्याने इल्यूमिनेशन होते."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"सपोर्ट असलेल्या Google TV रिमोटवर, रिमोटवरील बटण प्रेस केल्याने बॅकलाइट इल्यूमिनेशन ॲक्टिव्हेट होते."</string>
 </resources>

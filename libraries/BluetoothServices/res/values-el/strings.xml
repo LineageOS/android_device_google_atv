@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Εύρεση τηλεχειριστηρίου"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Αναπαράγετε ήχο για να εντοπίσετε το τηλεχειριστήριο του Google TV, σε περίπτωση που το έχετε χάσει"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Πατήστε το κουμπί στο πίσω μέρος του Google TV Streamer για την αναπαραγωγή ενός ήχου στο τηλεχειριστήριο για 30 δευτερόλεπτα. Αυτό λειτουργεί μόνο σε Φωνητικό έλεγχο Google TV Streamer.\n\nΓια να σταματήσετε την αναπαραγωγή του ήχου, πατήστε ένα κουμπί στο τηλεχειριστήριο."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Όταν είναι ενεργό, μπορείτε να χρησιμοποιήσετε το κουμπί στη συσκευή σας για να αναπαράγετε έναν ήχο, έτσι ώστε να εντοπίσετε το τηλεχειριστήριό σας. Όταν είναι ανενεργό, αυτό το κουμπί δεν λειτουργεί. Θα μπορείτε ακόμα να χρησιμοποιείτε την Εύρεση τηλεχειριστηρίου με άλλους τρόπους."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Αναπαραγωγή ήχου"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Επίπεδο μπαταρίας: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Αξεσουάρ"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Η συσκευή %1$s απέτυχε να συνδεθεί"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Η συσκευή %1$s συνδέθηκε"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Η συσκευή %1$s αποσυνδέθηκε"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Λειτουργία οπίσθιου φωτισμού"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Ο φωτισμός των κουμπιών στο τηλεχειριστήριο ενεργοποιείται με κάθε πάτημα."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Στα υποστηριζόμενα τηλεχειριστήρια Google TV, ο οπίσθιος φωτισμός ενεργοποιείται από το πάτημα του κουμπιού στα τηλεχειριστήρια."</string>
 </resources>

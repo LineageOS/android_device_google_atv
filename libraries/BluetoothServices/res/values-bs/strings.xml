@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Pronađi moj daljinski upravljač"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Reproducirajte zvuk da pronađete daljinski upravljač za Google TV ako ga izgubite"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Pritisnite dugme na poleđini Google TV Streamera da reproducirate zvuk na daljinskom upravljaču 30 sekundi. Funkcionira samo na glasovnom daljinskom upravljaču za Google TV Streamer.\n\nDa zaustavite zvuk, pritisnite bilo koje dugme na daljinskom upravljaču."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Kada je uključeno, možete koristiti dugme na uređaju da reproducirate zvuk radi pronalaženja daljinskog upravljača. Kada je isključeno, to dugme neće funkcionirati. I dalje ćete moći koristiti pronalaženje daljinskog upravljača na druge načine."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Reproduciraj zvuk"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Nivo napunjenosti baterije: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Dodaci"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Povezivanje uređaja %1$s nije uspjelo"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Uređaj %1$s je povezan"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Prekinuta je veza s uređajem %1$s"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Način rada s pozadinskim osvjetljenjem"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Osvjetljenje dugmadi na daljinskom upravljaču prilikom svakog pritiska."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Pritisak dugmeta na daljinskom upravljaču aktivira pozadinsko osvjetljenje na podržanim daljinskim upravljačima za Google TV."</string>
 </resources>

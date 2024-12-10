@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"หารีโมตของฉัน"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"เล่นเสียงเพื่อค้นหารีโมต Google TV หากวางไว้ผิดที่"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"กดปุ่มที่ด้านหลังของ Google TV Streamer เพื่อเล่นเสียงบนรีโมทของคุณเป็นเวลา 30 วินาที ซึ่งใช้งานได้กับรีโมทสั่งงานด้วยเสียงของ Google TV Streamer เท่านั้น\n\nหากต้องการหยุดเสียง ให้กดปุ่มใดก็ได้บนรีโมท"</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"เมื่อเปิดไว้ คุณจะใช้ปุ่มบนอุปกรณ์ในการเล่นเสียงเพื่อค้นหารีโมตได้ แต่หากปิด ปุ่มนี้จะไม่ทำงาน คุณจะยังใช้ฟีเจอร์หารีโมตของฉันด้วยวิธีอื่นๆ ได้"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"เล่นเสียง"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"ระดับแบตเตอรี่: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"อุปกรณ์เสริม"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s เชื่อมต่อไม่สำเร็จ"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"เชื่อมต่อ %1$s แล้ว"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"ยกเลิกการเชื่อมต่อ %1$s แล้ว"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"โหมดไฟแบ็กไลต์"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"การส่องสว่างของปุ่มเมื่อกดรีโมตคอนโทรลแต่ละครั้ง"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"เมื่อใช้รีโมต Google TV ที่รองรับ การกดปุ่มบนรีโมตจะเป็นการเปิดใช้งานไฟแบ็กไลต์"</string>
 </resources>

@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Finna fjarstýringuna mína"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Spilaðu hljóð til að finna Google TV fjarstýringuna ef hún týnist"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Ýttu á hnappinn aftan á Google TV Streamer til að spila hljóð á fjarstýringunni í 30 sekúndur. Þetta virkar eingöngu á Google TV Streamer raddfjarstýringu.\n\nTil að stöðva hljóðið geturðu ýtt á hvaða hnapp sem er á fjarstýringunni."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Þegar kveikt er á þessu geturðu notað hnappinn í tækinu til að spila hljóð til að finna fjarstýringuna. Þegar slökkt er á þessu virkar hnappurinn ekki. Þú getur áfram notað Finna fjarstýringuna mína með öðrum aðferðum."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Spila hljóð"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Staða rafhlöðu: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Fylgihlutir"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Ekki tókst að tengja %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s tengt"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s aftengt"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Baklýsingarstilling"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Baklýsing á hnöppum fjarstýringar í hvert sinn sem þú ýtir."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Ef þú ýtir á fjarstýringahnapp á studdum Google TV-fjarstýringum kviknar á baklýsingunni."</string>
 </resources>

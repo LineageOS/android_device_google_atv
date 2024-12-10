@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Пультімді табу"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Google TV пультіңіз жоғалып қалса, оны табу үшін дыбысты ойнатыңыз."</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Пультіңізде 30 секундтық дыбыс ойнату үшін Google TV Streamer-дің артқы жағындағы түймені басыңыз. Бұл әрекетті тек Google TV Streamer Voice Remote пультінде орындауға болады.\n\nДыбысты тоқтату үшін пультіңіздегі кез келген түймені басыңыз."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Қосулы кезде құрылғыңыздағы түймені басып, шыққан дыбыс арқылы пульттің орнын анықтаңыз. Өшірулі кезде бұл түйме жұмыс істемейді. Пультті табу мүмкіндігін басқа әдістер арқылы да пайдалана аласыз."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Дыбыс ойнату"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Батарея деңгейі: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Жабдықтар"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s жалғанбады."</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s жалғанды."</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s ажыратылды."</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Артқы жарық режимі"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Басқан сайын пульттегі түймелердің жарықтандырылуы."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Қолдау көрсетілетін Google TV пульттерінде түймені бассаңыз, жарықтандыру қосылады."</string>
 </resources>

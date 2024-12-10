@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Tafuta kidhibiti changu cha mbali"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Cheza sauti ili upate kidhibiti chako cha mbali cha Google TV ikiwa kimepotea"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Bonyeza kitufe kilicho upande wa nyuma wa Kitiririshaji chako cha Google TV ili ucheze sauti kwenye kidhibiti chako cha mbali kwa sekunde 30. Kipengele hiki kinapatikana tu kwa Kiungambali cha Sauti cha Kitiririshaji cha Google TV.\n\nIli uzime sauti, bonyeza kitufe chochote kwenye kidhibiti chako cha mbali."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Ukiwasha, unaweza kutumia kitufe kilicho kwenye kifaa chako kucheza sauti ili utambue mahali kilipo kidhibiti chako cha mbali. Ukizima, kitufe hiki hakitafanya kazi. Bado utaweza kutumia kipengele cha Tafuta kidhibiti changu cha mbali kupitia mbinu nyinginezo."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Cheza sauti"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Kiasi cha chaji kwenye betri: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Vifuasi"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s imeshindwa kuunganisha"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s imeunganishwa"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s imetenganishwa"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Hali ya Mwangaza wa Skrini"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Vitufe vilivyo kwenye kidhibiti cha mbali kuwaka kila unapobofya."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Kwenye vidhibiti vya mbali vya Google TV vinavyotumika, ukibonyeza kitufe kwenye vidhibiti vya mbali, mwangaza wa skrini utawaka."</string>
 </resources>

@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"எனது ரிமோட்டைக் கண்டறிதல்"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"உங்கள் Google TV ரிமோட்டைத் தவறுதலாக வேறொரு இடத்தில் வைத்திருந்தால் ஒலியை இயக்குவதன் மூலம் அதைக் கண்டறியலாம்"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Google TV ஸ்ட்ரீமரின் பின்புறம் உள்ள பட்டனை அழுத்துவதன் மூலம் உங்கள் ரிமோட்டில் 30 வினாடிகளுக்கு ஒலியை இயக்கலாம். Google TV ஸ்ட்ரீமர் வாய்ஸ் ரிமோட்டில் மட்டுமே இது செயல்படும்.\n\nஒலியை நிறுத்த உங்கள் ரிமோட்டில் ஏதேனும் ஒரு பட்டனை அழுத்துங்கள்."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"இயக்கப்பட்டிருக்கும்போது, உங்கள் சாதனத்திலுள்ள பட்டனைப் பயன்படுத்தி ஒலியை இயக்கி ரிமோட்டைக் கண்டறியலாம். முடக்கப்பட்டிருக்கும்போது இந்தப் பட்டன் வேலை செய்யாது. எனினும் பிற வழிகள் மூலம் நீங்கள் \'ரிமோட் கண்டறிதல்\' அம்சத்தைப் பயன்படுத்த முடியும்."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"ஒலியை இயக்கு"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"பேட்டரி நிலை: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"துணைக்கருவிகள்"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s ஐ இணைக்க முடியவில்லை"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s இணைக்கப்பட்டது"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s துண்டிக்கப்பட்டது"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"பேக்லைட் பயன்முறை"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"ஒவ்வொருமுறை அழுத்தும்போதும் ரிமோட் கன்ட்ரோலில் உள்ள பட்டன்களில் வெளிப்படும் வெளிச்சம்."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"ஆதரிக்கப்படும் Google TV ரிமோட்களில், ரிமோட்களில் உள்ள பட்டனை அழுத்துவது பேக்லைட் வெளிச்சத்தைச் செயல்படுத்தும்."</string>
 </resources>

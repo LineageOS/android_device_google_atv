@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"ស្វែងរកឧបករណ៍​បញ្ជាពីចម្ងាយរបស់ខ្ញុំ"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"ចាក់សំឡេងណាមួយ ដើម្បីកំណត់ទីតាំងឧបករណ៍​បញ្ជាពីចម្ងាយសម្រាប់ Google TV របស់អ្នក ប្រសិនបើបាត់ឧបករណ៍នោះ"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"ចុចប៊ូតុងនៅផ្នែកខាងក្រោយនៃ Google TV Streamer របស់អ្នក ដើម្បីចាក់សំឡេងនៅលើឧបករណ៍​បញ្ជាពីចម្ងាយរយៈពេល 30 វិនាទី។ សកម្មភាពនេះដំណើរការនៅលើឧបករណ៍បញ្ជាដោយសំឡេងសម្រាប់ Google TV Streamer តែប៉ុណ្ណោះ។\n\nដើម្បីបញ្ឈប់សំឡេង សូមចុចប៊ូតុងណាមួយនៅលើឧបករណ៍​បញ្ជាពីចម្ងាយរបស់អ្នក។"</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"នៅពេលបើក អ្នកអាចប្រើប៊ូតុងនៅលើឧបករណ៍របស់អ្នកសម្រាប់ចាក់សំឡេង ដើម្បីកំណត់ទីតាំងឧបករណ៍​បញ្ជាពីចម្ងាយរបស់អ្នក។ នៅពេលបិទ ប៊ូតុងនេះនឹងមិនដំណើរការទេ។ អ្នកនឹងនៅតែអាចប្រើ \"រកឧបករណ៍បញ្ជារបស់ខ្ញុំ\" តាមរយៈវិធីផ្សេងទៀត។"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"ចាក់​សំឡេង"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"កម្រិតថ្ម៖ %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"ឧបករណ៍​បន្ទាប់បន្សំ"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s មិនអាច​ភ្ជាប់​បានទេ"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"បានភ្ជាប់ %1$s"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"បានផ្ដាច់ %1$s"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"មុខងារពន្លឺក្រោយ"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"ពន្លឺនៃប៊ូតុងនៅលើឧបករណ៍​​បញ្ជា​ពី​ចម្ងាយនៅពេលចុចម្ដងៗ។"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"នៅលើឧបករណ៍​បញ្ជាពីចម្ងាយ Google TV ដែលអាចប្រើបាន ការចុចប៊ូតុងនៅលើឧបករណ៍​បញ្ជាពីចម្ងាយបើកដំណើរការពន្លឺក្រោយ។"</string>
 </resources>

@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"\'আমার রিমোট খুঁজুন\'"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"আপনার Google TV-এর রিমোট হারিয়ে গেলে, সেটি খুঁজতে সাউন্ড চালান"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"আপনার রিমোটে ৩০ সেকেন্ডের জন্য সাউন্ড চালাতে আপনার Google TV স্ট্রিমারের পিছনের বোতাম প্রেস করুন। এটি শুধুমাত্র Google TV স্ট্রিমারের ভয়েস রিমোটে কাজ করে।\n\nসাউন্ড বন্ধ করতে, আপনার রিমোটে যেকোনও বোতাম প্রেস করুন।"</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"চালু করা থাকলে, আপনার রিমোট খোঁজার জন্য ডিভাইসে থাকা বোতামটি ব্যবহার করে আপনি সাউন্ড চালাতে পারবেন। বন্ধ করা থাকলে, এই বোতামটি কাজ করবে না। আপনি অন্য পদ্ধতি ব্যবহার করেও আমার \'রিমোট খোঁজো\' ফিচারটি ব্যবহার করতে পারবেন।"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"সাউন্ড চালান"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"ব্যাটারিতে চার্জ আছে: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"অ্যাক্সেসরি"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s কানেক্ট করা যায়নি"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s কানেক্ট করা আছে"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s কানেক্ট করা নেই"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"ব্যাকলাইট মোড"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"রিমোট কন্ট্রোল থাকা বোতাম প্রত্যেকবার প্রেস করলে ব্যাকলাইট জ্বলে।"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"যেসব Google TV রিমোটে এই সুবিধা কাজ করে, সেইসব রিমোটের বোতাম প্রেস করলে ব্যাকলাইট জ্বলা চালু হয়।"</string>
 </resources>

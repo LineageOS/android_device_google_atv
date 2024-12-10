@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"میرا ریموٹ تلاش کریں"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"اگر آپ کا Google TV کا ریموٹ گم ہو گیا ہے تو اس کا پتا لگانے کے لیے آواز چلائیں"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"30 سیکنڈ تک اپنے ریموٹ پر آواز چلانے کے لیے اپنے Google TV کی سلسلہ بندی کرنے والے پیچھے والے بٹن کو دبائیں۔ یہ صرف Google TV کی سلسلہ بندی کرنے والے وائس ریموٹ پر کام کرتا ہے۔\n\nآواز کو روکنے کے لیے، اپنے ریموٹ پر کوئی بھی بٹن دبائیں۔"</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"آن ہونے پر، آپ اپنے ریموٹ کا پتا لگانے کے لیے آواز چلانے کی خاطر اپنے آلے پر بٹن کا استعمال کر سکتے ہیں۔ آف ہونے پر یہ بٹن کام نہیں کرے گا۔ آپ اب بھی دیگر طریقوں سے میرا ریموٹ تلاش کریں کا استعمال کر سکیں گے۔"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"آواز چلائیں"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"بیٹری لیول: ‏ %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"لوازمات"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s منسلک ہونے میں ناکام ہو گیا"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s کو منسلک کر دیا گیا"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s کو غیر منسلک کر دیا گیا"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"بیک لائٹ موڈ"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"ریموٹ کنٹرول پر موجود بٹنز کو ہر بار کلک کرنے سے جلتی ہے۔"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"تعاون یافتہ Google TV ریموٹس پر، ریموٹس پر موجود بٹن کو دبانے سے بیک لائٹ جل جاتی ہے۔"</string>
 </resources>

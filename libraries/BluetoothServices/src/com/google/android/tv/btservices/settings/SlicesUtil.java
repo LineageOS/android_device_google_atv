@@ -33,6 +33,7 @@ public final class SlicesUtil {
     static final String BLUETOOTH_DEVICE_PATH = "device";
     static final String CEC_PATH = "cec";
     static final String FIND_MY_REMOTE_PATH = "find_my_remote";
+    static final String BACKLIGHT_PATH = "backlight";
     static final String EXTRAS_DIRECTION = "extras_direction";
     static final String EXTRAS_SLICE_URI = "extras_slice_uri";
     static final String DIRECTION_BACK = "direction_back";
@@ -47,6 +48,8 @@ public final class SlicesUtil {
 
     static final Uri FIND_MY_REMOTE_SLICE_URI =
             Uri.parse("content://" + AUTHORITY + "/" + FIND_MY_REMOTE_PATH);
+    static final Uri BACKLIGHT_SLICE_URI =
+            Uri.parse("content://" + AUTHORITY + "/" + BACKLIGHT_PATH);
 
     /**
      * The {@link Settings.Global} integer setting name.
@@ -56,6 +59,15 @@ public final class SlicesUtil {
      */
     static final String FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED_SETTING =
             "find_my_remote_physical_button_enabled";
+
+    /**
+     * The {@link Settings.Global} integer setting name.
+     *
+     * <p>The settings saves the selection for Backlight feature
+     * is Never(0), Standard(1), or Schedules(2). Default value: 1.
+     */
+    static final String BACKLIGHT_MODE_SETTING =
+            "backlight_mode_setting";
 
     static String getDeviceAddr(Uri uri) {
         if (uri.getPathSegments().size() >= 2) {
@@ -78,6 +90,10 @@ public final class SlicesUtil {
 
     static boolean isFindMyRemotePath(Uri uri) {
         return FIND_MY_REMOTE_PATH.equals(getFirstSegment(uri));
+    }
+
+    static boolean isBacklightPath(Uri uri) {
+        return BACKLIGHT_PATH.equals(getFirstSegment(uri));
     }
 
     static Uri getDeviceUri(String deviceAddr) {
@@ -110,5 +126,16 @@ public final class SlicesUtil {
         Settings.Global.putInt(context.getContentResolver(),
                 FIND_MY_REMOTE_PHYSICAL_BUTTON_ENABLED_SETTING,
                 enabled ? 1 : 0);
+    }
+
+    public static int getBacklightMode(Context context) {
+        return Settings.Global.getInt(context.getContentResolver(),
+                BACKLIGHT_MODE_SETTING, 1);
+    }
+
+    static void setBacklightMode(Context context, int modes) {
+        Settings.Global.putInt(context.getContentResolver(),
+                BACKLIGHT_MODE_SETTING,
+                modes);
     }
 }

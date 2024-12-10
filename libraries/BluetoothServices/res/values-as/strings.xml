@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"মোৰ ৰিম’ট বিচাৰক"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"আপোনাৰ Google TV ৰিম’টটো হেৰুৱালে তাক বিচাৰিবলৈ কোনো ধ্বনি প্লে’ কৰক"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"আপোনাৰ ৰিম’টত ৩০ ছেকেণ্ডৰ বাবে কোনো ধ্বনি প্লে’ কৰিবলৈ আপোনাৰ Google TV ষ্ট্ৰীমাৰৰ পিছফালে থকা বুটামটোত টিপক। এইটোৱে কেৱল এটা Google TV ষ্ট্ৰীমাৰ ভইচ ৰিম’টতহে কাম কৰে।\n\nধ্বনিটো বন্ধ কৰিবলৈ, আপোনাৰ ৰিম’টটোৰ যিকোনো বুটামত টিপক।"</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"অন কৰা থাকিলে, আপোনাৰ ৰিম’টটোৰ অৱস্থান নিৰ্ধাৰণ কৰাৰ বাবে এটা ধ্বনি প্লে’ কৰিবলৈ আপুনি আপোনাৰ ডিভাইচৰ বুটামটো ব্যৱহাৰ কৰিব পাৰে। অফ কৰা থাকিলে, এই বুটামটোৱে কাম নকৰে। আপুনি তথাপি অন্য পদ্ধতিৰ জৰিয়তে মোৰ ৰিম’ট সন্ধান কৰক সুবিধাটো ব্যৱহাৰ কৰিব পাৰিব।"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"ধ্বনি প্লে’ কৰক"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"বেটাৰীৰ স্তৰ: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"আনুষংগিক সামগ্ৰী"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s সংযোগ কৰিব পৰা নগ’ল"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s সংযোগ কৰা হ’ল"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$sৰ সংযোগ বিচ্ছিন্ন কৰা হ’ল"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"বেকলাইট ম’ড"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"ৰিম’ট কন্ট্ৰ’লৰ বুটামবোৰৰ প্ৰতিবাৰ টিপিলে লাইট জ্বলে।"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"সমৰ্থিত Google TVৰ ৰিম’টত, ৰিম’টৰ বুটাম টিপিলে বেকলাইটৰ পোহৰ সক্ৰিয় হয়।"</string>
 </resources>

@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"ମୋ ରିମୋଟ ଖୋଜନ୍ତୁ"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"ଯଦି ଆପଣଙ୍କ Google TV ରିମୋଟକୁ ଭୁଲ ସ୍ଥାନରେ ରଖାଯାଇଥାଏ ତେବେ ଏହାକୁ ଖୋଜିବା ପାଇଁ ଏକ ସାଉଣ୍ଡ ପ୍ଲେ କରନ୍ତୁ"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"30 ସେକେଣ୍ଡ ପାଇଁ ଆପଣଙ୍କ ରିମୋଟରେ ଏକ ସାଉଣ୍ଡ ପ୍ଲେ କରିବାକୁ ଆପଣଙ୍କ Google TV ଷ୍ଟ୍ରିମରର ପଛପଟେ ଥିବା ବଟନ ଦବାନ୍ତୁ। ଏହା କେବଳ ଏକ Google TV ଷ୍ଟ୍ରିମର ଭଏସ ରିମୋଟରେ କାମ କରେ।\n\nସାଉଣ୍ଡ ବନ୍ଦ କରିବାକୁ ଆପଣଙ୍କ ରିମୋଟରେ ଯେ କୌଣସି ବଟନ ଦବାନ୍ତୁ।"</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"ଚାଲୁ ଥିଲେ ଆପଣ ଆପଣଙ୍କ ରିମୋଟ ଖୋଜିବା ପାଇଁ ଏକ ସାଉଣ୍ଡ ପ୍ଲେ କରବାକୁ ଆପଣଙ୍କ ଡିଭାଇସରେ ଥିବା ବଟନ ବ୍ୟବହାର କରିପାରିବେ। ବନ୍ଦ ଥିଲେ ଏହି ବଟନ କାମ କରିବ ନାହିଁ। ଆପଣ ଏବେ ବି ଅନ୍ୟ ପଦ୍ଧତି ମାଧ୍ୟମରେ ମୋ ରିମୋଟ ଖୋଜନ୍ତୁ ବ୍ୟବହାର କରିବାକୁ ସକ୍ଷମ ହେବେ।"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"ସାଉଣ୍ଡ ପ୍ଲେ କରନ୍ତୁ"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"ବେଟେରୀ ଲେଭେଲ: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"ଆକସେସୋରୀଗୁଡ଼ିକ"</string>
@@ -77,7 +76,7 @@
     <string name="settings_devices_connected" msgid="3256213134907921013">"ସଂଯୋଗ କରାଗଲା"</string>
     <string name="settings_devices_paired" msgid="4460141776955368574">"ପୂର୍ବରୁ ସଂଯୋଗ ହୋ‍ଇଛି"</string>
     <string name="settings_pair_remote" msgid="7566753084479902759">"ରିମୋଟ୍ କିମ୍ବା ଆକସେସୋରୀ ପେୟାର୍ କରନ୍ତୁ"</string>
-    <string name="bluetooth_disconnect" msgid="1385608885917484057">"ବିଚ୍ଛିନ୍ନ କରନ୍ତୁ"</string>
+    <string name="bluetooth_disconnect" msgid="1385608885917484057">"ଡିସକନେକ୍ଟ କରନ୍ତୁ"</string>
     <string name="bluetooth_connect" msgid="6283971929092004620">"କନେକ୍ଟ କରନ୍ତୁ"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"ରିନେମ କରନ୍ତୁ"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"ଭୁଲିଯାଆନ୍ତୁ"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s ସଂଯୋଗ କରିବାରେ ବିଫଳ ହୋଇଛି"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s ସଂଯୋଗ କରାଯାଇଛି"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s ବିଚ୍ଛିନ୍ନ କରାଯାଇଛି"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"ବେକଲାଇଟ ମୋଡ"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"ପ୍ରତ୍ୟେକ ଥର ଦବାଇଲେ ରିମୋଟ କଣ୍ଟ୍ରୋଲରେ ଥିବା ବଟନଗୁଡ଼ିକର ଇଲୁମିନେସନ ହୋଇଥାଏ।"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"ସପୋର୍ଟ କରୁଥିବା Google TV ରିମୋଟରେ, ବଟନଗୁଡ଼ିକୁ ଦବାଇଲେ ବେକଲାଇଟ ଇଲୁମିନେସନ ସକ୍ରିୟ ହୋଇଥାଏ।"</string>
 </resources>

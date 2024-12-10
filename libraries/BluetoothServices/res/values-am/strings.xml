@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"የእኔን የርቀት መቆጣጠሪያ አግኝ"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"የGoogle ቲቪ የርቀት መቆጣጠሪያዎ ያለ ቦታው ተቀምጦ ከሆነ አካባቢውን ለማግኘት ድምፅ ያጫውቱ"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"ድምፅን በእርስዎ የርቀት መቆጣጠሪያ ለ30 ሰከንዶች ለማጫወት ከGoogle ቲቪ አሰራጭዎ ጀርባ ያለውን አዝራር ይጫኑ። ይህ የሚሠራው በGoogle ቲቪ አሰራጭ የድምፅ የርቀት መቆጣጠሪያ ላይ ብቻ ነው።\n\nድምፁን ለማቆም በርቀት መቆጣጠሪያዎ ላይ ያለ ማንኛውንም አዝራር ይጫኑ።"</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"ሲበራ የርቀት መቆጣጠሪያዎን ለማግኘት ድምፅ ለማጫወት በመሣሪያዎ ላይ ያለውን አዝራር መጠቀም ይችላሉ። ሲጠፋ ይህ አዝራር አይሠራም። አሁንም የርቀት መቆጣጠሪያዬን አግኝን በሌሎች መንገዶች በኩል መጠቀም ይችላሉ።"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"ድምፅ አጫውት"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"የባትሪ ደረጃ፦ %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"መለዋወጫዎች"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s ማገናኘት አልተሳካም"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s ተገናኝቷል"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s ግንኙነቱ ተቋርጧል"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"የኋላ ብርሃን ሁነታ"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"በእያንዳንዱ ጫን ማለት ላይ በርቀት መቆጣጠሪያው ያሉት አዝራሮች ብርሃን።"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"በሚደገፉ የGoogle ቲቪ የርቀት መቆጣጠሪያዎች ላይ፣ የርቀት መቆጣጠሪያዎቹ ላይ ያለውን አዝራር መጫን የኋላውን ብርሃን ያነቃል።"</string>
 </resources>

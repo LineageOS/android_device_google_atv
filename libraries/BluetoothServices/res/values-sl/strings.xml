@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Poišči moj daljinski upravljalnik"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Predvajajte zvok, da poiščete daljinski upravljalnik za Google TV, če ga založite"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Pritisnite gumb na hrbtni strani naprave Google TV Streamer, če želite 30 sekund predvajati zvok prek daljinskega upravljalnika. To deluje samo z glasovnim daljinskim upravljalnikom za Google TV Streamer.\n\nČe želite zaustaviti predvajanje zvoka, pritisnite poljuben gumb na daljinskem upravljalniku."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Če je vklopljeno, lahko z gumbom na napravi predvajate zvok, da poiščete daljinca. Če je izklopljeno, gumb ne deluje. Funkcijo Poišči daljinec lahko še vedno uporabljate na druge načine."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Predvajaj zvok"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Raven napolnjenosti baterije: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Dodatki"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Povezave z napravo %1$s ni bilo mogoče vzpostaviti"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s – povezava vzpostavljena"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s – povezava prekinjena"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Način osvetlitve ozadja"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Osvetlitev gumbov na daljincu ob vsakem pritisku."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Če na podprtih daljincih za Google TV pritisnete gumb, se aktivira osvetlitev ozadja."</string>
 </resources>

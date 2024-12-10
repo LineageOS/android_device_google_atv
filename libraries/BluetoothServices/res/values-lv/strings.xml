@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Tālvadības ierīces atrašana"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Atskaņojiet signālu, lai atrastu savu Google TV tālvadības ierīci, ja tā ir pazudusi."</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Nospiediet pogu Google TV straumētāja aizmugurē, lai 30 sekundes atskaņotu tālvadības ierīces signālu. Tas darbojas tikai Google TV straumētāja balss tālvadības ierīcē.\n\nLai apturētu signāla atskaņošanu, nospiediet jebkuru tālvadības ierīces pogu."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Kad šis iestatījums ir ieslēgts, varat izmantot savas ierīces pogu, lai atskaņotu signālu un tādējādi atrastu savu tālvadības ierīci. Kad šis iestatījums ir izslēgts, šī poga nedarbosies. Jūs joprojām varēsiet izmantot tālvadības ierīces atrašanas funkciju citos veidos."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Atskaņot signālu"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Akumulatora uzlādes līmenis: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Aksesuāri"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Ierīcē (%1$s) neizdevās izveidot savienojumu."</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Savienojums ar ierīci (%1$s) ir izveidots."</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Savienojums ar ierīci (%1$s) ir pārtraukts."</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Fona apgaismojuma režīms"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Katru reizi nospiežot tālvadības ierīces pogu, tiek aktivizēts pogu izgaismojums."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Atbalstītām Google TV tālvadības ierīcēm, nospiežot tālvadības ierīces pogu, tiek aktivizēts fona apgaismojums."</string>
 </resources>

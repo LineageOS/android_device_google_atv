@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Thola irimothi yami"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Dlala umsindo ukuze uthole irimothi yakho ye-Google TV uma ibekwe kabi"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Cindezela inkinobho engemuva Komsakazi wakho we-Google TV ukuze udlale umsindo kurimothi yakho imizuzwana engu-30. Lokhu kusebenza kuphela Kurimothi Yezwi Yomsakazi we-Google TV.\n\nUkuze umise umsindo, cindezela noma iyiphi inkinobho kurimothi yakho."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Uma ivuliwe, ungasebenzisa inkinobho esedivayisini yakho ukuze udlale umsindo ukuze uthole irimothi yakho. Uma icishiwe, le nkinobho ngeke isebenze. Usazokwazi ukusebenzisa okuthi Thola irimothi yami ngezinye izindlela."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Dlala umsindo"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Ileveli yebhethri: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Okuhambisanayo"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"I-%1$s ihlulekile ukuxhuma"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"I-%1$s ixhunyiwe"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"I-%1$s inqanyuliwe"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Imodi Yokukhanya Kwangemuva"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Ukukhanya kwezinkinobho kusilawuli-kude ngokucindezela ngakunye."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Kumarimothi asekelwayo eGoogle TV, ukucindezela inkinobho kumarimothi kwenza ukukhanya kwangemuva kukhanye."</string>
 </resources>

@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"ຊອກຫາຣີໂໝດຂອງຂ້ອຍ"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"ຫຼິ້ນສຽງເພື່ອຊອກຫາຣີໂໝດ Google TV ຂອງທ່ານຫາກວາງໄວ້ຜິດບ່ອນ"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"ກົດປຸ່ມຢູ່ດ້ານຫຼັງຂອງ Google TV Streamer ເພື່ອຫຼິ້ນສຽງຢູ່ຣີໂໝດຂອງທ່ານເປັນເວລາ 30 ວິນາທີ. ເຊິ່ງສາມາດໃຊ້ໄດ້ກັບຣີໂໝດສັ່ງການດ້ວຍສຽງຂອງ Google TV Streamer ເທົ່ານັ້ນ.\n\nເພື່ອຢຸດສຽງ, ໃຫ້ກົດປຸ່ມໃດກໍໄດ້ຢູ່ຣີໂໝດຂອງທ່ານ."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"ເມື່ອເປີດໄວ້, ທ່ານສາມາດໃຊ້ປຸ່ມຢູ່ອຸປະກອນຂອງທ່ານໃນການຫຼິ້ນສຽງເພື່ອຊອກຫາຣີໂໝດຂອງທ່ານໄດ້. ແຕ່ຫາກປິດໄວ້, ປຸ່ມນີ້ຈະບໍ່ເຮັດວຽກ. ທ່ານຈະຍັງຄົງສາມາດໃຊ້ຄຸນສົມບັດຊອກຫາຣີໂໝດຂອງຂ້ອຍຜ່ານວິທີການອື່ນໆໄດ້."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"ຫຼິ້ນສຽງ"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"ລະດັບແບັດເຕີຣີ: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"ອຸປະກອນເສີມ"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"ເຊື່ອມຕໍ່ %1$s ບໍ່ສຳເລັດ"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"ເຊື່ອມຕໍ່ %1$s ແລ້ວ"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"ຕັດການເຊື່ອມຕໍ່ %1$s ແລ້ວ"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"ໂໝດແສງພື້ນຫຼັງ"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"ການສ່ອງສະຫວ່າງຂອງປຸ່ມເມື່ອກົດຣີໂໝດຄວບຄຸມແຕ່ລະເທື່ອ."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"ເມື່ອໃຊ້ຣີໂໝດ Google TV ທີ່ຮອງຮັບ, ການກົດປຸ່ມເທິງຣີໂໝດຈະເປັນການເປີດການນຳໃຊ້ແສງພື້ນຫຼັງ."</string>
 </resources>

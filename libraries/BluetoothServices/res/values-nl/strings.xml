@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Mijn afstandsbediening vinden"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Speel een geluid af om je Google TV-afstandsbediening te vinden als je deze kwijt bent"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Druk op de knop op de achterkant van je Google TV Streamer om 30 seconden een geluid op je afstandsbediening af te spelen. Dit werkt alleen op een Google TV Streamer-stembediening.\n\nAls je het geluid wilt stoppen, druk je op een knop op de afstandsbediening."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Als deze instelling aanstaat, kun je de knop op je apparaat gebruiken om een geluid af te spelen waarmee je je afstandsbediening kunt vinden. Staat de instelling uit, dan werkt deze knop niet. Je kunt Vind mijn afstandsbediening nog steeds gebruiken via andere methoden."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Geluid afspelen"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Batterijniveau: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Accessoires"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s kan geen verbinding maken"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s is gekoppeld"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s is ontkoppeld"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Modus voor achtergrondverlichting"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Verlichting van de knoppen op de afstandsbediening bij elke druk."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Als je op ondersteunde Google TV-afstandsbedieningen op de knop drukt, gaat de achtergrondverlichting aan."</string>
 </resources>

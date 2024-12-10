@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"查找我的遥控器"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"让忘记放在何处的 Google TV 遥控器响铃，以便找到它"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"按下 Google TV 流媒体播放器背面的按钮，即可让遥控器响铃 30 秒。这仅适用于 Google TV 流媒体播放器语音遥控器。\n\n若要停止响铃，请按下遥控器上的任意按钮。"</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"此项处于开启状态时，您可以使用设备上的按钮播放声音，以便定位遥控器。此项处于关闭状态时，这个按钮将不起作用。您仍然可以通过其他方法使用“查找我的遥控器”。"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"响铃"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"电池电量：%1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"配件"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"无法连接“%1$s”"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"已连接“%1$s”"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"已断开与“%1$s”的连接"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"背光模式"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"每次按遥控器上的按钮时，按钮都会亮起。"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"在支持的 Google TV 遥控器上，按下相应按钮会激活背光效果。"</string>
 </resources>

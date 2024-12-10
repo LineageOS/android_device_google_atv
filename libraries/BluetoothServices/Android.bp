@@ -16,6 +16,7 @@ android_library {
         "androidx.leanback_leanback",
         "androidx.leanback_leanback-preference",
         "androidx.legacy_legacy-support-core-ui",
+        "androidx.work_work-runtime",
         "guava",
         "TwoPanelSettingsLib",
     ],

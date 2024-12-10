@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Finn fjernkontrollen min"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Spill av en lyd for å finne Google TV-fjernkontrollen hvis du ikke finner den"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Trykk på knappen på baksiden av Google TV Streamer for å spille av en lyd på fjernkontrollen i 30 sekunder. Dette fungerer bare på stemmestyrte Google TV Streamer-fjernkontroller.\n\nFor å stoppe lyden, trykk på hvilken som helst knapp på fjernkontrollen."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Når funksjonen er på, kan du bruke knappen på enheten til å spille av en lyd for å finne fjernkontrollen. Når funksjonen er av, fungerer ikke denne knappen. Du kan fortsatt bruke finn fjernkontrollen via andre metoder."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Spill av lyd"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Batterinivå: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Tilbehør"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s kunne ikke kobles til"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s er koblet til"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s er koblet fra"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Bakgrunnsbelysning-modus"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Belysning av knappene på fjernkontrollen ved hvert trykk."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"På Google TV-fjernkontroller som støttes, aktiveres bakgrunnsbelysning når du trykker på knappene på fjernkontrollene."</string>
 </resources>

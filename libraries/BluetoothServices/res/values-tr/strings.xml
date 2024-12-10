@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Uzaktan kumandamı bul"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Google TV uzaktan kumandanızın nerede olduğunu hatırlamıyorsanız ses çalarak yerini bulabilirsiniz"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Uzaktan kumandanızda 30 saniye boyunca ses çalmak için Google TV Streamer cihazınızın arkasındaki düğmeye basın. Bu işlem yalnızca Google TV Streamer Sesli Uzaktan Kumandası\'nda çalışır.\n\nSesi durdurmak için uzaktan kumandanızdaki herhangi bir düğmeye basın."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Etkinleştirildiğinde ses çalarak uzaktan kumandanızı bulmak için cihazınızdaki düğmeyi kullanabilirsiniz. Devre dışı bırakıldığında bu düğme çalışmaz. Uzaktan kumandamı bul özelliğini başka yöntemlerle kullanmaya devam edebilirsiniz."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Ses çal"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Pil seviyesi: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Aksesuarlar"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s bağlantısı başarısız oldu"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s bağlandı"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s bağlantısı kesildi"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Arka Işık Modu"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Uzaktan kumandadaki düğmelerin her basıldığında yanması."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Desteklenen Google TV uzaktan kumandalarında düğmeye basıldığında arka ışık aydınlatması etkinleşir."</string>
 </resources>

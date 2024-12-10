@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"내 리모컨 찾기"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Google TV 리모컨을 잃어버린 경우 소리를 재생하여 위치 찾기"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Google TV Streamer 뒷면에 있는 버튼을 누르면 리모컨에서 30초 동안 소리가 재생됩니다. 이 기능은 Google TV Streamer 보이스 리모컨에서만 작동합니다.\n\n소리를 중지하려면 리모컨에 있는 아무 버튼이나 누르세요"</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"켜져 있으면 기기의 버튼으로 소리를 재생하여 리모컨을 찾을 수 있습니다. 꺼져 있으면 버튼이 작동하지 않습니다. 다른 방법으로도 \'리모컨 찾기\'를 사용할 수 있습니다."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"소리 재생"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"배터리 잔량: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"액세서리"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s 연결 실패"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s 연결됨"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s 연결 해제됨"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"백라이트 모드"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"리모컨에 있는 조명 버튼을 누를 때마다 제어합니다."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"지원되는 Google TV 리모컨에서 리모컨에 있는 조명 버튼을 누르면 백라이트 조명이 활성화됩니다."</string>
 </resources>

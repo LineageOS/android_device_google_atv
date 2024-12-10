@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Најди го мојот далечински управувач"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Репродуцирајте звук за да го лоцирате далечинскиот управувач на Google TV ако е изгубен"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Притиснете го копчето на задниот дел од вашиот стример за Google TV за да се репродуцира звук на далечинскиот управувач 30 секунди. Ова функционира само на Voice Remote за стример на Google TV.\n\nЗа да го сопрете звукот, притиснете некое копче на далечинскиот управувач."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Кога е вклучено, може да го користите копчето на вашиот уред за да репродуцирате звук за да го лоцирате далечинското. Кога е исклучено, копчево не функционира. Сè уште ќе може да ја користите „Најди го далечинското“ преку други методи."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Репродуцирај звук"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Ниво на батерија: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Додатоци"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s не можеше да се поврзе"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Уредот %1$s е поврзан"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Уредот %1$s не е поврзан"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Режим на заднинско осветлување"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Светење на копчињата на далечинското при секое притискање."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"На поддржаните далечински за Google TV, со притискање на копчето на далечинското се активира заднинското осветлување."</string>
 </resources>

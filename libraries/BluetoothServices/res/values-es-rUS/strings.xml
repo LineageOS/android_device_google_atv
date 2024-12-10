@@ -68,8 +68,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Buscar mi control remoto"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Reproducir un sonido para ubicar el control remoto de Google TV si se pierde"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Presiona el botón de la parte posterior de tu Google TV Streamer para reproducir un sonido en el control remoto durante 30 segundos. Solo funciona en Google TV Streamer Voice Remote.\n\nPara detener el sonido, presiona cualquier botón del control remoto."</string>
-    <!-- no translation found for find_my_remote_integration_hint (7131212049012673631) -->
-    <skip />
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Cuando se activa la función, puedes usar el botón de tu dispositivo para reproducir un sonido y ubicar el control remoto. Cuando esté desactivada, este botón no funcionará. Podrás seguir usando Encontrar mi control remoto con otros métodos."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Reproducir sonido"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Nivel de batería: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Accesorios"</string>
@@ -97,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"No se pudo conectar %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Se conectó %1$s"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Se desconectó %1$s"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Modo de retroiluminación"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Iluminación de los botones del control remoto cuando se presionan."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Se puede activar la retroiluminación cuando se presiona un botón en controles remotos de Google TV compatibles."</string>
 </resources>
