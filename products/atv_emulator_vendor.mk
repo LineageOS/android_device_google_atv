@@ -55,7 +55,7 @@ PRODUCT_COPY_FILES += \
     device/generic/goldfish/data/etc/advancedFeatures.ini:advancedFeatures.ini
 
 PRODUCT_COPY_FILES += \
-    device/generic/goldfish/camera/media/media_codecs_google_tv.xml:${TARGET_COPY_OUT_VENDOR}/etc/media_codecs_google_tv.xml \
+    device/generic/goldfish/codecs/media/media_codecs_google_tv.xml:${TARGET_COPY_OUT_VENDOR}/etc/media_codecs_google_tv.xml \
     frameworks/native/data/etc/android.hardware.ethernet.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.ethernet.xml \
     hardware/libhardware_legacy/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf
 
