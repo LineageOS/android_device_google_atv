@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$sను కనెక్ట్ చేయడం విఫలమైంది"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s కనెక్ట్ చేయబడింది"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s డిస్‌కనెక్ట్ చేయబడింది"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"బ్యాక్‌లైట్ మోడ్"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"మీరు రిమోట్ కంట్రోల్‌లోని బటన్‌లను నొక్కిన ప్రతిసారి అవి వెలుగుతాయి."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"సపోర్ట్ చేసే Google TV రిమోట్స్‌లో, రిమోట్స్‌లోని బటన్‌ను నొక్కడం ద్వారా బ్యాక్‌లైట్ వెలగడం యాక్టివేట్ అవుతుంది."</string>
 </resources>

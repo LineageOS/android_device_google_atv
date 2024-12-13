@@ -117,3 +117,5 @@ PRODUCT_COPY_FILES += \
     device/google/atv/permissions/tv_core_hardware.xml:system/etc/permissions/tv_core_hardware.xml
 
 PRODUCT_PACKAGES += framework-audio_effects.xml
+
+$(call soong_config_set,system_services,without_vibrator,true)

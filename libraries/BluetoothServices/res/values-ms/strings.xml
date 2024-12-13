@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s gagal menyambung"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s disambungkan"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s diputuskan sambungan"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Mod Lampu Latar"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Pencahayaan butang pada alat kawalan jauh setiap kali butang ditekan."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Pada alat kawalan jauh Google TV yang disokong, tindakan menekan butang pada alat kawalan jauh akan mengaktifkan pencahayaan lampu latar."</string>
 </resources>

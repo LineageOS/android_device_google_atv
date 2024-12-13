@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"ເຊື່ອມຕໍ່ %1$s ບໍ່ສຳເລັດ"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"ເຊື່ອມຕໍ່ %1$s ແລ້ວ"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"ຕັດການເຊື່ອມຕໍ່ %1$s ແລ້ວ"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"ໂໝດແສງພື້ນຫຼັງ"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"ການສ່ອງສະຫວ່າງຂອງປຸ່ມເມື່ອກົດຣີໂໝດຄວບຄຸມແຕ່ລະເທື່ອ."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"ເມື່ອໃຊ້ຣີໂໝດ Google TV ທີ່ຮອງຮັບ, ການກົດປຸ່ມເທິງຣີໂໝດຈະເປັນການເປີດການນຳໃຊ້ແສງພື້ນຫຼັງ."</string>
 </resources>

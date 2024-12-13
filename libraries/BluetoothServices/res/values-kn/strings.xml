@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s ಅನ್ನು ಕನೆಕ್ಟ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s ಅನ್ನು ಕನೆಕ್ಟ್ ಮಾಡಲಾಗಿದೆ"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s ಅನ್ನು ಡಿಸ್‌ಕನೆಕ್ಟ್ ಮಾಡಲಾಗಿದೆ"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"ಬ್ಯಾಕ್‌ಲೈಟ್ ಮೋಡ್"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"ಪ್ರತಿ ಪ್ರೆಸ್‌ನಲ್ಲಿ ರಿಮೋಟ್ ಕಂಟ್ರೋಲ್‌ನಲ್ಲಿರುವ ಬಟನ್‌ಗಳ ಇಲ್ಯುಮಿನೇಷನ್."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"ಬೆಂಬಲಿತ Google TV ರಿಮೋಟ್‌ಗಳಲ್ಲಿ, ರಿಮೋಟ್‌ಗಳಲ್ಲಿನ ಬಟನ್ ಅನ್ನು ಒತ್ತುವುದರಿಂದ ಬ್ಯಾಕ್‌ಲೈಟ್ ಇಲ್ಯುಮಿನೇಷನ್ ಸಕ್ರಿಯಗೊಳಿಸುತ್ತದೆ."</string>
 </resources>

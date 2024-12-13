@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s жалғанбады."</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s жалғанды."</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s ажыратылды."</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Артқы жарық режимі"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Басқан сайын пульттегі түймелердің жарықтандырылуы."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Қолдау көрсетілетін Google TV пульттерінде түймені бассаңыз, жарықтандыру қосылады."</string>
 </resources>

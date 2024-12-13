@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s ကို ချိတ်ဆက်၍မရပါ"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s ကို ချိတ်ဆက်ထားသည်"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s ကို ချိတ်ဆက်မထားပါ"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"နောက်ခံမီး မုဒ်"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"နှိပ်လိုက်တိုင်း အဝေးထိန်းခလုတ်ရှိ ခလုတ်များ မီးလင်းသည်။"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"ပံ့ပိုးထားသော Google TV အဝေးထိန်းခလုတ်များတွင် အဝေးထိန်းခလုတ်များရှိ ခလုတ်ကို နှိပ်ခြင်းဖြင့် နောက်ခံမီးလင်းခြင်းကို ဖွင့်သည်။"</string>
 </resources>

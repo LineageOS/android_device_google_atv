@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"تعذّر توصيل %1$s."</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"تم توصيل %1$s."</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"تم فصل %1$s."</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"وضع الإضاءة الخلفية"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"تضيء الأزرار الموجودة بجهاز التحكم عن بُعد عند كل ضغطة."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"يتم تنشيط الإضاءة الخلفية عند الضغط على أي زر من أزرار أجهزة التحكم عن بُعد لـ Google TV المتوافقة."</string>
 </resources>

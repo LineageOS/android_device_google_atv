@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Falha ao ligar %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s ligado"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s desligado"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Modo de retroiluminação"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Iluminação dos botões no comando quando premidos."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Nos comandos do Google TV suportados, se premir o botão nos comandos, a retroiluminação é ativada."</string>
 </resources>

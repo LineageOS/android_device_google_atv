@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"No se pudo conectar %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Se conectó %1$s"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Se desconectó %1$s"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Modo de retroiluminación"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Iluminación de los botones del control remoto cuando se presionan."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Se puede activar la retroiluminación cuando se presiona un botón en controles remotos de Google TV compatibles."</string>
 </resources>

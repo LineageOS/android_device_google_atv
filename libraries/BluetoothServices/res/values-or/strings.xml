@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s ସଂଯୋଗ କରିବାରେ ବିଫଳ ହୋଇଛି"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s ସଂଯୋଗ କରାଯାଇଛି"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s ବିଚ୍ଛିନ୍ନ କରାଯାଇଛି"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"ବେକଲାଇଟ ମୋଡ"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"ପ୍ରତ୍ୟେକ ଥର ଦବାଇଲେ ରିମୋଟ କଣ୍ଟ୍ରୋଲରେ ଥିବା ବଟନଗୁଡ଼ିକର ଇଲୁମିନେସନ ହୋଇଥାଏ।"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"ସପୋର୍ଟ କରୁଥିବା Google TV ରିମୋଟରେ, ବଟନଗୁଡ଼ିକୁ ଦବାଇଲେ ବେକଲାଇଟ ଇଲୁମିନେସନ ସକ୍ରିୟ ହୋଇଥାଏ।"</string>
 </resources>

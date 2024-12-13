@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s कनेक्ट करता आले नाही"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s कनेक्ट केले"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s डिस्कनेक्ट केले"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"बॅकलाइट मोड"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"रिमोट कंट्रोलवरील बटणे प्रत्येक वेळी प्रेस केल्याने इल्यूमिनेशन होते."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"सपोर्ट असलेल्या Google TV रिमोटवर, रिमोटवरील बटण प्रेस केल्याने बॅकलाइट इल्यूमिनेशन ॲक्टिव्हेट होते."</string>
 </resources>

@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"I-%1$s ihlulekile ukuxhuma"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"I-%1$s ixhunyiwe"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"I-%1$s inqanyuliwe"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Imodi Yokukhanya Kwangemuva"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Ukukhanya kwezinkinobho kusilawuli-kude ngokucindezela ngakunye."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Kumarimothi asekelwayo eGoogle TV, ukucindezela inkinobho kumarimothi kwenza ukukhanya kwangemuva kukhanye."</string>
 </resources>

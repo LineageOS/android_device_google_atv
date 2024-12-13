@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"הניסיון לחבר את %1$s נכשל"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s מחובר"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s מנותק"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"מצב \'תאורה אחורית\'"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"תאורה של הלחצנים בשלט הרחוק בכל לחיצה."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"בשלטים רחוקים שנתמכים על ידי Google TV, לחיצה על השלט מפעילה את התאורה האחורית."</string>
 </resources>

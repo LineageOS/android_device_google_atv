@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Η συσκευή %1$s απέτυχε να συνδεθεί"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Η συσκευή %1$s συνδέθηκε"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Η συσκευή %1$s αποσυνδέθηκε"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Λειτουργία οπίσθιου φωτισμού"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Ο φωτισμός των κουμπιών στο τηλεχειριστήριο ενεργοποιείται με κάθε πάτημα."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Στα υποστηριζόμενα τηλεχειριστήρια Google TV, ο οπίσθιος φωτισμός ενεργοποιείται από το πάτημα του κουμπιού στα τηλεχειριστήρια."</string>
 </resources>

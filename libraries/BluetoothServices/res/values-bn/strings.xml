@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s কানেক্ট করা যায়নি"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s কানেক্ট করা আছে"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s কানেক্ট করা নেই"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"ব্যাকলাইট মোড"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"রিমোট কন্ট্রোল থাকা বোতাম প্রত্যেকবার প্রেস করলে ব্যাকলাইট জ্বলে।"</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"যেসব Google TV রিমোটে এই সুবিধা কাজ করে, সেইসব রিমোটের বোতাম প্রেস করলে ব্যাকলাইট জ্বলা চালু হয়।"</string>
 </resources>

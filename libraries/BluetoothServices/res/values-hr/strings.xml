@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Povezivanje nije uspjelo: %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Povezano: %1$s"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Prekinuta veza: %1$s"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Način rada s pozadinskim osvjetljenjem"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Osvjetljenje gumba na daljinskom upravljaču na svaki pritisak gumba."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Na podržanim daljinskim upravljačima za Google TV pritiskom gumba na daljinskom upravljaču aktivirat će se pozadinsko osvjetljenje."</string>
 </resources>

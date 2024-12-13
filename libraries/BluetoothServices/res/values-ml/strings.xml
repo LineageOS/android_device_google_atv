@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s കണക്റ്റ് ചെയ്യാനായില്ല"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s കണക്റ്റ് ചെയ്തു"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s വിച്ഛേദിച്ചു"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"ബാക്ക്‌ലൈറ്റ് മോഡ്"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"ഓരോ തവണ അമർത്തുമ്പോഴും റിമോട്ട് കൺട്രോളിലെ ബട്ടണുകൾ തിളങ്ങുന്നു."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"പിന്തുണയ്ക്കുന്ന Google TV റിമോട്ടുകളിൽ, റിമോട്ടിലെ ബട്ടൺ അമർത്തുന്നത് ബാക്ക്‌ലൈറ്റിലെ തിളക്കം സജീവമാക്കുന്നു."</string>
 </resources>

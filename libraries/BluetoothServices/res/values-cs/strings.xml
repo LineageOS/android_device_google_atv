@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Zařízení %1$s se nepodařilo připojit"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Zařízení %1$s je připojeno"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Zařízení %1$s je odpojeno"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Režim podsvícení"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Podsvícení tlačítek na dálkovém ovládání při každém stisknutí tlačítka."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Na podporovaných dálkových ovládáních Google TV se stisknutím tlačítka aktivuje podsvícení."</string>
 </resources>

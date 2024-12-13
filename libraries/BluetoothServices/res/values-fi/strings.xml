@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Yhdistäminen epäonnistui: %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s yhdistetty"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Yhteys katkaistu: %1$s"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Taustavalaisutila"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Säädä valaisua painamalla kaukosäätimen painikkeita."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Tuetuilla Google TV ‑kaukosäätimillä voit painaa kaukosäätimen painiketta, joka aktivoi taustavalaisun."</string>
 </resources>

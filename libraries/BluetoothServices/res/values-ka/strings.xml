@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"%1$s ვერ უკავშირდება"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s დაკავშირებულია"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s-ის კავშირი გაწყვეტილია"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"შენათების რეჟიმი"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"ღილაკების განათება დისტანციური მართვის პულტზე ყოველი დაჭერისას."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Google TV-ის მხარდაჭერილ დისტანციური მართვის პულტებზე ღილაკის დაჭერა ააქტიურებს შენათებას."</string>
 </resources>

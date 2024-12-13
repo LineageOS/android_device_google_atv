@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Ezin izan da konektatu %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"Konektatu da %1$s"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"Deskonektatu da %1$s"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Hondoko argiaren modua"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Urruneko kontrolagailuko botoiak sakatze bakoitzarekin argiztatzea."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Google TV-ren urruneko kontrolagailu bateragarrietako botoia sakatuz gero, hondoko argiztapena aktibatuko da."</string>
 </resources>

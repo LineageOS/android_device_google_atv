@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Ekki tókst að tengja %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s tengt"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s aftengt"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Baklýsingarstilling"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Baklýsing á hnöppum fjarstýringar í hvert sinn sem þú ýtir."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Ef þú ýtir á fjarstýringahnapp á studdum Google TV-fjarstýringum kviknar á baklýsingunni."</string>
 </resources>

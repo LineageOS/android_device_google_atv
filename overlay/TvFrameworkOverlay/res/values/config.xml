@@ -168,8 +168,8 @@
     <!-- Maximum size, specified in pixels, to restrain the display space width to. Height and
          density will be scaled accordingly to maintain aspect ratio. A value of 0 indicates no
          constraint will be enforced.
-         ATV limits the UI graphics width to 1920 because higher resolution is unnecessary and causes
-         too much overhead on the GPU for Android TV devices. -->
+         ATV default dpis limits the UI graphics width to 1920 because higher resolution is
+         unnecessary and causes too much overhead on the GPU for Android TV devices. -->
     <integer name="config_maxUiWidth">1920</integer>
 
     <!-- Whether the device supports quick settings and its associated APIs -->

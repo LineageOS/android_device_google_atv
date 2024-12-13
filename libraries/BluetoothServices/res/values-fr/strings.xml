@@ -96,4 +96,7 @@
     <string name="settings_bt_pair_toast_fail" msgid="8025560978364284117">"Échec de la connexion de %1$s"</string>
     <string name="settings_bt_pair_toast_connected" msgid="3073130641004809067">"%1$s connecté"</string>
     <string name="settings_bt_pair_toast_disconnected" msgid="2046165143924352053">"%1$s déconnecté"</string>
+    <string name="settings_backlight_title" msgid="2013564937830315646">"Mode Rétroéclairage"</string>
+    <string name="settings_backlight_description" msgid="2672529254045062504">"Les boutons de la télécommande sont rétroéclairés à chaque appui."</string>
+    <string name="backlight_slice_description" msgid="2417058213200444743">"Sur les télécommandes Google TV prises en charge, appuyer sur le bouton active le rétroéclairage."</string>
 </resources>
