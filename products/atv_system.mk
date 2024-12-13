@@ -122,4 +122,4 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += framework-audio_effects.xml
 
-$(call soong_config_set,system_services,without_vibrator,true)
+$(call soong_config_set,system_services,without_hal,vibrator)
