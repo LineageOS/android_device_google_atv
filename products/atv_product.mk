@@ -40,7 +40,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     tombstoned.max_tombstone_count?=10
 
-# Limit persistent logs to 60MB
+# Limit persistent logs to 10MB
 PRODUCT_PRODUCT_PROPERTIES += \
-    logd.logpersistd.size=30 \
+    logd.logpersistd.size=5 \
     logd.logpersistd.rotate_kbytes=2048
