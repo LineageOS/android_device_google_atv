@@ -35,7 +35,7 @@
     <string name="settings_bt_update_needs_repair" msgid="1310917691218455907">"کنترل ازراه‌دور را دوباره مرتبط کنید"</string>
     <string name="settings_enabled" msgid="431464375814187683">"فعال"</string>
     <string name="settings_disabled" msgid="1459717258643130682">"غیرفعال"</string>
-    <string name="settings_remote_battery_level_label" msgid="3644348379742819020">"میزان شارژ باتری"</string>
+    <string name="settings_remote_battery_level_label" msgid="3644348379742819020">"سطح باتری"</string>
     <string name="settings_remote_battery_level_percentage_label" msgid="7301487906665476276">"%1$d%%"</string>
     <string name="settings_remote_firmware_label" msgid="2132403094910284670">"سفت‌افزار"</string>
     <string name="settings_remote_serial_number_label" msgid="7591347399882767241">"نشانی بلوتوث"</string>
@@ -72,7 +72,7 @@
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"دکمه پشت «جاری‌ساز Google TV» را فشار دهید تا صدایی به‌مدت ۳۰ ثانیه در کنترل از دور پخش شود. این ویژگی فقط در «کنترل از دور صوتی جاری‌ساز Google TV» کار می‌کند.\n\nبرای قطع کردن صدا، هر دکمه‌ای را روی کنترل از دور فشار دهید."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"وقتی روشن باشد، بااستفاده از این دکمه در دستگاهتان می‌توانید صدایی پخش کنید و کنترل از دور را پیدا کنید. وقتی خاموش باشد، این دکمه کار نمی‌کند. همچنان می‌توانید با روش‌های دیگر از «پیدا کردن کنترل از راه دور» استفاده کنید."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"پخش صدا"</string>
-    <string name="settings_remote_battery_level" msgid="1817513765913707505">"میزان شارژ باتری: %1$s"</string>
+    <string name="settings_remote_battery_level" msgid="1817513765913707505">"سطح باتری: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"لوازم جانبی"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"کنترل ازراه‌دور"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"متصل"</string>
