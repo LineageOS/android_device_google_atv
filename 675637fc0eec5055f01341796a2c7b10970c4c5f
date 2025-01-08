@@ -16,6 +16,24 @@
       "message": "Was there a reason to not include 64 only? I think this fixes the following:\n\n\u003e F DEBUG   : Abort message: \u0027Failed to execute (/apex/com.android.art/bin/dex2oat32 --zip-fd\u003d8 --zip-location\u003d/apex/com.android.ondevicepersonalization/app/FederatedCompute@AP4A.241205.013/FederatedCompute.apk --oat-fd\u003d9 --oat-location\u003d/data/dalvik-cache/x86_64/apex@com.android.ondevicepersonalization@app@FederatedCompute@AP4A.241205.013@FederatedCompute.apk@classes.dex --output-vdex-fd\u003d7 --swap-fd\u003d10 --class-loader-context\u003dPCL[] --classpath-dir\u003d/apex/com.android.ondevicepersonalization/app/FederatedCompute@AP4A.241205.013 --instruction-set\u003dx86_64 --instruction-set-features\u003ddefault --instruction-set-variant\u003dx86_64 --compiler-filter\u003dverify --compilation-reason\u003dfirst-boot --compact-dex-level\u003dnone --max-image-block-size\u003d524288 --resolve-startup-const-strings\u003dtrue --generate-mini-debug-info --runtime-arg -Xtarget-sdk-version:35 --runtime-arg -Xms64m --runtime-arg -Xmx512m --comments\u003dapp-name:com.android.federatedcompute.services,app-version-name:15,app-version-code:352090000,art-version:352090000): No such file or directory\u0027\nF DEBUG   :     rax 0000000000000000  rbx 0000000000000305  rcx 00007f0ff09249c4  rdx 0000000000000006\nF DEBUG   :     r8  0000000000000006  r9  0000000000000006  r10 00007ffc5ae49e90  r11 0000000000000207\nF DEBUG   :     r12 00007f0fcd0d95a0  r13 00000000000003f1  r14 0000000000000305  r15 00007f0e3d0dcd50\nF DEBUG   :     rdi 0000000000000305  rsi 0000000000000305\nF DEBUG   :     rbp 00007ffc5ae49f30  rsp 00007ffc5ae49e90  rip 00007f0ff09249c4\nF DEBUG   : 6 total frames\nF DEBUG   : backtrace:\nF DEBUG   :       #00 pc 00000000000599c4  /apex/com.android.runtime/lib64/bionic/libc.so (abort+196) (BuildId: e1e1f090fd70e1e04e2a67dfc9dc2075)\nF DEBUG   :       #01 pc 0000000000013f0d  /apex/com.android.art/lib64/libbase.so (android::base::DefaultAborter(char const*)+13) (BuildId: 923c5b8f4cbdbb7f8cdaeb25daee8238)\nF DEBUG   :       #02 pc 0000000000015f5e  /apex/com.android.art/lib64/libbase.so (android::base::SetAborter(std::__1::function\u003cvoid (char const*)\u003e\u0026\u0026)::$_0::__invoke(char const*)+62) (BuildId: 923c5b8f4cbdbb7f8cdaeb25daee8238)\nF DEBUG   :       #03 pc 0000000000015456  /apex/com.android.art/lib64/libbase.so (android::base::LogMessage::~LogMessage()+502) (BuildId: 923c5b8f4cbdbb7f8cdaeb25daee8238)\nF DEBUG   :       #04 pc 0000000000006e80  /apex/com.android.art/bin/art_exec (main+11744) (BuildId: 2a9c2662442861f2c32c6fa8576ef585)\nF DEBUG   :       #05 pc 00000000000549b5  /apex/com.android.runtime/lib64/bionic/libc.so (__libc_init+117) (BuildId: e1e1f090fd70e1e04e2a67dfc9dc2075)",
       "revId": "675637fc0eec5055f01341796a2c7b10970c4c5f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "daee5e99_61dbe46c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-01-08T19:00:11Z",
+      "side": 1,
+      "message": "no reason, just wasn\u0027t caught in version by version rebases",
+      "parentUuid": "f4ff7db2_82c11e30",
+      "revId": "675637fc0eec5055f01341796a2c7b10970c4c5f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
