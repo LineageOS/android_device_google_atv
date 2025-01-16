@@ -59,6 +59,7 @@ public class BluetoothDevicePreferenceFragment extends LeanbackPreferenceFragmen
     static final String KEY_RENAME = "key_rename";
     static final String KEY_CONNECT = "key_connect";
     static final String KEY_DISCONNECT = "key_disconnect";
+    static final String KEY_BLE_INFO = "key_bluetooth_info";
     static final String KEY_FORGET = "key_forget";
     static final String KEY_UPDATE= "key_update";
     private static final String KEY_RECONNECT = "key_reconnect";
