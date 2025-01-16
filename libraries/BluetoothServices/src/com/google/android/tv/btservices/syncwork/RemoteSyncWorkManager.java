@@ -41,13 +41,16 @@ public class RemoteSyncWorkManager {
         // Typically WorkManager is initialized as part of app start up. It is possible for
         // apps to disable that for customized configuration, so to be safe we should
         // attempt to initialize it here as well.
-        try {
-            WorkManager.initialize(context.getApplicationContext(),
-                    new Configuration.Builder().build());
-        } catch (IllegalStateException ex) {
-            // The call to initialize can fail in normal scenarios when WorkManager is already
-            // initialized.
-        }
+        if (!WorkManager.isInitialized()) {
+            try {
+                WorkManager.initialize(context.getApplicationContext(),
+                        new Configuration.Builder().build());
+            } catch (IllegalStateException ex) {
+                // The call to initialize can fail in normal scenarios when WorkManager is already
+                // initialized.
+                Log.d(TAG, "IllegalStateException:" + ex);
+            }
+         }
         return WorkManager.getInstance(context.getApplicationContext());
     }
 
