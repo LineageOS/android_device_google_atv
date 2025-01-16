@@ -27,6 +27,7 @@ import static com.android.tv.twopanelsettings.slices.SlicesConstants.EXTRA_SLICE
 import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenceFragment.CONT_CANCEL_ARGS;
 import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenceFragment.KEY_CONNECT;
 import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenceFragment.KEY_DISCONNECT;
+import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenceFragment.KEY_BLE_INFO;
 import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenceFragment.KEY_FORGET;
 import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenceFragment.KEY_RENAME;
 import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenceFragment.KEY_UPDATE;
@@ -125,6 +126,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
     static final String KEY_EXTRAS_DEVICE = "key_extras_device";
     static final String KEY_BACKLIGHT_RADIO_GROUP = "backlight_radio_group";
     static final String KEY_TOGGLE_ACTIVE_AUDIO_OUTPUT = "toggle_active_audio_output";
+
 
     private static final String SCHEME_CONTENT = "content://";
     private final Handler mHandler = new Handler(Looper.getMainLooper());
@@ -710,6 +712,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
 
         // Update "bluetooth device info preference".
         RowBuilder infoPref = new RowBuilder()
+                .setKey("KEY_BLE_INFO")
                 .setIcon(IconCompat.createWithResource(context, R.drawable.ic_baseline_info_24dp));
 
         int battery = btDeviceProvider.getBatteryLevel(device);
