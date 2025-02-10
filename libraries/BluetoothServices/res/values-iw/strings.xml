@@ -38,7 +38,7 @@
     <string name="settings_remote_battery_level_label" msgid="3644348379742819020">"רמת הטעינה של הסוללה"</string>
     <string name="settings_remote_battery_level_percentage_label" msgid="7301487906665476276">"‎%1$d%%‎"</string>
     <string name="settings_remote_firmware_label" msgid="2132403094910284670">"קושחה"</string>
-    <string name="settings_remote_serial_number_label" msgid="7591347399882767241">"כתובת Bluetooth"</string>
+    <string name="settings_remote_serial_number_label" msgid="7591347399882767241">"כתובת ה-Bluetooth"</string>
     <string name="settings_bt_battery_low" msgid="3547517382697124858">"עליך להחליף את הסוללה"</string>
     <string name="settings_bt_battery_low_warning" msgid="721091326401791089">"הסוללה חלשה"</string>
     <string name="connected_devices_pref_title" msgid="8985364841073196008">"מכשירים מחוברים"</string>
