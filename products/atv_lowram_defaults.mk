@@ -56,6 +56,17 @@ ifeq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
   MALLOC_SVELTE := true
 endif
 
+# Enable Madvising of the art, odex and vdex files to MADV_WILLNEED.
+# The size specified here is the size limit of how much of the file
+# (in bytes) is madvised.
+# We madvise 40MB of .art file to MADV_WILLNEED with UINT_MAX limit.
+# For odex and vdex files, we limit madvising to 30MB (down from the default of
+# 100MB) to alleviate pagecache pressure.
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.madvise.vdexfile.size=31457280\
+    dalvik.vm.madvise.odexfile.size=31457280\
+    dalvik.vm.madvise.artfile.size=0
+
 # Overlay for lowram
 PRODUCT_PACKAGES += TvLowRamOverlay
 
