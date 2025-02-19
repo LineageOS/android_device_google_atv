@@ -483,7 +483,8 @@ public class MdnsOffloadManagerService extends Service {
                 if (Intent.ACTION_SCREEN_ON.equals(action)) {
                     Log.d(TAG, "SCREEN_ON");
                     mOffloadWriter.setOffloadState(false);
-                    mOffloadWriter.retrieveAndClearMetrics(mOffloadIntentStore.getRecordKeys());
+                    mInterfaceOffloadManagers.values().forEach(
+                            InterfaceOffloadManager::retrieveAndClearMetrics);
                 } else if (Intent.ACTION_SCREEN_OFF.equals(action)) {
                     Log.d(TAG, "SCREEN_OFF");
                     try {
