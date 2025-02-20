@@ -59,7 +59,7 @@ endif
 # Enable Madvising of the art, odex and vdex files to MADV_WILLNEED.
 # The size specified here is the size limit of how much of the file
 # (in bytes) is madvised.
-# We madvise 40MB of .art file to MADV_WILLNEED with UINT_MAX limit.
+# We madvise 0MB of .art file.
 # For odex and vdex files, we limit madvising to 30MB (down from the default of
 # 100MB) to alleviate pagecache pressure.
 PRODUCT_PROPERTY_OVERRIDES += \
