@@ -63,6 +63,8 @@
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"Nika amandla i-HDMI-CEC"</string>
     <string name="settings_cec_explain" msgid="282126756909187653">"I-HDMI-CEC ikuvumela ukuthi ulawule futhi uvule/uvale ngokuzenzakalela amadivayisi anikwe amandla i-HDMI-CEC ngesilawulikude esisodwa.\n\nQaphela: Qiniseka ukuthi i-HDMI-CEC inikwe amandla ku-TV yakho namanye amadivayisi. Abakhiqizi bavame ukuba namagama ahlukahlukene e-HDMI-CEC, isibonelo:"</string>
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"I-Samsung: I-Anynet+\nLG: I-SimpLink\nSony: I-BRAVIA Sync\nPhilips: I-EasyLink\nSharp: Isixhumanisi se-Aquos"</string>
+    <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"Faka okubekwe eceleni lapho ushintshela okokufaka komunye umthombo"</string>
+    <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"Uma unika amandla leli sethingi futhi uvula i-HDMI-CEC ku-TV yakho, le divayisi izongena ngokuzenzekela okulindile ngemva nje kokushintshela kokokufaka okuhlukile ku-TV yakho. Lokhu kungasiza ukumisa isikhashana okuqukethwe futhi kunciphise ukusetshenziswa kwamandla uma ungabukeli kakhulu."</string>
     <string name="settings_axel" msgid="8253298947221430993">"Setha izinkinobho zerimothi"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Lawula ivolumu, amandla, okokufaka kuma-TV, izamukeli namabha omsindo"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Thola irimothi yami"</string>

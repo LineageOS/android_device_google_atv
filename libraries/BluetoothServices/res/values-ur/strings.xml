@@ -63,6 +63,8 @@
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"HDMI-CEC فعال کریں"</string>
     <string name="settings_cec_explain" msgid="282126756909187653">"HDMI-CEC آپ کو صرف ایک ریموٹ کنٹرول کے ذریعے HDMI-CEC فعال کردہ دیگر آلات کو خودکار طور پر آن/آف کرنے کی اجازت دیتی ہے۔ \n\nنوٹ: یقینی بنائیں کہ HDMI-CEC آپ کے TV اور دیگر HDMI آلات پر فعال ہو۔ بسا اوقات مینوفیکچررز کے پاس HDMI-CEC کے الگ الگ نام ہوتے ہیں، مثال کے طور پر:"</string>
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung:‎ Anynet+\nLG:‎ SimpLink\nSony:‎ BRAVIA Sync\nPhilips:‎ EasyLink\nSharp:‎ Aquos Link"</string>
+    <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"ان پٹ کو دوسرے ماخذ پر سوئچ کرتے وقت اسٹینڈ بائی میں داخل ہوں"</string>
+    <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"جب آپ اس ترتیب کو فعال کرتے ہیں اور HDMI-CEC آپ کے TV پر فعال ہو جاتا ہے تو یہ آلہ آپ کے TV پر مختلف ان پٹ پر سوئچ کرنے کے فوراً بعد خودکار طور پر اسٹینڈ بائی میں داخل ہو جائے گا۔ جب آپ فعال طور پر نہیں دیکھ رہے ہوں تو یہ کارروائی مواد کو موقوف کرنے اور بجلی کی کھپت کو کم کرنے میں مدد کر سکتی ہے۔"</string>
     <string name="settings_axel" msgid="8253298947221430993">"ریموٹ بٹنز سیٹ اپ کریں"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"TVs، ریسیورز اور ساؤنڈ بارز پر والیوم، پاور اور ان پٹ کنٹرول کریں"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"میرا ریموٹ تلاش کریں"</string>

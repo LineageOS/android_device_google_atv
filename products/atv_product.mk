@@ -17,8 +17,6 @@
 # a generic TV device.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/media_product.mk)
 
-PRODUCT_PUBLIC_SEPOLICY_DIRS += device/google/atv/audio_proxy/sepolicy/public
-
 PRODUCT_PACKAGES += \
     TvNetworkStackOverlay \
     TvFrameworkOverlay \
@@ -41,3 +39,8 @@ PRODUCT_COPY_FILES += \
 # Too many tombstones can cause bugreports to grow too large to be uploaded.
 PRODUCT_PRODUCT_PROPERTIES += \
     tombstoned.max_tombstone_count?=10
+
+# Limit persistent logs to 60MB
+PRODUCT_PRODUCT_PROPERTIES += \
+    logd.logpersistd.size=30 \
+    logd.logpersistd.rotate_kbytes=2048

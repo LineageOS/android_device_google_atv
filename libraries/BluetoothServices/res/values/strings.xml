@@ -81,6 +81,8 @@
   <string name="settings_enable_hdmi_cec">Enable HDMI-CEC</string>
   <string name="settings_cec_explain">HDMI-CEC allows you to control and automatically turn on/off other HDMI-CEC enabled devices with a single remote control.\n\nNote: Ensure HDMI-CEC is enabled on your TV and other HDMI devices. Manufacturers often have different names for HDMI-CEC, for example:</string>
   <string name="settings_cec_feature_names">Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link</string>
+  <string name="settings_cec_go_to_sleep_on_active_source_lost_title">Enter standby when switching input to another source</string>
+  <string name="settings_cec_go_to_sleep_on_active_source_lost_description">When you enable this setting and have HDMI-CEC enabled on your TV, this device will automatically enter standby shortly after you switch to a different input on your TV. This may help pause content and reduce power consumption when you aren\'t actively watching.</string>
 
   <string name="settings_axel">Set up remote buttons</string>
   <string name="settings_axel_description">Control volume, power, input on TVs, receivers and soundbars</string>

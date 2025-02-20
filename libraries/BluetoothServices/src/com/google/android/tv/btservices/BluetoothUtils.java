@@ -16,6 +16,8 @@
 
 package com.google.android.tv.btservices;
 
+import static android.media.tv.flags.Flags.enableLeAudioUnicastUi;
+
 import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothClass;
@@ -27,6 +29,9 @@ import android.util.Log;
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
 import com.android.settingslib.bluetooth.LocalBluetoothManager;
 import com.android.settingslib.bluetooth.LocalBluetoothProfile;
+import com.android.settingslib.bluetooth.LocalBluetoothProfileManager;
+import com.android.settingslib.bluetooth.A2dpProfile;
+import com.android.settingslib.bluetooth.LeAudioProfile;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -340,8 +345,11 @@ public class BluetoothUtils {
         return null;
     }
 
-    /** Returns true if the BluetoothDevice is the active audio output, false otherwise. */
-    public static boolean isActiveAudioOutput(BluetoothDevice device) {
+    /**
+     * Returns true if the BluetoothDevice is the active audio output over A2DP,
+     * false otherwise.
+     */
+    public static boolean isActiveA2dpAudioOutput(BluetoothDevice device) {
         if (device != null) {
             final BluetoothAdapter btAdapter = getDefaultBluetoothAdapter();
             if (btAdapter != null) {
@@ -369,15 +377,80 @@ public class BluetoothUtils {
         return false;
     }
 
+    /** Returns true if the platform supports LE Audio Unicast, false otherwise. */
+    public static boolean leAudioUnicastSupported(Context context) {
+        final LocalBluetoothManager btManager = getLocalBluetoothManager(context);
+        if (btManager == null) {
+            return false;
+        }
+
+        final LocalBluetoothProfileManager btProfileManager = btManager.getProfileManager();
+        if (btProfileManager == null) {
+            return false;
+        }
+
+        // The BT Framework returns a profile only if
+        // LeAudioService is enabled and running.
+        return btProfileManager.getLeAudioProfile() != null;
+    }
+
+    /** Returns true if the BluetoothDevice is an LE Audio device, false otherwise. */
+    public static boolean isLeAudioDevice(BluetoothDevice device) {
+        if (device == null) {
+            return false;
+        }
+
+        final BluetoothAdapter btAdapter = getDefaultBluetoothAdapter();
+        if (btAdapter != null) {
+            return btAdapter.getActiveDevices(BluetoothProfile.LE_AUDIO).contains(device);
+        }
+
+        return false;
+    }
+
     /**
-     * Returns true if the CachedBluetoothDevice supports an audio profile (A2DP for now),
-     * false otherwise.
+     * Flips the specified audio device between LE Audio and A2DP. Returns false
+     * if no device was set.
+     */
+    public static boolean setLeAudioEnabled(BluetoothDevice device, Context context, boolean leAudioEnabled) {
+        if (device == null) {
+            return false;
+        }
+
+        final LocalBluetoothManager btManager = getLocalBluetoothManager(context);
+        if (btManager == null) {
+            return false;
+        }
+
+        final LocalBluetoothProfileManager btProfileManager = btManager.getProfileManager();
+        if (btProfileManager == null) {
+            return false;
+        }
+
+        LeAudioProfile leAudioProfile = btProfileManager.getLeAudioProfile();
+        A2dpProfile a2dpProfile = btProfileManager.getA2dpProfile();
+        if (leAudioEnabled) {
+            a2dpProfile.setEnabled(device, false);
+            leAudioProfile.setEnabled(device, true);
+        } else {
+            leAudioProfile.setEnabled(device, false);
+            a2dpProfile.setEnabled(device, true);
+        }
+        return true;
+    }
+
+    /**
+     * Returns true if the CachedBluetoothDevice supports an audio profile
+     * (A2DP or LE Audio for now), false otherwise.
      */
     public static boolean hasAudioProfile(CachedBluetoothDevice cachedDevice) {
       if (cachedDevice != null) {
           for (LocalBluetoothProfile profile : cachedDevice.getProfiles()) {
               if (profile.getProfileId() == BluetoothProfile.A2DP) {
                   return true;
+              } else if (enableLeAudioUnicastUi()
+              && profile.getProfileId() == BluetoothProfile.LE_AUDIO) {
+                return true;
               }
           }
       }
