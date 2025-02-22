@@ -78,6 +78,10 @@
 
   <string name="custom_bluetooth_slice_provider_uri" translatable="false" />
 
+  <!-- Entry in settings menu to manage external speakers. -->
+  <string name="external_speaker_slice_provider_uri" translatable="false" />
+  <string name="external_speaker_category" />
+
   <!--
     Whether the ATV integrates the Find My Remote functionality with the on-device button.
     If it does, the integration should respect the value of

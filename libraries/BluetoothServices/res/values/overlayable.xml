@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+  <overlayable name="RemotesAccessoriesConfig">
+    <policy type="signature">
+      <item type="string" name="external_speaker_slice_provider_uri"/>
+      <item type="string" name="external_speaker_category"/>
+    </policy>
+  </overlayable>
+</resources>
