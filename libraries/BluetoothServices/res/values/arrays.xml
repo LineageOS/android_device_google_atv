@@ -28,8 +28,8 @@
     </string-array>
 
     <string-array name="backlight_hints">
-        <item>The backlight will never illuminate with each click.</item>
-        <item>The backlight will illuminate with each click. The illumination will last for 5 seconds each time it is activated.</item>
-        <item>The backlight will illuminate with each click only during nighttime hours(6pm~6am). The illumination will last for 5 seconds each time it is activated.</item>
+        <item>The backlight will never illuminate with each press.</item>
+        <item>The backlight will illuminate with each press. The illumination will last for 5 seconds each time it is activated.</item>
+        <item>The backlight will illuminate with each press only during nighttime hours (6pm~6am). The illumination will last for 5 seconds each time it is activated.</item>
     </string-array>
 </resources>
