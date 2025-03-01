@@ -81,6 +81,17 @@ public class InterfaceOffloadManager {
                 mOffloadIntentStore.getPassthroughIntentsForInterface(mNetworkInterface));
     }
 
+    void retrieveAndClearMetrics() {
+        if (!mIsNetworkAvailable) {
+            return;
+        }
+        if (!mOffloadWriter.isVendorServiceConnected()) {
+            Log.e(TAG, "Vendor service disconnected, cannot apply mDNS offload state");
+            return;
+        }
+        mOffloadWriter.retrieveAndClearMetrics(mCurrentOffloadKeys);
+    }
+
     private void clearProtocolResponses() {
         applyOffloadIntents(Collections.emptySet());
     }

@@ -21,9 +21,7 @@
     <item msgid="5086108549243157281">"רגיל"</item>
     <item msgid="1608651425322487768">"מתוזמן"</item>
   </string-array>
-  <string-array name="backlight_hints">
-    <item msgid="9076173600287388436">"התאורה האחורית אף פעם לא תפעל בכל לחיצה."</item>
-    <item msgid="2183471491302242879">"התאורה האחורית תפעל בכל לחיצה. התאורה תימשך 5 שניות בכל פעם שהיא תופעל."</item>
-    <item msgid="4339318499911916123">"התאורה האחורית תפעל בכל לחיצה רק במשך שעות הלילה (מ-18:00 עד 6:00). התאורה תימשך 5 שניות בכל פעם שהיא תופעל."</item>
-  </string-array>
+    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
+    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
+    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
 </resources>
