@@ -21,9 +21,7 @@
     <item msgid="5086108549243157281">"Padrão"</item>
     <item msgid="1608651425322487768">"Agendada"</item>
   </string-array>
-  <string-array name="backlight_hints">
-    <item msgid="9076173600287388436">"A retroiluminação nunca se acende quando clica."</item>
-    <item msgid="2183471491302242879">"A retroiluminação acende-se quando clica. A iluminação dura 5 segundos sempre que é ativada."</item>
-    <item msgid="4339318499911916123">"A retroiluminação acende-se quando clica apenas durante a noite (18:00-06:00). A iluminação dura 5 segundos sempre que é ativada."</item>
-  </string-array>
+    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
+    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
+    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
 </resources>

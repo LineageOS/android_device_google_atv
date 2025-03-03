@@ -88,7 +88,7 @@ public class OffloadWriter {
             return;
         }
         try {
-            Log.e(TAG, "Setting offload state: %b".formatted(enabled));
+            Log.d(TAG, "Setting offload state: %b".formatted(enabled));
             mVendorService.setOffloadState(enabled);
         } catch (RemoteException | ServiceSpecificException e) {
             Log.e(TAG, "Failed to set offload state to {" + enabled + "}.", e);
