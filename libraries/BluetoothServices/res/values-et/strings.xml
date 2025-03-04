@@ -31,7 +31,7 @@
     <string name="settings_bt_update_not_necessary" msgid="6906777343269759565">"Kaugjuhtimispult on ajakohane"</string>
     <string name="settings_bt_update_failed" msgid="2593228509570726064">"Puldi värskendamine ebaõnnestus"</string>
     <string name="settings_bt_update_error" msgid="6267154862961568780">"Teie kaugjuhtimispuldi värskendamisel tekkis probleem. Proovige uuesti."</string>
-    <string name="settings_bt_update_please_wait" msgid="8029641271132945499">"Oodake"</string>
+    <string name="settings_bt_update_please_wait" msgid="8029641271132945499">"Palun oodake"</string>
     <string name="settings_bt_update_needs_repair" msgid="1310917691218455907">"Siduge oma kaugjuhtimispult uuesti"</string>
     <string name="settings_enabled" msgid="431464375814187683">"Lubatud"</string>
     <string name="settings_disabled" msgid="1459717258643130682">"Keelatud"</string>
