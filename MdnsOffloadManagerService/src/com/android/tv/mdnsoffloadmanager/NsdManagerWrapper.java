@@ -52,6 +52,11 @@ public class NsdManagerWrapper {
 
     public void unregisterOffloadEngine(@NonNull OffloadEngine engine) {
         Log.d(TAG, "Unregister offload engine");
-        mManager.unregisterOffloadEngine(engine);
+        try {
+          mManager.unregisterOffloadEngine(engine);
+        } catch (IllegalStateException e) {
+            Log.e(TAG,"Error while unregistering offload engine.", e);
+        }
+
     }
 }
