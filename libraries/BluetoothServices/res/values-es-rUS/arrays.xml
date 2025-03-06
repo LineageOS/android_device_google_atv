@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"Estándar"</item>
     <item msgid="1608651425322487768">"Programado"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"La retroiluminación no se encenderá cada vez que presiones un botón."</item>
+    <item msgid="2571249757867129366">"La retroiluminación se encenderá cada vez que presiones un botón. La luz se mantendrá encendida durante 5 segundos cada vez que se active."</item>
+    <item msgid="6724077490859797929">"La retroiluminación se encenderá cada vez que presiones un botón durante la noche (de 6 p.m. a 6 a.m.) La luz se mantendrá encendida durante 5 segundos cada vez que se active."</item>
+  </string-array>
 </resources>

@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"標準"</item>
     <item msgid="1608651425322487768">"已預定"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"背光不會在每次按下時亮起。"</item>
+    <item msgid="2571249757867129366">"背光會在每次按下時亮起。每次啟用時，背光會亮起 5 秒。"</item>
+    <item msgid="6724077490859797929">"背光於晚間時段 (下午 6 時至上午 6 時)，才會在每次按下時亮起。每次啟用時，背光會亮起 5 秒。"</item>
+  </string-array>
 </resources>
