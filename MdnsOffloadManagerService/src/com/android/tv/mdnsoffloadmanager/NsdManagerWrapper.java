@@ -41,6 +41,7 @@ public class NsdManagerWrapper {
             long offloadCapability,
             @NonNull Executor executor,
             @NonNull OffloadEngine engine) {
+        Log.d(TAG, "Register offload engine for iface {" + ifaceName + "}.") ;
         try {
             mManager.registerOffloadEngine(ifaceName, offloadType, offloadCapability, executor, engine);
         } catch (IllegalStateException e) {
@@ -50,6 +51,12 @@ public class NsdManagerWrapper {
     }
 
     public void unregisterOffloadEngine(@NonNull OffloadEngine engine) {
-        mManager.unregisterOffloadEngine(engine);
+        Log.d(TAG, "Unregister offload engine");
+        try {
+          mManager.unregisterOffloadEngine(engine);
+        } catch (IllegalStateException e) {
+            Log.e(TAG,"Error while unregistering offload engine.", e);
+        }
+
     }
 }
