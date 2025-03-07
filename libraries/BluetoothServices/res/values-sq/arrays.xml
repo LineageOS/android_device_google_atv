@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"Standard"</item>
     <item msgid="1608651425322487768">"I planifikuar"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"Drita e sfondit nuk do të ndriçojë asnjëherë me çdo shtypje."</item>
+    <item msgid="2571249757867129366">"Drita e sfondit do të ndriçojë me çdo shtypje. Ndriçimi do të zgjasë për 5 sekonda sa herë që të aktivizohet."</item>
+    <item msgid="6724077490859797929">"Drita e sfondit do të ndriçojë me çdo shtypje vetëm gjatë orarit të natës (18:00~6:00). Ndriçimi do të zgjasë për 5 sekonda sa herë që të aktivizohet."</item>
+  </string-array>
 </resources>

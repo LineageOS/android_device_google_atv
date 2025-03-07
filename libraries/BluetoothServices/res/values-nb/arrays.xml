@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"Standard"</item>
     <item msgid="1608651425322487768">"Planlagt"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"Bakgrunnsbelysningen lyser aldri med hvert trykk."</item>
+    <item msgid="2571249757867129366">"Bakgrunnsbelysningen lyser med hvert trykk. Lyset varer 5 sekunder hver gang det aktiveres."</item>
+    <item msgid="6724077490859797929">"Bakgrunnsbelysningen lyser bare med hvert trykk når det er kveld/natt (18:00~06:00). Lyset varer 5 sekunder hver gang det aktiveres."</item>
+  </string-array>
 </resources>

@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"Padrão"</item>
     <item msgid="1608651425322487768">"Programada"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"A luz de fundo nunca acende a cada toque."</item>
+    <item msgid="2571249757867129366">"A luz de fundo acende a cada toque. A iluminação vai durar cinco segundos cada vez que for ativada."</item>
+    <item msgid="6724077490859797929">"A luz de fundo acende a cada toque apenas durante a noite, das 18h às 6h. A iluminação vai durar cinco segundos cada vez que for ativada."</item>
+  </string-array>
 </resources>

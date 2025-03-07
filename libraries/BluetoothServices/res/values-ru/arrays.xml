@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"Стандартный режим"</item>
     <item msgid="1608651425322487768">"По расписанию"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"Подсветка не будет включаться при каждом нажатии."</item>
+    <item msgid="2571249757867129366">"Кнопки будут подсвечиваться в течение пяти секунд после того, как вы нажмете одну из них."</item>
+    <item msgid="6724077490859797929">"Подсветка будет включаться на пять секунд по нажатию кнопок только вечером, ночью и рано утром (примерно с 18:00 до 06:00)."</item>
+  </string-array>
 </resources>

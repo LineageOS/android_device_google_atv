@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"Okujwayelekile"</item>
     <item msgid="1608651425322487768">"Kushejuliwe"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"Ilambu langemuva angeke likhanyise ngokucindezela ngakunye."</item>
+    <item msgid="2571249757867129366">"Ukukhanya kwangemuva kuzokhanyisa ngokucindezela ngakunye. Ukukhanya kuzothatha imizuzwana emi-5 njalo lapho kukhanyiswa."</item>
+    <item msgid="6724077490859797929">"Ukukhanya kuzokhanya ngokucindezela ngakunye kuphela phakathi namahora asebusuku (6pm~6am). Ukukhanya kuzothatha imizuzwana emi-5 njalo lapho kukhanyiswa."</item>
+  </string-array>
 </resources>

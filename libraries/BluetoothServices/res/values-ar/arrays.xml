@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"عادي"</item>
     <item msgid="1608651425322487768">"مُجدوَل"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"لن يتم تشغيل الإضاءة الخلفية عند الضغط عليها."</item>
+    <item msgid="2571249757867129366">"سيتم تشغيل الإضاءة الخلفية عند الضغط عليها. ستستمرّ الإضاءة لمدة 5 ثوانٍ في كل مرة يتم تشغيلها."</item>
+    <item msgid="6724077490859797929">"سيتم تشغيل الإضاءة الخلفية عند الضغط عليها في الليل فقط (من الساعة 6 مساءً حتى 6 صباحًا). ستستمرّ الإضاءة لمدة 5 ثوانٍ في كل مرة يتم تشغيلها."</item>
+  </string-array>
 </resources>
