@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"Standard"</item>
     <item msgid="1608651425322487768">"Programmato"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"La retroilluminazione non si accende mai a ogni pressione."</item>
+    <item msgid="2571249757867129366">"La retroilluminazione si accende a ogni pressione. L\'illuminazione dura 5 secondi ogni volta che viene attivata."</item>
+    <item msgid="6724077490859797929">"La retroilluminazione si accende a ogni pressione solo nelle ore notturne (18:00~06:00). L\'illuminazione dura 5 secondi ogni volta che viene attivata."</item>
+  </string-array>
 </resources>

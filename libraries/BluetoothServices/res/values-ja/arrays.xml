@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"標準"</item>
     <item msgid="1608651425322487768">"スケジュール設定済み"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"押してもバックライトは点灯しません。"</item>
+    <item msgid="2571249757867129366">"押すたびにバックライトが点灯します。一度点灯したバックライトは 5 秒後に消えます。"</item>
+    <item msgid="6724077490859797929">"夜間（午後 6 時～午前 6 時）は押すたびにバックライトが点灯します。一度点灯したバックライトは 5 秒後に消えます。"</item>
+  </string-array>
 </resources>

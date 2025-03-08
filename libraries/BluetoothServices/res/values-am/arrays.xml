@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"መደበኛ"</item>
     <item msgid="1608651425322487768">"መርሃግብር ተይዞለታል"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"የኋላ ብርሃኑ በእያንዳንዱ ጫን ማለት በጭራሽ አይበራም።"</item>
+    <item msgid="2571249757867129366">"የኋላ ብርሃኑ በእያንዳንዱ ጫን ማለት ይበራል። ብርሃኑ በነቃ ቁጥር ለ5 ሰከንዶች ይቆያል።"</item>
+    <item msgid="6724077490859797929">"የኋላው ብርሃን በእያንዳንዱ ጫን ማለት የሚያበራው በምሽት ሰዓታት (6ማታ~6ጠዋት) ላይ ብቻ ነው። ብርሃኑ በነቃ ቁጥር ለ5 ሰከንዶች ይቆያል።"</item>
+  </string-array>
 </resources>

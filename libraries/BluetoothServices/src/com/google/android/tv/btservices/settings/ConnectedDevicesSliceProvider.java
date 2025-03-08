@@ -376,6 +376,8 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
             createAndAddBtDeviceSlicePreferenceFromSet(psb, activeAccessories, addressToDevice);
             createAndAddBtDeviceSlicePreferenceFromSet(psb, inactiveAccessories, addressToDevice);
             createAndAddBtDeviceSlicePreferenceFromSet(psb, bondedAccessories, addressToDevice);
+            updateFindMyRemoteSlice(psb);
+            updateBacklight(psb);
         }
 
         // Add a section for external speakers.
@@ -394,8 +396,6 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         // Adding the remote buttons settings at the bottom
         updateAxelSlice(psb);
         updateCustomSlice(psb);
-        updateFindMyRemoteSlice(psb);
-        updateBacklight(psb);
     }
 
     private void updateDeviceControlSlice(PreferenceSliceBuilder psb) {

@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"Standard"</item>
     <item msgid="1608651425322487768">"Dijadualkan"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"Lampu latar tidak akan memancarkan cahaya setiap kali butang ditekan."</item>
+    <item msgid="2571249757867129366">"Lampu latar akan memancarkan cahaya setiap kali butang ditekan. Cahaya akan dipancarkan selama 5 saat setiap kali lampu latar diaktifkan."</item>
+    <item msgid="6724077490859797929">"Lampu latar akan memancarkan cahaya setiap kali butang ditekan hanya pada waktu malam (6ptg~6pg). Cahaya akan dipancarkan selama 5 saat setiap kali lampu latar diaktifkan."</item>
+  </string-array>
 </resources>

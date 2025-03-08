@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"Standardní"</item>
     <item msgid="1608651425322487768">"Plánované"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"Podsvícení se nebude aktivovat při každém stisknutí."</item>
+    <item msgid="2571249757867129366">"Podsvícení se aktivuje při každém stisknutí. Po aktivaci bude trvat minimálně pět sekund."</item>
+    <item msgid="6724077490859797929">"Podsvícení se aktivuje při každém stisknutí jen během noci (18:00–6:00). Po aktivaci bude trvat minimálně pět sekund."</item>
+  </string-array>
 </resources>

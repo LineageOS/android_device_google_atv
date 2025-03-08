@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"Standardno"</item>
     <item msgid="1608651425322487768">"Zakazano"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"Pozadinsko osvjetljenje se neće uključivati prilikom svakog pritiska."</item>
+    <item msgid="2571249757867129366">"Pozadinsko osvjetljenje će se uključivati prilikom svakog pritiska. Osvjetljenje će trajati 5 sekundi svaki put kada se aktivira."</item>
+    <item msgid="6724077490859797929">"Pozadinsko osvjetljenje će se uključivati prilikom svakog pritiska samo tokom noći (18:00–6:00). Osvjetljenje će trajati 5 sekundi svaki put kada se aktivira."</item>
+  </string-array>
 </resources>

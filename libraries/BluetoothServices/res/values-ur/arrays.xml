@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"معیاری"</item>
     <item msgid="1608651425322487768">"شیڈول کردہ"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"ہر بار دبانے پر بیک لائٹ کبھی نہیں جلے گی۔"</item>
+    <item msgid="2571249757867129366">"ہر بار دبانے پر بیک لائٹ جلے گی۔ ہر بار فعال کیے جانے پر لائٹ 5 سیکنڈ تک جلے گی۔"</item>
+    <item msgid="6724077490859797929">"بیک لائٹ صرف رات کے اوقات (6pm~6am) کے دوران ہر بار دبانے پر جلے گی۔ ہر بار فعال کیے جانے پر لائٹ 5 سیکنڈ تک جلے گی۔"</item>
+  </string-array>
 </resources>
