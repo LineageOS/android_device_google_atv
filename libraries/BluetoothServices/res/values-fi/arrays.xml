@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"Vakio"</item>
     <item msgid="1608651425322487768">"Ajoitettu"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"Taustavalo ei koskaan valaise jokaisella painalluksella."</item>
+    <item msgid="2571249757867129366">"Taustavalo valaisee joka painalluksella. Valaisu kestää 5 sekunnin ajan aina, kun se aktivoituu."</item>
+    <item msgid="6724077490859797929">"Taustavalo valaisee joka painalluksella ainoastaan yöaikaan (noin klo. 18–6). Valaisu kestää 5 sekunnin ajan aina, kun se aktivoituu."</item>
+  </string-array>
 </resources>

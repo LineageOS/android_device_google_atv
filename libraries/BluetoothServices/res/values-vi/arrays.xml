@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"Tiêu chuẩn"</item>
     <item msgid="1608651425322487768">"Theo lịch"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"Đèn nền sẽ không sáng sau mỗi lần nhấn."</item>
+    <item msgid="2571249757867129366">"Đèn nền sẽ sáng sau mỗi lần nhấn. Đèn sẽ sáng trong 5 giây sau mỗi lần kích hoạt."</item>
+    <item msgid="6724077490859797929">"Đèn nền sẽ chỉ sáng sau mỗi lần nhấn vào ban đêm (6:00 CH – 6:00 SA). Đèn sẽ sáng trong 5 giây sau mỗi lần kích hoạt."</item>
+  </string-array>
 </resources>

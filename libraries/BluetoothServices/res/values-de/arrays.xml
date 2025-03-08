@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"Standard"</item>
     <item msgid="1608651425322487768">"Geplant"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"Die Hintergrundbeleuchtung leuchtet beim Drücken nie auf."</item>
+    <item msgid="2571249757867129366">"Die Hintergrundbeleuchtung leuchtet beim Drücken auf. Sie hält jedes Mal 5 Sekunden lang an, wenn sie aktiviert wird."</item>
+    <item msgid="6724077490859797929">"Die Hintergrundbeleuchtung leuchtet nachts zwischen 18 und 6 Uhr beim Drücken auf. Sie hält jedes Mal 5 Sekunden lang an, wenn sie aktiviert wird."</item>
+  </string-array>
 </resources>
