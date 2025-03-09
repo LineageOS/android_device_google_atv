@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"Standard"</item>
     <item msgid="1608651425322487768">"Programmé"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"Le rétroéclairage ne s\'activera pas avec chaque appui."</item>
+    <item msgid="2571249757867129366">"Le rétroéclairage s\'activera avec chaque appui. La lumière restera allumée pendant cinq secondes chaque fois qu\'elle est activée."</item>
+    <item msgid="6724077490859797929">"Le rétroéclairage sera activé avec chaque appui pendant la nuit seulement (autour de 18 h à 6 h). La lumière restera allumée pendant cinq secondes chaque fois qu\'elle est activée."</item>
+  </string-array>
 </resources>

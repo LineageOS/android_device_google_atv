@@ -21,7 +21,9 @@
     <item msgid="5086108549243157281">"Standardno"</item>
     <item msgid="1608651425322487768">"Načrtovano"</item>
   </string-array>
-    <!-- no translation found for backlight_hints:0 (5834948533097349983) -->
-    <!-- no translation found for backlight_hints:1 (2571249757867129366) -->
-    <!-- no translation found for backlight_hints:2 (6724077490859797929) -->
+  <string-array name="backlight_hints">
+    <item msgid="5834948533097349983">"Osvetlitev ozadja nikoli ne zasveti z vsakim pritiskom."</item>
+    <item msgid="2571249757867129366">"Osvetlitev ozadja zasveti z vsakim pritiskom. Osvetlitev traja 5 sekund vsakič, ko je aktivirana."</item>
+    <item msgid="6724077490859797929">"Osvetlitev ozadja zasveti z vsakim pritiskom samo v večernem in nočnem času (od 18.00 do približno 6.00). Osvetlitev traja 5 sekund vsakič, ko je aktivirana."</item>
+  </string-array>
 </resources>
