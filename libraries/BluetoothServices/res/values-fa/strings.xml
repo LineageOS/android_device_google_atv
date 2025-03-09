@@ -63,6 +63,8 @@
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"فعال کردن HDMI-CEC"</string>
     <string name="settings_cec_explain" msgid="282126756909187653">"HDMI-CEC به شما اجازه می‌دهد سایر دستگاه‌های دارای قابلیت HDMI-CEC را تنها با یک کنترل ازراه‌دور کنترل و به‌طور خودکار روشن/خاموش کنید.\n\nتوجه: مطمئن شوید HDMI-CEC در تلویزیون و سایر دستگاه‌های HDMI فعال باشد. سازندگان اغلب نام‌های مختلفی برای HDMI-CEC دارند، برای مثال:"</string>
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
+    <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"ورود به حالت آماده به‌کار وقتی ورودی به منبع دیگری تغییر می‌کند"</string>
+    <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"وقتی این تنظیم را فعال می‌کنید و HDMI-CEC در تلویزیونتان فعال است، این دستگاه مدت کوتاهی پس‌از آنکه به ورودی دیگری در تلویزیون جابه‌جا می‌شوید، به‌طور خودکار به حالت آماده به‌کار می‌رود. این کار می‌تواند به موقتاً متوقف شدن محتوا و کاهش مصرف برق وقتی درحال تماشای فعال نیستید کمک کند."</string>
     <string name="settings_axel" msgid="8253298947221430993">"راه‌اندازی دکمه‌های کنترل ازراه‌دور"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"میزان صدا، ورودی، و روشن/خاموش شدن تلویزیون‌ها، گیرنده‌ها، و بلندگوهای ستونی را کنترل کنید"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"پیدا کردن کنترل از راه دور"</string>

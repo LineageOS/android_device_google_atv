@@ -34,7 +34,6 @@ PRODUCT_COPY_FILES += device/google/atv/products/lowram_boot_profiles/preloaded-
 # Use TV specific profile for the boot classpath, determines which methods
 # from the boot classpath get optimized, which class is included in the boot
 # .art image, and how the corresponding DEX files are laid out.
-PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
 PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := device/google/atv/products/lowram_boot_profiles/boot-image-profile.txt
 
 # Add the system properties.
