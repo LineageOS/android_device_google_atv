@@ -63,6 +63,8 @@
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"HDMI-CEC aanzetten"</string>
     <string name="settings_cec_explain" msgid="282126756909187653">"Via HDMI-CEC kun je andere apparaten met HDMI-CEC-functionaliteit bedienen en automatisch aan-/uitzetten met één afstandsbediening.\n\nOpmerking: Zorg ervoor dat HDMI-CEC aanstaat op je tv en andere HDMI-apparaten. Fabrikanten hebben vaak verschillende namen voor HDMI-CEC, zoals:"</string>
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
+    <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"Stand-bymodus activeren als je van invoerbron wisselt"</string>
+    <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"Als je deze instelling aanzet en HDMI-CEC aanstaat op je tv, gaat dit apparaat automatisch in de stand-bymodus kort nadat je naar een andere ingang op je tv bent overgeschakeld. Zo kun je content pauzeren en het energieverbruik verminderen als je niet actief kijkt."</string>
     <string name="settings_axel" msgid="8253298947221430993">"Afstandsbedieningsknoppen instellen"</string>
     <string name="settings_axel_description" msgid="5432968671905160994">"Volume bedienen, aan- en uitzetten en invoer selecteren op tv\'s, ontvangers en soundbars"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Mijn afstandsbediening vinden"</string>

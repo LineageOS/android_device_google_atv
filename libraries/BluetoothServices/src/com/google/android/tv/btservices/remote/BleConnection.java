@@ -125,6 +125,7 @@ public class BleConnection {
     private CharacteristicReadResultCallback lastCharacteristicReadCallback;
     private DescriptorWriteResultCallback lastDescriptorWriteCallback;
     private Consumer<Boolean> lastRequestMtuCallback;
+    public Context mContext;
 
     private class CharacteristicWriteRequest implements GattRequest {
         final BluetoothGattCharacteristic characteristic;
@@ -204,6 +205,7 @@ public class BleConnection {
         if (state.compareAndSet(
                     ConnectionState.UNINITIALIZED,
                     ConnectionState.GATT_CONNECTING)) {
+            mContext = context;
             synchronized (state) {
                 gatt = device.connectGatt(context, false, new GattCallback());
             }
@@ -361,7 +363,7 @@ public class BleConnection {
             }
             if (newState == BluetoothProfile.STATE_CONNECTED) {
                 Log.i(TAG, "Remote connected. Calibrating the time clock...");
-                schedulePeriodicSyncs();
+                schedulePeriodicSyncs(mContext);
                 if (state.compareAndSet(
                         ConnectionState.GATT_CONNECTING,
                         ConnectionState.SERVICE_DISCOVERING)) {

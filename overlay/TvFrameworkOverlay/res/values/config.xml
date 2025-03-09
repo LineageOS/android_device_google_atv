@@ -207,4 +207,7 @@
 
     <!-- If supported, whether Low Power Standby is enabled by default. -->
     <bool name="config_lowPowerStandbyEnabledByDefault">true</bool>
+
+    <!-- Bytes that the PinnerService will pin for Home app. -->
+    <integer name="config_pinnerHomePinBytes">0</integer>
 </resources>

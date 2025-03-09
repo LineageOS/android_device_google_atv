@@ -19,6 +19,8 @@ package com.google.android.tv.btservices.settings;
 import static android.app.PendingIntent.FLAG_IMMUTABLE;
 import static android.app.PendingIntent.FLAG_UPDATE_CURRENT;
 import static android.content.Intent.FLAG_RECEIVER_FOREGROUND;
+import static android.media.tv.flags.Flags.hdmiControlEnhancedBehavior;
+import static android.media.tv.flags.Flags.enableLeAudioUnicastUi;
 
 import static com.android.tv.twopanelsettings.slices.SlicesConstants.EXTRA_SLICE_FOLLOWUP;
 
@@ -40,7 +42,9 @@ import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.A
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.ACTION_FIND_MY_REMOTE;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.ACTION_TOGGLE_CHANGED;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.ACTIVE_AUDIO_OUTPUT;
+import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.LE_AUDIO_UNICAST;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.CEC;
+import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.POWER_STATE_CHANGE_ON_ACTIVE_SOURCE_LOST;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.TOGGLE_STATE;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.TOGGLE_TYPE;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.backAndUpdateSliceIntent;
@@ -111,6 +115,8 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
     private static final boolean DISCONNECT_PREFERENCE_ENABLED = false;
     private static final int ACTIVE_AUDIO_OUTPUT_REQUEST_CODE = 4;
     private static final int ACTIVE_AUDIO_OUTPUT_UPDATE_REQUEST_CODE = 5;
+    private static final int LE_AUDIO_UNICAST_REQUEST_CODE = 6;
+    private static final int LE_AUDIO_UNICAST_UPDATE_REQUEST_CODE = 7;
     private boolean mBtDeviceServiceBound;
     private final Map<String, Version> mVersionsMap = new ConcurrentHashMap<>();
     private BluetoothDeviceService.LocalBinder mBtDeviceServiceBinder;
@@ -541,7 +547,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 && BluetoothUtils.isConnected(device) && cachedDevice.isConnected()
                 && (BluetoothUtils.isBluetoothHeadset(device)
                 || BluetoothUtils.hasAudioProfile(cachedDevice))) {
-            boolean isActive = BluetoothUtils.isActiveAudioOutput(device);
+            boolean isActive = BluetoothUtils.isActiveA2dpAudioOutput(device);
 
             Intent intent = new Intent(ACTION_TOGGLE_CHANGED);
             intent.setClass(context, SliceBroadcastReceiver.class);
@@ -668,6 +674,40 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         forgetPref.setPendingIntent(disconnectPendingIntent);
         psb.addPreference(forgetPref);
 
+        // Update "LE Audio".
+        if (enableLeAudioUnicastUi()
+        && BluetoothUtils.leAudioUnicastSupported(context)
+        && BluetoothUtils.hasAudioProfile(cachedDevice)) {
+            boolean isActive = BluetoothUtils.isLeAudioDevice(device);
+
+            Intent intent = new Intent(ACTION_TOGGLE_CHANGED);
+            intent.setClass(context, SliceBroadcastReceiver.class);
+            intent.putExtra(TOGGLE_TYPE, LE_AUDIO_UNICAST);
+            intent.putExtra(TOGGLE_STATE, !isActive);
+            intent.putExtra(KEY_EXTRAS_DEVICE, device);
+
+            updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString(), sliceUri.toString());
+            updateSliceIntent = updateSliceIntent(getContext(),
+                    LE_AUDIO_UNICAST_UPDATE_REQUEST_CODE, new ArrayList<>(updatedUris),
+                    sliceUri.toString());
+            intent.putExtra(EXTRA_SLICE_FOLLOWUP, updateSliceIntent);
+
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(context,
+                    LE_AUDIO_UNICAST_REQUEST_CODE, intent,
+                    PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
+
+            // Update set/unset active LE Audio preference
+            RowBuilder leAudioPref = new RowBuilder()
+                    .setKey("KEY_TOGGLE_LE_UNICAST")
+                    .setTitle("LE Audio")
+                    .setActionId(0) // TODO: Add a TvSettingsEnums entry for LE Audio
+                    .addSwitch(pendingIntent,
+                            "LE Audio",
+                            isActive);
+
+            psb.addPreference(leAudioPref);
+        }
+
         // Update "bluetooth device info preference".
         RowBuilder infoPref = new RowBuilder()
                 .setIcon(IconCompat.createWithResource(context, R.drawable.ic_baseline_info_24dp));
@@ -707,7 +747,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 new RowBuilder()
                         .setTitle(getString(R.string.settings_hdmi_cec))
                         .setPageId(0x18300000)); // TvSettingsEnums.CONNECTED_SLICE_HDMICEC
-        final boolean isEnabled = PowerUtils.isCecControlEnabled(getContext());
+        final boolean isEnabled = PowerUtils.isCecControlEnabled(context);
         Intent intent = new Intent(context, SliceBroadcastReceiver.class)
                 .setAction(ACTION_TOGGLE_CHANGED)
                 .putExtra(TOGGLE_TYPE, CEC)
@@ -724,6 +764,30 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         psb.addPreference(new RowBuilder()
                 .setTitle(getString(R.string.settings_cec_feature_names))
                 .setEnabled(false));
+
+        // Allow the user to choose the behavior of their device when losing active source.
+        // This setting should be visible only on playback devices (OTTs/STBs) and it should be
+        // available to be toggled only when CEC is enabled.
+        if (hdmiControlEnhancedBehavior() && PowerUtils.isPlaybackDevice(context)) {
+            final boolean isEnabledGoToSleepOnActiveSourceLost =
+                    PowerUtils.isEnabledGoToSleepOnActiveSourceLost(context);
+            Intent intentGoToSleepOnActiveSourceLost = new Intent(context,
+                    SliceBroadcastReceiver.class)
+                    .setAction(ACTION_TOGGLE_CHANGED)
+                    .putExtra(TOGGLE_TYPE, POWER_STATE_CHANGE_ON_ACTIVE_SOURCE_LOST)
+                    .putExtra(TOGGLE_STATE, !isEnabledGoToSleepOnActiveSourceLost);
+            PendingIntent pendingIntentGoToSleepOnActiveSourceLost = PendingIntent.getBroadcast(
+                    context, 1, intentGoToSleepOnActiveSourceLost,
+                    FLAG_IMMUTABLE | FLAG_UPDATE_CURRENT);
+            psb.addPreference(new RowBuilder()
+                    .setTitle(getString(
+                            R.string.settings_cec_go_to_sleep_on_active_source_lost_title))
+                    .setInfoSummary(getString(
+                            R.string.settings_cec_go_to_sleep_on_active_source_lost_description))
+                    .addSwitch(pendingIntentGoToSleepOnActiveSourceLost, null,
+                            isEnabledGoToSleepOnActiveSourceLost && isEnabled)
+                    .setEnabled(isEnabled));
+        }
         return psb.build();
     }
 

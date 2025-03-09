@@ -71,6 +71,8 @@ public class MdnsOffloadManagerService extends Service {
     private static final int VENDOR_SERVICE_COMPONENT_ID =
             R.string.config_mdnsOffloadVendorServiceComponent;
     private static final int AWAIT_DUMP_SECONDS = 5;
+    /** If the service is currently bound. */
+    private static boolean mIsBound;
 
     private final ConnectivityManager.NetworkCallback mNetworkCallback =
             new ConnectivityManagerNetworkCallback();
@@ -84,6 +86,8 @@ public class MdnsOffloadManagerService extends Service {
     private ConnectivityManager mConnectivityManager;
     private PackageManager mPackageManager;
     private WakeLockWrapper mWakeLock;
+    private BroadcastReceiver lowPowerStandbyPolicyReceiver;
+    private BroadcastReceiver screenBroadcastReceiver;
 
     private NsdManagerWrapper mNsdManager;
 
@@ -147,6 +151,13 @@ public class MdnsOffloadManagerService extends Service {
             return mContext.bindService(intent, connection, flags);
         }
 
+        void unbindService(ServiceConnection connection) {
+            if (mIsBound) {
+                mContext.unbindService(connection);
+            }
+            mIsBound = false;
+        }
+
         void registerReceiver(BroadcastReceiver receiver, IntentFilter filter, int flags) {
             mContext.registerReceiver(receiver, filter, flags);
         }
@@ -172,10 +183,22 @@ public class MdnsOffloadManagerService extends Service {
         mPackageManager = mInjector.getPackageManager();
         mWakeLock = mInjector.newWakeLock();
         mNsdManager = mInjector.getNsdManager();
+        lowPowerStandbyPolicyReceiver = new LowPowerStandbyPolicyReceiver();
+        screenBroadcastReceiver = new ScreenBroadcastReceiver();
         bindVendorService();
         setupScreenBroadcastReceiver();
         setupConnectivityListener();
         setupStandbyPolicyListener();
+    }
+
+    @Override
+    public void onDestroy() {
+        // Unregister the receiver to avoid memory leaks
+        unregisterReceiver(lowPowerStandbyPolicyReceiver);
+        unregisterReceiver(screenBroadcastReceiver);
+        mConnectivityManager.unregisterNetworkCallback(mNetworkCallback);
+        mInjector.unbindService(mVendorServiceConnection);
+        super.onDestroy();
     }
 
     private void bindVendorService() {
@@ -198,9 +221,9 @@ public class MdnsOffloadManagerService extends Service {
 
         Intent explicitIntent = new Intent();
         explicitIntent.setComponent(componentName);
-        boolean bindingSuccessful = mInjector.bindService(
+        boolean mIsBound = mInjector.bindService(
                 explicitIntent, mVendorServiceConnection, Context.BIND_AUTO_CREATE);
-        if (!bindingSuccessful) {
+        if (!mIsBound) {
             String msg = "Failed to bind to vendor service at {" + vendorServicePath + "}.";
             Log.e(TAG, msg);
             throw new IllegalStateException(msg);
@@ -208,11 +231,10 @@ public class MdnsOffloadManagerService extends Service {
     }
 
     private void setupScreenBroadcastReceiver() {
-        BroadcastReceiver receiver = new ScreenBroadcastReceiver();
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_SCREEN_ON);
         filter.addAction(Intent.ACTION_SCREEN_OFF);
-        mInjector.registerReceiver(receiver, filter, 0);
+        mInjector.registerReceiver(screenBroadcastReceiver, filter, 0);
         mHandler.post(() -> mOffloadWriter.setOffloadState(!mInjector.isInteractive()));
     }
 
@@ -226,10 +248,9 @@ public class MdnsOffloadManagerService extends Service {
     }
 
     private void setupStandbyPolicyListener() {
-        BroadcastReceiver receiver = new LowPowerStandbyPolicyReceiver();
         IntentFilter filter = new IntentFilter();
         filter.addAction(PowerManager.ACTION_LOW_POWER_STANDBY_POLICY_CHANGED);
-        mInjector.registerReceiver(receiver, filter, 0);
+        mInjector.registerReceiver(lowPowerStandbyPolicyReceiver, filter, 0);
         refreshAppIdAllowlist();
     }
 
@@ -442,7 +463,7 @@ public class MdnsOffloadManagerService extends Service {
         }
 
         public void onServiceDisconnected(ComponentName className) {
-            Log.e(TAG, "IMdnsOffload service has unexpectedly disconnected.");
+            Log.e(TAG, "IMdnsOffload service has disconnected.");
             mHandler.post(() -> {
                 mOffloadWriter.setVendorService(null);
                 mInterfaceOffloadManagers.values()
