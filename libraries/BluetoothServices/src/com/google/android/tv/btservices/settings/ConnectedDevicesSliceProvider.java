@@ -336,6 +336,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         //       of inactiveAccessories and bondedAccessories.
         Set<String> activeOfficialRemotes = new HashSet<>();
         Set<String> inactiveOfficialRemotes = new HashSet<>();
+        boolean hasActiveDevices = false;
 
         // Bucketing all BT devices
         for (BluetoothDevice device : getBluetoothDevices()) {
@@ -376,8 +377,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
             createAndAddBtDeviceSlicePreferenceFromSet(psb, activeAccessories, addressToDevice);
             createAndAddBtDeviceSlicePreferenceFromSet(psb, inactiveAccessories, addressToDevice);
             createAndAddBtDeviceSlicePreferenceFromSet(psb, bondedAccessories, addressToDevice);
-            updateFindMyRemoteSlice(psb);
-            updateBacklight(psb);
+            hasActiveDevices = true;
         }
 
         // Add a section for external speakers.
@@ -391,11 +391,17 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
             createAndAddBtDeviceSlicePreferenceFromSet(psb, activeOfficialRemotes, addressToDevice);
             createAndAddBtDeviceSlicePreferenceFromSet(
                     psb, inactiveOfficialRemotes, addressToDevice);
+            hasActiveDevices = true;
         }
 
         // Adding the remote buttons settings at the bottom
         updateAxelSlice(psb);
         updateCustomSlice(psb);
+
+        if (hasActiveDevices) {
+            updateFindMyRemoteSlice(psb);
+            updateBacklight(psb);
+        }
     }
 
     private void updateDeviceControlSlice(PreferenceSliceBuilder psb) {
