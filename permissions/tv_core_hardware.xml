@@ -37,4 +37,9 @@
     <feature name="android.software.cts" />
     <feature name="android.hardware.security.model.compatible" />
 
+    <!-- ATV hardware is mutually exclusive with other hardware types. -->
+    <unavailable-feature name="android.hardware.type.automotive" />
+    <unavailable-feature name="android.hardware.type.embedded" />
+    <unavailable-feature name="android.hardware.type.pc" />
+    <unavailable-feature name="android.hardware.type.watch" />
 </permissions>
