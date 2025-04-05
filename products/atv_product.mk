@@ -37,8 +37,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.gamepad.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.gamepad.xml
 
 # Copy .kl file for generic voice remotes
-PRODUCT_COPY_FILES += \
-    device/google/atv/Generic.kl:$(TARGET_COPY_OUT_PRODUCT)/usr/keylayout/Generic.kl
+PRODUCT_PACKAGES += atv_generic_keylayout
+$(call soong_config_set_bool,atv_keylayouts,use_atv_generic_keylayout,true)
 
 # Too many tombstones can cause bugreports to grow too large to be uploaded.
 PRODUCT_PRODUCT_PROPERTIES += \
