@@ -400,7 +400,9 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
 
         if (hasActiveDevices) {
             updateFindMyRemoteSlice(psb);
-            updateBacklight(psb);
+            // Temporarily disable the backlight settings due to b/408118325, will re-enable it
+            // after the firmware is upgraded to fix the GATT issue.
+            //updateBacklight(psb);
         }
     }
 
