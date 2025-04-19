@@ -41,7 +41,7 @@
     <string name="settings_remote_serial_number_label" msgid="7591347399882767241">"బ్లూటూత్ అడ్రస్‌"</string>
     <string name="settings_bt_battery_low" msgid="3547517382697124858">"దయచేసి బ్యాటరీని రీప్లేస్ చేయండి"</string>
     <string name="settings_bt_battery_low_warning" msgid="721091326401791089">"బ్యాటరీ తక్కువగా ఉంది"</string>
-    <string name="connected_devices_pref_title" msgid="8985364841073196008">"కనెక్ట్ అయిన పరికరాలు"</string>
+    <string name="connected_devices_pref_title" msgid="8985364841073196008">"కనెక్ట్ అయిన డివైజ్‌లు"</string>
     <string name="connected_devices_slice_pref_title" msgid="8637777961277201747">"రిమోట్‌లు &amp; యాక్సెసరీలు"</string>
     <string name="settings_notif_update_title" msgid="4767043003900594863">"మీ రిమోట్‌ను అప్‌డేట్ చేయండి"</string>
     <string name="settings_notif_update_text" msgid="1092279154776177720">"ఇన్‌స్టాల్ చేయడానికి సిద్ధంగా ఉంది"</string>
