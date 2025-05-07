@@ -34,3 +34,7 @@ BOARD_SEPOLICY_DIRS += device/google/atv/sepolicy/vendor
 #   Minor Device Class: 0x20 -> 32 (Set-top box) // default value, should be set to 0x3C for a TV
 PRODUCT_VENDOR_PROPERTIES += \
     bluetooth.device.class_of_device?=44,4,32
+
+# Configure TV to be a batteryless device.
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.config.batteryless=true
