@@ -18,6 +18,7 @@
 
 # Release Configuration map
 PRODUCT_RELEASE_CONFIG_MAPS += $(wildcard vendor/google_shared/tv/release/release_config_map.textproto)
+PRODUCT_RELEASE_CONFIG_MAPS += $(wildcard vendor/google_shared/tv/release/gms_mainline/required/release_config_map.textproto)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/media_system.mk)
 
