@@ -76,7 +76,7 @@ public class ConnectedDevicesPreferenceFragment extends LeanbackPreferenceFragme
     static final String KEY_PAIR_PHONE = "pair_phone";
     static final String KEY_DEVICE_CONTROL = "device_control";
     static final String KEY_CEC_TOGGLE = "cec_toggle";
-    static final String KEY_AXEL_TOGGLE = "axel_toggle";
+    static final String KEY_REMOTE_SETUP_TOGGLE = "remote_toggle";
     static final String KEY_FIND_MY_REMOTE_TOGGLE = "fmr_toggle";
 
     private static final Set<String> NON_BT_PREFERENCES =

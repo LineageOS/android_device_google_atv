@@ -76,8 +76,6 @@
   <bool name="cec_settings_enabled">true</bool>
   <bool name="axel_settings_enabled">false</bool>
 
-  <string name="custom_bluetooth_slice_provider_uri" translatable="false" />
-
   <!-- Entry in settings menu to manage external speakers. -->
   <string name="external_speaker_slice_provider_uri" translatable="false" />
   <string name="external_speaker_category" />
