@@ -37,14 +37,17 @@ public final class SlicesUtil {
     static final String EXTRAS_DIRECTION = "extras_direction";
     static final String EXTRAS_SLICE_URI = "extras_slice_uri";
     static final String DIRECTION_BACK = "direction_back";
+    static final String AXEL_SLICE_PATH =
+        "content://com.google.android.tv.axel.sliceprovider/main";
+    static final String LAUNCHERX_SLICE_PATH =
+        "content://com.google.android.apps.tv.launcherx.sliceprovider/custom_button";
+
     static final Uri GENERAL_SLICE_URI =
             Uri.parse("content://" + AUTHORITY + "/" + GENERAL_PATH);
     static final Uri BLUETOOTH_DEVICE_SLICE_URI =
             Uri.parse("content://" + AUTHORITY + "/" + BLUETOOTH_DEVICE_PATH);
     static final Uri CEC_SLICE_URI =
             Uri.parse("content://" + AUTHORITY + "/" + CEC_PATH);
-    static final Uri AXEL_SLICE_URI =
-            Uri.parse("content://com.google.android.tv.axel.sliceprovider/main");
 
     static final Uri FIND_MY_REMOTE_SLICE_URI =
             Uri.parse("content://" + AUTHORITY + "/" + FIND_MY_REMOTE_PATH);
