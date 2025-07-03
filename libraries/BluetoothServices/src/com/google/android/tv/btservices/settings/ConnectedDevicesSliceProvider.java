@@ -33,7 +33,7 @@ import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenc
 import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenceFragment.KEY_UPDATE;
 import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenceFragment.YES_NO_ARGS;
 import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_ACCESSORIES;
-import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_AXEL_TOGGLE;
+import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_REMOTE_SETUP_TOGGLE;
 import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_CEC_TOGGLE;
 import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_DEVICE_CONTROL;
 import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_FIND_MY_REMOTE_TOGGLE;
@@ -77,6 +77,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.ArrayMap;
 import android.util.Log;
+import android.view.KeyEvent;
 
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.slice.Slice;
@@ -395,8 +396,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         }
 
         // Adding the remote buttons settings at the bottom
-        updateAxelSlice(psb);
-        updateCustomSlice(psb);
+        updateRemoteSetupSlice(psb);
 
         if (hasActiveDevices) {
             updateFindMyRemoteSlice(psb);
@@ -442,25 +442,27 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         psb.addEmbeddedPreference(new RowBuilder().setTargetSliceUri(uri));
     }
 
-    private void updateAxelSlice(PreferenceSliceBuilder psb) {
+    private void updateRemoteSetupSlice(PreferenceSliceBuilder psb) {
         if (!ConnectedDevicesPreferenceFragment.isAxelSettingsEnabled(getContext())) {
-            return;
+            if (InputDeviceKeyDetector.isCustomButtonPresent(getContext(),
+                    KeyEvent.KEYCODE_MACRO_1)) {
+                RowBuilder lxPref = new RowBuilder()
+                    .setKey(KEY_REMOTE_SETUP_TOGGLE)
+                    .setTitle(getString(R.string.settings_remote_setup))
+                    .setSubtitle(getString(R.string.settings_remote_setup_description))
+                    .setTargetSliceUri(SlicesUtil.LAUNCHERX_SLICE_PATH);
+                psb.addPreference(lxPref);
+            } else {
+                return;
+            }
+        } else {
+            RowBuilder axelPref = new RowBuilder()
+                .setKey(KEY_REMOTE_SETUP_TOGGLE)
+                .setTitle(getString(R.string.settings_remote_setup))
+                .setSubtitle(getString(R.string.settings_remote_setup_description))
+                .setTargetSliceUri(SlicesUtil.AXEL_SLICE_PATH);
+            psb.addPreference(axelPref);
         }
-        RowBuilder axelPref = new RowBuilder()
-                .setKey(KEY_AXEL_TOGGLE)
-                .setTitle(getString(R.string.settings_axel))
-                .setSubtitle(getString(R.string.settings_axel_description))
-                .setTargetSliceUri(SlicesUtil.AXEL_SLICE_URI.toString());
-        psb.addPreference(axelPref);
-    }
-
-    private void updateCustomSlice(PreferenceSliceBuilder psb) {
-        String customUri = getString(R.string.custom_bluetooth_slice_provider_uri);
-        if (TextUtils.isEmpty(customUri)) {
-            return;
-        }
-        RowBuilder customPref = new RowBuilder().setTargetSliceUri(customUri);
-        psb.addEmbeddedPreference(customPref);
     }
 
     private void updateFindMyRemoteSlice(PreferenceSliceBuilder psb) {

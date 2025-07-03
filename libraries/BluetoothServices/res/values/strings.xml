@@ -84,8 +84,8 @@
   <string name="settings_cec_go_to_sleep_on_active_source_lost_title">Enter standby when switching input to another source</string>
   <string name="settings_cec_go_to_sleep_on_active_source_lost_description">When you enable this setting and have HDMI-CEC enabled on your TV, this device will automatically enter standby shortly after you switch to a different input on your TV. This may help pause content and reduce power consumption when you aren\'t actively watching.</string>
 
-  <string name="settings_axel">Set up remote buttons</string>
-  <string name="settings_axel_description">Control volume, power, input on TVs, receivers and soundbars</string>
+  <string name="settings_remote_setup">Set up remote buttons</string>
+  <string name="settings_remote_setup_description">Control volume, power, input on TVs, receivers and soundbars</string>
 
   <string name="settings_find_my_remote_title">Find my remote</string>
   <string name="settings_find_my_remote_description">Play a sound to locate your Google TV remote if it\'s misplaced</string>
