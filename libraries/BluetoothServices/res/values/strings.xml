@@ -95,6 +95,8 @@
   <string name="find_my_remote_play_sound">Play sound</string>
 
   <string name="settings_remote_battery_level">Battery level: %1$s</string>
+  <string name="settings_remote_serial_number">Bluetooth address: %1$s</string>
+  <string name="settings_remote_firmware">Firmware: %1$s</string>
   <string name="settings_known_devices_category">Accessories</string>
   <!-- Category for listing official remote control devices. Can be overlaid for different devices such as "Foobar Remote". -->
   <string name="settings_official_remote_category">Remote Control</string>

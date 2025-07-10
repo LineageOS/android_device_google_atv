@@ -66,6 +66,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.pm.ProviderInfo;
 import android.content.pm.ResolveInfo;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -74,7 +75,10 @@ import android.os.Looper;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.provider.Settings;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
+import android.text.style.StyleSpan;
 import android.util.ArrayMap;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -524,10 +528,6 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         }
 
         PreferenceSliceBuilder psb = new PreferenceSliceBuilder(getContext(), sliceUri);
-        psb.addScreenTitle(
-                new RowBuilder()
-                        .setTitle(deviceName)
-                        .setPageId(0x18200000)); // TvSettingsEnums.CONNECTED_SLICE_DEVICE_ENTRY
 
         Bundle extras = new Bundle();
         Intent i = null;
@@ -577,6 +577,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 updatePref.setEnabled(false);
                 updatePref.setSelectable(false);
             }
+
             psb.addPreference(updatePref);
         }
 
@@ -748,10 +749,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
             psb.addPreference(leAudioPref);
         }
 
-        // Update "bluetooth device info preference".
-        RowBuilder infoPref = new RowBuilder()
-                .setKey("KEY_BLE_INFO")
-                .setIcon(IconCompat.createWithResource(context, R.drawable.ic_baseline_info_24dp));
+        SpannableStringBuilder bluetoothInfoStringBuilder = new SpannableStringBuilder();
 
         int battery = btDeviceProvider.getBatteryLevel(device);
         if (battery != BluetoothDevice.BATTERY_LEVEL_UNKNOWN) {
@@ -763,22 +761,37 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                         R.string.settings_remote_battery_level_with_warning_label, batteryText,
                         warning);
             }
-            infoPref.addInfoItem(getString(R.string.settings_remote_battery_level_label),
-                    batteryText);
+
+            SpannableStringBuilder styledBatteryText = new SpannableStringBuilder(context.getString(R.string.settings_remote_battery_level, batteryText));
+            // Make battery percentage bold
+            styledBatteryText.setSpan(new StyleSpan(Typeface.BOLD), styledBatteryText.length() - batteryText.length(), styledBatteryText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            addToBluetoothInfoStringBuilder(bluetoothInfoStringBuilder, styledBatteryText);
         }
 
         if (mVersionsMap.containsKey(deviceAddr)) {
             Version version = mVersionsMap.get(deviceAddr);
             if (!Version.BAD_VERSION.equals(version)) {
-                infoPref.addInfoItem(getString(R.string.settings_remote_firmware_label),
-                        version.toVersionString());
+                addToBluetoothInfoStringBuilder(bluetoothInfoStringBuilder, context.getString(R.string.settings_remote_firmware, version.toVersionString()));
             }
-            infoPref.addInfoItem(getString(R.string.settings_remote_serial_number_label),
-                    deviceAddr);
-            psb.addPreference(infoPref);
+            addToBluetoothInfoStringBuilder(bluetoothInfoStringBuilder, context.getString(R.string.settings_remote_serial_number, deviceAddr));
         }
+
+        psb.addScreenTitle(
+            new RowBuilder()
+                .setTitle(deviceName)
+                .setSubtitle(bluetoothInfoStringBuilder)
+                .setPageId(0x18200000)); // TvSettingsEnums.CONNECTED_SLICE_DEVICE_ENTRY
+
         return psb.build();
     }
+
+    private void addToBluetoothInfoStringBuilder(SpannableStringBuilder bluetoothInfoStringBuilder, CharSequence toAdd) {
+        if (bluetoothInfoStringBuilder.length() > 0) {
+            bluetoothInfoStringBuilder.append("\n");
+        }
+        bluetoothInfoStringBuilder.append(toAdd);
+    }
+
 
     // The slice that shows CEC control related information
     private Slice createCecSlice(Uri sliceUri) {
