@@ -65,14 +65,18 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nソニー: ブラビアリンク\nフィリップス: EasyLink\nシャープ: Aquos ファミリンク"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"入力を別のソースに切り替えたときにスタンバイ モードにする"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"この設定を有効にしてテレビで HDMI-CEC を有効にすると、テレビで別の入力に切り替えた直後に、このデバイスは自動的にスタンバイ モードになります。視聴していないときはコンテンツを一時停止して、消費電力を抑えることができます。"</string>
-    <string name="settings_axel" msgid="8253298947221430993">"リモコンボタンのセットアップ"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"テレビ、レシーバー、サウンドバーの音量、電源の操作や、入力の切り替えを行えます"</string>
+    <string name="settings_remote_setup" msgid="8948620173822916634">"リモコンボタンのセットアップ"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"テレビ、レシーバー、サウンドバーの音量、電源の操作や、入力の切り替えを行えます"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"リモコンを探す"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Google TV リモコンの場所がわからなくなったときに、リモコンから音を鳴らして探せるようにします"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Google TV Streamer の背面にあるボタンを押すと、リモコンから 30 秒間音が鳴ります。この機能は Google TV Streamer 音声リモコンでのみ利用できます。\n\n音を止めるには、リモコンのいずれかのボタンを押してください。"</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"ON にすると、デバイスのボタンを使用して、リモコンから音を鳴らして探すことができます。OFF にすると、このボタンは使用できません。別の方法で「リモコンを探す」機能を使用することもできます。"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"音を鳴らす"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"電池残量: %1$s"</string>
+    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
+    <skip />
+    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
+    <skip />
     <string name="settings_known_devices_category" msgid="2307810690946536753">"アクセサリー"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"リモコン"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"接続済み"</string>

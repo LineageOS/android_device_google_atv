@@ -65,14 +65,20 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"I-Samsung: I-Anynet+\nLG: I-SimpLink\nSony: I-BRAVIA Sync\nPhilips: I-EasyLink\nSharp: Isixhumanisi se-Aquos"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"Faka okubekwe eceleni lapho ushintshela okokufaka komunye umthombo"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"Uma unika amandla leli sethingi futhi uvula i-HDMI-CEC ku-TV yakho, le divayisi izongena ngokuzenzekela okulindile ngemva nje kokushintshela kokokufaka okuhlukile ku-TV yakho. Lokhu kungasiza ukumisa isikhashana okuqukethwe futhi kunciphise ukusetshenziswa kwamandla uma ungabukeli kakhulu."</string>
-    <string name="settings_axel" msgid="8253298947221430993">"Setha izinkinobho zerimothi"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"Lawula ivolumu, amandla, okokufaka kuma-TV, izamukeli namabha omsindo"</string>
+    <!-- no translation found for settings_remote_setup (8948620173822916634) -->
+    <skip />
+    <!-- no translation found for settings_remote_setup_description (7634910915863010663) -->
+    <skip />
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Thola irimothi yami"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Dlala umsindo ukuze uthole irimothi yakho ye-Google TV uma ibekwe kabi"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Cindezela inkinobho engemuva Komsakazi wakho we-Google TV ukuze udlale umsindo kurimothi yakho imizuzwana engu-30. Lokhu kusebenza kuphela Kurimothi Yezwi Yomsakazi we-Google TV.\n\nUkuze umise umsindo, cindezela noma iyiphi inkinobho kurimothi yakho."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Uma ivuliwe, ungasebenzisa inkinobho esedivayisini yakho ukuze udlale umsindo ukuze uthole irimothi yakho. Uma icishiwe, le nkinobho ngeke isebenze. Usazokwazi ukusebenzisa okuthi Thola irimothi yami ngezinye izindlela."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Dlala umsindo"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Ileveli yebhethri: %1$s"</string>
+    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
+    <skip />
+    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
+    <skip />
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Okuhambisanayo"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Isilawuli-kude"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Ixhunyiwe"</string>

@@ -65,14 +65,18 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"Entrar no modo de espera ao mudar de entrada para outra origem"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"Quando ativa esta definição e tem o HDMI-CEC ativado na sua TV, este dispositivo entra automaticamente em modo de espera pouco depois de mudar para uma entrada diferente na sua TV. Isto pode ajudar a pausar o conteúdo e reduzir o consumo de energia quando não está a ver ativamente."</string>
-    <string name="settings_axel" msgid="8253298947221430993">"Configure os botões do comando"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"Controle o volume, o botão ligar/desligar, a entrada em TVs, os recetores e as barras de som"</string>
+    <string name="settings_remote_setup" msgid="8948620173822916634">"Configure os botões do comando"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"Controle o volume, o botão ligar/desligar, a entrada em TVs, os recetores e as barras de som"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Localizar o meu comando"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Toque um som para localizar o comando do Google TV se não souber onde este se encontra"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Prima o botão na parte de trás do streamer do Google TV para tocar um som no comando durante 30 segundos. Isto só funciona num comando de voz do streamer do Google TV.\n\nPara parar o som, prima qualquer botão no comando."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Se ativada, pode usar o botão no dispositivo para tocar um som que ajude a localizar o comando. Se desativada, este botão não funciona. Continua a poder usar a funcionalidade encontrar o meu comando através de outros métodos."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Tocar som"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Nível da bateria: %1$s"</string>
+    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
+    <skip />
+    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
+    <skip />
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Acessórios"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Comando"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Ligado"</string>

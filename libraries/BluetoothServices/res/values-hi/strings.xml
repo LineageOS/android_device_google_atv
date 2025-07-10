@@ -65,14 +65,20 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"इनपुट को दूसरे सोर्स पर स्विच करने पर डिवाइस, स्टैंडबाय मोड में चला जाता है"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"अगर आपने इस सेटिंग को चालू किया है और टीवी पर एचडीएमआई-सीईसी की सुविधा चालू है, तो टीवी पर किसी दूसरे इनपुट का इस्तेमाल करने पर यह डिवाइस अपने-आप स्टैंडबाय मोड में चला जाएगा. इससे, वीडियो को रोकने और बिजली की खपत कम करने में मदद मिल सकती है."</string>
-    <string name="settings_axel" msgid="8253298947221430993">"रिमोट के बटन सेट अप करें"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"आवाज़, पावर बटन, और इनपुट के विकल्पों को टीवी, AV रिसीवर, और साउंडबार पर कंट्रोल करें"</string>
+    <!-- no translation found for settings_remote_setup (8948620173822916634) -->
+    <skip />
+    <!-- no translation found for settings_remote_setup_description (7634910915863010663) -->
+    <skip />
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"मेरा रिमोट ढूंढें"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Google TV रिमोट खो जाने पर, उसका पता लगाने के लिए साउंड चलाएं"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"रिमोट पर 30 सेकंड तक साउंड चलाने के लिए, Google TV स्ट्रीम करने वाले डिवाइस के पीछे मौजूद बटन दबाएं. ऐसा सिर्फ़ Google TV स्ट्रीम करने वाले वॉइस रिमोट पर किया जा सकता है.\n\nसाउंड बंद करने के लिए, रिमोट के किसी भी बटन को दबाएं."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"सेटिंग चालू होने पर, अपने डिवाइस पर मौजूद बटन को दबाकर एक साउंड चलाया जा सकेगा, ताकि टीवी के रिमोट को ढूंढा जा सके. सेटिंग बंद होने पर यह बटन काम नहीं करेगा. हालांकि, \'मेरा रिमोट ढूंढो\' सुविधा का इस्तेमाल अन्य तरीकों से अब भी किया जा सकेगा."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"साउंड चलाएं"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"बैटरी लेवल: %1$s"</string>
+    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
+    <skip />
+    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
+    <skip />
     <string name="settings_known_devices_category" msgid="2307810690946536753">"ऐक्सेसरी"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"रिमोट कंट्रोल"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"कनेक्ट है"</string>

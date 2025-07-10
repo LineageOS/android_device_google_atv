@@ -65,14 +65,18 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"Pokrenite stanje pripravnosti pri prelasku na drugi izvor za ulaz"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"Kada omogućite ovo podešavanje i imate HDMI-CEC omogućen na televizoru, ovaj uređaj automatski prelazi u stanje pripravnosti ubrzo pošto pređete na drugi ulaz na televizoru. To može da pomogne da se sadržaj pauzira i smanji potrošnja energije kada aktivno ne gledate."</string>
-    <string name="settings_axel" msgid="8253298947221430993">"Podesite dugmad na daljinskom upravljaču"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"Kontrolišite jačinu zvuka, napajanje i ulaz TV-a, prijemnika i saundbarova"</string>
+    <string name="settings_remote_setup" msgid="8948620173822916634">"Podesite dugmad na daljinskom upravljaču"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"Kontrolišite jačinu zvuka, napajanje i ulaz TV-a, prijemnika i saundbarova"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Nađi daljinski"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Pustite zvuk da biste locirali daljinski za Google TV ako ste ga zaturili"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Pritisnite dugme na poleđini uređaja za strimovanje na Google TV-u da biste na daljinskom pustili zvuk od 30 sekundi. Ovo radi samo na glasovnom daljinskom upravljaču za strimovanje na Google TV-u.\n\nDa biste zaustavili zvuk, pritisnite bilo koje dugme na daljinskom."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Kada je ova opcija uključena, pomoću dugmeta na uređaju možete da pustite zvuk kako biste pronašli daljinski. Kada je isključena, ovo dugme ne funkcioniše. Ipak ćete moći da koristite funkciju Nađi daljinski pomoću drugih metoda."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Pusti zvuk"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Nivo napunjenosti baterije: %1$s"</string>
+    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
+    <skip />
+    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
+    <skip />
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Dodaci"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Daljinski upravljač"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Povezano"</string>

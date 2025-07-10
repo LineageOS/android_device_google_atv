@@ -65,14 +65,18 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"„Samsung“: „Anynet+“\nLG: „SimpLink“\n„Sony“: „BRAVIA Sync“\n„Philips“: „EasyLink“\n„Sharp“: „Aquos Link“"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"Budėjimo režimo įjungimas, kai įvestis perjungiama į kitą šaltinį"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"Kai įgalinsite šį nustatymą ir televizoriuje įgalinsite HDMI-CEC, šis įrenginys automatiškai pereis į budėjimo režimą netrukus po to, kai perjungsite į kitą televizoriaus įvestį. Tai gali padėti pristabdyti turinį ir sumažinti energijos sąnaudas, kai nežiūrite aktyviai."</string>
-    <string name="settings_axel" msgid="8253298947221430993">"Nuotolinio valdymo pultelio mygtukų nustatymas"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"Valdykite TV, imtuvų ir garso kolonėlių garsumą, maitinimą bei įvestį"</string>
+    <string name="settings_remote_setup" msgid="8948620173822916634">"Nuotolinio valdymo pultelio mygtukų nustatymas"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"Valdykite TV, imtuvų ir garso kolonėlių garsumą, maitinimą bei įvestį"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Rasti nuotolinio valdymo pultelį"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Garso leidimas norint rasti netinkamoje vietoje padėtą „Google TV“ nuotolinio valdymo pultelį"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Paspauskite mygtuką „Google TV“ srautinio perdavimo įrenginio užpakalinėje dalyje, kad leistumėte garsą nuotolinio valdymo pultelyje trisdešimt sekundžių. Tai veikia tik „Google TV“ srautinio perdavimo įrenginio nuotolinio valdymo balsu pultelyje.\n\nJei norite sustabdyti garsą, paspauskite bet kurį nuotolinio valdymo pultelio mygtuką."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Kai įjungta, galite naudoti įrenginio mygtuką norėdami paleisti garsą ir aptikti nuotolinio valdymo pultelį. Kai išjungta, šis mygtukas neveiks. Funkciją „Rasti nuotolinio valdymo pultelį“ vis tiek galėsite naudoti kitais būdais."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Leisti garsą"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Akumuliatoriaus energijos lygis: %1$s"</string>
+    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
+    <skip />
+    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
+    <skip />
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Priedai"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Nuotolinio valdymo pultelis"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Prijungta"</string>
