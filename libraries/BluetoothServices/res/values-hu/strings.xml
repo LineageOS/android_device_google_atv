@@ -65,14 +65,18 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"Készenléti módba lépés, ha a bemenetet másik forrásra váltja"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"Ha aktiválja ezt a beállítást, és a tévén engedélyezve van a HDMI-CEC, akkor az eszköz automatikusan készenléti módba lép, miután Ön átvált egy másik bemenetre a tévén. Ez segíthet a tartalomlejátszás szüneteltetésében, valamint csökkentheti az energiafogyasztást, amikor Ön nem nézi aktívan a tévét."</string>
-    <string name="settings_axel" msgid="8253298947221430993">"Távirányító gombjainak beállítása"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"Hangerő, bekapcsológomb és bemenet kezelése tévén, vevőeszközön és hangprojektoron"</string>
+    <string name="settings_remote_setup" msgid="8948620173822916634">"Távirányító gombjainak beállítása"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"Hangerő, bekapcsológomb és bemenet kezelése tévén, vevőeszközön és hangprojektoron"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Find my remote"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Hang lejátszásával megkeresheti a Google TV távirányítóját, ha nem találja"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"A Google TV Streamer hátoldalán lévő gombot lenyomva 30 másodpercen át hangot ad ki a távirányító. Ez csak Google TV Streamer hangvezérlésű távirányítóval működik.\n\nA hang leállításához nyomja meg bármelyik gombot a távirányítón."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Amikor be van kapcsolva, az eszközén lévő gombot lenyomva hang lejátszásával keresheti meg a távirányítót. Amikor ki van kapcsolva, ez a gomb nem működik. Más módszerekkel továbbra is használhatja a távirányító megkeresése funkciót."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Hang lejátszása"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Elem töltöttségi szintje: %1$s"</string>
+    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
+    <skip />
+    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
+    <skip />
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Tartozékok"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Távirányító"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Csatlakozva"</string>

@@ -65,14 +65,18 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"වෙනත් මූලාශ්‍රයකට ආදානය මාරු කරන විට පොරොත්තුවට ඇතුළු වන්න"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"ඔබ මෙම සැකසීම සබල කර ඔබේ රූපවාහිනියේ HDMI-CEC සබල කර ඇති විට, ඔබ ඔබේ රූපවාහිනියේ වෙනත් ආදානයකට මාරු වූ පසු මෙම උපාංගය ස්වයංක්‍රීයව පොරොත්තුවට ඇතුළු වේ. මෙය ඔබ සක්‍රියව නරඹන්නේ නැති විට අන්තර්ගතය විරාම කිරීමට සහ බල පරිභෝජනය අඩු කිරීමට උදවු විය හැක."</string>
-    <string name="settings_axel" msgid="8253298947221430993">"දුරස්ථ පාලක බොත්තම් පිහිටුවන්න"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"රූපවාහිනී, ග්‍රාහක සහ හඬ තීරුවල හඬ පරිමාව, බලය, ආදානය පාලනය කරන්න"</string>
+    <string name="settings_remote_setup" msgid="8948620173822916634">"දුරස්ථ පාලක බොත්තම් පිහිටුවන්න"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"TV, ග්‍රාහක සහ හඬ තීරුවල හඬ පරිමාව, බලය, ආදානය පාලනය කරන්න"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"මගේ දුරස්ථ පාලකය සොයා ගන්න"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"ඔබේ Google TV දුරස්ථ පාලකය අස්ථානගත වී ඇත්නම් එය සොයා ගැනීමට හඬක් වාදනය කරන්න"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"තත්පර 30ක් ඔබේ දුරස්ථ පාලකයේ ශබ්දයක් වාදනය කිරීමට ඔබේ Google TV ප්‍රවාහකය හි පිටුපස ඇති බොත්තම ඔබන්න. මෙය Google TV ප්‍රවාහක හඬ දුරස්ථයක පමණක් ක්‍රියා කරයි.\n\nහඬ නැවැත්වීම සඳහා, ඔබේ දුරස්ථ පාලකයෙහි ඕනෑම බොත්තමක් ඔබන්න."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"ක්‍රියාත්මක වන විට, ඔබට ඔබේ දුරස්ථ පාලකය සොයා ගැනීමට ශබ්දයක් වාදනය කිරීමට ඔබේ උපාංගයෙහි බොත්තම භාවිතා කළ හැක. ක්‍රියා විරහිත වූ විට, මෙම බොත්තම ක්‍රියා නොකරනු ඇත. ඔබට තවමත් වෙනත් ක්‍රම හරහා මගේ දුරස්ථය සොයා ගැනීම භාවිත කිරීමට හැකි වනු ඇත."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"හඩ වාදනය කරන්න"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"බැටරි මට්ටම: %1$s"</string>
+    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
+    <skip />
+    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
+    <skip />
     <string name="settings_known_devices_category" msgid="2307810690946536753">"ආයිත්තම්"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"දුරස්ථ පාලකය"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"සම්බන්ධයි"</string>

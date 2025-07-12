@@ -65,14 +65,20 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"Pasar ao modo de espera ao cambiar a entrada a outra fonte"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"Se tes habilitado HDMI-CEC na televisión e activas esta opción de configuración, este dispositivo pasará ao modo de espera de xeito automático ao pouco de que cambies a unha entrada diferente no televisor. Deste xeito, ponse o contido en pausa cando non o estás vendo de forma activa e redúcese o consumo enerxético."</string>
-    <string name="settings_axel" msgid="8253298947221430993">"Configurar botóns do mando a distancia"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"Controla o volume, o acendido e a entrada nos receptores, barras de son e televisións"</string>
+    <!-- no translation found for settings_remote_setup (8948620173822916634) -->
+    <skip />
+    <!-- no translation found for settings_remote_setup_description (7634910915863010663) -->
+    <skip />
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Localizar o mando a distancia"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Se non dás atopado o mando a distancia de Google TV, fai que se reproduza un son nel para localizalo"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Preme o botón situado na parte traseira do Google TV Streamer para que se reproduza un son no mando a distancia durante 30 segundos. Esta acción só dá resultado co mando por voz do Google TV Streamer.\n\nPara deter o son, preme calquera botón do mando a distancia."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Cando a función está activada, podes usar o botón do dispositivo para reproducir un son que che permita atopar o mando a distancia. Cando está desactivada, este botón non funciona. Poderás seguir utilizando Localizar o mando a distancia a través doutros métodos."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Reproducir son"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Nivel de batería: %1$s"</string>
+    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
+    <skip />
+    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
+    <skip />
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Accesorios"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Mando a distancia"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Conectado"</string>

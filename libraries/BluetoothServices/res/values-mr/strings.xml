@@ -65,14 +65,18 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"इनपुट दुसऱ्या स्त्रोतावर स्विच करताना स्टँडबायमध्ये एंटर करा"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"तुम्ही हे सेटिंग सुरू करून तुमच्या टीव्हीवर HDMI-CEC सुरू करता, तेव्हा तुम्ही तुमच्या टीव्हीवर वेगळ्या इनपुटवर स्विच केल्यानंतर हे डिव्हाइस आपोआप स्टँडबायमध्ये एंटर करेल. तुम्ही सक्रियपणे पाहत नसाल, तेव्हा यामुळे आशय थांबवण्यास आणि वीज वापर कमी करण्यास मदत होऊ शकते."</string>
-    <string name="settings_axel" msgid="8253298947221430993">"रिमोटची बटणे सेट करा"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"टीव्ही, रीसीव्हर आणि साउंडबारवरील व्हॉल्यूम, पॉवर, इनपुट नियंत्रित करा"</string>
+    <string name="settings_remote_setup" msgid="8948620173822916634">"रिमोटची बटणे सेट करा"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"टीव्ही, रीसीव्हर आणि साउंडबारवरील व्हॉल्यूम, पॉवर, इनपुट नियंत्रित करा"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"माझा रिमोट शोधा"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"तुमचा Google TV रिमोट हरवला असल्यास, तो शोधण्यासाठी आवाज प्ले करा"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"तुमच्या रिमोटवर ३० सेकंदांसाठी आवाज प्ले करण्यासाठी तुमच्या Google TV Streamer च्या मागील बाजूचे बटण प्रेस करा. हे फक्त Google TV Streamer Voice Remote वर काम करते.\n\nआवाज थांबवण्यासाठी, तुमच्या रिमोटवरील कोणतेही बटण प्रेस करा."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"सुरू केलेले असेल, तेव्हा तुमचा रिमोट शोधण्यासाठी आवाज प्ले करण्याकरिता तुम्ही तुमच्या डिव्हाइसवरील बटण वापरू शकता. बंद केलेले असेल, तेव्हा हे बटण काम करणार नाही. तुम्ही तरीही इतर पद्धतींद्वारे माझा रिमोट शोधा हे वापरू शकाल."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"आवाज प्ले करा"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"बॅटरीची पातळी: %1$s"</string>
+    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
+    <skip />
+    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
+    <skip />
     <string name="settings_known_devices_category" msgid="2307810690946536753">"अ‍ॅक्सेसरी"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"रिमोट कंट्रोल"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"कनेक्ट केलेले"</string>

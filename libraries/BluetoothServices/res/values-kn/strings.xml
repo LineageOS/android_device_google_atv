@@ -65,14 +65,20 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"ಇನ್‌ಪುಟ್ ಅನ್ನು ಇನ್ನೊಂದು ಮೂಲಕ್ಕೆ ಬದಲಿಸುವಾಗ ಸ್ಟ್ಯಾಂಡ್‌ಬೈ ನಮೂದಿಸಿ"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"ನೀವು ಈ ಸೆಟ್ಟಿಂಗ್ ಅನ್ನು ಮತ್ತು ನಿಮ್ಮ ಟಿವಿಯಲ್ಲಿ HDMI-CEC ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿದಾಗ, ನಿಮ್ಮ ಟಿವಿಯಲ್ಲಿ ನೀವು ಬೇರೆ ಇನ್‌ಪುಟ್‌ಗೆ ಬದಲಿಸಿದ ಸ್ವಲ್ಪ ಸಮಯದ ನಂತರ ಈ ಸಾಧನವು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಸ್ಟ್ಯಾಂಡ್‌ಬೈ ಅನ್ನು ಪ್ರವೇಶಿಸುತ್ತದೆ. ಇದು ಕಂಟೆಂಟ್ ಅನ್ನು ವಿರಾಮಗೊಳಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ ಮತ್ತು ನೀವು ಸಕ್ರಿಯವಾಗಿ ವೀಕ್ಷಿಸದಿದ್ದಾಗ ವಿದ್ಯುತ್ ಬಳಕೆಯನ್ನು ಕಡಿಮೆ ಮಾಡಬಹುದು."</string>
-    <string name="settings_axel" msgid="8253298947221430993">"ರಿಮೋಟ್ ಬಟನ್‌ಗಳನ್ನು ಸೆಟಪ್ ಮಾಡಿ"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"ಟಿವಿಗಳು, ರಿಸೀವರ್‌ಗಳು ಮತ್ತು ಸೌಂಡ್‌ಬಾರ್‌ಗಳಲ್ಲಿ ವಾಲ್ಯೂಮ್, ಪವರ್, ಇನ್‌ಪುಟ್ ಅನ್ನು ನಿಯಂತ್ರಿಸಿ"</string>
+    <!-- no translation found for settings_remote_setup (8948620173822916634) -->
+    <skip />
+    <!-- no translation found for settings_remote_setup_description (7634910915863010663) -->
+    <skip />
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"ನನ್ನ ರಿಮೋಟ್ ಅನ್ನು ಹುಡುಕಿ"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"ನಿಮ್ಮ Google TV ರಿಮೋಟ್ ಕಳೆದುಹೋದರೆ ಅದನ್ನು ಪತ್ತೆಹಚ್ಚಲು ಸೌಂಡ್ ಅನ್ನು ಪ್ಲೇ ಮಾಡಿ"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"30 ಸೆಕೆಂಡ್‌ಗಳ ಕಾಲ ನಿಮ್ಮ ರಿಮೋಟ್‌ನಲ್ಲಿ ಸೌಂಡ್ ಅನ್ನು ಪ್ಲೇ ಮಾಡಲು ನಿಮ್ಮ Google TV ಸ್ಟ್ರೀಮರ್‌ನ ಹಿಂಭಾಗದಲ್ಲಿರುವ ಬಟನ್ ಅನ್ನು ಒತ್ತಿರಿ. ಇದು Google TV ಸ್ಟ್ರೀಮರ್ ಧ್ವನಿ ರಿಮೋಟ್‌ನಲ್ಲಿ ಮಾತ್ರ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ.\n\nಸೌಂಡ್ ಅನ್ನು ನಿಲ್ಲಿಸಲು, ನಿಮ್ಮ ರಿಮೋಟ್‌ನಲ್ಲಿರುವ ಯಾವುದೇ ಬಟನ್ ಅನ್ನು ಒತ್ತಿರಿ."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"ಆನ್ ಆಗಿರುವಾಗ, ಸೌಂಡ್ ಅನ್ನು ಪ್ಲೇ ಮಾಡುವ ಮೂಲಕ ರಿಮೋಟ್ ಅನ್ನು ಪತ್ತೆಹಚ್ಚಲು ನೀವು ಸಾಧನದಲ್ಲಿನ ಬಟನ್ ಅನ್ನು ಬಳಸಬಹುದು. ಆಫ್ ಆಗಿರುವಾಗ, ಈ ಬಟನ್ ಕಾರ್ಯನಿರ್ವಹಿಸುವುದಿಲ್ಲ. ನೀವು ಈಗಲೂ ಇತರ ವಿಧಾನಗಳನ್ನು ಬಳಸಿ ನನ್ನ ರಿಮೋಟ್ ಹುಡುಕಿ ಫೀಚರ್‌ ಅನ್ನು ಬಳಸಲು ಸಾಧ್ಯವಾಗುತ್ತದೆ."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"ಸೌಂಡ್ ಅನ್ನು ಪ್ಲೇ ಮಾಡಿ"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"ಬ್ಯಾಟರಿ ಮಟ್ಟ: %1$s"</string>
+    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
+    <skip />
+    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
+    <skip />
     <string name="settings_known_devices_category" msgid="2307810690946536753">"ಪರಿಕರಗಳು"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"ರಿಮೋಟ್ ನಿಯಂತ್ರಣ"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"ಸಂಪರ್ಕಗೊಂಡಿದೆ"</string>
