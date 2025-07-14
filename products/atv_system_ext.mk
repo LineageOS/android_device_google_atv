@@ -15,6 +15,10 @@
 #
 # This makefile contains the system_ext partition contents for
 # a generic TV device.
+
+# Declare here to not install modules which are not supported on TV
+PRODUCT_IS_ATV := true
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/media_system_ext.mk)
 
 PRODUCT_PACKAGES += \
