@@ -588,7 +588,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 && BluetoothUtils.isConnected(device) && cachedDevice.isConnected()
                 && (BluetoothUtils.isBluetoothHeadset(device)
                 || BluetoothUtils.hasAudioProfile(cachedDevice))) {
-            boolean isActive = BluetoothUtils.isActiveA2dpAudioOutput(device);
+            boolean isActive = BluetoothUtils.isActiveA2dpOrLeAudioOutput(device);
 
             Intent intent = new Intent(ACTION_TOGGLE_CHANGED);
             intent.setClass(context, SliceBroadcastReceiver.class);
