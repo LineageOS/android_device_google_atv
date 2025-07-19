@@ -120,3 +120,4 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += framework-audio_effects.xml
 
 $(call soong_config_set,system_services,without_hal,vibrator)
+$(call soong_config_set,google_tv,using_tv_gki,true)
