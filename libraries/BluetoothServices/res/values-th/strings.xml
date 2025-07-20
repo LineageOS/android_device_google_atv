@@ -73,10 +73,8 @@
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"เมื่อเปิดไว้ คุณจะใช้ปุ่มบนอุปกรณ์ในการเล่นเสียงเพื่อค้นหารีโมตได้ แต่หากปิด ปุ่มนี้จะไม่ทำงาน คุณจะยังใช้ฟีเจอร์หารีโมตของฉันด้วยวิธีอื่นๆ ได้"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"เล่นเสียง"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"ระดับแบตเตอรี่: %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"ที่อยู่บลูทูธ: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"เฟิร์มแวร์: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"อุปกรณ์เสริม"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"รีโมตคอนโทรล"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"เชื่อมต่อแล้ว"</string>

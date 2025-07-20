@@ -73,10 +73,8 @@
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"ක්‍රියාත්මක වන විට, ඔබට ඔබේ දුරස්ථ පාලකය සොයා ගැනීමට ශබ්දයක් වාදනය කිරීමට ඔබේ උපාංගයෙහි බොත්තම භාවිතා කළ හැක. ක්‍රියා විරහිත වූ විට, මෙම බොත්තම ක්‍රියා නොකරනු ඇත. ඔබට තවමත් වෙනත් ක්‍රම හරහා මගේ දුරස්ථය සොයා ගැනීම භාවිත කිරීමට හැකි වනු ඇත."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"හඩ වාදනය කරන්න"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"බැටරි මට්ටම: %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"බ්ලූටූත් ලිපිනය: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"නිත්‍ය මෘදුකාංග: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"ආයිත්තම්"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"දුරස්ථ පාලකය"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"සම්බන්ධයි"</string>

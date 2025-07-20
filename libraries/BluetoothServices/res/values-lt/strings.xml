@@ -73,10 +73,8 @@
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Kai įjungta, galite naudoti įrenginio mygtuką norėdami paleisti garsą ir aptikti nuotolinio valdymo pultelį. Kai išjungta, šis mygtukas neveiks. Funkciją „Rasti nuotolinio valdymo pultelį“ vis tiek galėsite naudoti kitais būdais."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Leisti garsą"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Akumuliatoriaus energijos lygis: %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"„Bluetooth“ adresas: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"Programinė aparatinė įranga: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Priedai"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Nuotolinio valdymo pultelis"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Prijungta"</string>

@@ -73,10 +73,8 @@
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Amikor be van kapcsolva, az eszközén lévő gombot lenyomva hang lejátszásával keresheti meg a távirányítót. Amikor ki van kapcsolva, ez a gomb nem működik. Más módszerekkel továbbra is használhatja a távirányító megkeresése funkciót."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Hang lejátszása"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Elem töltöttségi szintje: %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"Bluetooth-cím: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"Firmware: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Tartozékok"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Távirányító"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Csatlakozva"</string>

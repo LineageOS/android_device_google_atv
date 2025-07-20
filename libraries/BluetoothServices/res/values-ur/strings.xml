@@ -65,20 +65,16 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung:‎ Anynet+\nLG:‎ SimpLink\nSony:‎ BRAVIA Sync\nPhilips:‎ EasyLink\nSharp:‎ Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"ان پٹ کو دوسرے ماخذ پر سوئچ کرتے وقت اسٹینڈ بائی میں داخل ہوں"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"جب آپ اس ترتیب کو فعال کرتے ہیں اور HDMI-CEC آپ کے TV پر فعال ہو جاتا ہے تو یہ آلہ آپ کے TV پر مختلف ان پٹ پر سوئچ کرنے کے فوراً بعد خودکار طور پر اسٹینڈ بائی میں داخل ہو جائے گا۔ جب آپ فعال طور پر نہیں دیکھ رہے ہوں تو یہ کارروائی مواد کو موقوف کرنے اور بجلی کی کھپت کو کم کرنے میں مدد کر سکتی ہے۔"</string>
-    <!-- no translation found for settings_remote_setup (8948620173822916634) -->
-    <skip />
-    <!-- no translation found for settings_remote_setup_description (7634910915863010663) -->
-    <skip />
+    <string name="settings_remote_setup" msgid="8948620173822916634">"ریموٹ بٹنز سیٹ اپ کریں"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"‫TVs، ریسیورز اور ساؤنڈ بارز پر والیوم، پاور اور ان پٹ کنٹرول کریں"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"میرا ریموٹ تلاش کریں"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"اگر آپ کا Google TV کا ریموٹ گم ہو گیا ہے تو اس کا پتا لگانے کے لیے آواز چلائیں"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"30 سیکنڈ تک اپنے ریموٹ پر آواز چلانے کے لیے اپنے Google TV کی سلسلہ بندی کرنے والے پیچھے والے بٹن کو دبائیں۔ یہ صرف Google TV کی سلسلہ بندی کرنے والے وائس ریموٹ پر کام کرتا ہے۔\n\nآواز کو روکنے کے لیے، اپنے ریموٹ پر کوئی بھی بٹن دبائیں۔"</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"آن ہونے پر، آپ اپنے ریموٹ کا پتا لگانے کے لیے آواز چلانے کی خاطر اپنے آلے پر بٹن کا استعمال کر سکتے ہیں۔ آف ہونے پر یہ بٹن کام نہیں کرے گا۔ آپ اب بھی دیگر طریقوں سے میرا ریموٹ تلاش کریں کا استعمال کر سکیں گے۔"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"آواز چلائیں"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"بیٹری لیول: ‏ %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"بلوٹوتھ پتہ: ‎%1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"فرم ویئر: ‎%1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"لوازمات"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"ریموٹ کنٹرول"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"منسلک"</string>

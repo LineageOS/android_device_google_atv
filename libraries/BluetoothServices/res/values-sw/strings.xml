@@ -73,10 +73,8 @@
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Ukiwasha, unaweza kutumia kitufe kilicho kwenye kifaa chako kucheza sauti ili utambue mahali kilipo kidhibiti chako cha mbali. Ukizima, kitufe hiki hakitafanya kazi. Bado utaweza kutumia kipengele cha Tafuta kidhibiti changu cha mbali kupitia mbinu nyinginezo."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Cheza sauti"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Kiasi cha chaji kwenye betri: %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"Anwani ya Bluetooth: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"Programu dhibiti: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Vifuasi"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Kidhibiti cha Mbali"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Imeunganisha"</string>

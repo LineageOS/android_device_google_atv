@@ -73,10 +73,8 @@
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"When on, you can use the button on your device to play a sound to locate your remote. When off, this button won\'t work. You\'ll still be able to use find my remote via other methods."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Play sound"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Battery level: %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"Bluetooth address: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"Firmware: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Accessories"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Remote control"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Connected"</string>

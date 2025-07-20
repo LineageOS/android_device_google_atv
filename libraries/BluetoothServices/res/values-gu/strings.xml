@@ -73,10 +73,8 @@
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"જ્યારે ચાલુ હોય, ત્યારે તમે તમારા રિમોટને શોધવા માટે સાઉન્ડ વગાડવા માટે તમારા ડિવાઇસ પરના બટનનો ઉપયોગ કરી શકો છો. જ્યારે બંધ હોય, ત્યારે આ બટન કામ કરશે નહીં. તમે હજી પણ અન્ય પદ્ધતિઓ દ્વારા \'મારું રિમોટ શોધો\' સુવિધાનો ઉપયોગ કરી શકશો."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"સાઉન્ડ વગાડો"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"બૅટરીનું લેવલ: %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"બ્લૂટૂથ ઍડ્રેસ: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"ફર્મવેયર: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"ઍક્સેસરી"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"રિમોટ કન્ટ્રોલ"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"કનેક્ટેડ"</string>

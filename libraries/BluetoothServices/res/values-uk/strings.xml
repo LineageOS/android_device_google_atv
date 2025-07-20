@@ -65,20 +65,16 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung – Anynet+\nLG – SimpLink\nSony – BRAVIA Sync\nPhilips – EasyLink\nSharp – Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"Переходити в режим очікування в разі перемикання на інше джерело вхідного сигналу"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"Якщо ввімкнути це налаштування й HDMI-CEC на телевізорі, цей пристрій автоматично переходитиме в режим очікування невдовзі після перемикання на інший вхід на телевізорі. Це допоможе вам призупиняти відтворення контенту й економити електроенергію, коли ви не дивитеся відео."</string>
-    <!-- no translation found for settings_remote_setup (8948620173822916634) -->
-    <skip />
-    <!-- no translation found for settings_remote_setup_description (7634910915863010663) -->
-    <skip />
+    <string name="settings_remote_setup" msgid="8948620173822916634">"Налаштувати кнопки дистанційного керування"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"Керуйте гучністю, живленням і джерелами вхідного сигналу телевізора, приймача й звукової панелі"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Знайти пульт"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Якщо ви загубили пульт Google TV, відтворіть на ньому звуковий сигнал, щоб швидше знайти"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Натисніть кнопку на задній панелі Google TV Streamer, щоб на пульті дистанційного керування протягом 30 секунд відтворювався звуковий сигнал. Ця команда працює лише для голосового пульта Google TV Streamer.\n\nЩоб вимкнути сигнал, натисніть будь-яку кнопку на пульті."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Коли цю функцію ввімкнено, ви можете натиснути кнопку на пристрої, щоб знайти пульт за допомогою звукового сигналу. Якщо функцію вимкнено, ця кнопка не працюватиме. Ви все одно зможете використовувати пошук пульта іншими способами."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Відтворити звуковий сигнал"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Рівень заряду акумулятора: %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"Адреса Bluetooth: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"Мікропрограма: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Аксесуари"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Пульт ДК"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Під’єднано"</string>
