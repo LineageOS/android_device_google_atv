@@ -73,10 +73,8 @@
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"ଚାଲୁ ଥିଲେ ଆପଣ ଆପଣଙ୍କ ରିମୋଟ ଖୋଜିବା ପାଇଁ ଏକ ସାଉଣ୍ଡ ପ୍ଲେ କରବାକୁ ଆପଣଙ୍କ ଡିଭାଇସରେ ଥିବା ବଟନ ବ୍ୟବହାର କରିପାରିବେ। ବନ୍ଦ ଥିଲେ ଏହି ବଟନ କାମ କରିବ ନାହିଁ। ଆପଣ ଏବେ ବି ଅନ୍ୟ ପଦ୍ଧତି ମାଧ୍ୟମରେ ମୋ ରିମୋଟ ଖୋଜନ୍ତୁ ବ୍ୟବହାର କରିବାକୁ ସକ୍ଷମ ହେବେ।"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"ସାଉଣ୍ଡ ପ୍ଲେ କରନ୍ତୁ"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"ବେଟେରୀ ଲେଭେଲ: %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"ବ୍ଲୁଟୁଥ ଠିକଣା: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"ଫାର୍ମୱେର: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"ଆକସେସୋରୀଗୁଡ଼ିକ"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"ରିମୋଟ କଣ୍ଟ୍ରୋଲ"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"ସଂଯୋଗ କରାଗଲା"</string>

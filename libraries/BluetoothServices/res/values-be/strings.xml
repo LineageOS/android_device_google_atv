@@ -73,10 +73,8 @@
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Калі гэта функцыя ўключана, вы можаце прайграць гукавы сігнал на згубленым пульце, націснуўшы кнопку на сваёй прыладзе. Калі функцыя выключана, гэта кнопка не працуе. Вы па-ранейшаму зможаце выкарыстоўваць функцыю \"Знайсці пульт\" іншымі спосабамі."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Прайграць гукавы сігнал"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Узровень зараду акумулятара: %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"Адрас Bluetooth: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"Убудаваная праграма: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Аксесуары"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Пульт дыстанцыйнага кіравання"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Падключана"</string>

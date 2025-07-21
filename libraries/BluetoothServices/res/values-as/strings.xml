@@ -73,10 +73,8 @@
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"অন কৰা থাকিলে, আপোনাৰ ৰিম’টটোৰ অৱস্থান নিৰ্ধাৰণ কৰাৰ বাবে এটা ধ্বনি প্লে’ কৰিবলৈ আপুনি আপোনাৰ ডিভাইচৰ বুটামটো ব্যৱহাৰ কৰিব পাৰে। অফ কৰা থাকিলে, এই বুটামটোৱে কাম নকৰে। আপুনি তথাপি অন্য পদ্ধতিৰ জৰিয়তে মোৰ ৰিম’ট সন্ধান কৰক সুবিধাটো ব্যৱহাৰ কৰিব পাৰিব।"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"ধ্বনি প্লে’ কৰক"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"বেটাৰীৰ স্তৰ: %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"ব্লুটুথৰ ঠিকনা: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"ফাৰ্মৱেৰ: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"আনুষংগিক সামগ্ৰী"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"ৰিম’ট কণ্ট্ৰ’ল"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"সংযুক্ত"</string>

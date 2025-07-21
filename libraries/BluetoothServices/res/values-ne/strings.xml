@@ -65,20 +65,16 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"अर्को स्रोतमा इन्पुट बदल्दा स्ट्यान्डबाइ मोडमा प्रवेश गर्नुहोस्"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"तपाईंले यो सेटिङ अन गर्नुभयो र आफ्नो टिभीमा HDMI-CEC अन गर्नुभयो भने तपाईंले आफ्नो टिभीमा अर्को इन्पुट बदलेपछि यो डिभाइस चाँडै नै स्ट्यान्डबाइ मोडमा स्वतः प्रवेश गर्ने छ। तपाईंले सक्रिय रूपमा टिभी नहेरेका बेला यसले सामग्री पज गर्न र बिजुलीको खपत घटाउन सक्छ।"</string>
-    <!-- no translation found for settings_remote_setup (8948620173822916634) -->
-    <skip />
-    <!-- no translation found for settings_remote_setup_description (7634910915863010663) -->
-    <skip />
+    <string name="settings_remote_setup" msgid="8948620173822916634">"रिमोटका बटनहरू सेटअप गर्नुहोस्"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"टिभी, रिसिभर र साउन्डबारहरूको भोल्युम, पावर र इनपुट नियन्त्रण गर्नुहोस्"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"मेरो रिमोट भेट्टाइयोस्"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"आफ्नो Google TV रिमोट हराएका खण्डमा उक्त रिमोट भेट्टाउन कुनै साउन्ड प्ले गर्नुहोस्"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"रिमोटमा ३० सेकेन्डसम्म साउन्ड प्ले गर्न Google TV स्ट्रिमरको पछाडिपट्टि रहेको बटन थिच्नुहोस्। Google TV स्ट्रिमर भ्वाइस रिमोटमा मात्र यसो गर्न सकिन्छ।\n\nसाउन्ड बन्द गर्न रिमोटमा भएको कुनै पनि बटन थिच्नुहोस्।"</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"यो सेटिङ अन हुँदा तपाईं आफ्नो रिमोटको लोकेसन पत्ता लगाउन आफ्नो डिभाइसको बटन प्रयोग गरेर कुनै साउन्ड प्ले गर्न सक्नुहुन्छ। यो सेटिङ अफ हुँदा यो बटनले काम गर्ने छैन। तपाईं अझै पनि अन्य तरिकामार्फत \"रिमोट खोज्नुहोस्\" सुविधा प्रयोग गर्न सक्नु हुने छ।"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"साउन्ड प्ले गर्नुहोस्"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"ब्याट्रीको स्तर: %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"ब्लुटुथ एड्रेस: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"फर्मवेयर: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"सहायक सामग्रीहरू"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"रिमोट कन्ट्रोल"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"जोडिएको"</string>

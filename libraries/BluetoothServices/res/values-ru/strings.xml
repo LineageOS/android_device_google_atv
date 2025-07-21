@@ -73,10 +73,8 @@
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Если функция включена, вы можете воспроизводить звуковой сигнал нажатием кнопки на устройстве. Он поможет найти пульт. Когда функция отключена, кнопка не работает. Однако вы по-прежнему можете пользоваться поиском пульта другими способами."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Воспроизвести звуковой сигнал"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Уровень заряда батареи: %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"Адрес Bluetooth: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"Встроенное ПО: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Аксессуары"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Пульт ДУ"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Подключено"</string>

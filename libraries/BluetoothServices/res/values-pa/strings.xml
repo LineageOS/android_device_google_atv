@@ -73,10 +73,8 @@
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"ਚਾਲੂ ਹੋਣ \'ਤੇ, ਤੁਸੀਂ ਆਪਣਾ ਰਿਮੋਟ ਲੱਭਣ ਲਈ ਕੋਈ ਧੁਨੀ ਵਜਾਉਣ ਵਾਸਤੇ ਆਪਣੇ ਡੀਵਾਈਸ \'ਤੇ ਦਿੱਤੇ ਬਟਨ ਦੀ ਵਰਤੋਂ ਕਰ ਸਕਦੇ ਹੋ। ਬੰਦ ਹੋਣ \'ਤੇ, ਇਹ ਬਟਨ ਕੰਮ ਨਹੀਂ ਕਰੇਗਾ। ਤੁਸੀਂ ਹਾਲੇ ਵੀ ਹੋਰ ਵਿਧੀਆਂ ਰਾਹੀਂ \'ਮੇਰਾ ਰਿਮੋਟ ਲੱਭੋ\' ਵਿਸ਼ੇਸ਼ਤਾ ਦੀ ਵਰਤੋਂ ਕਰ ਸਕੋਗੇ।"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"ਧੁਨੀ ਵਜਾਓ"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"ਬੈਟਰੀ ਪੱਧਰ: %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"ਬਲੂਟੁੱਥ ਪਤਾ: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"ਫ਼ਰਮਵੇਅਰ: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"ਐਕਸੈਸਰੀਆਂ"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"ਰਿਮੋਟ ਕੰਟਰੋਲ"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"ਕਨੈਕਟ ਹੈ"</string>

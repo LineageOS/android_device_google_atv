@@ -73,10 +73,8 @@
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"ఆన్ చేసినప్పుడు, మీ రిమోట్‌ను గుర్తించడం కోసం సౌండ్ ప్లే చేయడానికి మీ పరికరంలోని బటన్‌ను ఉపయోగించవచ్చు. ఆఫ్ చేసినప్పుడు, ఈ బటన్ పని చేయదు. మీరు ఇప్పటికీ ఇతర పద్ధతుల ద్వారా \'రిమోట్‌ను వెతకండి\'ని ఉపయోగించగలరు."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"సౌండ్‌ను ప్లే చేయండి"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"బ్యాటరీ స్థాయి: %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"బ్లూటూత్ అడ్రస్: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"ఫర్మ్‌వేర్: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"యాక్సెసరీలు"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"రిమోట్ కంట్రోల్"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"కనెక్ట్ చేయబడింది"</string>

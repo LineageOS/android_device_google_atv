@@ -65,20 +65,16 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung፦ Anynet+\nLG፦ SimpLink\nSony፦ BRAVIA Sync\nPhilips፦ EasyLink\nSharp፦ Aquos አገናኝ"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"ግብዓትን ወደ ሌላ ምንጭ በመቀየር ወቅት ተጠባባቂ ውስጥ ይግቡ"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"ይህን ቅንብር ሲያነቁ እና ቲቪዎ ላይ HDMI-CECን ሲያነቁ ይህ መሣሪያ ቲቪዎ ላይ ወደተለየ ግብዓት ከቀየሩ በኋላ በአጭር ጊዜ ውስጥ በራስ-ሰር ተጠባባቂ ውስጥ ይገባል። ይህ ገቢር በሆነ መልኩ በማይመለከቱበት ወቅት ይዘትን ባለበት ለማቆም እና የኃይል አጠቃቀምን ለመቀነስ ሊያግዝ ይችላል።"</string>
-    <!-- no translation found for settings_remote_setup (8948620173822916634) -->
-    <skip />
-    <!-- no translation found for settings_remote_setup_description (7634910915863010663) -->
-    <skip />
+    <string name="settings_remote_setup" msgid="8948620173822916634">"የርቀት አዝራሮችን ያዋቅሩ"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"ድምፅን፣ ኃይልን፣ የቲቪዎች ላይ ግብዓትን፣ ተቀባዮችን እና የድምፅ አሞሌዎችን ይቆጣጠሩ"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"የእኔን የርቀት መቆጣጠሪያ አግኝ"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"የGoogle ቲቪ የርቀት መቆጣጠሪያዎ ያለ ቦታው ተቀምጦ ከሆነ አካባቢውን ለማግኘት ድምፅ ያጫውቱ"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"ድምፅን በእርስዎ የርቀት መቆጣጠሪያ ለ30 ሰከንዶች ለማጫወት ከGoogle ቲቪ አሰራጭዎ ጀርባ ያለውን አዝራር ይጫኑ። ይህ የሚሠራው በGoogle ቲቪ አሰራጭ የድምፅ የርቀት መቆጣጠሪያ ላይ ብቻ ነው።\n\nድምፁን ለማቆም በርቀት መቆጣጠሪያዎ ላይ ያለ ማንኛውንም አዝራር ይጫኑ።"</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"ሲበራ የርቀት መቆጣጠሪያዎን ለማግኘት ድምፅ ለማጫወት በመሣሪያዎ ላይ ያለውን አዝራር መጠቀም ይችላሉ። ሲጠፋ ይህ አዝራር አይሠራም። አሁንም የርቀት መቆጣጠሪያዬን አግኝን በሌሎች መንገዶች በኩል መጠቀም ይችላሉ።"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"ድምፅ አጫውት"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"የባትሪ ደረጃ፦ %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"የብሉቱዝ አድራሻ፦ %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"ፊርምዌር፦ %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"መለዋወጫዎች"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"የርቀት መቆጣጠሪያ"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"ተገናኝቷል"</string>

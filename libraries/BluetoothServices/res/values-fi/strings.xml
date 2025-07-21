@@ -65,20 +65,16 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"Siirry valmiustilaan, kun vaihdat toiseen lähteeseen"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"Kun otat tämän asetuksen käyttöön ja HDMI-CEC on käytössä televisiossa, laite siirtyy automaattisesti valmiustilaan pian sen jälkeen, kun olet vaihtanut televisiossa toiseen tuloon. Tämä voi auttaa keskeyttämään sisällön ja vähentämään virrankulutusta, kun et katso aktiivisesti."</string>
-    <!-- no translation found for settings_remote_setup (8948620173822916634) -->
-    <skip />
-    <!-- no translation found for settings_remote_setup_description (7634910915863010663) -->
-    <skip />
+    <string name="settings_remote_setup" msgid="8948620173822916634">"Valitse kaukosäätimen painikkeet"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"Ohjaa äänenvoimakkuutta, virtaa, TV:n tuloja, vastaanottimia ja soundbar-kaiuttimia"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Etsi kaukosäätimeni"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Jos et löydä Google TV ‑kaukosäädintä, etsi se toistamalla ääni"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Paina Google TV Streamer ‑laitteen takaosassa olevaa painiketta toistaaksesi kaukosäätimestä ääntä 30 sekunnin ajan. Tämä toimii vain Google TV Streamer Voice Remote ‑kaukosäätimellä.\n\nMykistä ääni painamalla mitä tahansa kaukosäätimen painiketta."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Kun asetus on päällä, voit käyttää laitteen painiketta ja löytää kaukosäätimen sen toistaman äänen perusteella. Kun asetus on pois päältä, painike ei toimi. Voit kuitenkin käyttää Löydä kaukosäädin ‑ominaisuutta muilla tavoilla."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Toista ääni"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Akun varaustaso: %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"Bluetooth-osoite: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"Laiteohjelmisto: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Lisävarusteet"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Kaukosäädin"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Yhdistetty"</string>

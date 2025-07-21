@@ -65,20 +65,16 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung៖ Anynet+\nLG៖ SimpLink\nSony៖ BRAVIA Sync\nPhilips៖ EasyLink\nSharp៖ Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"ចូលមុខងារសម្ងំ នៅពេលប្ដូរឧបករណ៍​បញ្ចូលទៅប្រភពផ្សេង"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"នៅពេលអ្នកបើកការ​កំណត់នេះ និងបានបើក HDMI-CEC នៅលើទូរទស្សន៍របស់អ្នក ឧបករណ៍នេះនឹងចូលមុខងារសម្ងំភ្លាមៗដោយស្វ័យប្រវត្តិ បន្ទាប់ពីអ្នកប្ដូរទៅឧបករណ៍​បញ្ចូលផ្សេងនៅលើទូរទស្សន៍របស់អ្នក។ ការធ្វើបែបនេះអាចជួយផ្អាកខ្លឹមសារ និងកាត់បន្ថយការប្រើប្រាស់ថាមពល នៅពេលអ្នកមិនមើលយ៉ាងសកម្មទេ។"</string>
-    <!-- no translation found for settings_remote_setup (8948620173822916634) -->
-    <skip />
-    <!-- no translation found for settings_remote_setup_description (7634910915863010663) -->
-    <skip />
+    <string name="settings_remote_setup" msgid="8948620173822916634">"រៀបចំ​ប៊ូតុងឧបករណ៍​បញ្ជាពីចម្ងាយ"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"គ្រប់គ្រងកម្រិតសំឡេង ថាមពល ប្រភពបញ្ចូលនៅលើទូរទស្សន៍ ឧបករណ៍ចាប់សំឡេងនិងរូបភាព និងរបារ​សំឡេង"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"ស្វែងរកឧបករណ៍​បញ្ជាពីចម្ងាយរបស់ខ្ញុំ"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"ចាក់សំឡេងណាមួយ ដើម្បីកំណត់ទីតាំងឧបករណ៍​បញ្ជាពីចម្ងាយសម្រាប់ Google TV របស់អ្នក ប្រសិនបើបាត់ឧបករណ៍នោះ"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"ចុចប៊ូតុងនៅផ្នែកខាងក្រោយនៃ Google TV Streamer របស់អ្នក ដើម្បីចាក់សំឡេងនៅលើឧបករណ៍​បញ្ជាពីចម្ងាយរយៈពេល 30 វិនាទី។ សកម្មភាពនេះដំណើរការនៅលើឧបករណ៍បញ្ជាដោយសំឡេងសម្រាប់ Google TV Streamer តែប៉ុណ្ណោះ។\n\nដើម្បីបញ្ឈប់សំឡេង សូមចុចប៊ូតុងណាមួយនៅលើឧបករណ៍​បញ្ជាពីចម្ងាយរបស់អ្នក។"</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"នៅពេលបើក អ្នកអាចប្រើប៊ូតុងនៅលើឧបករណ៍របស់អ្នកសម្រាប់ចាក់សំឡេង ដើម្បីកំណត់ទីតាំងឧបករណ៍​បញ្ជាពីចម្ងាយរបស់អ្នក។ នៅពេលបិទ ប៊ូតុងនេះនឹងមិនដំណើរការទេ។ អ្នកនឹងនៅតែអាចប្រើ \"រកឧបករណ៍បញ្ជារបស់ខ្ញុំ\" តាមរយៈវិធីផ្សេងទៀត។"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"ចាក់​សំឡេង"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"កម្រិតថ្ម៖ %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"អាសយដ្ឋាន​ប៊្លូធូស៖ %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"កម្មវិធី​បង្កប់៖ %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"ឧបករណ៍​បន្ទាប់បន្សំ"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"ឧបករណ៍​បញ្ជា​ពី​ចម្ងាយ"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"បានភ្ជាប់"</string>

@@ -73,10 +73,8 @@
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Кога е вклучено, може да го користите копчето на вашиот уред за да репродуцирате звук за да го лоцирате далечинското. Кога е исклучено, копчево не функционира. Сè уште ќе може да ја користите „Најди го далечинското“ преку други методи."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Репродуцирај звук"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Ниво на батерија: %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"Bluetooth-адреса: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"Фирмвер: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Додатоци"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Далечински управувач"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Поврзан"</string>

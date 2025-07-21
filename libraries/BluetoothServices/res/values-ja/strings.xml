@@ -73,10 +73,8 @@
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"ON にすると、デバイスのボタンを使用して、リモコンから音を鳴らして探すことができます。OFF にすると、このボタンは使用できません。別の方法で「リモコンを探す」機能を使用することもできます。"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"音を鳴らす"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"電池残量: %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"Bluetooth アドレス: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"ファームウェア: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"アクセサリー"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"リモコン"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"接続済み"</string>

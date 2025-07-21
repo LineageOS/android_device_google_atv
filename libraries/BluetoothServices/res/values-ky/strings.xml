@@ -73,10 +73,8 @@
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Күйүп турганда түзмөгүңүздөгү баскыч аркылуу үн чыгарып, пультту таба аласыз. Өчүп турганда бул баскыч иштебейт. \"Пульт кайда\" функциясын башка жолдор менен колдоно бересиз."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Үнүн чыгаруу"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Батареянын деңгээли: %1$s"</string>
-    <!-- no translation found for settings_remote_serial_number (7821496079279473563) -->
-    <skip />
-    <!-- no translation found for settings_remote_firmware (8956924558938994709) -->
-    <skip />
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"Bluetooth дареги: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"Орнотулган программа: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Көмөкчү жабдыктар"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Пульт"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Туташкан"</string>
