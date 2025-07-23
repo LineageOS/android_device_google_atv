@@ -210,4 +210,7 @@
 
     <!-- Bytes that the PinnerService will pin for Home app. -->
     <integer name="config_pinnerHomePinBytes">0</integer>
+
+    <!-- When true, the {@link Display#FLAG_PRESENTATION} flag is set to internal displays. -->
+    <bool name="config_allowPresentationOnInternalDisplay">false</bool>
 </resources>
