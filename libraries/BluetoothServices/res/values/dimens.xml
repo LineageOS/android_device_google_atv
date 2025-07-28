@@ -51,4 +51,5 @@
   <dimen name="settings_bt_pair_description_line_multiplier">1.3</dimen>
   <dimen name="settings_bt_pair_progress_margin">11dp</dimen>
 
+  <dimen name="compound_icon_offset">12dp</dimen>
 </resources>
