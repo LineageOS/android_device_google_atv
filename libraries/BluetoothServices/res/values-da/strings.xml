@@ -46,7 +46,7 @@
     <string name="settings_notif_update_title" msgid="4767043003900594863">"Opdater din fjernbetjening"</string>
     <string name="settings_notif_update_text" msgid="1092279154776177720">"Klar til installation"</string>
     <string name="settings_notif_update_action" msgid="7614942170621338703">"OPDATER"</string>
-    <string name="settings_notif_update_dismiss" msgid="2492993446930472109">"AFVIS"</string>
+    <string name="settings_notif_update_dismiss" msgid="2492993446930472109">"LUK"</string>
     <string name="settings_notif_low_battery_title" msgid="4638332702264612574">"Batteriniveauet i fjernbetjeningen er lavt"</string>
     <string name="settings_notif_low_battery_text" msgid="4371868286738256938">"Batteriet skal snart udskiftes"</string>
     <string name="settings_notif_critical_battery_title" msgid="2790514511512220266">"Der er næsten ikke mere batteri på fjernbetjeningen"</string>
