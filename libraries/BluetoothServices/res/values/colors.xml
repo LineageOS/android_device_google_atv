@@ -23,5 +23,6 @@
   <color name="connected">#FFFFFFFF</color>
   <color name="bt_info">#FF767676</color>
   <color name="bt_info_separator">#FF323232</color>
+  <color name="compound_icon_color">#FFE4F3FF</color>
 
 </resources>

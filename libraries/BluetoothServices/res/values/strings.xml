@@ -72,9 +72,9 @@
   <string name="settings_choices_yes">Yes</string>
   <string name="settings_choices_no">No</string>
 
-  <string name="settings_bt_disconnect">Disconnect from %1$s</string>
-  <string name="settings_bt_connect">Connect to %1$s</string>
-  <string name="settings_bt_forget">Forget %1$s</string>
+  <string name="settings_bt_disconnect">Disconnect from %1$s?</string>
+  <string name="settings_bt_connect">Connect to %1$s?</string>
+  <string name="settings_bt_forget">Forget %1$s?</string>
   <string name="settings_bt_rename">Rename your connected device</string>
 
   <string name="settings_hdmi_cec">HDMI-CEC</string>
