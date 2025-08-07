@@ -56,6 +56,11 @@ import static com.google.android.tv.btservices.settings.SlicesUtil.GENERAL_SLICE
 import static com.google.android.tv.btservices.settings.SlicesUtil.isFindMyRemoteButtonEnabled;
 import static com.google.android.tv.btservices.settings.SlicesUtil.BACKLIGHT_MODE_SETTING;
 import static com.google.android.tv.btservices.settings.SlicesUtil.getBacklightMode;
+import static com.google.android.tv.btservices.settings.DialogResponseActivity.DIALOG_ARG_ICON;
+import static com.google.android.tv.btservices.settings.DialogResponseActivity.DIALOG_ARG_KEY;
+import static com.google.android.tv.btservices.settings.DialogResponseActivity.DIALOG_ARG_NAME;
+import static com.google.android.tv.btservices.settings.DialogResponseActivity.DIALOG_ARG_SUMMARY;
+import static com.google.android.tv.btservices.settings.DialogResponseActivity.DIALOG_ARG_TITLE;
 
 import android.app.PendingIntent;
 import android.app.admin.DevicePolicyManager;
@@ -531,22 +536,16 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
 
         Bundle extras = new Bundle();
         Intent i = null;
-        // Update "update preference".
         if (BluetoothUtils.supportBtDeviceServiceUpdate(context, device)) {
-            i = new Intent(context, ResponseActivity.class);
             RowBuilder updatePref = new RowBuilder().setKey(KEY_UPDATE);
-            ResponseFragment.prepareArgs(
-                    extras,
-                    KEY_UPDATE,
-                    R.string.settings_bt_update,
-                    R.string.settings_bt_update_summary,
-                    0,
-                    CONT_CANCEL_ARGS,
-                    null,
-                    ResponseFragment.DEFAULT_CHOICE_UNDEFINED
-            );
-            i.putExtras(extras).putExtra(KEY_EXTRAS_DEVICE, device)
-                    .setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
+            i = new Intent(context, DialogResponseActivity.class);
+            i.putExtra(DIALOG_ARG_TITLE, R.string.settings_bt_update);
+            i.putExtra(DIALOG_ARG_SUMMARY, R.string.settings_bt_update_summary);
+            i.putExtra(DIALOG_ARG_NAME, deviceName);
+            i.putExtra(DIALOG_ARG_KEY, KEY_UPDATE);
+            i.putExtra(DIALOG_ARG_ICON, R.drawable.ic_info_compound);
+            i.putExtra(KEY_EXTRAS_DEVICE, device);
+            i.setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
             List<String> updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString(),
                     sliceUri.toString());
             PendingIntent updateSliceIntent = updateSliceIntent(getContext(), 0,
@@ -628,21 +627,13 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                         .setTitle(getString(isConnected
                                 ? R.string.bluetooth_disconnect : R.string.bluetooth_connect));
                 extras = new Bundle();
-                i = new Intent(context, ResponseActivity.class);
-                ResponseFragment.prepareArgs(
-                        extras,
-                        isConnected ? KEY_DISCONNECT : KEY_CONNECT,
-                        isConnected ? R.string.settings_bt_disconnect
-                                : R.string.settings_bt_connect,
-                        0,
-                        R.drawable.ic_baseline_bluetooth_searching_large,
-                        YES_NO_ARGS,
-                        deviceName,
-                        isConnected ? 1 /* default to NO (index 1) */ : 0 /* default to YES */
-                );
-                i.putExtras(extras)
-                        .putExtra(KEY_EXTRAS_DEVICE, device)
-                        .setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
+                i = new Intent(context, DialogResponseActivity.class);
+                i.putExtra(DIALOG_ARG_TITLE, isConnected ? R.string.settings_bt_disconnect : R.string.settings_bt_connect);
+                i.putExtra(DIALOG_ARG_NAME, deviceName);
+                i.putExtra(DIALOG_ARG_ICON, R.drawable.ic_bluetooth_compound);
+                i.putExtra(DIALOG_ARG_KEY, isConnected ? KEY_DISCONNECT : KEY_CONNECT);
+                i.putExtra(KEY_EXTRAS_DEVICE, device);
+                i.setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
                 List<String> updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString(),
                         sliceUri.toString());
                 PendingIntent updateSliceIntent = backAndUpdateSliceIntent(getContext(), 1,
@@ -686,28 +677,23 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         renamePref.setPendingIntent(renamePendingIntent);
         psb.addPreference(renamePref);
 
-        // Update "forget preference".
-        RowBuilder forgetPref = new RowBuilder()
+        // Update "Forget Preference"
+        RowBuilder forgetPref =
+            new RowBuilder()
                 .setKey(KEY_FORGET)
                 .setTitle(getString(R.string.bluetooth_forget))
                 .setActionId(0x18230000); // TvSettingsEnums.CONNECTED_SLICE_DEVICE_ENTRY_FORGET
-        extras = new Bundle();
-        i = new Intent(context, ResponseActivity.class);
-        ResponseFragment.prepareArgs(
-                extras,
-                KEY_FORGET,
-                R.string.settings_bt_forget,
-                0,
-                R.drawable.ic_baseline_bluetooth_searching_large,
-                YES_NO_ARGS,
-                deviceName,
-                1 /* default to NO (index 1) */
-        );
-        i.putExtras(extras).putExtra(KEY_EXTRAS_DEVICE, device)
-                .setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
+        i = new Intent(context, DialogResponseActivity.class);
+        i.putExtra(DIALOG_ARG_TITLE, R.string.settings_bt_forget);
+        i.putExtra(DIALOG_ARG_NAME, deviceName);
+        i.putExtra(DIALOG_ARG_ICON, R.drawable.ic_info_compound);
+        i.putExtra(DIALOG_ARG_KEY, KEY_FORGET);
+        i.putExtra(KEY_EXTRAS_DEVICE, device);
+        i.setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
         updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString(), sliceUri.toString());
-        updateSliceIntent = backAndUpdateSliceIntent(getContext(), 3,
-                new ArrayList<>(updatedUris), sliceUri.toString());
+        updateSliceIntent =
+            backAndUpdateSliceIntent(
+                getContext(), 3, new ArrayList<>(updatedUris), sliceUri.toString());
         i.putExtra(EXTRA_SLICE_FOLLOWUP, updateSliceIntent);
         PendingIntent disconnectPendingIntent = PendingIntent
                 .getActivity(context, 3, i,
