@@ -55,9 +55,12 @@
     <string name="settings_notif_depleted_battery_text" msgid="5656927974233544784">"റിമോട്ട് ഉപയോഗിക്കാൻ ബാറ്ററി മാറ്റി മറ്റൊന്ന് വയ്ക്കുക"</string>
     <string name="settings_choices_yes" msgid="791981754037655968">"ഉവ്വ്"</string>
     <string name="settings_choices_no" msgid="8559979491355839764">"ഇല്ല"</string>
-    <string name="settings_bt_disconnect" msgid="887583681642627405">"%1$s എന്നതിൽ നിന്ന് വിച്ഛേദിക്കുക"</string>
-    <string name="settings_bt_connect" msgid="486902469425565740">"%1$s എന്നതിലേക്ക് കണക്‌റ്റ് ചെയ്യുക"</string>
-    <string name="settings_bt_forget" msgid="1032095001156402398">"%1$s മറന്നു"</string>
+    <!-- no translation found for settings_bt_disconnect (4957745589640438518) -->
+    <skip />
+    <!-- no translation found for settings_bt_connect (6677433581014416847) -->
+    <skip />
+    <!-- no translation found for settings_bt_forget (6196976685969888603) -->
+    <skip />
     <string name="settings_bt_rename" msgid="477643459806883336">"കണക്റ്റ് ചെയ്‌ത ഉപകരണത്തിന്റെ പേര് മാറ്റുക"</string>
     <string name="settings_hdmi_cec" msgid="7945299353290226128">"HDMI-CEC"</string>
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"HDMI-CEC പ്രവർത്തനക്ഷമമാക്കുക"</string>

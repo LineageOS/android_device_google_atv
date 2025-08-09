@@ -55,9 +55,12 @@
     <string name="settings_notif_depleted_battery_text" msgid="5656927974233544784">"రిమోట్‌ను ఉపయోగించడానికి బ్యాటరీని రీప్లేస్ చేయండి"</string>
     <string name="settings_choices_yes" msgid="791981754037655968">"అవును"</string>
     <string name="settings_choices_no" msgid="8559979491355839764">"లేదు"</string>
-    <string name="settings_bt_disconnect" msgid="887583681642627405">"%1$s నుండి డిస్‌కనెక్ట్ చేయండి"</string>
-    <string name="settings_bt_connect" msgid="486902469425565740">"%1$sకు కనెక్ట్ చేయండి"</string>
-    <string name="settings_bt_forget" msgid="1032095001156402398">"%1$sని విస్మరించండి"</string>
+    <!-- no translation found for settings_bt_disconnect (4957745589640438518) -->
+    <skip />
+    <!-- no translation found for settings_bt_connect (6677433581014416847) -->
+    <skip />
+    <!-- no translation found for settings_bt_forget (6196976685969888603) -->
+    <skip />
     <string name="settings_bt_rename" msgid="477643459806883336">"మీ కనెక్ట్ చేసిన పరికరం పేరు మార్చండి"</string>
     <string name="settings_hdmi_cec" msgid="7945299353290226128">"HDMI-CEC"</string>
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"HDMI-CECని ప్రారంభించండి"</string>
@@ -91,7 +94,7 @@
     <string name="settings_bt_pair_title" msgid="1205942796805671508">"కొత్త పరికరాన్ని కనెక్ట్ చేయండి"</string>
     <string name="pair_device_description" msgid="5145574754576245361">"కొత్త బ్లూటూత్ పరికరాలను కనెక్ట్ చేసే ముందు, అవి పెయిరింగ్ మోడ్‌లోనే ఉన్నాయని నిర్ధారించుకోండి. \'%1$s\' ను కనెక్ట్ చేయడానికి, 3 సెకన్ల పాటు \'%2$s + %3$s\'ను నొక్కి, పట్టుకోండి."</string>
     <string name="pair_device_device_name" msgid="4004194247588260613">"Android టీవీ రిమోట్"</string>
-    <string name="settings_bt_available_devices" msgid="6237789711837183219">"అందుబాటులో ఉన్న పరికరాలు"</string>
+    <string name="settings_bt_available_devices" msgid="6237789711837183219">"అందుబాటులో ఉన్న డివైజ్‌లు"</string>
     <string name="settings_bt_empty_text" msgid="6228875847390369960">"పరికరాల కోసం వెతుకుతోంది…"</string>
     <string name="settings_bt_pair_status_error" msgid="4153213506048075994">"ఎర్రర్"</string>
     <string name="settings_bt_pair_status_connecting" msgid="1438458595123669762">"కనెక్ట్ అవుతోంది…"</string>
