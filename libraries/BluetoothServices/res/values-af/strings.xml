@@ -55,12 +55,9 @@
     <string name="settings_notif_depleted_battery_text" msgid="5656927974233544784">"Vervang battery om afstandbeheerder te gebruik"</string>
     <string name="settings_choices_yes" msgid="791981754037655968">"Ja"</string>
     <string name="settings_choices_no" msgid="8559979491355839764">"Nee"</string>
-    <!-- no translation found for settings_bt_disconnect (4957745589640438518) -->
-    <skip />
-    <!-- no translation found for settings_bt_connect (6677433581014416847) -->
-    <skip />
-    <!-- no translation found for settings_bt_forget (6196976685969888603) -->
-    <skip />
+    <string name="settings_bt_disconnect" msgid="4957745589640438518">"Ontkoppel van %1$s?"</string>
+    <string name="settings_bt_connect" msgid="6677433581014416847">"Koppel aan %1$s?"</string>
+    <string name="settings_bt_forget" msgid="6196976685969888603">"Vergeet %1$s?"</string>
     <string name="settings_bt_rename" msgid="477643459806883336">"Hernoem jou gekoppelde toestel"</string>
     <string name="settings_hdmi_cec" msgid="7945299353290226128">"HDMI-CEC"</string>
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"Aktiveer HDMI-CEC"</string>
