@@ -797,13 +797,16 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         psb.addPreference(new RowBuilder()
                 .setTitle(getString(R.string.settings_enable_hdmi_cec))
                 .setActionId(0x18310000) // TvSettingsEnums.CONNECTED_SLICE_HDMICEC_ON_OFF
+                .setInfoSummary(String.format("%s%n%s",
+                    getString(R.string.settings_cec_explain),
+                    getString(R.string.settings_cec_feature_names)))
                 .addSwitch(pendingIntent, null, isEnabled));
-        psb.addPreference(new RowBuilder()
-                .setTitle(getString(R.string.settings_cec_explain))
-                .setEnabled(false));
-        psb.addPreference(new RowBuilder()
-                .setTitle(getString(R.string.settings_cec_feature_names))
-                .setEnabled(false));
+        // psb.addPreference(new RowBuilder()
+        //         .setTitle(getString(R.string.settings_cec_explain))
+        //         .setEnabled(false));
+        // psb.addPreference(new RowBuilder()
+        //         .setTitle(getString(R.string.settings_cec_feature_names))
+        //         .setEnabled(false));
 
         // Allow the user to choose the behavior of their device when losing active source.
         // This setting should be visible only on playback devices (OTTs/STBs) and it should be
