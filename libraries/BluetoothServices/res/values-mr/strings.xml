@@ -55,12 +55,9 @@
     <string name="settings_notif_depleted_battery_text" msgid="5656927974233544784">"रिमोट वापरण्यासाठी बॅटरी बदला"</string>
     <string name="settings_choices_yes" msgid="791981754037655968">"होय"</string>
     <string name="settings_choices_no" msgid="8559979491355839764">"नाही"</string>
-    <!-- no translation found for settings_bt_disconnect (4957745589640438518) -->
-    <skip />
-    <!-- no translation found for settings_bt_connect (6677433581014416847) -->
-    <skip />
-    <!-- no translation found for settings_bt_forget (6196976685969888603) -->
-    <skip />
+    <string name="settings_bt_disconnect" msgid="4957745589640438518">"%1$s वरून डिस्कनेक्ट करायचे आहे का?"</string>
+    <string name="settings_bt_connect" msgid="6677433581014416847">"%1$s शी कनेक्ट करायचे आहे का?"</string>
+    <string name="settings_bt_forget" msgid="6196976685969888603">"%1$s विसरायचे आहे का?"</string>
     <string name="settings_bt_rename" msgid="477643459806883336">"कनेक्‍ट केलेल्या डिव्‍हाइसचे नाव बदला"</string>
     <string name="settings_hdmi_cec" msgid="7945299353290226128">"HDMI-CEC"</string>
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"HDMI-CEC सुरू करा"</string>

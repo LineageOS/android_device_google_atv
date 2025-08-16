@@ -55,12 +55,9 @@
     <string name="settings_notif_depleted_battery_text" msgid="5656927974233544784">"ರಿಮೋಟ್ ಬಳಸಲು ಬ್ಯಾಟರಿಯನ್ನು ಬದಲಾಯಿಸಿ"</string>
     <string name="settings_choices_yes" msgid="791981754037655968">"ಹೌದು"</string>
     <string name="settings_choices_no" msgid="8559979491355839764">"ಇಲ್ಲ"</string>
-    <!-- no translation found for settings_bt_disconnect (4957745589640438518) -->
-    <skip />
-    <!-- no translation found for settings_bt_connect (6677433581014416847) -->
-    <skip />
-    <!-- no translation found for settings_bt_forget (6196976685969888603) -->
-    <skip />
+    <string name="settings_bt_disconnect" msgid="4957745589640438518">"%1$s ನಿಂದ ಡಿಸ್‌ಕನೆಕ್ಟ್ ಮಾಡಬೇಕೇ?"</string>
+    <string name="settings_bt_connect" msgid="6677433581014416847">"%1$s ಗೆ ಕನೆಕ್ಟ್ ಮಾಡಬೇಕೇ?"</string>
+    <string name="settings_bt_forget" msgid="6196976685969888603">"%1$s ಅನ್ನು ಮರೆತಿದ್ದೀರಾ?"</string>
     <string name="settings_bt_rename" msgid="477643459806883336">"ಸಂಪರ್ಕಗೊಂಡಿರುವ ನಿಮ್ಮ ಸಾಧನವನ್ನು ಮರುಹೆಸರಿಸಿ"</string>
     <string name="settings_hdmi_cec" msgid="7945299353290226128">"HDMI-CEC"</string>
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"HDMI-CEC ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ"</string>
