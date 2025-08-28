@@ -17,10 +17,6 @@ PRODUCT_IS_ATV_SDK := true
 
 $(call inherit-product, device/google/atv/products/aosp_tv_arm64.mk)
 
-# keep this apk for sdk targets for now
-PRODUCT_PACKAGES += \
-    EmulatorSmokeTests
-
 # Overrides
 PRODUCT_BRAND := Android
 PRODUCT_NAME := sdk_atv64_arm64
