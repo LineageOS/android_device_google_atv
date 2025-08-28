@@ -20,10 +20,6 @@ QEMU_USE_SYSTEM_EXT_PARTITIONS := true
 
 $(call inherit-product, device/google/atv/products/aosp_tv_arm.mk)
 
-# keep this apk for sdk targets for now
-PRODUCT_PACKAGES += \
-    EmulatorSmokeTests
-
 # Overrides
 PRODUCT_BRAND := Android
 PRODUCT_NAME := sdk_atv_armv7
