@@ -31,15 +31,21 @@ import static com.google.android.tv.btservices.settings.SlicesUtil.GENERAL_SLICE
 import static com.google.android.tv.btservices.settings.SlicesUtil.notifyToGoBack;
 import static com.google.android.tv.btservices.settings.SlicesUtil.setFindMyRemoteButtonEnabled;
 import static com.google.android.tv.btservices.settings.SlicesUtil.setBacklightMode;
+import static com.google.android.tv.btservices.settings.SlicesUtil.EXTRAS_DIRECTION;
+import static com.google.android.tv.btservices.settings.SlicesUtil.DIRECTION_BACK;
 
 import android.app.PendingIntent;
+import android.app.ProgressDialog;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 
+import android.view.WindowManager;
 import com.google.android.tv.btservices.BluetoothUtils;
 import com.google.android.tv.btservices.PowerUtils;
 import com.google.android.tv.btservices.R;
@@ -72,8 +78,17 @@ public class SliceBroadcastReceiver extends BroadcastReceiver {
     private static final String ACTION_BACK_AND_UPDATE_SLICE = "BACK_AND_UPDATE_SLICE";
     private static final String PARAM_URIS = "URIS";
 
+    // Bluetooth off is handled differently by ResponseActivity with confirmation dialog.
+    static final String BLUETOOTH_ON = "BLUETOOTH_ON";
+
+    private ProgressDialog mProgress;
+    private static final int MSG_ENABLE_BLUETOOTH_SWITCH = 0;
+    private static final int TIME_DELAYED = 50;
+    private static Context mContext;
+
     @Override
     public void onReceive(Context context, Intent intent) {
+        mContext = context;
         final String action = intent.getAction();
         if (action == null) {
             return;
@@ -122,6 +137,14 @@ public class SliceBroadcastReceiver extends BroadcastReceiver {
                     } catch (Throwable ex) {
                         Log.e(TAG, "Followup PendingIntent for slice cannot be sent", ex);
                     }
+                } else if (BLUETOOTH_ON.equals(intent.getStringExtra(TOGGLE_TYPE))) {
+                    if (BluetoothUtils.getDefaultBluetoothAdapter() != null) {
+                        BluetoothUtils.getDefaultBluetoothAdapter().enable();
+                    }
+                    mProgress = new ProgressDialog(context);
+                    showBlueToothConnectionDialog(mProgress,
+                            context.getString(R.string.settings_bt_update_please_wait));
+                    mHandler.sendEmptyMessageDelayed(MSG_ENABLE_BLUETOOTH_SWITCH, TIME_DELAYED);
                 }
                 break;
             }
@@ -157,6 +180,7 @@ public class SliceBroadcastReceiver extends BroadcastReceiver {
             default:
                 // no-op
         }
+
     }
 
     public static PendingIntent updateSliceIntent(Context context, int requestCode,
@@ -207,4 +231,34 @@ public class SliceBroadcastReceiver extends BroadcastReceiver {
         return PendingIntent.getBroadcast(context, 0, intent,
                 PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
     }
+
+    private void showBlueToothConnectionDialog(ProgressDialog progressDialog,
+                                               String blueToothDialogMessage) {
+        progressDialog.setMessage(blueToothDialogMessage);
+        progressDialog.setIndeterminate(false);
+        progressDialog.getWindow().setType(WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY);
+        if (progressDialog != null && !progressDialog.isShowing()) {
+            progressDialog.show();
+        }
+    }
+
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case MSG_ENABLE_BLUETOOTH_SWITCH:
+                    if (mProgress != null && mProgress.isShowing()
+                            && BluetoothUtils.isBluetoothEnabled()) {
+                        mContext.getContentResolver()
+                                .notifyChange(GENERAL_SLICE_URI, null);
+                        mProgress.dismiss();
+                    } else {
+                        mHandler.sendEmptyMessageDelayed(MSG_ENABLE_BLUETOOTH_SWITCH, TIME_DELAYED);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
 }

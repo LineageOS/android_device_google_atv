@@ -88,6 +88,10 @@ public class BluetoothUtils {
                 context.getResources().getStringArray(R.array.bt_device_service_updatable_labels)));
     }
 
+    public static boolean isBluetoothEnabled() {
+        return getDefaultBluetoothAdapter() != null && getDefaultBluetoothAdapter().isEnabled();
+    }
+
     public static boolean isConnected(BluetoothDevice device) {
         if (device == null) {
             return false;

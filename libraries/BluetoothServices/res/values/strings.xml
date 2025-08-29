@@ -16,6 +16,11 @@
   -->
 <resources>
 
+  <!-- The title for the Bluetooth toggle [CHAR LIMIT=20] -->
+  <string name="bluetooth_toggle_title">Bluetooth</string>
+  <string name="bluetooth_toggle_confirmation_dialog_title">Turn off Bluetooth</string>
+  <string name="bluetooth_toggle_confirmation_dialog_summary">You will not be able to
+           access voice assistant from your remote while Bluetooth is off.</string>
   <string name="battery_not_available">N/A</string>
   <string name="battery_level_critical">Critical</string>
   <string name="battery_level_low">Low</string>
