@@ -17,6 +17,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="bluetooth_toggle_title" msgid="3808904783456336104">"Bluetooth-i"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_title" msgid="3906746631391295717">"Çaktivizo Bluetooth-in"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_summary" msgid="2129842434432539594">"Nuk do të mund të qasesh tek asistenti zanor nga telekomanda jote ndërkohë që Bluetooth-i është joaktiv."</string>
     <string name="battery_not_available" msgid="5120583262792310269">"Nuk zbatohet"</string>
     <string name="battery_level_critical" msgid="1217236822824234202">"Kritik"</string>
     <string name="battery_level_low" msgid="8156936236696805171">"I ulët"</string>
