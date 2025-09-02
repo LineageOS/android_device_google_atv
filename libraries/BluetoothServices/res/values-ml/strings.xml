@@ -17,9 +17,12 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="bluetooth_toggle_title" msgid="3808904783456336104">"Bluetooth"</string>
-    <string name="bluetooth_toggle_confirmation_dialog_title" msgid="3906746631391295717">"Bluetooth ഓഫാക്കുക"</string>
-    <string name="bluetooth_toggle_confirmation_dialog_summary" msgid="2129842434432539594">"ബ്ലൂടൂത്ത് ഓഫായിരിക്കുമ്പോൾ നിങ്ങളുടെ റിമോട്ടിൽ നിന്ന് വോയ്സ് അസിസ്റ്റന്റ് ആക്‌സസ് ചെയ്യാനാകില്ല."</string>
+    <!-- no translation found for bluetooth_toggle_title (7561336055603119271) -->
+    <skip />
+    <!-- no translation found for bluetooth_toggle_confirmation_dialog_title (9179697353016289617) -->
+    <skip />
+    <!-- no translation found for bluetooth_toggle_confirmation_dialog_summary (2779137494595804572) -->
+    <skip />
     <string name="battery_not_available" msgid="5120583262792310269">"N/A"</string>
     <string name="battery_level_critical" msgid="1217236822824234202">"ബാറ്ററി നില ക്രിട്ടിക്കലാണ്"</string>
     <string name="battery_level_low" msgid="8156936236696805171">"ബാറ്ററി നില കുറവാണ്"</string>
