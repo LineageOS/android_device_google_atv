@@ -38,10 +38,6 @@ PRODUCT_IS_ATV := true
 PRODUCT_PACKAGES += \
     TvProvider
 
-# TV services extension
-PRODUCT_PACKAGES += tv-services
-PRODUCT_SYSTEM_SERVER_JARS_EXTRA += tv-services
-
 # PRODUCT_SUPPORTS_TUNER: Whether the product hardware tuner. When 'false',
 # we drop mediatuner, which saves ~4 MiB of RAM. When 'true', the tuner HAL
 # should be implemented in vendor partition and android.hardware.tv.tuner
