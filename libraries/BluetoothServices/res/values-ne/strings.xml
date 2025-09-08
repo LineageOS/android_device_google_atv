@@ -17,12 +17,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- no translation found for bluetooth_toggle_title (7561336055603119271) -->
-    <skip />
-    <!-- no translation found for bluetooth_toggle_confirmation_dialog_title (9179697353016289617) -->
-    <skip />
-    <!-- no translation found for bluetooth_toggle_confirmation_dialog_summary (2779137494595804572) -->
-    <skip />
+    <string name="bluetooth_toggle_title" msgid="7561336055603119271">"ब्लुटुथ"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_title" msgid="9179697353016289617">"ब्लुटुथ अफ गर्नुहोस्"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_summary" msgid="2779137494595804572">"ब्लुटुथ अफ भएका बेला तपाईं आफ्नो रिमोटमार्फत भ्वाइस एसिस्टेन्ट एक्सेस गर्न सक्नु हुने छैन।"</string>
     <string name="battery_not_available" msgid="5120583262792310269">"छैन"</string>
     <string name="battery_level_critical" msgid="1217236822824234202">"अत्यन्तै कम छ"</string>
     <string name="battery_level_low" msgid="8156936236696805171">"कम छ"</string>

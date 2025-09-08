@@ -17,12 +17,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- no translation found for bluetooth_toggle_title (7561336055603119271) -->
-    <skip />
-    <!-- no translation found for bluetooth_toggle_confirmation_dialog_title (9179697353016289617) -->
-    <skip />
-    <!-- no translation found for bluetooth_toggle_confirmation_dialog_summary (2779137494595804572) -->
-    <skip />
+    <string name="bluetooth_toggle_title" msgid="7561336055603119271">"ब्लूटूथ"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_title" msgid="9179697353016289617">"ब्लूटूथ बंद करें"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_summary" msgid="2779137494595804572">"ब्लूटूथ बंद होने पर, आवाज़ से डिवाइस का इस्तेमाल करने की सुविधा को रिमोट से ऐक्सेस नहीं किया जा सकेगा."</string>
     <string name="battery_not_available" msgid="5120583262792310269">"जानकारी नहीं है"</string>
     <string name="battery_level_critical" msgid="1217236822824234202">"बहुत कम"</string>
     <string name="battery_level_low" msgid="8156936236696805171">"कम"</string>
