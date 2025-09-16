@@ -795,6 +795,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent,
                 FLAG_IMMUTABLE | FLAG_UPDATE_CURRENT);
         psb.addPreference(new RowBuilder()
+                .setKey("KEY_TOGGLE_CEC")
                 .setTitle(getString(R.string.settings_enable_hdmi_cec))
                 .setActionId(0x18310000) // TvSettingsEnums.CONNECTED_SLICE_HDMICEC_ON_OFF
                 .setInfoSummary(String.format("%s%n%s",
@@ -823,6 +824,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                     context, 1, intentGoToSleepOnActiveSourceLost,
                     FLAG_IMMUTABLE | FLAG_UPDATE_CURRENT);
             psb.addPreference(new RowBuilder()
+                    .setKey("KEY_TOGGLE_SLEEP_ON_ACTIVE_SOURCE_LOST")
                     .setTitle(getString(
                             R.string.settings_cec_go_to_sleep_on_active_source_lost_title))
                     .setInfoSummary(getString(
