@@ -29,7 +29,9 @@ PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 # Use TV specific preloaded classes for the boot classpath, determines which
 # methods from the boot classpath get optimized, which class is included in
 # the boot .art image, and how the corresponding DEX files are laid out.
-PRODUCT_COPY_FILES += device/google/atv/products/lowram_boot_profiles/preloaded-classes:system/etc/preloaded-classes
+$(call soong_config_set_bool,frameworks_config,use_default_preloaded_classes,false)
+PRODUCT_SOONG_NAMESPACES += device/google/atv/products/lowram_boot_profiles
+PRODUCT_PACKAGES += preloaded-classes
 
 # Use TV specific profile for the boot classpath, determines which methods
 # from the boot classpath get optimized, which class is included in the boot
