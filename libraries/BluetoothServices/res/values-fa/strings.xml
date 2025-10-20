@@ -17,6 +17,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="bluetooth_toggle_title" msgid="7561336055603119271">"بلوتوث"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_title" msgid="9179697353016289617">"خاموش کردن بلوتوث"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_summary" msgid="2779137494595804572">"وقتی بلوتوث خاموش است، نمی‌توانید ازطریق کنترل از دور به دستیار صوتی دسترسی پیدا کنید."</string>
     <string name="battery_not_available" msgid="5120583262792310269">"موجود نیست"</string>
     <string name="battery_level_critical" msgid="1217236822824234202">"بحرانی"</string>
     <string name="battery_level_low" msgid="8156936236696805171">"کم"</string>
@@ -41,7 +44,7 @@
     <string name="settings_remote_serial_number_label" msgid="7591347399882767241">"نشانی بلوتوث"</string>
     <string name="settings_bt_battery_low" msgid="3547517382697124858">"لطفاً باتری را تعویض کنید"</string>
     <string name="settings_bt_battery_low_warning" msgid="721091326401791089">"باتری ضعیف است"</string>
-    <string name="connected_devices_pref_title" msgid="8985364841073196008">"دستگاه‌های متصل"</string>
+    <string name="connected_devices_pref_title" msgid="8985364841073196008">"دستگاه‌های متصل‌شده"</string>
     <string name="connected_devices_slice_pref_title" msgid="8637777961277201747">"کنترل ازراه‌دور و لوازم جانبی"</string>
     <string name="settings_notif_update_title" msgid="4767043003900594863">"به‌روزرسانی کنترل ازراه‌دور"</string>
     <string name="settings_notif_update_text" msgid="1092279154776177720">"آماده نصب"</string>

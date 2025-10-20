@@ -28,6 +28,10 @@ PRODUCT_PACKAGES += \
     TvFrameworkPackageStubs \
     TvSettings
 
+# TV services extension
+PRODUCT_PACKAGES += tv-services tv-services-client
+PRODUCT_SYSTEM_SERVER_JARS_EXTRA += system_ext:tv-services
+
 ifeq ($(MDNS_OFFLOAD_SUPPORT),true)
     PRODUCT_PACKAGES += MdnsOffloadManagerService
 endif

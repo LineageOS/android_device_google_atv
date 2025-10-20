@@ -17,6 +17,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="bluetooth_toggle_title" msgid="7561336055603119271">"Bluetooth"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_title" msgid="9179697353016289617">"Անջատել Bluetooth-ը"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_summary" msgid="2779137494595804572">"Bluetooth-ն անջատելու դեպքում դուք չեք կարողանա բացել ձայնային օգնականը հեռակառավարման վահանակից։"</string>
     <string name="battery_not_available" msgid="5120583262792310269">"Կիրառելի չէ"</string>
     <string name="battery_level_critical" msgid="1217236822824234202">"Կրիտիկական"</string>
     <string name="battery_level_low" msgid="8156936236696805171">"Ցածր"</string>
@@ -41,7 +44,7 @@
     <string name="settings_remote_serial_number_label" msgid="7591347399882767241">"Bluetooth հասցե"</string>
     <string name="settings_bt_battery_low" msgid="3547517382697124858">"Փոխեք մարտկոցը"</string>
     <string name="settings_bt_battery_low_warning" msgid="721091326401791089">"Մարտկոցի լիցքը քիչ է"</string>
-    <string name="connected_devices_pref_title" msgid="8985364841073196008">"Միացված սարքեր"</string>
+    <string name="connected_devices_pref_title" msgid="8985364841073196008">"Կապակցված սարքեր"</string>
     <string name="connected_devices_slice_pref_title" msgid="8637777961277201747">"Հեռակառավարման վահանակներ և լրասարքեր"</string>
     <string name="settings_notif_update_title" msgid="4767043003900594863">"Թարմացրեք հեռակառավարիչը"</string>
     <string name="settings_notif_update_text" msgid="1092279154776177720">"Պատրաստ է տեղադրման"</string>
@@ -58,7 +61,7 @@
     <string name="settings_bt_disconnect" msgid="4957745589640438518">"Անջատե՞լ %1$s սարքից"</string>
     <string name="settings_bt_connect" msgid="6677433581014416847">"Միացնե՞լ %1$s սարքին"</string>
     <string name="settings_bt_forget" msgid="6196976685969888603">"Հեռացնե՞լ %1$s սարքը"</string>
-    <string name="settings_bt_rename" msgid="477643459806883336">"Վերանվանել միացված սարքը"</string>
+    <string name="settings_bt_rename" msgid="477643459806883336">"Վերանվանել կապակցված սարքը"</string>
     <string name="settings_hdmi_cec" msgid="7945299353290226128">"HDMI-CEC"</string>
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"Միացնել HDMI-CEC-ը"</string>
     <string name="settings_cec_explain" msgid="282126756909187653">"Սարքերը, որոնք համատեղելի են HDMI-CEC հաղորդակարգի հետ, հնարավոր է կառավարել և ավտոմատ միացնել/անջատել մեկ հեռակառավարիչի միջոցով։\n\nՆշում. Համոզվեք, որ հաղորդակարգը միացված է հեռուստացույցում և մյուս HDMI սարքերում։ Տարբեր արտադրողներ HDMI-CEC հաղորդակարգի համար տարբեր անվանումներ են օգտագործում, օրինակ՝"</string>

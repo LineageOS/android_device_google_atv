@@ -90,6 +90,7 @@ public class MdnsOffloadManagerService extends Service {
     private BroadcastReceiver screenBroadcastReceiver;
 
     private NsdManagerWrapper mNsdManager;
+    private boolean mIsInitialized = false;
 
     public MdnsOffloadManagerService() {
         this(new Injector());
@@ -175,6 +176,16 @@ public class MdnsOffloadManagerService extends Service {
     public void onCreate() {
         Log.d(TAG, "onCreate()");
         super.onCreate();
+
+        PowerManager powerManager = getSystemService(PowerManager.class);
+
+        // Check if Low Power Standby is supported. Stop the service if it's not supported.
+        if (powerManager == null || !powerManager.isLowPowerStandbySupported()) {
+            Log.w(TAG, "Low Power Standby is not supported on this device. Stopping service.");
+            stopSelf();
+            return;
+        }
+
         mHandler = new Handler(mInjector.getLooper());
         mPriorityListManager = new PriorityListManager(mInjector.getResources());
         mOffloadIntentStore = new OffloadIntentStore(mPriorityListManager);
@@ -189,15 +200,19 @@ public class MdnsOffloadManagerService extends Service {
         setupScreenBroadcastReceiver();
         setupConnectivityListener();
         setupStandbyPolicyListener();
+        mIsInitialized = true;
     }
 
     @Override
     public void onDestroy() {
-        // Unregister the receiver to avoid memory leaks
-        unregisterReceiver(lowPowerStandbyPolicyReceiver);
-        unregisterReceiver(screenBroadcastReceiver);
-        mConnectivityManager.unregisterNetworkCallback(mNetworkCallback);
-        mInjector.unbindService(mVendorServiceConnection);
+        if (mIsInitialized) {
+            // Unregister the receiver to avoid memory leaks
+            unregisterReceiver(lowPowerStandbyPolicyReceiver);
+            unregisterReceiver(screenBroadcastReceiver);
+            mConnectivityManager.unregisterNetworkCallback(mNetworkCallback);
+            mInjector.unbindService(mVendorServiceConnection);
+            mIsInitialized = false;
+        }
         super.onDestroy();
     }
 
