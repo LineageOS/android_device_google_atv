@@ -37,7 +37,7 @@
     <string name="settings_bt_update_please_wait" msgid="8029641271132945499">"कृपया पर्खनुहोस्"</string>
     <string name="settings_bt_update_needs_repair" msgid="1310917691218455907">"आफ्नो रिमोटलाई फेरि कनेक्ट गर्नुहोस्"</string>
     <string name="settings_enabled" msgid="431464375814187683">"सक्षम पारियो"</string>
-    <string name="settings_disabled" msgid="1459717258643130682">"असक्षम पारियो"</string>
+    <string name="settings_disabled" msgid="1459717258643130682">"अफ गरिएको छ"</string>
     <string name="settings_remote_battery_level_label" msgid="3644348379742819020">"ब्याट्रीको स्तर"</string>
     <string name="settings_remote_battery_level_percentage_label" msgid="7301487906665476276">"%1$d%%"</string>
     <string name="settings_remote_firmware_label" msgid="2132403094910284670">"फर्मवेयर"</string>

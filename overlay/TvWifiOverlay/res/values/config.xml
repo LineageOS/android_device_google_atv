@@ -44,4 +44,8 @@
 
     <!-- Integer for maximum number of channels to use in initial partial scan. If equals to 0, means add all available channels for networks -->
     <integer translatable="false" name="config_wifiInitialPartialScanChannelMaxCount">4</integer>
+
+    <!-- Disable verbose logging by default on userdebug and eng builds.
+    This saves up to 600KB of heap memory. -->
+    <integer translatable="false" name="config_wifiVerboseLoggingAlwaysOnLevel">0</integer>
 </resources>
