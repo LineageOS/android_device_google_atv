@@ -210,4 +210,7 @@
 
     <!-- Bytes that the PinnerService will pin for Home app. -->
     <integer name="config_pinnerHomePinBytes">0</integer>
+
+    <!-- Retention policy: number of records to kept for the historical start info per package. -->
+    <integer name="config_app_start_info_history_list_size">1</integer>
 </resources>
