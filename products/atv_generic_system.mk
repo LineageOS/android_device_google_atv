@@ -48,7 +48,8 @@ PRODUCT_PACKAGES += \
     liblz4 \
     libminui \
     libnl \
-    libprotobuf-cpp-full
+    libprotobuf-cpp-full \
+    libssl
 
 # These libraries are empty and have been combined into libhidlbase, but are still depended
 # on by things off /system.
