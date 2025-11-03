@@ -73,7 +73,7 @@
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Fernbedienung finden"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Du kannst auf deiner Google TV-Fernbedienung einen Ton wiedergeben lassen, wenn du sie verlegt hast"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Drück die Taste auf der Rückseite deines Google TV Streamers, um 30 Sekunden lang einen Ton auf deiner Fernbedienung wiedergeben zu lassen. Dafür ist eine Google TV Streamer-Sprachfernbedienung erforderlich.\n\nDrücke zum Beenden der Wiedergabe eine beliebige Taste auf deiner Fernbedienung."</string>
-    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Wenn diese Option aktiviert ist, kannst du über die Schaltfläche auf deinem Gerät einen Ton wiedergeben lassen, um deine Fernbedienung zu finden. Ist sie deaktiviert, funktioniert die Schaltfläche nicht. Du kannst „Finde meine Fernbedienung“ jedoch mit anderen Methoden verwenden."</string>
+    <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Wenn diese Option aktiviert ist, kannst du über den Button auf deinem Gerät einen Ton wiedergeben lassen, um deine Fernbedienung zu finden. Ist sie deaktiviert, funktioniert der Button nicht. Du kannst „Finde meine Fernbedienung“ jedoch mit anderen Methoden verwenden."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Ton abspielen"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Akkustand: %1$s"</string>
     <string name="settings_remote_serial_number" msgid="7821496079279473563">"Bluetooth-Adresse: %1$s"</string>
