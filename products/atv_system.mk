@@ -61,7 +61,6 @@ PRODUCT_PACKAGES += \
     KeyChain \
     librs_jni \
     PacProcessor \
-    PrintSpooler \
     ProxyHandler \
     SharedStorageBackup \
     screenrecord \
