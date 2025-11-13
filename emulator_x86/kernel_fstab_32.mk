@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2020 The Android Open Source Project
+# Copyright (C) 2023 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,8 +13,12 @@
 # limitations under the License.
 #
 
-PRODUCT_SOONG_NAMESPACES += device/generic/goldfish # for libwifi-hal-emu
+# This file adds the x86_64 kernel and fstab only, it is used on 32bit userspace
+# devices (which is currently ATV only).
 
-ifdef NET_ETH0_STARTONBOOT
-  PRODUCT_VENDOR_PROPERTIES += net.eth0.startonboot=1
-endif
+include device/google/atv/emulator_x86/x86_64.mk
+
+PRODUCT_COPY_FILES += \
+    $(EMULATOR_KERNEL_FILE):kernel-ranchu-64 \
+    device/generic/goldfish/board/fstab/x86:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.ranchu \
+    device/generic/goldfish/board/fstab/x86:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.ranchu

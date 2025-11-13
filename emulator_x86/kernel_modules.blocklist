@@ -1,0 +1,4 @@
+blocklist vkms.ko
+# When enabled, hijacks the first audio device that's expected to be backed by
+# virtio-snd. See also: aosp/3391025
+blocklist snd-aloop.ko

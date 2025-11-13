@@ -18,6 +18,7 @@
 
 # Release Configuration map
 PRODUCT_RELEASE_CONFIG_MAPS += $(wildcard vendor/google_shared/tv/release/release_config_map.textproto)
+PRODUCT_RELEASE_CONFIG_MAPS += $(wildcard vendor/google_shared/tv/release/gms_mainline/required/release_config_map.textproto)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/media_system.mk)
 
@@ -99,10 +100,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Update Display.getDeviceProductInfo() on hotplug
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.update_device_product_info_on_hotplug_reconnect=1
-
-# Copy .kl file for generic voice remotes
-PRODUCT_COPY_FILES += \
-    device/google/atv/Generic.kl:system/usr/keylayout/Generic.kl
 
 PRODUCT_COPY_FILES += \
     device/google/atv/permissions/tv_core_hardware.xml:system/etc/permissions/tv_core_hardware.xml
