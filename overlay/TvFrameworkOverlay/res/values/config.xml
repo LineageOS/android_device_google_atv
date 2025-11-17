@@ -213,4 +213,7 @@
 
     <!-- Retention policy: number of records to kept for the historical start info per package. -->
     <integer name="config_app_start_info_history_list_size">1</integer>
+
+    <!-- Enable or disable android.companion.virtual.VirtualDeviceManager. Enabled by default. -->
+    <bool name="config_enableVirtualDeviceManager">false</bool>
 </resources>
