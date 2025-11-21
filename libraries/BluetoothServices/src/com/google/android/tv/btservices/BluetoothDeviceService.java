@@ -30,6 +30,7 @@ import android.content.IntentFilter;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.content.SharedPreferences;
 import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
@@ -54,6 +55,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -68,6 +70,9 @@ public abstract class BluetoothDeviceService
     private static final String USER_SETUP_COMPLETE = "user_setup_complete";
     private static final String TV_USER_SETUP_COMPLETE = "tv_user_setup_complete";
     private static final String FASTPAIR_PROCESS = "com.google.android.gms.ui";
+
+    private static final String PREF_A2DP_DEVICES_CACHE = "pref_a2dp_devices_cache";
+    private static final String KEY_CONNECTED_A2DP_DEVICES = "key_connected_a2dp_devices";
 
     private static final long BATTERY_VALIDITY_PERIOD_MS =
             TimeUnit.MILLISECONDS.convert(5, TimeUnit.MINUTES);
@@ -121,7 +126,7 @@ public abstract class BluetoothDeviceService
                 switch (action) {
                     case BluetoothA2dp.ACTION_CONNECTION_STATE_CHANGED:
                         int state = intent.getIntExtra(BluetoothProfile.EXTRA_STATE, -1);
-                        mHandler.post(() -> onA2dpConnectionStateChanged(device.getName(), state));
+                        mHandler.post(() -> onA2dpConnectionStateChanged(device, state));
                         break;
                     case BluetoothDevice.ACTION_ACL_CONNECTED:
                         Log.i(TAG, "acl connected " + device);
@@ -217,9 +222,24 @@ public abstract class BluetoothDeviceService
         return curDevice;
     }
 
-    private static void forgetDevice(BluetoothDevice device) {
-        if (device == null || !device.removeBond()) {
+    private static void forgetDevice(Context context, BluetoothDevice device) {
+        if (device == null) {
+            return;
+        }
+
+        String deviceAddress = device.getAddress();
+        String deviceName  = device.getName();
+
+        if (!device.removeBond()) {
             Log.w(TAG, "failed to remove bond: " + device);
+            return;
+        }
+
+        // Cache forgetting a2dp devices name.
+        SharedPreferences prefs = context.getSharedPreferences(PREF_A2DP_DEVICES_CACHE, Context.MODE_PRIVATE);
+        Set<String> a2dpDevices = prefs.getStringSet(KEY_CONNECTED_A2DP_DEVICES, new HashSet<>());
+        if (a2dpDevices.contains(deviceAddress)) {
+            prefs.edit().putString(deviceAddress, deviceName).apply();
         }
     }
 
@@ -572,25 +592,52 @@ public abstract class BluetoothDeviceService
         });
     }
 
-    private void onA2dpConnectionStateChanged(String deviceName, int connectionStatus) {
-        // Avoiding showing Toast while Fastpair is in Foreground.
-        if (fastPairInForeground()) {
+    private void onA2dpConnectionStateChanged(BluetoothDevice device, int connectionStatus) {
+        if (device == null || device.getAddress() == null) {
             return;
         }
+
+        SharedPreferences prefs = getApplicationContext().getSharedPreferences(PREF_A2DP_DEVICES_CACHE, Context.MODE_PRIVATE);
+        String deviceAddress = device.getAddress();
+        String deviceName = device.getName();
         String resStr;
         String text;
+
         switch (connectionStatus) {
             case BluetoothProfile.STATE_CONNECTED:
-                resStr = getResources().getString(R.string.settings_bt_pair_toast_connected);
-                text = String.format(resStr, deviceName);
-                Toast.makeText(BluetoothDeviceService.this.getApplicationContext(),
-                        text, Toast.LENGTH_SHORT).show();
+                // Cache connected a2dp devices.
+                Set<String> a2dpDevices = new HashSet<>(prefs.getStringSet(KEY_CONNECTED_A2DP_DEVICES, new HashSet<>()));
+                if (a2dpDevices.add(deviceAddress)) {
+                    prefs.edit().putStringSet(KEY_CONNECTED_A2DP_DEVICES, a2dpDevices).apply();
+                }
+
+                // Avoiding showing Toast while Fastpair is in Foreground.
+                if (!fastPairInForeground()) {
+                    resStr = getResources().getString(R.string.settings_bt_pair_toast_connected);
+                    text = String.format(resStr, deviceName);
+                    Toast.makeText(BluetoothDeviceService.this.getApplicationContext(),
+                            text, Toast.LENGTH_SHORT).show();
+                }
                 break;
             case BluetoothProfile.STATE_DISCONNECTED:
-                resStr = getResources().getString(R.string.settings_bt_pair_toast_disconnected);
-                text = String.format(resStr, deviceName);
-                Toast.makeText(BluetoothDeviceService.this.getApplicationContext(),
-                        text, Toast.LENGTH_SHORT).show();
+                Set<String> updatedA2dpDevices = new HashSet<>(prefs.getStringSet(KEY_CONNECTED_A2DP_DEVICES, new HashSet<>()));
+                if (updatedA2dpDevices.remove(deviceAddress)) {
+                    prefs.edit().putStringSet(KEY_CONNECTED_A2DP_DEVICES, updatedA2dpDevices).apply();
+                }
+
+                // Try to get device name from cache if device name is null.
+                if (deviceName == null) {
+                    deviceName = prefs.getString(deviceAddress, null);
+                    prefs.edit().remove(deviceAddress).apply();
+                }
+
+                // Avoiding showing Toast while Fastpair is in Foreground or device name is null.
+                if (!fastPairInForeground() && deviceName != null) {
+                    resStr = getResources().getString(R.string.settings_bt_pair_toast_disconnected);
+                    text = String.format(resStr, deviceName);
+                    Toast.makeText(BluetoothDeviceService.this.getApplicationContext(),
+                            text, Toast.LENGTH_SHORT).show();
+                }
                 break;
             case BluetoothProfile.STATE_CONNECTING:
             case BluetoothProfile.STATE_DISCONNECTING:
@@ -823,7 +870,7 @@ public abstract class BluetoothDeviceService
 
         @Override
         public void forgetDevice(BluetoothDevice device) {
-            BluetoothDeviceService.forgetDevice(device);
+            BluetoothDeviceService.forgetDevice(getApplicationContext(), device);
         }
 
         @Override
