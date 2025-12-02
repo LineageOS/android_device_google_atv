@@ -123,3 +123,11 @@ PRODUCT_PACKAGES += preinstalled-packages-atv-system.xml
 
 $(call soong_config_set,system_services,without_hal,vibrator)
 $(call soong_config_set,google_tv,using_tv_gki,true)
+$(call soong_config_set_bool,google_tv,is_tv_device,true)
+
+# TV IO Watchdog Daemon
+PRODUCT_PACKAGES += iowatchdogd
+
+# SELinux policies for IO Watchdog
+PRODUCT_PUBLIC_SEPOLICY_DIRS += packages/services/Car/cpp/watchdog/ioserver/sepolicy/public
+PRODUCT_PRIVATE_SEPOLICY_DIRS += packages/services/Car/cpp/watchdog/ioserver/sepolicy/private
