@@ -84,7 +84,7 @@
     <string name="settings_devices_paired" msgid="4460141776955368574">"قبلاً متصل‌شده"</string>
     <string name="settings_pair_remote" msgid="7566753084479902759">"جفت کردن کنترل ازراه‌دور یا وسیله جانبی"</string>
     <string name="bluetooth_disconnect" msgid="1385608885917484057">"قطع ارتباط"</string>
-    <string name="bluetooth_connect" msgid="6283971929092004620">"اتصال"</string>
+    <string name="bluetooth_connect" msgid="6283971929092004620">"متصل کردن"</string>
     <string name="bluetooth_rename" msgid="4433577238394058486">"تغییر نام"</string>
     <string name="bluetooth_forget" msgid="4933552074497360964">"فراموش کردن"</string>
     <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"استفاده برای صدای تلویزیون"</string>
