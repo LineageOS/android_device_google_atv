@@ -17,6 +17,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="bluetooth_toggle_title" msgid="7561336055603119271">"Bluetooth"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_title" msgid="9179697353016289617">"Turn off Bluetooth"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_summary" msgid="2779137494595804572">"You will not be able to access voice assistant from your remote while Bluetooth is off."</string>
     <string name="battery_not_available" msgid="5120583262792310269">"N/A"</string>
     <string name="battery_level_critical" msgid="1217236822824234202">"Critical"</string>
     <string name="battery_level_low" msgid="8156936236696805171">"Low"</string>
@@ -55,9 +58,9 @@
     <string name="settings_notif_depleted_battery_text" msgid="5656927974233544784">"Replace battery to use remote"</string>
     <string name="settings_choices_yes" msgid="791981754037655968">"Yes"</string>
     <string name="settings_choices_no" msgid="8559979491355839764">"No"</string>
-    <string name="settings_bt_disconnect" msgid="887583681642627405">"Disconnect from %1$s"</string>
-    <string name="settings_bt_connect" msgid="486902469425565740">"Connect to %1$s"</string>
-    <string name="settings_bt_forget" msgid="1032095001156402398">"Forget %1$s"</string>
+    <string name="settings_bt_disconnect" msgid="4957745589640438518">"Disconnect from %1$s?"</string>
+    <string name="settings_bt_connect" msgid="6677433581014416847">"Connect to %1$s?"</string>
+    <string name="settings_bt_forget" msgid="6196976685969888603">"Forget %1$s?"</string>
     <string name="settings_bt_rename" msgid="477643459806883336">"Rename your connected device"</string>
     <string name="settings_hdmi_cec" msgid="7945299353290226128">"HDMI-CEC"</string>
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"Enable HDMI-CEC"</string>
@@ -65,14 +68,16 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"Enter standby when switching input to another source"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"When you enable this setting and have HDMI-CEC enabled on your TV, this device will automatically enter standby shortly after you switch to a different input on your TV. This may help to pause content and reduce power consumption when you aren\'t actively watching."</string>
-    <string name="settings_axel" msgid="8253298947221430993">"Set up remote buttons"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"Control volume, power, input on TVs, receivers and soundbars"</string>
+    <string name="settings_remote_setup" msgid="8948620173822916634">"Set up remote buttons"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"Control volume, power, input on TVs, receivers and soundbars"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Find my remote"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Play a sound to locate your Google TV remote if it\'s misplaced"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Press the button at the back of your Google TV Streamer to play a sound on your remote for 30 seconds. This only works on a Google TV Streamer Voice Remote.\n\nTo stop the sound, press any button on your remote."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"When on, you can use the button on your device to play a sound to locate your remote. When off, this button won\'t work. You\'ll still be able to use find my remote via other methods."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Play sound"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Battery level: %1$s"</string>
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"Bluetooth address: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"Firmware: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Accessories"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Remote control"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Connected"</string>

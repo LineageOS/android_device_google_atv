@@ -17,6 +17,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="bluetooth_toggle_title" msgid="7561336055603119271">"Bluetooth"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_title" msgid="9179697353016289617">"Bluetoothni oʻchirish"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_summary" msgid="2779137494595804572">"Bluetooth yoqilmagan holda pult orqali ovozli yordamchidan foydalanolmaysiz."</string>
     <string name="battery_not_available" msgid="5120583262792310269">"Noaniq"</string>
     <string name="battery_level_critical" msgid="1217236822824234202">"Juda kam"</string>
     <string name="battery_level_low" msgid="8156936236696805171">"Past"</string>
@@ -55,9 +58,9 @@
     <string name="settings_notif_depleted_battery_text" msgid="5656927974233544784">"Pultni ishlatish uchun batareyasini almashtiring"</string>
     <string name="settings_choices_yes" msgid="791981754037655968">"Ha"</string>
     <string name="settings_choices_no" msgid="8559979491355839764">"Yo‘q"</string>
-    <string name="settings_bt_disconnect" msgid="887583681642627405">"%1$s bilan aloqani uzish"</string>
-    <string name="settings_bt_connect" msgid="486902469425565740">"%1$s bilan ulash"</string>
-    <string name="settings_bt_forget" msgid="1032095001156402398">"%1$s qurilmasini olib tashlash"</string>
+    <string name="settings_bt_disconnect" msgid="4957745589640438518">"%1$s bilan aloqa uzilsinmi?"</string>
+    <string name="settings_bt_connect" msgid="6677433581014416847">"%1$s bilan ulansinmi?"</string>
+    <string name="settings_bt_forget" msgid="6196976685969888603">"%1$s olib tashlansinmi?"</string>
     <string name="settings_bt_rename" msgid="477643459806883336">"Ulangan qurilmani qayta nomlash"</string>
     <string name="settings_hdmi_cec" msgid="7945299353290226128">"HDMI-CEC"</string>
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"HDMI-CEC xususiyatini yoqish"</string>
@@ -65,14 +68,16 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"Boshqa manbaga almashtirishda kutish rejimiga oʻtish"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"Joriy qurilmada bu sozlama va televizorda HDMI-CEC yoqilsa, televizorda boshqa manba tanlanishi bilan bu qruilma avtomatik kutish rejimiga oʻtadi. Natijada, kontent ijrosi toʻxtatilsa, quvvat sarfi pasayadi. Bu funksiya fondagi kontent ijrosi uchun foydali boʻladi."</string>
-    <string name="settings_axel" msgid="8253298947221430993">"Pult tugmalarini sozlash"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"Televizor, resiver va saundbarlardagi tovush balandligi, quvvat va manbalarni boshqarish"</string>
+    <string name="settings_remote_setup" msgid="8948620173822916634">"Pult tugmalarini sozlash"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"Televizor, resiver va saundbarlardagi tovush balandligi, quvvat va manbalarni boshqarish"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Pultimni top"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Google TV pulti joyida boʻlmasa, uni topish uchun jiringlating"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Pultingizni 30 soniya jiringlatish uchun Google TV Streamer orqasidagi tugmani bosing. Bu faqat Google TV Streamer ovozli boshqaruv pultida ishlaydi.\n\nSignalni toʻxtatish uchun pultdagi biror tugmani bosing."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Bu yoqilsa, pult qayerdaligini aniqlash uchun qurilmadagi tugma orqali tovush chiqarish mumkin. Yoqilmasa, bu tugma ishlamaydi. Biroq boshqa usullar orqali “Pultni top” funksiyasidan foydalanishingiz mumkin."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Signalni ijro etish"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Batareya quvvati: %1$s"</string>
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"Bluetooth manzili: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"Mikrodastur: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Aksessuarlar"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Masofaviy boshqaruv"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Ulangan"</string>

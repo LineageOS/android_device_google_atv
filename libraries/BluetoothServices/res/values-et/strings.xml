@@ -17,6 +17,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="bluetooth_toggle_title" msgid="7561336055603119271">"Bluetooth"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_title" msgid="9179697353016289617">"Lülita Bluetooth välja"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_summary" msgid="2779137494595804572">"Kui Bluetooth on välja lülitatud, ei pääse te puldi kaudu häälassistendile juurde."</string>
     <string name="battery_not_available" msgid="5120583262792310269">"Puudub"</string>
     <string name="battery_level_critical" msgid="1217236822824234202">"Kriitiline"</string>
     <string name="battery_level_low" msgid="8156936236696805171">"Madal"</string>
@@ -55,9 +58,9 @@
     <string name="settings_notif_depleted_battery_text" msgid="5656927974233544784">"Kaugjuhtimispuldi kasutamiseks vahetage aku"</string>
     <string name="settings_choices_yes" msgid="791981754037655968">"Jah"</string>
     <string name="settings_choices_no" msgid="8559979491355839764">"Ei"</string>
-    <string name="settings_bt_disconnect" msgid="887583681642627405">"Katkesta ühendus seadmega %1$s"</string>
-    <string name="settings_bt_connect" msgid="486902469425565740">"Ühendage seadmega %1$s"</string>
-    <string name="settings_bt_forget" msgid="1032095001156402398">"Unusta seade %1$s"</string>
+    <string name="settings_bt_disconnect" msgid="4957745589640438518">"Kas katkestada ühendus seadmega %1$s?"</string>
+    <string name="settings_bt_connect" msgid="6677433581014416847">"Kas ühendada seadmega %1$s?"</string>
+    <string name="settings_bt_forget" msgid="6196976685969888603">"Kas unustada seade %1$s?"</string>
     <string name="settings_bt_rename" msgid="477643459806883336">"Muutke oma ühendatud seadme nime"</string>
     <string name="settings_hdmi_cec" msgid="7945299353290226128">"HDMI-CEC"</string>
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"Luba HDMI-CEC"</string>
@@ -65,14 +68,16 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"Lülituge ooterežiimile, kui lülitate sisendi teisele allikale"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"Kui lubate selle seade ja teie teleris on lubatud HDMI-CEC-funktsioon, lülitub see seade varsti pärast teleri teisele sisendile lülitamist automaatselt ooterežiimile. See võib aidata sisu peatada ja vähendada energiatarbimist, kui te aktiivselt ei vaata."</string>
-    <string name="settings_axel" msgid="8253298947221430993">"Kaugjuhtimispuldi nuppude seadistamine"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"Helitugevuse, toite ja sisendi juhtimine telerites, vastuvõtjates ning heliribades"</string>
+    <string name="settings_remote_setup" msgid="8948620173822916634">"Puldi nuppude seadistamine"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"Helitugevuse, toite ja sisendi juhtimine telerites, vastuvõtjates ning heliribades"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Leia mu pult"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Esitage heli, et leida oma kaotsiläinud Google TV pult"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Vajutage Google TV voogesitusseadme tagaküljel olevat nuppu, et esitada puldil 30-sekundiline heli. See töötab ainult Google TV voogesitusseadme hääljuhtimisege puldiga.\n\nHeli peatamiseks vajutage puldil mis tahes nuppu."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Kui see funktsioon on sees, saate esitada oma seadmes oleva nupu abil heli, et leida oma pult. Kui funktsioon on väljas, siis see nupp ei tööta. Saate siiski kasutada funktsiooni Leia mu kaugjuhtimispult teiste meetodite kaudu."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Esita heli"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Aku tase: %1$s"</string>
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"Bluetoothi aadress: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"Püsivara: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Tarvikud"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Kaugjuhtimispult"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Ühendatud"</string>

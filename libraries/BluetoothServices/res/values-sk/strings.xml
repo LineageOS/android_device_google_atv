@@ -17,6 +17,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="bluetooth_toggle_title" msgid="7561336055603119271">"Bluetooth"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_title" msgid="9179697353016289617">"Vypnutie rozhrania Bluetooth"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_summary" msgid="2779137494595804572">"Keď Bluetooth vypnete, nebudete mať prístup k hlasovému asistentovi pomocou diaľkového ovládania."</string>
     <string name="battery_not_available" msgid="5120583262792310269">"-"</string>
     <string name="battery_level_critical" msgid="1217236822824234202">"Kritický"</string>
     <string name="battery_level_low" msgid="8156936236696805171">"Nízky"</string>
@@ -55,9 +58,9 @@
     <string name="settings_notif_depleted_battery_text" msgid="5656927974233544784">"Ak chcete používať diaľkové ovládanie, vymeňte batériu"</string>
     <string name="settings_choices_yes" msgid="791981754037655968">"Áno"</string>
     <string name="settings_choices_no" msgid="8559979491355839764">"Nie"</string>
-    <string name="settings_bt_disconnect" msgid="887583681642627405">"Odpojiť od zariadenia %1$s"</string>
-    <string name="settings_bt_connect" msgid="486902469425565740">"Pripojiť k zariadeniu %1$s"</string>
-    <string name="settings_bt_forget" msgid="1032095001156402398">"Zabudnúť zariadenie %1$s"</string>
+    <string name="settings_bt_disconnect" msgid="4957745589640438518">"Chcete sa odpojiť od zariadenia %1$s?"</string>
+    <string name="settings_bt_connect" msgid="6677433581014416847">"Chcete sa pripojiť k zariadeniu %1$s?"</string>
+    <string name="settings_bt_forget" msgid="6196976685969888603">"Chcete zabudnúť zariadenie %1$s?"</string>
     <string name="settings_bt_rename" msgid="477643459806883336">"Premenovať pripojené zariadenie"</string>
     <string name="settings_hdmi_cec" msgid="7945299353290226128">"HDMI-CEC"</string>
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"Povoliť HDMI-CEC"</string>
@@ -65,14 +68,16 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"Prechod do pohotovostného režimu po prepnutí na iný zdroj"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"Keď v televízore zapnete funkciu HDMI-CEC a povolíte toto nastavenie, zariadenie krátko po prepnutí na iný vstup v televízore automaticky prejde do pohotovostného režimu. Vďaka tomu sa bude môcť obsah pozastaviť, pričom sa zníži aj spotreba energie, keď nebudete aktívne pozerať."</string>
-    <string name="settings_axel" msgid="8253298947221430993">"Nastavenie tlačidiel diaľkového ovládania"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"Ovládanie hlasitosti, vypínača a vstupu v televízoroch, prijímačoch a soundbaroch"</string>
+    <string name="settings_remote_setup" msgid="8948620173822916634">"Nastavenie tlačidiel diaľkového ovládania"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"Ovládanie hlasitosti, vypínača a vstupu v televízoroch, prijímačoch a soundbaroch"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Find my remote"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Prehraním zvuku nájdite stratené diaľkové ovládanie Google TV"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Stlačte tlačidlo na zadnej strane zariadenia Google TV Streamer a na 30 sekúnd tak prehrajte zvuk v diaľkovom ovládaní. Funguje to iba v zariadení Google TV Streamer Voice Remote.\n\nZvuk zastavíte stlačením akéhokoľvek tlačidla na diaľkovom ovládaní."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Keď je táto možnosť zapnutá, pomocou príslušného tlačidla na zariadení môžete prehrať zvuk a nájsť tak svoje diaľkové ovládanie. Keď je vypnutá, toto tlačidlo nefunguje. Funkciu nájdenia ovládania budete môcť stále používať inými spôsobmi."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Prehranie zvuku"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Stav batérie: %1$s"</string>
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"Adresa zariadenia Bluetooth: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"Firmvér: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Príslušenstvo"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Diaľkové ovládanie"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Pripojené"</string>

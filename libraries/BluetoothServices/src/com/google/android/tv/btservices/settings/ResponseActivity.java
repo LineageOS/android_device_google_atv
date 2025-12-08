@@ -24,6 +24,9 @@ import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenc
 import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenceFragment.KEY_UPDATE;
 import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenceFragment.YES;
 import static com.google.android.tv.btservices.settings.ConnectedDevicesSliceProvider.KEY_EXTRAS_DEVICE;
+import static com.google.android.tv.btservices.settings.ConnectedDevicesSliceProvider.KEY_BLUETOOTH_TOGGLE;
+import static com.google.android.tv.btservices.settings.SlicesUtil.DIRECTION_BACK;
+import static com.google.android.tv.btservices.settings.SlicesUtil.EXTRAS_DIRECTION;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothDevice;
@@ -32,6 +35,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
 
 import com.google.android.tv.btservices.BluetoothDeviceService;
@@ -45,6 +49,8 @@ public class ResponseActivity extends Activity implements
     private boolean mBtDeviceServiceBound;
     private BluetoothDevice mDevice;
     private BluetoothDeviceService.LocalBinder mBtDeviceServiceBinder;
+    private Handler mHandler = new Handler();
+    private static final int TIME_DELAYED = 50;
 
     private final ServiceConnection mBtDeviceServiceConnection = new SimplifiedConnection() {
 
@@ -98,6 +104,25 @@ public class ResponseActivity extends Activity implements
             finish();
         }
         switch (key) {
+            case KEY_BLUETOOTH_TOGGLE:
+                if (choice == YES) {
+                    if (BluetoothUtils.getDefaultBluetoothAdapter() != null) {
+                        BluetoothUtils.getDefaultBluetoothAdapter().disable();
+                    }
+                    mHandler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (BluetoothUtils.isBluetoothEnabled()) {
+                                mHandler.postDelayed(this, TIME_DELAYED);
+                            } else {
+                                getContentResolver().notifyChange(SlicesUtil.GENERAL_SLICE_URI, null);
+                            }
+                        }
+                    });
+                    i.putExtra(EXTRAS_DIRECTION, DIRECTION_BACK);
+                    setResult(RESULT_OK, i);
+                }
+                break;
             case KEY_CONNECT:
                 if (choice == YES) {
                     provider.connectDevice(mDevice);

@@ -17,6 +17,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="bluetooth_toggle_title" msgid="7561336055603119271">"ব্লুটুথ"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_title" msgid="9179697353016289617">"ব্লুটুথ বন্ধ করুন"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_summary" msgid="2779137494595804572">"ব্লুটুথ বন্ধ থাকাকালীন আপনার রিমোট ডিভাইস থেকে ভয়েস অ্যাসিস্ট্যান্ট অ্যাক্সেস করতে পারবেন না।"</string>
     <string name="battery_not_available" msgid="5120583262792310269">"প্রযোজ্য নয়"</string>
     <string name="battery_level_critical" msgid="1217236822824234202">"গুরুত্বপূর্ণ"</string>
     <string name="battery_level_low" msgid="8156936236696805171">"কম"</string>
@@ -55,9 +58,9 @@
     <string name="settings_notif_depleted_battery_text" msgid="5656927974233544784">"রিমোট ব্যবহার করতে ব্যাটারি পাল্টান"</string>
     <string name="settings_choices_yes" msgid="791981754037655968">"হ্যাঁ"</string>
     <string name="settings_choices_no" msgid="8559979491355839764">"না"</string>
-    <string name="settings_bt_disconnect" msgid="887583681642627405">"%1$s থেকে ডিসকানেক্ট করুন"</string>
-    <string name="settings_bt_connect" msgid="486902469425565740">"%1$s-এ কানেক্ট করুন"</string>
-    <string name="settings_bt_forget" msgid="1032095001156402398">"%1$s ভুলে যান"</string>
+    <string name="settings_bt_disconnect" msgid="4957745589640438518">"%1$s থেকে ডিসকানেক্ট করবেন?"</string>
+    <string name="settings_bt_connect" msgid="6677433581014416847">"%1$s-এ কানেক্ট করবেন?"</string>
+    <string name="settings_bt_forget" msgid="6196976685969888603">"%1$s সরিয়ে দিতে চান?"</string>
     <string name="settings_bt_rename" msgid="477643459806883336">"আপনার কানেক্ট করা ডিভাইসের নাম দিন"</string>
     <string name="settings_hdmi_cec" msgid="7945299353290226128">"HDMI-CEC"</string>
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"HDMI-CEC চালু করুন"</string>
@@ -65,14 +68,16 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"ইনপুট অন্য সোর্সে পরিবর্তন করা হলে ডিভাইস স্ট্যান্ডবাই মোডে চলে যাবে"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"আপনি টিভিতে এই সেটিং এবং HDMI-CEC চালু করলে, আপনার টিভির জন্য অন্য ইনপুটে পরিবর্তন করার কিছুক্ষণ পরেই এই ডিভাইসটি অটোমেটিক স্ট্যান্ডবাই মোডে চলে যাবে। এর ফলে আপনি যখন সক্রিয়ভাবে টিভি দেখছেন না এটি কন্টেন্ট পজ করা এবং বিদ্যুৎ সাশ্রয় করার ক্ষেত্রে সাহায্য করতে পারে।"</string>
-    <string name="settings_axel" msgid="8253298947221430993">"রিমোটের বোতাম সেট-আপ করুন"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"ভলিউম, পাওয়ার, টিভির ইনপুট, রিসিভার ও সাউন্ডবার নিয়ন্ত্রণ করুন"</string>
+    <string name="settings_remote_setup" msgid="8948620173822916634">"রিমোটের বোতাম সেট-আপ করুন"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"ভলিউম, পাওয়ার, টিভির ইনপুট, রিসিভার ও সাউন্ডবার নিয়ন্ত্রণ করুন"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"\'আমার রিমোট খুঁজুন\'"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"আপনার Google TV-এর রিমোট হারিয়ে গেলে, সেটি খুঁজতে সাউন্ড চালান"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"আপনার রিমোটে ৩০ সেকেন্ডের জন্য সাউন্ড চালাতে আপনার Google TV স্ট্রিমারের পিছনের বোতাম প্রেস করুন। এটি শুধুমাত্র Google TV স্ট্রিমারের ভয়েস রিমোটে কাজ করে।\n\nসাউন্ড বন্ধ করতে, আপনার রিমোটে যেকোনও বোতাম প্রেস করুন।"</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"চালু করা থাকলে, আপনার রিমোট খোঁজার জন্য ডিভাইসে থাকা বোতামটি ব্যবহার করে আপনি সাউন্ড চালাতে পারবেন। বন্ধ করা থাকলে, এই বোতামটি কাজ করবে না। আপনি অন্য পদ্ধতি ব্যবহার করেও আমার \'রিমোট খোঁজো\' ফিচারটি ব্যবহার করতে পারবেন।"</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"সাউন্ড চালান"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"ব্যাটারিতে চার্জ আছে: %1$s"</string>
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"ব্লুটুথ অ্যাড্রেস: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"ফার্মওয়্যার: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"অ্যাক্সেসরি"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"রিমোট কন্ট্রোল"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"কানেক্ট করা আছে"</string>

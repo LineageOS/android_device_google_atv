@@ -17,6 +17,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="bluetooth_toggle_title" msgid="7561336055603119271">"بلوتوث"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_title" msgid="9179697353016289617">"خاموش کردن بلوتوث"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_summary" msgid="2779137494595804572">"وقتی بلوتوث خاموش است، نمی‌توانید ازطریق کنترل از دور به دستیار صوتی دسترسی پیدا کنید."</string>
     <string name="battery_not_available" msgid="5120583262792310269">"موجود نیست"</string>
     <string name="battery_level_critical" msgid="1217236822824234202">"بحرانی"</string>
     <string name="battery_level_low" msgid="8156936236696805171">"کم"</string>
@@ -41,7 +44,7 @@
     <string name="settings_remote_serial_number_label" msgid="7591347399882767241">"نشانی بلوتوث"</string>
     <string name="settings_bt_battery_low" msgid="3547517382697124858">"لطفاً باتری را تعویض کنید"</string>
     <string name="settings_bt_battery_low_warning" msgid="721091326401791089">"باتری ضعیف است"</string>
-    <string name="connected_devices_pref_title" msgid="8985364841073196008">"دستگاه‌های متصل"</string>
+    <string name="connected_devices_pref_title" msgid="8985364841073196008">"دستگاه‌های متصل‌شده"</string>
     <string name="connected_devices_slice_pref_title" msgid="8637777961277201747">"کنترل ازراه‌دور و لوازم جانبی"</string>
     <string name="settings_notif_update_title" msgid="4767043003900594863">"به‌روزرسانی کنترل ازراه‌دور"</string>
     <string name="settings_notif_update_text" msgid="1092279154776177720">"آماده نصب"</string>
@@ -55,9 +58,9 @@
     <string name="settings_notif_depleted_battery_text" msgid="5656927974233544784">"برای استفاده از کنترل ازراه‌دور، باتری را تعویض کنید"</string>
     <string name="settings_choices_yes" msgid="791981754037655968">"بله"</string>
     <string name="settings_choices_no" msgid="8559979491355839764">"نه"</string>
-    <string name="settings_bt_disconnect" msgid="887583681642627405">"قطع اتصال از %1$s"</string>
-    <string name="settings_bt_connect" msgid="486902469425565740">"اتصال به %1$s"</string>
-    <string name="settings_bt_forget" msgid="1032095001156402398">"فراموش کردن %1$s"</string>
+    <string name="settings_bt_disconnect" msgid="4957745589640438518">"اتصال از %1$s قطع شود؟"</string>
+    <string name="settings_bt_connect" msgid="6677433581014416847">"اتصال به %1$s برقرار شود؟"</string>
+    <string name="settings_bt_forget" msgid="6196976685969888603">"‫%1$s فراموش شود؟"</string>
     <string name="settings_bt_rename" msgid="477643459806883336">"نام دستگاه متصل‌شده‌تان را تغییر دهید"</string>
     <string name="settings_hdmi_cec" msgid="7945299353290226128">"HDMI-CEC"</string>
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"فعال کردن HDMI-CEC"</string>
@@ -65,14 +68,16 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"ورود به حالت آماده به‌کار وقتی ورودی به منبع دیگری تغییر می‌کند"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"وقتی این تنظیم را فعال می‌کنید و HDMI-CEC در تلویزیونتان فعال است، این دستگاه مدت کوتاهی پس‌از آنکه به ورودی دیگری در تلویزیون جابه‌جا می‌شوید، به‌طور خودکار به حالت آماده به‌کار می‌رود. این کار می‌تواند به موقتاً متوقف شدن محتوا و کاهش مصرف برق وقتی درحال تماشای فعال نیستید کمک کند."</string>
-    <string name="settings_axel" msgid="8253298947221430993">"راه‌اندازی دکمه‌های کنترل ازراه‌دور"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"میزان صدا، ورودی، و روشن/خاموش شدن تلویزیون‌ها، گیرنده‌ها، و بلندگوهای ستونی را کنترل کنید"</string>
+    <string name="settings_remote_setup" msgid="8948620173822916634">"راه‌اندازی دکمه‌های کنترل از دور"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"میزان صدا، ورودی، و روشن/خاموش شدن تلویزیون‌ها، گیرنده‌ها، و بلندگوهای ستونی را کنترل کنید"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"پیدا کردن کنترل از راه دور"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"اگر کنترل از راه دور Google TV در جای خودش نباشد، برای پیدا کردن آن، صدایی پخش می‌شود"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"دکمه پشت «جاری‌ساز Google TV» را فشار دهید تا صدایی به‌مدت ۳۰ ثانیه در کنترل از راه دور پخش شود. این ویژگی فقط در «کنترل از راه دور صوتی جاری‌ساز Google TV» کار می‌کند.\n\nبرای قطع کردن صدا، هر دکمه‌ای را روی کنترل از راه دور فشار دهید."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"وقتی روشن باشد، بااستفاده از این دکمه در دستگاهتان می‌توانید صدایی پخش کنید و کنترل از راه دور را پیدا کنید. وقتی خاموش باشد، این دکمه کار نمی‌کند. همچنان می‌توانید با روش‌های دیگر از «پیدا کردن کنترل از راه دور» استفاده کنید."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"پخش صدا"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"سطح باتری: %1$s"</string>
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"نشانی بلوتوث: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"سفت‌افزار: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"لوازم جانبی"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"کنترل ازراه‌دور"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"متصل"</string>

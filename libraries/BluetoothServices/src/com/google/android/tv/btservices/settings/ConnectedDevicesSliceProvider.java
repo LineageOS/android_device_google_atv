@@ -33,7 +33,7 @@ import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenc
 import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenceFragment.KEY_UPDATE;
 import static com.google.android.tv.btservices.settings.BluetoothDevicePreferenceFragment.YES_NO_ARGS;
 import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_ACCESSORIES;
-import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_AXEL_TOGGLE;
+import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_REMOTE_SETUP_TOGGLE;
 import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_CEC_TOGGLE;
 import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_DEVICE_CONTROL;
 import static com.google.android.tv.btservices.settings.ConnectedDevicesPreferenceFragment.KEY_FIND_MY_REMOTE_TOGGLE;
@@ -48,6 +48,7 @@ import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.C
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.POWER_STATE_CHANGE_ON_ACTIVE_SOURCE_LOST;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.TOGGLE_STATE;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.TOGGLE_TYPE;
+import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.BLUETOOTH_ON;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.backAndUpdateSliceIntent;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.updateSliceIntent;
 import static com.google.android.tv.btservices.settings.SliceBroadcastReceiver.getBacklightModeIntent;
@@ -56,6 +57,11 @@ import static com.google.android.tv.btservices.settings.SlicesUtil.GENERAL_SLICE
 import static com.google.android.tv.btservices.settings.SlicesUtil.isFindMyRemoteButtonEnabled;
 import static com.google.android.tv.btservices.settings.SlicesUtil.BACKLIGHT_MODE_SETTING;
 import static com.google.android.tv.btservices.settings.SlicesUtil.getBacklightMode;
+import static com.google.android.tv.btservices.settings.DialogResponseActivity.DIALOG_ARG_ICON;
+import static com.google.android.tv.btservices.settings.DialogResponseActivity.DIALOG_ARG_KEY;
+import static com.google.android.tv.btservices.settings.DialogResponseActivity.DIALOG_ARG_NAME;
+import static com.google.android.tv.btservices.settings.DialogResponseActivity.DIALOG_ARG_SUMMARY;
+import static com.google.android.tv.btservices.settings.DialogResponseActivity.DIALOG_ARG_TITLE;
 
 import android.app.PendingIntent;
 import android.app.admin.DevicePolicyManager;
@@ -66,6 +72,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.pm.ProviderInfo;
 import android.content.pm.ResolveInfo;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -74,9 +81,13 @@ import android.os.Looper;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.provider.Settings;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
+import android.text.style.StyleSpan;
 import android.util.ArrayMap;
 import android.util.Log;
+import android.view.KeyEvent;
 
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.slice.Slice;
@@ -124,6 +135,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
     private BluetoothDeviceService.LocalBinder mBtDeviceServiceBinder;
     private final Map<Uri, Integer> pinnedUris = new ArrayMap<>();
 
+    static final String KEY_BLUETOOTH_TOGGLE = "bluetooth_toggle";
     static final String KEY_EXTRAS_DEVICE = "key_extras_device";
     static final String KEY_BACKLIGHT_RADIO_GROUP = "backlight_radio_group";
     static final String KEY_TOGGLE_ACTIVE_AUDIO_OUTPUT = "toggle_active_audio_output";
@@ -131,6 +143,8 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
     private static final String KEY_EXTERNAL_SPEAKER = "external_speaker";
 
     private static final String SCHEME_CONTENT = "content://";
+    static int PendingIntentId = 0;
+
     private final Handler mHandler = new Handler(Looper.getMainLooper());
 
     private final ServiceConnection mBtDeviceServiceConnection =
@@ -266,7 +280,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
     @Override
     public PendingIntent onCreatePermissionRequest(Uri sliceUri, String callingPackage) {
         final Intent settingsIntent = new Intent(Settings.ACTION_SETTINGS);
-        return PendingIntent.getActivity(getContext(), 0, settingsIntent, FLAG_IMMUTABLE);
+        return PendingIntent.getActivity(getContext(), PendingIntentId++, settingsIntent, FLAG_IMMUTABLE);
     }
 
     // The initial slice in the Connected Device flow.
@@ -276,36 +290,8 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 .setTitle(getString(R.string.connected_devices_slice_pref_title))
                 .setPageId(0x18000000)); // TvSettingsEnums.CONNECTED_SLICE
 
-        RestrictedLockUtils.EnforcedAdmin admin =
-                RestrictedLockUtilsInternal.checkIfRestrictionEnforced(getContext(),
-                        UserManager.DISALLOW_CONFIG_BLUETOOTH, UserHandle.myUserId());
-        PendingIntent pendingIntent;
-        List<String> updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString());
-        PendingIntent updateGeneralSliceIntent = updateSliceIntent(getContext(), 0,
-                new ArrayList<>(updatedUris), GENERAL_SLICE_URI.toString());
-        if (admin == null) {
-            Intent i = SettingsUtils.getPairingIntent()
-                    .putExtra(EXTRA_SLICE_FOLLOWUP, updateGeneralSliceIntent);
-            pendingIntent = PendingIntent.getActivity(
-                    getContext(), 0, i, FLAG_IMMUTABLE | FLAG_UPDATE_CURRENT);
-        } else {
-            Intent intent = RestrictedLockUtils.getShowAdminSupportDetailsIntent(
-                            getContext(), admin)
-                    .putExtra(DevicePolicyManager.EXTRA_RESTRICTION,
-                            UserManager.DISALLOW_CONFIG_BLUETOOTH)
-                    .putExtra(EXTRA_SLICE_FOLLOWUP, updateGeneralSliceIntent);
-            pendingIntent = PendingIntent.getActivity(getContext(), 0, intent, FLAG_IMMUTABLE);
-        }
-        psb.addPreference(new RowBuilder()
-                .setKey(KEY_PAIR_REMOTE)
-                .setTitle(getString(R.string.settings_pair_remote))
-                .setActionId(0x18100000) // TvSettingsEnums.CONNECTED_SLICE_CONNECT_NEW_DEVICES
-                .setIcon(IconCompat.createWithResource(getContext(),
-                        R.drawable.ic_baseline_add_24dp))
-                .setIconNeedsToBeProcessed(true)
-                .setPendingIntent(pendingIntent)
-        );
-
+        updateBluetoothToggle(psb);
+        updatePairingButton(psb);
         // Visually, the connected devices concept covers two categories:
         // 1. Any connected devices except the official remote controls. Actively connected devices
         //    are ranked higher.
@@ -313,6 +299,87 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         updateConnectedDevicesSlice(psb);
         updateDeviceControlSlice(psb);
         return psb.build();
+    }
+
+    private boolean showBluetoothToggle() {
+        return getContext().getResources().getBoolean(R.bool.show_bluetooth_toggle);
+    }
+
+    private void updateBluetoothToggle(PreferenceSliceBuilder psb) {
+        if (showBluetoothToggle()) {
+            Intent bluetoothToggleIntent;
+            if (BluetoothUtils.isBluetoothEnabled()) {
+                bluetoothToggleIntent = new Intent(getContext(), ResponseActivity.class);
+                Bundle extras = new Bundle();
+                ResponseFragment.prepareArgs(
+                        extras,
+                        KEY_BLUETOOTH_TOGGLE,
+                        R.string.bluetooth_toggle_confirmation_dialog_title,
+                        R.string.bluetooth_toggle_confirmation_dialog_summary,
+                        R.drawable.ic_baseline_bluetooth_searching_large,
+                        YES_NO_ARGS,
+                        null,
+                        0 /* default to YES */
+                );
+                bluetoothToggleIntent.putExtras(extras);
+            } else {
+                bluetoothToggleIntent = new Intent(ACTION_TOGGLE_CHANGED);
+                bluetoothToggleIntent.setClass(
+                        getContext(), SliceBroadcastReceiver.class);
+                bluetoothToggleIntent.putExtra(TOGGLE_TYPE, BLUETOOTH_ON);
+            }
+            psb.addPreference(
+                    new RowBuilder()
+                            .setKey(KEY_BLUETOOTH_TOGGLE)
+                            .setIcon(IconCompat.createWithResource(
+                                    getContext(), R.drawable.ic_bluetooth_raw))
+                            .setIconNeedsToBeProcessed(true)
+                            .setTitle(getString(R.string.bluetooth_toggle_title))
+                            .addSwitch(
+                                    BluetoothUtils.isBluetoothEnabled()
+                                            ? PendingIntent.getActivity(
+                                            getContext(), PendingIntentId++, bluetoothToggleIntent,
+                                            PendingIntent.FLAG_MUTABLE)
+                                            : PendingIntent.getBroadcast(
+                                            getContext(), PendingIntentId++, bluetoothToggleIntent,
+                                            PendingIntent.FLAG_MUTABLE),
+                                    BluetoothUtils.isBluetoothEnabled())
+            );
+        }
+    }
+
+    private void updatePairingButton(PreferenceSliceBuilder psb) {
+        RestrictedLockUtils.EnforcedAdmin admin =
+                RestrictedLockUtilsInternal.checkIfRestrictionEnforced(getContext(),
+                        UserManager.DISALLOW_CONFIG_BLUETOOTH, UserHandle.myUserId());
+        if (BluetoothUtils.isBluetoothEnabled()) {
+            PendingIntent pendingIntent;
+            List<String> updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString());
+            PendingIntent updateGeneralSliceIntent = updateSliceIntent(getContext(), 0,
+                    new ArrayList<>(updatedUris), GENERAL_SLICE_URI.toString());
+            if (admin == null) {
+                Intent i = SettingsUtils.getPairingIntent()
+                        .putExtra(EXTRA_SLICE_FOLLOWUP, updateGeneralSliceIntent);
+                pendingIntent = PendingIntent.getActivity(
+                        getContext(), 0, i, FLAG_IMMUTABLE | FLAG_UPDATE_CURRENT);
+            } else {
+                Intent intent = RestrictedLockUtils.getShowAdminSupportDetailsIntent(
+                                getContext(), admin)
+                        .putExtra(DevicePolicyManager.EXTRA_RESTRICTION,
+                                UserManager.DISALLOW_CONFIG_BLUETOOTH)
+                        .putExtra(EXTRA_SLICE_FOLLOWUP, updateGeneralSliceIntent);
+                pendingIntent = PendingIntent.getActivity(getContext(), 0, intent, FLAG_IMMUTABLE);
+            }
+            psb.addPreference(new RowBuilder()
+                    .setKey(KEY_PAIR_REMOTE)
+                    .setTitle(getString(R.string.settings_pair_remote))
+                    .setActionId(0x18100000) // TvSettingsEnums.CONNECTED_SLICE_CONNECT_NEW_DEVICES
+                    .setIcon(IconCompat.createWithResource(getContext(),
+                            R.drawable.ic_baseline_add_24dp))
+                    .setIconNeedsToBeProcessed(true)
+                    .setPendingIntent(pendingIntent)
+            );
+        }
     }
 
     private void updateConnectedDevicesSlice(PreferenceSliceBuilder psb) {
@@ -395,8 +462,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         }
 
         // Adding the remote buttons settings at the bottom
-        updateAxelSlice(psb);
-        updateCustomSlice(psb);
+        updateRemoteSetupSlice(psb);
 
         if (hasActiveDevices) {
             updateFindMyRemoteSlice(psb);
@@ -442,25 +508,27 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         psb.addEmbeddedPreference(new RowBuilder().setTargetSliceUri(uri));
     }
 
-    private void updateAxelSlice(PreferenceSliceBuilder psb) {
+    private void updateRemoteSetupSlice(PreferenceSliceBuilder psb) {
         if (!ConnectedDevicesPreferenceFragment.isAxelSettingsEnabled(getContext())) {
-            return;
+            if (InputDeviceKeyDetector.isCustomButtonPresent(getContext(),
+                    KeyEvent.KEYCODE_MACRO_1)) {
+                RowBuilder lxPref = new RowBuilder()
+                    .setKey(KEY_REMOTE_SETUP_TOGGLE)
+                    .setTitle(getString(R.string.settings_remote_setup))
+                    .setSubtitle(getString(R.string.settings_remote_setup_description))
+                    .setTargetSliceUri(SlicesUtil.LAUNCHERX_SLICE_PATH);
+                psb.addPreference(lxPref);
+            } else {
+                return;
+            }
+        } else {
+            RowBuilder axelPref = new RowBuilder()
+                .setKey(KEY_REMOTE_SETUP_TOGGLE)
+                .setTitle(getString(R.string.settings_remote_setup))
+                .setSubtitle(getString(R.string.settings_remote_setup_description))
+                .setTargetSliceUri(SlicesUtil.AXEL_SLICE_PATH);
+            psb.addPreference(axelPref);
         }
-        RowBuilder axelPref = new RowBuilder()
-                .setKey(KEY_AXEL_TOGGLE)
-                .setTitle(getString(R.string.settings_axel))
-                .setSubtitle(getString(R.string.settings_axel_description))
-                .setTargetSliceUri(SlicesUtil.AXEL_SLICE_URI.toString());
-        psb.addPreference(axelPref);
-    }
-
-    private void updateCustomSlice(PreferenceSliceBuilder psb) {
-        String customUri = getString(R.string.custom_bluetooth_slice_provider_uri);
-        if (TextUtils.isEmpty(customUri)) {
-            return;
-        }
-        RowBuilder customPref = new RowBuilder().setTargetSliceUri(customUri);
-        psb.addEmbeddedPreference(customPref);
     }
 
     private void updateFindMyRemoteSlice(PreferenceSliceBuilder psb) {
@@ -522,29 +590,19 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         }
 
         PreferenceSliceBuilder psb = new PreferenceSliceBuilder(getContext(), sliceUri);
-        psb.addScreenTitle(
-                new RowBuilder()
-                        .setTitle(deviceName)
-                        .setPageId(0x18200000)); // TvSettingsEnums.CONNECTED_SLICE_DEVICE_ENTRY
 
         Bundle extras = new Bundle();
         Intent i = null;
-        // Update "update preference".
         if (BluetoothUtils.supportBtDeviceServiceUpdate(context, device)) {
-            i = new Intent(context, ResponseActivity.class);
             RowBuilder updatePref = new RowBuilder().setKey(KEY_UPDATE);
-            ResponseFragment.prepareArgs(
-                    extras,
-                    KEY_UPDATE,
-                    R.string.settings_bt_update,
-                    R.string.settings_bt_update_summary,
-                    0,
-                    CONT_CANCEL_ARGS,
-                    null,
-                    ResponseFragment.DEFAULT_CHOICE_UNDEFINED
-            );
-            i.putExtras(extras).putExtra(KEY_EXTRAS_DEVICE, device)
-                    .setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
+            i = new Intent(context, DialogResponseActivity.class);
+            i.putExtra(DIALOG_ARG_TITLE, R.string.settings_bt_update);
+            i.putExtra(DIALOG_ARG_SUMMARY, R.string.settings_bt_update_summary);
+            i.putExtra(DIALOG_ARG_NAME, deviceName);
+            i.putExtra(DIALOG_ARG_KEY, KEY_UPDATE);
+            i.putExtra(DIALOG_ARG_ICON, R.drawable.ic_info_compound);
+            i.putExtra(KEY_EXTRAS_DEVICE, device);
+            i.setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
             List<String> updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString(),
                     sliceUri.toString());
             PendingIntent updateSliceIntent = updateSliceIntent(getContext(), 0,
@@ -575,6 +633,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 updatePref.setEnabled(false);
                 updatePref.setSelectable(false);
             }
+
             psb.addPreference(updatePref);
         }
 
@@ -585,7 +644,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 && BluetoothUtils.isConnected(device) && cachedDevice.isConnected()
                 && (BluetoothUtils.isBluetoothHeadset(device)
                 || BluetoothUtils.hasAudioProfile(cachedDevice))) {
-            boolean isActive = BluetoothUtils.isActiveA2dpAudioOutput(device);
+            boolean isActive = BluetoothUtils.isActiveA2dpOrLeAudioOutput(device);
 
             Intent intent = new Intent(ACTION_TOGGLE_CHANGED);
             intent.setClass(context, SliceBroadcastReceiver.class);
@@ -625,28 +684,20 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                         .setTitle(getString(isConnected
                                 ? R.string.bluetooth_disconnect : R.string.bluetooth_connect));
                 extras = new Bundle();
-                i = new Intent(context, ResponseActivity.class);
-                ResponseFragment.prepareArgs(
-                        extras,
-                        isConnected ? KEY_DISCONNECT : KEY_CONNECT,
-                        isConnected ? R.string.settings_bt_disconnect
-                                : R.string.settings_bt_connect,
-                        0,
-                        R.drawable.ic_baseline_bluetooth_searching_large,
-                        YES_NO_ARGS,
-                        deviceName,
-                        isConnected ? 1 /* default to NO (index 1) */ : 0 /* default to YES */
-                );
-                i.putExtras(extras)
-                        .putExtra(KEY_EXTRAS_DEVICE, device)
-                        .setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
+                i = new Intent(context, DialogResponseActivity.class);
+                i.putExtra(DIALOG_ARG_TITLE, isConnected ? R.string.settings_bt_disconnect : R.string.settings_bt_connect);
+                i.putExtra(DIALOG_ARG_NAME, deviceName);
+                i.putExtra(DIALOG_ARG_ICON, R.drawable.ic_bluetooth_compound);
+                i.putExtra(DIALOG_ARG_KEY, isConnected ? KEY_DISCONNECT : KEY_CONNECT);
+                i.putExtra(KEY_EXTRAS_DEVICE, device);
+                i.setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
                 List<String> updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString(),
                         sliceUri.toString());
-                PendingIntent updateSliceIntent = backAndUpdateSliceIntent(getContext(), 1,
+                PendingIntent updateSliceIntent = backAndUpdateSliceIntent(getContext(), PendingIntentId++,
                         new ArrayList<>(updatedUris), sliceUri.toString());
                 i.putExtra(EXTRA_SLICE_FOLLOWUP, updateSliceIntent);
                 PendingIntent pendingIntent = PendingIntent
-                        .getActivity(context, 1, i,
+                        .getActivity(context, PendingIntentId++, i,
                                 FLAG_IMMUTABLE | FLAG_UPDATE_CURRENT);
                 disconnectPref.setPendingIntent(pendingIntent);
                 psb.addPreference(disconnectPref);
@@ -674,40 +725,35 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                 .putExtras(extras)
                 .setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
         List<String> updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString(), sliceUri.toString());
-        PendingIntent updateSliceIntent = updateSliceIntent(getContext(), 2,
+        PendingIntent updateSliceIntent = updateSliceIntent(getContext(), PendingIntentId++,
                 new ArrayList<>(updatedUris), sliceUri.toString());
         i.putExtra(EXTRA_SLICE_FOLLOWUP, updateSliceIntent);
         PendingIntent renamePendingIntent = PendingIntent
-                .getActivity(context, 2, i,
+                .getActivity(context, PendingIntentId++, i,
                         FLAG_IMMUTABLE | FLAG_UPDATE_CURRENT);
         renamePref.setPendingIntent(renamePendingIntent);
         psb.addPreference(renamePref);
 
-        // Update "forget preference".
-        RowBuilder forgetPref = new RowBuilder()
+        // Update "Forget Preference"
+        RowBuilder forgetPref =
+            new RowBuilder()
                 .setKey(KEY_FORGET)
                 .setTitle(getString(R.string.bluetooth_forget))
                 .setActionId(0x18230000); // TvSettingsEnums.CONNECTED_SLICE_DEVICE_ENTRY_FORGET
-        extras = new Bundle();
-        i = new Intent(context, ResponseActivity.class);
-        ResponseFragment.prepareArgs(
-                extras,
-                KEY_FORGET,
-                R.string.settings_bt_forget,
-                0,
-                R.drawable.ic_baseline_bluetooth_searching_large,
-                YES_NO_ARGS,
-                deviceName,
-                1 /* default to NO (index 1) */
-        );
-        i.putExtras(extras).putExtra(KEY_EXTRAS_DEVICE, device)
-                .setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
+        i = new Intent(context, DialogResponseActivity.class);
+        i.putExtra(DIALOG_ARG_TITLE, R.string.settings_bt_forget);
+        i.putExtra(DIALOG_ARG_NAME, deviceName);
+        i.putExtra(DIALOG_ARG_ICON, R.drawable.ic_info_compound);
+        i.putExtra(DIALOG_ARG_KEY, KEY_FORGET);
+        i.putExtra(KEY_EXTRAS_DEVICE, device);
+        i.setData(Uri.parse(SCHEME_CONTENT + device.getAddress()));
         updatedUris = Arrays.asList(GENERAL_SLICE_URI.toString(), sliceUri.toString());
-        updateSliceIntent = backAndUpdateSliceIntent(getContext(), 3,
-                new ArrayList<>(updatedUris), sliceUri.toString());
+        updateSliceIntent =
+            backAndUpdateSliceIntent(
+                getContext(), PendingIntentId++, new ArrayList<>(updatedUris), sliceUri.toString());
         i.putExtra(EXTRA_SLICE_FOLLOWUP, updateSliceIntent);
         PendingIntent disconnectPendingIntent = PendingIntent
-                .getActivity(context, 3, i,
+                .getActivity(context, PendingIntentId++, i,
                         FLAG_IMMUTABLE | FLAG_UPDATE_CURRENT);
         forgetPref.setPendingIntent(disconnectPendingIntent);
         psb.addPreference(forgetPref);
@@ -746,10 +792,7 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
             psb.addPreference(leAudioPref);
         }
 
-        // Update "bluetooth device info preference".
-        RowBuilder infoPref = new RowBuilder()
-                .setKey("KEY_BLE_INFO")
-                .setIcon(IconCompat.createWithResource(context, R.drawable.ic_baseline_info_24dp));
+        SpannableStringBuilder bluetoothInfoStringBuilder = new SpannableStringBuilder();
 
         int battery = btDeviceProvider.getBatteryLevel(device);
         if (battery != BluetoothDevice.BATTERY_LEVEL_UNKNOWN) {
@@ -761,22 +804,37 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
                         R.string.settings_remote_battery_level_with_warning_label, batteryText,
                         warning);
             }
-            infoPref.addInfoItem(getString(R.string.settings_remote_battery_level_label),
-                    batteryText);
+
+            SpannableStringBuilder styledBatteryText = new SpannableStringBuilder(context.getString(R.string.settings_remote_battery_level, batteryText));
+            // Make battery percentage bold
+            styledBatteryText.setSpan(new StyleSpan(Typeface.BOLD), styledBatteryText.length() - batteryText.length(), styledBatteryText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            addToBluetoothInfoStringBuilder(bluetoothInfoStringBuilder, styledBatteryText);
         }
 
         if (mVersionsMap.containsKey(deviceAddr)) {
             Version version = mVersionsMap.get(deviceAddr);
             if (!Version.BAD_VERSION.equals(version)) {
-                infoPref.addInfoItem(getString(R.string.settings_remote_firmware_label),
-                        version.toVersionString());
+                addToBluetoothInfoStringBuilder(bluetoothInfoStringBuilder, context.getString(R.string.settings_remote_firmware, version.toVersionString()));
             }
-            infoPref.addInfoItem(getString(R.string.settings_remote_serial_number_label),
-                    deviceAddr);
-            psb.addPreference(infoPref);
+            addToBluetoothInfoStringBuilder(bluetoothInfoStringBuilder, context.getString(R.string.settings_remote_serial_number, deviceAddr));
         }
+
+        psb.addScreenTitle(
+            new RowBuilder()
+                .setTitle(deviceName)
+                .setSubtitle(bluetoothInfoStringBuilder)
+                .setPageId(0x18200000)); // TvSettingsEnums.CONNECTED_SLICE_DEVICE_ENTRY
+
         return psb.build();
     }
+
+    private void addToBluetoothInfoStringBuilder(SpannableStringBuilder bluetoothInfoStringBuilder, CharSequence toAdd) {
+        if (bluetoothInfoStringBuilder.length() > 0) {
+            bluetoothInfoStringBuilder.append("\n");
+        }
+        bluetoothInfoStringBuilder.append(toAdd);
+    }
+
 
     // The slice that shows CEC control related information
     private Slice createCecSlice(Uri sliceUri) {
@@ -796,13 +854,16 @@ public class ConnectedDevicesSliceProvider extends SliceProvider implements
         psb.addPreference(new RowBuilder()
                 .setTitle(getString(R.string.settings_enable_hdmi_cec))
                 .setActionId(0x18310000) // TvSettingsEnums.CONNECTED_SLICE_HDMICEC_ON_OFF
+                .setInfoSummary(String.format("%s%n%s",
+                    getString(R.string.settings_cec_explain),
+                    getString(R.string.settings_cec_feature_names)))
                 .addSwitch(pendingIntent, null, isEnabled));
-        psb.addPreference(new RowBuilder()
-                .setTitle(getString(R.string.settings_cec_explain))
-                .setEnabled(false));
-        psb.addPreference(new RowBuilder()
-                .setTitle(getString(R.string.settings_cec_feature_names))
-                .setEnabled(false));
+        // psb.addPreference(new RowBuilder()
+        //         .setTitle(getString(R.string.settings_cec_explain))
+        //         .setEnabled(false));
+        // psb.addPreference(new RowBuilder()
+        //         .setTitle(getString(R.string.settings_cec_feature_names))
+        //         .setEnabled(false));
 
         // Allow the user to choose the behavior of their device when losing active source.
         // This setting should be visible only on playback devices (OTTs/STBs) and it should be

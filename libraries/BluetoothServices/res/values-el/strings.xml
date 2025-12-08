@@ -17,6 +17,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="bluetooth_toggle_title" msgid="7561336055603119271">"Bluetooth"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_title" msgid="9179697353016289617">"Απενεργοποίηση Bluetooth"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_summary" msgid="2779137494595804572">"Δεν θα έχετε πρόσβαση στον φωνητικό βοηθό από το τηλεχειριστήριό σας ενώ το Bluetooth είναι ανενεργό."</string>
     <string name="battery_not_available" msgid="5120583262792310269">"Δ/Ι"</string>
     <string name="battery_level_critical" msgid="1217236822824234202">"Κρίσιμη"</string>
     <string name="battery_level_low" msgid="8156936236696805171">"Χαμηλή"</string>
@@ -55,9 +58,9 @@
     <string name="settings_notif_depleted_battery_text" msgid="5656927974233544784">"Αντικαταστήστε την μπαταρία για να χρησιμοποιήσετε το τηλεχειριστήριο"</string>
     <string name="settings_choices_yes" msgid="791981754037655968">"Ναι"</string>
     <string name="settings_choices_no" msgid="8559979491355839764">"Όχι"</string>
-    <string name="settings_bt_disconnect" msgid="887583681642627405">"Αποσύνδεση από %1$s"</string>
-    <string name="settings_bt_connect" msgid="486902469425565740">"Σύνδεση σε %1$s"</string>
-    <string name="settings_bt_forget" msgid="1032095001156402398">"Διαγραφή %1$s"</string>
+    <string name="settings_bt_disconnect" msgid="4957745589640438518">"Αποσύνδεση από %1$s;"</string>
+    <string name="settings_bt_connect" msgid="6677433581014416847">"Σύνδεση σε %1$s;"</string>
+    <string name="settings_bt_forget" msgid="6196976685969888603">"Διαγραφή %1$s;"</string>
     <string name="settings_bt_rename" msgid="477643459806883336">"Μετονομάστε τη συνδεδεμένη συσκευή σας"</string>
     <string name="settings_hdmi_cec" msgid="7945299353290226128">"HDMI-CEC"</string>
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"Ενεργοποίηση HDMI-CEC"</string>
@@ -65,14 +68,16 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"Μετάβαση σε κατάσταση αναμονής κατά την εναλλαγή εισόδου σε άλλη πηγή"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"Όταν ενεργοποιείτε αυτή τη ρύθμιση και έχετε ενεργό το HDMI-CEC στην τηλεόρασή σας, αυτή η συσκευή θα μεταβαίνει αυτόματα σε κατάσταση αναμονής λίγο αφότου κάνετε εναλλαγή σε διαφορετική είσοδο της τηλεόρασης. Αυτό μπορεί να βοηθήσει στην παύση του περιεχομένου και στη μείωση της κατανάλωσης ενέργειας, όταν δεν παρακολουθείτε ενεργά."</string>
-    <string name="settings_axel" msgid="8253298947221430993">"Ρύθμιση κουμπιών τηλεχειριστηρίου"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"Έλεγχος έντασης ήχου, λειτουργίας και πηγών εισόδου σε τηλεοράσεις, δέκτες και soundbar"</string>
+    <string name="settings_remote_setup" msgid="8948620173822916634">"Ρύθμιση κουμπιών τηλεχειριστηρίου"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"Έλεγχος έντασης ήχου, έναρξης και τερματισμού λειτουργίας, πηγών εισόδου σε τηλεοράσεις, δέκτες και soundbar"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Εύρεση τηλεχειριστηρίου"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Αναπαράγετε ήχο για να εντοπίσετε το τηλεχειριστήριο του Google TV, σε περίπτωση που το έχετε χάσει"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Πατήστε το κουμπί στο πίσω μέρος του Google TV Streamer για την αναπαραγωγή ενός ήχου στο τηλεχειριστήριο για 30 δευτερόλεπτα. Αυτό λειτουργεί μόνο σε Φωνητικό έλεγχο Google TV Streamer.\n\nΓια να σταματήσετε την αναπαραγωγή του ήχου, πατήστε ένα κουμπί στο τηλεχειριστήριο."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Όταν είναι ενεργό, μπορείτε να χρησιμοποιήσετε το κουμπί στη συσκευή σας για να αναπαράγετε έναν ήχο, έτσι ώστε να εντοπίσετε το τηλεχειριστήριό σας. Όταν είναι ανενεργό, αυτό το κουμπί δεν λειτουργεί. Θα μπορείτε ακόμα να χρησιμοποιείτε την Εύρεση τηλεχειριστηρίου με άλλους τρόπους."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Αναπαραγωγή ήχου"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Επίπεδο μπαταρίας: %1$s"</string>
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"Διεύθυνση Bluetooth: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"Υλικολογισμικό: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Αξεσουάρ"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Τηλεχειριστήριο"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Σε σύνδεση"</string>

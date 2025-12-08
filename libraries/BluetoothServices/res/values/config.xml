@@ -76,8 +76,6 @@
   <bool name="cec_settings_enabled">true</bool>
   <bool name="axel_settings_enabled">false</bool>
 
-  <string name="custom_bluetooth_slice_provider_uri" translatable="false" />
-
   <!-- Entry in settings menu to manage external speakers. -->
   <string name="external_speaker_slice_provider_uri" translatable="false" />
   <string name="external_speaker_category" />
@@ -99,4 +97,11 @@
 
   <!-- Whether to show the remote control icon on remote control update screen. -->
   <bool name="show_remote_icon_in_dfu">true</bool>
+
+  <!-- Whether to show the bluetooth toggle. Please be very careful with this config as setting it
+    to true would surface a toggle in Remotes & Accessories settings that allows the user to
+    turn off Bluetooth. Without an IR remote or some other form of connection, the user may not
+    be able to turn it back on and have to perform FDR. -->
+  <bool name="show_bluetooth_toggle">false</bool>
+
 </resources>

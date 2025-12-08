@@ -17,6 +17,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="bluetooth_toggle_title" msgid="7561336055603119271">"Bluetooth"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_title" msgid="9179697353016289617">"Исклучи го Bluetooth"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_summary" msgid="2779137494595804572">"Нема да може да пристапите до гласовниот помошник преку далечинското додека е исклучен Bluetooth."</string>
     <string name="battery_not_available" msgid="5120583262792310269">"Недостапно"</string>
     <string name="battery_level_critical" msgid="1217236822824234202">"Критично"</string>
     <string name="battery_level_low" msgid="8156936236696805171">"Ниско"</string>
@@ -55,9 +58,9 @@
     <string name="settings_notif_depleted_battery_text" msgid="5656927974233544784">"Заменете ја батеријата за да го користите далечинскиот управувач"</string>
     <string name="settings_choices_yes" msgid="791981754037655968">"Да"</string>
     <string name="settings_choices_no" msgid="8559979491355839764">"Не"</string>
-    <string name="settings_bt_disconnect" msgid="887583681642627405">"Прекини ја врската со %1$s"</string>
-    <string name="settings_bt_connect" msgid="486902469425565740">"Поврзете се со уредот %1$s"</string>
-    <string name="settings_bt_forget" msgid="1032095001156402398">"Заборави го %1$s"</string>
+    <string name="settings_bt_disconnect" msgid="4957745589640438518">"Да се прекине врската со %1$s?"</string>
+    <string name="settings_bt_connect" msgid="6677433581014416847">"Да се поврзе со %1$s?"</string>
+    <string name="settings_bt_forget" msgid="6196976685969888603">"Да се заборави %1$s?"</string>
     <string name="settings_bt_rename" msgid="477643459806883336">"Преименувајте го поврзаниот уред"</string>
     <string name="settings_hdmi_cec" msgid="7945299353290226128">"HDMI-CEC"</string>
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"Овозможи HDMI-CEC"</string>
@@ -65,14 +68,16 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"Влезете во „Режим на подготвеност“ кога ќе го префрлите влезот на друг извор"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"Кога ќе ја овозможите поставкава и ќе овозможите HDMI-CEC на вашиот телевизор, уредов ќе влезе во „Режим на подготвеност“ автоматски набргу откако ќе се префрлите на друг влез на вашиот телевизор. Ова може да помогне да се паузираат содржините и да се намали потрошувачката на енергија кога не гледате активно."</string>
-    <string name="settings_axel" msgid="8253298947221430993">"Поставете копчиња на далечинскиот управувач"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"Контролирајте ги јачината на звукот, вклучувањето, влезот на телевизорите, приемниците и звучниците"</string>
+    <string name="settings_remote_setup" msgid="8948620173822916634">"Поставете копчиња на далечинското"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"Контролирајте ги јачината на звукот, вклучувањето, влезот на телевизорите, приемниците и звучниците"</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"Најди го мојот далечински управувач"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"Репродуцирајте звук за да го лоцирате далечинскиот управувач на Google TV ако е изгубен"</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"Притиснете го копчето на задниот дел од вашиот стример за Google TV за да се репродуцира звук на далечинскиот управувач 30 секунди. Ова функционира само на Voice Remote за стример на Google TV.\n\nЗа да го сопрете звукот, притиснете некое копче на далечинскиот управувач."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"Кога е вклучено, може да го користите копчето на вашиот уред за да репродуцирате звук за да го лоцирате далечинското. Кога е исклучено, копчево не функционира. Сè уште ќе може да ја користите „Најди го далечинското“ преку други методи."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"Репродуцирај звук"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"Ниво на батерија: %1$s"</string>
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"Bluetooth-адреса: %1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"Фирмвер: %1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"Додатоци"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"Далечински управувач"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"Поврзан"</string>

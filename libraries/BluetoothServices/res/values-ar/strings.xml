@@ -17,6 +17,9 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="bluetooth_toggle_title" msgid="7561336055603119271">"بلوتوث"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_title" msgid="9179697353016289617">"إيقاف البلوتوث"</string>
+    <string name="bluetooth_toggle_confirmation_dialog_summary" msgid="2779137494595804572">"سيتعذّر عليك الوصول إلى \"المساعد الصوتي\" من جهاز التحكّم عن بُعد عندما تكون تقنية البلوتوث غير مفعّلة."</string>
     <string name="battery_not_available" msgid="5120583262792310269">"لا ينطبق"</string>
     <string name="battery_level_critical" msgid="1217236822824234202">"حرج"</string>
     <string name="battery_level_low" msgid="8156936236696805171">"منخفض"</string>
@@ -55,9 +58,9 @@
     <string name="settings_notif_depleted_battery_text" msgid="5656927974233544784">"استبدِل البطارية لاستخدام جهاز التحكّم عن بُعد."</string>
     <string name="settings_choices_yes" msgid="791981754037655968">"نعم"</string>
     <string name="settings_choices_no" msgid="8559979491355839764">"لا"</string>
-    <string name="settings_bt_disconnect" msgid="887583681642627405">"إلغاء الربط بـ %1$s"</string>
-    <string name="settings_bt_connect" msgid="486902469425565740">"التوصيل بـ %1$s"</string>
-    <string name="settings_bt_forget" msgid="1032095001156402398">"حذف بيانات %1$s"</string>
+    <string name="settings_bt_disconnect" msgid="4957745589640438518">"هل مطلوب إلغاء التوصيل بـ ‎%1$s؟"</string>
+    <string name="settings_bt_connect" msgid="6677433581014416847">"هل مطلوب التوصيل بـ ‎%1$s؟"</string>
+    <string name="settings_bt_forget" msgid="6196976685969888603">"هل مطلوب حذف بيانات ‎%1$s؟"</string>
     <string name="settings_bt_rename" msgid="477643459806883336">"إعادة تسمية الجهاز المتصل"</string>
     <string name="settings_hdmi_cec" msgid="7945299353290226128">"HDMI-CEC"</string>
     <string name="settings_enable_hdmi_cec" msgid="3955194037299390473">"تفعيل HDMI-CEC"</string>
@@ -65,14 +68,16 @@
     <string name="settings_cec_feature_names" msgid="3250254903330955270">"Samsung: Anynet+\nLG: SimpLink\nSony: BRAVIA Sync\nPhilips: EasyLink\nSharp: Aquos Link"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_title" msgid="8678213062009082466">"الدخول في وضع الاستعداد عند تبديل مصدر الإدخال إلى مصدر آخر"</string>
     <string name="settings_cec_go_to_sleep_on_active_source_lost_description" msgid="3308324454326515797">"عند تفعيل هذا الإعداد وميزة HDMI-CEC على التلفزيون، سيدخل هذا الجهاز تلقائيًا في وضع الاستعداد بعد فترة قصيرة من التبديل إلى مصدر إدخال مختلف. يساعد هذا في إيقاف عرض المحتوى مؤقتًا وتقليل استهلاك الطاقة عند عدم المشاهدة."</string>
-    <string name="settings_axel" msgid="8253298947221430993">"إعداد أزرار جهاز التحكّم عن بُعد"</string>
-    <string name="settings_axel_description" msgid="5432968671905160994">"التحكّم في مستوى الصوت وإمكانية الإيقاف أو التشغيل والإدخال في أجهزة التلفزيون وأجهزة الاستقبال ومكبّرات الصوت العمودي"</string>
+    <string name="settings_remote_setup" msgid="8948620173822916634">"إعداد أزرار جهاز التحكّم عن بُعد"</string>
+    <string name="settings_remote_setup_description" msgid="7634910915863010663">"التحكّم في مستوى الصوت وإمكانية الإيقاف أو التشغيل والإدخال في أجهزة التلفزيون وأجهزة الاستقبال ومكبّرات الصوت الشريطية \"ساوند بار\""</string>
     <string name="settings_find_my_remote_title" msgid="618883575610472525">"العثور على جهاز التحكّم عن بُعد"</string>
     <string name="settings_find_my_remote_description" msgid="2434088262598422577">"يمكنك تشغيل صوت لتحديد موقع جهاز التحكّم في Google TV عن بُعد إذا لم يكن في مكانه."</string>
     <string name="find_my_remote_slice_description" msgid="4802810369433859327">"اضغط على الزرّ المتوفّر في الجزء الخلفي من Google TV Streamer لتشغيل صوت على جهاز التحكّم عن بُعد لمدة 30 ثانية. لا تعمل هذه الميزة إلا على جهاز التحكّم الصوتي في Google TV Streamer.\n\nلإيقاف الصوت، اضغط على أي زرّ في جهاز التحكّم عن بُعد."</string>
     <string name="find_my_remote_integration_hint" msgid="7131212049012673631">"عندما يكون هذا الخيار مفعَّلاً، يمكنك استخدام الزرّ على جهازك لتشغيل صوت من أجل تحديد موقع جهاز التحكّم عن بُعد. أمّا عندما يكون هذا الخيار غير مفعَّل، فلن يعمل هذا الزرّ. سيظل بإمكانك استخدام ميزة \"العثور على جهاز التحكّم\" بطرق أخرى."</string>
     <string name="find_my_remote_play_sound" msgid="1799877650759138251">"تشغيل الصوت"</string>
     <string name="settings_remote_battery_level" msgid="1817513765913707505">"مستوى البطارية: %1$s"</string>
+    <string name="settings_remote_serial_number" msgid="7821496079279473563">"عنوان البلوتوث: ‎%1$s"</string>
+    <string name="settings_remote_firmware" msgid="8956924558938994709">"البرامج الثابتة: ‎%1$s"</string>
     <string name="settings_known_devices_category" msgid="2307810690946536753">"الأجهزة الملحقة"</string>
     <string name="settings_official_remote_category" msgid="1373956695709331265">"جهاز التحكّم عن بُعد"</string>
     <string name="settings_devices_connected" msgid="3256213134907921013">"متصل"</string>

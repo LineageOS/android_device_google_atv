@@ -88,6 +88,10 @@ public class BluetoothUtils {
                 context.getResources().getStringArray(R.array.bt_device_service_updatable_labels)));
     }
 
+    public static boolean isBluetoothEnabled() {
+        return getDefaultBluetoothAdapter() != null && getDefaultBluetoothAdapter().isEnabled();
+    }
+
     public static boolean isConnected(BluetoothDevice device) {
         if (device == null) {
             return false;
@@ -346,14 +350,15 @@ public class BluetoothUtils {
     }
 
     /**
-     * Returns true if the BluetoothDevice is the active audio output over A2DP,
+     * Returns true if the BluetoothDevice is the active audio output over A2DP or LE,
      * false otherwise.
      */
-    public static boolean isActiveA2dpAudioOutput(BluetoothDevice device) {
+    public static boolean isActiveA2dpOrLeAudioOutput(BluetoothDevice device) {
         if (device != null) {
             final BluetoothAdapter btAdapter = getDefaultBluetoothAdapter();
             if (btAdapter != null) {
-                return btAdapter.getActiveDevices(BluetoothProfile.A2DP).contains(device);
+                return btAdapter.getActiveDevices(BluetoothProfile.A2DP).contains(device)
+                        || btAdapter.getActiveDevices(BluetoothProfile.LE_AUDIO).contains(device);
             }
         }
         return false;
