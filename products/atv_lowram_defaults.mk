@@ -72,6 +72,3 @@ PRODUCT_PACKAGES += TvLowRamOverlay
 
 # Disable camera by default
 PRODUCT_SUPPORTS_CAMERA ?= false
-
-# Force decoding of bootanimation images to 16 bits
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.bootanim.decode.rgb565=true
