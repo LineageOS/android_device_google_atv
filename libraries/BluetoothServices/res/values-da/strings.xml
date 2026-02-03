@@ -90,7 +90,7 @@
     <string name="bluetooth_toggle_active_audio_output" msgid="494557568422711885">"Brug til TV-lyd"</string>
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"Forbundet"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"Afbrudt"</string>
-    <string name="settings_devices_control" msgid="1862490057009510077">"Enhedsstyring"</string>
+    <string name="settings_devices_control" msgid="1862490057009510077">"Enheds­styring"</string>
     <string name="settings_bt_pair_title" msgid="1205942796805671508">"Forbind ny enhed"</string>
     <string name="pair_device_description" msgid="5145574754576245361">"Inden du forbinder dine Bluetooth-enheder, skal du sørge for, at de er i parringstilstand Hold fingeren nede på %2$s+%3$s i 3 sekunder for at forbinde %1$s."</string>
     <string name="pair_device_device_name" msgid="4004194247588260613">"en Android TV-fjernbetjening"</string>
