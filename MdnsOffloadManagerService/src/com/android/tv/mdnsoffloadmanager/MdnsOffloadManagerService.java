@@ -91,6 +91,7 @@ public class MdnsOffloadManagerService extends Service {
 
     private NsdManagerWrapper mNsdManager;
     private boolean mIsInitialized = false;
+    private PowerManager mPowerManager;
 
     public MdnsOffloadManagerService() {
         this(new Injector());
@@ -196,6 +197,7 @@ public class MdnsOffloadManagerService extends Service {
         mNsdManager = mInjector.getNsdManager();
         lowPowerStandbyPolicyReceiver = new LowPowerStandbyPolicyReceiver();
         screenBroadcastReceiver = new ScreenBroadcastReceiver();
+        mPowerManager = getSystemService(PowerManager.class);
         bindVendorService();
         setupScreenBroadcastReceiver();
         setupConnectivityListener();
@@ -473,7 +475,18 @@ public class MdnsOffloadManagerService extends Service {
                 mOffloadWriter.resetAll();
                 mInterfaceOffloadManagers.values()
                         .forEach(InterfaceOffloadManager::onVendorServiceConnected);
-                mOffloadWriter.applyOffloadState();
+                if (mPowerManager != null && !mPowerManager.isInteractive()) {
+                    Log.i(TAG, "Device is non-interactive on connection. Enabling mDNS offload with wakelock.");
+                    try {
+                        mWakeLock.acquire(5000);
+                        mOffloadWriter.setOffloadState(true);
+                    } finally {
+                        Log.d(TAG, "onServiceConnected wakelock released");
+                        mWakeLock.release();
+                    }
+                } else {
+                    mOffloadWriter.applyOffloadState();
+                }
             });
         }
 
