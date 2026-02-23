@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Flag indicating that the media framework should support playing of sounds on volume
          key usage.  This adds noticeable additional overhead to volume key processing, so
          is disableable for products for which it is irrelevant. -->
@@ -225,4 +225,8 @@
 
     <!-- Disable system vendor intelligence role on TV targets -->
     <string name="config_systemVendorIntelligence" translatable="false" />
+
+    <!-- Prevent the InputMethodManagerService from starting up the IME unless
+         the currently focused view is a text editor. -->
+    <bool name="config_preventImeStartupUnlessTextEditor" android:featureFlag="android.view.inputmethod.prevent_ime_startup_on_tv">true</bool>
 </resources>
