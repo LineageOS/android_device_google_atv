@@ -13,4 +13,5 @@ runtime_resource_overlay {
     resource_dirs: ["res"],
     product_specific: true,
     sdk_version: "current",
+    flags_packages: ["android.view.inputmethod.flags-aconfig"],
 }
