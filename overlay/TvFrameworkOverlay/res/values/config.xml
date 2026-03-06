@@ -216,4 +216,10 @@
 
     <!-- Enable or disable android.companion.virtual.VirtualDeviceManager. Enabled by default. -->
     <bool name="config_enableVirtualDeviceManager">false</bool>
+
+    <!-- TV only: Number of consecutive long press volume keys required to adjust volume up/down -->
+    <integer name="config_tvLongPressVolumeKeysPerAdjustment">3</integer>
+
+    <!-- TV only: Scaling factor for volume up/down adjustments during long presses -->
+    <item name="config_tvLongPressVolumeAdjustmentScaleFactor" format="float" type="dimen">3.0</item>
 </resources>
