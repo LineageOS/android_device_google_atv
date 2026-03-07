@@ -222,4 +222,7 @@
 
     <!-- TV only: Scaling factor for volume up/down adjustments during long presses -->
     <item name="config_tvLongPressVolumeAdjustmentScaleFactor" format="float" type="dimen">3.0</item>
+
+    <!-- Disable system vendor intelligence role on TV targets -->
+    <string name="config_systemVendorIntelligence" translatable="false" />
 </resources>
