@@ -15,7 +15,7 @@
 #
 
 # Generate source.properties for image target
-PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := \
+PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP ?= \
     device/google/atv/sdk/images_source.prop_template
 
 PRODUCT_USE_DYNAMIC_PARTITIONS := true

@@ -1,0 +1,12 @@
+Pkg.Desc=Android SDK Platform ${PLATFORM_VERSION}
+Pkg.UserSrc=false
+Pkg.Revision=1
+Pkg.Dependencies=emulator#${EMULATOR_MINIMAL_VERSION}
+AndroidVersion.ApiLevel=${PLATFORM_SDK_VERSION}
+AndroidVersion.CodeName=${PLATFORM_VERSION_CODENAME}
+AndroidVersion.ExtensionLevel=${PLATFORM_SDK_EXTENSION_VERSION}
+AndroidVersion.IsBaseSdk=${PLATFORM_IS_BASE_SDK}
+SystemImage.Abi=${TARGET_CPU_ABI}
+SystemImage.GpuSupport=true
+SystemImage.TagId=google-tv,google_apis_playstore
+SystemImage.TagDisplay=Google TV,Google APIs PlayStore
