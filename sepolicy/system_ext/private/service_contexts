@@ -1,1 +1,2 @@
 TvKeyInputManagerService     u:object_r:TvKeyInputManagerService_service:s0
+tv_watchdog                  u:object_r:tv_watchdog_service:s0
