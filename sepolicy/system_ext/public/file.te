@@ -1,0 +1,2 @@
+# /data/system/io-watchdog
+type system_io_watchdog_data_file, file_type, data_file_type, core_data_file_type;
