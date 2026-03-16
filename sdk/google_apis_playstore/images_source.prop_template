@@ -8,5 +8,5 @@ AndroidVersion.ExtensionLevel=${PLATFORM_SDK_EXTENSION_VERSION}
 AndroidVersion.IsBaseSdk=${PLATFORM_IS_BASE_SDK}
 SystemImage.Abi=${TARGET_CPU_ABI}
 SystemImage.GpuSupport=true
-SystemImage.TagId=google-tv,google_apis_playstore,page_size_16kb
-SystemImage.TagDisplay=Google TV,Google APIs PlayStore,Page Size 16KB
+SystemImage.TagId=google-tv,google_apis_playstore
+SystemImage.TagDisplay=Google TV,Google APIs PlayStore
