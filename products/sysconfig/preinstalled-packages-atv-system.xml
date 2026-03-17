@@ -32,4 +32,10 @@
         <install-in user-type="FULL" />
     </install-in-user-type>
 
+    <!-- Camera extensions proxy service (CameraExtensionsProxy)  -->
+    <install-in-user-type package="com.android.cameraextensions">
+        <install-in user-type="SYSTEM" />
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
 </config>
