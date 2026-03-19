@@ -27,6 +27,13 @@
         <install-in user-type="SYSTEM" />
     </install-in-user-type>
 
+    <!-- Key Chain app (KeyChain) -->
+    <install-in-user-type package="com.android.keychain">
+        <install-in user-type="SYSTEM" />
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
+
     <!-- Basic Dreams (BasicDreams) -->
     <install-in-user-type package="com.android.dreams.basic">
         <install-in user-type="FULL" />
