@@ -51,4 +51,10 @@
         <install-in user-type="FULL" />
         <install-in user-type="PROFILE" />
     </install-in-user-type>
+
+    <!-- Calendar Provider (CalendarProvider) -->
+    <install-in-user-type package="com.android.providers.calendar">
+        <install-in user-type="FULL" />
+        <install-in user-type="PROFILE" />
+    </install-in-user-type>
 </config>
