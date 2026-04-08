@@ -91,7 +91,7 @@
     <string name="bluetooth_connected_status" msgid="8391804274846835227">"కనెక్ట్ చేయబడింది"</string>
     <string name="bluetooth_disconnected_status" msgid="972515438988962457">"డిస్‌కనెక్ట్ అయింది"</string>
     <string name="settings_devices_control" msgid="1862490057009510077">"పరికర నియంత్రణ"</string>
-    <string name="settings_bt_pair_title" msgid="1205942796805671508">"కొత్త పరికరాన్ని కనెక్ట్ చేయండి"</string>
+    <string name="settings_bt_pair_title" msgid="1205942796805671508">"కొత్త డివైజ్‌ ను కనెక్ట్ చేయండి"</string>
     <string name="pair_device_description" msgid="5145574754576245361">"కొత్త బ్లూటూత్ పరికరాలను కనెక్ట్ చేసే ముందు, అవి పెయిరింగ్ మోడ్‌లోనే ఉన్నాయని నిర్ధారించుకోండి. \'%1$s\' ను కనెక్ట్ చేయడానికి, 3 సెకన్ల పాటు \'%2$s + %3$s\'ను నొక్కి, పట్టుకోండి."</string>
     <string name="pair_device_device_name" msgid="4004194247588260613">"Android టీవీ రిమోట్"</string>
     <string name="settings_bt_available_devices" msgid="6237789711837183219">"అందుబాటులో ఉన్న డివైజ్‌లు"</string>
